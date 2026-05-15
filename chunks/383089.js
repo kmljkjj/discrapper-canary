@@ -1,98 +1,103 @@
-i.d(e, { m: () => d });
-var a = i(627968);
-i(64700);
-var n = i(158954),
-    s = i(397927),
-    l = i(665711),
-    r = i(41032),
-    c = i(985018),
-    o = i(23337);
-function d(t) {
+n.d(i, { m: () => u });
+var s = n(627968);
+n(64700);
+var e = n(224640),
+    l = n(430993),
+    a = n(696208),
+    r = n(683071),
+    c = n(478016),
+    d = n(834730),
+    o = n(665711),
+    x = n(41032),
+    j = n(375708),
+    m = n(376960);
+function u(t) {
     let {
-        sku: e,
-        application: i,
-        primaryCTAButtonProps: l,
-        transitionState: d,
-        onClose: _,
-        hasAlreadyLinked: x,
-        canStartAuthorization: m,
-        bodyText: f,
-        title: p,
+        sku: i,
+        application: n,
+        primaryCTAButtonProps: r,
+        transitionState: c,
+        onClose: o,
+        hasAlreadyLinked: u,
+        canStartAuthorization: v,
+        bodyText: p,
+        title: N,
     } = t;
-    return (0, a.jsxs)(n.dWK, {
-        transitionState: d,
-        onClose: _,
+    return (0, s.jsxs)(e.d, {
+        transitionState: c,
+        onClose: o,
+        "aria-label": N,
         children: [
-            (0, a.jsx)(r.z, { sku: e, title: p }),
-            (0, a.jsxs)(n.cwr, {
+            (0, s.jsx)(x.z, { sku: i, title: N }),
+            (0, s.jsxs)(l.c, {
                 children: [
-                    (0, a.jsxs)("div", {
-                        className: o.S3,
+                    (0, s.jsxs)("div", {
+                        className: m.S3,
                         children: [
-                            (0, a.jsx)(s.Text, {
+                            (0, s.jsx)(d.E, {
                                 variant: "text-md/normal",
                                 color: "text-subtle",
-                                className: o.jJ,
-                                children: f,
+                                className: m.jJ,
+                                children: p,
                             }),
-                            (0, a.jsx)(u, { isConnected: x, application: i }),
+                            (0, s.jsx)(h, { isConnected: u, application: n }),
                         ],
                     }),
-                    !m &&
-                        !x &&
-                        (0, a.jsx)(s.Text, {
+                    !v &&
+                        !u &&
+                        (0, s.jsx)(d.E, {
                             variant: "text-md/normal",
-                            className: o.tl,
+                            className: m.tl,
                             color: "text-feedback-warning",
-                            children: c.intl.string(c.t.GDL8wb),
+                            children: j.intl.string(j.t.GDL8wb),
                         }),
-                    !x &&
-                        (0, a.jsx)("div", {
-                            className: o.ZT,
-                            children: (0, a.jsx)(s.Text, {
+                    !u &&
+                        (0, s.jsx)("div", {
+                            className: m.ZT,
+                            children: (0, s.jsx)(d.E, {
                                 variant: "text-xs/normal",
                                 color: "text-subtle",
-                                children: c.intl.formatToPlainString(c.t.TTj7ME, { numDays: 14 }),
+                                children: j.intl.formatToPlainString(j.t.TTj7ME, { numDays: 14 }),
                             }),
                         }),
                 ],
             }),
-            (0, a.jsx)(n.H7u, { actions: [l], actionsFullWidth: !0 }),
+            (0, s.jsx)(a.H, { actions: [r], actionsFullWidth: !0 }),
         ],
     });
 }
-function u(t) {
-    let { isConnected: e, application: i } = t;
-    return e
-        ? (0, a.jsx)("div", {
-              className: o.II,
-              children: (0, a.jsxs)("div", {
-                  className: o.jf,
+function h(t) {
+    let { isConnected: i, application: n } = t;
+    return i
+        ? (0, s.jsx)("div", {
+              className: m.II,
+              children: (0, s.jsxs)("div", {
+                  className: m.jf,
                   children: [
-                      (0, a.jsxs)("div", {
-                          className: o.iN,
+                      (0, s.jsxs)("div", {
+                          className: m.iN,
                           children: [
-                              (0, a.jsx)("div", {
-                                  className: o.I8,
-                                  children: (0, a.jsx)(n.Uzd, { size: "xs", color: "currentColor" }),
+                              (0, s.jsx)("div", {
+                                  className: m.I8,
+                                  children: (0, s.jsx)(c.U, { size: "xs", color: "currentColor" }),
                               }),
-                              (0, a.jsx)(s.Text, {
+                              (0, s.jsx)(d.E, {
                                   variant: "text-md/normal",
-                                  className: o.qS,
+                                  className: m.qS,
                                   color: "text-subtle",
-                                  children: c.intl.string(c.t["LV+CXH"]),
+                                  children: j.intl.string(j.t["LV+CXH"]),
                               }),
                           ],
                       }),
-                      (0, a.jsx)("div", {
-                          className: o.vA,
-                          children: (0, a.jsx)(l.W, { application: i, iconSize: 20 }),
+                      (0, s.jsx)("div", {
+                          className: m.vA,
+                          children: (0, s.jsx)(o.W, { application: n, iconSize: 20 }),
                       }),
                   ],
               }),
           })
-        : (0, a.jsx)(n.wx6, {
+        : (0, s.jsx)(r.w, {
               type: "warning",
-              children: (0, a.jsx)(s.Text, { variant: "text-sm/medium", children: c.intl.string(c.t.Plv1Xk) }),
+              children: (0, s.jsx)(d.E, { variant: "text-sm/medium", children: j.intl.string(j.t.Plv1Xk) }),
           });
 }

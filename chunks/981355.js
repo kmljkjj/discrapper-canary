@@ -1,8 +1,8 @@
-n.d(t, { A: () => l });
-var a = n(64700);
-function l() {
+n.d(i, { A: () => d });
+var t = n(64700);
+function d() {
     arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
-    let [e, t] = a.useState(
+    let [e, i] = t.useState(
         (function () {
             return (
                 arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
@@ -11,9 +11,9 @@ function l() {
         })(),
     );
     return (
-        a.useLayoutEffect(() => {
+        t.useLayoutEffect(() => {
             function e() {
-                t({ width: window.innerWidth, height: window.innerHeight });
+                i({ width: window.innerWidth, height: window.innerHeight });
             }
             return e(), window.addEventListener("resize", e), () => window.removeEventListener("resize", e);
         }, []),

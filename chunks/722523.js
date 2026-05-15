@@ -1,65 +1,77 @@
-"use strict";
-n.d(t, { Ay: () => x, GU: () => g });
-var i = n(627968);
-n(64700);
-var s = n(503698),
-    l = n.n(s),
-    r = n(732955),
-    a = n(438874),
-    o = n(363487),
-    c = n(439156),
-    d = n(689906),
-    u = n(224331),
-    h = n(568065),
-    A = n(136708),
-    m = n(985018),
-    p = n(452565);
-function g(e) {
-    let { className: t, guildId: n, powerup: s, onClick: a } = e,
-        o = (0, d.A)(n, s),
-        c = (0, u.A)(n, s),
-        g = h.HO.has(s.skuId);
-    return (0, i.jsx)("div", {
-        className: l()(p.FS, t),
-        children: (0, i.jsx)(r.$nd, {
+l.d(e, { Ay: () => y, GU: () => E });
+var n = l(627968);
+l(64700);
+var a = l(503698),
+    i = l.n(a),
+    r = l(821609),
+    s = l(438874),
+    o = l(363487),
+    d = l(439156),
+    u = l(689906),
+    c = l(224331),
+    p = l(568065),
+    f = l(853513),
+    A = l(985018),
+    v = l(742786);
+function E(t) {
+    let { className: e, guildId: l, powerup: a, onClick: s } = t,
+        o = (0, u.A)(l, a);
+    return (0, n.jsx)("div", {
+        className: i()(v.FS, e),
+        children: (0, n.jsx)(r.$, {
             variant: "primary",
             fullWidth: !0,
-            text: g ? m.intl.string(A.default.g5Ds69) : m.intl.string(m.t["0Q61kF"]),
-            onClick: (e) => {
-                a?.(e), g ? o?.(e) : c?.();
+            text: A.intl.string(f.default.g5Ds69),
+            onClick: (t) => {
+                s?.(t), o?.(t);
             },
         }),
     });
 }
-function _(e) {
-    let { className: t, guildId: n, powerup: s } = e,
-        a = (0, u.A)(n, s);
-    return (0, i.jsx)("div", {
-        className: l()(p.kL, t),
-        children: (0, i.jsx)("div", {
-            className: p.FS,
-            children: (0, i.jsx)(r.$nd, {
+function g(t) {
+    let { className: e, guildId: l, powerup: a, onClick: s } = t,
+        o = (0, c.A)(l, a);
+    return (0, n.jsx)("div", {
+        className: i()(v.FS, e),
+        children: (0, n.jsx)(r.$, {
+            variant: "primary",
+            fullWidth: !0,
+            text: A.intl.string(A.t["0Q61kF"]),
+            onClick: (t) => {
+                s?.(t), o?.();
+            },
+        }),
+    });
+}
+function h(t) {
+    let { className: e, guildId: l, powerup: a } = t,
+        s = (0, c.A)(l, a);
+    return (0, n.jsx)("div", {
+        className: i()(v.kL, e),
+        children: (0, n.jsx)("div", {
+            className: v.FS,
+            children: (0, n.jsx)(r.$, {
                 variant: "primary",
                 fullWidth: !0,
-                text: s.type === h.o9.LEVEL ? m.intl.string(m.t["0Q61kF"]) : m.intl.string(m.t.Xa11Ep),
-                onClick: a,
+                text: a.type === p.o9.LEVEL ? A.intl.string(A.t["0Q61kF"]) : A.intl.string(A.t.Xa11Ep),
+                onClick: s,
             }),
         }),
     });
 }
-function f(e) {
-    let { className: t, guildId: n, powerup: s, expressiveCta: r, onError: o } = e,
-        { showToggleButton: d, isPowerupActive: u } = (0, a.A)(n, s),
-        h = !u;
-    return (0, i.jsxs)("div", {
-        className: l()(p.kL, t),
+function x(t) {
+    let { className: e, guildId: l, powerup: a, expressiveCta: r, onError: o } = t,
+        { showToggleButton: u, isPowerupActive: c, showConfigureButton: p } = (0, s.A)(l, a),
+        f = !c;
+    return (0, n.jsxs)("div", {
+        className: i()(v.kL, e),
         children: [
-            d && (0, i.jsx)(c.A, { guildId: n, powerup: s, onError: o, grow: h, compact: !h, expressiveCta: r }),
-            u && (0, i.jsx)(g, { guildId: n, powerup: s }),
+            u && (0, n.jsx)(d.A, { guildId: l, powerup: a, onError: o, grow: f, compact: !f, expressiveCta: r }),
+            p ? (0, n.jsx)(E, { guildId: l, powerup: a }) : c ? (0, n.jsx)(g, { guildId: l, powerup: a }) : null,
         ],
     });
 }
-function x(e) {
-    let { ...t } = e;
-    return (0, o.A)(t.guildId) ? (0, i.jsx)(f, { ...t }) : (0, i.jsx)(_, { ...t });
+function y(t) {
+    let { ...e } = t;
+    return (0, o.A)(e.guildId) ? (0, n.jsx)(x, { ...e }) : (0, n.jsx)(h, { ...e });
 }

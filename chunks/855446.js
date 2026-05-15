@@ -1,82 +1,84 @@
-"use strict";
-n.d(t, { C: () => I });
-var i,
-    s = n(627968),
-    l = n(64700),
-    r = n(503698),
-    a = n.n(r),
-    o = n(475539),
+n.d(t, { C: () => f });
+var l,
+    i = n(627968),
+    s = n(64700),
+    a = n(503698),
+    r = n.n(a),
+    o = n(123924),
     c = n(696292),
-    d = n(397927),
-    u = n(753845),
+    u = n(834730),
+    d = n(939249),
+    A = n(805901),
+    E = n(43990),
+    m = n(932413),
     h = n(849269),
-    A = n(881343),
-    p = n(697675),
-    g = n(869003),
-    m = n(652215),
-    _ = n(985018),
-    f = n(279240);
-let x = ["embedded_cover"],
-    C = { tension: 800, friction: 24 };
-var E =
-    (((i = E || {})[(i.THIRTEEN_BY_ELEVEN = 0)] = "THIRTEEN_BY_ELEVEN"),
-    (i[(i.SIXTEEN_BY_NINE = 1)] = "SIXTEEN_BY_NINE"),
-    i);
-function I(e) {
-    let { context: t, activityItem: n, onClick: i, aspectRatio: r = 0, animatedDivClass: E, commandOrigin: I } = e,
+    C = n(881343),
+    g = n(697675),
+    I = n(869003),
+    p = n(652215),
+    x = n(985018),
+    T = n(186349);
+let _ = ["embedded_cover"],
+    v = { tension: 800, friction: 24 };
+var N =
+    (((l = N || {})[(l.THIRTEEN_BY_ELEVEN = 0)] = "THIRTEEN_BY_ELEVEN"),
+    (l[(l.SIXTEEN_BY_NINE = 1)] = "SIXTEEN_BY_NINE"),
+    l);
+function f(e) {
+    let { context: t, activityItem: n, onClick: l, aspectRatio: a = 0, animatedDivClass: N, commandOrigin: f } = e,
         {
-            onActivityItemSelected: b,
-            imageBackground: N,
-            activityAction: S,
-            labelType: T,
+            onActivityItemSelected: j,
+            imageBackground: S,
+            activityAction: b,
+            labelType: O,
         } = (0, h.Ay)({
             context: t,
             activityItem: n,
             guildId: t.channel.getGuildId() ?? void 0,
             locationObject: {},
-            onActivityItemSelected: i,
-            embeddedActivitiesManager: g.A,
-            assetNames: x,
-            commandOrigin: I,
+            onActivityItemSelected: l,
+            embeddedActivitiesManager: I.A,
+            assetNames: _,
+            commandOrigin: f,
         }),
-        [v, y] = l.useState(!1),
-        j = l.useCallback(() => {
-            y(!0);
-        }, [y]),
-        R = l.useCallback(() => {
-            y(!1);
-        }, [y]),
-        O = l.useMemo(
+        [y, L] = s.useState(!1),
+        M = s.useCallback(() => {
+            L(!0);
+        }, [L]),
+        R = s.useCallback(() => {
+            L(!1);
+        }, [L]),
+        D = s.useMemo(
             () =>
-                (0, s.jsx)("div", {
-                    className: f.Gz,
-                    children: (0, s.jsx)("div", { className: f.fC, children: (0, s.jsx)(p.A, { labelType: T }) }),
+                (0, i.jsx)("div", {
+                    className: T.Gz,
+                    children: (0, i.jsx)("div", { className: T.fC, children: (0, i.jsx)(g.A, { labelType: O }) }),
                 }),
-            [T],
+            [O],
         ),
-        L = l.useMemo(() => {
-            switch (S) {
+        P = s.useMemo(() => {
+            switch (b) {
                 case h.o6.JOIN:
-                    return (0, s.jsx)("div", {
-                        className: f.m9,
-                        children: (0, s.jsx)("div", {
-                            className: f.aF,
-                            children: (0, s.jsx)(d.Text, {
+                    return (0, i.jsx)("div", {
+                        className: T.m9,
+                        children: (0, i.jsx)("div", {
+                            className: T.aF,
+                            children: (0, i.jsx)(u.E, {
                                 variant: "text-sm/medium",
                                 color: "always-white",
-                                children: _.intl.string(_.t.VJlc0S),
+                                children: x.intl.string(x.t.VJlc0S),
                             }),
                         }),
                     });
                 case h.o6.LEAVE:
-                    return (0, s.jsx)("div", {
-                        className: f.m9,
-                        children: (0, s.jsx)("div", {
-                            className: a()(f.aF, f.pS),
-                            children: (0, s.jsx)(d.Text, {
+                    return (0, i.jsx)("div", {
+                        className: T.m9,
+                        children: (0, i.jsx)("div", {
+                            className: r()(T.aF, T.pS),
+                            children: (0, i.jsx)(u.E, {
                                 variant: "text-sm/medium",
                                 color: "always-white",
-                                children: _.intl.string(_.t["wH/wDO"]),
+                                children: x.intl.string(x.t["wH/wDO"]),
                             }),
                         }),
                     });
@@ -84,40 +86,40 @@ function I(e) {
                 default:
                     return null;
             }
-        }, [S]);
-    return (0, s.jsx)(d.DUT, {
-        onClick: b,
-        onFocus: j,
+        }, [b]);
+    return (0, i.jsx)(d.D, {
+        onClick: j,
+        onFocus: M,
         onBlur: R,
-        onMouseEnter: j,
+        onMouseEnter: M,
         onMouseLeave: R,
-        className: f.XA,
-        children: (0, s.jsx)(d.c7X, {
-            config: C,
+        className: T.XA,
+        children: (0, i.jsx)(A.c, {
+            config: v,
             from: { value: 0 },
-            to: { value: +!!v },
+            to: { value: +!!y },
             children: (e) => {
                 let { value: t } = e;
-                return (0, s.jsx)(d.NPJ, {
-                    theme: m.NJ8.DARK,
+                return (0, i.jsx)(E.N, {
+                    theme: p.NJ8.DARK,
                     children: (e) =>
-                        (0, s.jsx)(u.A, {
+                        (0, i.jsx)(m.A, {
                             applicationId: n.application.id,
                             questContent: c.u.ACTIVITY_SUGGESTION,
-                            children: (i) =>
-                                (0, s.jsxs)(o.animated.div, {
-                                    ref: i,
-                                    className: a()(e, f.LM, E, { [f.$g]: 0 === r, [f.J3]: 1 === r }),
+                            children: (l) =>
+                                (0, i.jsxs)(o.animated.div, {
+                                    ref: l,
+                                    className: r()(e, T.LM, N, { [T.$g]: 0 === a, [T.J3]: 1 === a }),
                                     style: { transform: t.to([0, 1], [1, 1.05]).to((e) => `scale(${e})`) },
                                     children: [
-                                        (0, s.jsx)(A.A, {
-                                            imageBackground: N,
+                                        (0, i.jsx)(C.A, {
+                                            imageBackground: S,
                                             applicationName: n.application.name,
-                                            imageClassName: f.jj,
-                                            imageNotFoundClassName: f.v_,
+                                            imageClassName: T.jj,
+                                            imageNotFoundClassName: T.v_,
                                         }),
-                                        O,
-                                        L,
+                                        D,
+                                        P,
                                     ],
                                 }),
                         }),
@@ -126,4 +128,4 @@ function I(e) {
         }),
     });
 }
-I.AspectRatio = E;
+f.AspectRatio = N;

@@ -1,116 +1,125 @@
-"use strict";
-n.d(t, { t: () => f });
-var r = n(627968),
-    i = n(64700),
-    a = n(123292),
-    s = n(460890),
-    o = n(224640),
-    l = n(696208),
-    u = n(430993),
-    c = n(20742),
-    d = n(655053);
-let _ = i.createContext(null);
-function f(e) {
+l.d(t, { n: () => C, t: () => y });
+var n = l(627968),
+    a = l(64700),
+    i = l(123292),
+    s = l(460890),
+    o = l(224640),
+    r = l(696208),
+    u = l(430993),
+    c = l(20742),
+    d = l(655053);
+let p = a.createContext(null);
+function C() {
+    let e = a.useContext(p);
+    if (null == e) throw Error("useMultiStepModalContext must be used within a MultiStepModal");
+    return e;
+}
+function y(e) {
     let t,
-        { steps: n, currentStepKey: f, numberedSteps: p, onStepChange: h, onComplete: m, ...g } = e,
+        { steps: l, currentStepKey: C, numberedSteps: y, onStepChange: x, onComplete: h, ...b } = e,
         { i18n: E } = (0, s.G9)(),
-        A = g.onClose,
-        [I, T] = i.useState(!1),
-        [y, S] = i.useState(null),
-        v = n.find((e) => e.stepKey === f);
-    if (null == v) throw Error(`Step with key ${f} not found`);
-    let C = n.findIndex((e) => e.stepKey === f),
-        b = C === n.length - 1,
-        N = 0 === C,
-        [R, O] = i.useState(!1),
-        D = v.nextEnabled ?? !0,
-        L = i.useCallback(
+        P = b.onClose,
+        [v, k] = a.useState(!1),
+        [g, N] = a.useState(null),
+        f = l.find((e) => e.stepKey === C);
+    if (null == f) throw Error(`Step with key ${C} not found`);
+    let m = l.findIndex((e) => e.stepKey === C),
+        T = m === l.length - 1,
+        I = 0 === m,
+        [S, j] = a.useState(!1),
+        w = f.nextEnabled ?? !0,
+        B = a.useCallback(
             (e) => {
-                S(null), h?.(e, f);
+                N(null), x?.(e, C);
             },
-            [h, f],
+            [x, C],
         ),
-        w = i.useCallback(async () => {
-            await m?.(), O(!0), A();
-        }, [m, A]),
-        x = i.useCallback(async () => {
-            T(!0), S(null);
+        _ = a.useCallback(async () => {
+            await h?.(), j(!0), P();
+        }, [h, P]),
+        M = a.useCallback(async () => {
+            k(!0), N(null);
             try {
-                if (null != v.onNext && !(await v.onNext())) return void T(!1);
-                b ? await w() : L(n[C + 1].stepKey);
+                if (null != f.onNext && !(await f.onNext())) return void k(!1);
+                T ? await _() : B(l[m + 1].stepKey);
             } catch {
-                S(E.INLINE_NOTICE_GENERIC_ERROR);
+                N(E.INLINE_NOTICE_GENERIC_ERROR);
             } finally {
-                T(!1);
+                k(!1);
             }
-        }, [L, C, n, b, w, v, E]),
-        P = i.useCallback(() => {
-            N || L(n[C - 1].stepKey);
-        }, [L, C, n, N]),
-        M = i.useMemo(
-            () => ({ currentStepKey: f, goToStep: L, goToNextStep: x, goToPreviousStep: P, complete: w }),
-            [f, L, x, P, w],
+        }, [B, m, l, T, _, f, E]),
+        R = a.useCallback(() => {
+            I || B(l[m - 1].stepKey);
+        }, [B, m, l, I]),
+        K = a.useMemo(
+            () => ({ currentStepKey: C, goToStep: B, goToNextStep: M, goToPreviousStep: R, complete: _ }),
+            [C, B, M, R, _],
         ),
-        k = { variant: "secondary", text: E.BACK },
-        U = {
+        O = { variant: "secondary", text: E.BACK },
+        A = {
             variant: "primary",
-            text: b ? E.SUBMIT : E.NEXT,
-            disabled: !D,
-            loading: I,
+            text: T ? E.SUBMIT : E.NEXT,
+            disabled: !w,
+            loading: v,
             onClick: () => {
-                D && !I && x();
+                w && !v && M();
             },
         },
-        G = { text: E.CANCEL, variant: "secondary", onClick: A },
-        V = v.hideBackButton || N ? void 0 : (0, r.jsx)(a.Q, { ...k, ...v.backButtonProps, onClick: P }),
-        F = v.modalProps,
-        B = "graphic" in F ? F : null,
-        j = null != p && p.length > 0 && p.includes(f),
-        H = j && !R ? p.indexOf(f) + 1 : void 0;
-    return (
-        j && (t = R ? { percent: 100 } : { stepCount: p.length, stepNumber: H }),
-        (0, r.jsx)(_.Provider, {
-            value: M,
-            children: (0, r.jsxs)(o.d, {
-                ...g,
-                paddingSize: null != B ? "lg" : "sm",
-                children: [
-                    null != B
-                        ? (0, r.jsx)(c.V6, { ...B })
-                        : (0, r.jsx)(c.rQ, { title: F.title, subtitle: F.subtitle, progressBarProps: t }),
-                    (0, r.jsx)(
-                        d.i,
-                        {
-                            message: y ?? ("notice" in F ? F.notice?.message : void 0),
-                            type: null != y ? "critical" : "notice" in F ? F.notice?.type : void 0,
-                        },
-                        f,
-                    ),
-                    n.map((e) => {
-                        let t = "graphic" in e.modalProps ? null : e.modalProps;
-                        return (
-                            (null != e.body || t?.input != null || t?.listProps != null) &&
-                            (0, r.jsx)(
-                                "div",
-                                {
-                                    style: { display: e.stepKey === f ? void 0 : "none" },
-                                    children: (0, r.jsx)(u.c, {
-                                        controls: t?.input,
-                                        listProps: t?.listProps,
-                                        children: e.body,
-                                    }),
-                                },
-                                e.stepKey,
-                            )
-                        );
-                    }),
-                    (0, r.jsx)(l.H, {
-                        leading: V,
-                        actionsFullWidth: N,
-                        actions: [...(N ? [G] : []), { ...U, ...v.nextButtonProps }],
-                    }),
-                ],
-            }),
-        })
-    );
+        L = { text: E.CANCEL, variant: "secondary", onClick: P },
+        D = null != f.secondaryActionButtonProps ? { variant: "secondary", ...f.secondaryActionButtonProps } : null,
+        G = f.hideBackButton || I ? void 0 : (0, n.jsx)(i.Q, { ...O, ...f.backButtonProps, onClick: R }),
+        Q = f.modalProps,
+        V = "graphic" in Q ? Q : null,
+        z = null != y && y.length > 0 && y.includes(C),
+        F = z && !S ? y.indexOf(C) + 1 : void 0;
+    if (z) {
+        let e = y.length;
+        t = S
+            ? { value: 100, "aria-label": E.PERCENT_COMPLETE(100), valueLabel: E.PERCENT_COMPLETE(100) }
+            : { value: F, maxValue: e + 1, "aria-label": E.STEP_INDICATOR(F, e), valueLabel: E.STEP_INDICATOR(F, e) };
+    }
+    return (0, n.jsx)(p.Provider, {
+        value: K,
+        children: (0, n.jsxs)(o.d, {
+            ...b,
+            "aria-label": b["aria-label"] ?? Q.title,
+            paddingSize: null != V ? "lg" : "sm",
+            children: [
+                null != V
+                    ? (0, n.jsx)(c.V6, { ...V })
+                    : (0, n.jsx)(c.rQ, { title: Q.title, subtitle: Q.subtitle, progressBarProps: t }),
+                (0, n.jsx)(
+                    d.i,
+                    {
+                        message: g ?? ("notice" in Q ? Q.notice?.message : void 0),
+                        type: null != g ? "critical" : "notice" in Q ? Q.notice?.type : void 0,
+                    },
+                    C,
+                ),
+                l.map((e) => {
+                    let t = "graphic" in e.modalProps ? null : e.modalProps;
+                    return (
+                        (null != e.body || t?.input != null || t?.listProps != null) &&
+                        (0, n.jsx)(
+                            "div",
+                            {
+                                style: { display: e.stepKey === C ? "contents" : "none" },
+                                children: (0, n.jsx)(u.c, {
+                                    controls: t?.input,
+                                    listProps: t?.listProps,
+                                    children: e.body,
+                                }),
+                            },
+                            e.stepKey,
+                        )
+                    );
+                }),
+                (0, n.jsx)(r.H, {
+                    leading: G,
+                    actionsFullWidth: I,
+                    actions: [...(I ? [L] : []), ...(null != D ? [D] : []), { ...A, ...f.nextButtonProps }],
+                }),
+            ],
+        }),
+    });
 }

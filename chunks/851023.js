@@ -1,25 +1,25 @@
 "use strict";
-n.d(t, { A: () => c });
-var r = n(627968),
+n.d(t, { A: () => u });
+var l = n(627968),
     i = n(64700),
-    a = n(503698),
-    s = n.n(a),
-    o = n(990078),
-    l = n(101555),
-    u = n(238855);
-function c(e) {
-    let { onClick: t, children: n, tooltip: a, dangerous: c = !1, className: d, "aria-label": _ } = e;
-    return (0, r.jsx)(o.m, {
-        text: a,
-        children: (0, r.jsx)(l.$n, {
+    s = n(503698),
+    a = n.n(s),
+    r = n(990078),
+    o = n(101555),
+    c = n(389116);
+function u(e) {
+    let { onClick: t, children: n, tooltip: s, dangerous: u = !1, className: d, "aria-label": h } = e;
+    return (0, l.jsx)(r.m, {
+        text: s,
+        children: (0, l.jsx)(o.$n, {
             onClick: (e) => {
                 e.stopPropagation(), t(e);
             },
-            dangerous: c,
-            "aria-label": _ ?? a,
+            dangerous: u,
+            "aria-label": h ?? s,
             className: d,
             children: i.Children.map(n, (e) =>
-                i.isValidElement(e) ? i.cloneElement(e, { className: s()(e.props.className, u.l) }) : e,
+                i.isValidElement(e) ? i.cloneElement(e, { className: a()(e.props.className, c.l) }) : e,
             ),
         }),
     });

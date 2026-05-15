@@ -1,33 +1,39 @@
-r.d(t, { J: () => h });
-var n = r(33851),
-    s = r.n(n),
-    l = r(311907),
+r.d(t, { J: () => d });
+var l = r(33851),
+    n = r.n(l),
+    s = r(17928),
     a = r(5180),
     i = r(253932),
-    o = r(734057),
-    c = r(71393),
-    u = r(967198),
-    d = r(652215);
-function h(e) {
+    u = r(734057),
+    o = r(71393),
+    c = r(967198),
+    h = r(652215);
+function d(e) {
     let { guildId: t, channelId: r } = e,
-        n = i.Hu.useSetting();
-    return (0, l.bG)(
-        [c.A, o.A, u.A],
+        l = i.Hu.useSetting();
+    return (0, s.bG)(
+        [o.A, u.A, c.A],
         () => {
-            let e = c.A.getGuild(t),
-                s = o.A.getChannel(r),
-                l = u.A.getGuildId();
-            return (0, a.ai)(l)
-                ? { type: d.I4_.FAVORITES }
-                : null != t && null != e
-                  ? { type: d.I4_.GUILD, guildId: t }
-                  : null != r && null != s && s.isPrivate()
-                    ? n
-                        ? { type: d.I4_.DMS }
-                        : { type: d.I4_.CHANNEL, channelId: r }
-                    : null;
+            let e = o.A.getGuild(t),
+                n = u.A.getChannel(r),
+                s = c.A.getGuildId();
+            if ((0, a.ai)(s)) {
+                if (null != n) {
+                    if (n.isPrivate()) return { type: h.I4_.CHANNEL, channelId: r };
+                    let e = n.getGuildId();
+                    if (null != e) return { type: h.I4_.GUILD_CHANNEL, guildId: e, channelId: r };
+                }
+                return null;
+            }
+            return null != t && null != e
+                ? { type: h.I4_.GUILD, guildId: t }
+                : null != r && null != n && n.isPrivate()
+                  ? l
+                      ? { type: h.I4_.DMS }
+                      : { type: h.I4_.CHANNEL, channelId: r }
+                  : null;
         },
-        [r, t, n],
-        s(),
+        [r, t, l],
+        n(),
     );
 }

@@ -1,83 +1,90 @@
 "use strict";
-n.d(t, { A: () => N });
-var r = n(627968);
+n.d(t, { A: () => O });
+var i = n(627968);
 n(64700);
-var i = n(503698),
-    a = n.n(i),
-    s = n(311907),
-    o = n(397927),
+var r = n(503698),
+    s = n.n(r),
+    a = n(17928),
+    o = n(289873),
     l = n(536246),
-    u = n(398866),
+    u = n(395678),
     c = n(793574),
     d = n(688810),
     _ = n(429913),
     f = n(869146),
-    p = n(272812),
-    h = n(461782),
-    m = n(334463),
-    g = n(625180),
-    E = n(91242),
+    h = n(272812),
+    p = n(461782),
+    E = n(334463),
+    m = n(113854),
+    g = n(91242),
     A = n(113192),
     I = n(165610),
     T = n(652215),
-    y = n(360469),
-    S = n(463967),
-    v = n(319567),
-    C = n(976092);
-function b(e) {
+    S = n(360469),
+    N = n(970682),
+    y = n(27600),
+    C = n(604949);
+function v(e) {
     let { isLoading: t } = e,
-        n = (0, s.bG)([E.A], () => E.A.getConnectedFrame()),
-        i = (0, s.bG)([E.A], () => E.A.getFrameLayoutMode()),
+        n = (0, a.bG)([g.A], () => g.A.getConnectedFrame()),
+        r = (0, a.bG)([g.A], () => g.A.getFrameLayoutMode()),
         c = (0, _.h)(n?.applicationId),
-        d = (0, s.bG)([E.A], () => null != c && E.A.isProxyTicketRefreshing(c.id), [c]),
-        b = (0, s.bG)([f.A], () => f.A.getWindowOpen(T.MLl.ACTIVITY_POPOUT)),
-        N = (0, s.bG)([m.A], () => m.A.isFrameHidden()),
-        R = i === I.y.PIP && !N && !b,
-        O = R && null != m.A.pipVideoWindow && null != m.A.pipFrameWindow;
-    if (null == n || null == c || b) return null;
-    let D = { instance_id: "example-cl-instance", platform: y.vu.DESKTOP };
-    function L(e) {
-        let { onActive: t, onForceIdle: i, idle: a } = e;
-        return R && null != n
-            ? (0, r.jsxs)(r.Fragment, {
-                  children: [
-                      (0, r.jsx)("div", { onMouseMove: t, onMouseDown: t, onMouseLeave: i, className: S.OB }),
-                      (0, r.jsx)(A.v, {
-                          idle: a,
-                          onMouseMove: t,
-                          onMouseDown: t,
-                          onMouseLeave: i,
-                          onFocus: () => {
-                              g.A.updateFrameLayoutMode({ applicationId: n.applicationId, layoutMode: I.y.FOCUSED });
-                          },
-                          applicationId: n.applicationId,
-                      }),
-                  ],
-              })
-            : null;
-    }
+        d = (0, a.bG)([g.A], () => null != c && g.A.isProxyTicketRefreshing(c.id), [c]),
+        v = (0, a.bG)([f.A], () => f.A.getWindowOpen(T.MLl.ACTIVITY_POPOUT)),
+        O = (0, a.bG)([E.A], () => E.A.isFrameHidden()),
+        R = r === I.y.PIP && !O && !v,
+        b = R && null != E.A.pipVideoWindow && null != E.A.pipFrameWindow;
+    if (null == n || null == c || v) return null;
+    let D = { instance_id: "example-cl-instance", platform: S.vu.DESKTOP };
     return (
         null != n.proxyTicket && (D.discord_proxy_ticket = n.proxyTicket),
-        (0, r.jsx)(h.Ay, {
+        (0, i.jsx)(p.Ay, {
             timeout: 2e3,
             children: (e) => {
-                let { idle: i, onActive: s, onForceIdle: _ } = e;
-                return (0, r.jsxs)(p.A, {
-                    className: a()(S.zr, { [S.NW]: R, [C.a8]: R, [v.N7]: i, [S.p0]: R, [S.R]: N, [S.Gq]: O }),
+                let { idle: r, onActive: a, onForceIdle: _ } = e;
+                return (0, i.jsxs)(h.A, {
+                    className: s()(N.zr, { [N.NW]: R, [C.a8]: R, [y.N7]: r, [N.p0]: R, [N.R]: O, [N.Gq]: b }),
                     noBorder: !R,
                     children: [
-                        (0, r.jsx)("div", {
+                        (0, i.jsx)("div", {
                             className: "theme-dark",
-                            children: L({ onActive: s, onForceIdle: _, idle: i }),
+                            children: (function (e) {
+                                let { onActive: t, onForceIdle: r, idle: s } = e;
+                                return R && null != n
+                                    ? (0, i.jsxs)(i.Fragment, {
+                                          children: [
+                                              (0, i.jsx)("div", {
+                                                  onMouseMove: t,
+                                                  onMouseDown: t,
+                                                  onMouseLeave: r,
+                                                  className: N.OB,
+                                              }),
+                                              (0, i.jsx)(A.v, {
+                                                  idle: s,
+                                                  onMouseMove: t,
+                                                  onMouseDown: t,
+                                                  onMouseLeave: r,
+                                                  onFocus: () => {
+                                                      m.A.updateFrameLayoutMode({
+                                                          applicationId: n.applicationId,
+                                                          layoutMode: I.y.FOCUSED,
+                                                      });
+                                                  },
+                                                  applicationId: n.applicationId,
+                                              }),
+                                          ],
+                                      })
+                                    : null;
+                            })({ onActive: a, onForceIdle: _, idle: r }),
                         }),
                         t || d
-                            ? (0, r.jsx)(o.y$y, { className: a()(S.pU, { [S.p0]: R }) })
-                            : (0, r.jsx)(u.o, {
+                            ? (0, i.jsx)(o.y, { className: s()(N.pU, { [N.p0]: R }) })
+                            : (0, i.jsx)(u.o, {
                                   allowPopups: (0, l.b)(c),
                                   referrerPolicy: "origin",
                                   url: n.url,
                                   queryParams: D,
-                                  className: a()(S.pU, { [S.p0]: R, [S.v8]: R }),
+                                  className: s()(N.pU, { [N.p0]: R, [N.v8]: R }),
                                   shouldRefocus: !R,
                               }),
                     ],
@@ -86,8 +93,8 @@ function b(e) {
         })
     );
 }
-let N = () => {
+let O = () => {
     let { analyticsLocations: e } = (0, d.Ay)(c.A.FRAME_PIP),
-        t = (0, s.bG)([E.A], () => E.A.isFrameActive());
-    return (0, r.jsx)(d.f5, { value: e, children: (0, r.jsx)(b, { isLoading: !t }) });
+        t = (0, a.bG)([g.A], () => g.A.isFrameActive());
+    return (0, i.jsx)(d.f5, { value: e, children: (0, i.jsx)(v, { isLoading: !t }) });
 };

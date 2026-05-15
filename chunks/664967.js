@@ -1,29 +1,38 @@
-i.d(t, { A: () => u });
-var n = i(627968),
-    l = i(64700),
-    s = i(397927),
-    r = i(585510),
-    a = i(834409),
-    d = i(903093),
-    o = i(652215),
-    c = i(985018);
-function u(e) {
-    let t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
-        { shouldShowIncidentActions: u, isUnderLockdown: A, incidentData: g } = (0, r.Li)(e.id),
-        E = l.useCallback(() => {
-            let t = { source: a.Eo.CONTEXT_MENU, alertType: (0, d.$5)(g) };
-            (0, s.mMO)(async () => {
-                let { default: l } = await i.e("43233").then(i.bind(i, 671576));
-                return (i) => (0, n.jsx)(l, { ...i, guildId: e.id, analyticsData: t });
+i.d(n, { A: () => v });
+var l = i(627968),
+    t = i(64700),
+    o = i(192308),
+    a = i(477782),
+    r = i(328162),
+    c = i(194261),
+    s = i(585510),
+    d = i(834409),
+    u = i(903093),
+    p = i(652215),
+    y = i(375708);
+function v(e) {
+    let n = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
+        { shouldShowIncidentActions: v, isUnderLockdown: g, incidentData: b } = (0, s.Li)(e.id),
+        A = t.useCallback(() => {
+            let n = { source: d.Eo.CONTEXT_MENU, alertType: (0, u.$5)(b) };
+            (0, o.openModalLazy)(async () => {
+                let { default: t } = await Promise.all([
+                    i.e("29690"),
+                    i.e("40258"),
+                    i.e("73669"),
+                    i.e("46313"),
+                    i.e("43233"),
+                ]).then(i.bind(i, 671576));
+                return (i) => (0, l.jsx)(t, { ...i, guildId: e.id, analyticsData: n });
             });
-        }, [e.id, g]);
-    return e.features.has(o.GuildFeatures.COMMUNITY) && u
-        ? (0, n.jsx)(s.Drp, {
+        }, [e.id, b]);
+    return e.features.has(p.GuildFeatures.COMMUNITY) && v
+        ? (0, l.jsx)(a.Dr, {
               id: "server-lockdown",
-              label: A ? c.intl.string(c.t["+tSVi3"]) : c.intl.string(c.t.EPlEdu),
-              icon: t ? (A ? s.wUM : s.XAi) : void 0,
-              leadingAccessory: t ? { type: "icon", icon: A ? s.wUM : s.XAi } : void 0,
-              action: E,
+              label: g ? y.intl.string(y.t["+tSVi3"]) : y.intl.string(y.t.EPlEdu),
+              icon: n ? (g ? r.w : c.X) : void 0,
+              leadingAccessory: n ? { type: "icon", icon: g ? r.w : c.X } : void 0,
+              action: A,
               color: "danger",
           })
         : null;

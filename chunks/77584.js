@@ -1,33 +1,48 @@
 "use strict";
-n.d(t, { e: () => o });
-var r = n(627968);
+n.d(t, { A: () => f });
+var i = n(627968);
 n(64700);
-var i = n(827734),
-    a = n(996682),
-    s = n(27989);
-let o = (e) => {
-    let {
-            size: t = "md",
-            width: n,
-            height: o,
-            color: l = i.A.colors.INTERACTIVE_ICON_DEFAULT,
-            colorClass: u = "",
-            ...c
-        } = e,
-        d = (0, s.J)(t),
-        _ = d?.width ?? n,
-        f = d?.height ?? o;
-    return (0, r.jsx)("svg", {
-        ...(0, a.A)(c),
-        xmlns: "http://www.w3.org/2000/svg",
-        width: _,
-        height: f,
-        fill: "none",
-        viewBox: "0 0 24 24",
-        children: (0, r.jsx)("path", {
-            fill: "string" == typeof l ? l : l.css,
-            d: "M2 4c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4ZM2 15c0-1.1.9-2 2-2h5a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-5ZM15 13a2 2 0 0 0-2 2v5c0 1.1.9 2 2 2h5a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-5Z",
-            className: u,
-        }),
-    });
-};
+var r = n(192308),
+    s = n(803306),
+    a = n(439372),
+    o = n(734057),
+    l = n(309010),
+    _ = n(287809),
+    d = n(716371),
+    u = n(652215);
+let c = !1;
+function E(e) {
+    if (__OVERLAY__) return;
+    let t = _.default.getCurrentUser();
+    if (null == t) return;
+    let n = l.A.getChannelId(),
+        i = o.A.getDMFromUserId(d.K);
+    if (!t.hasUrgentMessages() || i === n) return h({ channelId: n });
+    c || ((c = !0), e());
+}
+function h(e) {
+    let { channelId: t } = e,
+        n = _.default.getCurrentUser(),
+        i = t === o.A.getDMFromUserId(d.K);
+    null != n && n.hasUrgentMessages() && i && ((c = !1), s.lA(u.nhx.HAS_UNREAD_URGENT_MESSAGES, !1));
+}
+class m extends a.A {
+    handleShowUrgentMessageAlert;
+    actions = {
+        POST_CONNECTION_OPEN: () => E(this.handleShowUrgentMessageAlert),
+        MESSAGE_CREATE: () => E(this.handleShowUrgentMessageAlert),
+        CHANNEL_SELECT: h,
+    };
+    constructor(e) {
+        super(), (this.handleShowUrgentMessageAlert = e);
+    }
+}
+let f = new m(() =>
+    (0, r.openModalLazy)(
+        async () => {
+            let { default: e } = await Promise.all([n.e("89913"), n.e("36724")]).then(n.bind(n, 531519));
+            return (t) => (0, i.jsx)(e, { ...t });
+        },
+        { modalKey: d.r, onCloseRequest: u.FXj },
+    ),
+);

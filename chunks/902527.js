@@ -1,18 +1,20 @@
-"use strict";
-n.d(t, { A: () => o });
-var r = n(110259),
-    i = n(139286),
-    a = n(989837),
-    s = n(520117);
-function o(e) {
-    let { sectionName: t, numItems: n, numVisibleItems: o } = e,
-        l = () => {
-            (0, i.x)({
-                type: r.ImpressionTypes.VIEW,
-                name: r.ImpressionNames.APP_LAUNCHER_SECTION,
-                properties: { section_name: t, num_items: n, num_visible_items: o, source: a.A.entrypoint() },
-            });
-        },
-        u = 1;
-    return { trackSectionImpressionRef: (0, s.A)({ onVisible: l, threshold: u }) };
+i.d(e, { A: () => a });
+var s = i(110259),
+    n = i(139286),
+    r = i(989837),
+    A = i(520117);
+function a(t) {
+    let { sectionName: e, numItems: i, numVisibleItems: a } = t;
+    return {
+        trackSectionImpressionRef: (0, A.A)({
+            onVisible: () => {
+                (0, n.x)({
+                    type: s.ImpressionTypes.VIEW,
+                    name: s.ImpressionNames.APP_LAUNCHER_SECTION,
+                    properties: { section_name: e, num_items: i, num_visible_items: a, source: r.A.entrypoint() },
+                });
+            },
+            threshold: 1,
+        }),
+    };
 }

@@ -1,45 +1,28 @@
 "use strict";
-n.d(t, { KD: () => f, ME: () => d, Sm: () => _, Z1: () => a, oS: () => s });
-var r = n(967245),
-    i = n(652215);
-function s() {
-    let { isUserEligibleForCreatorMonetization: e } = r.i.useExperiment(
-        { location: "e3bb71_1" },
-        { autoTrackExposure: !1 },
-    );
-    return e;
+n.d(t, { ME: () => _, Z1: () => d, oS: () => c });
+var i = n(17928),
+    r = n(546605),
+    s = n(287809),
+    a = n(615405),
+    o = n(652215);
+let l = new Set(["US"]);
+function u() {
+    return (0, r.wy)("CreatorMonetizationEligibility")
+        ? (s.default.getCurrentUser()?.storeCountry?.country ?? a.A.ipCountryCode)
+        : a.A.ipCountryCode;
 }
-function a() {
-    let { isUserEligibleForCreatorMonetization: e } = r.i.getCurrentConfig(
-        { location: "e3bb71_2" },
-        { autoTrackExposure: !1 },
-    );
-    return e;
+function c() {
+    return (0, i.bG)([s.default, a.A], () => {
+        let e = u();
+        return null != e && l.has(e);
+    });
 }
-function o(e) {
-    return null != e;
-}
-function l(e) {
-    return null != e;
-}
-function u(e) {
-    return null != e && e.features.has(i.GuildFeatures.CREATOR_MONETIZABLE_WHITEGLOVE);
-}
-function c(e) {
-    return null != e && e.features.has(i.GuildFeatures.CREATOR_MONETIZABLE_WHITEGLOVE);
-}
-function d(e) {
-    let t = o(e?.id),
-        n = u(e);
-    return t || n;
+function d() {
+    let e = u();
+    return null != e && l.has(e);
 }
 function _(e) {
-    return l(e?.id) || c(e);
-}
-function f() {
-    let { enableCreatorMonetizationNagActivateForUser: e } = r.w.getCurrentConfig(
-        { location: "e3bb71_11" },
-        { autoTrackExposure: !0 },
-    );
-    return e;
+    let t = null != e?.id,
+        n = null != e && e.features.has(o.GuildFeatures.CREATOR_MONETIZABLE_WHITEGLOVE);
+    return t || n;
 }

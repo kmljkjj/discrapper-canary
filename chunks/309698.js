@@ -1,9 +1,9 @@
 "use strict";
-n.d(t, { A: () => p });
-var r = n(478437),
-    i = n(311907),
-    a = n(73153),
-    s = n(142120);
+n.d(t, { A: () => _ });
+var i = n(478437),
+    r = n(17928),
+    s = n(228366),
+    a = n(587626);
 let o = new Set(),
     l = {};
 function u() {
@@ -12,30 +12,32 @@ function u() {
 function c(e) {
     o.delete(e.guild.id);
 }
-function d(e) {
-    null == l[e.guildId] && (l[e.guildId] = {}), (l[e.guildId][e.id] = e.status);
-}
-function _(e) {
-    for (let { id: t, status: n } of ((l[e.guildId] = {}), e.channels)) l[e.guildId][t] = n;
-}
-class f extends i.Ay.Store {
+class d extends r.Ay.Store {
     initialize() {
-        this.waitFor(s.A);
+        this.waitFor(a.A);
     }
     static displayName = "ChannelStatusStore";
     getChannelStatus(e) {
-        if (null != e && null != e.guild_id && e.type === r.r.GUILD_VOICE)
-            return (
-                o.has(e.guild_id) || (o.add(e.guild_id), s.A.getSocket().requestChannelStatuses(e.guild_id)),
-                l[e.guild_id]?.[e.id]
-            );
+        if (null != e && null != e.guild_id && e.type === i.r.GUILD_VOICE) return l[e.guild_id]?.[e.id];
+    }
+    hasRequestedStatuses(e) {
+        return o.has(e);
     }
 }
-let p = new f(a.h, {
+let _ = new d(s.h, {
     GUILD_CREATE: c,
     GUILD_DELETE: c,
     CONNECTION_RESUMED: u,
     CONNECTION_OPEN: u,
-    VOICE_CHANNEL_STATUS_UPDATE: d,
-    CHANNEL_STATUSES: _,
+    VOICE_CHANNEL_STATUS_UPDATE: function (e) {
+        null == l[e.guildId] && (l[e.guildId] = {}), (l[e.guildId][e.id] = e.status);
+    },
+    CHANNEL_INFO: function (e) {
+        let { guildId: t, channels: n } = e;
+        for (let { id: e, status: i } of ((l[t] = {}), n)) l[t][e] = i;
+    },
+    FETCH_CHANNEL_INFO: function (e) {
+        let { guildId: t } = e;
+        o.add(t);
+    },
 });

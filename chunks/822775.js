@@ -1,83 +1,85 @@
-"use strict";
-n.d(t, { A: () => m });
-var r = n(627968),
-    i = n(64700),
-    a = n(311907),
-    s = n(397927),
-    o = n(474397),
-    l = n(206835),
-    u = n(961350),
-    c = n(71393),
-    d = n(183555),
-    _ = n(958805),
-    f = n(61881),
-    p = n(993401),
-    h = n(985018);
-function m(e) {
-    let { user: t, guildId: n, fullWidth: m, appContext: g, onClose: E } = e,
-        A = (0, a.bG)([u.default], () => u.default.getId() === t.id),
-        I = (0, a.bG)([c.A], () => (null != n ? c.A.getGuild(n) : null)),
-        T = (0, a.bG)([f.A], () => f.A.hasUnsavedChanges()),
-        y = (0, l.A)({ guild: I }),
-        S = (0, l.A)({}),
-        { trackUserProfileAction: v } = (0, d.NJ)(),
-        C = i.useRef(null);
-    return A
-        ? null == I
-            ? (0, r.jsx)(p.FD, {
+t.d(n, { A: () => v });
+var l = t(627968),
+    i = t(64700),
+    r = t(17928),
+    a = t(22231),
+    s = t(922016),
+    o = t(550079),
+    d = t(477782),
+    u = t(474397),
+    c = t(206835),
+    g = t(495544),
+    m = t(71393),
+    f = t(207803),
+    p = t(183555),
+    x = t(61881),
+    A = t(993401),
+    h = t(985018);
+function v(e) {
+    let { user: n, guildId: t, fullWidth: v, appContext: j, onClose: I } = e,
+        b = (0, r.bG)([g.default], () => g.default.getId() === n.id),
+        C = (0, r.bG)([m.A], () => (null != t ? m.A.getGuild(t) : null)),
+        N = (0, r.bG)([x.A], () => x.A.hasUnsavedChanges()),
+        y = (0, c.A)({ guild: C }),
+        E = (0, c.A)({}),
+        { trackUserProfileAction: P } = (0, p.NJ)(),
+        R = i.useRef(null);
+    return b
+        ? null == C
+            ? (0, l.jsx)(A.FD, {
                   action: "EDIT_PROFILE",
                   text: h.intl.string(h.t.s5vZlQ),
-                  icon: s.R2l,
+                  icon: a.R,
                   autoFocus: !0,
-                  fullWidth: m,
+                  fullWidth: v,
                   variant: "primary",
                   onClick: () => {
-                      T ? _.A.notifyUnsavedWidgets() : (E?.(), S(), (0, o.A)(g));
+                      N ? (0, f.VQ)() : (I?.(), E(), (0, u.A)(j));
                   },
               })
-            : (0, r.jsx)(s.YNO, {
-                  targetElementRef: C,
+            : (0, l.jsx)(s.Y, {
+                  targetElementRef: R,
                   renderPopout: (e) => {
-                      let { closePopout: t } = e;
-                      return (0, r.jsxs)(s.W1t, {
+                      let { closePopout: n } = e;
+                      return (0, l.jsxs)(o.W, {
                           "data-menu-needs-review": !0,
                           onSelect: void 0,
                           navId: "edit-profile-popout",
-                          onClose: t,
+                          onClose: n,
                           "aria-label": h.intl.string(h.t.AXIHpV),
                           children: [
-                              (0, r.jsx)(s.Drp, {
+                              (0, l.jsx)(d.Dr, {
                                   id: "edit-server-profile",
                                   label: h.intl.string(h.t["PKQB/H"]),
                                   subtext: h.intl.string(h.t.VYHWKJ),
                                   action: () => {
-                                      v({ action: "EDIT_GUILD_PROFILE" }), E?.(), y(), (0, o.A)(g);
+                                      P({ action: "EDIT_GUILD_PROFILE" }), I?.(), y(), (0, u.A)(j);
                                   },
                               }),
-                              (0, r.jsx)(s.Drp, {
+                              (0, l.jsx)(d.Dr, {
                                   id: "edit-main-profile",
                                   label: h.intl.string(h.t.HmFaFB),
                                   subtext: h.intl.string(h.t["+EERMk"]),
                                   action: () => {
-                                      v({ action: "EDIT_PROFILE" }), E?.(), S(), (0, o.A)(g);
+                                      P({ action: "EDIT_PROFILE" }), I?.(), E(), (0, u.A)(j);
                                   },
                               }),
                           ],
                       });
                   },
                   children: (e) => {
-                      let { onClick: t, ...n } = e;
-                      return (0, r.jsx)(p.FD, {
-                          buttonRef: C,
+                      let { onClick: n, ...t } = e;
+                      return (0, l.jsx)(A.FD, {
+                          buttonRef: R,
                           text: h.intl.string(h.t.s5vZlQ),
-                          icon: s.R2l,
+                          icon: a.R,
                           autoFocus: !0,
-                          fullWidth: m,
+                          fullWidth: v,
                           variant: "primary",
                           onClick: () => {
-                              T ? _.A.notifyUnsavedWidgets() : t?.();
+                              N ? (0, f.VQ)() : n?.();
                           },
-                          ...n,
+                          ...t,
                       });
                   },
               })

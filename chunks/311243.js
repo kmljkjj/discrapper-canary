@@ -1,38 +1,53 @@
-n.d(t, { A: () => c });
-var l = n(627968);
+"use strict";
+n.d(t, { A: () => h });
+var i = n(627968);
 n(64700);
-var s = n(503698),
-    i = n.n(s),
-    a = n(397927),
-    r = n(714510),
-    u = n(646764),
-    o = n(96373);
-let c = function (e) {
+var r = n(503698),
+    s = n.n(r),
+    a = n(834730),
+    o = n(838077),
+    l = n(31587),
+    u = n(646917),
+    c = n(895253),
+    d = n(442734),
+    _ = n(646764),
+    f = n(417386);
+let h = function (e) {
     let {
             className: t,
             autoplay: n,
-            quest: s,
-            questContent: c,
-            taskDetails: d,
-            location: m,
-            sourceQuestContent: A,
-            gameProfileSource: E,
+            quest: r,
+            questContent: h,
+            taskDetails: p,
+            location: E,
+            sourceQuestContent: m,
+            gameProfileSource: g,
         } = e,
-        p = (0, r.mU)({
-            quest: s,
-            taskDetails: d,
-            location: m,
-            questContent: c,
-            sourceQuestContent: A,
-            gameProfileSource: E,
-        });
-    return (0, l.jsxs)("div", {
-        className: i()(o.iE, t),
+        A = (0, o.mU)({
+            quest: r,
+            taskDetails: p,
+            location: E,
+            questContent: h,
+            sourceQuestContent: m,
+            gameProfileSource: g,
+        }),
+        I = (0, u.z)(),
+        T = (0, l.SD)(r, I),
+        S = T && I === u.M.NITRO;
+    return (0, i.jsxs)("div", {
+        className: s()(f.iE, t),
         children: [
-            (0, l.jsx)(u.A, { autoplay: n, className: o.Qq, quest: s, questContent: c, sourceQuestContent: A }),
-            (0, l.jsx)("div", {
-                className: o.C,
-                children: (0, l.jsx)(a.Text, { variant: "text-sm/normal", color: "text-default", children: p }),
+            (0, i.jsx)(c.A, { visible: S }),
+            (0, i.jsx)(_.A, { autoplay: n, className: f.Qq, quest: r, questContent: h, sourceQuestContent: m }),
+            (0, i.jsx)("div", {
+                className: f.C,
+                children: (0, i.jsxs)("div", {
+                    className: f.P2,
+                    children: [
+                        (0, i.jsx)(a.E, { variant: "text-sm/normal", color: "text-default", children: A }),
+                        T && (0, i.jsx)(d.e, { questId: r.id, orbMultiplierEligibility: I }),
+                    ],
+                }),
             }),
         ],
     });

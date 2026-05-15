@@ -1,39 +1,42 @@
-n.d(t, { A: () => p });
+n.d(t, { A: () => _ });
 var i = n(627968),
     l = n(64700),
-    a = n(827734),
-    s = n(582754),
-    r = n(397927),
-    o = n(58149),
-    c = n(544028),
-    d = n(954571),
-    u = n(652215),
-    h = n(985018),
-    m = n(887008),
-    A = n(206314);
-function p(e) {
-    let { onClose: t, onConfirm: p, onCancel: g, channel: f, analyticsType: _, popoutText: E, animation: C } = e;
+    s = n(661531),
+    a = n(462887),
+    r = n(305866),
+    o = n(834730),
+    c = n(821609),
+    d = n(885574),
+    u = n(58149),
+    h = n(363195),
+    m = n(954571),
+    p = n(652215),
+    g = n(985018),
+    A = n(636801),
+    f = n(992595);
+function _(e) {
+    let { onClose: t, onConfirm: _, onCancel: E, channel: C, analyticsType: x, popoutText: b, animation: S } = e;
     l.useEffect(() => {
-        d.default.track(u.HAw.OPEN_POPOUT, { type: _, ...(0, o.dI)(f) });
-    }, [_, f]);
-    let x = l.useCallback(() => {
-            p?.(), t();
-        }, [p, t]),
-        S = l.useCallback(() => {
-            g?.(), t();
-        }, [g, t]),
+        m.default.track(p.HAw.OPEN_POPOUT, { type: x, ...(0, u.dI)(C) });
+    }, [x, C]);
+    let I = l.useCallback(() => {
+            _?.(), t();
+        }, [_, t]),
+        y = l.useCallback(() => {
+            E?.(), t();
+        }, [E, t]),
         T = l.useRef(null);
     return (
         l.useEffect(() => {
             let e,
-                t = c.A.theme,
+                t = h.A.theme,
                 i = !1;
             return (
-                null != C &&
+                null != S &&
                     (async () => {
-                        let [{ default: l }, a] = await Promise.all([
-                            Promise.resolve().then(n.t.bind(n, 883885, 23)),
-                            (0, s.Mw)(t) ? C.dark() : C.light(),
+                        let [{ default: l }, s] = await Promise.all([
+                            n.e("96382").then(n.t.bind(n, 883885, 23)),
+                            (0, a.M)(t) ? S.dark() : S.light(),
                         ]);
                         i ||
                             null == T.current ||
@@ -42,71 +45,71 @@ function p(e) {
                                 renderer: "svg",
                                 loop: !0,
                                 autoplay: !0,
-                                animationData: a,
+                                animationData: s,
                             }));
                     })(),
                 () => {
                     (i = !0), null != e && (e.destroy(), (e = void 0));
                 }
             );
-        }, [C]),
-        (0, i.jsx)(r.lGe, {
+        }, [S]),
+        (0, i.jsx)(r.l, {
             "aria-labelledby": "content-warning-popout-label",
             children: (0, i.jsxs)("form", {
-                className: m.$,
-                onSubmit: x,
+                className: A.$,
+                onSubmit: I,
                 children: [
                     (0, i.jsxs)("div", {
-                        className: m.rf,
+                        className: A.rf,
                         children: [
-                            null != C && (0, i.jsx)("div", { className: m.lY, ref: T }),
+                            null != S && (0, i.jsx)("div", { className: A.lY, ref: T }),
                             (0, i.jsxs)("div", {
-                                className: m.Qs,
+                                className: A.Qs,
                                 children: [
-                                    (0, i.jsx)("div", { className: m.wx, children: h.intl.string(h.t.mY3Y38) }),
-                                    (0, i.jsx)(r.Text, {
+                                    (0, i.jsx)("div", { className: A.wx, children: g.intl.string(g.t.mY3Y38) }),
+                                    (0, i.jsx)(o.E, {
                                         id: "content-warning-popout-label",
-                                        className: A.PT,
+                                        className: f.PT,
                                         variant: "text-sm/normal",
-                                        children: E.body,
+                                        children: b.body,
                                     }),
                                     (0, i.jsxs)("div", {
-                                        className: m._o,
+                                        className: A._o,
                                         children: [
                                             (0, i.jsxs)("div", {
-                                                className: m.UD,
+                                                className: A.UD,
                                                 children: [
                                                     (0, i.jsx)("div", {
-                                                        className: m.x6,
-                                                        children: (0, i.jsx)(r.Button, {
+                                                        className: A.x6,
+                                                        children: (0, i.jsx)(c.$, {
                                                             variant: "secondary",
-                                                            onClick: S,
-                                                            text: h.intl.string(h.t.fsBWmS),
+                                                            onClick: y,
+                                                            text: g.intl.string(g.t.fsBWmS),
                                                         }),
                                                     }),
-                                                    (0, i.jsx)(r.Text, {
+                                                    (0, i.jsx)(o.E, {
                                                         variant: "text-xs/normal",
-                                                        className: m.uK,
-                                                        children: h.intl.format(h.t["0LzVPZ"], {}),
+                                                        className: A.uK,
+                                                        children: g.intl.format(g.t["0LzVPZ"], {}),
                                                     }),
                                                 ],
                                             }),
                                             (0, i.jsxs)("div", {
-                                                className: m.UD,
+                                                className: A.UD,
                                                 children: [
                                                     (0, i.jsx)("div", {
-                                                        className: m.x6,
-                                                        children: (0, i.jsx)(r.Button, {
+                                                        className: A.x6,
+                                                        children: (0, i.jsx)(c.$, {
                                                             variant: "primary",
-                                                            onClick: x,
-                                                            text: h.intl.string(h.t.KJnHq3),
+                                                            onClick: I,
+                                                            text: g.intl.string(g.t.KJnHq3),
                                                             autoFocus: !0,
                                                         }),
                                                     }),
-                                                    (0, i.jsx)(r.Text, {
+                                                    (0, i.jsx)(o.E, {
                                                         variant: "text-xs/normal",
-                                                        className: m.uK,
-                                                        children: h.intl.format(h.t.khjqdH, {}),
+                                                        className: A.uK,
+                                                        children: g.intl.format(g.t.khjqdH, {}),
                                                     }),
                                                 ],
                                             }),
@@ -116,16 +119,16 @@ function p(e) {
                             }),
                         ],
                     }),
-                    null != E.footer && "" !== E.footer
+                    null != b.footer && "" !== b.footer
                         ? (0, i.jsxs)("div", {
-                              className: m.qr,
+                              className: A.qr,
                               children: [
-                                  (0, i.jsx)(r.mir, {
+                                  (0, i.jsx)(d.m, {
                                       size: "xs",
-                                      color: a.A.unsafe_rawColors.PRIMARY_400.css,
-                                      className: m.Kk,
+                                      color: s.A.unsafe_rawColors.PRIMARY_400.css,
+                                      className: A.Kk,
                                   }),
-                                  (0, i.jsx)(r.Text, { variant: "text-sm/normal", children: E.footer }),
+                                  (0, i.jsx)(o.E, { variant: "text-sm/normal", children: b.footer }),
                               ],
                           })
                         : null,

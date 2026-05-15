@@ -1,5 +1,4 @@
 "use strict";
 n.d(t, { f: () => r });
-var r = (function (e) {
-    return (e[(e.STRING = 1)] = "STRING"), (e[(e.NUMBER = 2)] = "NUMBER"), (e[(e.MEDIA = 3)] = "MEDIA"), e;
-})({});
+var i,
+    r = (((i = {})[(i.STRING = 1)] = "STRING"), (i[(i.NUMBER = 2)] = "NUMBER"), (i[(i.MEDIA = 3)] = "MEDIA"), i);

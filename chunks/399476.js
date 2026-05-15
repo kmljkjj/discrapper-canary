@@ -1,57 +1,66 @@
-"use strict";
-n.d(t, { A: () => d });
-var r = n(627968);
-n(64700);
-var i = n(311907),
-    a = n(397927),
-    s = n(49229),
-    o = n(994500),
-    l = n(287809),
-    u = n(652215),
-    c = n(985018);
-function d(e) {
+t.d(n, { A: () => p });
+var i = t(627968);
+t(64700);
+var o = t(17928),
+    r = t(477782),
+    s = t(192308),
+    d = t(717398),
+    l = t(994500),
+    a = t(287809),
+    u = t(652215),
+    c = t(375708);
+function p(e) {
     let {
-            user: t,
-            guildId: d,
-            channelId: _,
-            onBlock: f,
-            onIgnore: p,
-            onUnignore: h,
-            location: m = "ContextMenu",
-            appContext: g = u.BRT.APP,
+            user: n,
+            guildId: p,
+            channelId: g,
+            onBlock: h,
+            onIgnore: k,
+            onUnignore: A,
+            location: C = "ContextMenu",
+            appContext: b = u.BRT.APP,
         } = e,
-        { id: E } = t,
-        A = (0, i.bG)([l.default], () => l.default.getCurrentUser()?.id === E, [E]),
-        { isIgnored: I, isBlocked: T } = (0, i.cf)(
-            [o.A],
-            () => ({ isIgnored: o.A.isIgnored(E), isBlocked: o.A.isBlocked(E) }),
-            [E],
+        { id: x } = n,
+        f = (0, o.bG)([a.default], () => a.default.getCurrentUser()?.id === x, [x]),
+        { isIgnored: w, isBlocked: B } = (0, o.cf)(
+            [l.A],
+            () => ({ isIgnored: l.A.isIgnored(x), isBlocked: l.A.isBlocked(x) }),
+            [x],
         );
-    return A || T
+    return f || B
         ? null
-        : (0, r.jsx)(a.Drp, {
+        : (0, i.jsx)(r.Dr, {
               id: "ignore",
-              label: I ? c.intl.string(c.t["8wXU9B"]) : c.intl.string(c.t.ytCpKs),
-              action: I
+              label: w ? c.intl.string(c.t["8wXU9B"]) : c.intl.string(c.t.ytCpKs),
+              action: w
                   ? () => {
-                        h?.(), s.A.unignoreUser(E, m ?? "use-ignore-user-item-web", _ ?? void 0);
+                        A?.(), d.A.unignoreUser(x, C ?? "use-ignore-user-item-web", g ?? void 0);
                     }
                   : () => {
-                        (0, a.mMO)(
+                        (0, s.openModalLazy)(
                             async () => {
-                                let { default: e } = await n.e("28969").then(n.bind(n, 143547));
-                                return (n) =>
-                                    (0, r.jsx)(e, {
-                                        ...n,
-                                        guildId: d,
-                                        channelId: _,
-                                        user: t,
-                                        onIgnore: p,
-                                        onBlock: f,
-                                        location: m,
+                                let { default: e } = await Promise.all([
+                                    t.e("57750"),
+                                    t.e("74370"),
+                                    t.e("11523"),
+                                    t.e("20683"),
+                                    t.e("63618"),
+                                    t.e("607"),
+                                    t.e("12755"),
+                                    t.e("14788"),
+                                ]).then(t.bind(t, 143547));
+                                return (t) =>
+                                    (0, i.jsx)(e, {
+                                        ...t,
+                                        guildId: p,
+                                        channelId: g,
+                                        user: n,
+                                        onIgnore: k,
+                                        onBlock: h,
+                                        location: C,
                                     });
                             },
-                            { contextKey: (0, a.TId)(g) },
+                            { contextKey: (0, s.modalContextFromAppContext)(b) },
                         );
                     },
           });

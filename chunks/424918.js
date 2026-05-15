@@ -1,5 +1,4 @@
 "use strict";
 n.d(t, { u: () => r });
-var r = (function (e) {
-    return (e[(e.CATEGORY = 0)] = "CATEGORY"), e;
-})({});
+var i,
+    r = (((i = {})[(i.CATEGORY = 0)] = "CATEGORY"), i);

@@ -1,34 +1,35 @@
-n.d(e, { A: () => o });
+n.d(e, { A: () => c });
 var s = n(627968);
 n(64700);
 var i = n(503698),
     l = n.n(i),
-    r = n(397927),
-    a = n(186261);
-function o(t) {
+    r = n(534514),
+    a = n(834730),
+    o = n(822030);
+function c(t) {
     let { tips: e, className: n, headerText: i } = t;
     return (0, s.jsxs)("div", {
-        className: l()(a.iB, n),
+        className: l()(o.iB, n),
         children: [
             (0, s.jsx)("div", {
-                className: a.oO,
-                children: (0, s.jsx)(r.Heading, { variant: "heading-lg/bold", className: a.TK, children: i }),
+                className: o.oO,
+                children: (0, s.jsx)(r.D, { variant: "heading-lg/bold", className: o.TK, children: i }),
             }),
             (0, s.jsx)("ul", {
-                className: a.T6,
+                className: o.T6,
                 children: e.map((t, e) =>
                     (0, s.jsxs)(
                         "li",
                         {
-                            className: a.eL,
+                            className: o.eL,
                             children: [
-                                (0, s.jsx)(r.Heading, {
+                                (0, s.jsx)(r.D, {
                                     variant: "heading-md/semibold",
                                     color: "text-brand",
-                                    className: a.VX,
+                                    className: o.VX,
                                     children: e + 1,
                                 }),
-                                (0, s.jsx)(r.Text, { variant: "text-sm/medium", children: t }),
+                                (0, s.jsx)(a.E, { variant: "text-sm/medium", children: t }),
                             ],
                         },
                         `safety-tips-${e}`,

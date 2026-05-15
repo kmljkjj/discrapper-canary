@@ -1,45 +1,46 @@
-n.d(t, { A: () => N }), n(321073);
-var i = n(73153),
-    l = n(272355),
+"use strict";
+n.d(t, { A: () => C }), n(321073);
+var i = n(228366),
+    r = n(272355),
     s = n(400492),
     a = n(312671),
-    r = n(961350),
-    o = n(383501),
-    d = n(309010),
+    o = n(495544),
+    l = n(763827),
+    u = n(309010),
     c = n(741961),
-    u = n(3137),
-    h = n(559908),
-    A = n(652215);
-let g = (0, s.aN)("poggermode_applause", a.A.getSoundpack()),
-    m = !1,
+    d = n(3137),
+    _ = n(559908),
+    f = n(652215);
+let h = (0, s.aN)("poggermode_applause", a.A.getSoundpack()),
     p = !1,
-    _ = [],
-    x = null,
-    f = () => {
-        g.stop(), (m = !1);
-    },
-    E = () => {
-        let e = u.A.isEnabled(),
-            t = u.A.comboSoundsEnabled;
-        return !!e && !!t && null != d.A.getChannelId();
-    },
-    C = () => {
-        if (0 === _.length || !E() || p) return;
-        p = !0;
-        let [e, t] = _[_.length - 1];
-        (0, s.Ak)(e, t), (x = setTimeout(I, 1e3));
+    E = !1,
+    m = [],
+    g = null,
+    A = () => {
+        h.stop(), (p = !1);
     },
     I = () => {
-        _.pop(), (p = !1), C();
+        let e = d.A.isEnabled(),
+            t = d.A.comboSoundsEnabled;
+        return !!e && !!t && null != u.A.getChannelId();
     },
-    S = function (e) {
+    T = () => {
+        if (0 === m.length || !I() || E) return;
+        E = !0;
+        let [e, t] = m[m.length - 1];
+        (0, s.Ak)(e, t), (g = setTimeout(S, 1e3));
+    },
+    S = () => {
+        m.pop(), (E = !1), T();
+    },
+    N = function (e) {
         let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 1,
-            n = o.A.isConnected();
-        _.push([e, t * (n ? 0.1 : 1)]), C();
+            n = l.A.isConnected();
+        m.push([e, t * (n ? 0.1 : 1)]), T();
     };
-class b extends l.A {
+class y extends r.A {
     _initialize() {
-        h.Ay.addChangeListener(this.startAudio),
+        _.Ay.addChangeListener(this.startAudio),
             i.h.subscribe("RTC_CONNECTION_STATE", this.setVolume),
             i.h.subscribe("TYPING_STOP", this.stopAudio),
             i.h.subscribe("TYPING_STOP_LOCAL", this.stopAudio),
@@ -47,37 +48,37 @@ class b extends l.A {
             i.h.subscribe("POGGERMODE_SETTINGS_UPDATE", this.stopAudio);
     }
     _terminate() {
-        h.Ay.removeChangeListener(this.startAudio),
+        _.Ay.removeChangeListener(this.startAudio),
             i.h.unsubscribe("RTC_CONNECTION_STATE", this.setVolume),
             i.h.unsubscribe("TYPING_STOP", this.stopAudio),
             i.h.unsubscribe("TYPING_STOP_LOCAL", this.stopAudio),
             i.h.unsubscribe("CHANNEL_SELECT", this.stopAudio),
             i.h.unsubscribe("POGGERMODE_SETTINGS_UPDATE", this.stopAudio),
-            clearTimeout(x);
+            clearTimeout(g);
     }
     setVolume(e) {
         let { state: t } = e;
-        t === A.S7L.RTC_CONNECTED ? (g.volume = 0.1) : (g.volume = 1);
+        t === f.S7L.RTC_CONNECTED ? (h.volume = 0.1) : (h.volume = 1);
     }
     handleTypingStop(e) {
         let { userId: t } = e;
-        r.default.getId() === t && f();
+        o.default.getId() === t && A();
     }
     stopAudio() {
-        f();
+        A();
     }
     startAudio() {
-        if (!E()) return;
-        let e = d.A.getChannelId();
+        if (!I()) return;
+        let e = u.A.getChannelId();
         if (null == e) return;
-        let t = r.default.getId(),
+        let t = o.default.getId(),
             n = c.A.isTyping(e, t),
-            i = h.Ay.getUserCombo(t, e),
-            l = i?.multiplier ?? 1;
-        n && l >= 7 ? m || (g.loop(), (m = !0)) : f();
+            i = _.Ay.getUserCombo(t, e),
+            r = i?.multiplier ?? 1;
+        n && r >= 7 ? p || (h.loop(), (p = !0)) : A();
     }
     playAchievementUnlockSound() {
-        E() && S("poggermode_achievement_unlock");
+        I() && N("poggermode_achievement_unlock");
     }
 }
-let N = new b();
+let C = new y();

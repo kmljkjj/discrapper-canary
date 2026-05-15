@@ -1,16 +1,16 @@
 "use strict";
-n.d(t, { Ft: () => o, Jt: () => a, eY: () => l, pf: () => s });
-var r = n(73153),
-    i = n(265059);
-function a(e) {
-    r.h.dispatch({ type: "DEV_TOOLS_SETTINGS_UPDATE", settings: e });
+n.d(t, { Ft: () => o, Jt: () => s, eY: () => l, pf: () => a });
+var i = n(228366),
+    r = n(265059);
+function s(e) {
+    i.h.dispatch({ type: "DEV_TOOLS_SETTINGS_UPDATE", settings: e });
 }
-function s() {
-    a({ displayTools: !i.A.displayTools });
+function a() {
+    s({ displayTools: !r.A.displayTools });
 }
-function o(e) {
-    a({ displayTools: !0, lastOpenTabId: e });
+function o(e, t) {
+    s({ displayTools: !0, lastOpenTabId: e, lastOpenSubTabId: t });
 }
 function l() {
-    r.h.dispatch({ type: "ANALYTICS_LOG_CLEAR" });
+    i.h.dispatch({ type: "ANALYTICS_LOG_CLEAR" });
 }

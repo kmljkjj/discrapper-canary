@@ -1,57 +1,56 @@
-"use strict";
-n.d(t, { _: () => d });
-var r = n(627968),
-    i = n(64700),
-    s = n(503698),
-    a = n.n(s),
-    o = n(397927),
-    l = n(580630),
-    u = n(381247),
-    c = n(85302);
+l.d(t, { _: () => d });
+var n = l(627968),
+    a = l(64700),
+    r = l(503698),
+    s = l.n(r),
+    i = l(834730),
+    c = l(580630),
+    o = l(777485),
+    u = l(303519);
 function d(e) {
     let {
             label: t,
-            totalLineItemLabel: n,
-            totalLineItemLabelSubText: s,
+            totalLineItemLabel: l,
+            totalLineItemLabelSubText: r,
             totalLineItemValueSubText: d,
-            showTotalWhenCollapsed: _ = !1,
-            lineItems: f,
-            intervalType: p,
-            intervalCount: h,
-            currency: m,
-            defaultExpanded: E = !1,
+            showTotalWhenCollapsed: m = !1,
+            lineItems: x,
+            intervalType: h,
+            intervalCount: g,
+            currency: v,
+            defaultExpanded: j = !1,
         } = e,
-        [g, A] = i.useState(E),
-        I = i.useMemo(() => {
-            let e = f.reduce((e, t) => e + t.amount, 0),
-                t = (0, l.$g)(e, m);
-            return (0, l.CE)(t, p, h);
-        }, [f, m, p, h]),
-        T = (0, r.jsxs)(u.h, {
+        [p, f] = a.useState(j),
+        N = a.useMemo(() => {
+            let e = x.reduce((e, t) => e + t.amount, 0),
+                t = (0, c.$g)(e, v);
+            return (0, c.CE)(t, h, g);
+        }, [x, v, h, g]),
+        b = (0, n.jsxs)(o.h, {
             label: t,
-            defaultExpanded: E,
-            isDisabled: f.length <= 0,
-            onExpandedChange: A,
-            collapsedContent: _
-                ? (0, r.jsx)(o.Text, { variant: "text-md/normal", color: "text-subtle", children: I })
+            defaultExpanded: j,
+            isDisabled: x.length <= 0,
+            onExpandedChange: f,
+            collapsedContent: m
+                ? (0, n.jsx)(i.E, { variant: "text-md/normal", color: "text-subtle", children: N })
                 : null,
             children: [
-                f.map((e) => {
-                    let { formatWithoutRate: t, amount: n, ...i } = e,
-                        s = (0, l.$g)(n, m),
-                        a = t ? s : (0, l.CE)(s, p, h);
-                    return (0, r.jsx)(u.i, { value: a, ...i }, i.id);
+                x.map((e) => {
+                    let { formatWithoutRate: t, amount: l, ...a } = e,
+                        r = (0, c.$g)(l, v),
+                        s = t ? r : (0, c.CE)(r, h, g);
+                    return (0, n.jsx)(o.i, { value: s, ...a }, a.id);
                 }),
-                (0, r.jsx)("div", { className: c.m }),
-                (0, r.jsx)(u.i, {
-                    label: n ?? t,
-                    labelSubText: s,
-                    value: I,
+                (0, n.jsx)("div", { className: u.m }),
+                (0, n.jsx)(o.i, {
+                    label: l ?? t,
+                    labelSubText: r,
+                    value: N,
                     subText: d,
                     color: "text-strong",
                     valueColor: "text-strong",
                 }),
             ],
         });
-    return (0, r.jsx)("div", { className: a()({ [c.k]: g }), children: T });
+    return (0, n.jsx)("div", { className: s()({ [u.k]: p }), children: b });
 }

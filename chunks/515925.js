@@ -1,48 +1,48 @@
 "use strict";
 n.d(t, {
     G1: () => u,
-    Ih: () => s,
+    Ih: () => a,
     Oy: () => d,
     kk: () => l,
     t7: () => c,
     tR: () => o,
-    uU: () => p,
+    uU: () => h,
     uc: () => f,
-    xd: () => i.x,
+    xd: () => r.x,
     xy: () => _,
 });
-var r = n(31436),
-    i = n(279234);
-let a = null;
-function s() {
-    return (0, r.Ay)().ExperimentCacher;
+var i = n(31436),
+    r = n(279234);
+let s = null;
+function a() {
+    return (0, i.Ay)().ExperimentCacher;
 }
 function o(e) {
-    return (0, r.Ay)().BlockedDomainsStore.isBlockedDomain(e) ?? null;
+    return (0, i.Ay)().BlockedDomainsStore.isBlockedDomain(e) ?? null;
 }
 function l(e) {
-    (0, r.Ay)().BlockedDomainsStore.startFetchingBlockedDomains(e);
+    (0, i.Ay)().BlockedDomainsStore.startFetchingBlockedDomains(e);
 }
 function u() {
     return "libdiscore logs are part of the main app logs";
 }
 function c(e, t) {
-    return (0, r.Ay)().rustMultiply(e, t);
+    return (0, i.Ay)().rustMultiply(e, t);
 }
 function d() {
-    (0, r.Ay)().crash();
+    (0, i.Ay)().crash();
 }
 function _(e) {
-    return (0, r.Ay)().generateLaunchSignature(e);
+    return (0, i.Ay)().generateLaunchSignature(e);
 }
 function f() {
-    if (null != a) return a;
+    if (null != s) return s;
     try {
-        return (a = new ((0, r.Ay)().FluxApi)());
+        return (s = new ((0, i.Ay)().FluxApi)());
     } catch {
         return null;
     }
 }
-function p() {
+function h() {
     return null;
 }

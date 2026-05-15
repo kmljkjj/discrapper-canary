@@ -1,30 +1,32 @@
-n.d(t, { A: () => h });
-var i = n(627968);
+n.d(t, { A: () => E, L: () => g });
+var l = n(627968);
 n(64700);
 var s = n(503698),
-    r = n.n(s),
-    l = n(397927),
-    o = n(780964),
-    a = n(358776),
-    c = n(840065),
-    d = n(985018),
-    u = n(92052);
-function h(e) {
-    let { disableButton: t } = e;
-    return (0, i.jsxs)("div", {
-        className: u.IG,
+    i = n.n(s),
+    r = n(17928),
+    o = n(939249),
+    a = n(780964),
+    d = n(858897),
+    c = n(351906),
+    u = n(985018),
+    h = n(584105);
+function E(e) {
+    let { className: t } = e;
+    return (0, l.jsxs)("div", {
+        className: i()(h.IG, t),
         children: [
-            (0, i.jsx)("div", { className: u.TE }),
-            (0, i.jsx)(l.DUT, {
-                className: r()(u.Ac, { [u.r9]: t }),
-                onClick: () => {
-                    if (!0 !== t) {
-                        let e = (0, a.Ci)("StreamerModeEnabled_handleClick");
-                        (0, c.openUserSettings)(e ? o.X.STREAMER_MODE_CATEGORY : o.X.STREAMER_MODE_PANEL);
-                    }
-                },
-                children: d.intl.string(d.t.Br1ls3),
+            (0, l.jsx)("div", { className: h.TE }),
+            (0, l.jsx)(o.D, {
+                className: h.Ac,
+                onClick: () => (0, d.openUserSettings)(a.X.STREAMER_MODE_CATEGORY),
+                children: u.intl.string(u.t.Br1ls3),
             }),
         ],
     });
+}
+function p() {
+    return (0, l.jsx)(E, { className: h.ch });
+}
+function g() {
+    return (0, r.bG)([c.A], () => (c.A.hidePersonalInformation ? p : null));
 }

@@ -1,57 +1,55 @@
 "use strict";
-n.d(t, { Ay: () => U, RQ: () => v, hz: () => y });
-var r = n(735438),
-    i = n.n(r),
-    a = n(311907),
-    s = n(713402),
-    o = n(73153),
-    l = n(427157),
-    u = n(961350),
-    c = n(734057),
-    d = n(696451),
-    _ = n(287809),
-    f = n(977997),
-    p = n(661191),
-    h = n(427262),
-    m = n(652215);
+n.d(t, { Ay: () => v, RQ: () => N, hz: () => S });
+var i = n(735438),
+    r = n.n(i),
+    s = n(17928),
+    a = n(713402),
+    o = n(228366),
+    l = n(889227),
+    d = n(495544),
+    _ = n(734057),
+    u = n(696451),
+    c = n(287809),
+    E = n(977997),
+    h = n(935208),
+    m = n(427262),
+    f = n(652215);
 let g = Object.freeze([]),
-    E = {};
+    p = {};
 function A(e) {
-    let t = E[e];
-    return null == t && ((t = new C(e)), (E[e] = t)), t;
+    let t = p[e];
+    return null == t && ((t = new C(e)), (p[e] = t)), t;
 }
 function I(e, t) {
-    return d.Ay.getMember(e, t.id);
+    return u.Ay.getMember(e, t.id);
 }
 function T(e, t, n) {
-    let r = t?.nick ?? h.Ay.getName(n);
-    return { member: t, comparator: y(e, r) };
+    let i = t?.nick ?? m.Ay.getName(n);
+    return { member: t, comparator: S(e, i) };
 }
-function y(e, t) {
+function S(e, t) {
     return `${e.selfStream ? "\0" : "\x01"}${t.toLowerCase()}\0${e.userId}`;
 }
-function S(e, t, n) {
-    return T(n, I(e, t), t);
-}
-function v(e, t, n, r) {
-    let i = _.default.getUser(n),
-        a = null == i;
-    null == i && (i = new l.A({ id: n, username: "...", discriminator: n.slice(-5, -1) }));
-    let { member: s, comparator: o } = S(t, i, e),
-        u = {
+function N(e, t, n, i) {
+    var r;
+    let s = c.default.getUser(n),
+        a = null == s;
+    null == s && (s = new l.A({ id: n, username: "...", discriminator: n.slice(-5, -1) }));
+    let { member: o, comparator: d } = T(e, I(t, (r = s)), r),
+        _ = {
             voiceState: e,
-            user: i,
-            member: s,
-            comparator: o,
-            nick: s?.nick,
-            connectedOn: r?.connectedOn ?? Date.now(),
+            user: s,
+            member: o,
+            comparator: d,
+            nick: o?.nick,
+            connectedOn: i?.connectedOn ?? Date.now(),
         };
-    return a && (u._isPlaceholder = !0), u;
+    return a && (_._isPlaceholder = !0), _;
 }
 class C {
     guildId;
     _pending = new Set();
-    _voiceStates = new s.J(
+    _voiceStates = new a.J(
         (e) => {
             let {
                 voiceState: { channelId: t },
@@ -68,15 +66,15 @@ class C {
     }
     updateVoiceState(e) {
         if (null != this._pending) return this._pending.add(e), !1;
-        let t = f.A.getVoiceState(this.guildId, e),
+        let t = E.A.getVoiceState(this.guildId, e),
             n = this._voiceStates.get(e),
-            r = _.default.getUser(e);
-        if (null != t && null != r) {
-            if (null == n) return this._voiceStates.set(e, v(t, this.guildId, e)), !0;
+            i = c.default.getUser(e);
+        if (null != t && null != i) {
+            if (null == n) return this._voiceStates.set(e, N(t, this.guildId, e)), !0;
             else if (n.voiceState !== t) {
-                let i = I(this.guildId, r),
-                    a = i?.nick ?? h.Ay.getName(r);
-                return this._voiceStates.set(e, { ...n, member: i, comparator: y(t, a), nick: a, voiceState: t }), !0;
+                let r = I(this.guildId, i),
+                    s = r?.nick ?? m.Ay.getName(i);
+                return this._voiceStates.set(e, { ...n, member: r, comparator: S(t, s), nick: s, voiceState: t }), !0;
             }
         } else if (null != n) return this._voiceStates.delete(e), !0;
         return !1;
@@ -84,12 +82,12 @@ class C {
     updateMember(e) {
         if (null != this._pending) return this._pending.add(e), !1;
         let t = this._voiceStates.get(e),
-            n = _.default.getUser(e);
+            n = c.default.getUser(e);
         if (null != t && null != n) {
-            let r = I(this.guildId, n);
-            if (r?.nick !== t.member?.nick || r?.avatar !== t.member?.avatar) {
-                let { comparator: i } = T(t.voiceState, r, n);
-                return this._voiceStates.set(e, { ...t, member: r, comparator: i, nick: r?.nick }), !0;
+            let i = I(this.guildId, n);
+            if (i?.nick !== t.member?.nick || i?.avatar !== t.member?.avatar) {
+                let { comparator: r } = T(t.voiceState, i, n);
+                return this._voiceStates.set(e, { ...t, member: i, comparator: r, nick: i?.nick }), !0;
             }
         }
         return !1;
@@ -98,9 +96,9 @@ class C {
         return (
             null == this._pending &&
             this._voiceStates.values().reduce((e, t) => {
-                let n = _.default.getUser(t.user.id);
+                let n = c.default.getUser(t.user.id);
                 return null != n && t.user !== n
-                    ? (this._voiceStates.set(n.id, v(t.voiceState, this.guildId, n.id, t)), !0)
+                    ? (this._voiceStates.set(n.id, N(t.voiceState, this.guildId, n.id, t)), !0)
                     : e;
             }, !1)
         );
@@ -129,91 +127,83 @@ class C {
         }
     }
 }
-function b() {
-    E = {};
+function R() {
+    return r().reduce(p, (e, t) => t.updateUsers() || e, !1);
 }
-function N() {
-    M();
-}
-function R(e) {
-    let { voiceStates: t } = e;
-    return t.reduce((e, t) => {
-        let { guildId: n, userId: r } = t;
-        return A(n ?? m.ME).updateVoiceState(r) || e;
-    }, !1);
-}
-function O(e) {
-    let t = !1,
-        n = new Set(E[e.guildId]?.getUserIds()),
-        r = new Set(e.voiceStates?.map((e) => e.userId)),
-        i = new Set(e.removedVoiceStateUsers);
-    for (let i of new Set([...n, ...r])) t = A(e.guildId).updateVoiceState(i) || t;
-    for (let r of n) i.has(r) || (t = A(e.guildId).updateMember(r) || t);
-    return t;
-}
-function D(e) {
-    let { guildId: t } = e,
-        n = u.default.getId();
-    return null != n && A(t ?? m.ME).updateVoiceState(n);
-}
-function L() {
-    return i().reduce(E, (e, t) => t.updateUsers() || e, !1);
-}
-function w(e) {
-    let { guildId: t, user: n } = e;
-    return A(t).updateMember(n.id);
-}
-function x(e) {
-    let { guild: t } = e;
-    delete E[t.id];
-}
-function P(e) {
-    let { guild: t } = e;
-    delete E[t.id];
-}
-function M() {
-    E = {};
-    let e = f.A.getAllVoiceStates();
-    p.default.keys(e).forEach((t) => {
+function O() {
+    p = {};
+    let e = E.A.getAllVoiceStates();
+    h.default.keys(e).forEach((t) => {
         Object.keys(e[t]).forEach((e) => {
-            A(t ?? m.ME).updateVoiceState(e);
+            A(t ?? f.ME).updateVoiceState(e);
         });
     });
 }
-class k extends a.Ay.Store {
+class y extends s.Ay.Store {
     static displayName = "SortedVoiceStateStore";
     initialize() {
-        M(), this.waitFor(u.default, c.A, d.Ay, _.default, f.A), this.syncWith([_.default], L);
+        O(), this.waitFor(d.default, _.A, u.Ay, c.default, E.A), this.syncWith([c.default], R);
     }
     getVoiceStates(e) {
-        return A(e ?? m.ME).getVoiceStates();
+        return A(e ?? f.ME).getVoiceStates();
     }
     getAllVoiceStates() {
-        return E;
+        return p;
     }
     getVoiceStatesForChannel(e) {
         let t = e.getGuildId(),
             n = e.id;
-        return A(t ?? m.ME).getVoiceStatesForChannel(n);
+        return A(t ?? f.ME).getVoiceStatesForChannel(n);
     }
     getVoiceStatesForChannelAlt(e, t) {
-        return A(t ?? m.ME).getVoiceStatesForChannel(e);
+        return A(t ?? f.ME).getVoiceStatesForChannel(e);
     }
     countVoiceStatesForChannel(e) {
-        let t = c.A.getChannel(e);
-        return null == t ? 0 : A(t.getGuildId() ?? m.ME).countVoiceStatesForChannel(e);
+        let t = _.A.getChannel(e);
+        return null == t ? 0 : A(t.getGuildId() ?? f.ME).countVoiceStatesForChannel(e);
     }
     getVoiceStateVersion(e) {
-        return A(e ?? m.ME).getVersion();
+        return A(e ?? f.ME).getVersion();
     }
 }
-let U = new k(o.h, {
-    CONNECTION_OPEN: b,
-    OVERLAY_INITIALIZE: N,
-    VOICE_CHANNEL_SELECT: D,
-    VOICE_STATE_UPDATES: R,
-    GUILD_MEMBER_UPDATE: w,
-    GUILD_CREATE: x,
-    GUILD_DELETE: P,
-    PASSIVE_UPDATE_V2: O,
+let v = new y(o.h, {
+    CONNECTION_OPEN: function () {
+        p = {};
+    },
+    OVERLAY_INITIALIZE: function () {
+        O();
+    },
+    VOICE_CHANNEL_SELECT: function (e) {
+        let { guildId: t } = e,
+            n = d.default.getId();
+        return null != n && A(t ?? f.ME).updateVoiceState(n);
+    },
+    VOICE_STATE_UPDATES: function (e) {
+        let { voiceStates: t } = e;
+        return t.reduce((e, t) => {
+            let { guildId: n, userId: i } = t;
+            return A(n ?? f.ME).updateVoiceState(i) || e;
+        }, !1);
+    },
+    GUILD_MEMBER_UPDATE: function (e) {
+        let { guildId: t, user: n } = e;
+        return A(t).updateMember(n.id);
+    },
+    GUILD_CREATE: function (e) {
+        let { guild: t } = e;
+        delete p[t.id];
+    },
+    GUILD_DELETE: function (e) {
+        let { guild: t } = e;
+        delete p[t.id];
+    },
+    PASSIVE_UPDATE_V2: function (e) {
+        let t = !1,
+            n = new Set(p[e.guildId]?.getUserIds()),
+            i = new Set(e.voiceStates?.map((e) => e.userId)),
+            r = new Set(e.removedVoiceStateUsers);
+        for (let r of new Set([...n, ...i])) t = A(e.guildId).updateVoiceState(r) || t;
+        for (let i of n) r.has(i) || (t = A(e.guildId).updateMember(i) || t);
+        return t;
+    },
 });

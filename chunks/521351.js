@@ -1,15 +1,15 @@
 "use strict";
-var r = n(503628),
-    i = n(339626),
-    a = /#|\.prototype\./,
-    s = function (e, t) {
+var i = n(503628),
+    r = n(339626),
+    s = /#|\.prototype\./,
+    a = function (e, t) {
         var n = l[o(e)];
-        return n === c || (n !== u && (i(t) ? r(t) : !!t));
+        return n === c || (n !== u && (r(t) ? i(t) : !!t));
     },
-    o = (s.normalize = function (e) {
-        return String(e).replace(a, ".").toLowerCase();
+    o = (a.normalize = function (e) {
+        return String(e).replace(s, ".").toLowerCase();
     }),
-    l = (s.data = {}),
-    u = (s.NATIVE = "N"),
-    c = (s.POLYFILL = "P");
-e.exports = s;
+    l = (a.data = {}),
+    u = (a.NATIVE = "N"),
+    c = (a.POLYFILL = "P");
+e.exports = a;

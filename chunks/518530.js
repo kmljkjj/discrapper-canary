@@ -1,49 +1,51 @@
-"use strict";
-n.d(t, { A: () => E });
-var i = n(627968),
-    s = n(64700),
-    l = n(554146),
-    r = n(397927),
-    a = n(367513),
-    o = n(738876),
-    c = n(698718),
-    d = n(812771),
-    u = n(355622),
-    h = n(826673),
-    A = n(58736),
-    p = n(31717),
-    g = n(203982),
-    m = n(43189),
-    _ = n(652215),
-    f = n(49999),
-    x = n(985018),
-    C = n(266920);
-let E = function (e) {
-    let { channel: t, guild: n, maxWidth: E } = e;
-    s.useEffect(() => {
-        (0, h.Dr)(l.M.CALL_CHAT_BUTTON_TEXT_IN_VOICE_COACH_MARK, { dismissAction: f.i.AUTO });
+n.d(t, { A: () => v });
+var l = n(627968),
+    i = n(64700),
+    s = n(554146),
+    a = n(789645),
+    r = n(534890),
+    o = n(367513),
+    c = n(738876),
+    u = n(47167),
+    d = n(806202),
+    A = n(140130),
+    E = n(355622),
+    m = n(826673),
+    h = n(58736),
+    C = n(31717),
+    g = n(625494),
+    I = n(43189),
+    p = n(652215),
+    x = n(49999),
+    T = n(985018),
+    _ = n(248537);
+let v = function (e) {
+    let { channel: t, guild: n, maxWidth: v } = e,
+        N = (0, u.Ay)(t);
+    i.useEffect(() => {
+        (0, m.Dr)(s.M.CALL_CHAT_BUTTON_TEXT_IN_VOICE_COACH_MARK, { dismissAction: x.i.AUTO });
     }, []);
-    let I = s.useCallback(() => {
-            a.A.updateChatOpen(t.id, !1, "close button"), g._.safeDispatch(_.jej.FOCUS_CHAT_BUTTON);
+    let f = i.useCallback(() => {
+            o.A.updateChatOpen(t.id, !1, "close button"), g._.safeDispatch(p.jej.FOCUS_CHAT_BUTTON);
         }, [t.id]),
-        b = (0, i.jsx)(A.Ay.Icon, { icon: r.PGe, tooltip: x.intl.string(x.t.cpT0Cq), onClick: I });
-    return (0, i.jsxs)(d.A, {
-        sidebarType: d.X.CallChatSidebar,
-        maxWidth: E,
-        floatingLayer: m.Ay,
+        j = (0, l.jsx)(h.Ay.Icon, { icon: a.P, tooltip: T.intl.string(T.t.cpT0Cq), onClick: f });
+    return (0, l.jsxs)(A.A, {
+        sidebarType: A.X.CallChatSidebar,
+        maxWidth: v,
+        floatingLayer: I.Ay,
         children: [
-            (0, i.jsx)(o.A, { channel: t, draftType: p.C.ChannelMessage }),
-            (0, i.jsxs)(A.Ay, {
-                toolbar: b,
-                "aria-label": x.intl.string(x.t.BIYAqa),
+            (0, l.jsx)(c.A, { channel: t, draftType: C.C.ChannelMessage }),
+            (0, l.jsxs)(h.Ay, {
+                toolbar: j,
+                "aria-label": T.intl.string(T.t.BIYAqa),
                 children: [
-                    (0, i.jsx)(A.Ay.ChannelIcon, { icon: r.oyn, "aria-label": x.intl.string(x.t.Kx5kCN) }),
-                    (0, i.jsx)(A.Ay.Title, { children: t.name }),
+                    (0, l.jsx)(h.Ay.ChannelIcon, { icon: r.o, "aria-label": T.intl.string(T.t.Kx5kCN) }),
+                    (0, l.jsx)(h.Ay.Title, { children: N }),
                 ],
             }),
-            (0, i.jsx)("div", {
-                className: C.T,
-                children: (0, i.jsx)(c.A, { channel: t, guild: n, chatInputType: u.oU.SIDEBAR }, t.id),
+            (0, l.jsx)("div", {
+                className: _.T,
+                children: (0, l.jsx)(d.A, { channel: t, guild: n, chatInputType: E.oU.SIDEBAR }, t.id),
             }),
         ],
     });

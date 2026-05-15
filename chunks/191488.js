@@ -7,14 +7,14 @@ e.exports = function (e) {
                 e.inherit(e.QUOTE_STRING_MODE, { illegal: null }),
             ],
         },
-        n = e.UNDERSCORE_TITLE_MODE,
-        r = { variants: [e.BINARY_NUMBER_MODE, e.C_NUMBER_MODE] },
-        i =
+        a = e.UNDERSCORE_TITLE_MODE,
+        n = { variants: [e.BINARY_NUMBER_MODE, e.C_NUMBER_MODE] },
+        r =
             "namespace class interface use extends function return abstract final public protected private static deprecated throw try catch Exception echo empty isset instanceof unset let var new const self require if else elseif switch case default do while loop for continue break likely unlikely __LINE__ __FILE__ __DIR__ __FUNCTION__ __CLASS__ __TRAIT__ __METHOD__ __NAMESPACE__ array boolean float double integer object resource string char long unsigned bool int uint ulong uchar true false null undefined";
     return {
         name: "Zephir",
         aliases: ["zep"],
-        keywords: i,
+        keywords: r,
         contains: [
             e.C_LINE_COMMENT_MODE,
             e.COMMENT(/\/\*/, /\*\//, { contains: [{ className: "doctag", begin: /@[A-Za-z]+/ }] }),
@@ -27,13 +27,13 @@ e.exports = function (e) {
                 excludeEnd: !0,
                 illegal: /\$|\[|%/,
                 contains: [
-                    n,
+                    a,
                     {
                         className: "params",
                         begin: /\(/,
                         end: /\)/,
-                        keywords: i,
-                        contains: ["self", e.C_BLOCK_COMMENT_MODE, t, r],
+                        keywords: r,
+                        contains: ["self", e.C_BLOCK_COMMENT_MODE, t, n],
                     },
                 ],
             },
@@ -43,13 +43,13 @@ e.exports = function (e) {
                 end: /\{/,
                 excludeEnd: !0,
                 illegal: /[:($"]/,
-                contains: [{ beginKeywords: "extends implements" }, n],
+                contains: [{ beginKeywords: "extends implements" }, a],
             },
-            { beginKeywords: "namespace", end: /;/, illegal: /[.']/, contains: [n] },
-            { beginKeywords: "use", end: /;/, contains: [n] },
+            { beginKeywords: "namespace", end: /;/, illegal: /[.']/, contains: [a] },
+            { beginKeywords: "use", end: /;/, contains: [a] },
             { begin: /=>/ },
             t,
-            r,
+            n,
         ],
     };
 };

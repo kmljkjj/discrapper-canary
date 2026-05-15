@@ -1,202 +1,187 @@
 "use strict";
-n.d(t, { DZ: () => U, Mm: () => k, Qg: () => L, Y5: () => x, av: () => b, eA: () => D, vK: () => P });
-var r = n(835245),
-    i = n(323889),
+n.d(t, { DZ: () => D, Mm: () => b, Qg: () => y, Y5: () => O, av: () => N, vK: () => R });
+var i = n(835245),
+    r = n(323889),
     s = n(345353),
     a = n(881615),
-    o = n(861638),
-    l = n(58149),
+    o = n(234396),
+    l = n(95561),
     u = n(69114),
     c = n(265059),
     d = n(111162),
-    _ = n(954571),
+    _ = n(174459),
     f = n(723702),
-    p = n(859703),
-    h = n(431490),
-    m = n(807876),
-    E = n(710969),
-    g = n(792620),
-    A = n(814793),
-    I = n(590202),
-    T = n(654487),
-    S = n(652215);
-let y = new Set([S.HAw.QUEST_CONTENT_VIEWED, S.HAw.QUEST_CONTENT_CLICKED]);
-function v(e, t) {
-    let n = h.e.getConfig({ location: "quest_analytics" });
-    return t && n.use_ad_session_id ? e : ((0, o.Vc)()?.uuid ?? null);
-}
-function N(e, t, n, r) {
-    let i = (0, a.sN)(r).uuid;
+    h = n(859703),
+    p = n(710969),
+    E = n(792620),
+    m = n(814793),
+    g = n(590202),
+    A = n(652215);
+let I = new Set([A.HAw.QUEST_CONTENT_VIEWED, A.HAw.QUEST_CONTENT_CLICKED]);
+function T(e, t, n, i) {
+    let r = (0, a.sN)(i).uuid,
+        s = (0, p.Kc)(e, t);
     return {
-        client_ad_session_id: i,
-        billing_session_id: v(i, (0, E.xn)(t)),
+        client_ad_session_id: r,
+        billing_session_id: (0, p.xn)(t) ? r : ((0, o.Vc)()?.uuid ?? null),
         ad_content_id: e,
-        creative_type: n,
-        ...(0, E.Kc)(e, t),
+        ...s,
+        creative_type: s.creative_type ?? n,
     };
 }
-function C(e, t, n) {
-    return {
-        quest_id: e.id,
-        quest_type: (0, A.pv)(e.config),
-        game_id: e.config.application.id,
-        game_name: e.config.application.name,
-        application_ids: (0, g._3)(e) ?? [],
-        ...N(e.id, t, i.p.QUEST, n),
-    };
-}
-function R(e, t, n, r) {
-    return { ...N(e, n, t, r) };
-}
-function O(e, t) {
+function S(e, t) {
     let n = arguments.length > 2 && void 0 !== arguments[2] && arguments[2],
-        r = arguments.length > 3 ? arguments[3] : void 0;
+        i = arguments.length > 3 ? arguments[3] : void 0;
     if (
-        ((0, m.Q)({ location: T.rE.QUEST_PREVIEW_TOOL }) &&
-            c.A.displayTools &&
-            "quest_preview" === c.A.lastOpenTabId) ||
-        (d.default.isLoggingAnalyticsEvents && console.info("[Quest] AnalyticsUtils.track", e, t), r)
+        (c.A.displayTools && "quest_preview" === c.A.lastOpenTabId) ||
+        (d.default.isLoggingAnalyticsEvents && console.info("[Quest] AnalyticsUtils.track", e, t), i)
     )
         return;
-    let i = y.has(e);
-    if (n) return l.Ay.trackWithMetadata(e, t, i);
-    _.default.track(e, t, { flush: i });
+    let r = I.has(e);
+    if (n) return l.Ay.trackWithMetadata(e, t, r);
+    _.default.track(e, t, { flush: r });
 }
-function b(e) {
+function N(e) {
     let {
             questId: t,
             event: n,
-            properties: r,
-            trackGuildAndChannelMetadata: i,
-            shouldExtendSession: s = !1,
-            sourceQuestContent: a,
+            properties: i,
+            trackGuildAndChannelMetadata: s,
+            shouldExtendSession: a = !1,
+            sourceQuestContent: o,
         } = e,
-        o = p.A.quests.get(t);
-    null == o || O(n, { ...C(o, a, s), ...r }, i, o.preview);
+        l = h.A.quests.get(t);
+    null != l &&
+        S(
+            n,
+            {
+                ...{
+                    quest_id: l.id,
+                    quest_type: (0, m.pv)(l.config),
+                    game_id: l.config.application.id,
+                    game_name: l.config.application.name,
+                    application_ids: (0, E._3)(l) ?? [],
+                    ...T(l.id, o, r.p.QUEST, a),
+                },
+                ...i,
+            },
+            s,
+            l.preview,
+        );
 }
-function D(e, t, n, r, i) {
-    let s = {
-            content_name: (0, I.jO)(t.content),
-            cta_name: t.ctaContent,
-            impression_id: t.impressionId,
-            source_content_name: (0, I.jO)(t.sourceQuestContent),
-            app_id: n,
-            content_position: t.position,
-            quest_status: (0, I.NI)(e),
-        },
-        a =
-            (r === S.HAw.QUEST_APP_STORE_OVERLAY_CLOSED || r === S.HAw.QUEST_APP_STORE_OVERLAY_RETURNED) &&
-            void 0 !== i;
-    b({
-        questId: e.id,
-        event: r,
-        properties: a ? { ...s, time_spent_ms: i } : s,
-        sourceQuestContent: t.sourceQuestContent,
-    });
-}
-function L(e) {
+function y(e) {
     let {
         adContentId: t,
         adCreativeType: n,
-        event: r,
-        properties: i,
+        event: i,
+        properties: r,
         trackGuildAndChannelMetadata: s,
         shouldExtendSession: a = !1,
         sourceQuestContent: o,
     } = e;
-    O(r, { ...R(t, n, o, a), ...i }, s, !1);
+    S(i, { ...T(t, o, n, a), ...r }, s, !1);
 }
-async function w(e) {
-    let t = await (0, s.N)((0, I.jO)(e));
-    return { adUser: t, adMetadataRaw: (0, E.Li)(e), adMetadataSealed: (0, E.L4)(e) };
+async function C(e, t) {
+    return { adUser: await (0, s.N)((0, g.jO)(e)), adMetadataSealed: (0, p.L4)(e, t) };
 }
-async function M(e) {
-    let { questContent: t, questContentPosition: n, questContentRowIndex: i, questContentCTA: s, impressionId: a } = e,
-        { adUser: o, adMetadataRaw: l, adMetadataSealed: c } = await w(t);
+async function v(e) {
+    let {
+            questContent: t,
+            questContentPosition: n,
+            questContentRowIndex: r,
+            questContentCTA: s,
+            impressionId: a,
+            clickId: o,
+            adCreativeId: l,
+        } = e,
+        { adUser: c, adMetadataSealed: d } = await C(t, l);
     return {
-        ...(0, I.fF)(t, n, i),
+        ...(0, g.fF)(t, n, r),
         ...(0, u.A)(),
         cta_name: s,
         impression_id: a,
-        apple_advertising_id: null != o && (0, f.isIOS)() ? o.advertisingId : null,
-        android_advertising_id: null != o && (0, f.isAndroid)() ? o.advertisingId : null,
-        click_id: (0, r.A)(),
-        metadata_raw: l ?? null,
-        metadata_sealed: c ?? null,
+        apple_advertising_id: null != c && (0, f.isIOS)() ? c.advertisingId : null,
+        android_advertising_id: null != c && (0, f.isAndroid)() ? c.advertisingId : null,
+        click_id: o ?? (0, i.A)(),
+        metadata_sealed: d ?? null,
     };
 }
-async function x(e) {
+async function O(e) {
     let {
             questId: t,
             questContent: n,
-            questContentCTA: r,
-            questContentPosition: i,
+            questContentCTA: i,
+            questContentPosition: r,
             questContentRowIndex: s,
             impressionId: a,
-            trackGuildAndChannelMetadata: o,
-            sourceQuestContent: l,
+            clickId: o,
+            trackGuildAndChannelMetadata: l,
+            sourceQuestContent: u,
         } = e,
-        u = p.A.getQuest(t),
-        c = (0, E.yI)(n, t),
-        d = (0, E.Gp)(n, t);
-    b({
+        c = h.A.getQuest(t),
+        d = (0, p.Gp)(n, t);
+    N({
         questId: t,
-        event: S.HAw.QUEST_CONTENT_CLICKED,
+        event: A.HAw.QUEST_CONTENT_CLICKED,
         properties: {
-            ...(await M({
+            ...(await v({
                 questContent: n,
-                questContentPosition: i,
+                questContentPosition: r,
                 questContentRowIndex: s,
-                questContentCTA: r,
+                questContentCTA: i,
                 impressionId: a,
+                clickId: o,
             })),
-            quest_status: null != u ? (0, I.NI)(u) : null,
-            traffic_metadata_raw: c ?? null,
+            quest_status: null != c ? (0, g.NI)(c) : null,
             traffic_metadata_sealed: d ?? null,
         },
-        trackGuildAndChannelMetadata: o,
-        shouldExtendSession: (0, E.xn)(n),
-        sourceQuestContent: l,
+        trackGuildAndChannelMetadata: l,
+        shouldExtendSession: (0, p.xn)(n),
+        sourceQuestContent: u,
     });
 }
-async function P(e) {
+async function R(e) {
     let {
         adContentId: t,
         adCreativeType: n,
-        questContent: r,
-        questContentCTA: i,
+        questContent: i,
+        questContentCTA: r,
         questContentPosition: s,
         questContentRowIndex: a,
         impressionId: o,
         trackGuildAndChannelMetadata: l,
         sourceQuestContent: u,
     } = e;
-    L({
+    y({
         adContentId: t,
         adCreativeType: n,
-        event: S.HAw.QUEST_CONTENT_CLICKED,
-        properties: await M({
-            questContent: r,
-            questContentPosition: s,
-            questContentRowIndex: a,
-            questContentCTA: i,
-            impressionId: o,
-        }),
+        event: A.HAw.QUEST_CONTENT_CLICKED,
+        properties: {
+            ...(await v({
+                questContent: i,
+                questContentPosition: s,
+                questContentRowIndex: a,
+                questContentCTA: r,
+                impressionId: o,
+                adCreativeId: t,
+            })),
+            traffic_metadata_sealed: (0, p.Gp)(i, void 0, t) ?? null,
+        },
         trackGuildAndChannelMetadata: l,
-        shouldExtendSession: (0, E.xn)(r),
+        shouldExtendSession: (0, p.xn)(i),
         sourceQuestContent: u,
     });
 }
-function k(e) {
-    let { questContent: t, sourceQuestContent: n, questId: r, mode: i, prevMode: s } = e,
-        a = (0, I.fF)(t);
-    b({
-        questId: r,
-        event: S.HAw.QUEST_BAR_MODE_CHANGED,
-        properties: { content_id: a.content_id, content_name: a.content_name, mode: i, previous_mode: s },
+function b(e) {
+    let { questContent: t, sourceQuestContent: n, questId: i, mode: r, prevMode: s } = e,
+        a = (0, g.fF)(t);
+    N({
+        questId: i,
+        event: A.HAw.QUEST_BAR_MODE_CHANGED,
+        properties: { content_id: a.content_id, content_name: a.content_name, mode: r, previous_mode: s },
         sourceQuestContent: n,
     });
 }
-function U(e, t) {
-    l.Ay.trackWithMetadata(S.HAw.QUEST_EMBED_FALLBACK_VIEWED, { quest_id: e, reason: t });
+function D(e, t) {
+    l.Ay.trackWithMetadata(A.HAw.QUEST_EMBED_FALLBACK_VIEWED, { quest_id: e, reason: t });
 }

@@ -1,22 +1,23 @@
-"use strict";
-n.d(t, { A: () => h });
+n.d(t, { A: () => m });
 var i = n(627968);
 n(64700);
-var s = n(503698),
-    l = n.n(s),
-    r = n(311907),
-    a = n(397927),
-    o = n(775602),
-    c = n(108713),
-    d = n(985018),
-    u = n(177432);
-function h(e) {
+var l = n(503698),
+    a = n.n(l),
+    s = n(17928),
+    r = n(604121),
+    o = n(534514),
+    c = n(834730),
+    d = n(775602),
+    u = n(469802),
+    h = n(375708),
+    p = n(944785);
+function m(e) {
     let { height: t } = e,
-        s = (0, r.bG)([o.A], () => o.A.useReducedMotion);
+        l = (0, s.bG)([d.A], () => d.A.useReducedMotion);
     return (0, i.jsxs)("div", {
-        className: u.zr,
+        className: p.zr,
         children: [
-            (0, i.jsx)(a.akl, {
+            (0, i.jsx)(r.a, {
                 importData: () =>
                     n
                         .e("35066")
@@ -25,18 +26,14 @@ function h(e) {
                             let { default: t } = e;
                             return t;
                         }),
-                shouldAnimate: !s,
-                className: l()(u.Qw, { [u.R]: t <= 280 }),
+                shouldAnimate: !l,
+                className: a()(p.Qw, { [p.R]: t <= 280 }),
             }),
-            (0, i.jsx)(a.Heading, {
-                className: u.wx,
-                variant: "heading-md/bold",
-                children: d.intl.string(d.t["C+tj1c"]),
-            }),
-            (0, i.jsx)(a.Text, {
+            (0, i.jsx)(o.D, { className: p.wx, variant: "heading-md/bold", children: h.intl.string(h.t["C+tj1c"]) }),
+            (0, i.jsx)(c.E, {
                 variant: "text-md/normal",
                 color: "text-default",
-                children: d.intl.format(d.t["nNHd/y"], { onCancel: c.ZG }),
+                children: h.intl.format(h.t["nNHd/y"], { onCancel: u.ZG }),
             }),
         ],
     });

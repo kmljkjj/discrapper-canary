@@ -1,16 +1,16 @@
 "use strict";
 n.d(t, { Hp: () => l, cx: () => c, dw: () => u });
-var r = n(600975),
-    i = n(945810),
+var i = n(600975),
+    r = n(945810),
     s = n(477421);
-let a = (0, r.C)({
+let a = (0, i.C)({
         kind: "user",
         id: "2022-03_block_russian_purchases",
         label: "Block purchases based on country",
         defaultConfig: { paymentsBlocked: !1 },
         treatments: [{ id: 1, label: "Payments Blocked", config: { paymentsBlocked: !0 } }],
     }),
-    o = (0, i.mj)({
+    o = (0, r.mj)({
         name: "2026-03-block-purchases",
         kind: "user",
         defaultConfig: { enabled: !1 },

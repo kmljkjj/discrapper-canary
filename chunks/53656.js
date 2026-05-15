@@ -1,260 +1,245 @@
-"use strict";
-let r, i;
-n.r(t), n.d(t, { default: () => $ }), n(321073);
-var a = n(735438),
-    s = n.n(a),
-    o = n(311907),
-    l = n(73153),
-    u = n(824953),
-    c = n(576705),
-    d = n(718116),
-    _ = n(555337),
-    f = n(652215);
-let p = [],
-    h = [],
-    m = null,
-    g = null,
-    E = null,
+let T, I;
+n.r(t), n.d(t, { default: () => U }), n(321073);
+var i = n(735438),
+    N = n.n(i),
+    l = n(17928),
+    E = n(228366),
+    r = n(824953),
+    S = n(576705),
+    _ = n(718116),
+    a = n(555337),
+    o = n(652215);
+let u = [],
+    s = [],
+    G = null,
+    d = null,
+    c = null,
     A = !1,
-    I = !1,
-    T = f.XlH.CLOSED,
-    y = {},
-    S = !1,
-    v = null;
-function C(e) {
+    p = !1,
+    h = o.XlH.CLOSED,
+    O = {},
+    R = !1,
+    f = null;
+function y(e) {
     let { section: t } = e;
-    if (t !== f.BEX.INTEGRATIONS) return !1;
-    if (null == r) {
-        let e = _.A.getGuildId();
-        null != e && (u.A.fetchForGuild(e), (A = !0)), N(!1);
+    if (t !== o.BEX.INTEGRATIONS) return !1;
+    if (null == T) {
+        let e = a.A.getGuildId();
+        null != e && (r.A.fetchForGuild(e), (A = !0)), g(!1);
     }
 }
-function b(e) {
-    let { section: t, sectionId: n } = e;
-    (i = t), (v = n);
-}
-function N(e) {
-    if (null != (r = _.A.getProps().guild) && c.A.can(f.xBc.MANAGE_GUILD, r)) {
-        let e = _.A.getProps().integrations;
-        null == e && (I = !0), (p = e ?? []);
-    } else p = [];
-    if (((h = null != r && c.A.can(f.xBc.MANAGE_WEBHOOKS, r) ? d.A.getWebhooksForGuild(r.id) : []), !e && null != g)) {
-        let e = Y(g.id);
-        null != e && (g = e);
+function g(e) {
+    if (null != (T = a.A.getProps().guild) && S.A.can(o.xBc.MANAGE_GUILD, T)) {
+        let e = a.A.getProps().integrations;
+        null == e && (p = !0), (u = e ?? []);
+    } else u = [];
+    if (((s = null != T && S.A.can(o.xBc.MANAGE_WEBHOOKS, T) ? _.A.getWebhooksForGuild(T.id) : []), !e && null != d)) {
+        let e = D(d.id);
+        null != e && (d = e);
     }
-    if (null != E) {
-        let e = W(E.id);
-        null != e && (E = e);
+    if (null != c) {
+        let e = M(c.id);
+        null != e && (c = e);
     }
-    (m = null), (T = f.XlH.OPEN), (y = {}), (S = !1);
+    (G = null), (h = o.XlH.OPEN), (O = {}), (R = !1);
 }
-function R() {
-    (r = null), (p = []), (h = []), (m = null), (g = null), (E = null), (T = f.XlH.CLOSED), (S = !1);
-}
-let O = s().debounce(() => {
-    S &&
-        (null != g ? s().isEqual(g, Y(g.id)) && (S = !1) : null != E && s().isEqual(E, W(E.id)) && (S = !1),
-        S || z.emitChange());
+let C = N().debounce(() => {
+    R &&
+        (null != d ? N().isEqual(d, D(d.id)) && (R = !1) : null != c && N().isEqual(c, M(c.id)) && (R = !1),
+        R || m.emitChange());
 }, 500);
 function D(e) {
-    let { settings: t } = e;
-    if (null == g) return !1;
-    (g = { ...g }),
-        null != t.enableEmoticons &&
-            g.enable_emoticons !== t.enableEmoticons &&
-            ((g.enable_emoticons = t.enableEmoticons), (S = !0)),
-        null != t.expireBehavior &&
-            g.expire_behavior !== t.expireBehavior &&
-            ((g.expire_behavior = t.expireBehavior), (S = !0)),
-        null != t.expireGracePeriod &&
-            g.expire_grace_period !== t.expireGracePeriod &&
-            ((g.expire_grace_period = t.expireGracePeriod), (S = !0)),
-        S && O();
-}
-function L(e) {
-    let { settings: t } = e;
-    if (null == E) return !1;
-    (E = { ...E }),
-        null != t.name && E.name !== t.name && ((E.name = t.name), (S = !0)),
-        void 0 !== t.avatar && E.avatar !== t.avatar && ((E.avatar = t.avatar), (S = !0)),
-        null != t.channelId && E.channel_id !== t.channelId && ((E.channel_id = t.channelId), (S = !0)),
-        S && O();
-}
-function w() {
-    (T = f.XlH.SUBMITTING), (y = {});
-}
-function x(e) {
-    if (T !== f.XlH.SUBMITTING) return !1;
-    (T = f.XlH.OPEN), (y = e.errors ?? {});
-}
-function P(e) {
-    let { guildId: t, integrations: n } = e;
-    if (null == r || t !== r.id || T === f.XlH.SUBMITTING) return !1;
-    for (let e of ((I = !1), n))
-        null ==
-            p.find((t) => {
-                let { id: n } = t;
-                if (n === e.id) return !0;
-            }) && (p.push(e), e.type === g?.type && e.account?.id === g.account?.id && (g = e));
-    for (let e = p.length - 1; e >= 0; e--) {
-        let t = p[e],
-            r = n.find((e) => {
-                let { id: n } = e;
-                if (n === t.id) return !0;
-            });
-        if (null != r) {
-            let n = { ...t, ...r };
-            g?.id === n.id && (!1 === n.enabled ? (g = null) : S || (g = n)), (p[e] = n);
-        } else g?.id === t.id && (g = null), p.splice(e, 1);
-    }
-    (p = [...p]), O();
+    return u.find((t) => {
+        let { id: n } = t;
+        return n === e;
+    });
 }
 function M(e) {
-    let { guildId: t, channelId: n, webhooks: i } = e;
-    if (((A = !1), null != r && t === r.id && null != i && T !== f.XlH.SUBMITTING)) {
-        for (let e = h.length - 1; e >= 0; e--) {
-            let t = h[e];
-            if (null != n && t?.channel_id !== n) continue;
-            let r = i.find((e) => {
-                let { id: n } = e;
-                if (n === t.id) return !0;
-            });
-            if (null != r) {
-                let n = { ...t, ...r };
-                (h[e] = n), S || E?.id !== n.id || (E = n);
-            } else E?.id === t.id && (E = null), h.splice(e, 1);
-        }
-        for (let e of i)
-            null ==
-                h.find((t) => {
-                    let { id: n } = t;
-                    if (n === e.id) return !0;
-                }) && h.push(e);
-        (h = [...h]), O();
-    }
-}
-function k(e) {
-    let { commandId: t } = e;
-    (m = t), (g = null), (E = null), (y = {}), (S = !0);
-}
-function U(e) {
-    let { commandId: t } = e;
-    if (null == m || m !== t) return !1;
-    (m = null), (y = {}), (S = !1);
-}
-function G(e) {
-    let { integrationId: t } = e,
-        n = Y(t);
-    if (null == n) return !1;
-    (g = n), (m = null), (E = null), (y = {}), (S = !1);
-}
-function V() {
-    (g = null), (y = {}), (S = !1);
-}
-function F(e) {
-    let { webhookId: t } = e,
-        n = W(t);
-    if (null == n) return !1;
-    (E = n), (m = null), (g = null), (y = {}), (S = !1);
-}
-function B() {
-    (E = null), (y = {}), (S = !1);
-}
-function j() {
-    return N(!1);
-}
-function H() {
-    return N(!0);
-}
-function Y(e) {
-    return p.find((t) => {
+    return s.find((t) => {
         let { id: n } = t;
         return n === e;
     });
 }
-function W(e) {
-    return h.find((t) => {
-        let { id: n } = t;
-        return n === e;
-    });
-}
-class K extends o.Ay.Store {
+class P extends l.Ay.Store {
     static displayName = "GuildSettingsIntegrationsStore";
     initialize() {
-        this.waitFor(_.A, d.A, c.A);
+        this.waitFor(a.A, _.A, S.A);
     }
     hasChanges() {
-        return S;
+        return R;
     }
     get guild() {
-        return r;
-    }
-    get integrations() {
-        return p;
-    }
-    get webhooks() {
-        return h;
-    }
-    get editedCommandId() {
-        return m;
-    }
-    get editedIntegration() {
-        return g;
-    }
-    get editedWebhook() {
-        return E;
-    }
-    get formState() {
         return T;
     }
+    get integrations() {
+        return u;
+    }
+    get webhooks() {
+        return s;
+    }
+    get editedCommandId() {
+        return G;
+    }
+    get editedIntegration() {
+        return d;
+    }
+    get editedWebhook() {
+        return c;
+    }
+    get formState() {
+        return h;
+    }
     getErrors() {
-        return y;
+        return O;
     }
     getSection() {
-        return i ?? f.wLn.OVERVIEW;
+        return I ?? o.wLn.OVERVIEW;
     }
     getSectionId() {
-        return v;
+        return f;
     }
     getIntegration(e) {
-        return Y(e);
+        return D(e);
     }
     getWebhook(e) {
-        return W(e);
+        return M(e);
     }
     isFetching() {
-        return I || A;
+        return p || A;
     }
     showNotice() {
         return this.hasChanges();
     }
     getApplication(e) {
-        return p.find((t) => t.application?.id === e)?.application;
+        return u.find((t) => t.application?.id === e)?.application;
     }
 }
-let z = new K(
-        l.h,
+let m = new P(
+        E.h,
         __OVERLAY__
             ? {}
             : {
-                  INTEGRATION_SETTINGS_INIT: j,
-                  INTEGRATION_SETTINGS_SAVE_SUCCESS: H,
-                  GUILD_SETTINGS_INIT: C,
-                  GUILD_SETTINGS_SET_SECTION: C,
-                  INTEGRATION_SETTINGS_SET_SECTION: b,
-                  INTEGRATION_SETTINGS_START_EDITING_COMMAND: k,
-                  INTEGRATION_SETTINGS_STOP_EDITING_COMMAND: U,
-                  INTEGRATION_SETTINGS_START_EDITING_INTEGRATION: G,
-                  INTEGRATION_SETTINGS_STOP_EDITING_INTEGRATION: V,
-                  INTEGRATION_SETTINGS_UPDATE_INTEGRATION: D,
-                  INTEGRATION_SETTINGS_UPDATE_WEBHOOK: L,
-                  INTEGRATION_SETTINGS_START_EDITING_WEBHOOK: F,
-                  INTEGRATION_SETTINGS_STOP_EDITING_WEBHOOK: B,
-                  GUILD_SETTINGS_CLOSE: R,
-                  GUILD_SETTINGS_LOADED_INTEGRATIONS: P,
-                  WEBHOOKS_UPDATE: M,
-                  INTEGRATION_SETTINGS_SUBMITTING: w,
-                  INTEGRATION_SETTINGS_SAVE_FAILURE: x,
+                  INTEGRATION_SETTINGS_INIT: function () {
+                      return g(!1);
+                  },
+                  INTEGRATION_SETTINGS_SAVE_SUCCESS: function () {
+                      return g(!0);
+                  },
+                  GUILD_SETTINGS_INIT: y,
+                  GUILD_SETTINGS_SET_SECTION: y,
+                  INTEGRATION_SETTINGS_SET_SECTION: function (e) {
+                      let { section: t, sectionId: n } = e;
+                      (I = t), (f = n);
+                  },
+                  INTEGRATION_SETTINGS_START_EDITING_COMMAND: function (e) {
+                      let { commandId: t } = e;
+                      (G = t), (d = null), (c = null), (O = {}), (R = !0);
+                  },
+                  INTEGRATION_SETTINGS_STOP_EDITING_COMMAND: function (e) {
+                      let { commandId: t } = e;
+                      if (null == G || G !== t) return !1;
+                      (G = null), (O = {}), (R = !1);
+                  },
+                  INTEGRATION_SETTINGS_START_EDITING_INTEGRATION: function (e) {
+                      let { integrationId: t } = e,
+                          n = D(t);
+                      if (null == n) return !1;
+                      (d = n), (G = null), (c = null), (O = {}), (R = !1);
+                  },
+                  INTEGRATION_SETTINGS_STOP_EDITING_INTEGRATION: function () {
+                      (d = null), (O = {}), (R = !1);
+                  },
+                  INTEGRATION_SETTINGS_UPDATE_INTEGRATION: function (e) {
+                      let { settings: t } = e;
+                      if (null == d) return !1;
+                      (d = { ...d }),
+                          null != t.enableEmoticons &&
+                              d.enable_emoticons !== t.enableEmoticons &&
+                              ((d.enable_emoticons = t.enableEmoticons), (R = !0)),
+                          null != t.expireBehavior &&
+                              d.expire_behavior !== t.expireBehavior &&
+                              ((d.expire_behavior = t.expireBehavior), (R = !0)),
+                          null != t.expireGracePeriod &&
+                              d.expire_grace_period !== t.expireGracePeriod &&
+                              ((d.expire_grace_period = t.expireGracePeriod), (R = !0)),
+                          R && C();
+                  },
+                  INTEGRATION_SETTINGS_UPDATE_WEBHOOK: function (e) {
+                      let { settings: t } = e;
+                      if (null == c) return !1;
+                      (c = { ...c }),
+                          null != t.name && c.name !== t.name && ((c.name = t.name), (R = !0)),
+                          void 0 !== t.avatar && c.avatar !== t.avatar && ((c.avatar = t.avatar), (R = !0)),
+                          null != t.channelId &&
+                              c.channel_id !== t.channelId &&
+                              ((c.channel_id = t.channelId), (R = !0)),
+                          R && C();
+                  },
+                  INTEGRATION_SETTINGS_START_EDITING_WEBHOOK: function (e) {
+                      let { webhookId: t } = e,
+                          n = M(t);
+                      if (null == n) return !1;
+                      (c = n), (G = null), (d = null), (O = {}), (R = !1);
+                  },
+                  INTEGRATION_SETTINGS_STOP_EDITING_WEBHOOK: function () {
+                      (c = null), (O = {}), (R = !1);
+                  },
+                  GUILD_SETTINGS_CLOSE: function () {
+                      (T = null), (u = []), (s = []), (G = null), (d = null), (c = null), (h = o.XlH.CLOSED), (R = !1);
+                  },
+                  GUILD_SETTINGS_LOADED_INTEGRATIONS: function (e) {
+                      let { guildId: t, integrations: n } = e;
+                      if (null == T || t !== T.id || h === o.XlH.SUBMITTING) return !1;
+                      for (let e of ((p = !1), n))
+                          null ==
+                              u.find((t) => {
+                                  let { id: n } = t;
+                                  if (n === e.id) return !0;
+                              }) && (u.push(e), e.type === d?.type && e.account?.id === d.account?.id && (d = e));
+                      for (let e = u.length - 1; e >= 0; e--) {
+                          let t = u[e],
+                              T = n.find((e) => {
+                                  let { id: n } = e;
+                                  if (n === t.id) return !0;
+                              });
+                          if (null != T) {
+                              let n = { ...t, ...T };
+                              d?.id === n.id && (!1 === n.enabled ? (d = null) : R || (d = n)), (u[e] = n);
+                          } else d?.id === t.id && (d = null), u.splice(e, 1);
+                      }
+                      (u = [...u]), C();
+                  },
+                  WEBHOOKS_UPDATE: function (e) {
+                      let { guildId: t, channelId: n, webhooks: I } = e;
+                      if (((A = !1), null != T && t === T.id && null != I && h !== o.XlH.SUBMITTING)) {
+                          for (let e = s.length - 1; e >= 0; e--) {
+                              let t = s[e];
+                              if (null != n && t?.channel_id !== n) continue;
+                              let T = I.find((e) => {
+                                  let { id: n } = e;
+                                  if (n === t.id) return !0;
+                              });
+                              if (null != T) {
+                                  let n = { ...t, ...T };
+                                  (s[e] = n), R || c?.id !== n.id || (c = n);
+                              } else c?.id === t.id && (c = null), s.splice(e, 1);
+                          }
+                          for (let e of I)
+                              null ==
+                                  s.find((t) => {
+                                      let { id: n } = t;
+                                      if (n === e.id) return !0;
+                                  }) && s.push(e);
+                          (s = [...s]), C();
+                      }
+                  },
+                  INTEGRATION_SETTINGS_SUBMITTING: function () {
+                      (h = o.XlH.SUBMITTING), (O = {});
+                  },
+                  INTEGRATION_SETTINGS_SAVE_FAILURE: function (e) {
+                      if (h !== o.XlH.SUBMITTING) return !1;
+                      (h = o.XlH.OPEN), (O = e.errors ?? {});
+                  },
               },
     ),
-    $ = z;
+    U = m;

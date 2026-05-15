@@ -1,55 +1,51 @@
 "use strict";
-n.d(t, { f: () => s, u: () => l });
-var r = n(64700),
-    i = n(735438),
+n.d(t, { f: () => o, u: () => u });
+var i,
+    r = n(64700),
+    s = n(735438),
     a = n(860923),
-    s = (function (e) {
-        return (
-            (e.IDLE = "idle"),
-            (e.HEAD_TURN = "headTurn"),
-            (e.HEAD_TURN_BACK = "headTurnBack"),
-            (e.TALKING = "talking"),
-            e
-        );
-    })({});
-let o = {
+    o =
+        (((i = {}).IDLE = "idle"),
+        (i.HEAD_TURN = "headTurn"),
+        (i.HEAD_TURN_BACK = "headTurnBack"),
+        (i.TALKING = "talking"),
+        i);
+let l = {
         idle: ["headTurnBack", "talking"],
         headTurn: ["idle", "talking"],
         headTurnBack: ["headTurn"],
         talking: ["idle", "headTurnBack"],
     },
-    l = (e) => {
+    u = (e) => {
         let [t, n] = r.useState("idle"),
-            [s, l] = r.useState(),
+            [i, o] = r.useState(),
             u = (0, a.A)(),
             c = r.useMemo(() => u?.characters[e], [u, e]),
             d = r.useCallback(() => {
-                if (null == c) return s;
+                if (null == c) return i;
                 let e = c[t];
-                return (0, i.sample)(e);
-            }, [s, c, t]);
-        r.useEffect(() => {
-            l(d());
-        }, [u, e, d]),
+                return (0, s.sample)(e);
+            }, [i, c, t]);
+        return (
             r.useEffect(() => {
-                l(() => d());
-            }, [t]);
-        let _ = () => {
-                let e = 10,
-                    n = !1,
-                    r = 0,
-                    i = new Set([t]);
-                for (; !n && r < e; ) r += 1;
-                return i;
-            },
-            f = (e) => (e === t ? t : o[e].includes(t) ? (n(e), e) : t);
-        return {
-            animationState: t,
-            updateAnimationState: f,
-            asset: s,
-            setAsset: l,
-            sampleAsset: d,
-            findAnimationTree: _,
-            characterAssets: c,
-        };
+                o(d());
+            }, [u, e, d]),
+            r.useEffect(() => {
+                o(() => d());
+            }, [t]),
+            {
+                animationState: t,
+                updateAnimationState: (e) => (e === t ? t : l[e].includes(t) ? (n(e), e) : t),
+                asset: i,
+                setAsset: o,
+                sampleAsset: d,
+                findAnimationTree: () => {
+                    let e = 0,
+                        n = new Set([t]);
+                    for (; e < 10; ) e += 1;
+                    return n;
+                },
+                characterAssets: c,
+            }
+        );
     };

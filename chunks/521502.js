@@ -1,58 +1,58 @@
 "use strict";
-n.d(t, { A: () => h, U: () => s });
-var r = n(311907),
-    i = n(73153),
+n.d(t, { A: () => c, U: () => o });
+var i,
+    r = n(17928),
+    s = n(228366),
     a = n(380610),
-    s = (function (e) {
-        return (
-            (e[(e.NotResolved = 0)] = "NotResolved"),
-            (e[(e.Resolving = 1)] = "Resolving"),
-            (e[(e.Resolved = 2)] = "Resolved"),
-            (e[(e.Invalid = 3)] = "Invalid"),
-            e
-        );
-    })({});
-let o = 0,
-    l = null,
-    u = {};
-function c() {
-    0 === o &&
-        ((o = 1),
-        (0, a.bD)().then((e) => {
-            i.h.dispatch({ type: "CURRENT_BUILD_OVERRIDE_RESOLVED", overrides: e });
-        }));
-}
-function d(e) {
-    let { overrides: t } = e;
-    (o = 2), (l = t);
-}
-function _(e) {
-    if (e in u) return;
-    let t = (0, a.qU)(e);
-    if (null == t) {
-        u = { ...u, [e]: { url: e, state: 3 } };
-        return;
-    }
-    (u = { ...u, [e]: { url: e, validatedURL: t.url, payload: String(t.payload), state: 1 } }),
-        (0, a.k9)(t.url).then((t) => {
-            i.h.dispatch({ type: "BUILD_OVERRIDE_RESOLVED", url: e, override: t });
-        });
-}
-function f(e) {
-    let { url: t, override: n } = e,
-        r = null == n ? 3 : 2;
-    u = { ...u, [t]: { ...u[t], state: r, override: n } };
-}
-class p extends r.Ay.Store {
+    o =
+        (((i = {})[(i.NotResolved = 0)] = "NotResolved"),
+        (i[(i.Resolving = 1)] = "Resolving"),
+        (i[(i.Resolved = 2)] = "Resolved"),
+        (i[(i.Invalid = 3)] = "Invalid"),
+        i);
+let l = 0,
+    d = null,
+    _ = {};
+class u extends r.Ay.Store {
     static displayName = "BuildOverrideStore";
     getCurrentBuildOverride() {
-        return c(), { state: o, overrides: l };
+        return (
+            0 === l &&
+                ((l = 1),
+                (0, a.bD)().then((e) => {
+                    s.h.dispatch({ type: "CURRENT_BUILD_OVERRIDE_RESOLVED", overrides: e });
+                })),
+            { state: l, overrides: d }
+        );
     }
     getBuildOverride(e) {
-        return _(e), u[e];
+        return (
+            !(function (e) {
+                if (e in _) return;
+                let t = (0, a.qU)(e);
+                if (null == t) {
+                    _ = { ..._, [e]: { url: e, state: 3 } };
+                    return;
+                }
+                (_ = { ..._, [e]: { url: e, validatedURL: t.url, payload: String(t.payload), state: 1 } }),
+                    (0, a.k9)(t.url).then((t) => {
+                        s.h.dispatch({ type: "BUILD_OVERRIDE_RESOLVED", url: e, override: t });
+                    });
+            })(e),
+            _[e]
+        );
     }
     getBuildOverrides() {
-        return u;
+        return _;
     }
 }
-let h = new p(i.h, { BUILD_OVERRIDE_RESOLVED: f, CURRENT_BUILD_OVERRIDE_RESOLVED: d });
+let c = new u(s.h, {
+    BUILD_OVERRIDE_RESOLVED: function (e) {
+        let { url: t, override: n } = e;
+        _ = { ..._, [t]: { ..._[t], state: null == n ? 3 : 2, override: n } };
+    },
+    CURRENT_BUILD_OVERRIDE_RESOLVED: function (e) {
+        let { overrides: t } = e;
+        (l = 2), (d = t);
+    },
+});

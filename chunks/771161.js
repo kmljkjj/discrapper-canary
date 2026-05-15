@@ -1,8 +1,8 @@
 "use strict";
-var r = n(120394),
-    i = RangeError;
+var i = n(120394),
+    r = RangeError;
 e.exports = function (e) {
-    var t = r(e);
-    if (t < 0) throw new i("The argument can't be less than 0");
+    var t = i(e);
+    if (t < 0) throw new r("The argument can't be less than 0");
     return t;
 };

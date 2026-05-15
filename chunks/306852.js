@@ -1,91 +1,90 @@
-"use strict";
-n.d(t, { A: () => x });
+n.d(t, { A: () => f });
 var i = n(627968),
-    s = n(64700),
-    l = n(503698),
-    r = n.n(l),
-    a = n(311907),
+    l = n(64700),
+    a = n(503698),
+    s = n.n(a),
+    r = n(17928),
     o = n(506774),
     c = n(31728),
     d = n(164617),
     u = n(205297),
     h = n(334463),
-    A = n(175203),
-    p = n(652215),
-    g = n(806931),
-    m = n(697166),
-    _ = n(976092);
-let f = "CameraPreviewPosition";
-function x(e) {
-    let { width: t, onContextMenuParticipant: n, height: l, channel: x, participants: C, onSelectParticipant: E } = e,
-        [I, b] = (function () {
-            let [e, t] = s.useState(() => o.w.get(f, p.CUs.BOTTOM_RIGHT));
+    p = n(175203),
+    m = n(652215),
+    A = n(806931),
+    x = n(566555),
+    g = n(604949);
+let C = "CameraPreviewPosition";
+function f(e) {
+    let { width: t, onContextMenuParticipant: n, height: a, channel: f, participants: E, onSelectParticipant: y } = e,
+        [N, j] = (function () {
+            let [e, t] = l.useState(() => o.w.get(C, m.CUs.BOTTOM_RIGHT));
             return [
                 e,
-                s.useCallback((e) => {
-                    o.w.set(f, e), t(e);
+                l.useCallback((e) => {
+                    o.w.set(C, e), t(e);
                 }, []),
             ];
         })(),
-        N = s.useRef(null),
-        S = null == x.getGuildId() ? 70 : 50,
-        T = (0, a.bG)([h.A], () => h.A.pipWidth(g.R8.CAMERA_PREVIEW)),
-        v = C.length,
-        y = T * v + 8 * (v - 1),
-        j = s.useMemo(
+        v = l.useRef(null),
+        I = null == f.getGuildId() ? 70 : 50,
+        T = (0, r.bG)([h.A], () => h.A.pipWidth(A.R8.CAMERA_PREVIEW)),
+        _ = E.length,
+        R = T * _ + 8 * (_ - 1),
+        S = l.useMemo(
             () => ({
-                minWidth: g.mn[g.R8.CAMERA_PREVIEW] * v + 8 * (v - 1),
-                maxWidth: g.cF[g.R8.CAMERA_PREVIEW] * v + 8 * (v - 1),
+                minWidth: A.mn[A.R8.CAMERA_PREVIEW] * _ + 8 * (_ - 1),
+                maxWidth: A.cF[A.R8.CAMERA_PREVIEW] * _ + 8 * (_ - 1),
             }),
-            [v],
+            [_],
         );
-    s.useLayoutEffect(() => {
-        N.current?.ensureIsInPosition();
-    }, [C.length]);
-    let R = s.useCallback(
+    l.useLayoutEffect(() => {
+        v.current?.ensureIsInPosition();
+    }, [E.length]);
+    let P = l.useCallback(
             (e) => {
-                let t = 0 === v ? e : (e - 8 * (v - 1)) / v;
-                c.EB(t, g.R8.CAMERA_PREVIEW);
+                let t = 0 === _ ? e : (e - 8 * (_ - 1)) / _;
+                c.EB(t, A.R8.CAMERA_PREVIEW);
             },
-            [v],
+            [_],
         ),
-        O = s.useCallback(
+        O = l.useCallback(
             (e, t) => {
-                b(t);
+                j(t);
             },
-            [b],
+            [j],
         );
     return (0, i.jsx)("div", {
-        className: m.kL,
+        className: x.kL,
         children: (0, i.jsx)(u.S, {
-            position: I,
+            position: N,
             id: 0,
-            width: y,
-            ref: N,
+            width: R,
+            ref: v,
             onMove: O,
-            onResize: R,
+            onResize: P,
             maxX: t,
-            maxY: l,
-            edgeOffsetTop: S,
+            maxY: a,
+            edgeOffsetTop: I,
             edgeOffsetBottom: 70,
             edgeOffsetLeft: 16,
             edgeOffsetRight: 16,
-            resizeConfig: j,
+            resizeConfig: S,
             children: (0, i.jsx)("div", {
-                className: m.iA,
-                children: C.map((e) =>
+                className: x.iA,
+                children: E.map((e) =>
                     (0, i.jsx)(
-                        A.Ay,
+                        p.Ay,
                         {
                             participant: e,
-                            channel: x,
+                            channel: f,
                             onContextMenu: n,
-                            className: r()(m.Vs, _.a8),
-                            fit: A.Yl.COVER,
+                            className: s()(x.Vs, g.a8),
+                            fit: p.Yl.COVER,
                             inCall: !0,
                             popoutType: d.N.NO_POPOUT,
                             width: 160,
-                            onClick: E,
+                            onClick: y,
                         },
                         e.id,
                     ),

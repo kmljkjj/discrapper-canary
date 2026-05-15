@@ -1,47 +1,46 @@
-"use strict";
-n.d(t, { A: () => p, x: () => A });
-var i,
-    s = n(627968),
-    l = n(64700),
-    r = n(503698),
-    a = n.n(r),
-    o = n(397927),
-    c = n(765671),
-    d = n(401685),
-    u = n(919706),
-    h = n(678536),
-    A = (((i = {})[(i.TOP = 0)] = "TOP"), (i[(i.BOTTOM = 1)] = "BOTTOM"), i);
-function m(e) {
+t.d(n, { A: () => m, x: () => h });
+var l,
+    i = t(627968),
+    a = t(64700),
+    s = t(503698),
+    r = t.n(s),
+    o = t(187322),
+    c = t(765671),
+    u = t(401685),
+    d = t(919706),
+    A = t(499997),
+    h = (((l = {})[(l.TOP = 0)] = "TOP"), (l[(l.BOTTOM = 1)] = "BOTTOM"), l);
+function p(e) {
     let {
-            disableGradients: t = !1,
-            renderHeader: n,
-            renderBottomLeft: i,
-            renderBottomCenter: r,
-            renderBottomRight: a,
-            renderCenter: u,
+            disableGradients: n = !1,
+            renderHeader: t,
+            renderBottomLeft: l,
+            renderBottomCenter: s,
+            renderBottomRight: r,
+            renderCenter: d,
         } = e,
-        A = l.useRef(null),
-        { width: m, ref: p } = (0, c.Ay)(),
-        g = (0, d.bf)(m);
-    return (0, s.jsx)(o.xpW, {
-        containerRef: A,
-        children: (0, s.jsxs)("div", {
-            className: h._v,
-            ref: A,
+        h = a.useRef(null),
+        { width: p, ref: m } = (0, c.Ay)(),
+        g = (0, u.bf)(p);
+    return (0, i.jsx)(o.xp, {
+        containerRef: h,
+        children: (0, i.jsxs)("div", {
+            className: A._v,
+            ref: h,
             children: [
-                0 !== t && !0 !== t && (0, s.jsx)("div", { className: h.aw }),
-                1 !== t && !0 !== t && (0, s.jsx)("div", { className: h.YA }),
-                (0, s.jsx)("div", { className: h.K1, children: n?.() }),
-                u?.(),
-                (0, s.jsx)(d.Ay.Provider, {
+                0 !== n && !0 !== n && (0, i.jsx)("div", { className: A.aw }),
+                1 !== n && !0 !== n && (0, i.jsx)("div", { className: A.YA }),
+                (0, i.jsx)("div", { className: A.K1, children: t?.() }),
+                d?.(),
+                (0, i.jsx)(u.Ay.Provider, {
                     value: g,
-                    children: (0, s.jsxs)("div", {
-                        className: h.q6,
-                        ref: p,
+                    children: (0, i.jsxs)("div", {
+                        className: A.q6,
+                        ref: m,
                         children: [
-                            (0, s.jsx)("div", { className: h.i$, children: i?.() }),
-                            (0, s.jsx)("div", { className: h.Kz, children: r?.() }),
-                            (0, s.jsx)("div", { className: h.i$, children: a?.() }),
+                            (0, i.jsx)("div", { className: A.i$, children: l?.() }),
+                            (0, i.jsx)("div", { className: A.Kz, children: s?.() }),
+                            (0, i.jsx)("div", { className: A.i$, children: r?.() }),
                         ],
                     }),
                 }),
@@ -49,32 +48,32 @@ function m(e) {
         }),
     });
 }
-function p(e) {
+function m(e) {
     let {
-        screenMessage: t,
-        onDoubleClick: n,
-        onActive: i,
-        onForceIdle: l,
-        idle: r,
+        screenMessage: n,
+        onDoubleClick: t,
+        onActive: l,
+        onForceIdle: a,
+        idle: s,
         children: o,
         renderChatToasts: c,
-        renderVoiceChannelEffects: d,
-        style: A,
-        ...p
+        renderVoiceChannelEffects: u,
+        style: h,
+        ...m
     } = e;
-    return (0, s.jsxs)("div", {
-        className: a()(h.zr, { [h.N7]: r }),
-        style: A,
-        onMouseMove: i,
-        onMouseDown: i,
-        onMouseLeave: l,
-        onDoubleClick: n,
+    return (0, i.jsxs)("div", {
+        className: r()(A.zr, { [A.N7]: s }),
+        style: h,
+        onMouseMove: l,
+        onMouseDown: l,
+        onMouseLeave: a,
+        onDoubleClick: t,
         children: [
             o,
-            null != t ? (0, s.jsx)(u.A, { size: "large", ...t }) : null,
-            (0, s.jsx)(m, { ...p }),
+            null != n ? (0, i.jsx)(d.A, { size: "large", ...n }) : null,
+            (0, i.jsx)(p, { ...m }),
             c?.(),
-            d?.(),
+            u?.(),
         ],
     });
 }

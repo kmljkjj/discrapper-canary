@@ -1,37 +1,35 @@
 "use strict";
-n.d(t, { Ay: () => _, JF: () => c, gA: () => l });
-var r = n(627968),
-    i = n(64700),
-    a = n(817363),
-    s = n(693591),
-    o = n(985018);
+n.d(t, { Ay: () => d, JF: () => u, gA: () => l });
+var i = n(627968),
+    r = n(64700),
+    s = n(780777),
+    a = n(693591),
+    o = n(375708);
 function l() {
     return [{ name: o.intl.string(o.t["Sp2NF+"]), extensions: ["jpg", "jpeg", "jfif", "png", "gif", "webp", "avif"] }];
 }
-function u(e, t) {
+function u(e, t, n) {
     if (null != e) {
-        let n = new FileReader();
-        (n.onload = (n) => {
-            "string" == typeof n.target?.result && t(n.target.result, e);
+        let i = new FileReader();
+        (i.onload = (i) => {
+            "string" == typeof i.target?.result &&
+                ((i) => {
+                    if (e.type === a.a.MP4) return t(i, e);
+                    let r = new Image();
+                    (r.src = i),
+                        (r.onload = () => {
+                            t(i, e);
+                        }),
+                        (r.onerror = () => {
+                            n();
+                        });
+                })(i.target.result);
         }),
-            n.readAsDataURL(e);
+            i.readAsDataURL(e);
     }
 }
-function c(e, t, n) {
-    u(e, (r) => {
-        if (e.type === s.a.MP4) return t(r, e);
-        let i = new Image();
-        (i.src = r),
-            (i.onload = () => {
-                t(r, e);
-            }),
-            (i.onerror = () => {
-                n();
-            });
-    });
-}
-class d extends i.PureComponent {
-    _ref = i.createRef();
+class c extends r.PureComponent {
+    _ref = r.createRef();
     _isMounted = !1;
     static defaultProps = { multiple: !0, tabIndex: -1, maxFileSizeBytes: 1 / 0 };
     componentDidMount() {
@@ -40,13 +38,13 @@ class d extends i.PureComponent {
     handleFileChange = (e) => {
         let { onFileSizeError: t, maxFileSizeBytes: n } = this.props;
         if ((e.stopPropagation(), e.preventDefault(), null != e.currentTarget.files))
-            for (let r = 0; r < e.currentTarget.files.length; r++) {
-                let i = e.currentTarget.files[r];
-                if (i.size > n) {
-                    t?.(n, i.size);
+            for (let i = 0; i < e.currentTarget.files.length; i++) {
+                let r = e.currentTarget.files[i];
+                if (r.size > n) {
+                    t?.(n, r.size);
                     continue;
                 }
-                c(i, this.handleFileRead, this.handleFileError);
+                u(r, this.handleFileRead, this.handleFileError);
             }
     };
     activateUploadDialogue() {
@@ -57,22 +55,31 @@ class d extends i.PureComponent {
         this._isMounted && n(e, t);
     };
     handleFileError = async () => {
-        let { openUploadError: e } = await Promise.resolve().then(n.bind(n, 23658));
+        let { openUploadError: e } = await Promise.resolve().then(n.bind(n, 494921));
         e({ title: o.intl.string(o.t["0egKg3"]), help: o.intl.string(o.t["7PnXqu"]) });
     };
     render() {
-        let { multiple: e, disabled: t, className: n, tabIndex: i, "aria-label": s, filters: o } = this.props;
-        return (0, r.jsx)(a.A, {
-            ref: this._ref,
-            onClick: this.props.onClick,
-            onChange: this.handleFileChange,
-            filters: o ?? l(),
+        let {
             multiple: e,
             disabled: t,
             className: n,
-            tabIndex: i,
-            "aria-label": s,
+            tabIndex: r,
+            "aria-label": a,
+            "aria-hidden": o,
+            filters: u,
+        } = this.props;
+        return (0, i.jsx)(s.A, {
+            ref: this._ref,
+            onClick: this.props.onClick,
+            onChange: this.handleFileChange,
+            filters: u ?? l(),
+            multiple: e,
+            disabled: t,
+            className: n,
+            tabIndex: r,
+            "aria-label": a,
+            "aria-hidden": o,
         });
     }
 }
-let _ = d;
+let d = c;

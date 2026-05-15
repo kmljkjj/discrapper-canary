@@ -1,60 +1,64 @@
-r.d(e, { default: () => m });
-var s = r(627968);
-r(64700);
-var i = r(158954),
-    n = r(397927),
-    o = r(725177),
-    l = r(975571),
-    c = r(652215),
-    a = r(857266),
-    d = r(985018),
-    x = r(461162);
-function m(t) {
-    let { transitionState: e, onClose: r } = t;
-    return (0, s.jsx)(i.Modal, {
-        transitionState: e,
-        title: d.intl.string(d.t.pWLGnF),
-        subtitle: d.intl.string(d.t.WKxo8n),
+e.d(r, { default: () => j });
+var i = e(627968);
+e(64700);
+var s = e(189213),
+    n = e(214947),
+    l = e(534890),
+    o = e(26137),
+    c = e(625903),
+    a = e(834730),
+    d = e(230837),
+    m = e(975571),
+    x = e(652215),
+    u = e(99206),
+    h = e(375708),
+    C = e(643833);
+function j(t) {
+    let { transitionState: r, onClose: e } = t;
+    return (0, i.jsx)(s.Modal, {
+        transitionState: r,
+        title: h.intl.string(h.t.pWLGnF),
+        subtitle: h.intl.string(h.t.WKxo8n),
         actions: [],
-        onClose: r,
-        children: (0, s.jsx)(u, { onClose: r }),
+        onClose: e,
+        children: (0, i.jsx)(v, { onClose: e }),
     });
 }
-function u(t) {
-    let { onClose: e } = t,
-        r = [
-            { icon: (0, s.jsx)(n.$yI, { size: "refresh_sm", color: "currentColor" }), text: d.intl.string(d.t.vXBrdg) },
+function v(t) {
+    let { onClose: r } = t,
+        e = [
+            { icon: (0, i.jsx)(n.$, { size: "refresh_sm", color: "currentColor" }), text: h.intl.string(h.t.vXBrdg) },
             {
-                icon: (0, s.jsx)(n.oyn, { size: "refresh_sm", color: "currentColor" }),
-                text: d.intl.string(d.t["i7/QHN"]),
+                icon: (0, i.jsx)(l.o, { size: "refresh_sm", color: "currentColor" }),
+                text: h.intl.string(h.t["i7/QHN"]),
             },
-            { icon: (0, s.jsx)(n.rMq, { size: "refresh_sm", color: "currentColor" }), text: d.intl.string(d.t.ZmBfKJ) },
+            { icon: (0, i.jsx)(o.r, { size: "refresh_sm", color: "currentColor" }), text: h.intl.string(h.t.ZmBfKJ) },
             {
-                icon: (0, s.jsx)(n.Zes, { size: "refresh_sm", color: "currentColor" }),
-                text: d.intl.format(d.t.wBlJCr, {
-                    recentActivityURL: l.A.getArticleURL(c.MVz.MEMBER_LIST_ACTIVITY_FEED),
+                icon: (0, i.jsx)(c.Z, { size: "refresh_sm", color: "currentColor" }),
+                text: h.intl.format(h.t.wBlJCr, {
+                    recentActivityURL: m.A.getArticleURL(x.MVz.MEMBER_LIST_ACTIVITY_FEED),
                     handleActivityPrivacyClick: () => {
-                        e(), (0, o.A)(a.J.ACTIVITY_PRIVACY);
+                        r(), (0, d.A)(u.J.ACTIVITY_PRIVACY);
                     },
                 }),
             },
         ];
-    return (0, s.jsxs)("div", {
-        className: x.Q2,
+    return (0, i.jsxs)("div", {
+        className: C.Q2,
         children: [
-            (0, s.jsx)(n.Text, { variant: "text-sm/semibold", children: d.intl.string(d.t.YjqBbg) }),
-            r.map((t, e) => {
-                let { icon: r, text: i } = t;
-                return (0, s.jsxs)(
+            (0, i.jsx)(a.E, { variant: "text-sm/semibold", children: h.intl.string(h.t.YjqBbg) }),
+            e.map((t, r) => {
+                let { icon: e, text: s } = t;
+                return (0, i.jsxs)(
                     "div",
                     {
-                        className: x.Gc,
+                        className: C.Gc,
                         children: [
-                            (0, s.jsx)("div", { className: x.qS, children: r }),
-                            (0, s.jsx)(n.Text, { variant: "text-sm/medium", color: "text-muted", children: i }),
+                            (0, i.jsx)("div", { className: C.qS, children: e }),
+                            (0, i.jsx)(a.E, { variant: "text-sm/medium", color: "text-muted", children: s }),
                         ],
                     },
-                    `memberlist-learn-more-note-${e}`,
+                    `memberlist-learn-more-note-${r}`,
                 );
             }),
         ],

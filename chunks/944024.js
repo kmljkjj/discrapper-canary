@@ -4,6 +4,6 @@ var t = Math.ceil,
 e.exports =
     Math.trunc ||
     function (e) {
-        var r = +e;
-        return (r > 0 ? n : t)(r);
+        var i = +e;
+        return (i > 0 ? n : t)(i);
     };

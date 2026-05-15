@@ -1,26 +1,26 @@
 "use strict";
-let r, i;
+let i, r;
 n.r(t),
     n.d(t, {
         encryptAndStoreTokens: () => D,
         getAnalyticsToken: () => T,
-        getToken: () => y,
-        hideToken: () => b,
+        getToken: () => S,
+        hideToken: () => v,
         init: () => I,
-        removeAnalyticsToken: () => O,
+        removeAnalyticsToken: () => b,
         removeToken: () => R,
-        setAnalyticsToken: () => S,
-        setToken: () => v,
-        showToken: () => N,
+        setAnalyticsToken: () => N,
+        setToken: () => y,
+        showToken: () => O,
     });
-var a = n(506774),
-    s = n(818348);
+var s = n(506774),
+    a = n(818348);
 let o = "dQw4w9WgXcQ:",
     l = "__analytics__";
 function u(e) {
     return [...e].reduce((e, t) => {
-        let [n, r] = t;
-        return (e[n] = r), e;
+        let [n, i] = t;
+        return (e[n] = i), e;
     }, {});
 }
 let c = null,
@@ -28,17 +28,17 @@ let c = null,
 null != d && (c = d.safeStorage);
 let _ = !1,
     f = {},
-    p = {},
-    h = !1,
-    m = !1;
-function g() {
-    if (h) {
-        a.w.remove(s.il), a.w.remove(s.zy);
+    h = {},
+    p = !1,
+    E = !1;
+function m() {
+    if (p) {
+        s.w.remove(a.il), s.w.remove(a.zy);
         return;
     }
-    null != i ? a.w.set(s.il, i) : a.w.remove(s.il), a.w.set(s.zy, p);
+    null != r ? s.w.set(a.il, r) : s.w.remove(a.il), s.w.set(a.zy, h);
 }
-function E(e) {
+function g(e) {
     return null == e || 0 === e.length
         ? { decryptedToken: null, wasEncrypted: !1 }
         : c?.isEncryptionAvailable() && e.startsWith(o)
@@ -49,63 +49,63 @@ function A(e) {
     return c?.isEncryptionAvailable() && !e.startsWith(o) ? `${o}${c.encryptString(e)}` : e;
 }
 function I() {
-    if (m) return;
-    (i = a.w.get(s.il)), (p = a.w.get(s.zy) || {});
-    let { decryptedToken: e, wasEncrypted: t } = E(i);
+    if (E) return;
+    (r = s.w.get(a.il)), (h = s.w.get(a.zy) || {});
+    let { decryptedToken: e, wasEncrypted: t } = g(r);
     (_ = t),
-        (r = e),
+        (i = e),
         (f = u(
-            Object.entries(p)
+            Object.entries(h)
                 .map((e) => {
                     let [t, n] = e,
-                        { decryptedToken: r, wasEncrypted: i } = E(n);
-                    return (_ = i || _), [t, r];
+                        { decryptedToken: i, wasEncrypted: r } = g(n);
+                    return (_ = r || _), [t, i];
                 })
                 .filter((e) => {
                     let [t, n] = e;
                     return null != n;
                 }),
         )),
-        (m = !0);
+        (E = !0);
 }
 function T() {
-    return y(l);
-}
-function y(e) {
-    return (I(), null != e) ? f[e] : r;
+    return S(l);
 }
 function S(e) {
+    return (I(), null != e) ? f[e] : i;
+}
+function N(e) {
     null == e ? R(l) : C(e, l);
 }
-function v(e, t) {
-    null == e ? R(t) : ((r = e), C(e, t));
+function y(e, t) {
+    null == e ? R(t) : ((i = e), C(e, t));
 }
 function C(e, t) {
-    null != t && (f[t] = e), _ ? D() : ((i = r), (p = f), g());
+    null != t && (f[t] = e), _ ? D() : ((r = i), (h = f), m());
 }
-function b() {
-    h || ((h = !0), g());
-}
-function N() {
-    h && ((h = !1), g());
-}
-function R(e) {
-    let t = r;
-    return null != e && ((t = f[e]), delete f[e], delete p[e]), t === r && ((r = null), (i = null)), g(), null != t;
+function v() {
+    p || ((p = !0), m());
 }
 function O() {
+    p && ((p = !1), m());
+}
+function R(e) {
+    let t = i;
+    return null != e && ((t = f[e]), delete f[e], delete h[e]), t === i && ((i = null), (r = null)), m(), null != t;
+}
+function b() {
     return R(l);
 }
 function D() {
     c?.isEncryptionAvailable()
-        ? (null != r && (i = A(r)),
-          (p = u(
+        ? (null != i && (r = A(i)),
+          (h = u(
               Object.entries(f).map((e) => {
                   let [t, n] = e;
                   return [t, A(n)];
               }),
           )),
           (_ = !0))
-        : ((i = r), (p = f)),
-        g();
+        : ((r = i), (h = f)),
+        m();
 }

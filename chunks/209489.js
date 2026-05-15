@@ -1,20 +1,20 @@
 "use strict";
-let r;
-n.d(t, { A: () => s }), n(321073), (r = n(4472).A);
-let i = [],
-    a = !1,
-    s = {
-        ...r,
+let i;
+n.d(t, { A: () => a }), n(321073), (i = n(4472).A);
+let r = [],
+    s = !1,
+    a = {
+        ...i,
         awaitOnline: () =>
             new Promise((e) => {
-                if (r.isOnline()) return e();
+                if (i.isOnline()) return e();
                 {
-                    if ((i.push(e), a)) return;
-                    a = !0;
+                    if ((r.push(e), s)) return;
+                    s = !0;
                     let t = () => {
-                        i.forEach((e) => e()), (i.length = 0), (a = !1), r.removeOnlineCallback(t);
+                        r.forEach((e) => e()), (r.length = 0), (s = !1), i.removeOnlineCallback(t);
                     };
-                    r.addOnlineCallback(t);
+                    i.addOnlineCallback(t);
                 }
             }),
     };

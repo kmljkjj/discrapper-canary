@@ -1,46 +1,45 @@
 "use strict";
-n.d(t, { LS: () => _, LW: () => d, Om: () => u, Uk: () => s, bM: () => c });
-var r = n(499867),
+n.d(t, { LS: () => h, LW: () => d, Om: () => c, Uk: () => a, bM: () => u });
+var l = n(499867),
     i = n(265690),
-    a = n(121894);
-let s = -1,
-    o = Object.freeze({
+    s = n(121894);
+let a = -1,
+    r = Object.freeze({
         inspectedExpressionPosition: { rowIndex: 0, columnIndex: 0 },
+        hasInteracted: !1,
         activeCategoryIndex: 0,
         searchPlaceholder: null,
         bottomPosition: null,
     });
-function l() {
-    let e = (0, i.h)()((0, r.eh)((e) => o)),
-        t = () => e.getState(),
-        n = (t, n, r) => {
-            (0, a.r)(() => e.setState({ inspectedExpressionPosition: { rowIndex: n, columnIndex: t, source: r } }));
-        },
-        s = (t) => {
-            (0, a.r)(() => e.setState({ activeCategoryIndex: t }));
-        },
-        l = (t) => {
-            (0, a.r)(() => e.setState({ searchPlaceholder: t }));
-        },
-        u = (t) => {
-            (0, a.r)(() => e.setState({ bottomPosition: t }));
-        },
-        c = () => {
-            (0, a.r)(() => e.setState(o));
-        },
-        d = (t, n) => e.subscribe(t, n);
+function o() {
+    let e = (0, i.h)()((0, l.eh)((e) => r));
     return {
         useStore: e,
-        getState: t,
-        subscribe: d,
-        setInspectedExpressionPosition: n,
-        setActiveCategoryIndex: s,
-        setSearchPlaceholder: l,
-        resetStoreState: c,
-        setBottomPosition: u,
+        getState: () => e.getState(),
+        subscribe: (t, n) => e.subscribe(t, n),
+        setInspectedExpressionPosition: (t, n, l) => {
+            (0, s.r)(() =>
+                e.setState({
+                    inspectedExpressionPosition: { rowIndex: n, columnIndex: t, source: l },
+                    hasInteracted: !0,
+                }),
+            );
+        },
+        setActiveCategoryIndex: (t) => {
+            (0, s.r)(() => e.setState({ activeCategoryIndex: t }));
+        },
+        setSearchPlaceholder: (t) => {
+            (0, s.r)(() => e.setState({ searchPlaceholder: t }));
+        },
+        resetStoreState: () => {
+            (0, s.r)(() => e.setState(r));
+        },
+        setBottomPosition: (t) => {
+            (0, s.r)(() => e.setState({ bottomPosition: t }));
+        },
     };
 }
-let u = l(),
-    c = l(),
-    d = l(),
-    _ = l();
+let c = o(),
+    u = o(),
+    d = o(),
+    h = o();

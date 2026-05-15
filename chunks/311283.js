@@ -1,8 +1,8 @@
-n.d(t, { A: () => d });
+n.d(t, { A: () => u });
 var i = n(64700);
 let l = new Map(),
-    a = new Map(),
-    s = new Map();
+    s = new Map(),
+    a = new Map();
 function r(e) {
     return l.has(e) || l.set(e, !1), l.get(e);
 }
@@ -10,22 +10,22 @@ function o(e) {
     var t;
     let n, i, l, r;
     return (
-        a.has(e) ||
-            (a.set(e, new Set()),
-            s.set(
+        s.has(e) ||
+            (s.set(e, new Set()),
+            a.set(
                 e,
                 ((t = e),
                 (n = (e) => {
-                    c(e.shiftKey, t);
+                    d(e.shiftKey, t);
                 }),
                 (i = (e) => {
-                    c(e.shiftKey, t);
+                    d(e.shiftKey, t);
                 }),
                 (l = (e) => {
-                    c(e.shiftKey, t);
+                    d(e.shiftKey, t);
                 }),
                 (r = () => {
-                    c(!1, t);
+                    d(!1, t);
                 }),
                 t.addEventListener("keydown", n),
                 t.addEventListener("keyup", i),
@@ -38,13 +38,13 @@ function o(e) {
                         t.removeEventListener("blur", r);
                 }),
             )),
-        a.get(e)
+        s.get(e)
     );
 }
-function c(e, t) {
+function d(e, t) {
     e !== r(t) && (l.set(t, e), o(t).forEach((t) => t(e)));
 }
-function d() {
+function u() {
     let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : window,
         [t, n] = i.useState(r(e));
     return (
@@ -55,7 +55,7 @@ function d() {
             return (
                 o(e).add(t),
                 () => {
-                    o(e).delete(t), 0 === o(e).size && (s.get(e)?.(), s.delete(e), a.delete(e), l.delete(e));
+                    o(e).delete(t), 0 === o(e).size && (a.get(e)?.(), a.delete(e), s.delete(e), l.delete(e));
                 }
             );
         }, [e]),

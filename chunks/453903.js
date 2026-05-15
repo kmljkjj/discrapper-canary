@@ -1,41 +1,43 @@
 "use strict";
-n.d(t, { $: () => y, o: () => I });
-var r = n(627968),
-    i = n(64700),
-    a = n(985623),
-    s = n.n(a),
+n.d(t, { $: () => y, o: () => S });
+var i = n(627968),
+    r = n(64700),
+    s = n(985623),
+    a = n.n(s),
     o = n(296489),
     l = n.n(o),
     u = n(340287),
     c = n(621466),
-    d = n(158954),
-    _ = n(451988),
-    f = n(192308),
-    p = n(750506),
-    h = n(267102),
-    m = n(712687),
-    g = n(728458),
-    E = n(292036),
-    A = n(652215);
-let I = Symbol("POPOUT_PREVENT_CLOSE"),
-    T = new Set(["Spacebar", " ", "Enter"]);
-class y extends i.Component {
+    d = n(707554),
+    _ = n(83379),
+    f = n(623646),
+    h = n(451988),
+    p = n(192308),
+    E = n(750506),
+    m = n(267102),
+    g = n(712687),
+    A = n(38405),
+    I = n(292036),
+    T = n(652215);
+let S = Symbol("POPOUT_PREVENT_CLOSE"),
+    N = new Set(["Spacebar", " ", "Enter"]);
+class y extends r.Component {
     static defaultProps = {
         autoInvert: !1,
         nudgeAlignIntoViewport: !1,
         spacing: 0,
-        loadingComponent: (0, r.jsx)(E.s, {}),
+        loadingComponent: (0, i.jsx)(I.s, {}),
         closeOnClickOutside: !0,
     };
-    domElementRef = i.createRef();
-    layerRef = i.createRef();
-    popoutRef = i.createRef();
+    domElementRef = r.createRef();
+    layerRef = r.createRef();
+    popoutRef = r.createRef();
     resizeObserver;
     popoutId = `popout_${l()()}`;
-    loadingTimeout = new _.Ep();
-    validClickTimeout = new _.Ep();
+    loadingTimeout = new h.Ep();
+    validClickTimeout = new h.Ep();
     isValidClickStart = !1;
-    static contextType = h.Ay;
+    static contextType = m.Ay;
     state = {
         renderedPosition: this.props.position,
         shouldShowPopout: !1,
@@ -73,12 +75,12 @@ class y extends i.Component {
         let e = this.props.targetElementRef?.current;
         if (!(0, c.vq)(e)) {
             let e = Error("Popout cannot find DOM node");
-            return console.error(e), g.A.captureException(e), null;
+            return console.error(e), A.A.captureException(e), null;
         }
         return e;
     }
     get closeAction() {
-        return this.props.ignoreModalClicks ? A.jej.POPOUT_CLOSE_AFTER_MODALS : A.jej.POPOUT_CLOSE;
+        return this.props.ignoreModalClicks ? T.jej.POPOUT_CLOSE_AFTER_MODALS : T.jej.POPOUT_CLOSE;
     }
     setupShowPopout() {
         let e = this.getDomElement();
@@ -101,8 +103,8 @@ class y extends i.Component {
             e.ownerDocument?.removeEventListener("mouseup", this.handleDocumentMouseUp, !0),
             e.ownerDocument?.removeEventListener("scroll", this.handleScroll, !0),
             e.ownerDocument?.removeEventListener("scroll", this.handleStickyScroll, !0)),
-            this.context.windowDispatch.unsubscribe(A.jej.POPOUT_CLOSE, this.handleEscapeClose),
-            this.context.windowDispatch.unsubscribe(A.jej.POPOUT_CLOSE_AFTER_MODALS, this.handleEscapeClose),
+            this.context.windowDispatch.unsubscribe(T.jej.POPOUT_CLOSE, this.handleEscapeClose),
+            this.context.windowDispatch.unsubscribe(T.jej.POPOUT_CLOSE_AFTER_MODALS, this.handleEscapeClose),
             this.resizeObserver?.disconnect();
     }
     componentWillUnmount() {
@@ -114,7 +116,7 @@ class y extends i.Component {
     render() {
         let { children: e, useMouseEnter: t } = this.props,
             n = this.shouldShowPopout(this.props, this.state);
-        return (0, r.jsxs)(i.Fragment, {
+        return (0, i.jsxs)(r.Fragment, {
             children: [
                 e(
                     {
@@ -127,7 +129,7 @@ class y extends i.Component {
                     },
                     { isShown: n, position: this.state.renderedPosition },
                 ),
-                (0, r.jsx)(d.Fmo, { forceLevel: 2, children: this.renderLayer() }),
+                (0, i.jsx)(d.F, { forceLevel: 2, children: this.renderLayer() }),
             ],
         });
     }
@@ -137,22 +139,23 @@ class y extends i.Component {
                 position: e,
                 align: t,
                 nudgeAlignIntoViewport: n,
-                useRawTargetDimensions: i,
+                avoidancePadding: r,
+                useRawTargetDimensions: s,
                 spacing: a,
-                offset: s,
-                autoInvert: o,
-                fixed: l,
-                positionKey: u,
-                disablePointerEvents: c,
-                layerContext: _,
-                clickTrap: f = !1,
+                offset: o,
+                autoInvert: l,
+                fixed: u,
+                positionKey: c,
+                disablePointerEvents: d,
+                layerContext: h,
+                clickTrap: p = !1,
             } = this.props,
-            { resizeKey: h, isLoading: m, shouldShowLoadingState: g } = this.state;
-        return m && !g
+            { resizeKey: m, isLoading: g, shouldShowLoadingState: A } = this.state;
+        return g && !A
             ? null
-            : (0, r.jsx)(d.Wdr, {
-                  layerContext: _ ?? p.uY,
-                  children: (0, r.jsx)(d.QCO, {
+            : (0, i.jsx)(_.Wd, {
+                  layerContext: h ?? E.uY,
+                  children: (0, i.jsx)(f.Q, {
                       ref: this.layerRef,
                       onMount: this.handlePopoutShow,
                       onUnmount: this.handlePopoutHide,
@@ -161,24 +164,25 @@ class y extends i.Component {
                       position: e,
                       align: t,
                       nudgeAlignIntoViewport: n,
-                      useRawTargetDimensions: i,
+                      avoidancePadding: r,
+                      useRawTargetDimensions: s,
                       spacing: a,
-                      offset: s,
-                      autoInvert: o,
-                      fixed: l,
-                      positionKey: u ?? String(h),
-                      disablePointerEvents: c,
+                      offset: o,
+                      autoInvert: l,
+                      fixed: u,
+                      positionKey: c ?? String(m),
+                      disablePointerEvents: d,
                       onPositionChange: this.handlePopoutPositionChange,
-                      clickTrap: f,
+                      clickTrap: p,
                       children: this.renderPopout,
                   }),
               });
     }
     handlePopoutShow = () => {
-        this.context.windowDispatch.dispatch(A.jej.POPOUT_SHOW, this.props.popoutKey);
+        this.context.windowDispatch.dispatch(T.jej.POPOUT_SHOW, this.props.popoutKey);
     };
     handlePopoutHide = () => {
-        this.context.windowDispatch.dispatch(A.jej.POPOUT_HIDE, this.props.popoutKey);
+        this.context.windowDispatch.dispatch(T.jej.POPOUT_HIDE, this.props.popoutKey);
     };
     handleSetPopoutRef = (e) => {
         let t = e?.ownerDocument.defaultView;
@@ -203,15 +207,15 @@ class y extends i.Component {
         this.state.shouldShowPopout !== e && this.setState({ shouldShowPopout: e });
     }
     close = (e, t) => {
-        let { onRequestClose: n, shouldShow: r } = this.props;
-        n?.(e, t) === I || (null == r && this.toggleShow(!1));
+        let { onRequestClose: n, shouldShow: i } = this.props;
+        n?.(e, t) === S || (null == i && this.toggleShow(!1));
     };
     handleClick = (e) => {
-        let { onShiftClick: t, shouldShow: n, onRequestOpen: r, onRequestClose: i } = this.props;
+        let { onShiftClick: t, shouldShow: n, onRequestOpen: i, onRequestClose: r } = this.props;
         if (e?.shiftKey && null != t) return void t(e);
-        let a = null != n;
-        (a ? n : this.state.shouldShowPopout) ? i?.(e?.nativeEvent, "user:explicit") : r?.(),
-            a ||
+        let s = null != n;
+        (s ? n : this.state.shouldShowPopout) ? r?.(e?.nativeEvent, "user:explicit") : i?.(),
+            s ||
                 this.setState((e) => {
                     let { shouldShowPopout: t } = e;
                     return { shouldShowPopout: !t };
@@ -234,15 +238,15 @@ class y extends i.Component {
         }
     };
     handleKeyboardPreload = (e) => {
-        T.has(e.key) && this.handlePreload();
+        N.has(e.key) && this.handlePreload();
     };
     handleDocumentMouseDown = (e) => {
         let { ignoreModalClicks: t, closeOnClickOutside: n } = this.props;
         if (!1 === n) return;
-        let r = e.target,
-            i = this.domElementRef.current;
-        if (null != i) {
-            if ((0, d.HG$)(i, r) || m.A.isOpen() || (t && (0, f.hasAnyModalOpen)())) return;
+        let i = e.target,
+            r = this.domElementRef.current;
+        if (null != r) {
+            if ((0, f.H)(r, i) || g.A.isOpen() || (t && (0, p.hasAnyModalOpen)())) return;
             this.isValidClickStart = !0;
         }
     };
@@ -259,18 +263,18 @@ class y extends i.Component {
     handleEscapeClose = (e) => {
         this.close(e, "user:escape");
     };
-    handleStickyScroll = s()(() => {
+    handleStickyScroll = a()(() => {
         requestAnimationFrame(() => {
             let e = this.popoutRef.current;
             null == e ||
                 (this.shouldShowPopout(this.props, this.state) &&
-                    (S(e) || this.close(void 0, "system:viewport_exit"), this.layerRef.current?.updatePosition()));
+                    (C(e) || this.close(void 0, "system:viewport_exit"), this.layerRef.current?.updatePosition()));
         });
     }, 1e3 / 60);
 }
-let S = (e) => {
+let C = (e) => {
     let t = e.getBoundingClientRect(),
         n = e.ownerDocument?.defaultView?.innerHeight ?? 0,
-        r = e.ownerDocument?.defaultView?.innerWidth ?? 0;
-    return t.top < n && t.bottom > 0 && t.left < r && t.right > 0;
+        i = e.ownerDocument?.defaultView?.innerWidth ?? 0;
+    return t.top < n && t.bottom > 0 && t.left < i && t.right > 0;
 };

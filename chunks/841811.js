@@ -1,111 +1,114 @@
-n.d(t, { default: () => N, j: () => b });
+n.d(t, { default: () => f, j: () => S });
 var i = n(627968),
-    s = n(64700),
-    l = n(158954),
-    r = n(311907),
-    a = n(397927),
-    o = n(702805),
-    d = n(198982),
-    h = n(155718),
-    u = n(845202),
-    c = n(86944),
-    g = n(734057),
-    p = n(71393),
-    m = n(488926),
+    l = n(64700);
+if (21552 == n.j) var s = n(189213);
+var r = n(17928);
+if (21552 == n.j) var a = n(834730);
+if (21552 == n.j) var o = n(451394);
+var h = n(702805),
+    d = n(845584),
+    u = n(155718),
+    c = n(47167),
+    g = n(517622),
+    p = n(86944),
+    m = n(734057),
+    E = n(71393),
+    C = n(488926),
     A = n(233993),
-    C = n(737045),
-    E = n(985018),
-    I = n(69405);
-function b(e, t) {
-    return { id: e, type: t, deny: m.x3, allow: A.QY };
+    I = n(719366),
+    b = n(985018),
+    N = n(380174);
+function S(e, t) {
+    return { id: e, type: t, deny: C.x3, allow: A.QY };
 }
-function N(e) {
-    let { channelId: t, onClose: n, ...m } = e,
-        N = (0, r.bG)([g.A], () => g.A.getChannel(t)),
-        S = (0, r.bG)([p.A], () => p.A.getGuild(N?.getGuildId())),
-        [O, x] = s.useState(""),
-        [f, T] = s.useState({}),
-        [_, G] = s.useState(!1),
-        [v, U] = s.useState(null),
-        L = s.useRef(null),
-        { roles: R, members: M, getRichTag: y } = (0, c.K)(S, N, A.QY, O),
-        j = u.A.useSections({ roles: R, members: M });
-    if (null == N || null == S) return null;
-    let D = async () => {
-        G(!0);
+function f(e) {
+    let { channelId: t, onClose: n, ...C } = e,
+        f = (0, r.bG)([m.A], () => m.A.getChannel(t)),
+        O = (0, r.bG)([E.A], () => E.A.getGuild(f?.getGuildId())),
+        x = (0, c.Ay)(f),
+        [_, T] = l.useState(""),
+        [v, G] = l.useState({}),
+        [L, U] = l.useState(!1),
+        [R, M] = l.useState(null),
+        y = l.useRef(null),
+        { roles: j, members: D, getRichTag: P } = (0, p.K)(O, f, A.QY, _),
+        w = g.A.useSections({ roles: j, members: D });
+    if (null == f || null == O) return null;
+    let H = async () => {
+        U(!0);
         try {
             let e;
-            await ((e = Object.values(f)
+            await ((e = Object.values(v)
                 .filter((e) => {
                     let { row: t } = e;
                     return null != t.id;
                 })
                 .map((e) => {
                     let { row: t } = e;
-                    return t.rowType === C.T6.ROLE ? b(t.id, h.r2.ROLE) : b(t.id, h.r2.MEMBER);
+                    return t.rowType === I.T6.ROLE ? S(t.id, u.r2.ROLE) : S(t.id, u.r2.MEMBER);
                 })),
-            (0, o.R$)(N.id, e, !0)),
+            (0, h.R$)(f.id, e, !0)),
                 n();
         } catch (t) {
             let e = new d.LG(t);
-            G(!1), U(e);
+            U(!1), M(e);
         }
     };
-    return (0, i.jsx)(u.A.Provider, {
-        listRef: L,
-        query: O,
-        setQuery: x,
-        pendingAdditions: f,
-        setPendingAdditions: T,
-        roles: R,
-        members: M,
-        getRichTag: y,
-        children: (0, i.jsx)(l.Modal, {
-            ...m,
-            title: E.intl.string(E.t.dMJ3Y6),
+    return (0, i.jsx)(g.A.Provider, {
+        listRef: y,
+        query: _,
+        setQuery: T,
+        pendingAdditions: v,
+        setPendingAdditions: G,
+        roles: j,
+        members: D,
+        getRichTag: P,
+        children: (0, i.jsx)(s.Modal, {
+            ...C,
+            title: b.intl.string(b.t.dMJ3Y6),
             onClose: n,
             input: (0, i.jsxs)("div", {
                 children: [
-                    (0, i.jsxs)(a.Text, {
-                        className: I.HA,
+                    (0, i.jsxs)(a.E, {
+                        className: N.HA,
                         variant: "text-lg/normal",
                         color: "text-default",
-                        children: [(0, i.jsx)(a.qux, { className: I.p, size: "sm", color: "currentColor" }), N.name],
+                        children: [(0, i.jsx)(o.q, { className: N.p, size: "sm", color: "currentColor" }), x],
                     }),
-                    N.isGuildStageVoice() &&
-                        (0, i.jsx)(a.Text, {
+                    f.isGuildStageVoice() &&
+                        (0, i.jsx)(a.E, {
                             color: "text-default",
-                            className: I.h_,
+                            className: N.h_,
                             variant: "text-sm/normal",
-                            children: E.intl.string(E.t.f7VbhF),
+                            children: b.intl.string(b.t.f7VbhF),
                         }),
-                    (0, i.jsx)(u.A.SearchBox, { placeholderText: E.intl.string(E.t.iezLLn) }),
-                    (0, i.jsx)(a.Text, {
-                        className: I.W$,
+                    (0, i.jsx)(g.A.SearchBox, { placeholderText: b.intl.string(b.t.iezLLn) }),
+                    (0, i.jsx)(a.E, {
+                        className: N.W$,
                         variant: "text-xs/normal",
-                        children: E.intl.string(E.t.rwFx85),
+                        children: b.intl.string(b.t.rwFx85),
                     }),
-                    null != v
-                        ? (0, i.jsx)(a.Text, {
-                              className: I.W$,
+                    null != R
+                        ? (0, i.jsx)(a.E, {
+                              className: N.W$,
                               variant: "text-xs/normal",
                               color: "text-feedback-critical",
-                              children: v.getAnyErrorMessage(),
+                              children: R.getAnyErrorMessage(),
                           })
                         : null,
                 ],
             }),
             listProps: {
-                ref: L,
-                sectionHeight: u.A.SECTION_HEIGHT,
-                renderSection: u.A.renderSection,
-                rowHeight: u.A.ROW_HEIGHT,
-                renderRow: u.A.renderRow,
-                sections: j,
+                ref: y,
+                sectionHeight: g.A.SECTION_HEIGHT,
+                renderSection: g.A.renderSection,
+                rowHeight: g.A.ROW_HEIGHT,
+                renderRow: g.A.renderRow,
+                sections: w,
             },
             actions: [
-                { variant: "secondary", text: E.intl.string(E.t["ETE/oC"]), onClick: n },
-                { variant: "primary", text: E.intl.string(E.t.OYkgVk), onClick: D, loading: _ },
+                { variant: "secondary", text: b.intl.string(b.t["ETE/oC"]), onClick: n },
+                { variant: "primary", text: b.intl.string(b.t.OYkgVk), onClick: H, loading: L },
             ],
         }),
     });

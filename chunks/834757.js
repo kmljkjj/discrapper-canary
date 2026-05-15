@@ -1,17 +1,16 @@
 "use strict";
 n.d(t, { AO: () => _, Ee: () => c, nr: () => u });
-var r = n(311907),
-    i = n(52133),
+var i = n(17928),
+    r = n(52133),
+    s = n(765379),
     a = n(290863),
-    s = n(652215);
-function o(e) {
-    return e.type === s.$pd.PLAYING;
-}
-function l(e, t) {
-    return t.findActivity(e, o);
+    o = n(652215);
+function l(e) {
+    return e.type === o.$pd.PLAYING && !(0, s.A)(e);
 }
 function u(e, t) {
-    return null != e ? l(e.ownerId, t) : null;
+    var n;
+    return null != e ? ((n = e.ownerId), t.findActivity(n, l)) : null;
 }
 function c(e, t) {
     if (null == e) return null;
@@ -19,8 +18,8 @@ function c(e, t) {
     return null == n ? null : { id: n.application_id, name: n.name };
 }
 function d(e, t) {
-    return e === t || (null != e && null != t && (0, i.A)(e, t));
+    return e === t || (null != e && null != t && (0, r.A)(e, t));
 }
 function _(e) {
-    return (0, r.bG)([a.A], () => c(e, a.A), [e], d);
+    return (0, i.bG)([a.A], () => c(e, a.A), [e], d);
 }

@@ -1,43 +1,44 @@
-i.d(t, { A: () => m });
-var r = i(627968);
-i(64700);
-var n = i(582754),
-    s = i(421380),
-    a = i(736653),
-    l = i(234419),
-    o = i(465794),
-    c = i(145310),
-    d = i(275403);
-let m = (e) => {
+"use strict";
+n.d(t, { A: () => d });
+var i = n(627968);
+n(64700);
+var r = n(462887),
+    s = n(862482),
+    a = n(736653),
+    o = n(234419),
+    l = n(725807),
+    u = n(145310),
+    c = n(943386);
+let d = (e) => {
     let {
             textOptions: t,
-            subscriptionTier: i,
-            hasActivePromotion: m = !1,
-            isPersistentCTA: u = !1,
-            useShorterCTA: x = !1,
-            showGradient: C,
-            confirmationFooter: g,
-            color: p,
-            ...T
+            subscriptionTier: n,
+            hasActivePromotion: d = !1,
+            isPersistentCTA: _ = !1,
+            useShorterCTA: f = !1,
+            showGradient: h,
+            confirmationFooter: p,
+            color: E,
+            ...m
         } = e,
-        h = (0, a.Ay)(),
-        { buttonText: I, marketingSubscriptionTierSkuId: f } = (0, c.s)({
-            hasActivePromotion: m,
-            subscriptionTier: i,
-            useShorterCTA: x,
-            isPersistentCTA: u,
+        g = (0, a.Ay)(),
+        { buttonText: A, marketingSubscriptionTierSkuId: I } = (0, u.s)({
+            hasActivePromotion: d,
+            subscriptionTier: n,
+            useShorterCTA: f,
+            isPersistentCTA: _,
         }),
-        j = (0, l.V)(),
-        A = j?.subscription_trial,
-        v = null != A && f === A.sku_id,
-        _ = p ?? ((0, n.Mw)(h) ? s.XD.BRAND_INVERTED : s.XD.BRAND);
-    return (0, r.jsx)(o.A, {
-        color: _,
-        textOptions: { textOverride: I, textClassName: v ? d.A : void 0, ...t },
+        T = (0, o.V)(),
+        S = T?.subscription_trial,
+        N = null != S && I === S.sku_id,
+        y = E ?? ((0, r.M)(g) ? s.XD.BRAND_INVERTED : s.XD.BRAND);
+    return (0, i.jsx)(l.A, {
+        color: y,
+        textOptions: { textOverride: A, textClassName: N ? c.A : void 0, ...t },
         onlyShineOnHover: !0,
-        subscriptionTier: f,
-        showGradient: C,
-        confirmationFooter: g,
-        ...T,
+        subscriptionTier: I,
+        showGradient: h,
+        confirmationFooter: p,
+        ...m,
     });
 };

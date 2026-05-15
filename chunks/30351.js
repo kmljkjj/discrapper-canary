@@ -1,0 +1,3 @@
+a.exports = JSON.parse(
+    '{"IraH2Q":["\u2013",[1,"discountOfferAmount"]," %"],"WBMEcr":["Eiti \u012F Rust parduotuv\u0119"],"7mIXs6":["Naujas ciklas \u2013 nauja \u012Franga. Sutaupyk 20\xa0% iki gegu\u017E\u0117s 21 d."],"C+RsW7":["Sutaupyk 20\xa0% \u2013 tik Discord platformoje."],"RMafGC":["Padovanok Rust element\u0173 draugams tiesiai i\u0161 Discord. Nereik\u0117s net pakuoti."],"5aC9+e":["Prad\u017Eiugink savo komand\u0105"],"me6trO":["\u012Esigyk Rust element\u0173 per Discord ir i\u0161kart perduok juos \u017Eaid\u017Eiantiems."],"2FKQ2n":["\u012Esigyk per Discord."],"JN38wW":["Gauk per Rust."]}',
+);

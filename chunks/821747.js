@@ -1,46 +1,45 @@
-"use strict";
-n.d(t, { A: () => g });
-var i = n(627968);
-n(64700);
-var s = n(503698),
-    l = n.n(s),
-    a = n(311907),
-    r = n(827343),
-    o = n(384059),
-    c = n(20504),
-    d = n(430452),
-    u = n(824744),
-    h = n(723702),
-    A = n(447404),
-    m = n(874802);
-function g(e) {
+t.d(n, { A: () => C });
+var l = t(627968);
+t(64700);
+var i = t(503698),
+    s = t.n(i),
+    a = t(17928),
+    r = t(827343),
+    o = t(384059),
+    c = t(20504),
+    u = t(235058),
+    d = t(824744),
+    A = t(723702),
+    h = t(447404),
+    m = t(329333);
+function C(e) {
     let {
-            className: t,
-            iconClassName: n,
-            sliderClassName: s,
-            userId: g,
-            context: p,
-            currentWindow: _ = window,
-            location: f,
+            className: n,
+            iconClassName: t,
+            sliderClassName: i,
+            userId: C,
+            context: E,
+            currentWindow: p = window,
+            location: g,
         } = e,
-        { currentVolume: x, muted: C } = (0, a.cf)([d.Ay], () => ({
-            currentVolume: d.Ay.getLocalVolume(g, p),
-            muted: d.Ay.isLocalMute(g, p),
+        { currentVolume: x, muted: I } = (0, a.cf)([u.Ay], () => ({
+            currentVolume: u.Ay.getLocalVolume(C, E),
+            muted: u.Ay.isLocalMute(C, E),
         }));
-    return (0, i.jsx)(A.A, {
-        children: (0, i.jsx)(c.A, {
-            currentWindow: _,
-            iconClassName: l()(n, m.pd),
-            sliderClassName: s,
-            className: t,
-            value: (0, u.M)(x),
-            muted: C,
-            maxValue: h.isPlatformEmbedded ? 200 : 100,
+    return (0, l.jsx)(h.A, {
+        children: (0, l.jsx)(c.A, {
+            currentWindow: p,
+            iconClassName: s()(t, m.pd),
+            sliderClassName: i,
+            className: n,
+            value: (0, d.M)(x),
+            muted: I,
+            maxValue: A.isPlatformEmbedded ? 200 : 100,
             onValueChange: (e) => {
-                e > 0 && C && r.A.toggleLocalMute(g, p), r.A.setLocalVolume(g, (0, u.w)(e), p);
+                e > 0 && I && r.A.toggleLocalMute(C, E), r.A.setLocalVolume(C, (0, d.w)(e), E);
             },
             onToggleMute: () => {
-                null != f && (0, o.X)(f, o.O.VOLUME, C), r.A.toggleLocalMute(g, p);
+                null != g && (0, o.X)(g, o.O.VOLUME, I), r.A.toggleLocalMute(C, E);
             },
         }),
     });

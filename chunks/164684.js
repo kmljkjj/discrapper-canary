@@ -1,63 +1,58 @@
-l.d(t, { Y: () => h, x: () => _ });
-var a = l(627968),
-    n = l(397927),
-    s = l(157559),
-    i = l(793574),
-    r = l(203982),
-    A = l(216623),
-    c = l(85109),
-    u = l(226017),
-    d = l(652215);
-l(811233);
-var o = l(985018);
-async function h(e) {
-    let { displayToast: t = !1, ...h } = e;
-    if (null == c.A.getSavedMessage(h.channelId, h.messageId) && !(0, u.A)())
-        return void (0, n.mMO)(async () => {
-            let { default: e } = await l.e("159").then(l.bind(l, 530951));
-            return (t) => (0, a.jsx)(e, { source: i.A.FOR_LATER_HELPERS, ...t });
+i.d(n, { Y: () => R, x: () => O });
+var l = i(627968),
+    e = i(192308),
+    a = i(691540),
+    s = i(857250),
+    d = i(97483),
+    o = i(157559),
+    r = i(625494),
+    c = i(216623),
+    u = i(85109),
+    g = i(226017),
+    A = i(652215);
+i(811233);
+var C = i(985018);
+async function R(t) {
+    let { displayToast: n = !1, ...R } = t;
+    if (null == u.A.getSavedMessage(R.channelId, R.messageId) && !(0, g.A)())
+        return void (0, e.openModalLazy)(async () => {
+            let { default: t } = await Promise.all([i.e("63238"), i.e("22540")]).then(i.bind(i, 530951));
+            return (n) => (0, l.jsx)(t, { ...n });
         });
     if (
         null !=
-            (await (0, A.oN)(h).catch(
-                (e) => (
-                    e?.body?.code === d.t02.TOO_MANY_SAVED_MESSAGES
-                        ? s.A.show({
-                              title: o.intl.string(o.t.mlbiZW),
-                              body: o.intl.formatToPlainString(o.t["1zVbEG"], { max: 200 }),
-                              cancelText: o.intl.string(o.t.BddRzS),
-                              confirmText: o.intl.string(o.t.ZGbTcy),
-                              onConfirm: () => r._.dispatch(d.jej.TOGGLE_FOR_LATER),
+            (await (0, c.oN)(R).catch(
+                (t) => (
+                    t?.body?.code === A.t02.TOO_MANY_SAVED_MESSAGES
+                        ? o.A.show({
+                              title: C.intl.string(C.t.mlbiZW),
+                              body: C.intl.formatToPlainString(C.t["1zVbEG"], { max: 200 }),
+                              cancelText: C.intl.string(C.t.BddRzS),
+                              confirmText: C.intl.string(C.t.ZGbTcy),
+                              onConfirm: () => r._.dispatch(A.jej.TOGGLE_FOR_LATER),
                           })
-                        : (0, n.showToast)(
-                              (0, n.createToast)(e?.body?.message ?? o.intl.string(o.t.R0RpRX), n.ToastType.FAILURE),
-                          ),
+                        : (0, a.P0)((0, s.o)(t?.body?.message ?? C.intl.string(C.t.R0RpRX), d.Ck.FAILURE)),
                     null
                 ),
             )) &&
-        t
+        n
     ) {
-        let e = null != h.dueAt ? o.intl.string(o.t.i1IsOy) : o.intl.string(o.t["WQdL/6"]),
-            t = null != h.dueAt ? n.ToastType.CLOCK : n.ToastType.BOOKMARK;
-        (0, n.showToast)((0, n.createToast)(e, t));
+        let t = null != R.dueAt ? C.intl.string(C.t.i1IsOy) : C.intl.string(C.t["WQdL/6"]),
+            n = null != R.dueAt ? d.Ck.CLOCK : d.Ck.BOOKMARK;
+        (0, a.P0)((0, s.o)(t, n));
     }
 }
-async function _(e) {
-    let { displayToast: t = !1, ...l } = e;
+async function O(t) {
+    let { displayToast: n = !1, ...i } = t;
     if (
         null !=
-            (await (0, A.cf)(l).catch(
-                (e) => (
-                    (0, n.showToast)(
-                        (0, n.createToast)(e?.body?.message ?? o.intl.string(o.t.R0RpRX), n.ToastType.FAILURE),
-                    ),
-                    null
-                ),
+            (await (0, c.cf)(i).catch(
+                (t) => ((0, a.P0)((0, s.o)(t?.body?.message ?? C.intl.string(C.t.R0RpRX), d.Ck.FAILURE)), null),
             )) &&
-        t
+        n
     ) {
-        let e = null != l.dueAt ? o.intl.string(o.t.D0tS02) : o.intl.string(o.t["5KOMiV"]),
-            t = null != l.dueAt ? n.ToastType.CLOCK : n.ToastType.BOOKMARK;
-        (0, n.showToast)((0, n.createToast)(e, t));
+        let t = null != i.dueAt ? C.intl.string(C.t.D0tS02) : C.intl.string(C.t["5KOMiV"]),
+            n = null != i.dueAt ? d.Ck.CLOCK : d.Ck.BOOKMARK;
+        (0, a.P0)((0, s.o)(t, n));
     }
 }

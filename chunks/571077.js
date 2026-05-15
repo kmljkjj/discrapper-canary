@@ -1,38 +1,145 @@
-"use strict";
-n.d(t, { A: () => _ });
-var r = n(627968);
-n(64700);
-var i = n(311907),
-    a = n(397927),
-    s = n(658575),
-    o = n(123791),
-    l = n(622543),
-    u = n(993401),
-    c = n(985018);
-function d(e) {
-    let { user: t, onClick: n, ...i } = e;
+t.d(i, { A: () => A });
+var n = t(627968);
+t(64700);
+var l = t(17928),
+    a = t(34188),
+    r = t(192308),
+    d = t(658575),
+    o = t(123791),
+    u = t(841595),
+    c = t(993401),
+    s = t(375708);
+function p(e) {
+    let { user: i, onClick: t, ...l } = e;
     return (
-        (0, o.C)(t.id),
-        (0, r.jsx)(u.FD, {
+        (0, o.C)(i.id),
+        (0, n.jsx)(c.FD, {
             action: "PRESS_APP_STOREFRONT",
-            icon: a.U1X,
-            text: c.intl.string(c.t.V7j5aZ),
-            onClick: n,
+            icon: a.U,
+            text: s.intl.string(s.t.V7j5aZ),
+            onClick: t,
             variant: "primary",
-            ...i,
+            ...l,
         })
     );
 }
-function _(e) {
-    let { user: t, guildId: o, ...u } = e,
-        c = (0, i.bG)([l.A], () => l.A.getUserProfile(t.id)?.application),
-        _ = (0, s.G)(c?.id ?? "");
-    if (null == c || !_) return null;
-    let f = () => {
-        (0, a.mMO)(async () => {
-            let { default: e } = await Promise.all([n.e("13088"), n.e("33563"), n.e("92201")]).then(n.bind(n, 719847));
-            return (t) => (0, r.jsx)(e, { appId: c.id, guildId: o, ...t });
-        });
-    };
-    return (0, r.jsx)(d, { user: t, guildId: o, onClick: f, ...u });
+function A(e) {
+    let { user: i, guildId: a, ...o } = e,
+        c = (0, l.bG)([u.A], () => u.A.getUserProfile(i.id)?.application),
+        s = (0, d.G)(c?.id ?? "");
+    return null != c && s
+        ? (0, n.jsx)(p, {
+              user: i,
+              guildId: a,
+              onClick: () => {
+                  (0, r.openModalLazy)(async () => {
+                      let { default: e } = await Promise.all([
+                          t.e("73953"),
+                          t.e("81586"),
+                          t.e("54266"),
+                          t.e("5959"),
+                          t.e("86028"),
+                          t.e("96527"),
+                          t.e("95664"),
+                          t.e("9432"),
+                          t.e("80203"),
+                          t.e("45650"),
+                          t.e("18556"),
+                          t.e("31837"),
+                          t.e("27660"),
+                          t.e("85484"),
+                          t.e("31135"),
+                          t.e("69177"),
+                          t.e("8506"),
+                          t.e("333"),
+                          t.e("15615"),
+                          t.e("79705"),
+                          t.e("23924"),
+                          t.e("42205"),
+                          t.e("71091"),
+                          t.e("28367"),
+                          t.e("10471"),
+                          t.e("35429"),
+                          t.e("63232"),
+                          t.e("11301"),
+                          t.e("60235"),
+                          t.e("64827"),
+                          t.e("30938"),
+                          t.e("96643"),
+                          t.e("94493"),
+                          t.e("92789"),
+                          t.e("47834"),
+                          t.e("74016"),
+                          t.e("19551"),
+                          t.e("84569"),
+                          t.e("6338"),
+                          t.e("50689"),
+                          t.e("45959"),
+                          t.e("60658"),
+                          t.e("8304"),
+                          t.e("18573"),
+                          t.e("55936"),
+                          t.e("31988"),
+                          t.e("39667"),
+                          t.e("5812"),
+                          t.e("26073"),
+                          t.e("34303"),
+                          t.e("28866"),
+                          t.e("1368"),
+                          t.e("58038"),
+                          t.e("93159"),
+                          t.e("31716"),
+                          t.e("8751"),
+                          t.e("62931"),
+                          t.e("81987"),
+                          t.e("50417"),
+                          t.e("74548"),
+                          t.e("34530"),
+                          t.e("91146"),
+                          t.e("46070"),
+                          t.e("6949"),
+                          t.e("53917"),
+                          t.e("90365"),
+                          t.e("89088"),
+                          t.e("15186"),
+                          t.e("54975"),
+                          t.e("77084"),
+                          t.e("20287"),
+                          t.e("49697"),
+                          t.e("80230"),
+                          t.e("37687"),
+                          t.e("48900"),
+                          t.e("63645"),
+                          t.e("5636"),
+                          t.e("86230"),
+                          t.e("834"),
+                          t.e("60177"),
+                          t.e("26728"),
+                          t.e("23276"),
+                          t.e("78412"),
+                          t.e("63213"),
+                          t.e("75016"),
+                          t.e("4193"),
+                          t.e("95444"),
+                          t.e("48720"),
+                          t.e("33134"),
+                          t.e("80112"),
+                          t.e("59880"),
+                          t.e("54791"),
+                          t.e("73234"),
+                          t.e("31445"),
+                          t.e("26437"),
+                          t.e("78050"),
+                          t.e("94607"),
+                          t.e("99835"),
+                          t.e("68031"),
+                          t.e("85384"),
+                          t.e("20428"),
+                      ]).then(t.bind(t, 719847));
+                      return (i) => (0, n.jsx)(e, { appId: c.id, guildId: a, ...i });
+                  });
+              },
+              ...o,
+          })
+        : null;
 }

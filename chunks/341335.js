@@ -1,22 +1,22 @@
 "use strict";
-n.d(t, { A: () => s });
-var r = n(427262),
-    i = n(272984),
-    a = n(985018);
-function s(e, t, n) {
+n.d(t, { A: () => a });
+var i = n(427262),
+    r = n(272984),
+    s = n(375708);
+function a(e, t, n) {
     switch (t) {
-        case i.Qp.USER_ACTIVITY_PLAY:
-            if (e.isCurrentUser) return a.intl.string(a.t.ZpDeUC);
-            if (e.playingSameTrack) return a.intl.string(a.t.TYSymS);
-            if (e.notPlayable) return a.intl.formatToPlainString(a.t.SqJBnN, { name: i.HD });
+        case r.Qp.USER_ACTIVITY_PLAY:
+            if (e.isCurrentUser) return s.intl.string(s.t.ZpDeUC);
+            if (e.playingSameTrack) return s.intl.string(s.t.TYSymS);
+            if (e.notPlayable) return s.intl.formatToPlainString(s.t.SqJBnN, { name: r.HD });
             return;
-        case i.Qp.USER_ACTIVITY_SYNC:
-            if (e.isCurrentUser) return a.intl.string(a.t["AOU/CR"]);
-            if (e.syncingWithUser || e.syncingWithParty) return a.intl.string(a.t.m8CScv);
-            if (e.notPlayable) return a.intl.formatToPlainString(a.t.SqJBnN, { name: i.HD });
-            return a.intl.formatToPlainString(a.t.CT9xYI, { name: n ?? r.Ay.getName(e.user) });
-        case i.Qp.EMBED_SYNC:
-            if (e.notPlayable) return a.intl.formatToPlainString(a.t.SqJBnN, { name: i.HD });
+        case r.Qp.USER_ACTIVITY_SYNC:
+            if (e.isCurrentUser) return s.intl.string(s.t["AOU/CR"]);
+            if (e.syncingWithUser || e.syncingWithParty) return s.intl.string(s.t.m8CScv);
+            if (e.notPlayable) return s.intl.formatToPlainString(s.t.SqJBnN, { name: r.HD });
+            return s.intl.formatToPlainString(s.t.CT9xYI, { name: n ?? i.Ay.getName(e.user) });
+        case r.Qp.EMBED_SYNC:
+            if (e.notPlayable) return s.intl.formatToPlainString(s.t.SqJBnN, { name: r.HD });
             return;
         default:
             return;

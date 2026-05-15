@@ -1,92 +1,93 @@
 "use strict";
-n.d(t, { A: () => h, r: () => p });
-var r = n(627968),
-    i = n(64700),
+n.d(t, { A: () => m, r: () => E });
+var i = n(627968),
+    r = n(64700),
     s = n(503698),
     a = n.n(s),
     o = n(446080),
-    l = n(397927),
-    u = n(267102),
-    c = n(675991),
-    d = n(709562),
-    _ = n(652215),
-    f = n(724718);
-function p(e) {
-    let t = (0, c.Q)(e),
+    l = n(428689),
+    u = n(943812),
+    c = n(267102),
+    d = n(675991),
+    _ = n(204651),
+    f = n(652215),
+    h = n(375708),
+    p = n(181859);
+function E(e) {
+    let t = (0, d.Q)(e),
         {
             enabled: n,
             cameraUnavailable: s,
             onChange: a,
-            onCameraUnavailable: d,
-            hasPermission: f,
+            onCameraUnavailable: _,
+            hasPermission: h,
             children: p,
-            channelLimitReached: h = !1,
+            channelLimitReached: E = !1,
             join: m,
         } = e,
-        E = (0, u.Us)(),
-        g = s ? () => d() : () => a(!e.enabled, E),
-        { Component: A, play: I, events: T } = (0, o.K)(m || n ? "disable" : "enable");
-    i.useEffect(() => () => I(), [n, I]);
-    let S = m ? l.npA : E === _.BRT.POPOUT ? (n ? l.npA : l.OCo) : A;
-    return (0, r.jsx)(r.Fragment, {
+        g = (0, c.Us)(),
+        A = s ? () => _() : () => a(!e.enabled, g),
+        { Component: I, play: T, events: S } = (0, o.K)(m || n ? "disable" : "enable");
+    r.useEffect(() => () => T(), [n, T]);
+    let N = m ? l.n : g === f.BRT.POPOUT ? (n ? l.n : u.O) : I;
+    return (0, i.jsx)(i.Fragment, {
         children: p({
-            onClick: g,
+            onClick: A,
             isActive: n,
-            disabled: !n && (!f || h),
-            iconComponent: S,
+            disabled: !n && (!h || E),
+            iconComponent: N,
             iconColor: "currentColor",
             label: t,
             unavailable: s,
-            onMouseEnter: m ? void 0 : T.onMouseEnter,
-            onMouseLeave: m ? void 0 : T.onMouseLeave,
+            onMouseEnter: m ? void 0 : S.onMouseEnter,
+            onMouseLeave: m ? void 0 : S.onMouseLeave,
         }),
     });
 }
-function h(e) {
+function m(e) {
     let {
             enabled: t,
             join: n,
-            channel: i,
+            channel: r,
             onChange: s,
             onCameraUnavailable: o,
             cameraUnavailable: l,
             hasPermission: u,
             className: c,
-            channelLimitReached: _,
-            channelLimit: h,
+            channelLimitReached: d,
+            channelLimit: f,
             centerButton: m = !1,
-            onPopoutClick: E,
-            ...g
+            onPopoutClick: g,
+            ...A
         } = e,
-        A = m ? d.l : d.A,
-        I = () => (n ? "join" : t ? "green" : "primaryDark"),
-        T = (e) => (n ? "join" : e ? "green" : g.color);
-    return (0, r.jsx)(p, {
+        I = m ? _.l : _.A;
+    return (0, i.jsx)(E, {
         enabled: t,
         join: n,
-        channel: i,
+        channel: r,
         onChange: s,
         onCameraUnavailable: o,
         cameraUnavailable: l,
         hasPermission: u,
-        channelLimitReached: _,
-        channelLimit: h,
+        channelLimitReached: d,
+        channelLimit: f,
         children: (e) => {
-            let { unavailable: t, onMouseEnter: i, onMouseLeave: s, isActive: o, ...l } = e;
-            return (0, r.jsx)(A, {
-                ...l,
-                ...g,
-                color: T(o),
-                caretColor: I(),
-                isActive: o,
+            let { unavailable: r, onMouseEnter: s, onMouseLeave: o, isActive: l, ...u } = e;
+            return (0, i.jsx)(I, {
+                ...u,
+                ...A,
+                color: n ? "join" : l ? "green" : A.color,
+                caretColor: n ? "join" : t ? "green" : "primaryDark",
+                caretAriaLabel: h.intl.string(h.t.jO7lgy),
+                isActive: l,
                 onMouseEnter: (e) => {
-                    g.onMouseEnter?.(e), i?.();
+                    A.onMouseEnter?.(e), s?.();
                 },
                 onMouseLeave: (e) => {
-                    g.onMouseLeave?.(e), s?.();
+                    A.onMouseLeave?.(e), o?.();
                 },
-                className: a()(c, { [f.t]: t }),
-                onPopoutClick: E,
+                className: a()(c, { [p.t]: r }),
+                onPopoutClick: g,
                 isTrayButton: !n,
             });
         },

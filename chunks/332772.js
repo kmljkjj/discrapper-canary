@@ -1,25 +1,21 @@
-"use strict";
-n.d(t, { T: () => d });
-var r = n(64700),
-    i = n(311907),
-    s = n(622543),
-    a = n(576622),
-    o = n(961350),
-    l = n(178213),
-    u = n(33190),
-    c = n(594832);
-function d(e) {
-    let { location: t, source: n } = e,
-        d = (0, l.GG)(t),
-        _ = (0, u.H)(t),
-        f = d && _,
-        { currentUserId: p, wishlistId: h } = (0, i.cf)([o.default, s.A], () => {
-            let e = o.default.getId(),
-                t = s.A.getFirstWishlistId(e);
-            return { currentUserId: e, wishlistId: t };
+e.d(s, { T: () => f });
+var u = e(64700),
+    d = e(17928),
+    i = e(841595),
+    l = e(576622),
+    c = e(495544),
+    r = e(33190),
+    a = e(594832);
+function f(t) {
+    let { location: s, source: e } = t,
+        f = (0, r.H)(s),
+        { currentUserId: h, wishlistId: n } = (0, d.cf)([c.default, i.A], () => {
+            let t = c.default.getId(),
+                s = i.A.getFirstWishlistId(t);
+            return { currentUserId: t, wishlistId: s };
         });
-    r.useEffect(() => {
-        f && null == h && (0, a.A)(p);
-    }, [p, f, h]),
-        (0, c.fw)({ wishlistId: f ? h : null, userId: p, source: n });
+    u.useEffect(() => {
+        f && null == n && (0, l.A)(h);
+    }, [h, f, n]),
+        (0, a.fw)({ wishlistId: f ? n : null, userId: h, source: e });
 }

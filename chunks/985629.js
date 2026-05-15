@@ -1,37 +1,37 @@
 "use strict";
 n.d(t, { A: () => f });
-var r = n(627968),
-    i = n(110259),
-    a = n(435371),
-    s = n(397927),
-    o = n(359549),
+var i = n(627968),
+    r = n(562708),
+    s = n(990078),
+    a = n(414499),
+    o = n(737393),
     l = n(139286),
     u = n(939496),
     c = n(993401),
     d = n(996988),
-    _ = n(985018);
+    _ = n(375708);
 function f(e) {
-    let { application: t, analyticsLocations: n, onAction: f, onClose: p } = e,
-        { themeType: h } = (0, u.E)(),
-        m = (0, o.A)({ application: t, analyticsLocations: n });
+    let { application: t, analyticsLocations: n, onAction: f, onClose: h } = e,
+        { themeType: p } = (0, u.E)(),
+        E = (0, o.A)({ application: t, analyticsLocations: n });
     return ((0, l.A)(
-        { name: i.ImpressionNames.CLOUD_PLAY_CTA, type: i.ImpressionTypes.VIEW, properties: { location_stack: n } },
-        { disableTrack: null == m },
-        [m],
+        { name: r.ImpressionNames.CLOUD_PLAY_CTA, type: r.ImpressionTypes.VIEW, properties: { location_stack: n } },
+        { disableTrack: null == E },
+        [E],
     ),
-    null == m)
+    null == E)
         ? null
-        : (0, r.jsx)(a.m_, {
+        : (0, i.jsx)(s.m, {
               text: _.intl.string(_.t.JVwWva),
               position: "top",
-              children: (0, r.jsx)(c.FD, {
-                  icon: s.hpF,
+              children: (0, i.jsx)(c.FD, {
+                  icon: a.h,
                   text: _.intl.string(_.t["jaYS/h"]),
                   size: "sm",
                   onClick: (e) => {
-                      e.stopPropagation(), f?.({ action: "PRESS_CLOUD_PLAY_BUTTON" }), m(), p?.();
+                      e.stopPropagation(), f?.({ action: "PRESS_CLOUD_PLAY_BUTTON" }), E(), h?.();
                   },
-                  fullWidth: h !== d.d.MODAL_V2,
+                  fullWidth: p !== d.d.MODAL_V2,
               }),
           });
 }

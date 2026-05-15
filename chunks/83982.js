@@ -1,127 +1,129 @@
-n.d(t, { A: () => k, s: () => w });
-var i = n(627968),
-    l = n(64700),
+n.d(t, { A: () => P, s: () => V });
+var l = n(627968),
+    i = n(64700),
     s = n(503698),
     a = n.n(s),
-    r = n(311907),
+    r = n(17928),
     o = n(990078),
-    c = n(397927),
-    d = n(367513),
-    u = n(684339),
-    h = n(313961),
-    m = n(520698),
-    A = n(164617),
-    g = n(958713),
-    p = n(525505),
-    f = n(550946),
-    _ = n(991701),
-    E = n(401901),
-    x = n(869146),
-    C = n(854627),
-    S = n(530804),
-    T = n(961350),
-    I = n(430452),
-    N = n(531685),
+    u = n(778712),
+    c = n(695366),
+    d = n(661531),
+    m = n(367513),
+    p = n(684339),
+    g = n(313961),
+    f = n(520698),
+    h = n(164617),
+    A = n(958713),
+    x = n(525505),
+    v = n(550946),
+    E = n(334557),
+    C = n(51092),
+    I = n(869146),
+    _ = n(854627),
+    j = n(530804),
+    S = n(495544),
+    N = n(235058),
+    b = n(531685),
     y = n(562153),
-    b = n(51082),
-    v = n(566566),
-    j = n(289552),
-    R = n(652215),
-    M = n(731854),
-    D = n(985018),
-    O = n(257277);
-let L = c._3J.SIZE_80,
-    P = c._3J.SIZE_40;
-function w(e) {
+    w = n(51082),
+    T = n(566566),
+    R = n(289552),
+    k = n(652215),
+    D = n(731854),
+    O = n(375708),
+    L = n(391308);
+let M = u._3.SIZE_80,
+    F = u._3.SIZE_40;
+function V(e) {
     let { channelId: t, participant: n } = e;
-    return (0, S.uy)(t, n.id)
-        ? (0, i.jsx)(o.m, {
-              text: D.intl.string(D.t.HFwRpk),
+    return (0, j.uy)(t, n.id)
+        ? (0, l.jsx)(o.m, {
+              text: O.intl.string(O.t.HFwRpk),
               position: "bottom",
-              children: (0, i.jsx)("div", {
-                  className: O.bG,
-                  children: (0, i.jsx)(c.EpV, { color: c.LU0.colors.STATUS_WARNING_BACKGROUND }),
+              children: (0, l.jsx)("div", {
+                  className: L.bG,
+                  children: (0, l.jsx)(c.E, { color: d.A.colors.STATUS_WARNING_BACKGROUND }),
               }),
           })
-        : (0, i.jsx)(j.A, { userId: n.user.id });
+        : (0, l.jsx)(R.A, { userId: n.user.id });
 }
-function k(e) {
+function P(e) {
     let {
             participant: t,
             channel: n,
             inCall: s,
             width: o,
-            selected: c,
-            popoutType: S,
-            fit: j,
-            onVideoResize: w,
-            blocked: k,
-            ignored: U,
-            noVideoRender: G = !1,
-            pulseSpeakingIndicator: F = !1,
+            selected: u,
+            popoutType: c,
+            fit: d,
+            onVideoResize: j,
+            blocked: R,
+            ignored: V,
+            noVideoRender: P = !1,
+            pulseSpeakingIndicator: G = !1,
             paused: H = !1,
         } = e,
-        B = I.Ay.getVideoComponent(),
-        V = (0, r.bG)([T.default], () => T.default.getId()),
-        { user: K, streamId: z, speaking: W } = t,
-        Y = K.id === V,
-        q = (0, b.Ay)(t),
-        J = (0, r.bG)([N.A], () => N.A.isFocused()),
-        $ = (0, r.bG)([x.A], () => x.A.getWindowFocused(R.MLl.CHANNEL_CALL_POPOUT)),
-        Z = (0, r.bG)([I.Ay], () => null != K.id && I.Ay.isLocalVideoDisabled(K.id, (0, m.A)(t.type)), [K.id, t.type]),
-        X = (0, f.A)(n.guild_id, K.id),
-        Q = y.Ay.getName(n.getGuildId(), n.id, K) + (X ? ` ${D.intl.string(D.t["pFO/Ph"])}` : ""),
-        ee = W && ($ || J),
-        et = o < 124 ? P : L,
-        { avatarSrc: en, avatarDecorationSrc: ei } = (0, C.A)({
-            userId: K.id,
+        U = N.Ay.getVideoComponent(),
+        z = (0, r.bG)([S.default], () => S.default.getId()),
+        { user: W, streamId: $, speaking: B } = t,
+        Y = W.id === z,
+        Z = (0, w.Ay)(t),
+        K = (0, r.bG)([b.A], () => b.A.isFocused()),
+        Q = (0, r.bG)([I.A], () => I.A.getWindowFocused(k.MLl.CHANNEL_CALL_POPOUT)),
+        X = (0, r.bG)([N.Ay], () => null != W.id && N.Ay.isLocalVideoDisabled(W.id, (0, f.A)(t.type)), [W.id, t.type]),
+        q = (0, v.A)(n.guild_id, W.id),
+        J = y.Ay.getName(n.getGuildId(), n.id, W) + (q ? ` ${O.intl.string(O.t["pFO/Ph"])}` : ""),
+        ee = B && (Q || K),
+        et = o < 124 ? F : M,
+        { avatarSrc: en, avatarDecorationSrc: el } = (0, _.A)({
+            userId: W.id,
             guildId: n.guild_id,
             size: et,
             animateOnHover: !ee,
         }),
-        el = (0, r.bG)([h.A], () => h.A.getSelectedParticipant(n.id)),
-        es = (0, p.A)(M.x.DEFAULT, t.user.id),
-        ea = (0, g.A)(t.user.id),
-        er = { channel: n, selectedParticipant: el, user: K },
-        eo = l.useRef(er);
-    return (l.useEffect(() => {
+        ei = (0, r.bG)([g.A], () => g.A.getSelectedParticipant(n.id)),
+        es = (0, x.A)(D.x.DEFAULT, t.user.id),
+        ea = (0, A.A)(t.user.id),
+        er = { channel: n, selectedParticipant: ei, user: W },
+        eo = i.useRef(er);
+    return (i.useEffect(() => {
         eo.current = er;
     }),
-    l.useEffect(() => {
+    i.useEffect(() => {
         let { channel: e, selectedParticipant: t, user: n } = eo.current;
-        e.isGuildStageVoice() && !q && t?.id === n.id && d.A.selectParticipant(e.id, null);
-    }, [q]),
-    s && !Z && !G && q && !c && null != B && I.Ay.supports(M.O5.VIDEO))
+        e.isGuildStageVoice() && !Z && t?.id === n.id && m.A.selectParticipant(e.id, null);
+    }, [Z]),
+    s && !X && !P && Z && !u && null != U && N.Ay.supports(D.O5.VIDEO))
         ? null != es && null == ea
-            ? (0, i.jsx)(v.A, { avError: es, userId: t.id, width: o, selected: c })
-            : (0, i.jsx)(
-                  E.A,
+            ? (0, l.jsx)(T.A, { avError: es, userId: t.id, width: o, selected: u })
+            : (0, l.jsx)(
+                  C.A,
                   {
-                      onResize: w,
-                      wrapperClassName: S !== A.N.CALL_TILE ? O.tN : void 0,
-                      className: O.Qs,
+                      onResize: j,
+                      wrapperClassName: c !== h.N.CALL_TILE ? L.tN : void 0,
+                      className: L.Qs,
                       mirror: Y,
-                      streamId: z,
-                      videoComponent: B,
-                      fit: j,
-                      videoSpinnerContext: K.id === V ? u.u.SELF_VIDEO : u.u.REMOTE_VIDEO,
+                      streamId: $,
+                      videoComponent: U,
+                      fit: d,
+                      videoSpinnerContext: W.id === z ? p.u.SELF_VIDEO : p.u.REMOTE_VIDEO,
                       paused: H,
-                      userId: K.id,
+                      userId: W.id,
                   },
-                  z,
+                  $,
               )
-        : (0, i.jsx)("div", {
-              className: a()(O.Qs, { [O.Kx]: k || U }),
-              children: (0, i.jsx)(_.A, {
-                  "aria-label": Q,
-                  avatarDecoration: ei,
-                  backgroundSrc: K.getAvatarURL(n.guild_id, 80),
+        : (0, l.jsx)("div", {
+              className: a()(L.Qs, { [L.Kx]: R || V }),
+              children: (0, l.jsx)(E.A, {
+                  "aria-label": J,
+                  avatarDecoration: el,
+                  backgroundSrc: W.getAvatarURL(n.guild_id, 80),
                   guildId: n.guild_id,
-                  pulseSpeakingIndicator: F,
+                  pulseSpeakingIndicator: G,
                   size: et,
-                  speaking: W,
+                  speaking: B,
                   src: en,
-                  userId: K.id,
+                  userId: W.id,
               }),
           });
 }

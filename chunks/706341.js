@@ -1,111 +1,111 @@
 "use strict";
-n.d(t, { A: () => y }), n(321073);
-var r = n(735438),
-    i = n(73153),
-    a = n(378939),
-    s = n(843472),
+n.d(t, { A: () => g }), n(321073);
+var i = n(735438),
+    r = n(228366),
+    s = n(378939),
+    a = n(720149),
     o = n(334738),
-    l = n(187508),
+    l = n(135978),
     u = n(976860),
     c = n(222823),
-    d = n(661191),
+    d = n(935208),
     _ = n(932883),
-    f = n(320697),
-    p = n(849077),
-    h = n(652215);
-let m = 5,
-    g = 1500;
-function E(e) {
-    return a.A.fetchRecentMentions({
-        before: e,
-        limit: h.Ue3,
-        roles: l.Ay.roleFilter,
-        everyone: l.Ay.everyoneFilter,
-        feature: p.j5,
-    });
-}
-let A = (0, r.throttle)(T, g);
-function I(e) {
-    let t = f.A.getChannelInfoMap(),
-        n = [];
-    for (let r of e) {
-        if (t[r]?.loadState === p.Ve.LOADED) continue;
-        let e = c.Ay.lastMessageId(r),
-            i = null != e && d.default.age(e) > p.V$;
-        if (n.length >= m || i) break;
-        let a = s.A.fetchMessages({ channelId: r, limit: p.EM, feature: p.j5 });
-        !1 !== a && null != a && n.push(a);
-    }
-    return n;
-}
-async function T(e) {
+    f = n(310031),
+    h = n(849077),
+    p = n(652215);
+let E = (0, i.throttle)(m, 1500);
+async function m(e) {
     let { preload: t = !1, ...n } = e,
-        r = Date.now(),
-        a = f.A.getNotifyingChannelIds();
-    if (null == a) return;
-    let s = t ? [] : I(a),
-        o = l.Ay.getMentions(),
-        u = null != o && o.length > 0 ? o[o.length - 1].id : null,
-        c = !1;
-    if (((!l.Ay.hasMore && l.Ay.hasLoadedEver) || l.Ay.loading || (s.push(E(u)), (c = !0)), 0 === s.length))
-        return void i.h.dispatch({
+        i = Date.now(),
+        o = f.A.getNotifyingChannelIds();
+    if (null == o) return;
+    let u = (function (e) {
+            let t = f.A.getChannelInfoMap(),
+                n = [];
+            for (let i of e) {
+                if (t[i]?.loadState === h.Ve.LOADED) continue;
+                let e = c.Ay.lastMessageId(i),
+                    r = null != e && d.default.age(e) > h.V$;
+                if (n.length >= 5 || r) break;
+                let s = a.A.fetchMessages({ channelId: i, limit: h.EM, feature: h.j5 });
+                !1 !== s && null != s && n.push(s);
+            }
+            return n;
+        })(o),
+        E = l.Ay.getMentions(),
+        m = null != E && E.length > 0 ? E[E.length - 1].id : null,
+        g = !1;
+    (l.Ay.hasMore || !l.Ay.hasLoadedEver) &&
+        !l.Ay.loading &&
+        (u.push(
+            s.A.fetchRecentMentions({
+                before: m,
+                limit: p.Ue3,
+                roles: l.Ay.roleFilter,
+                everyone: l.Ay.everyoneFilter,
+                feature: h.j5,
+            }),
+        ),
+        (g = !0));
+    if (0 === u.length)
+        return void r.h.dispatch({
             type: "NOTIFICATIONS_INBOX_LOAD_MORE_INBOX_SUCCESS",
             preload: t,
             hasMoreToLoad: !1,
         });
     try {
-        await Promise.all(s);
+        await Promise.all(u);
         let e = {
-            timeToLoad: Date.now() - r,
-            loadingTrigger: n.loadingTrigger ?? p.VA.UNKNOWN,
+            timeToLoad: Date.now() - i,
+            loadingTrigger: n.loadingTrigger ?? h.VA.UNKNOWN,
             viewId: n.viewId,
-            channelsFetched: s.length - !!c,
-            mentionsFetched: c,
+            channelsFetched: u.length - !!g,
+            mentionsFetched: g,
         };
         t && (0, _.P3)(e),
-            i.h.dispatch({
+            r.h.dispatch({
                 type: "NOTIFICATIONS_INBOX_LOAD_MORE_INBOX_SUCCESS",
                 preload: t,
                 analyticsPayload: e,
                 hasMoreToLoad: !0,
             });
     } catch (e) {
-        i.h.dispatch({ type: "NOTIFICATIONS_INBOX_LOAD_MORE_INBOX_FAILURE" });
+        r.h.dispatch({ type: "NOTIFICATIONS_INBOX_LOAD_MORE_INBOX_FAILURE" });
     }
 }
-let y = {
+let g = {
     loadMoreInbox() {
         let { preload: e = !1, ...t } = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
         if (!f.A.canLoadMore({ preload: e })) return !1;
-        i.h.dispatch({ type: "NOTIFICATIONS_INBOX_LOAD_MORE_INBOX_START", preload: e }), A({ preload: e, ...t });
+        r.h.dispatch({ type: "NOTIFICATIONS_INBOX_LOAD_MORE_INBOX_START", preload: e }), E({ preload: e, ...t });
     },
     inboxItemClick: function (e) {
         let {
             message: t,
             channel: n,
-            isUnread: r,
-            isSidebar: a,
+            isUnread: i,
+            isSidebar: s,
             viewId: l,
             track: c = !0,
             autoTriggeredOnInboxOpen: d = !1,
         } = e;
-        i.h.dispatch({ type: "NOTIFICATIONS_INBOX_ITEM_CLICK", messageId: t.id, channelId: n.id, isUnread: r }),
+        r.h.dispatch({ type: "NOTIFICATIONS_INBOX_ITEM_CLICK", messageId: t.id, channelId: n.id, isUnread: i }),
             c && (0, _.Ml)({ interactionType: _.X8.CLICK, message: t, viewId: l }),
-            r &&
+            i &&
                 o.ack(
                     t.channel_id,
                     {
-                        section: h.JJy.INBOX,
-                        object: h.ZSU.ACK_MESSAGE_VIEWED,
-                        objectType: h.AnalyticsObjectTypes.ACK_SEMI_AUTOMATIC,
+                        section: p.JJy.INBOX,
+                        object: p.ZSU.ACK_MESSAGE_VIEWED,
+                        objectType: p.AnalyticsObjectTypes.ACK_SEMI_AUTOMATIC,
                     },
                     !0,
                     void 0,
                     t.id,
                 ),
-            s.A.trackJump(n.id, t.id, p.XU);
-        let f = a ? h.gNP : n.guild_id,
-            m = h.BVt.CHANNEL(f, n.id, t.id);
-        d && a ? (0, u.bG)(m) : (0, u.pX)(m);
+            a.A.trackJump(n.id, t.id, h.XU);
+        let f = s ? p.gNP : n.guild_id,
+            E = p.BVt.CHANNEL(f, n.id, t.id);
+        d && s ? (0, u.bG)(E) : (0, u.pX)(E);
     },
 };

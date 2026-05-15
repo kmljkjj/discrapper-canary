@@ -1,35 +1,35 @@
-n.d(t, { k: () => o, y: () => c });
-var i = n(627968);
+n.d(l, { k: () => i, y: () => o });
+var r = n(627968);
 n(64700);
-var l = n(709066),
-    r = n(455207),
-    a = n(943667),
-    s = n(679740);
-function o(e) {
-    let t,
-        { message: n, channel: i, user: s, isRepliedMessage: o } = e;
+var u = n(709066),
+    t = n(455207),
+    s = n(943667),
+    a = n(334211);
+function i(e) {
+    let l,
+        { message: n, channel: r, user: a, isRepliedMessage: i } = e;
     return (
         n?.isSystemDM()
-            ? (t = l.A.Types.SYSTEM_DM)
-            : null != n && (0, a.A)(n)
-              ? (t = (0, r.MZ)(n) ? l.A.Types.OFFICIAL : l.A.Types.SERVER)
-              : s?.bot
-                ? (t = l.A.Types.BOT)
-                : null != i && i.isForumPost() && i.ownerId === s?.id && !o && (t = l.A.Types.ORIGINAL_POSTER),
-        t
+            ? (l = u.A.Types.SYSTEM_DM)
+            : null != n && (0, s.A)(n)
+              ? (l = (0, t.MZ)(n) ? u.A.Types.OFFICIAL : u.A.Types.SERVER)
+              : a?.bot
+                ? (l = u.A.Types.BOT)
+                : null != r && r.isForumPost() && r.ownerId === a?.id && !i && (l = u.A.Types.ORIGINAL_POSTER),
+        l
     );
 }
-function c(e) {
-    let { message: t, channel: n, user: r, compact: a, isRepliedMessage: c, hideIcon: _ = !1, children: E } = e,
-        d = o({ message: t, channel: n, user: r, compact: a, isRepliedMessage: c, hideIcon: _, children: E });
-    return null == d
+function o(e) {
+    let { message: l, channel: n, user: t, compact: s, isRepliedMessage: o, hideIcon: d = !1, children: c } = e,
+        A = i({ message: l, channel: n, user: t, compact: s, isRepliedMessage: o, hideIcon: d, children: c });
+    return null == A
         ? null
-        : (0, i.jsx)(l.A, {
-              className: a ? s.jW : s.RQ,
-              type: d,
-              verified: r?.isVerifiedBot(),
-              hideIcon: _,
+        : (0, r.jsx)(u.A, {
+              className: s ? a.jW : a.RQ,
+              type: A,
+              verified: t?.isVerifiedBot(),
+              hideIcon: d,
               useRemSizes: !0,
-              children: E,
+              children: c,
           });
 }

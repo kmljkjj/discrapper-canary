@@ -1,74 +1,73 @@
-"use strict";
-n.d(t, { Ay: () => E, UX: () => A, dZ: () => g });
+n.d(l, { Ay: () => h, UX: () => C, dZ: () => f });
 var r = n(627968),
-    i = n(64700),
-    s = n(503698),
-    a = n.n(s),
-    o = n(284009),
-    l = n.n(o),
-    u = n(340287),
-    c = n(158954),
-    d = n(397927),
-    _ = n(608805),
-    f = n(156312),
-    p = n(166532),
-    h = n(804686);
-function m(e) {
-    let { header: t, ...n } = e;
-    return { header: t, stepProps: n };
-}
-function E(e) {
-    let { header: t, stepProps: n } = m(e),
+    s = n(64700),
+    t = n(503698),
+    i = n.n(t),
+    a = n(284009),
+    d = n.n(a),
+    o = n(340287),
+    c = n(430993),
+    u = n(430690),
+    p = n(742810),
+    N = n(94420),
+    A = n(834252),
+    E = n(166532),
+    m = n(615310),
+    S = n(370353);
+function h(e) {
+    let { header: l, stepProps: n } = (function (e) {
+            let { header: l, ...n } = e;
+            return { header: l, stepProps: n };
+        })(e),
+        { step: t, stepConfigs: a } = (0, m.Ay)(),
         {
-            step: s,
-            stepConfigs: o,
-            setBodyNode: u,
-            setFooterNode: E,
-            setModalOverlayNode: g,
-            setReadySlideId: A,
-            isDisplayingWowMomentConfirmation: I,
-        } = (0, f.P5)(),
-        T = o.find((e) => e.key === s);
-    i.useEffect(() => {
-        g(null);
-    }, [s, g]),
-        l()(null != T, "Unknown step for current payment flow.");
-    let S = T?.options?.hideSlider ?? !1,
-        y = T?.options?.hideDefaultModalBody ?? !1,
-        v = T?.options?.sliderBodyClassName,
-        N = "100%",
-        C = (0, _.D7)({ location: "PaymentModalStep" }),
-        R = i.useMemo(() => C && s === p.pn.REVIEW, [C, s]);
+            setBodyNode: o,
+            setFooterNode: h,
+            setModalOverlayNode: f,
+            isDisplayingWowMomentConfirmation: C,
+            unifiedCheckoutFlow: x,
+        } = (0, A.P5)(),
+        { setReadySlideId: P } = (0, N.t4)((e) => ({ setReadySlideId: e.setReadySlideId })),
+        j = a.find((e) => e.key === t);
+    s.useEffect(() => {
+        f(null);
+    }, [t, f]),
+        d()(null != j, "Unknown step for current payment flow (PaymentModalStep): step=%s, flow=%s", t, x);
+    let y = j?.options?.hideSlider ?? !1,
+        R = j?.options?.hideDefaultModalBody ?? !1,
+        I = j?.options?.sliderBodyClassName,
+        _ = (0, p.D7)({ location: "PaymentModalStep" }),
+        M = s.useMemo(() => _ && t === E.pn.REVIEW, [_, t]);
     return (0, r.jsxs)(r.Fragment, {
         children: [
-            (T?.options?.renderHeader ?? !0) ? t : null,
-            T.renderStep(n),
-            null == s || S
+            (j?.options?.renderHeader ?? !0) ? l : null,
+            j.renderStep(n),
+            null == t || y
                 ? null
                 : (0, r.jsxs)(r.Fragment, {
                       children: [
-                          y
+                          R
                               ? null
-                              : (0, r.jsx)(c.cwr, {
-                                    children: (0, r.jsx)(d.tN_, {
+                              : (0, r.jsx)(c.c, {
+                                    children: (0, r.jsx)(u.t, {
                                         shouldUseMediaQueriesForSizing: !0,
-                                        activeSlide: s,
+                                        activeSlide: t,
                                         centered: !1,
-                                        onSlideReady: (e) => A(e),
-                                        width: N,
-                                        disableDefaultTransformStyling: R,
-                                        overflow: I ? "visible" : void 0,
-                                        children: o
+                                        onSlideReady: (e) => P(e),
+                                        width: "100%",
+                                        disableDefaultTransformStyling: M,
+                                        overflow: C ? "visible" : void 0,
+                                        children: a
                                             .filter((e) => null != e.key)
                                             .map((e) =>
                                                 (0, r.jsx)(
-                                                    d.q7S,
+                                                    u.q,
                                                     {
                                                         id: e.key,
                                                         children: (0, r.jsx)("form", {
-                                                            className: a()(h.OO, { [h.Wq]: R }, v),
+                                                            className: i()(S.OO, { [S.Wq]: M }, I),
                                                             ref: (e) => {
-                                                                u(e);
+                                                                o(e);
                                                             },
                                                             onSubmit: (e) => e.preventDefault(),
                                                         }),
@@ -78,10 +77,10 @@ function E(e) {
                                             ),
                                     }),
                                 }),
-                          (0, r.jsx)("div", { ref: (e) => E(e) }),
+                          (0, r.jsx)("div", { ref: (e) => h(e) }),
                           (0, r.jsx)("div", {
                               ref: (e) => {
-                                  g(e);
+                                  f(e);
                               },
                           }),
                       ],
@@ -89,13 +88,13 @@ function E(e) {
         ],
     });
 }
-function g(e) {
-    let { children: t } = e,
-        { bodyNode: n } = (0, f.P5)();
-    return null == n ? null : u.createPortal(t, n);
+function f(e) {
+    let { children: l } = e,
+        { bodyNode: n } = (0, A.P5)();
+    return null == n ? null : o.createPortal(l, n);
 }
-function A(e) {
-    let { children: t } = e,
-        { footerNode: n } = (0, f.P5)();
-    return null == n ? null : u.createPortal(t, n);
+function C(e) {
+    let { children: l } = e,
+        { footerNode: n } = (0, A.P5)();
+    return null == n ? null : o.createPortal(l, n);
 }

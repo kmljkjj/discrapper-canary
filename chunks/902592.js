@@ -1,148 +1,151 @@
-n.r(t), n.d(t, { default: () => k, openDevToolsPopout: () => y });
-var a = n(627968),
-    s = n(64700),
-    i = n(503698),
-    l = n.n(i),
-    r = n(110259),
-    o = n(311907),
-    d = n(397927),
-    c = n(761929),
-    u = n(139286),
-    m = n(58736),
-    h = n(923917),
-    x = n(574172),
-    p = n(147925),
-    g = n(538064),
-    _ = n(265059),
-    f = n(867041),
-    v = n(641616),
-    b = n(231643),
-    j = n(652215),
-    A = n(985018),
-    C = n(346858),
-    S = n(661251);
-function T(e) {
-    let { resizableNode: t, onResize: n, onResizeEnd: s } = e,
-        i = (0, c.A)({
-            minDimension: _.q,
+a.r(t), a.d(t, { default: () => O, openDevToolsPopout: () => I });
+var n = a(627968),
+    l = a(64700),
+    i = a(503698),
+    s = a.n(i),
+    r = a(110259),
+    o = a(17928),
+    d = a(811893),
+    c = a(789645),
+    u = a(306471),
+    m = a(939249),
+    h = a(761929),
+    p = a(139286),
+    x = a(58736),
+    g = a(979186),
+    v = a(574172),
+    b = a(147925),
+    _ = a(538064),
+    f = a(265059),
+    j = a(867041),
+    y = a(550708),
+    C = a(231643),
+    E = a(652215),
+    S = a(985018),
+    N = a(503539),
+    A = a(505206);
+function k(e) {
+    let { resizableNode: t, onResize: a, onResizeEnd: l } = e,
+        i = (0, h.A)({
+            minDimension: f.q,
             resizableDomNodeRef: t,
-            onElementResize: n,
-            onElementResizeEnd: s,
-            orientation: c.R.HORIZONTAL_LEFT,
+            onElementResize: a,
+            onElementResizeEnd: l,
+            orientation: h.R.HORIZONTAL_LEFT,
         });
-    return (0, a.jsx)("div", { onMouseDown: i, className: C.Di });
+    return (0, n.jsx)("div", { onMouseDown: i, className: N.Di });
 }
-function y() {
-    (0, x.open)(
-        j.MLl.DEVTOOLS_POPOUT,
+function I() {
+    (0, v.open)(
+        E.MLl.DEVTOOLS_POPOUT,
         () =>
-            (0, a.jsx)(h.A, {
-                windowKey: j.MLl.DEVTOOLS_POPOUT,
+            (0, n.jsx)(g.A, {
+                windowKey: E.MLl.DEVTOOLS_POPOUT,
                 title: "DevTools",
                 withTitleBar: !0,
-                children: (0, a.jsx)(k, { mobile: !1, isPopout: !0 }),
+                children: (0, n.jsx)(O, { mobile: !1, isPopout: !0 }),
             }),
         { width: 800, height: 600 },
     );
 }
-function N(e) {
+function T(e) {
     let { isPopout: t = !1 } = e,
-        n = (0, v.x)(),
+        a = (0, y.x)(),
         {
-            TabBar: s,
+            TabBar: l,
             renderSelectedTab: i,
-            selectedTabId: l,
-        } = (0, b.Ay)(
+            selectedTabId: s,
+        } = (0, C.Ay)(
             {
-                tabs: n,
-                initialSelectedTabId: _.A.lastOpenTabId ?? void 0,
+                tabs: a,
+                initialSelectedTabId: f.A.lastOpenTabId ?? void 0,
                 onChangeTab: (e) => {
-                    (0, g.Jt)({ lastOpenTabId: e });
+                    (0, _.Jt)({ lastOpenTabId: e });
                 },
             },
-            [n],
+            [a],
         );
     return (
-        (0, u.A)({
+        (0, p.A)({
             type: r.ImpressionTypes.PANE,
             name: r.ImpressionNames.VIEW_PANEL_DEVTOOLS,
-            properties: { panel: l },
+            properties: { panel: s },
         }),
-        (0, a.jsxs)(f.xG, {
+        (0, n.jsxs)(j.xG, {
             children: [
-                (0, a.jsxs)(m.Ay, {
-                    className: S.jr,
+                (0, n.jsxs)(x.Ay, {
+                    className: A.jr,
                     toolbar: t
                         ? null
-                        : (0, a.jsxs)(a.Fragment, {
+                        : (0, n.jsxs)(n.Fragment, {
                               children: [
-                                  (0, a.jsx)(m.Ay.Icon, { icon: d.tfB, tooltip: "Pop Out", onClick: y }),
-                                  (0, a.jsx)(m.Ay.Icon, {
-                                      icon: d.PGe,
-                                      tooltip: A.intl.string(A.t.cpT0Cq),
-                                      onClick: g.pf,
+                                  (0, n.jsx)(x.Ay.Icon, { icon: d.t, tooltip: "Pop Out", onClick: I }),
+                                  (0, n.jsx)(x.Ay.Icon, {
+                                      icon: c.P,
+                                      tooltip: S.intl.string(S.t.cpT0Cq),
+                                      onClick: _.pf,
                                   }),
                               ],
                           }),
                     children: [
-                        (0, a.jsx)(m.Ay.Icon, { icon: d.VaJ, tooltip: "DevTools" }),
-                        (0, a.jsx)(m.Ay.Title, { children: "DevTools" }),
+                        (0, n.jsx)(x.Ay.Icon, { icon: u.V, tooltip: "DevTools" }),
+                        (0, n.jsx)(x.Ay.Title, { children: "DevTools" }),
                     ],
                 }),
-                (0, a.jsx)(s, {}),
+                (0, n.jsx)(l, {}),
                 i(),
-                (0, a.jsx)(f.jY, { className: C.n7 }),
+                (0, n.jsx)(j.jY, { className: N.n7 }),
             ],
         })
     );
 }
-function E() {
-    let e = s.useRef(null),
-        t = (0, o.bG)([_.A], () => _.A.sidebarWidth),
-        [n, i] = s.useState(null),
-        l = s.useCallback((e) => (0, g.Jt)({ sidebarWidth: e }), []);
-    return (s.useEffect(() => {
-        null === n && null !== t && i(t);
-    }, [t, n]),
-    null === n)
+function D() {
+    let e = l.useRef(null),
+        t = (0, o.bG)([f.A], () => f.A.sidebarWidth),
+        [a, i] = l.useState(null),
+        s = l.useCallback((e) => (0, _.Jt)({ sidebarWidth: e }), []);
+    return (l.useEffect(() => {
+        null === a && null !== t && i(t);
+    }, [t, a]),
+    null === a)
         ? null
-        : (0, a.jsxs)("div", {
+        : (0, n.jsxs)("div", {
               ref: e,
-              className: C.kL,
-              style: { minWidth: _.q, width: n },
+              className: N.kL,
+              style: { minWidth: f.q, width: a },
               "data-app-right-panel": !0,
               children: [
-                  (0, a.jsx)(T, { resizableNode: e, onResize: i, onResizeEnd: l }),
-                  (0, a.jsx)("div", { className: C.wp, children: (0, a.jsx)(N, {}) }),
+                  (0, n.jsx)(k, { resizableNode: e, onResize: i, onResizeEnd: s }),
+                  (0, n.jsx)("div", { className: N.wp, children: (0, n.jsx)(T, {}) }),
               ],
           });
 }
-function I() {
-    return (0, o.bG)([_.A], () => _.A.displayTools)
-        ? (0, a.jsx)("div", {
-              className: l()(C.kL, C.PQ),
-              children: (0, a.jsx)("div", { className: C.wp, children: (0, a.jsx)(N, {}) }),
+function w() {
+    return (0, o.bG)([f.A], () => f.A.displayTools)
+        ? (0, n.jsx)("div", {
+              className: s()(N.kL, N.PQ),
+              children: (0, n.jsx)("div", { className: N.wp, children: (0, n.jsx)(T, {}) }),
           })
-        : (0, a.jsx)("div", {
-              className: C.kL,
-              children: (0, a.jsx)(d.DUT, {
-                  onClick: g.pf,
-                  children: (0, a.jsxs)(m.Ay, {
-                      className: l()(S.jr, C.J$),
-                      toolbar: (0, a.jsx)(p.A, { direction: p.A.Directions.UP }),
+        : (0, n.jsx)("div", {
+              className: N.kL,
+              children: (0, n.jsx)(m.D, {
+                  onClick: _.pf,
+                  children: (0, n.jsxs)(x.Ay, {
+                      className: s()(A.jr, N.J$),
+                      toolbar: (0, n.jsx)(b.A, { direction: b.A.Directions.UP }),
                       children: [
-                          (0, a.jsx)(m.Ay.Icon, { icon: d.VaJ, tooltip: "DevTools" }),
-                          (0, a.jsx)(m.Ay.Title, { children: "DevTools" }),
+                          (0, n.jsx)(x.Ay.Icon, { icon: u.V, tooltip: "DevTools" }),
+                          (0, n.jsx)(x.Ay.Title, { children: "DevTools" }),
                       ],
                   }),
               }),
           });
 }
-function k(e) {
-    let { mobile: t, isPopout: n = !1 } = e;
+function O(e) {
+    let { mobile: t, isPopout: a = !1 } = e;
     return t
-        ? (0, a.jsx)(I, {})
-        : n
-          ? (0, a.jsx)("div", { className: C.jC, children: (0, a.jsx)(N, { isPopout: !0 }) })
-          : (0, a.jsx)(E, {});
+        ? (0, n.jsx)(w, {})
+        : a
+          ? (0, n.jsx)("div", { className: N.jC, children: (0, n.jsx)(T, { isPopout: !0 }) })
+          : (0, n.jsx)(D, {});
 }

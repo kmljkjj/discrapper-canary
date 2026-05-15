@@ -1,74 +1,74 @@
 "use strict";
-n.d(t, { u: () => E });
-var r = n(627968),
-    i = n(64700),
+n.d(t, { u: () => m });
+var i = n(627968),
+    r = n(64700),
     s = n(503698),
     a = n.n(s),
     o = n(140735),
-    l = n(158954),
-    u = n(397927),
+    l = n(353795),
+    u = n(834730),
     c = n(750506),
-    d = n(717995),
+    d = n(237140),
     _ = n(112317),
     f = n(348275),
-    p = n(505679),
-    h = n(747781),
-    m = n(93476);
-function E(e) {
+    h = n(505679),
+    p = n(521754),
+    E = n(600525);
+function m(e) {
     let {
             children: t,
             title: n,
             body: s,
-            asset: E,
+            asset: m,
             assetSize: g = 48,
             padding: A = "default",
             asContainer: I = !1,
             element: T = "span",
             position: S = "top",
-            align: y = "center",
-            spacing: v,
-            caretConfig: N,
-            layerContext: C,
-            targetElementRef: R,
-            anchorRef: O,
+            align: N = "center",
+            spacing: y,
+            caretConfig: C,
+            layerContext: v,
+            targetElementRef: O,
+            anchorRef: R,
             positionKey: b,
             ariaHidden: D = !1,
             ...L
         } = e,
-        [w, M] = i.useState(null);
-    i.useLayoutEffect(() => {
-        null != O && M(O.current);
-    }, [O]);
-    let x = i.useCallback(
+        [w, M] = r.useState(null);
+    r.useLayoutEffect(() => {
+        null != R && M(R.current);
+    }, [R]);
+    let P = r.useCallback(
             (e) => {
-                null == O && M(e), (0, f.cZ)(R, e);
+                null == R && M(e), (0, f.cZ)(O, e);
             },
-            [R, O],
+            [O, R],
         ),
         {
-            tooltipId: P,
-            isVisible: k,
-            targetElementRef: U,
+            tooltipId: x,
+            isVisible: U,
+            targetElementRef: k,
             trigger: G,
-        } = (0, h.D)({ children: t, targetElementRef: x, asContainer: I, containerTag: T, ariaHidden: D, ...L }),
+        } = (0, p.D)({ children: t, targetElementRef: P, asContainer: I, containerTag: T, ariaHidden: D, ...L }),
         F = null != n && ("string" != typeof n || "" !== n),
-        V = null != E && !i.isValidElement(E),
-        B = i.useMemo(
+        V = null != m && !r.isValidElement(m),
+        B = r.useMemo(
             () =>
-                (0, r.jsxs)("div", {
-                    className: a()(m.jk, { [m.eb]: null == E, [m.Sx]: "lg" === A }),
+                (0, i.jsxs)("div", {
+                    className: a()(E.jk, { [E.eb]: null == m, [E.Sx]: "lg" === A }),
                     children: [
-                        null != E &&
-                            (0, r.jsx)("div", {
-                                className: m.s,
+                        null != m &&
+                            (0, i.jsx)("div", {
+                                className: E.s,
                                 style: { width: g },
-                                children: V ? (0, r.jsx)(l.vYh, { ...E }) : E,
+                                children: V ? (0, i.jsx)(l.v, { ...m }) : m,
                             }),
-                        (0, r.jsxs)("div", {
-                            className: m.P_,
+                        (0, i.jsxs)("div", {
+                            className: E.P_,
                             children: [
-                                F && (0, r.jsx)(u.Text, { variant: "text-sm/medium", children: n }),
-                                (0, r.jsx)(u.Text, {
+                                F && (0, i.jsx)(u.E, { variant: "text-sm/medium", children: n }),
+                                (0, i.jsx)(u.E, {
                                     variant: "text-sm/normal",
                                     color: F ? "text-subtle" : "text-default",
                                     children: s,
@@ -77,29 +77,29 @@ function E(e) {
                         }),
                     ],
                 }),
-            [E, g, A, n, s, F, V],
+            [m, g, A, n, s, F, V],
         ),
         H = b ?? `${(0, f.Xj)(n ?? "")}|${(0, f.Xj)(s)}`,
-        j = (0, p.j)({ shouldShow: k });
-    if (!I && !i.isValidElement(t)) return null;
+        j = (0, h.j)({ shouldShow: U });
+    if (!I && !r.isValidElement(t)) return null;
     let Y = j((e, t) =>
         t
-            ? (0, r.jsx)(_.Bc, {
+            ? (0, i.jsx)(_.Bc, {
                   isRichTooltip: !0,
                   richTooltipPadding: A,
-                  children: (0, r.jsx)(d.R, {
-                      isVisible: k,
+                  children: (0, i.jsx)(d.R, {
+                      isVisible: U,
                       isRendered: !0,
-                      targetElementRef: U,
+                      targetElementRef: k,
                       targetElement: w,
-                      anchorRef: O,
-                      id: P,
+                      anchorRef: R,
+                      id: x,
                       content: B,
                       position: S,
-                      align: y,
-                      spacing: v,
-                      caretConfig: N,
-                      layerContext: C ?? c.uY,
+                      align: N,
+                      spacing: y,
+                      caretConfig: C,
+                      layerContext: v ?? c.uY,
                       animationStyle: e,
                       positionKey: H,
                       "data-mana-component": "rich-tooltip",
@@ -107,7 +107,7 @@ function E(e) {
               })
             : null,
     );
-    return (0, r.jsxs)(r.Fragment, {
-        children: [G, D || null == B ? null : (0, r.jsx)(o.A, { id: P, children: B }), Y],
+    return (0, i.jsxs)(i.Fragment, {
+        children: [G, D || null == B ? null : (0, i.jsx)(o.A, { id: x, children: B }), Y],
     });
 }

@@ -1,37 +1,38 @@
+"use strict";
 n.d(t, { A: () => _ });
-var i = n(311907),
-    l = n(506774),
-    a = n(73153),
-    r = n(785796);
-let s = "MaintenanceStore",
-    o = null,
-    c = null,
-    d = null;
-class u extends i.Ay.Store {
+var i = n(17928),
+    r = n(506774),
+    s = n(228366),
+    a = n(785796);
+let o = "MaintenanceStore",
+    l = null,
+    u = null,
+    c = null;
+class d extends i.Ay.Store {
     static displayName = "MaintenanceStore";
     initialize() {
-        d = l.w.get(s);
+        c = r.w.get(o);
     }
     getIncident() {
-        return o;
+        return l;
     }
     getScheduledMaintenance() {
-        let e = c?.scheduled_until ?? c?.scheduled_for;
-        return null != c && c.id !== d && (null == e || Date.now() < new Date(e).getTime()) ? c : null;
+        let e = u?.scheduled_until ?? u?.scheduled_for;
+        return null != u && u.id !== c && (null == e || Date.now() < new Date(e).getTime()) ? u : null;
     }
 }
-let _ = new u(a.h, {
+let _ = new d(s.h, {
     CONNECTION_OPEN: function () {
-        (o = null), r.A.checkScheduledMaintenances();
+        (l = null), a.A.checkScheduledMaintenances();
     },
     STATUS_PAGE_INCIDENT: function (e) {
-        o = e.incident;
+        l = e.incident;
     },
     STATUS_PAGE_SCHEDULED_MAINTENANCE: function (e) {
-        c = e.maintenance;
+        u = e.maintenance;
     },
     STATUS_PAGE_SCHEDULED_MAINTENANCE_ACK: function () {
-        if (null == c) return !1;
-        (d = c.id), l.w.set(s, d);
+        if (null == u) return !1;
+        (c = u.id), r.w.set(o, c);
     },
 });

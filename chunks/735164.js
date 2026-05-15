@@ -1,114 +1,108 @@
-"use strict";
-n.d(t, { Sd: () => A, X0: () => I, Xd: () => h, Yx: () => f, f0: () => g, oR: () => p, pK: () => E });
-var r = n(627968),
-    i = n(64700),
-    a = n(503698),
-    s = n.n(a),
-    o = n(397927),
-    l = n(580630),
-    u = n(985018),
-    c = n(600834);
-let d = i.createContext({ isPremiumRebrand: !1 }),
-    _ = () => i.useContext(d).isPremiumRebrand;
-function f(e) {
-    let { children: t, className: n, isPremiumRebrand: i = !1 } = e;
-    return (0, r.jsx)(d.Provider, {
-        value: { isPremiumRebrand: i },
-        children: (0, r.jsx)("div", { className: s()(c.tp, { [c.u0]: i }, n), children: t }),
+n.d(t, { Sd: () => h, X0: () => x, Xd: () => m, Yx: () => _, f0: () => f, oR: () => b, pK: () => g });
+var a = n(627968),
+    r = n(64700),
+    l = n(503698),
+    i = n.n(l),
+    s = n(534514),
+    o = n(834730),
+    c = n(580630),
+    d = n(985018),
+    u = n(690073);
+let p = r.createContext({ isPremiumRebrand: !1 });
+function _(e) {
+    let { children: t, className: n, isPremiumRebrand: r = !1 } = e;
+    return (0, a.jsx)(p.Provider, {
+        value: { isPremiumRebrand: r },
+        children: (0, a.jsx)("div", { className: i()(u.tp, { [u.u0]: r }, n), children: t }),
     });
 }
-function h(e) {
+function m(e) {
     let { children: t } = e;
-    return _()
-        ? (0, r.jsx)(o.Heading, {
+    return r.useContext(p).isPremiumRebrand
+        ? (0, a.jsx)(s.D, {
               variant: "heading-md/semibold",
               color: "text-strong",
-              className: s()(c.wx, c.u0),
+              className: i()(u.wx, u.u0),
               children: t,
           })
-        : (0, r.jsx)("div", { className: c.wx, children: t });
+        : (0, a.jsx)("div", { className: u.wx, children: t });
 }
-function p(e) {
-    let { label: t, value: n, className: i } = e;
-    return _()
-        ? (0, r.jsxs)("div", {
-              className: s()(c.nM, i),
+function b(e) {
+    let { label: t, value: n, className: l } = e;
+    return r.useContext(p).isPremiumRebrand
+        ? (0, a.jsxs)("div", {
+              className: i()(u.nM, l),
               children: [
-                  (0, r.jsx)(o.Text, { variant: "text-sm/medium", color: "currentColor", children: t }),
-                  (0, r.jsx)(o.Text, {
-                      variant: "text-sm/medium",
-                      color: "currentColor",
-                      className: c.Uu,
-                      children: n,
-                  }),
+                  (0, a.jsx)(o.E, { variant: "text-sm/medium", color: "currentColor", children: t }),
+                  (0, a.jsx)(o.E, { variant: "text-sm/medium", color: "currentColor", className: u.Uu, children: n }),
               ],
           })
-        : (0, r.jsxs)("div", {
-              className: s()(c.nM, i),
+        : (0, a.jsxs)("div", {
+              className: i()(u.nM, l),
               children: [
-                  (0, r.jsx)("div", { className: c.xZ, children: t }),
-                  (0, r.jsx)("div", { className: c.X6, children: n }),
+                  (0, a.jsx)("div", { className: u.xZ, children: t }),
+                  (0, a.jsx)("div", { className: u.X6, children: n }),
               ],
           });
 }
-function g(e) {
+function f(e) {
     let {
             label: t,
             value: n,
-            subscriptionDiscount: i,
-            entitlementDiscount: a,
-            originalAmount: s,
-            interval: d,
-            currency: _,
-            className: f,
-            intervalCount: h,
-            inTrialPeriod: g,
+            subscriptionDiscount: r,
+            entitlementDiscount: l,
+            originalAmount: i,
+            interval: s,
+            currency: p,
+            className: _,
+            intervalCount: m,
+            inTrialPeriod: f,
         } = e,
-        E = null != i ? Math.floor((i.amount / s) * 100) : null,
-        A = (0, l.$g)(s, _);
-    return (0, r.jsxs)(r.Fragment, {
+        g = null != r ? Math.floor((r.amount / i) * 100) : null,
+        h = (0, c.$g)(i, p);
+    return (0, a.jsxs)(a.Fragment, {
         children: [
-            (0, r.jsx)(p, {
+            (0, a.jsx)(b, {
                 label: t,
-                value: (0, r.jsxs)(r.Fragment, {
+                value: (0, a.jsxs)(a.Fragment, {
                     children: [
-                        g ? u.intl.formatToPlainString(u.t.hXcaLT, { price: (0, l.$g)(0, _) }) : n,
-                        null != E ? (0, r.jsxs)("div", { className: c.ns, children: ["-", E, "%"] }) : null,
+                        f ? d.intl.formatToPlainString(d.t.hXcaLT, { price: (0, c.$g)(0, p) }) : n,
+                        null != g ? (0, a.jsxs)("div", { className: u.ns, children: ["-", g, "%"] }) : null,
                     ],
                 }),
-                className: f,
+                className: _,
             }),
-            g &&
-                (0, r.jsx)(o.Text, {
+            f &&
+                (0, a.jsx)(o.E, {
                     variant: "text-md/medium",
-                    className: c.lk,
-                    children: u.intl.format(u.t.v9QeON, { price: A }),
+                    className: u.lk,
+                    children: d.intl.format(d.t.v9QeON, { price: h }),
                 }),
-            null != E
-                ? (0, r.jsxs)("div", {
-                      className: c.gX,
-                      children: ["(", null != d && null != h ? (0, l.CE)(A, d, h) : A, ")"],
+            null != g
+                ? (0, a.jsxs)("div", {
+                      className: u.gX,
+                      children: ["(", null != s && null != m ? (0, c.CE)(h, s, m) : h, ")"],
                   })
                 : null,
-            null != a ? (0, r.jsx)("div", { className: c.Ht, children: u.intl.string(u.t.A7Hpfs) }) : null,
+            null != l ? (0, a.jsx)("div", { className: u.Ht, children: d.intl.string(d.t.A7Hpfs) }) : null,
         ],
     });
 }
-function E(e) {
-    let { extended: t = !1, negativeMarginTop: n = !1, negativeMarginBottom: i = !1, invisible: a = !1 } = e;
-    return (0, r.jsx)("div", { className: s()(c.yF, { [c.hF]: t, [c.P_]: n, [c.vy]: i, [c.Bw]: a }) });
+function g(e) {
+    let { extended: t = !1, negativeMarginTop: n = !1, negativeMarginBottom: r = !1, invisible: l = !1 } = e;
+    return (0, a.jsx)("div", { className: i()(u.yF, { [u.hF]: t, [u.P_]: n, [u.vy]: r, [u.Bw]: l }) });
 }
-function A(e) {
-    let { label: t, value: n, className: i } = e;
-    return (0, r.jsxs)("div", {
-        className: s()(c.V$, i),
+function h(e) {
+    let { label: t, value: n, className: r } = e;
+    return (0, a.jsxs)("div", {
+        className: i()(u.V$, r),
         children: [
-            (0, r.jsx)("div", { className: c.j5, children: t }),
-            (0, r.jsx)("div", { className: c.HR, children: n }),
+            (0, a.jsx)("div", { className: u.j5, children: t }),
+            (0, a.jsx)("div", { className: u.HR, children: n }),
         ],
     });
 }
-function I(e) {
+function x(e) {
     let { children: t, className: n } = e;
-    return (0, r.jsx)("div", { className: s()(c.aO, n), children: t });
+    return (0, a.jsx)("div", { className: i()(u.aO, n), children: t });
 }

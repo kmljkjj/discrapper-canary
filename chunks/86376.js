@@ -1,50 +1,51 @@
-"use strict";
-n.d(t, { A: () => S, X: () => T });
-var r = n(627968),
-    i = n(64700),
-    s = n(503698),
-    a = n.n(s),
-    o = n(311907),
-    l = n(990078),
-    u = n(397927),
-    c = n(986268),
-    d = n(345942),
-    _ = n(773669),
-    f = n(961350),
-    p = n(696451),
-    h = n(860689),
-    m = n(661191),
-    E = n(107123),
-    g = n(985018),
-    A = n(837756);
-function I(e) {
-    let { profile: t, disableGuildNameClick: n } = e,
-        s = t.id,
-        a = (0, o.bG)([p.Ay, f.default], () => p.Ay.getMember(s, f.default.getId())?.joinedAt != null, [s]),
-        c = i.useCallback(
+s.d(t, { A: () => G, X: () => y });
+var l = s(627968),
+    a = s(64700),
+    i = s(503698),
+    n = s.n(i),
+    r = s(17928),
+    c = s(990078),
+    d = s(534514),
+    m = s(939249),
+    o = s(834730),
+    u = s(986268),
+    x = s(345942),
+    h = s(773669),
+    v = s(495544),
+    j = s(696451),
+    N = s(860689),
+    g = s(935208),
+    f = s(107123),
+    p = s(985018),
+    A = s(73045);
+function b(e) {
+    let { profile: t, disableGuildNameClick: s } = e,
+        i = t.id,
+        n = (0, r.bG)([j.Ay, v.default], () => j.Ay.getMember(i, v.default.getId())?.joinedAt != null, [i]),
+        o = a.useCallback(
             (e) => {
-                a && (e.stopPropagation(), (0, d.u)(t.id));
+                n && (e.stopPropagation(), (0, x.u)(t.id));
             },
-            [a, t.id],
+            [n, t.id],
         );
-    return !a || n
-        ? (0, r.jsx)(l.m, {
+    return !n || s
+        ? (0, l.jsx)(c.m, {
               text: t.name,
               overflowOnly: !0,
-              children: (0, r.jsx)(u.Heading, {
+              children: (0, l.jsx)(d.D, {
                   className: A.J5,
                   variant: "heading-md/semibold",
                   color: "text-strong",
                   children: t.name,
               }),
           })
-        : (0, r.jsx)(u.DUT, {
+        : (0, l.jsx)(m.D, {
               className: A.YS,
-              onClick: c,
-              children: (0, r.jsx)(l.m, {
+              onClick: o,
+              children: (0, l.jsx)(c.m, {
                   text: t.name,
                   overflowOnly: !0,
-                  children: (0, r.jsx)(u.Heading, {
+                  children: (0, l.jsx)(d.D, {
                       className: A.J5,
                       variant: "heading-md/semibold",
                       color: "text-strong",
@@ -53,58 +54,58 @@ function I(e) {
               }),
           });
 }
-function T(e) {
-    let { onlineCount: t, memberCount: n, className: i } = e;
-    return (0, r.jsxs)("div", {
-        className: a()(A.ol, i),
+function y(e) {
+    let { onlineCount: t, memberCount: s, className: a, highContrast: i = !1 } = e;
+    return (0, l.jsxs)("div", {
+        className: n()(A.ol, a),
         children: [
-            (0, r.jsxs)("div", {
+            (0, l.jsxs)("div", {
                 className: A.Kl,
                 children: [
-                    (0, r.jsx)("div", { className: A.JX }),
-                    (0, r.jsx)(u.Text, {
+                    (0, l.jsx)("div", { className: A.JX }),
+                    (0, l.jsx)(o.E, {
                         variant: "text-sm/normal",
-                        color: "text-subtle",
-                        children: g.intl.format(g.t["LC+S+m"], { membersOnline: t }),
+                        color: i ? "text-default" : "text-subtle",
+                        children: p.intl.format(p.t["LC+S+m"], { membersOnline: t }),
                     }),
                 ],
             }),
-            (0, r.jsxs)("div", {
+            (0, l.jsxs)("div", {
                 className: A.Kl,
                 children: [
-                    (0, r.jsx)("div", { className: A.Om }),
-                    (0, r.jsx)(u.Text, {
+                    (0, l.jsx)("div", { className: n()(A.Om, i && A.i7) }),
+                    (0, l.jsx)(o.E, {
                         variant: "text-sm/normal",
-                        color: "text-subtle",
-                        children: g.intl.format(g.t.zRl6XR, { count: n }),
+                        color: i ? "text-default" : "text-subtle",
+                        children: p.intl.format(p.t.zRl6XR, { count: s }),
                     }),
                 ],
             }),
         ],
     });
 }
-function S(e) {
-    let { profile: t, disableGuildNameClick: n } = e,
-        s = (0, o.bG)([_.default], () => _.default.locale),
-        a = (0, E.P)(m.default.extractTimestamp(t.id), s),
-        l = i.useMemo(() => {
-            let e = (0, h.b9)(t);
-            return (0, r.jsx)(c.A, { guild: e, isBannerVisible: !1 });
+function G(e) {
+    let { profile: t, disableGuildNameClick: s } = e,
+        i = (0, r.bG)([h.default], () => h.default.locale),
+        n = (0, f.P)(g.default.extractTimestamp(t.id), i),
+        c = a.useMemo(() => {
+            let e = (0, N.b9)(t);
+            return (0, l.jsx)(u.A, { guild: e, isBannerVisible: !1 });
         }, [t]);
-    return (0, r.jsxs)("div", {
+    return (0, l.jsxs)("div", {
         className: A.wx,
         children: [
-            (0, r.jsxs)("div", {
+            (0, l.jsxs)("div", {
                 className: A.VW,
-                children: [(0, r.jsx)(I, { profile: t, disableGuildNameClick: n }), l],
+                children: [(0, l.jsx)(b, { profile: t, disableGuildNameClick: s }), c],
             }),
-            (0, r.jsx)(T, { onlineCount: t.onlineCount, memberCount: t.memberCount }),
-            (0, r.jsx)("div", {
+            (0, l.jsx)(y, { onlineCount: t.onlineCount, memberCount: t.memberCount }),
+            (0, l.jsx)("div", {
                 className: A.b5,
-                children: (0, r.jsx)(u.Text, {
+                children: (0, l.jsx)(o.E, {
                     variant: "text-sm/normal",
                     color: "text-subtle",
-                    children: g.intl.format(g.t.zb2Q56, { createdAtDate: a }),
+                    children: p.intl.format(p.t.zb2Q56, { createdAtDate: n }),
                 }),
             }),
         ],

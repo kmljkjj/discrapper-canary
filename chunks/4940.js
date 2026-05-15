@@ -1,8 +1,8 @@
 "use strict";
-var r = n(257943),
-    i = n(804272),
-    a = n(516549),
-    s = n(101968),
+var i = n(257943),
+    r = n(804272),
+    s = n(516549),
+    a = n(101968),
     o = n(706598),
     l = TypeError,
     u = Object.defineProperty,
@@ -10,26 +10,26 @@ var r = n(257943),
     d = "enumerable",
     _ = "configurable",
     f = "writable";
-t.f = r
-    ? a
+t.f = i
+    ? s
         ? function (e, t, n) {
               if (
-                  (s(e),
+                  (a(e),
                   (t = o(t)),
-                  s(n),
+                  a(n),
                   "function" == typeof e && "prototype" === t && "value" in n && f in n && !n[f])
               ) {
-                  var r = c(e, t);
-                  r &&
-                      r[f] &&
+                  var i = c(e, t);
+                  i &&
+                      i[f] &&
                       ((e[t] = n.value),
-                      (n = { configurable: _ in n ? n[_] : r[_], enumerable: d in n ? n[d] : r[d], writable: !1 }));
+                      (n = { configurable: _ in n ? n[_] : i[_], enumerable: d in n ? n[d] : i[d], writable: !1 }));
               }
               return u(e, t, n);
           }
         : u
     : function (e, t, n) {
-          if ((s(e), (t = o(t)), s(n), i))
+          if ((a(e), (t = o(t)), a(n), r))
               try {
                   return u(e, t, n);
               } catch (e) {}

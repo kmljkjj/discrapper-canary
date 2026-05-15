@@ -1,20 +1,21 @@
-n.d(t, { k: () => r });
-var i = n(311907),
-    l = n(734057),
-    a = n(383501);
-function r(e) {
+"use strict";
+n.d(t, { k: () => a });
+var i = n(17928),
+    r = n(734057),
+    s = n(763827);
+function a(e) {
     let { channelId: t } = e;
     return (0, i.bG)(
-        [a.A, l.A],
+        [s.A, r.A],
         () =>
             (function (e) {
-                let [t, n] = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : [a.A, l.A];
+                let [t, n] = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : [s.A, r.A];
                 if (null == e || t.getChannelId() !== e) return !1;
                 let i = n.getChannel(e);
                 if (null == i || i.isGuildStageVoice()) return !1;
-                let r = t.getSecureFramesState()?.version;
-                return null != r && 0 !== r;
-            })(t, [a.A, l.A]),
+                let a = t.getSecureFramesState()?.version;
+                return null != a && 0 !== a;
+            })(t, [s.A, r.A]),
         [t],
     );
 }

@@ -1,32 +1,33 @@
 "use strict";
-let r;
-n.d(t, { A: () => c }), n(321073);
-var i = n(311907),
-    a = n(73153);
-let s = { hasAcceptedStoreTerms: !1, hasAcceptedEulaIds: [] };
-function o() {
-    r.hasAcceptedStoreTerms = !0;
-}
-function l(e) {
-    let { eulaId: t } = e;
-    if (r.hasAcceptedEulaIds.includes(t)) return !1;
-    r.hasAcceptedEulaIds.push(t);
-}
-class u extends i.Ay.PersistedStore {
+let i;
+n.d(t, { A: () => l }), n(321073);
+var r = n(17928),
+    s = n(228366);
+let a = { hasAcceptedStoreTerms: !1, hasAcceptedEulaIds: [] };
+class o extends r.Ay.PersistedStore {
     static displayName = "ApplicationStoreUserSettingsStore";
     static persistKey = "ApplicationStoreUserSettingsStore";
     static migrations = [(e) => (null == e.hasAcceptedEulaIds ? { ...e, hasAcceptedEulaIds: [] } : e)];
     initialize(e) {
-        r = e ?? s;
+        i = e ?? a;
     }
     getState() {
-        return r;
+        return i;
     }
     get hasAcceptedStoreTerms() {
-        return r.hasAcceptedStoreTerms;
+        return i.hasAcceptedStoreTerms;
     }
     hasAcceptedEULA(e) {
-        return r.hasAcceptedEulaIds.includes(e);
+        return i.hasAcceptedEulaIds.includes(e);
     }
 }
-let c = new u(a.h, { APPLICATION_STORE_ACCEPT_STORE_TERMS: o, APPLICATION_STORE_ACCEPT_EULA: l });
+let l = new o(s.h, {
+    APPLICATION_STORE_ACCEPT_STORE_TERMS: function () {
+        i.hasAcceptedStoreTerms = !0;
+    },
+    APPLICATION_STORE_ACCEPT_EULA: function (e) {
+        let { eulaId: t } = e;
+        if (i.hasAcceptedEulaIds.includes(t)) return !1;
+        i.hasAcceptedEulaIds.push(t);
+    },
+});

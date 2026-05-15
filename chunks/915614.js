@@ -1,77 +1,76 @@
 "use strict";
-n.d(t, { A: () => v, o: () => y });
-var r = n(627968),
-    i = n(64700),
+n.d(t, { A: () => y, o: () => N });
+var i = n(627968),
+    r = n(64700),
     s = n(503698),
     a = n.n(s),
     o = n(317097),
-    l = n(311907),
-    u = n(827734),
-    c = n(397927),
-    d = n(654107),
-    _ = n(450373),
-    f = n(915089),
+    l = n(17928),
+    u = n(661531),
+    c = n(778712),
+    d = n(602853),
+    _ = n(654107),
+    f = n(450373),
+    h = n(915089),
     p = n(693875),
-    h = n(253932),
+    E = n(885386),
     m = n(531685),
-    E = n(486020),
-    g = n(837529),
-    A = n(686189),
-    I = n(985253),
-    T = n(166212);
-let S = (e) => {
-    let { size: t, stroke: n } = (0, c.KjH)(e);
-    return t / 2 + n;
-};
-function y(e) {
+    g = n(486020),
+    A = n(837529),
+    I = n(686189),
+    T = n(985253),
+    S = n(926601);
+function N(e) {
     let {
             user: t,
             displayProfile: n,
             guildId: s,
-            pendingBanner: I,
-            children: y,
-            className: v,
-            avatarSize: N,
-            avatarOffsetX: C,
-            avatarOffsetY: R,
-            bannerWidth: O,
+            pendingBanner: T,
+            children: N,
+            className: y,
+            avatarSize: C,
+            avatarOffsetX: v,
+            avatarOffsetY: O,
+            bannerWidth: R,
             bannerHeight: b,
             themePadding: D,
             pendingAccentColor: L,
             animateOnHoverOrFocusOnly: w = !1,
         } = e,
-        M = (0, f.GV)(),
-        [x, P] = i.useState(!1),
-        k = (0, l.bG)([m.A], () => m.A.isFocused()),
-        U = h.kt.getSetting(),
-        G = (0, g.Nx)(),
-        { bannerSrc: F, status: V } = (0, A.A)({
+        M = (0, h.GV)(),
+        [P, x] = r.useState(!1),
+        U = (0, l.bG)([m.A], () => m.A.isFocused()),
+        k = E.kt.getSetting(),
+        G = (0, A.Nx)(),
+        { bannerSrc: F, status: V } = (0, I.A)({
             displayProfile: n,
-            pendingBanner: I,
-            size: O,
-            canAnimate: w || !U ? x : k,
+            pendingBanner: T,
+            size: R,
+            canAnimate: w || !k ? P : U,
         }),
         B = G ? null : F,
-        H = (0, c.rdh)(u.A.unsafe_rawColors.PRIMARY_800).hex(),
-        j = t.getAvatarURL(s, (0, c.FT9)(N)),
-        Y = (0, o.LX)((0, d.Ay)(j, H, !1)),
-        W = (0, _.A)(L ?? n?.primaryColor ?? Y).hex,
-        K = S(N),
-        $ = K + C - D,
-        z = b - R - D;
-    return (0, r.jsxs)("svg", {
-        className: T.dK,
-        viewBox: `0 0 ${O} ${b}`,
-        style: { minWidth: O, minHeight: b },
+        H = (0, d.r)(u.A.unsafe_rawColors.PRIMARY_800).hex(),
+        j = t.getAvatarURL(s, (0, c.FT)(C)),
+        Y = (0, o.LX)((0, _.Ay)(j, H, !1)),
+        W = (0, f.A)(L ?? n?.primaryColor ?? Y).hex,
+        K = ((e) => {
+            let { size: t, stroke: n } = (0, c.Kj)(e);
+            return t / 2 + n;
+        })(C),
+        z = b - O - D;
+    return (0, i.jsxs)("svg", {
+        className: S.dK,
+        viewBox: `0 0 ${R} ${b}`,
+        style: { minWidth: R, minHeight: b },
         children: [
-            (0, r.jsxs)("mask", {
+            (0, i.jsxs)("mask", {
                 id: M,
                 children: [
-                    (0, r.jsx)("rect", { fill: "white", x: "0", y: "0", width: "100%", height: "100%" }),
-                    (0, r.jsx)("circle", { fill: "black", cx: $, cy: z, r: K }),
+                    (0, i.jsx)("rect", { fill: "white", x: "0", y: "0", width: "100%", height: "100%" }),
+                    (0, i.jsx)("circle", { fill: "black", cx: K + v - D, cy: z, r: K }),
                 ],
             }),
-            (0, r.jsxs)("foreignObject", {
+            (0, i.jsxs)("foreignObject", {
                 x: "0",
                 y: "0",
                 width: "100%",
@@ -79,35 +78,35 @@ function y(e) {
                 overflow: "visible",
                 mask: `url(#${M})`,
                 children: [
-                    y,
-                    (0, r.jsx)("div", {
-                        className: a()(T.vK, v),
-                        onMouseMove: () => P(!0),
-                        onMouseLeave: () => P(!1),
+                    N,
+                    (0, i.jsx)("div", {
+                        className: a()(S.vK, y),
+                        onMouseMove: () => x(!0),
+                        onMouseLeave: () => x(!1),
                         style: {
                             height: b,
                             minHeight: b,
                             backgroundImage: null != B ? `url(${B})` : void 0,
                             backgroundColor: "COMPLETE" === V || G ? W : u.A.unsafe_rawColors.PRIMARY_800.css,
                         },
-                        children: !U && (0, E.o4)(B) && (0, r.jsx)(p.A, { className: T.pH }),
+                        children: !k && (0, g.o4)(B) && (0, i.jsx)(p.A, { className: S.pH }),
                     }),
                 ],
             }),
         ],
     });
 }
-function v(e) {
+function y(e) {
     let {
             themeType: t,
             user: n,
-            displayProfile: i,
+            displayProfile: r,
             canUsePremiumProfileCustomization: s = !1,
             specOverrides: a,
             ...o
         } = e,
-        l = I.T[t],
+        l = T.T[t],
         u = null != a ? { ...l, ...a } : l,
-        c = !(0, g.Qq)() && (s || i?.canUsePremiumProfileCustomization || !1);
-    return (0, r.jsx)(y, { ...o, ...u, user: n, displayProfile: i, themePadding: c ? u.themePadding : 0 });
+        c = !(0, A.Qq)() && (s || r?.canUsePremiumProfileCustomization || !1);
+    return (0, i.jsx)(N, { ...o, ...u, user: n, displayProfile: r, themePadding: c ? u.themePadding : 0 });
 }

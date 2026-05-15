@@ -1,26 +1,23 @@
 "use strict";
-n.d(t, { Ay: () => _, Cj: () => d, Sm: () => c, xz: () => u });
-var r = n(143236),
-    i = n(735438),
-    a = n.n(i),
-    s = n(835245),
-    o = n(453771),
-    l = n(292348),
-    u = (function (e) {
-        return (e[(e.REACT_NATIVE = 0)] = "REACT_NATIVE"), (e[(e.WEB = 1)] = "WEB"), e;
-    })({});
-function c(e) {
+n.d(t, { Ay: () => h, Cj: () => f, Sm: () => _, xz: () => d });
+var i,
+    r,
+    s = n(143236),
+    a = n(735438),
+    o = n.n(a),
+    l = n(835245),
+    u = n(453771),
+    c = n(292348),
+    d = (((i = {})[(i.REACT_NATIVE = 0)] = "REACT_NATIVE"), (i[(i.WEB = 1)] = "WEB"), i);
+function _(e) {
     return void 0 !== e.isVideo && void 0 !== e.isImage;
 }
-var d = (function (e) {
-    return (
-        (e[(e.FILE_ATTACHMENT = 0)] = "FILE_ATTACHMENT"),
-        (e[(e.IMAGE_PICKER = 1)] = "IMAGE_PICKER"),
-        (e[(e.IMAGE_EDITOR = 2)] = "IMAGE_EDITOR"),
-        e
-    );
-})({});
-class _ extends r.EventEmitter {
+var f =
+    (((r = {})[(r.FILE_ATTACHMENT = 0)] = "FILE_ATTACHMENT"),
+    (r[(r.IMAGE_PICKER = 1)] = "IMAGE_PICKER"),
+    (r[(r.IMAGE_EDITOR = 2)] = "IMAGE_EDITOR"),
+    r);
+class h extends s.EventEmitter {
     id;
     uniqueId;
     filename;
@@ -37,10 +34,11 @@ class _ extends r.EventEmitter {
     waveform;
     isThumbnail;
     clip;
+    allowOptimization = !0;
     constructor(e) {
         if ((super(), (this.item = e), 0 === e.platform)) {
             this.id = e.id ?? e.uri;
-            const t = (0, l.ly)({ uri: e.uri, overrideFilename: e.filename, overrideType: e.mimeType });
+            const t = (0, c.ly)({ uri: e.uri, overrideFilename: e.filename, overrideType: e.mimeType });
             (this.filename = t.filename),
                 (this.isImage = t.isImage),
                 (this.isVideo = t.isVideo),
@@ -49,8 +47,8 @@ class _ extends r.EventEmitter {
                 (this.durationSecs = e.durationSecs),
                 (this.waveform = e.waveform);
         } else
-            (this.id = e.id ?? a().uniqueId("upload")),
-                (this.classification = o.TX(e.file)),
+            (this.id = e.id ?? o().uniqueId("upload")),
+                (this.classification = u.TX(e.file)),
                 (this.isImage = "image" === this.classification),
                 (this.isVideo = "video" === this.classification),
                 (this.filename = e.file.name),
@@ -58,7 +56,7 @@ class _ extends r.EventEmitter {
                 (this.origin = e.origin);
         (this.isThumbnail = e.isThumbnail),
             (this.clip = e.clip),
-            (this.uniqueId = (0, s.A)()),
+            (this.uniqueId = (0, l.A)()),
             (this.spoiler = !1),
             (this.description = null);
     }

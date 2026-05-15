@@ -1,79 +1,83 @@
 "use strict";
-n.d(t, { A: () => g, n: () => m });
-var r = n(627968),
+n.d(t, { A: () => E, n: () => A });
+var l = n(627968),
     i = n(64700),
-    a = n(990078),
-    s = n(397927),
-    o = n(442433),
-    l = n(50268),
-    u = n(409626),
-    c = n(692969),
-    d = n(243949),
-    _ = n(20805),
-    f = n(420706),
-    p = n(985018),
-    h = n(596020);
-let m = "content-inventory-context";
-function g(e) {
-    let { user: t, guildId: n, channel: g, entry: E, onSelect: A, disableGameProfileLinks: I } = e,
-        T = i.useRef(null),
-        y = i.useContext(f.Jd),
-        S = (0, d.A)({ userId: t.id, guildId: n, channelId: g?.id, onAction: y }),
-        v = (0, l.A)({ id: t.id, label: p.intl.string(p.t["/AXYnE"]) }),
-        C = "application_id" in E.extra ? E.extra.application_id : null,
-        b = (0, l.A)({ id: C, label: p.intl.string(p.t["FfCL+6"]) }),
-        N = (0, _.zD)(E),
-        R = (0, c.A)({
+    s = n(990078),
+    a = n(922016),
+    r = n(550079),
+    o = n(477782),
+    c = n(939249),
+    u = n(365199),
+    d = n(442433),
+    h = n(50268),
+    m = n(409626),
+    p = n(692969),
+    f = n(243949),
+    g = n(20805),
+    _ = n(420706),
+    x = n(985018),
+    C = n(399247);
+let A = "content-inventory-context";
+function E(e) {
+    let { user: t, guildId: n, channel: E, entry: I, onSelect: v, disableGameProfileLinks: y } = e,
+        b = i.useRef(null),
+        S = i.useContext(_.Jd),
+        N = (0, f.A)({ userId: t.id, guildId: n, channelId: E?.id, onAction: S }),
+        j = (0, h.A)({ id: t.id, label: x.intl.string(x.t["/AXYnE"]) }),
+        T = "application_id" in I.extra ? I.extra.application_id : null,
+        w = (0, h.A)({ id: T, label: x.intl.string(x.t["FfCL+6"]) }),
+        R = (0, g.zD)(I),
+        L = (0, p.A)({
             location: "ContentPopoutContextMenu",
-            applicationId: N && !0 !== I ? E.extra?.application_id : void 0,
-            source: u.Ob.ActivityCardContextMenu,
+            applicationId: R && !0 !== y ? I.extra?.application_id : void 0,
+            source: m.Ob.ActivityCardContextMenu,
             trackEntryPointImpression: !0,
-            sourceUserId: E.author_id,
+            sourceUserId: I.author_id,
         });
-    return (0, r.jsx)(s.YNO, {
-        targetElementRef: T,
+    return (0, l.jsx)(a.Y, {
+        targetElementRef: b,
         align: "top",
         position: "right",
         disablePointerEvents: !1,
         renderPopout: (e) => {
             let { closePopout: t } = e;
-            return (0, r.jsx)(s.W1t, {
+            return (0, l.jsx)(r.W, {
                 "data-menu-migrated-auto": !0,
-                navId: m,
+                navId: A,
                 onClose: () => {
-                    (0, o.Z_)(), t();
+                    (0, d.Z_)(), t();
                 },
-                "aria-label": p.intl.string(p.t.liqwPJ),
-                onSelect: A,
-                children: (0, r.jsxs)(r.Fragment, {
+                "aria-label": x.intl.string(x.t.liqwPJ),
+                onSelect: v,
+                children: (0, l.jsxs)(l.Fragment, {
                     children: [
-                        (0, r.jsxs)(s.rXV, {
+                        (0, l.jsxs)(o.rX, {
                             children: [
-                                S,
-                                null != R &&
-                                    (0, r.jsx)(s.Drp, {
+                                N,
+                                null != L &&
+                                    (0, l.jsx)(o.Dr, {
                                         id: "game-profile",
-                                        label: p.intl.string(p.t.f7aVGn),
+                                        label: x.intl.string(x.t.f7aVGn),
                                         action: (e) => {
-                                            R(e), y?.();
+                                            L(e), S?.();
                                         },
                                     }),
                             ],
                         }),
-                        (0, r.jsxs)(s.rXV, { children: [v, b] }),
+                        (0, l.jsxs)(o.rX, { children: [j, w] }),
                     ],
                 }),
             });
         },
         children: (e) =>
-            (0, r.jsx)(a.m, {
+            (0, l.jsx)(s.m, {
                 asContainer: !0,
-                text: p.intl.string(p.t["UKOtz+"]),
-                children: (0, r.jsx)(s.DUT, {
-                    innerRef: T,
-                    className: h.r,
+                text: x.intl.string(x.t["UKOtz+"]),
+                children: (0, l.jsx)(c.D, {
+                    innerRef: b,
+                    className: C.r,
                     ...e,
-                    children: (0, r.jsx)(s.jNK, { color: "currentColor", size: "custom", width: 16, height: 16 }),
+                    children: (0, l.jsx)(u.j, { color: "currentColor", size: "custom", width: 16, height: 16 }),
                 }),
             }),
     });

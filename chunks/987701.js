@@ -1,28 +1,27 @@
 "use strict";
-function r(e) {
+function i(e) {
     return e.valueOf ? e.valueOf() : Object.prototype.valueOf.call(e);
 }
-function i(e, t) {
-    if (e === t) return !0;
-    if (null == e || null == t) return !1;
-    if (Array.isArray(e))
+n.d(t, { A: () => r });
+let r = function e(t, n) {
+    if (t === n) return !0;
+    if (null == t || null == n) return !1;
+    if (Array.isArray(t))
         return (
-            Array.isArray(t) &&
-            e.length === t.length &&
-            e.every(function (e, n) {
-                return i(e, t[n]);
+            Array.isArray(n) &&
+            t.length === n.length &&
+            t.every(function (t, i) {
+                return e(t, n[i]);
             })
         );
-    if ("object" == typeof e || "object" == typeof t) {
-        var n = r(e),
-            a = r(t);
-        return n !== e || a !== t
-            ? i(n, a)
-            : Object.keys(Object.assign({}, e, t)).every(function (n) {
-                  return i(e[n], t[n]);
+    if ("object" == typeof t || "object" == typeof n) {
+        var r = i(t),
+            s = i(n);
+        return r !== t || s !== n
+            ? e(r, s)
+            : Object.keys(Object.assign({}, t, n)).every(function (i) {
+                  return e(t[i], n[i]);
               });
     }
     return !1;
-}
-n.d(t, { A: () => a });
-let a = i;
+};

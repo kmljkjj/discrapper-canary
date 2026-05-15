@@ -1,22 +1,17 @@
 "use strict";
-n.d(t, { Ao: () => u, id: () => d, mG: () => l }), n(321073);
-var r = n(284009),
-    i = n.n(r),
-    a = n(73153);
-let s = 6e4,
-    o = 3e3;
-var l = (function (e) {
-        return (e.FORUM_CHANNEL = "forum_channel"), e;
-    })({}),
-    u = (function (e) {
-        return (
-            (e[(e.IMMEDIATE = 0)] = "IMMEDIATE"),
-            (e[(e.IMMEDIATE_WITH_COOLDOWN = 1)] = "IMMEDIATE_WITH_COOLDOWN"),
-            (e[(e.IMMEDIATE_WITH_DELAY = 2)] = "IMMEDIATE_WITH_DELAY"),
-            e
-        );
-    })({});
-class c {
+n.d(t, { Ao: () => d, id: () => u, mG: () => l }), n(321073);
+var i,
+    r,
+    s = n(284009),
+    a = n.n(s),
+    o = n(228366),
+    l = (((i = {}).FORUM_CHANNEL = "forum_channel"), i),
+    d =
+        (((r = {})[(r.IMMEDIATE = 0)] = "IMMEDIATE"),
+        (r[(r.IMMEDIATE_WITH_COOLDOWN = 1)] = "IMMEDIATE_WITH_COOLDOWN"),
+        (r[(r.IMMEDIATE_WITH_DELAY = 2)] = "IMMEDIATE_WITH_DELAY"),
+        r);
+class _ {
     seenIntervals;
     constructor() {
         this.seenIntervals = [];
@@ -36,24 +31,24 @@ class c {
     computeSeenTimeDestructive(e) {
         let t = 0,
             n = [];
-        for (let r of this.seenIntervals) {
-            if (null != r.endTimeMillis) {
-                t += r.endTimeMillis - r.startTimeMillis;
+        for (let i of this.seenIntervals) {
+            if (null != i.endTimeMillis) {
+                t += i.endTimeMillis - i.startTimeMillis;
                 continue;
             }
             if (e) {
                 let e = Date.now();
-                (t += e - r.startTimeMillis), n.push({ startTimeMillis: e });
+                (t += e - i.startTimeMillis), n.push({ startTimeMillis: e });
                 continue;
             }
-            n.push(r);
+            n.push(i);
         }
         return (
-            i()(n.length < 2, "there should only be a single left over data"), (this.seenIntervals = n), Math.round(t)
+            a()(n.length < 2, "there should only be a single left over data"), (this.seenIntervals = n), Math.round(t)
         );
     }
 }
-class d {
+class u {
     trackedFeedItems;
     _lastFlushTimeMillis;
     _pausedFeedItemIds;
@@ -75,19 +70,19 @@ class d {
     onFeedItemSeen;
     onFeedItemUnseen;
     initialize = () => {
-        a.h.subscribe("ANALYTICS_FEED_ITEM_SEEN", this.handleFeedItemSeen),
-            a.h.subscribe("ANALYTICS_FEED_ITEM_UNSEEN", this.handleFeedItemUnseen),
-            a.h.subscribe("ANALYTICS_FEED_FLUSH", this.handleFeedItemFlush),
-            a.h.subscribe("APP_STATE_UPDATE", this.handleAppStateUpdate),
-            a.h.subscribe("WINDOW_FOCUS", this.handleWindowFocus),
+        o.h.subscribe("ANALYTICS_FEED_ITEM_SEEN", this.handleFeedItemSeen),
+            o.h.subscribe("ANALYTICS_FEED_ITEM_UNSEEN", this.handleFeedItemUnseen),
+            o.h.subscribe("ANALYTICS_FEED_FLUSH", this.handleFeedItemFlush),
+            o.h.subscribe("APP_STATE_UPDATE", this.handleAppStateUpdate),
+            o.h.subscribe("WINDOW_FOCUS", this.handleWindowFocus),
             this.onInitialize?.();
     };
     terminate = () => {
-        a.h.unsubscribe("ANALYTICS_FEED_ITEM_SEEN", this.handleFeedItemSeen),
-            a.h.unsubscribe("ANALYTICS_FEED_ITEM_UNSEEN", this.handleFeedItemUnseen),
-            a.h.unsubscribe("ANALYTICS_FEED_FLUSH", this.handleFeedItemFlush),
-            a.h.unsubscribe("APP_STATE_UPDATE", this.handleAppStateUpdate),
-            a.h.unsubscribe("WINDOW_FOCUS", this.handleWindowFocus),
+        o.h.unsubscribe("ANALYTICS_FEED_ITEM_SEEN", this.handleFeedItemSeen),
+            o.h.unsubscribe("ANALYTICS_FEED_ITEM_UNSEEN", this.handleFeedItemUnseen),
+            o.h.unsubscribe("ANALYTICS_FEED_FLUSH", this.handleFeedItemFlush),
+            o.h.unsubscribe("APP_STATE_UPDATE", this.handleAppStateUpdate),
+            o.h.unsubscribe("WINDOW_FOCUS", this.handleWindowFocus),
             this.onTerminate?.(),
             this.maybeFlushSeenItems(0);
     };
@@ -97,8 +92,8 @@ class d {
     };
     maybeFlushSeenItems(e) {
         if (
-            (null == e && Date.now() - this._lastFlushTimeMillis < s) ||
-            (1 === e && Date.now() - this._lastFlushTimeMillis < o)
+            (null == e && Date.now() - this._lastFlushTimeMillis < 6e4) ||
+            (1 === e && Date.now() - this._lastFlushTimeMillis < 3e3)
         )
             return Promise.resolve();
         let t = this.createFlushSeenItemsFunction(e);
@@ -119,23 +114,23 @@ class d {
     handleFeedItemSeen = (e) => {
         let t = e.id,
             n = e.timestampMillis,
-            r = e.feedItemId;
+            i = e.feedItemId;
         if (t !== this._id) return;
-        if (this._paused) return void this._pausedFeedItemIds.add(r);
-        let i = this.getTrackedFeedItem(r).maybeMarkSeen(n);
-        this.onFeedItemSeen?.(r, i);
+        if (this._paused) return void this._pausedFeedItemIds.add(i);
+        let r = this.getTrackedFeedItem(i).maybeMarkSeen(n);
+        this.onFeedItemSeen?.(i, r);
     };
     handleFeedItemUnseen = (e) => {
         let t = e.id,
             n = e.timestampMillis,
-            r = e.feedItemId;
+            i = e.feedItemId;
         if (t !== this._id) return;
-        this._paused && this._pausedFeedItemIds.delete(r);
-        let i = this.getTrackedFeedItem(r).maybeMarkUnseen(n);
-        this.onFeedItemUnseen?.(r, i), this.maybeFlushSeenItems();
+        this._paused && this._pausedFeedItemIds.delete(i);
+        let r = this.getTrackedFeedItem(i).maybeMarkUnseen(n);
+        this.onFeedItemUnseen?.(i, r), this.maybeFlushSeenItems();
     };
     getTrackedFeedItem = (e) => (
-        null == this.trackedFeedItems[e] && (this.trackedFeedItems[e] = new c()), this.trackedFeedItems[e]
+        null == this.trackedFeedItems[e] && (this.trackedFeedItems[e] = new _()), this.trackedFeedItems[e]
     );
     getVisibleFeedItemIds = () =>
         new Set(Object.keys(this.trackedFeedItems).filter((e) => this.trackedFeedItems[e]?.isVisible()));

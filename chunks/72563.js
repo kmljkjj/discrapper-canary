@@ -1,24 +1,24 @@
-n.d(t, { i: () => o });
-var l = n(64700),
-    i = n(311907),
-    s = n(287809),
-    a = n(403362),
-    r = n(427262),
-    u = n(985018);
-function o(e) {
-    let t = (0, i.yK)([s.default], () =>
-        e.recipients
-            .map((e) => s.default.getUser(e))
+r.d(n, { i: () => s });
+var e = r(64700),
+    i = r(17928),
+    l = r(287809),
+    a = r(403362),
+    u = r(427262),
+    f = r(985018);
+function s(t) {
+    let n = (0, i.yK)([l.default], () =>
+        t.recipients
+            .map((t) => l.default.getUser(t))
             .filter(a.Vq)
-            .map((e) => r.Ay.getName(e)),
+            .map((t) => u.Ay.getName(t)),
     );
-    return l.useMemo(() => {
-        if ("" === e.name) return null;
-        if (0 === t.length) return null;
-        if (1 === t.length) return u.intl.formatToPlainString(u.t["J+Wpst"], { first: t[0] });
-        if (2 === t.length) return u.intl.formatToPlainString(u.t.gwRP0Y, { first: t[0], second: t[1] });
-        if (3 === t.length) return u.intl.formatToPlainString(u.t.QDB5et, { first: t[0], second: t[1], third: t[2] });
-        let n = t.length - 3;
-        return u.intl.formatToPlainString(u.t.VYfueb, { first: t[0], second: t[1], third: t[2], count: n });
-    }, [e, t]);
+    return e.useMemo(() => {
+        if ("" === t.name) return null;
+        if (0 === n.length) return null;
+        if (1 === n.length) return f.intl.formatToPlainString(f.t["J+Wpst"], { first: n[0] });
+        if (2 === n.length) return f.intl.formatToPlainString(f.t.gwRP0Y, { first: n[0], second: n[1] });
+        if (3 === n.length) return f.intl.formatToPlainString(f.t.QDB5et, { first: n[0], second: n[1], third: n[2] });
+        let r = n.length - 3;
+        return f.intl.formatToPlainString(f.t.VYfueb, { first: n[0], second: n[1], third: n[2], count: r });
+    }, [t, n]);
 }

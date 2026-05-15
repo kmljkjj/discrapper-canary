@@ -1,32 +1,33 @@
 "use strict";
-n.d(t, { A: () => d });
-var r = n(627968);
+n.d(t, { A: () => h });
+var i,
+    r = n(627968);
 n(64700);
-var i = n(503698),
-    a = n.n(i),
-    s = n(607399),
-    o = n(397927),
-    l = n(985018),
-    u = n(462674),
-    c = (function (e) {
-        return (e.DEFAULT = ""), (e.BOLD = "Bold"), (e.SOLID = "Solid"), e;
-    })(c || {});
-function d(e) {
-    let { closeAction: t, variant: n = "", keybind: i, className: c } = e;
+var s = n(503698),
+    a = n.n(s),
+    o = n(607399),
+    l = n(939249),
+    u = n(285796),
+    c = n(789645),
+    d = n(375708),
+    _ = n(589753),
+    f = (((i = f || {}).DEFAULT = ""), (i.BOLD = "Bold"), (i.SOLID = "Solid"), i);
+function h(e) {
+    let { closeAction: t, variant: n = "", keybind: i, className: s } = e;
     return (0, r.jsxs)("div", {
-        className: a()(u.kL, c),
+        className: a()(_.kL, s),
         children: [
-            (0, r.jsx)(o.DUT, {
-                className: a()(u.b, { [u.EH]: "Bold" === n, [u.O3]: "Solid" === n }),
+            (0, r.jsx)(l.D, {
+                className: a()(_.b, { [_.EH]: "Bold" === n, [_.O3]: "Solid" === n }),
                 onClick: t,
-                "aria-label": l.intl.string(l.t.cpT0Cq),
+                "aria-label": d.intl.string(d.t.cpT0Cq),
                 children:
                     "Solid" === n
-                        ? (0, r.jsx)(o.aXh, { size: "md", color: "currentColor", "aria-hidden": !0 })
-                        : (0, r.jsx)(o.PGe, { size: "sm", color: "currentColor", "aria-hidden": !0 }),
+                        ? (0, r.jsx)(u.a, { size: "md", color: "currentColor", "aria-hidden": !0 })
+                        : (0, r.jsx)(c.P, { size: "sm", color: "currentColor", "aria-hidden": !0 }),
             }),
-            s.Fr ? null : (0, r.jsx)("div", { className: u.P, "aria-hidden": !0, children: i }),
+            o.Fr ? null : (0, r.jsx)("div", { className: _.P, "aria-hidden": !0, children: i }),
         ],
     });
 }
-d.Variants = c;
+h.Variants = f;

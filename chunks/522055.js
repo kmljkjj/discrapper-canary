@@ -1,134 +1,122 @@
 "use strict";
-n.d(t, { A: () => C });
-var r = n(311907),
-    i = n(73153),
+n.d(t, { A: () => h });
+var i = n(17928),
+    r = n(228366),
     s = n(410212),
     a = n(532555);
-let o = 864e5,
-    l = 3e5,
-    u = {},
-    c = { catalog: {}, hasFetchedCatalog: !1, catalogLastFetchedAt: void 0 };
-function d() {
-    (u = {}), (c = { catalog: {}, hasFetchedCatalog: !1, catalogLastFetchedAt: void 0 });
-}
+let o = {},
+    l = { catalog: {}, hasFetchedCatalog: !1, catalogLastFetchedAt: void 0 };
 function _(e) {
-    return null == u[e] && (u[e] = { catalog: {}, instances: {}, instructions: {}, entitlements: {} }), u[e];
+    return null == o[e] && (o[e] = { catalog: {}, instances: {}, instructions: {}, entitlements: {} }), o[e];
 }
-function f(e) {
-    let { guildId: t, catalog: n } = e;
-    u = { ...u, [t]: { ..._(t), catalog: n, hasFetchedCatalog: !0, catalogLastFetchedAt: Date.now() } };
-}
-function p(e) {
-    let { catalog: t } = e;
-    c = { catalog: t, hasFetchedCatalog: !0, catalogLastFetchedAt: Date.now() };
-}
-function h(e) {
-    let { guildId: t, instances: n } = e;
-    u = { ...u, [t]: { ..._(t), instances: n, hasFetchedInstances: !0, instancesLastFetchedAt: Date.now() } };
-}
-function m(e) {
-    let { guildId: t, skuId: n, instructions: r } = e;
-    u = { ...u, [t]: { ..._(t), instructions: { ..._(t).instructions, [n]: r } } };
-}
-function E(e) {
-    let { guildId: t, instance: n } = e,
-        r = _(t);
-    u = { ...u, [t]: { ...r, instances: { ...r.instances, [n.id]: n } } };
-}
-function g(e, t) {
+function d(e, t) {
     return Object.values(t).reduce((e, t) => e + ((0, s.A)(t) ?? 0), 0);
 }
-function A(e) {
-    let { guildId: t, unlockedGameServers: n } = e,
-        r = g(t, n);
-    u = { ...u, [t]: { ..._(t), entitlements: n, appliedBoosts: r } };
-}
-function I(e) {
+function u(e) {
     let { guildId: t, gameServer: n } = e,
-        r = _(t);
-    u = { ...u, [t]: { ...r, instances: { ...r.instances, [n.id]: (0, a.A)(n) } } };
+        i = _(t);
+    o = { ...o, [t]: { ...i, instances: { ...i.instances, [n.id]: (0, a.A)(n) } } };
 }
-function T(e) {
-    let { guildId: t, gameServerId: n } = e,
-        r = _(t);
-    delete r.instances[n], (u = { ...u, [t]: { ...r } });
+function c(e, t) {
+    let n = d(e, t.entitlements);
+    o = { ...o, [e]: { ...t, appliedBoosts: n } };
 }
-function S(e) {
-    let { guildId: t, entitlements: n } = e,
-        r = _(t);
-    n
-        .filter((e) => e.sku?.tenant_metadata?.guild_monetization?.game_server != null)
-        .forEach((e) => {
-            r.entitlements[e.id] = e;
-        }),
-        v(t, r);
-}
-function y(e) {
-    let { guildId: t, entitlements: n } = e,
-        r = _(t);
-    n.forEach((e) => {
-        delete r.entitlements[e.id];
-    }),
-        v(t, r);
-}
-function v(e, t) {
-    let n = g(e, t.entitlements);
-    u = { ...u, [e]: { ...t, appliedBoosts: n } };
-}
-class N extends r.Ay.PersistedStore {
+class E extends i.Ay.PersistedStore {
     static displayName = "GameServerStore";
     static persistKey = "GameServerStore";
     initialize(e) {
-        null != e && (u = e);
+        null != e && (o = e);
     }
     getState() {
-        return u;
+        return o;
     }
     getStateForGuild(e) {
-        return null != e ? u[e] : void 0;
+        return null != e ? o[e] : void 0;
     }
     getGlobalCatalogState() {
-        return c;
+        return l;
     }
     getGlobalCatalogGame(e) {
-        return Object.values(c.catalog).find((t) => t.gameId === e);
+        return Object.values(l.catalog).find((t) => t.gameId === e);
     }
     getLowestGameCostForGuild(e) {
         if (null == e) return null;
-        let t = u[e],
+        let t = o[e],
             n = Object.values(t?.catalog ?? {});
         return 0 === n.length ? null : Math.min(...n.map((e) => e.baseCost));
     }
     hasFetchedCatalog(e) {
-        return null != e && u[e]?.hasFetchedCatalog === !0;
+        return null != e && o[e]?.hasFetchedCatalog === !0;
     }
     hasFetchedInstances(e) {
-        return null != e && u[e]?.hasFetchedInstances === !0;
+        return null != e && o[e]?.hasFetchedInstances === !0;
     }
     shouldFetchCatalogForGuild(e) {
-        let t = u[e]?.catalogLastFetchedAt;
-        return null == t || t + o < Date.now();
+        let t = o[e]?.catalogLastFetchedAt;
+        return null == t || t + 864e5 < Date.now();
     }
     shouldFetchInstancesForGuild(e) {
-        let t = u[e]?.instancesLastFetchedAt;
-        return null == t || t + l < Date.now();
+        let t = o[e]?.instancesLastFetchedAt;
+        return null == t || t + 3e5 < Date.now();
     }
     shouldFetchGlobalCatalog() {
-        let e = c.catalogLastFetchedAt;
-        return null == e || e + o < Date.now();
+        let e = l.catalogLastFetchedAt;
+        return null == e || e + 864e5 < Date.now();
     }
 }
-let C = new N(i.h, {
-    LOGOUT: d,
-    GAME_SERVER_FETCH_CATALOG_SUCCESS: f,
-    GAME_SERVER_FETCH_GLOBAL_CATALOG_SUCCESS: p,
-    GAME_SERVER_FETCH_INSTANCES_SUCCESS: h,
-    GAME_SERVER_FETCH_GAME_INSTRUCTIONS_SUCCESS: m,
-    GAME_SERVER_UPDATE_INSTANCE_SUCCESS: E,
-    GUILD_BOOST_ENTITLEMENTS_FETCH_SUCCESS: A,
-    GAME_SERVER_CREATE: I,
-    GAME_SERVER_UPDATE: I,
-    GAME_SERVER_DELETE: T,
-    GUILD_POWERUP_ENTITLEMENTS_CREATE: S,
-    GUILD_POWERUP_ENTITLEMENTS_DELETE: y,
+let h = new E(r.h, {
+    LOGOUT: function () {
+        (o = {}), (l = { catalog: {}, hasFetchedCatalog: !1, catalogLastFetchedAt: void 0 });
+    },
+    GAME_SERVER_FETCH_CATALOG_SUCCESS: function (e) {
+        let { guildId: t, catalog: n } = e;
+        o = { ...o, [t]: { ..._(t), catalog: n, hasFetchedCatalog: !0, catalogLastFetchedAt: Date.now() } };
+    },
+    GAME_SERVER_FETCH_GLOBAL_CATALOG_SUCCESS: function (e) {
+        let { catalog: t } = e;
+        l = { catalog: t, hasFetchedCatalog: !0, catalogLastFetchedAt: Date.now() };
+    },
+    GAME_SERVER_FETCH_INSTANCES_SUCCESS: function (e) {
+        let { guildId: t, instances: n } = e;
+        o = { ...o, [t]: { ..._(t), instances: n, hasFetchedInstances: !0, instancesLastFetchedAt: Date.now() } };
+    },
+    GAME_SERVER_FETCH_GAME_INSTRUCTIONS_SUCCESS: function (e) {
+        let { guildId: t, skuId: n, instructions: i } = e;
+        o = { ...o, [t]: { ..._(t), instructions: { ..._(t).instructions, [n]: i } } };
+    },
+    GAME_SERVER_UPDATE_INSTANCE_SUCCESS: function (e) {
+        let { guildId: t, instance: n } = e,
+            i = _(t);
+        o = { ...o, [t]: { ...i, instances: { ...i.instances, [n.id]: n } } };
+    },
+    GUILD_BOOST_ENTITLEMENTS_FETCH_SUCCESS: function (e) {
+        let { guildId: t, unlockedGameServers: n } = e,
+            i = d(t, n);
+        o = { ...o, [t]: { ..._(t), entitlements: n, appliedBoosts: i } };
+    },
+    GAME_SERVER_CREATE: u,
+    GAME_SERVER_UPDATE: u,
+    GAME_SERVER_DELETE: function (e) {
+        let { guildId: t, gameServerId: n } = e,
+            i = _(t);
+        delete i.instances[n], (o = { ...o, [t]: { ...i } });
+    },
+    GUILD_POWERUP_ENTITLEMENTS_CREATE: function (e) {
+        let { guildId: t, entitlements: n } = e,
+            i = _(t);
+        n
+            .filter((e) => e.sku?.tenant_metadata?.guild_monetization?.game_server != null)
+            .forEach((e) => {
+                i.entitlements[e.id] = e;
+            }),
+            c(t, i);
+    },
+    GUILD_POWERUP_ENTITLEMENTS_DELETE: function (e) {
+        let { guildId: t, entitlements: n } = e,
+            i = _(t);
+        n.forEach((e) => {
+            delete i.entitlements[e.id];
+        }),
+            c(t, i);
+    },
 });

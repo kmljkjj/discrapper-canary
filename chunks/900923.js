@@ -1,8 +1,8 @@
 "use strict";
-var r = n(374316),
-    i = TypeError;
+var i = n(374316),
+    r = TypeError;
 e.exports = function (e) {
-    var t = r(e, "number");
-    if ("number" == typeof t) throw new i("Can't convert number to bigint");
+    var t = i(e, "number");
+    if ("number" == typeof t) throw new r("Can't convert number to bigint");
     return BigInt(t);
 };

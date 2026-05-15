@@ -1,26 +1,40 @@
-e.d(t, { A: () => c });
-var i = e(627968);
-e(64700);
-var l = e(311907),
-    r = e(397927),
-    a = e(576705),
-    d = e(652215),
-    s = e(985018);
-function c(n, t) {
-    let c = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : n.type,
-        u = (0, l.bG)([a.A], () => a.A.can(d.xBc.MANAGE_CHANNELS, n), [n]);
-    if (__OVERLAY__ || !u) return null;
+n.d(t, { A: () => u });
+var a = n(627968);
+n(64700);
+var r = n(17928),
+    i = n(192308),
+    l = n(477782),
+    c = n(576705),
+    d = n(652215),
+    s = n(375708);
+function u(e, t) {
+    let u = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : e.type,
+        h = (0, r.bG)([c.A], () => c.A.can(d.xBc.MANAGE_CHANNELS, e), [e]);
+    if (__OVERLAY__ || !h) return null;
     let o = () => {
-        (0, r.mMO)(async () => {
-            let { default: t } = await Promise.all([e.e("93142"), e.e("64233"), e.e("56651")]).then(e.bind(e, 409200));
-            return (e) => (0, i.jsx)(t, { ...e, channelType: c, guildId: n.guild_id, categoryId: n.parent_id });
+        (0, i.openModalLazy)(async () => {
+            let { default: t } = await Promise.all([
+                n.e("94513"),
+                n.e("11585"),
+                n.e("3589"),
+                n.e("89916"),
+                n.e("60773"),
+                n.e("8018"),
+                n.e("20379"),
+                n.e("19193"),
+                n.e("7775"),
+                n.e("58608"),
+                n.e("70195"),
+                n.e("37038"),
+            ]).then(n.bind(n, 946430));
+            return (n) => (0, a.jsx)(t, { ...n, channelType: u, guildId: e.guild_id, categoryId: e.parent_id });
         });
     };
-    switch (c) {
+    switch (u) {
         case d.rbe.GUILD_TEXT:
-            return (0, i.jsx)(r.Drp, { id: "create-text-channel", label: s.intl.string(s.t.HHkTJP), action: o });
+            return (0, a.jsx)(l.Dr, { id: "create-text-channel", label: s.intl.string(s.t.HHkTJP), action: o });
         case d.rbe.GUILD_VOICE:
-            return (0, i.jsx)(r.Drp, { id: "create-voice-channel", label: s.intl.string(s.t.AlbZaI), action: o });
+            return (0, a.jsx)(l.Dr, { id: "create-voice-channel", label: s.intl.string(s.t.AlbZaI), action: o });
         default:
             return null;
     }

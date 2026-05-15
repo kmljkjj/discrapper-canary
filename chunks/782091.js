@@ -1,62 +1,60 @@
 "use strict";
-n.d(t, { J4: () => p, JH: () => f, dL: () => m, et: () => h, xy: () => _ });
-var r = n(311907),
-    i = n(734057),
+n.d(t, { J4: () => p, JH: () => h, dL: () => m, et: () => E, xy: () => f });
+var i,
+    r = n(17928),
+    s = n(734057),
     a = n(71393),
-    s = n(576705),
-    o = n(977997),
-    l = n(170148),
-    u = n(360469),
-    c = n(652215),
-    d = n(985018),
-    _ = (function (e) {
-        return (
-            (e[(e.CAN_LAUNCH = 0)] = "CAN_LAUNCH"),
-            (e[(e.NO_USE_EMBEDDED_ACTIVITIES_PERMISSION = 1)] = "NO_USE_EMBEDDED_ACTIVITIES_PERMISSION"),
-            (e[(e.NO_CHANNEL_CONNECT_PERMISSION = 2)] = "NO_CHANNEL_CONNECT_PERMISSION"),
-            (e[(e.NO_CHANNEL = 3)] = "NO_CHANNEL"),
-            (e[(e.NO_GUILD = 4)] = "NO_GUILD"),
-            (e[(e.IS_AFK_CHANNEL = 5)] = "IS_AFK_CHANNEL"),
-            (e[(e.ACTIVITIES_FEATURE_NOT_ENABLED_FOR_OS = 6)] = "ACTIVITIES_FEATURE_NOT_ENABLED_FOR_OS"),
-            (e[(e.ACTIVITIES_FEATURE_NOT_ENABLED_FOR_CHANNEL = 7)] = "ACTIVITIES_FEATURE_NOT_ENABLED_FOR_CHANNEL"),
-            e
-        );
-    })({});
-function f(e) {
-    let { channelId: t, ChannelStore: n, GuildStore: r, PermissionStore: i, VoiceStateStore: a } = e,
-        s = n.getChannel(t);
-    if (null == s) return 3;
-    if (!u.H5.includes(s.type)) return 7;
-    if (!(0, l.A)()) return 6;
-    if (null != s && !s.isPrivate()) {
-        let e = s.getGuildId();
+    o = n(576705),
+    l = n(977997),
+    u = n(170148),
+    c = n(360469),
+    d = n(652215),
+    _ = n(375708),
+    f =
+        (((i = {})[(i.CAN_LAUNCH = 0)] = "CAN_LAUNCH"),
+        (i[(i.NO_USE_EMBEDDED_ACTIVITIES_PERMISSION = 1)] = "NO_USE_EMBEDDED_ACTIVITIES_PERMISSION"),
+        (i[(i.NO_CHANNEL_CONNECT_PERMISSION = 2)] = "NO_CHANNEL_CONNECT_PERMISSION"),
+        (i[(i.NO_CHANNEL = 3)] = "NO_CHANNEL"),
+        (i[(i.NO_GUILD = 4)] = "NO_GUILD"),
+        (i[(i.IS_AFK_CHANNEL = 5)] = "IS_AFK_CHANNEL"),
+        (i[(i.ACTIVITIES_FEATURE_NOT_ENABLED_FOR_OS = 6)] = "ACTIVITIES_FEATURE_NOT_ENABLED_FOR_OS"),
+        (i[(i.ACTIVITIES_FEATURE_NOT_ENABLED_FOR_CHANNEL = 7)] = "ACTIVITIES_FEATURE_NOT_ENABLED_FOR_CHANNEL"),
+        i);
+function h(e) {
+    let { channelId: t, ChannelStore: n, GuildStore: i, PermissionStore: r, VoiceStateStore: s } = e,
+        a = n.getChannel(t);
+    if (null == a) return 3;
+    if (!c.H5.includes(a.type)) return 7;
+    if (!(0, u.A)()) return 6;
+    if (null != a && !a.isPrivate()) {
+        let e = a.getGuildId();
         if (null == e) return 4;
-        let n = r.getGuild(e);
-        if (n?.afkChannelId === s.id) return 5;
-        let o = i.can(c.xBc.CONNECT, s);
-        if (!i.can(c.xBc.USE_EMBEDDED_ACTIVITIES, s)) return 1;
-        let l = a.getCurrentClientVoiceChannelId(s.getGuildId()) === t;
-        if (s.isVocal() && !l && !o) return 2;
+        let n = i.getGuild(e);
+        if (n?.afkChannelId === a.id) return 5;
+        let o = r.can(d.xBc.CONNECT, a);
+        if (!r.can(d.xBc.USE_EMBEDDED_ACTIVITIES, a)) return 1;
+        let l = s.getCurrentClientVoiceChannelId(a.getGuildId()) === t;
+        if (a.isVocal() && !l && !o) return 2;
     }
     return 0;
 }
 function p(e) {
-    return f({ channelId: e, ChannelStore: i.A, GuildStore: a.A, PermissionStore: s.A, VoiceStateStore: o.A });
+    return h({ channelId: e, ChannelStore: s.A, GuildStore: a.A, PermissionStore: o.A, VoiceStateStore: l.A });
 }
-function h(e) {
+function E(e) {
     return (0, r.bG)(
-        [i.A, a.A, s.A, o.A],
-        () => f({ channelId: e, ChannelStore: i.A, GuildStore: a.A, PermissionStore: s.A, VoiceStateStore: o.A }),
+        [s.A, a.A, o.A, l.A],
+        () => h({ channelId: e, ChannelStore: s.A, GuildStore: a.A, PermissionStore: o.A, VoiceStateStore: l.A }),
         [e],
     );
 }
 function m(e) {
     switch (e) {
         case 0:
-            return d.intl.string(d.t.qJvTKQ);
+            return _.intl.string(_.t.qJvTKQ);
         case 1:
-            return d.intl.string(d.t.hHGrWz);
+            return _.intl.string(_.t.hHGrWz);
         default:
-            return d.intl.string(d.t.j29zCr);
+            return _.intl.string(_.t.j29zCr);
     }
 }

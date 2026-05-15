@@ -1,42 +1,26 @@
 "use strict";
-n.d(t, { A: () => f });
-var r = n(735438),
-    i = n.n(r),
-    a = n(311907),
-    s = n(506774),
-    o = n(73153),
+n.d(t, { A: () => d });
+var i = n(735438),
+    r = n.n(i),
+    s = n(17928),
+    a = n(506774),
+    o = n(228366),
     l = n(652215);
 let u = {};
-function c(e) {
-    let { changes: t } = e;
-    for (let e in t) {
-        let n = e,
-            { shouldSync: r, settings: i } = t[n];
-        if (!0 === r) {
-            delete u[n];
-            continue;
-        }
-        if ((!1 === r && (u[n] = { shouldSync: r, settings: {} }), u[n]?.shouldSync === !1))
-            for (let e in i) u[n].settings[e] = i[e];
-    }
-}
-function d() {
-    u = {};
-}
-class _ extends a.Ay.PersistedStore {
+class c extends s.Ay.PersistedStore {
     static displayName = "SelectivelySyncedUserSettingsStore";
     static persistKey = "SelectivelySyncedUserSettingsStore";
     static migrations = [
         () => {
-            let e = s.w.get("UserSettingsSync") ?? {},
-                t = s.w.get("UserSettingsStore") ?? {};
-            s.w.remove("UserSettingsSync");
+            let e = a.w.get("UserSettingsSync") ?? {},
+                t = a.w.get("UserSettingsStore") ?? {};
+            a.w.remove("UserSettingsSync");
             let n = {};
             return (
                 !1 === e[l.nc_.TEXT] &&
                     (n.text = {
                         shouldSync: !1,
-                        settings: i().pick(t, [
+                        settings: r().pick(t, [
                             "inlineAttachmentMedia",
                             "inlineEmbedMedia",
                             "renderEmbeds",
@@ -50,7 +34,7 @@ class _ extends a.Ay.PersistedStore {
                 !1 === e[l.nc_.APPEARANCE] &&
                     (n.appearance = {
                         shouldSync: !1,
-                        settings: i().pick(t, ["theme", "clientThemeSettings", "developerMode"]),
+                        settings: r().pick(t, ["theme", "clientThemeSettings", "developerMode"]),
                     }),
                 n
             );
@@ -79,4 +63,20 @@ class _ extends a.Ay.PersistedStore {
         return u.appearance?.settings;
     }
 }
-let f = new _(o.h, { SELECTIVELY_SYNCED_USER_SETTINGS_UPDATE: c, LOGOUT: d });
+let d = new c(o.h, {
+    SELECTIVELY_SYNCED_USER_SETTINGS_UPDATE: function (e) {
+        let { changes: t } = e;
+        for (let e in t) {
+            let { shouldSync: n, settings: i } = t[e];
+            if (!0 === n) {
+                delete u[e];
+                continue;
+            }
+            if ((!1 === n && (u[e] = { shouldSync: n, settings: {} }), u[e]?.shouldSync === !1))
+                for (let t in i) u[e].settings[t] = i[t];
+        }
+    },
+    LOGOUT: function () {
+        u = {};
+    },
+});

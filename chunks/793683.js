@@ -1,20 +1,20 @@
 "use strict";
-n.d(t, { v: () => c });
+n.d(t, { v: () => u });
 var i = n(64700),
-    s = n(793574),
-    l = n(979286),
-    a = n(92246),
-    r = n(201805),
-    o = n(758836);
-function c(e) {
-    let { quest: t, questContent: n, sourceQuestContent: c, onCloseModal: d, shouldShowShopIfAlreadyClaimed: u } = e,
-        h = (0, r.ix)({ quest: t, questContent: n, sourceQuestContent: c });
+    r = n(793574),
+    s = n(859040),
+    a = n(801365),
+    o = n(371912),
+    l = n(758836);
+function u(e) {
+    let { quest: t, questContent: n, sourceQuestContent: u, onCloseModal: c, shouldShowShopIfAlreadyClaimed: d } = e,
+        _ = (0, o.ix)({ quest: t, questContent: n, sourceQuestContent: u });
     return i.useCallback(
         (e) => {
-            (0, a.ks)(t.config) && t.userStatus?.claimedAt != null && u
-                ? (d?.(e), (0, l.Cz)({ tab: o.G2.ORBS, analyticsLocations: [], analyticsSource: s.A.QUEST_HOME_PAGE }))
-                : ((0, a.K9)(t.config) && d?.(e), h());
+            (0, a.ks)(t.config) && t.userStatus?.claimedAt != null && d
+                ? (c?.(e), (0, s.Cz)({ tab: l.G2.ORBS, analyticsLocations: [], analyticsSource: r.A.QUEST_HOME_PAGE }))
+                : ((0, a.K9)(t.config) && c?.(e), _());
         },
-        [t.config, t.userStatus?.claimedAt, h, u, d],
+        [t.config, t.userStatus?.claimedAt, _, d, c],
     );
 }

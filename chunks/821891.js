@@ -1,207 +1,218 @@
-"use strict";
-n.d(t, { A: () => A });
-var r = n(627968);
+n.d(t, { A: () => y });
+var l = n(627968);
 n(64700);
-var i = n(311907),
-    s = n(367921),
-    a = n(166403),
-    o = n(739508),
-    l = n(975571),
+var a = n(881489),
+    i = n(367921),
+    r = n(987723),
+    s = n(739508),
+    o = n(975571),
     u = n(927578),
     c = n(580630),
     d = n(615396),
-    _ = n(652215),
-    f = n(758836),
-    p = n(788868),
-    h = n(985018),
-    m = n(186119);
-let E = (e, t, n, r) => {
-    if (null == e || null == t || null == n) {
-        let e = Error("Missing base rate for legal fine print"),
-            t = r || "none";
-        return (0, o.pM)(e, { tags: { planId: t } }), null;
-    }
-    return (0, c.CE)((0, c.$g)(e.amount, e.currency), t, n);
-};
-function g(e) {
+    p = n(652215),
+    m = n(758836),
+    h = n(788868),
+    C = n(375708),
+    A = n(516442);
+function E(e) {
     let t,
         n,
-        o,
-        m,
+        A,
+        E,
         {
-            subscriptionPlan: g,
-            isGift: A,
-            isTrial: I,
-            isOrbCheckout: T,
-            isEmbeddedIAP: S,
-            renewalInvoice: y,
-            paymentSourceType: v,
-            hide: N,
-            purchaseType: C,
-            productLine: b,
-            proratedAmount: R,
-            basePrice: O,
-            currentSubscription: D,
-            skuId: L,
-            applicationName: w,
-            hasAlreadyLinked: x,
+            subscriptionPlan: y,
+            isGift: P,
+            isTrial: S,
+            isOrbCheckout: _,
+            isEmbeddedIAP: T,
+            renewalInvoice: f,
+            paymentSourceType: N,
+            hide: x,
+            purchaseType: I,
+            productLine: g,
+            proratedAmount: v,
+            basePrice: M,
+            currentSubscription: j,
+            skuId: b,
+            applicationName: R,
+            applicationId: L,
+            hasAlreadyLinked: O,
         } = e,
-        M = (0, i.bG)([a.A], () => a.A.inReverseTrial());
-    if (N) return null;
-    let P = null == e.planGroup ? [] : e.planGroup;
-    if (null != y) {
-        let e = u.Ay.getIntervalForInvoice(y);
+        D = (0, a.ds)();
+    if (x) return null;
+    let w = null == e.planGroup ? [] : e.planGroup;
+    if (null != f) {
+        let e = u.Ay.getIntervalForInvoice(f);
         (t = e.intervalType),
             (n = e.intervalCount),
-            (o = (0, c.CE)((0, c.$g)(y.total, y.currency), t, n)),
-            (m = (0, c.CE)((0, c.$g)(y.subtotal, y.currency), t, n));
-    } else null != g && ((t = g.interval), (n = g.intervalCount));
-    let k = (0, s.Ro)({
-            purchaseType: C || _.VVm.SUBSCRIPTION,
-            plan: g,
-            premiumSubscription: null == D ? null : D,
-            productLine: b,
-            isGift: !!A,
-            planGroup: P,
+            (A = (0, c.CE)((0, c.$g)(f.total, f.currency), t, n)),
+            (E = (0, c.CE)((0, c.$g)(f.subtotal, f.currency), t, n));
+    } else null != y && ((t = y.interval), (n = y.intervalCount));
+    let U = (0, i.Ro)({
+            purchaseType: I ?? p.VVm.SUBSCRIPTION,
+            plan: y,
+            premiumSubscription: null == j ? null : j,
+            productLine: g,
+            isGift: !!P,
+            planGroup: w,
             isPrepaidPaymentSource: !1,
+            willRelocateStoreCountry: e.willRelocateStoreCountry,
         }),
-        U = h.intl.format(h.t.Y2Rkqc, { primaryText: k, paidURL: _.X7G.PAID_TERMS }),
-        G = h.intl.format(h.t.H2uH5b, { primaryText: k, paidURL: _.X7G.PAID_TERMS }),
-        F = "",
-        V = "";
-    if (T) {
-        F = h.intl.format(h.t.xlJyOM, { virtualGoodsURL: _.X7G.PAID_TERMS_VIRTUAL_GOODS, paidURL: _.X7G.PAID_TERMS });
+        k = C.intl.format(C.t.Y2Rkqc, { primaryText: U, paidURL: p.X7G.PAID_TERMS }),
+        Y = C.intl.format(C.t.H2uH5b, { primaryText: U, paidURL: p.X7G.PAID_TERMS }),
+        G = "",
+        F = "";
+    if (_) {
+        G = C.intl.format(C.t.xlJyOM, { virtualGoodsURL: p.X7G.PAID_TERMS_VIRTUAL_GOODS, paidURL: p.X7G.PAID_TERMS });
         let e = "";
         (e =
-            L === f.Dp.ORB_PROFILE_BADGE
-                ? h.intl.string(h.t.APcKRo)
-                : L === f.Dp.FRACTIONAL_PREMIUM
-                  ? h.intl.string(h.t.FhJ74j)
-                  : h.intl.string(h.t["Sxed/G"])),
-            Array.isArray(F) ? (F = [...F, ` ${e}`]) : (F += ` ${e}`);
-    } else if (S)
-        if (null != o && y?.subscriptionPeriodEnd != null) F = h.intl.format(h.t["2VPTay"], { subtotalRate: m });
+            b === m.Dp.ORB_PROFILE_BADGE
+                ? C.intl.string(C.t.APcKRo)
+                : b === m.Dp.FRACTIONAL_PREMIUM
+                  ? C.intl.string(C.t.FhJ74j)
+                  : C.intl.string(C.t["Sxed/G"])),
+            Array.isArray(G) ? (G = [...G, ` ${e}`]) : (G += ` ${e}`);
+    } else if (T)
+        if (null != A && f?.subscriptionPeriodEnd != null) G = C.intl.format(C.t["2VPTay"], { subtotalRate: E });
         else
             switch (t) {
-                case p.WT.MONTH:
-                    F = 1 === n ? h.intl.format(h.t["+ywPmZ"], {}) : h.intl.format(h.t.oBwZfh, { intervalCount: n });
+                case h.WT.MONTH:
+                    G = 1 === n ? C.intl.format(C.t["+ywPmZ"], {}) : C.intl.format(C.t.oBwZfh, { intervalCount: n });
                     break;
-                case p.WT.YEAR:
-                    F = h.intl.format(h.t.y9gsX5, {});
+                case h.WT.YEAR:
+                    G = C.intl.format(C.t.y9gsX5, {});
                     break;
                 case void 0:
-                    F = h.intl.format(h.t.UxGFH4, {});
+                    G = C.intl.format(C.t.UxGFH4, {});
                     break;
                 default:
                     throw Error(`Unexpected interval: ${t}`);
             }
-    else if (C === _.VVm.ONE_TIME)
-        switch (b) {
-            case _.EZt.COLLECTIBLES:
-                (V = U),
-                    (F = A
-                        ? h.intl.format(h.t.Amdf8X, { paidURL: _.X7G.PAID_TERMS })
-                        : h.intl.format(h.t["40vM4o"], { paidURL: _.X7G.PAID_TERMS }));
+    else if (I === p.VVm.ONE_TIME)
+        switch (g) {
+            case p.EZt.COLLECTIBLES:
+                (F = k),
+                    (G = P
+                        ? C.intl.format(C.t.Amdf8X, { paidURL: p.X7G.PAID_TERMS })
+                        : C.intl.format(C.t["40vM4o"], { paidURL: p.X7G.PAID_TERMS }));
                 break;
-            case _.EZt.GUILD_PRODUCT:
-                (V = U), (F = h.intl.format(h.t["GEAQ+u"], { paidURL: _.X7G.PAID_TERMS }));
+            case p.EZt.GUILD_PRODUCT:
+                (F = k), (G = C.intl.format(C.t["GEAQ+u"], { paidURL: p.X7G.PAID_TERMS }));
                 break;
-            case _.EZt.SOCIAL_LAYER_GAME_ITEM:
-                V = U;
-                let B = A || !0 === x ? h.t.f6Ngwm : h.t.CVITgq;
-                F = h.intl.format(B, { applicationName: w ?? "game's" });
+            case p.EZt.SOCIAL_LAYER_GAME_ITEM:
+                (F = k),
+                    (G = (0, r._z)(
+                        null != L ? { id: L, name: R ?? "game's" } : void 0,
+                        { shouldAppendDisclaimer: !0 === P || !0 === O },
+                        { location: "LegalFinePrint" },
+                    ));
                 break;
             default:
-                (V = G), (F = h.intl.string(h.t["9/siSQ"]));
+                (F = Y), (G = "");
         }
-    else if (null == g || A)
-        switch ((A && (V = U), t)) {
-            case p.WT.MONTH:
-                (F = A ? h.intl.string(h.t.IjNapk) : h.intl.string(h.t["/sGXPr"])),
-                    (F = A
-                        ? h.intl.string(h.t.IjNapk)
+    else if (null == y || P)
+        switch ((P && (F = k), t)) {
+            case h.WT.MONTH:
+                (G = P ? C.intl.string(C.t.IjNapk) : C.intl.string(C.t["/sGXPr"])),
+                    (G = P
+                        ? C.intl.string(C.t.IjNapk)
                         : 1 === n
-                          ? h.intl.string(h.t["/sGXPr"])
-                          : h.intl.formatToPlainString(h.t.Fqjihk, { intervalCount: n }));
+                          ? C.intl.string(C.t["/sGXPr"])
+                          : C.intl.formatToPlainString(C.t.Fqjihk, { intervalCount: n }));
                 break;
-            case p.WT.YEAR:
-                F = A ? h.intl.string(h.t.vAfbG8) : h.intl.string(h.t.IGzFc5);
+            case h.WT.YEAR:
+                G = P ? C.intl.string(C.t.vAfbG8) : C.intl.string(C.t.IGzFc5);
                 break;
             case void 0:
-                F = "";
+                G = "";
                 break;
             default:
                 throw Error(`Unexpected interval: ${t}`);
         }
     else {
-        let e,
-            r = (0, s.Ro)({
-                productLine: b,
-                purchaseType: _.VVm.SUBSCRIPTION,
-                plan: g,
-                premiumSubscription: null == D ? null : D,
+        let l,
+            a = (0, i.Ro)({
+                productLine: g,
+                purchaseType: p.VVm.SUBSCRIPTION,
+                plan: y,
+                premiumSubscription: null == j ? null : j,
                 isGift: !1,
-                planGroup: P,
+                planGroup: w,
                 isPrepaidPaymentSource: !1,
+                willRelocateStoreCountry: e.willRelocateStoreCountry,
             });
-        I || (e = E(O, t, n, g.id)),
-            (F = D?.isPausedAllowsResumeButNotUpdates
-                ? h.intl.format(h.t.B6oNwB, {
-                      primaryText: r,
-                      rate: e,
-                      paidURL: _.X7G.PAID_TERMS,
-                      contactLink: _.X7G.CONTACT,
-                      helpdeskArticle: l.A.getArticleURL(_.MVz.BILLING),
+        S ||
+            (l = ((e, t, n, l) => {
+                if (null == e || null == t || null == n) {
+                    let e = Error("Missing base rate for legal fine print");
+                    return (0, s.pM)(e, { tags: { planId: l ?? "none" } }), null;
+                }
+                return (0, c.CE)((0, c.$g)(e.amount, e.currency), t, n);
+            })(M, t, n, y.id)),
+            (G = j?.isPausedAllowsResumeButNotUpdates
+                ? C.intl.format(C.t.B6oNwB, {
+                      primaryText: a,
+                      rate: l,
+                      paidURL: p.X7G.PAID_TERMS,
+                      contactLink: p.X7G.CONTACT,
+                      helpdeskArticle: o.A.getArticleURL(p.MVz.BILLING),
                   })
-                : null != D && (0, d.vT)(D, g.id, P)
-                  ? h.intl.format(h.t.LyBQUW, {
-                        primaryText: r,
-                        rate: e,
-                        paidURL: _.X7G.PAID_TERMS,
-                        contactLink: _.X7G.CONTACT,
-                        helpdeskArticle: l.A.getArticleURL(_.MVz.BILLING),
+                : null != j && (0, d.vT)(j, y.id, w)
+                  ? C.intl.format(C.t.LyBQUW, {
+                        primaryText: a,
+                        rate: l,
+                        paidURL: p.X7G.PAID_TERMS,
+                        contactLink: p.X7G.CONTACT,
+                        helpdeskArticle: o.A.getArticleURL(p.MVz.BILLING),
                     })
-                  : M && b === _.EZt.BOOST && null != O
-                    ? h.intl.format(h.t["2nKy/0"], {
-                          price: (0, c.$g)(O.amount, O.currency),
-                          paidServiceTermsArticle: _.X7G.PAID_TERMS,
-                          contactUsArticle: _.X7G.CONTACT,
-                          subscriptionFAQArticle: l.A.getArticleURL(_.MVz.BILLING),
+                  : D && g === p.EZt.BOOST && null != M
+                    ? C.intl.format(C.t["2nKy/0"], {
+                          price: (0, c.$g)(M.amount, M.currency),
+                          paidServiceTermsArticle: p.X7G.PAID_TERMS,
+                          contactUsArticle: p.X7G.CONTACT,
+                          subscriptionFAQArticle: o.A.getArticleURL(p.MVz.BILLING),
                       })
-                    : I
-                      ? h.intl.format(h.t["Hvo/Z5"], {
-                            buttonText: r,
-                            interval: u.Ay.formatInterval(g?.interval),
-                            cancelSubscriptionArticle: l.A.getArticleURL(_.MVz.PREMIUM_DETAILS_CANCEL_SUB),
-                            paidServiceTermsArticle: l.A.getArticleURL(_.MVz.PAID_TERMS),
+                    : D
+                      ? C.intl.format(C.t.Oo2FeS, {
+                            buttonText: a,
+                            interval: u.Ay.formatInterval(y?.interval),
+                            cancelSubscriptionArticle: o.A.getArticleURL(p.MVz.PREMIUM_DETAILS_CANCEL_SUB),
+                            paidServiceTermsArticle: o.A.getArticleURL(p.MVz.PAID_TERMS),
                         })
-                      : null != R && null != O
-                        ? h.intl.format(h.t.Kcieh4, {
-                              primaryText: r,
-                              proratedAmount: (0, c.$g)(R, O.currency),
-                              renewalAmount: (0, c.$g)(O.amount, O.currency),
-                              rateInterval: u.Ay.formatInterval(g?.interval),
-                              paidURL: _.X7G.PAID_TERMS,
-                              contactLink: _.X7G.CONTACT,
-                              helpdeskArticle: l.A.getArticleURL(_.MVz.BILLING),
+                      : S
+                        ? C.intl.format(C.t["Hvo/Z5"], {
+                              buttonText: a,
+                              interval: u.Ay.formatInterval(y?.interval),
+                              cancelSubscriptionArticle: o.A.getArticleURL(p.MVz.PREMIUM_DETAILS_CANCEL_SUB),
+                              paidServiceTermsArticle: o.A.getArticleURL(p.MVz.PAID_TERMS),
                           })
-                        : h.intl.format(h.t.anJ7OX, {
-                              primaryText: r,
-                              rate: e,
-                              paidURL: _.X7G.PAID_TERMS,
-                              contactLink: _.X7G.CONTACT,
-                              helpdeskArticle: l.A.getArticleURL(_.MVz.BILLING),
-                          }));
+                        : null != v && null != M
+                          ? C.intl.format(C.t.Kcieh4, {
+                                primaryText: a,
+                                proratedAmount: (0, c.$g)(v, M.currency),
+                                renewalAmount: (0, c.$g)(M.amount, M.currency),
+                                rateInterval: u.Ay.formatInterval(y?.interval),
+                                paidURL: p.X7G.PAID_TERMS,
+                                contactLink: p.X7G.CONTACT,
+                                helpdeskArticle: o.A.getArticleURL(p.MVz.BILLING),
+                            })
+                          : C.intl.format(C.t.anJ7OX, {
+                                primaryText: a,
+                                rate: l,
+                                paidURL: p.X7G.PAID_TERMS,
+                                contactLink: p.X7G.CONTACT,
+                                helpdeskArticle: o.A.getArticleURL(p.MVz.BILLING),
+                            }));
     }
-    return (0, r.jsxs)(r.Fragment, {
+    return (0, l.jsxs)(l.Fragment, {
         children: [
-            "" !== V && (0, r.jsx)("div", { children: V }),
-            "" !== F && (0, r.jsx)("div", { children: F }),
-            v === _.hes.PAYSAFE_CARD && (0, r.jsx)("div", { children: h.intl.string(h.t.kj9VLI) }),
-            v === _.hes.SOFORT && (0, r.jsx)("div", { children: h.intl.string(h.t["UYy1/h"]) }),
+            "" !== F && (0, l.jsx)("div", { children: F }),
+            "" !== G && (0, l.jsx)("div", { children: G }),
+            N === p.hes.PAYSAFE_CARD && (0, l.jsx)("div", { children: C.intl.string(C.t.kj9VLI) }),
+            N === p.hes.SOFORT && (0, l.jsx)("div", { children: C.intl.string(C.t["UYy1/h"]) }),
         ],
     });
 }
-let A = function (e) {
-    return (0, r.jsx)("div", { className: m.F, children: (0, r.jsx)(g, { ...e }) });
+let y = function (e) {
+    return (0, l.jsx)("div", { className: A.F, children: (0, l.jsx)(E, { ...e }) });
 };

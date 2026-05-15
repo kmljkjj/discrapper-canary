@@ -1,56 +1,59 @@
-n.d(t, { W: () => h });
+n.d(t, { W: () => g });
 var i = n(627968),
     l = n(64700),
-    s = n(311907),
-    a = n(397927),
-    r = n(956793),
-    o = n(734057),
-    c = n(624458),
-    d = n(513461),
-    u = n(985018);
-function h(e, t, h, m) {
-    let [A, g] = l.useState(!1),
-        p = (0, s.bG)([o.A], () => o.A.getChannel(m)),
-        f = l.useCallback(() => {
-            (0, a.showToast)((0, a.createToast)(u.intl.string(u.t.R0RpRX), a.ToastType.FAILURE));
+    s = n(17928),
+    a = n(691540),
+    r = n(857250),
+    o = n(97483),
+    c = n(192308),
+    d = n(956793),
+    u = n(734057),
+    h = n(624458),
+    m = n(513461),
+    p = n(985018);
+function g(e, t, g, A) {
+    let [f, _] = l.useState(!1),
+        E = (0, s.bG)([u.A], () => u.A.getChannel(A)),
+        C = l.useCallback(() => {
+            (0, a.P0)((0, r.o)(p.intl.string(p.t.R0RpRX), o.Ck.FAILURE));
         }, []),
-        _ = l.useCallback(async () => {
-            if (!A && null != e && null != t && null != h) {
-                if (null != p) return void r.default.selectPrivateChannel(p.id);
-                g(!0);
+        x = l.useCallback(async () => {
+            if (!f && null != e && null != t && null != g) {
+                if (null != E) return void d.default.selectPrivateChannel(E.id);
+                _(!0);
                 try {
-                    await c.A.createOrEnterJoinRequestInterview(h);
+                    await h.A.createOrEnterJoinRequestInterview(g);
                 } catch {
-                    f();
+                    C();
                 } finally {
-                    g(!1);
+                    _(!1);
                 }
             }
-        }, [e, h, p, f, A, t]);
+        }, [e, g, E, C, f, t]);
     return {
         approveRequest: async () => {
-            if (!A && null != e && null != t && null != h) {
-                g(!0);
+            if (!f && null != e && null != t && null != g) {
+                _(!0);
                 try {
-                    await c.A.updateGuildJoinRequest(e, t, h, d.B5.APPROVED);
+                    await h.A.updateGuildJoinRequest(e, t, g, m.B5.APPROVED);
                 } catch {
-                    f();
+                    C();
                 } finally {
-                    g(!1);
+                    _(!1);
                 }
             }
         },
         rejectRequest: () => {
             null != e &&
                 null != t &&
-                null != h &&
-                (0, a.mMO)(async () => {
+                null != g &&
+                (0, c.openModalLazy)(async () => {
                     let { default: l } = await n.e("70685").then(n.bind(n, 867276));
                     return (n) =>
-                        (0, i.jsx)(l, { modalProps: n, guildId: e, userId: t, guildJoinRequestId: h, onError: f });
+                        (0, i.jsx)(l, { modalProps: n, guildId: e, userId: t, guildJoinRequestId: g, onError: C });
                 });
         },
-        submitting: A,
-        handleOpenInterview: _,
+        submitting: f,
+        handleOpenInterview: x,
     };
 }

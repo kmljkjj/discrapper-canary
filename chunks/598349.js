@@ -1,5 +1,5 @@
 "use strict";
-var r = n(339626);
+var i = n(339626);
 e.exports = function (e) {
-    return "object" == typeof e ? null !== e : r(e);
+    return "object" == typeof e ? null !== e : i(e);
 };

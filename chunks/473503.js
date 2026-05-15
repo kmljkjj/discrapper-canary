@@ -1,19 +1,17 @@
 "use strict";
-n.d(t, { OA: () => I, kB: () => y });
-var r = n(735438),
-    i = n.n(r),
-    a = n(311907),
-    s = n(562465),
-    o = n(73153),
+n.d(t, { OA: () => f, kB: () => p });
+var i = n(735438),
+    r = n.n(i),
+    s = n(17928),
+    a = n(636537),
+    o = n(228366),
     l = n(734057),
-    u = n(661191),
-    c = n(207777),
-    d = n(969043);
+    d = n(935208),
+    _ = n(207777),
+    u = n(969043);
 n(246943);
-var _ = n(652215);
-let f = 10,
-    p = 5;
-class h {
+var c = n(652215);
+class E {
     _set;
     _defaultValueFunc;
     constructor(e) {
@@ -26,90 +24,91 @@ class h {
         delete this._set[e];
     }
     hasNext() {
-        return !i().isEmpty(this._set);
+        return !r().isEmpty(this._set);
     }
     next() {
-        return u.default.keys(this._set)[0];
+        return d.default.keys(this._set)[0];
     }
 }
-class m {
-    requested;
-    constructor() {
-        this.requested = new h(() => new Set());
-    }
-    request(e, t) {
-        this.requested.get(e).add(t);
-    }
-    hasRequested(e, t) {
-        return this.requested.get(e).has(t);
-    }
-    finishRequesting(e, t) {
-        let n = this.requested.get(e);
-        t.forEach((e) => n.delete(e)), g.compact(e);
-    }
-    getRequested(e) {
-        return this.requested.get(e);
-    }
-    getNextBatch(e, t) {
-        return Array.from(this.requested.get(e)).slice(0, t);
-    }
-    hasNext() {
-        return this.requested.hasNext();
-    }
-    next() {
-        return this.requested.next();
-    }
-    compact(e) {
-        0 === this.requested.get(e).size && this.requested.delete(e);
-    }
+let h = new (class {
+        requested;
+        constructor() {
+            this.requested = new E(() => new Set());
+        }
+        request(e, t) {
+            this.requested.get(e).add(t);
+        }
+        hasRequested(e, t) {
+            return this.requested.get(e).has(t);
+        }
+        finishRequesting(e, t) {
+            let n = this.requested.get(e);
+            t.forEach((e) => n.delete(e)), h.compact(e);
+        }
+        getRequested(e) {
+            return this.requested.get(e);
+        }
+        getNextBatch(e, t) {
+            return Array.from(this.requested.get(e)).slice(0, t);
+        }
+        hasNext() {
+            return this.requested.hasNext();
+        }
+        next() {
+            return this.requested.next();
+        }
+        compact(e) {
+            0 === this.requested.get(e).size && this.requested.delete(e);
+        }
+    })(),
+    m = null;
+function f(e) {
+    let { loaded: t, firstMessage: n } = (0, s.cf)([u.A], () => u.A.getMessage(e.id)),
+        i = (0, s.bG)([l.A], () => l.A.getChannel(e.parent_id));
+    return (
+        null == i ||
+            t ||
+            null != n ||
+            (function (e, t) {
+                if (h.hasRequested(e.id, t)) return;
+                let n = (0, _.S)(e.id),
+                    i = n.findIndex((e) => e === t),
+                    r = n.slice(i, i + 5).filter((t) => !h.hasRequested(e.id, t));
+                g(e, r);
+            })(i, e.id),
+        { loaded: t, firstMessage: n }
+    );
 }
-let g = new m(),
-    E = null;
-function A(e, t) {
-    return !e && null == t;
-}
-function I(e) {
-    let { loaded: t, firstMessage: n } = (0, a.cf)([d.A], () => d.A.getMessage(e.id)),
-        r = (0, a.bG)([l.A], () => l.A.getChannel(e.parent_id));
-    return null != r && A(t, n) && S(r, e.id), { loaded: t, firstMessage: n };
-}
-function T(e, t) {
+function g(e, t) {
     let n = !1;
     t.forEach((t) => {
-        let { loaded: r, firstMessage: i } = d.A.getMessage(t);
-        A(r, i) && (g.request(e.id, t), (n = !0));
+        let { loaded: i, firstMessage: r } = u.A.getMessage(t);
+        i || null != r || (h.request(e.id, t), (n = !0));
     }),
-        n && null == E && (E = setTimeout(v, 0));
+        n && null == m && (m = setTimeout(A, 0));
 }
-function y(e) {
-    T(e, (0, c.S)(e.id).slice(0, f));
+function p(e) {
+    g(e, (0, _.S)(e.id).slice(0, 10));
 }
-function S(e, t) {
-    if (g.hasRequested(e.id, t)) return;
-    let n = (0, c.S)(e.id),
-        r = n.findIndex((e) => e === t),
-        i = n.slice(r, r + p).filter((t) => !g.hasRequested(e.id, t));
-    T(e, i);
-}
-async function v() {
+async function A() {
     try {
-        for (; g.hasNext(); ) await C(g.next());
+        for (; h.hasNext(); ) await I(h.next());
     } finally {
-        E = null;
+        m = null;
     }
 }
-async function C(e) {
-    let t = g.getNextBatch(e, f);
+async function I(e) {
+    let t = h.getNextBatch(e, 10);
     try {
         if (0 === t.length) return;
         let n = l.A.getChannel(e)?.guild_id;
         if (null == n) return;
         let {
-            body: { threads: r },
-        } = await s.Bo.post({ url: _.Rsh.FORUM_POSTS(e), body: { thread_ids: t }, rejectWithError: !0 });
-        o.h.dispatch({ type: "LOAD_FORUM_POSTS", guildId: n, threads: r });
+            body: { threads: i },
+        } = await a.Bo.post({ url: c.Rsh.FORUM_POSTS(e), body: { thread_ids: t }, rejectWithError: !0 });
+        o.h.dispatch({ type: "LOAD_FORUM_POSTS", guildId: n, threads: i });
     } catch (e) {
     } finally {
-        g.finishRequesting(e, t);
+        h.finishRequesting(e, t);
     }
 }

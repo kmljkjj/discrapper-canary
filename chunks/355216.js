@@ -1,84 +1,82 @@
-"use strict";
-n.d(t, { HN: () => m, ux: () => _ });
-var i = n(627968),
-    s = n(64700),
-    l = n(503698),
-    r = n.n(l),
-    a = n(311907),
-    o = n(397927),
-    c = n(187508),
-    d = n(851109),
-    u = n(599486),
-    h = n(394953),
-    A = n(628325),
-    p = n(849077);
-n(445368);
-var g = n(626600);
+t.d(n, { HN: () => m, ux: () => E });
+var i = t(627968),
+    s = t(64700),
+    a = t(503698),
+    o = t.n(a),
+    r = t(17928),
+    l = t(777666),
+    u = t(834730),
+    d = t(135978),
+    c = t(851109),
+    h = t(599486),
+    b = t(394953),
+    g = t(849077);
+t(445368);
+var T = t(773557);
 function m() {
-    let { setSelectedFilter: e } = (0, u.A)(),
-        t = (0, A.S)((e) => e.setInboxReadState);
+    let { setSelectedFilter: e } = (0, h.A)();
     return () => {
-        e(p.Io.ALL), t(!1);
+        e(g.Io.ALL);
     };
 }
-function _(e) {
-    let t,
-        n,
-        l,
-        { isSelected: u } = e,
-        { unreadRecentMentionsCount: A, unreadChannelIds: p } = (0, h.U4)(),
-        m =
-            ((t = (function () {
-                let { unreadRecentMentionsCount: e } = (0, h.U4)(),
-                    { hasMoreMentions: t, mentionsLoading: n } = (0, a.cf)([c.Ay], () => ({
-                        hasMoreMentions: c.Ay.hasMore,
-                        mentionsLoading: c.Ay.loading,
+function E(e) {
+    let n,
+        t,
+        a,
+        { isSelected: h } = e,
+        { unreadRecentMentionsCount: g, unreadChannelIds: m } = (0, b.U4)(),
+        E =
+            ((n = (function () {
+                let { unreadRecentMentionsCount: e } = (0, b.U4)(),
+                    { hasMoreMentions: n, mentionsLoading: t } = (0, r.cf)([d.Ay], () => ({
+                        hasMoreMentions: d.Ay.hasMore,
+                        mentionsLoading: d.Ay.loading,
                     })),
                     i = Math.min(e, 25),
-                    s = e > i || t || n,
-                    l = (0, o.o6S)(i) + 6 * !!s;
-                return { clampedCount: i, isEstimated: s, width: l };
+                    s = e > i || n || t,
+                    a = (0, l.o6)(i) + 6 * !!s;
+                return { clampedCount: i, isEstimated: s, width: a };
             })()),
-            (n = s.useCallback((e) => (t.isEstimated ? `${e}+` : e), [t.isEstimated])),
-            (l = s.useMemo(
+            (t = s.useCallback((e) => (n.isEstimated ? `${e}+` : e), [n.isEstimated])),
+            (a = s.useMemo(
                 () =>
-                    (function (e, t) {
-                        let { clampedCount: n, width: s } = e;
-                        return (0, i.jsx)(o.hVq, {
-                            count: n,
-                            renderBadgeCount: t,
+                    (function (e, n) {
+                        let { clampedCount: t, width: s } = e;
+                        return (0, i.jsx)(l.hV, {
+                            count: t,
+                            renderBadgeCount: n,
                             style: { width: s },
-                            className: g.xF,
+                            className: T.xF,
                         });
-                    })(t, n),
-                [t, n],
+                    })(n, t),
+                [n, t],
             )),
             s.useMemo(
-                () => ({ badge: l, badgeType: "mentions", dimensions: { height: 16, width: t.width } }),
-                [l, t.width],
+                () => ({ badge: a, badgeType: "mentions", dimensions: { height: 16, width: n.width } }),
+                [a, n.width],
             )),
-        { entrypoint: _ } = (0, d.X8)({ location: "useInboxBadgeInfo" });
+        { entrypoint: p } = (0, c.X8)({ location: "useInboxBadgeInfo" });
     return s.useMemo(() => {
-        if (A > 0) return m;
-        let e = p.length;
+        if (g > 0) return E;
+        let e = m.length;
         if (0 === e) return { badge: null, badgeType: null };
-        if (_ === d.RK.SERVER_RAIL_TOP) {
-            let t,
-                n = (0, o.o6S)(e) - 3;
+        if (p === c.RK.SERVER_RAIL_TOP) {
+            let n,
+                t = (0, l.o6)(e) - 3;
             return {
                 badge:
-                    ((t = (0, o.o6S)(e) - 3),
-                    (0, i.jsx)(o.hVq, {
+                    ((n = (0, l.o6)(e) - 3),
+                    (0, i.jsx)(l.hV, {
                         count: e,
-                        style: { width: t, lineHeight: 13, height: 13, minHeight: 13, minWidth: 13 },
-                        className: r()(g.xF, g.pw, { [g.wH]: u }),
+                        style: { width: n, lineHeight: 13, height: 13, minHeight: 13, minWidth: 13 },
+                        className: o()(T.xF, T.pw, { [T.wH]: h }),
                     })),
                 badgeType: "unread",
-                dimensions: { height: 13, width: n },
+                dimensions: { height: 13, width: t },
             };
         }
-        return _ === d.RK.TITLE_BAR_LEFT
-            ? { badge: (0, i.jsx)(o.Text, { variant: "eyebrow", children: (0, o.Gub)(e) }), badgeType: "unread" }
+        return p === c.RK.TITLE_BAR_LEFT
+            ? { badge: (0, i.jsx)(u.E, { variant: "eyebrow", children: (0, l.Gu)(e) }), badgeType: "unread" }
             : { badge: null, badgeType: null };
-    }, [A, m, p.length, _, u]);
+    }, [g, E, m.length, p, h]);
 }

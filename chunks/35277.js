@@ -1,125 +1,125 @@
 "use strict";
-n.d(t, { b: () => o }), n(134528), n(947204);
-var r = n(719442),
+n.d(t, { b: () => r }), n(134528), n(947204);
+var l = n(154283),
     i = n(317681),
-    a = n(711371),
-    s = n(551483);
-let o = {
-    ...r.gB,
+    s = n(820066),
+    a = n(551483);
+let r = {
+    ...l.gB,
     resetSelectionToEditorStart(e) {
-        r.gB.select(e, a.VW.start(e, []));
+        l.gB.select(e, s.VW.start(e, []));
     },
     resetSelectionToEditorEnd(e) {
-        r.gB.select(e, a.VW.end(e, []));
+        l.gB.select(e, s.VW.end(e, []));
     },
     delete(e, t) {
-        let { at: n, distance: i, unit: s, reverse: o = !1, select: l = !1, bounds: u, voids: c } = t;
+        let { at: n, distance: i, unit: a, reverse: r = !1, select: o = !1, bounds: c, voids: u } = t;
         if (null == n) {
             if (null == e.selection) return;
             n = e.selection;
         }
-        let [d, _] = a.ZF.isRange(n) ? a.ZF.edges(n) : a.VW.edges(e, n);
-        if (null != i || null != s)
-            if (o) {
-                let t = a.VW.before(e, d, { distance: i, unit: s }) ?? a.VW.start(e, []);
-                if ("character" === s && (i ?? 1) === 1 && a.PW.equals(d.path, _.path)) {
-                    let n = a.VW.leaf(e, d.path),
-                        r = null != n ? n[0].text : "";
-                    r.length > 0 &&
-                        null != r[r.length - 1].match(/[\u0E00-\u0E7F]/) &&
-                        (t = a.VW.before(e, d, { distance: i, unit: "offset" }) ?? a.VW.start(e, []));
+        let [d, h] = s.ZF.isRange(n) ? s.ZF.edges(n) : s.VW.edges(e, n);
+        if (null != i || null != a)
+            if (r) {
+                let t = s.VW.before(e, d, { distance: i, unit: a }) ?? s.VW.start(e, []);
+                if ("character" === a && (i ?? 1) === 1 && s.PW.equals(d.path, h.path)) {
+                    let n = s.VW.leaf(e, d.path),
+                        l = null != n ? n[0].text : "";
+                    l.length > 0 &&
+                        null != l[l.length - 1].match(/[\u0E00-\u0E7F]/) &&
+                        (t = s.VW.before(e, d, { distance: i, unit: "offset" }) ?? s.VW.start(e, []));
                 }
                 d = t;
-            } else _ = a.VW.after(e, _, { distance: i, unit: s }) ?? a.VW.end(e, []);
-        if (null != u) {
-            let [e, t] = a.ZF.edges(u);
-            a.Kh.isBefore(d, e) && (d = e), a.Kh.isAfter(_, t) && (_ = t);
+            } else h = s.VW.after(e, h, { distance: i, unit: a }) ?? s.VW.end(e, []);
+        if (null != c) {
+            let [e, t] = s.ZF.edges(c);
+            s.Kh.isBefore(d, e) && (d = e), s.Kh.isAfter(h, t) && (h = t);
         }
-        !a.Kh.equals(d, _) &&
-            (r.gB.delete(e, { at: { anchor: d, focus: _ }, hanging: !0, voids: c }),
-            l && a.VW.hasPath(e, d.path) && r.gB.select(e, d));
+        !s.Kh.equals(d, h) &&
+            (l.gB.delete(e, { at: { anchor: d, focus: h }, hanging: !0, voids: u }),
+            o && s.VW.hasPath(e, d.path) && l.gB.select(e, d));
     },
     textToText(e, t, n) {
-        let i = a.VW.getSelectionOverlap(e, n),
-            [s, o] = a.ZF.edges(n),
-            l = a.VW.before(e, s) ?? a.VW.start(e, []),
-            c = a.VW.after(e, o);
-        a.ZF.isExpanded(n) && r.gB.delete(e, { at: n, voids: !0 }),
-            r.gB.insertText(e, t, { at: l }),
-            (l = l ?? a.VW.start(e, [])),
-            (c = c ?? a.VW.end(e, [])),
-            u(e, i, l, c, c);
+        let i = s.VW.getSelectionOverlap(e, n),
+            [a, r] = s.ZF.edges(n),
+            o = s.VW.before(e, a) ?? s.VW.start(e, []),
+            u = s.VW.after(e, r);
+        s.ZF.isExpanded(n) && l.gB.delete(e, { at: n, voids: !0 }),
+            l.gB.insertText(e, t, { at: o }),
+            (o = o ?? s.VW.start(e, [])),
+            (u = u ?? s.VW.end(e, [])),
+            c(e, i, o, u, u);
     },
     textToVoid(e, t, n) {
-        let i = a.VW.getSelectionOverlap(e, n),
-            s = a.ZF.start(n),
-            o = a.PW.next(s.path),
-            l = { path: a.PW.next(o), offset: 0 };
-        r.gB.delete(e, { at: n, voids: !0 }),
-            0 === s.offset && r.gB.insertNodes(e, [{ text: "" }], { at: s.path }),
-            r.gB.insertNodes(e, [t], { at: s }),
-            (a.VW.hasPath(e, l.path) && a.l5.isText(a.VW.node(e, l.path)[0])) ||
-                r.gB.insertNodes(e, [{ text: "" }], { at: l.path }),
-            u(e, i, s, l, l);
+        let i = s.VW.getSelectionOverlap(e, n),
+            a = s.ZF.start(n),
+            r = s.PW.next(a.path),
+            o = { path: s.PW.next(r), offset: 0 };
+        l.gB.delete(e, { at: n, voids: !0 }),
+            0 === a.offset && l.gB.insertNodes(e, [{ text: "" }], { at: a.path }),
+            l.gB.insertNodes(e, [t], { at: a }),
+            (s.VW.hasPath(e, o.path) && s.l5.isText(s.VW.node(e, o.path)[0])) ||
+                l.gB.insertNodes(e, [{ text: "" }], { at: o.path }),
+            c(e, i, a, o, o);
     },
     textToInline(e, t, n) {
-        let i = a.VW.getSelectionOverlap(e, n),
-            s = t.children[t.children.length - 1],
-            o = a.ZF.start(n),
-            l = a.PW.next(o.path),
-            c = { path: a.PW.child(l, t.children.length - 1), offset: a.l5.isText(s) ? s.text.length : 0 };
-        r.gB.delete(e, { at: n, voids: !0 }),
-            0 === o.offset && r.gB.insertNodes(e, [{ text: "" }], { at: o.path }),
-            r.gB.insertNodes(e, [t], { at: o }),
-            u(e, i, o, c, c);
+        let i = s.VW.getSelectionOverlap(e, n),
+            a = t.children[t.children.length - 1],
+            r = s.ZF.start(n),
+            o = s.PW.next(r.path),
+            u = { path: s.PW.child(o, t.children.length - 1), offset: s.l5.isText(a) ? a.text.length : 0 };
+        l.gB.delete(e, { at: n, voids: !0 }),
+            0 === r.offset && l.gB.insertNodes(e, [{ text: "" }], { at: r.path }),
+            l.gB.insertNodes(e, [t], { at: r }),
+            c(e, i, r, u, u);
     },
     voidToText(e, t, n) {
-        let i = a.VW.getSelectionOverlap(e, n),
-            s = a.VW.before(e, n) ?? a.VW.start(e, []),
-            o = { path: s.path, offset: s.offset + t.length };
-        r.gB.delete(e, { at: n, voids: !0 }), r.gB.insertText(e, t, { at: s }), u(e, i, s, s, o);
+        let i = s.VW.getSelectionOverlap(e, n),
+            a = s.VW.before(e, n) ?? s.VW.start(e, []),
+            r = { path: a.path, offset: a.offset + t.length };
+        l.gB.delete(e, { at: n, voids: !0 }), l.gB.insertText(e, t, { at: a }), c(e, i, a, a, r);
     },
     removeInline(e, t) {
-        let n = a.VW.getSelectionOverlap(e, t),
-            i = a.VW.before(e, t) ?? a.VW.start(e, []);
-        r.gB.delete(e, { at: t, voids: !0 }), u(e, n, i, i, i);
+        let n = s.VW.getSelectionOverlap(e, t),
+            i = s.VW.before(e, t) ?? s.VW.start(e, []);
+        l.gB.delete(e, { at: t, voids: !0 }), c(e, n, i, i, i);
     },
     removeInlineChildren(e, t) {
         let [n, i] = t,
-            s = a.VW.getSelectionOverlap(e, i),
-            o = { path: a.PW.child(i, 0), offset: 0 };
-        a.VW.withoutNormalizing(e, () => {
-            for (let t = n.children.length - 1; t >= 0; t--) r.gB.removeNodes(e, { at: a.PW.child(i, t), voids: !0 });
+            a = s.VW.getSelectionOverlap(e, i),
+            r = { path: s.PW.child(i, 0), offset: 0 };
+        s.VW.withoutNormalizing(e, () => {
+            for (let t = n.children.length - 1; t >= 0; t--) l.gB.removeNodes(e, { at: s.PW.child(i, t), voids: !0 });
         }),
-            u(e, s, null, o, null);
+            c(e, a, null, r, null);
     },
     selectCommandOption(e, t) {
         let n = !(arguments.length > 2) || void 0 === arguments[2] || arguments[2],
-            s = i.n$(e);
-        if (null != s)
-            for (let i = 0; i < s[0].children.length; i++) {
-                let o = s[0].children[i];
-                if (a.AS.isType(o, "applicationCommandOption") && o.optionName === t)
-                    return void (n ? r.gB.select(e, [0, i]) : r.gB.select(e, a.VW.end(e, [0, i])));
+            a = i.n$(e);
+        if (null != a)
+            for (let i = 0; i < a[0].children.length; i++) {
+                let r = a[0].children[i];
+                if (s.AS.isType(r, "applicationCommandOption") && r.optionName === t)
+                    return void (n ? l.gB.select(e, [0, i]) : l.gB.select(e, s.VW.end(e, [0, i])));
             }
     },
     selectPreviousCommandOption(e) {
         if (null == i.n$(e)) return;
-        let t = null != e.selection ? e.selection.focus.path : a.VW.end(e, s.Xg).path,
+        let t = null != e.selection ? e.selection.focus.path : s.VW.end(e, a.Xg).path,
             n = i.M3(e),
-            o = a.VW.previous(e, { at: t, match: (e) => e !== n?.[0] && a.AS.isType(e, "applicationCommandOption") });
-        null != o ? r.gB.select(e, o[1]) : a.PW.isAfter(t, s.fP) && r.gB.select(e, a.VW.end(e, s.fP));
+            r = s.VW.previous(e, { at: t, match: (e) => e !== n?.[0] && s.AS.isType(e, "applicationCommandOption") });
+        null != r ? l.gB.select(e, r[1]) : s.PW.isAfter(t, a.fP) && l.gB.select(e, s.VW.end(e, a.fP));
     },
     selectNextCommandOption(e) {
         if (null == i.n$(e)) return;
-        let t = null != e.selection ? e.selection.focus.path : a.VW.start(e, s.Xg).path,
+        let t = null != e.selection ? e.selection.focus.path : s.VW.start(e, a.Xg).path,
             n = i.M3(e),
-            l = a.VW.next(e, { at: t, match: (e) => e !== n?.[0] && a.AS.isType(e, "applicationCommandOption") });
-        null != l ? r.gB.select(e, l[1]) : o.resetSelectionToEditorEnd(e);
+            o = s.VW.next(e, { at: t, match: (e) => e !== n?.[0] && s.AS.isType(e, "applicationCommandOption") });
+        null != o ? l.gB.select(e, o[1]) : r.resetSelectionToEditorEnd(e);
     },
     insertCommandOption(e, t) {
-        o.resetSelectionToEditorEnd(e),
-            o.insertNodes(e, [
+        r.resetSelectionToEditorEnd(e),
+            r.insertNodes(e, [
                 {
                     type: "applicationCommandOption",
                     optionName: t.name,
@@ -130,34 +130,32 @@ let o = {
             ]);
     },
     keyboardMove(e, t) {
-        let { distance: n = 1, unit: i = "character", reverse: s = !1, edge: o } = t ?? {},
-            l = e.selection;
-        if (null == l) return;
-        let u = l.focus;
-        if (a.ZF.isExpanded(l)) {
-            if (void 0 === o && "character" === i) return void r.gB.collapse(e, { edge: s ? "start" : "end" });
-            "focus" !== o && (u = "line" === i || s ? a.ZF.start(l) : a.ZF.end(l));
+        let { distance: n = 1, unit: i = "character", reverse: a = !1, edge: r } = t ?? {},
+            o = e.selection;
+        if (null == o) return;
+        let c = o.focus;
+        if (s.ZF.isExpanded(o)) {
+            if (void 0 === r && "character" === i) return void l.gB.collapse(e, { edge: a ? "start" : "end" });
+            "focus" !== r && (c = "line" === i || a ? s.ZF.start(o) : s.ZF.end(o));
         }
-        let c = (s ? a.VW.before : a.VW.after)(e, u, { unit: i, distance: n });
-        null != c && r.gB.setSelection(e, "focus" === o ? { focus: c } : { anchor: c, focus: c });
+        let u = (a ? s.VW.before : s.VW.after)(e, c, { unit: i, distance: n });
+        null != u && l.gB.setSelection(e, "focus" === r ? { focus: u } : { anchor: u, focus: u });
     },
 };
-function l(e, t, n, r, i) {
+function o(e, t, n, l, i) {
     switch (t) {
         case "start":
             return n;
         case "inside":
-            return r;
+            return l;
         case "end":
             return i;
     }
     return e;
 }
-function u(e, t, n, r, i) {
+function c(e, t, n, l, i) {
     if (null == t.anchor && null == t.focus) return;
-    let a = l(e.selection?.anchor, t.anchor, n, r, i),
-        s = l(e.selection?.focus, t.focus, n, r, i);
-    if (null == a || null == s) return;
-    let u = { anchor: a, focus: s };
-    o.select(e, u);
+    let s = o(e.selection?.anchor, t.anchor, n, l, i),
+        a = o(e.selection?.focus, t.focus, n, l, i);
+    null == s || null == a || r.select(e, { anchor: s, focus: a });
 }

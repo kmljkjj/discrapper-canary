@@ -1,34 +1,33 @@
 "use strict";
-n.d(t, { Gr: () => s, T4: () => u, VV: () => r, aQ: () => c, jq: () => a, lx: () => l, mP: () => o, qW: () => i });
-var r = (function (e) {
-    return (
-        (e.ROLE_SUBSCRIPTIONS = "role-subscriptions"),
-        (e.SERVER_MONETIZATION_ONBOARDING = "server-monetization-onboarding"),
-        (e.GAME_SHOP = "game-shop"),
-        (e.GUILD_SHOP = "shop"),
-        (e.MEMBER_APPLICATIONS = "member-applications"),
-        (e.GUILD_HOME = "@home"),
-        (e.CHANNEL_BROWSER = "channel-browser"),
-        (e.GUILD_ONBOARDING = "onboarding"),
-        (e.CUSTOMIZE_COMMUNITY = "customize-community"),
-        (e.MEMBER_SAFETY = "member-safety"),
-        (e.GUILD_BOOSTS = "boosts"),
-        (e.GAME_SERVERS = "game-servers"),
-        (e.REPORT_TO_MOD = "report-to-mod"),
-        e
-    );
-})({});
-let i = new Set(Object.values(r));
-function a(e) {
-    return i.has(e);
+n.d(t, { Gr: () => l, T4: () => d, VV: () => s, aQ: () => _, jq: () => o, lx: () => c, mP: () => u, qW: () => a });
+var i,
+    r,
+    s =
+        (((i = {}).ROLE_SUBSCRIPTIONS = "role-subscriptions"),
+        (i.SERVER_MONETIZATION_ONBOARDING = "server-monetization-onboarding"),
+        (i.GAME_SHOP = "game-shop"),
+        (i.GUILD_SHOP = "shop"),
+        (i.MEMBER_APPLICATIONS = "member-applications"),
+        (i.GUILD_HOME = "@home"),
+        (i.CHANNEL_BROWSER = "channel-browser"),
+        (i.GUILD_ONBOARDING = "onboarding"),
+        (i.CUSTOMIZE_COMMUNITY = "customize-community"),
+        (i.MEMBER_SAFETY = "member-safety"),
+        (i.GUILD_BOOSTS = "boosts"),
+        (i.GAME_SERVERS = "game-servers"),
+        (i.REPORT_TO_MOD = "report-to-mod"),
+        i);
+let a = new Set(Object.values(s));
+function o(e) {
+    return a.has(e);
 }
-function s(e, t) {
+function l(e, t) {
     return `${e}-${t}`;
 }
-function o(e) {
+function u(e) {
     return !!e?.includes("@home");
 }
-let l = Object.freeze({
+let c = Object.freeze({
     GUILD_FEED_REMOVED: 1,
     PINNED: 2,
     ACTIVE_CHANNELS_REMOVED: 4,
@@ -45,15 +44,14 @@ let l = Object.freeze({
     IS_JOIN_REQUEST_INTERVIEW_CHANNEL: 65536,
     OBFUSCATED: 131072,
     IS_MODERATOR_REPORT_CHANNEL: 524288,
+    IS_SPOILER_CHANNEL: 2097152,
+    IS_GAME_INVITES_CHANNEL: 4194304,
 });
-var u = (function (e) {
-    return (
-        (e.GUILD_HOME = "home"),
-        (e.SERVER_GUIDE = "guide"),
-        (e.CHANNEL_BROWSER = "browse"),
-        (e.CUSTOMIZE_COMMUNITY = "customize"),
-        (e.LINKED_ROLES = "linked-roles"),
-        e
-    );
-})({});
-let c = new Set(Object.values(u));
+var d =
+    (((r = {}).GUILD_HOME = "home"),
+    (r.SERVER_GUIDE = "guide"),
+    (r.CHANNEL_BROWSER = "browse"),
+    (r.CUSTOMIZE_COMMUNITY = "customize"),
+    (r.LINKED_ROLES = "linked-roles"),
+    r);
+let _ = new Set(Object.values(d));

@@ -1,29 +1,28 @@
 "use strict";
-n.d(t, { C1: () => d, Or: () => c, YR: () => u });
-var r = n(627968),
-    i = n(353640),
-    a = n(311907),
-    s = n(111162),
-    o = n(355001);
-let l = 4,
-    u = 64,
-    c = (0, i.v)((e) => ({
-        horizontalSpacing: l,
-        verticalSpacing: l,
+n.d(t, { C1: () => _, Or: () => d, YR: () => l });
+var i = n(627968),
+    r = n(353640),
+    s = n(17928),
+    a = n(111162),
+    o = n(650761);
+let l = 64,
+    d = (0, r.v)((e) => ({
+        horizontalSpacing: 4,
+        verticalSpacing: 4,
         setHorizontalSpacing: (t) => {
-            e({ horizontalSpacing: Math.round(Math.min(Math.max(t, 0), u)) });
+            e({ horizontalSpacing: Math.round(Math.min(Math.max(t, 0), l)) });
         },
         setVerticalSpacing: (t) => {
-            e({ verticalSpacing: Math.round(Math.min(Math.max(t, 0), u)) });
+            e({ verticalSpacing: Math.round(Math.min(Math.max(t, 0), l)) });
         },
     }));
-function d() {
-    let e = (0, a.bG)([s.default], () => s.default.layoutDebuggingEnabled),
-        { horizontalSpacing: t, verticalSpacing: n } = c();
+function _() {
+    let e = (0, s.bG)([a.default], () => a.default.layoutDebuggingEnabled),
+        { horizontalSpacing: t, verticalSpacing: n } = d();
     return e
-        ? (0, r.jsx)("div", {
+        ? (0, i.jsx)("div", {
               className: o.k,
-              children: (0, r.jsx)("div", {
+              children: (0, i.jsx)("div", {
                   className: o.Z,
                   "data-horizontal": t > 0,
                   "data-vertical": n > 0,

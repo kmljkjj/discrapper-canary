@@ -1,15 +1,7 @@
-"use strict";
 n.d(t, { A: () => s });
-var r = n(311907),
-    i = n(775602);
-function a(e, t, n, r) {
-    if (null != e) return t || !1 === n || r ? e.staticImageUrl : (e.animatedImageUrl ?? e.staticImageUrl);
-}
+var i = n(17928),
+    l = n(775602);
 function s(e, t, n) {
-    return a(
-        e,
-        (0, r.bG)([i.A], () => i.A.useReducedMotion),
-        t,
-        n,
-    );
+    let s = (0, i.bG)([l.A], () => l.A.useReducedMotion);
+    return null != e ? (s || !1 === t || n ? e.staticImageUrl : (e.animatedImageUrl ?? e.staticImageUrl)) : void 0;
 }

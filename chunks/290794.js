@@ -1,4 +1,4 @@
-n.d(t, { Tu: () => d, hd: () => o, y0: () => r, y5: () => s });
+n.d(t, { Tu: () => c, hd: () => o, y0: () => r, y5: () => s });
 var i = n(627968),
     l = n(64700);
 let a = l.createContext(void 0);
@@ -18,7 +18,7 @@ function o(e) {
         return e.resources;
     })().styles[e];
 }
-function d() {
+function c() {
     let { message: e } = r(),
         t = e.getChannelId();
     return l.useMemo(() => ({ channelId: t, messageId: e.id }), [e.id, t]);

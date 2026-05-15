@@ -1,45 +1,33 @@
 "use strict";
-n.d(t, { A: () => I });
-var r = n(311907),
-    i = n(451988),
-    a = n(73153),
-    s = n(375492),
+n.d(t, { A: () => E });
+var i = n(17928),
+    r = n(451988),
+    s = n(228366),
+    a = n(480595),
     o = n(461213),
     l = n(652215);
 let u = {},
-    c = {},
-    d = 12e4,
-    _ = 15e3;
-function f(e) {
-    let { applicationId: t, activityType: n } = e,
-        r = u[t];
-    if (null == r) return !1;
-    delete r[n];
-}
-function p(e, t, n) {
+    c = {};
+function d(e, t, n) {
     null != c[e] && c[e].stop();
-    let r = new i.Ep();
-    r.start(n, () => a.h.dispatch({ type: "ACTIVITY_LAUNCH_FAIL", applicationId: e, activityType: t })), (c[e] = r);
+    let i = new r.Ep();
+    i.start(n, () => s.h.dispatch({ type: "ACTIVITY_LAUNCH_FAIL", applicationId: e, activityType: t })), (c[e] = i);
 }
-function h(e, t, n) {
-    let { applicationId: r, remotePartyId: i } = n;
+function _(e, t, n) {
+    let { applicationId: i, remotePartyId: r } = n;
     if (e === l.eAD.COMPLETE) {
-        delete u[r]?.[t], null != c[r] && (c[r].stop(), delete c[r]);
+        delete u[i]?.[t], null != c[i] && (c[i].stop(), delete c[i]);
         return;
     }
-    let a = u[r] ?? {};
-    (a[t] = { state: e, remotePartyId: i }),
-        (u[r] = a),
-        __OVERLAY__ || e !== l.eAD.FAILED ? e === l.eAD.LOADING && null != i && p(r, t, _) : p(r, t, d);
+    let s = u[i] ?? {};
+    (s[t] = { state: e, remotePartyId: r }),
+        (u[i] = s),
+        __OVERLAY__ || e !== l.eAD.FAILED ? e === l.eAD.LOADING && d(i, t, null != r ? 15e3 : 12e4) : d(i, t, 12e4);
 }
-function m(e) {
-    let { activityLauncherStates: t } = e;
-    u = { ...t };
+function f(e) {
+    return _(l.eAD.COMPLETE, l.xL.JOIN, e);
 }
-function g(e) {
-    return h(l.eAD.COMPLETE, l.xL.JOIN, e);
-}
-function E() {
+function h() {
     let e = Object.entries(u)
             .map((e) => {
                 let [t, n] = e;
@@ -52,19 +40,19 @@ function E() {
         t = !1;
     return (
         e.forEach((e) => {
-            let { applicationId: n, remotePartyId: r } = e,
-                i = s.A.getApplicationActivity(n),
-                a = o.A.getApplicationActivity(n);
-            (i?.party?.id === r || a?.party?.id === r) &&
-                (h(l.eAD.COMPLETE, l.xL.JOIN, { applicationId: n, remotePartyId: r }), (t = !0));
+            let { applicationId: n, remotePartyId: i } = e,
+                r = a.A.getApplicationActivity(n),
+                s = o.A.getApplicationActivity(n);
+            (r?.party?.id === i || s?.party?.id === i) &&
+                (_(l.eAD.COMPLETE, l.xL.JOIN, { applicationId: n, remotePartyId: i }), (t = !0));
         }),
         t
     );
 }
-class A extends r.Ay.Store {
+class p extends i.Ay.Store {
     static displayName = "ActivityLauncherStore";
     initialize() {
-        this.syncWith([s.A, o.A], E);
+        this.syncWith([a.A, o.A], h);
     }
     getState(e, t) {
         let n = u[e];
@@ -74,11 +62,19 @@ class A extends r.Ay.Store {
         return u;
     }
 }
-let I = new A(a.h, {
-    OVERLAY_INITIALIZE: m,
-    ACTIVITY_JOIN_LOADING: (e) => h(l.eAD.LOADING, l.xL.JOIN, e),
-    ACTIVITY_JOIN_FAILED: (e) => h(l.eAD.FAILED, l.xL.JOIN, e),
-    ACTIVITY_JOIN: g,
-    EMBEDDED_ACTIVITY_CLOSE: g,
-    ACTIVITY_LAUNCH_FAIL: f,
+let E = new p(s.h, {
+    OVERLAY_INITIALIZE: function (e) {
+        let { activityLauncherStates: t } = e;
+        u = { ...t };
+    },
+    ACTIVITY_JOIN_LOADING: (e) => _(l.eAD.LOADING, l.xL.JOIN, e),
+    ACTIVITY_JOIN_FAILED: (e) => _(l.eAD.FAILED, l.xL.JOIN, e),
+    ACTIVITY_JOIN: f,
+    EMBEDDED_ACTIVITY_CLOSE: f,
+    ACTIVITY_LAUNCH_FAIL: function (e) {
+        let { applicationId: t, activityType: n } = e,
+            i = u[t];
+        if (null == i) return !1;
+        delete i[n];
+    },
 });

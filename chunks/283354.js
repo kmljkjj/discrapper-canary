@@ -1,83 +1,89 @@
-"use strict";
-n.d(t, { default: () => A });
-var i = n(627968),
-    s = n(64700),
-    l = n(314116),
-    r = n(397927),
-    a = n(442433),
-    o = n(50268),
-    c = n(928658),
-    d = n(208882),
-    u = n(352123),
-    h = n(985018);
-function A(e) {
-    let { entry: t, onSelect: A, closePopout: p, hideEditButton: g = !1 } = e,
-        { isEntryAdmin: m, canEdit: _, canRemove: f } = (0, u.A)(t),
-        x = (0, o.A)({ id: t.guildId, label: h.intl.string(h.t["94lLD7"]), onSuccess: p });
-    s.useEffect(() => {
-        _ || f || null != x || (0, a.Z_)();
+n.d(e, { default: () => D });
+var r = n(627968),
+    i = n(64700),
+    c = n(314116),
+    a = n(192308),
+    l = n(550079),
+    o = n(477782),
+    E = n(22231),
+    R = n(241326),
+    s = n(138134),
+    _ = n(442433),
+    d = n(50268),
+    h = n(928658),
+    u = n(208882),
+    C = n(352123),
+    I = n(985018);
+function D(t) {
+    let { entry: e, onSelect: D, closePopout: A, hideEditButton: y = !1 } = t,
+        { isEntryAdmin: T, canEdit: p, canRemove: S } = (0, C.A)(e),
+        Y = (0, d.A)({ id: e.guildId, label: I.intl.string(I.t["94lLD7"]), onSuccess: A });
+    i.useEffect(() => {
+        p || S || null != Y || (0, _.Z_)();
     });
-    let C = () => {
-        d.ZM(t.channelId, t.guildId);
+    let g = () => {
+        u.ZM(e.channelId, e.guildId);
     };
-    function E() {
-        (0, a.Z_)(), p?.();
+    function N() {
+        (0, _.Z_)(), A?.();
     }
-    return (0, i.jsxs)(r.W1t, {
+    return (0, r.jsxs)(l.W, {
         "data-menu-migrated": !0,
         navId: "guild-entry-context",
-        onClose: E,
-        "aria-label": h.intl.string(h.t.HpQykc),
-        onSelect: A,
+        onClose: N,
+        "aria-label": I.intl.string(I.t.HpQykc),
+        onSelect: D,
         children: [
-            (0, i.jsxs)(r.rXV, {
+            (0, r.jsxs)(o.rX, {
                 children: [
-                    _ && !g
-                        ? (0, i.jsx)(r.Drp, {
+                    p && !y
+                        ? (0, r.jsx)(o.Dr, {
                               id: "update-entry",
-                              label: h.intl.string(h.t.XnuOvN),
+                              label: I.intl.string(I.t.XnuOvN),
                               action: function () {
-                                  (0, r.mMO)(async () => {
-                                      let { default: e } = await n.e("88869").then(n.bind(n, 201700));
-                                      return (n) => (0, i.jsx)(e, { ...n, entry: t });
+                                  (0, a.openModalLazy)(async () => {
+                                      let { default: t } = await Promise.all([n.e("13754"), n.e("88869")]).then(
+                                          n.bind(n, 201700),
+                                      );
+                                      return (n) => (0, r.jsx)(t, { ...n, entry: e });
                                   }),
-                                      E();
+                                      N();
                               },
-                              leadingAccessory: { type: "icon", icon: r.R2l },
+                              leadingAccessory: { type: "icon", icon: E.R },
                           })
                         : null,
-                    f
-                        ? (0, i.jsx)(r.Drp, {
+                    S
+                        ? (0, r.jsx)(o.Dr, {
                               id: "remove-from-hub",
-                              label: h.intl.string(h.t.KUxYWH),
+                              label: I.intl.string(I.t.KUxYWH),
                               action: function () {
-                                  (0, l.A)({
-                                      title: h.intl.string(h.t.KUxYWH),
-                                      subtitle: h.intl.format(h.t["/5y0uV"], { guildName: t.name }),
-                                      confirmText: h.intl.string(h.t.N86XcP),
-                                      onConfirm: C,
+                                  (0, c.A)({
+                                      title: I.intl.string(I.t.KUxYWH),
+                                      subtitle: I.intl.format(I.t["/5y0uV"], { guildName: e.name }),
+                                      confirmText: I.intl.string(I.t.N86XcP),
+                                      onConfirm: g,
                                   }),
-                                      E();
+                                      N();
                               },
                               color: "danger",
-                              leadingAccessory: { type: "icon", icon: r.ucK },
+                              leadingAccessory: { type: "icon", icon: R.u },
                           })
                         : null,
-                    m
+                    T
                         ? null
-                        : (0, i.jsx)(r.Drp, {
+                        : (0, r.jsx)(o.Dr, {
                               id: "report-server-listing",
-                              label: h.intl.string(h.t.Aen9eh),
+                              label: I.intl.string(I.t.Aen9eh),
                               action: function () {
-                                  null != t && ((0, c.sJ)(t), E());
+                                  null != e && ((0, h.sJ)(e), N());
                               },
-                              icon: r.iFK,
-                              leadingAccessory: { type: "icon", icon: r.iFK },
+                              icon: s.i,
+                              leadingAccessory: { type: "icon", icon: s.i },
                               color: "danger",
                           }),
                 ],
             }),
-            (0, i.jsx)(r.rXV, { children: x }),
+            (0, r.jsx)(o.rX, { children: Y }),
         ],
     });
 }

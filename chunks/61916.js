@@ -1,41 +1,62 @@
-s.d(t, { s: () => F });
-var i = s(627968),
-    a = s(64700),
-    l = s(989349),
-    n = s.n(l),
-    r = s(311907),
-    A = s(397927),
-    u = s(966327),
-    d = s(629357),
-    _ = s(47167),
-    c = s(598104),
-    o = s(255266),
-    h = s(72563),
-    I = s(223863),
-    L = s(734057),
-    E = s(71393),
-    N = s(290863),
-    C = s(222823),
-    P = s(994500),
-    m = s(287809),
-    b = s(405269),
-    f = s(403362),
-    g = s(427262),
-    x = s(513480),
-    D = s(359378),
-    G = s(790782),
-    p = s(893323);
-function T(e) {
-    let { user: t, subLabel: s, ...a } = e,
-        l = g.Ay.useName(t),
-        n = g.Ay.useUserTag(t, { decoration: "never" }),
-        d = (0, r.bG)([P.A], () => P.A.getNickname(t.id)),
-        _ = (0, r.bG)([N.A], () => N.A.getStatus(t.id));
-    return (0, i.jsx)(D.A, {
+i.d(s, { s: () => H });
+var t = i(627968),
+    a = i(64700),
+    n = i(989349),
+    l = i.n(n),
+    r = i(17928),
+    d = i(778712),
+    o = i(56059),
+    u = i(276293),
+    c = i(661531),
+    b = i(834730),
+    m = i(966327),
+    A = i(115718),
+    x = i(47167),
+    h = i(598104),
+    p = i(255266),
+    N = i(72563),
+    E = i(223863),
+    j = i(734057),
+    D = i(71393),
+    P = i(290863),
+    g = i(222823),
+    L = i(994500),
+    _ = i(287809),
+    v = i(58703),
+    I = i(403362),
+    z = i(427262),
+    f = i(513480),
+    y = i(359378),
+    C = i(790782),
+    T = i(745812);
+function k(e) {
+    let { user: s, subLabel: i, ...a } = e,
+        n = z.Ay.useName(s),
+        l = z.Ay.useUserTag(s, { decoration: "never" }),
+        o = (0, r.bG)([L.A], () => L.A.getNickname(s.id)),
+        u = (0, r.bG)([P.A], () => P.A.getStatus(s.id));
+    return (0, t.jsx)(y.A, {
         listItemId: a.destination.id,
-        icon: (0, i.jsx)(u.A, { "aria-hidden": !0, size: A._3J.SIZE_32, user: t, status: _ }),
-        label: d ?? l,
-        subLabel: s ?? n,
+        icon: (0, t.jsx)(m.A, { "aria-hidden": !0, size: d._3.SIZE_32, user: s, status: u }),
+        label: o ?? n,
+        subLabel: i ?? l,
+        selected: a.selected,
+        disabled: a.disabled,
+        onPress: null != a.onPressDestination ? () => a.onPressDestination?.(a.destination) : void 0,
+        "aria-setsize": a["aria-setsize"],
+        "aria-posinset": a["aria-posinset"],
+        className: a.className,
+    });
+}
+function G(e) {
+    let { channel: s, subLabel: i, ...a } = e,
+        n = (0, x.Ay)(s),
+        l = (0, N.i)(s);
+    return (0, t.jsx)(y.A, {
+        listItemId: a.destination.id,
+        icon: (0, t.jsx)(h.A, { "aria-hidden": !0, size: d._3.SIZE_32, channel: s }),
+        label: n,
+        subLabel: i ?? l,
         selected: a.selected,
         disabled: a.disabled,
         onPress: null != a.onPressDestination ? () => a.onPressDestination?.(a.destination) : void 0,
@@ -45,52 +66,35 @@ function T(e) {
     });
 }
 function S(e) {
-    let { channel: t, subLabel: s, ...a } = e,
-        l = (0, _.Ay)(t),
-        n = (0, h.i)(t);
-    return (0, i.jsx)(D.A, {
-        listItemId: a.destination.id,
-        icon: (0, i.jsx)(c.A, { "aria-hidden": !0, size: A._3J.SIZE_32, channel: t }),
-        label: l,
-        subLabel: s ?? n,
-        selected: a.selected,
-        disabled: a.disabled,
-        onPress: null != a.onPressDestination ? () => a.onPressDestination?.(a.destination) : void 0,
-        "aria-setsize": a["aria-setsize"],
-        "aria-posinset": a["aria-posinset"],
-        className: a.className,
-    });
-}
-function y(e) {
-    let { channel: t, subLabel: s, ...a } = e,
-        l = (0, r.bG)([E.A], () => E.A.getGuild(t?.guild_id)),
-        u = (0, _.Ay)(t),
-        d = (0, r.bG)([L.A, m.default, P.A], () => {
-            let e = L.A.getChannel(t.parent_id);
-            return null == e ? null : (0, _.m1)(e, m.default, P.A, !1);
+    let { channel: s, subLabel: i, ...a } = e,
+        n = (0, r.bG)([D.A], () => D.A.getGuild(s?.guild_id)),
+        d = (0, x.Ay)(s),
+        m = (0, r.bG)([j.A, _.default, L.A], () => {
+            let e = j.A.getChannel(s.parent_id);
+            return null == e ? null : (0, x.m1)(e, _.default, L.A, !1);
         }),
-        c = (0, r.bG)([C.Ay], () => C.Ay.lastMessageTimestamp(t.id, G.P.CHANNEL)),
-        h = l?.name;
-    if (t.isThread() || t.isForumPost()) {
-        let e = t.isForumPost() ? A.bSJ : A.N$i;
-        h = (0, i.jsxs)("div", {
-            className: p.vr,
+        A = (0, r.bG)([g.Ay], () => g.Ay.lastMessageTimestamp(s.id, C.P.CHANNEL)),
+        h = n?.name;
+    if (s.isThread() || s.isForumPost()) {
+        let e = s.isForumPost() ? o.b : u.N;
+        h = (0, t.jsxs)("div", {
+            className: T.vr,
             children: [
-                (0, i.jsx)(e, { color: A.LU0.colors.TEXT_SUBTLE, className: p.Q9 }),
-                (0, i.jsx)(A.Text, { variant: "text-xs/medium", color: "text-subtle", lineClamp: 1, children: d }),
-                null != c
-                    ? (0, i.jsxs)(i.Fragment, {
+                (0, t.jsx)(e, { color: c.A.colors.TEXT_SUBTLE, className: T.Q9 }),
+                (0, t.jsx)(b.E, { variant: "text-xs/medium", color: "text-subtle", lineClamp: 1, children: m }),
+                null != A
+                    ? (0, t.jsxs)(t.Fragment, {
                           children: [
-                              (0, i.jsx)(A.Text, {
-                                  className: p.Ql,
+                              (0, t.jsx)(b.E, {
+                                  className: T.Ql,
                                   variant: "text-xs/medium",
                                   color: "text-subtle",
-                                  children: "•",
+                                  children: "\u2022",
                               }),
-                              (0, i.jsx)(A.Text, {
+                              (0, t.jsx)(b.E, {
                                   variant: "text-xs/medium",
                                   color: "text-subtle",
-                                  children: (0, b.Fe)(n()(c)),
+                                  children: (0, v.Fe)(l()(A)),
                               }),
                           ],
                       })
@@ -98,11 +102,11 @@ function y(e) {
             ],
         });
     }
-    return (0, i.jsx)(D.A, {
+    return (0, t.jsx)(y.A, {
         listItemId: a.destination.id,
-        icon: (0, i.jsx)(o.A, { size: o.q.SMALL_32, guild: l, channel: t }),
-        label: u,
-        subLabel: s ?? h,
+        icon: (0, t.jsx)(p.A, { size: p.q.SMALL_32, guild: n, channel: s }),
+        label: d,
+        subLabel: i ?? h,
         selected: a.selected,
         disabled: a.disabled,
         onPress: null != a.onPressDestination ? () => a.onPressDestination?.(a.destination) : void 0,
@@ -111,49 +115,49 @@ function y(e) {
         className: a.className,
     });
 }
-function F(e) {
+function H(e) {
     let {
-            rowData: t,
-            message: s,
-            originChannel: l,
-            selectedDestinations: n,
+            rowData: s,
+            message: i,
+            originChannel: n,
+            selectedDestinations: l,
             handleToggleDestination: r,
-            disableSelection: A,
-            rowClassName: u,
-            validateDestination: _,
+            disableSelection: d,
+            rowClassName: o,
+            validateDestination: u,
         } = e,
-        c = a.useMemo(() => n?.map(I.I) ?? [], [n]),
-        o = a.useCallback(
+        c = a.useMemo(() => l?.map(E.I) ?? [], [l]),
+        b = a.useCallback(
             (e) => {
-                let { section: a, row: n } = e;
+                let { section: a, row: l } = e;
                 if (a > 0) return;
-                let { type: o, record: h } = t[n];
-                if (o === d.rD.HEADER) return;
-                let L = o === d.rD.USER ? { type: "user", id: h.id } : { type: "channel", id: h.id },
-                    E = (0, I.I)(L),
-                    N = (0, x.pE)(s, l, h, _),
-                    C = c.includes(E),
-                    P = {
-                        key: E,
-                        message: s,
-                        destination: L,
-                        subLabel: null != N ? N.label : void 0,
-                        disabled: (A && !C) || null != N,
-                        selected: C,
+                let { type: b, record: m } = s[l];
+                if (b === A.rD.HEADER) return;
+                let x = b === A.rD.USER ? { type: "user", id: m.id } : { type: "channel", id: m.id },
+                    h = (0, E.I)(x),
+                    p = (0, f.pE)(i, n, m, u),
+                    N = c.includes(h),
+                    j = {
+                        key: h,
+                        message: i,
+                        destination: x,
+                        subLabel: null != p ? p.label : void 0,
+                        disabled: (d && !N) || null != p,
+                        selected: N,
                         onPressDestination: r,
-                        "aria-posinset": n + 1,
-                        "aria-setsize": t.length,
-                        className: u,
+                        "aria-posinset": l + 1,
+                        "aria-setsize": s.length,
+                        className: o,
                     };
-                return o === d.rD.USER
-                    ? (0, i.jsx)(T, { user: h, ...P })
-                    : o === d.rD.GROUP_DM
-                      ? (0, i.jsx)(S, { channel: h, ...P })
-                      : o === d.rD.TEXT_CHANNEL || o === d.rD.VOICE_CHANNEL
-                        ? (0, i.jsx)(y, { channel: h, ...P })
-                        : void (0, f.xb)(o);
+                return b === A.rD.USER
+                    ? (0, t.jsx)(k, { user: m, ...j })
+                    : b === A.rD.GROUP_DM
+                      ? (0, t.jsx)(G, { channel: m, ...j })
+                      : b === A.rD.TEXT_CHANNEL || b === A.rD.VOICE_CHANNEL
+                        ? (0, t.jsx)(S, { channel: m, ...j })
+                        : void (0, I.xb)(b);
             },
-            [A, r, s, l, t, c, u, _],
+            [d, r, i, n, s, c, o, u],
         );
-    return { sections: [t.length], sectionHeight: 0, rowHeight: 48, renderRow: o };
+    return { sections: [s.length], sectionHeight: 0, rowHeight: 48, renderRow: b };
 }

@@ -1,42 +1,27 @@
 "use strict";
-n.d(t, { A: () => h });
-var r = n(311907),
-    i = n(73153),
-    a = n(166403);
-let s = !1,
+n.d(t, { A: () => c });
+var i = n(17928),
+    r = n(228366),
+    s = n(166403);
+let a = !1,
     o = !1,
     l = {};
-function u() {
-    o = !0;
-}
-function c(e) {
-    let { guildBoostSlots: t } = e;
-    (l = {}),
-        t.forEach((e) => {
-            l[e.id] = e;
-        }),
-        (o = !1),
-        (s = !0);
-}
 function d(e) {
     let { guildBoostSlot: t } = e;
     l = { ...l, [t.id]: t };
 }
 function _() {
-    (l = {}), (s = !1), (o = !1);
-}
-function f() {
     let e = {};
-    for (let t of Object.values(l)) (e[t.id] = t), (t.subscription = a.A.getSubscriptionById(t.subscriptionId));
+    for (let t of Object.values(l)) (e[t.id] = t), (t.subscription = s.A.getSubscriptionById(t.subscriptionId));
     l = e;
 }
-class p extends r.Ay.Store {
+class u extends i.Ay.Store {
     static displayName = "GuildBoostSlotStore";
     initialize() {
-        this.syncWith([a.A], f);
+        this.syncWith([s.A], _);
     }
     get hasFetched() {
-        return s;
+        return a;
     }
     get isFetching() {
         return o;
@@ -48,11 +33,23 @@ class p extends r.Ay.Store {
         return l[e];
     }
 }
-let h = new p(i.h, {
-    GUILD_BOOST_SLOTS_FETCH: u,
-    GUILD_BOOST_SLOTS_FETCH_SUCCESS: c,
+let c = new u(r.h, {
+    GUILD_BOOST_SLOTS_FETCH: function () {
+        o = !0;
+    },
+    GUILD_BOOST_SLOTS_FETCH_SUCCESS: function (e) {
+        let { guildBoostSlots: t } = e;
+        (l = {}),
+            t.forEach((e) => {
+                l[e.id] = e;
+            }),
+            (o = !1),
+            (a = !0);
+    },
     GUILD_BOOST_SLOT_UPDATE_SUCCESS: d,
     GUILD_BOOST_SLOT_CREATE: d,
     GUILD_BOOST_SLOT_UPDATE: d,
-    LOGOUT: _,
+    LOGOUT: function () {
+        (l = {}), (a = !1), (o = !1);
+    },
 });

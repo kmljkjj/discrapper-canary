@@ -1,27 +1,29 @@
 "use strict";
-n.d(t, { S: () => p });
-var r = n(627968),
-    i = n(64700),
+n.d(t, { S: () => E });
+var i = n(627968),
+    r = n(64700),
     s = n(503698),
     a = n.n(s),
-    o = n(497766),
-    l = n(311907),
-    u = n(397927),
-    c = n(775602),
-    d = n(425763),
-    _ = n(985018),
-    f = n(987987);
-function p(e) {
+    o = n(785651),
+    l = n(17928),
+    u = n(866323),
+    c = n(834730),
+    d = n(475358),
+    _ = n(775602),
+    f = n(425763),
+    h = n(375708),
+    p = n(493442);
+function E(e) {
     let { className: t } = e,
         n = [
-            { keybinds: ["Spacebar", "Enter"], name: _.intl.string(_.t["cs/HVH"]) },
-            { keybinds: ["up", "down"], name: _.intl.string(_.t.dmMqay) },
-            { keybinds: ["ESC"], name: _.intl.string(_.t["1ioMJQ"]) },
+            { keybinds: ["Spacebar", "Enter"], name: h.intl.string(h.t["cs/HVH"]) },
+            { keybinds: ["up", "down"], name: h.intl.string(h.t.dmMqay) },
+            { keybinds: ["ESC"], name: h.intl.string(h.t["1ioMJQ"]) },
         ],
-        s = (0, l.bG)([c.A], () => c.A.useReducedMotion),
-        p = (0, d.VU)();
-    return (0, u.pnh)(
-        p,
+        s = (0, l.bG)([_.A], () => _.A.useReducedMotion),
+        E = (0, f.VU)();
+    return (0, u.p)(
+        E,
         {
             enter: { from: { opacity: 0, y: 80 * !s }, to: { opacity: 1, y: 0 } },
             leave: { opacity: 0, y: 80 * !s },
@@ -30,20 +32,20 @@ function p(e) {
         "animate-always",
     )((e, s) =>
         s
-            ? (0, r.jsx)("div", {
-                  className: a()(f.lY, t),
-                  children: (0, r.jsx)(o.animated.div, {
-                      className: f.kL,
+            ? (0, i.jsx)("div", {
+                  className: a()(p.lY, t),
+                  children: (0, i.jsx)(o.animated.div, {
+                      className: p.kL,
                       style: e,
                       children: n.map((e, t) => {
                           let { keybinds: s, name: a } = e;
-                          return (0, r.jsxs)(
-                              i.Fragment,
+                          return (0, i.jsxs)(
+                              r.Fragment,
                               {
                                   children: [
-                                      (0, r.jsx)(u.Text, { variant: "text-md/semibold", className: f.nx, children: a }),
-                                      s.map((e) => (0, r.jsx)(u.e7I, { shortcut: e, className: f.LE }, e)),
-                                      t < n.length - 1 ? (0, r.jsx)("span", { className: f.me }) : null,
+                                      (0, i.jsx)(c.E, { variant: "text-md/semibold", className: p.nx, children: a }),
+                                      s.map((e) => (0, i.jsx)(d.e, { shortcut: e, className: p.LE }, e)),
+                                      t < n.length - 1 ? (0, i.jsx)("span", { className: p.me }) : null,
                                   ],
                               },
                               a,

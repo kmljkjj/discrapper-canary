@@ -1,34 +1,35 @@
-n.d(a, { default: () => o });
+n.d(a, { default: () => d });
 var i = n(627968);
 n(64700);
-var e = n(397927),
-    l = n(442433),
-    c = n(202803),
+var e = n(861672),
+    l = n(477782),
+    c = n(442433),
+    r = n(202803),
     s = n(957565),
-    r = n(985018);
-function o(t) {
-    let { attachmentUrl: a, attachmentName: n, onSelect: o } = t;
-    return (0, i.jsx)(e.W1t, {
+    o = n(985018);
+function d(t) {
+    let { attachmentUrl: a, attachmentName: n, onSelect: d } = t;
+    return (0, i.jsx)(e.W, {
         "data-menu-migrated-auto": !0,
         navId: "attachment-link-context",
-        onClose: l.Z_,
-        onSelect: o,
-        "aria-label": r.intl.string(r.t["5oIOLX"]),
+        onClose: c.Z_,
+        onSelect: d,
+        "aria-label": o.intl.string(o.t["5oIOLX"]),
         children: (0, i.jsxs)(
-            e.rXV,
+            l.rX,
             {
                 children: [
-                    (0, i.jsx)(e.Drp, {
+                    (0, i.jsx)(l.Dr, {
                         id: "attachment-link-copy-link",
-                        label: r.intl.string(r.t.WqhZss),
+                        label: o.intl.string(o.t["92CPQ+"]),
                         action: async () => {
-                            let t = await (0, c.AN)(a);
+                            let t = await (0, r.AN)(a);
                             (0, s.C)(t ?? "");
                         },
                     }),
-                    (0, i.jsx)(e.Drp, {
+                    (0, i.jsx)(l.Dr, {
                         id: "attachment-link-copy-name",
-                        label: r.intl.string(r.t.JrGD7E),
+                        label: o.intl.string(o.t.JrGD7E),
                         action: () => {
                             (0, s.C)(n ?? "");
                         },

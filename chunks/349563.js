@@ -1,56 +1,56 @@
 "use strict";
-n.d(t, { Bp: () => d, G5: () => _, Wy: () => f, zF: () => p });
+n.d(t, { Bp: () => c, G5: () => _, Wy: () => f, zF: () => E });
 var r = n(627968);
 n(64700);
 var i = n(503698),
-    a = n.n(i),
-    s = n(582754),
+    s = n.n(i),
+    a = n(462887),
     o = n(736653),
     l = n(953727),
     u = n(788868),
-    c = n(806678);
-let d = "premium_new_tier_2_gradient",
+    d = n(3193);
+let c = "premium_new_tier_2_gradient",
     _ = "premium_old_tier_2_gradient";
 function f(e) {
     let { tier: t = u.PremiumTypes.TIER_2 } = e,
         n = (0, o.Ay)(),
-        i = (0, s.qB)(n);
+        i = (0, a.q)(n);
     return (0, r.jsxs)(r.Fragment, {
         children: [
             !i &&
                 (0, r.jsxs)(r.Fragment, {
                     children: [
                         (0, r.jsx)("div", {
-                            className: a()(c.WU, {
-                                [c.W4]: t === u.PremiumTypes.TIER_0,
-                                [c.WJ]: t === u.PremiumTypes.TIER_2,
+                            className: s()(d.WU, {
+                                [d.W4]: t === u.PremiumTypes.TIER_0,
+                                [d.WJ]: t === u.PremiumTypes.TIER_2,
                             }),
                         }),
-                        (0, r.jsx)(p, { foreground: c.iM }),
+                        (0, r.jsx)(E, { foreground: d.iM }),
                     ],
                 }),
-            (0, r.jsx)(p, { foreground: c.bP }),
-            (0, r.jsx)(p, { foreground: c.ir }),
-            (0, r.jsx)(p, { foreground: c.b4 }),
-            (0, r.jsx)(p, { foreground: c.iG }),
+            (0, r.jsx)(E, { foreground: d.bP }),
+            (0, r.jsx)(E, { foreground: d.ir }),
+            (0, r.jsx)(E, { foreground: d.b4 }),
+            (0, r.jsx)(E, { foreground: d.iG }),
         ],
     });
 }
-function p(e) {
-    let { width: t = 14, height: n = 13, color: i = "white", foreground: a, ...s } = e;
+function E(e) {
+    let { width: t = 14, height: n = 13, color: i = "white", foreground: s, ...a } = e;
     return (0, r.jsxs)("svg", {
-        ...(0, l.A)({ ...s }),
+        ...(0, l.A)({ ...a }),
         preserveAspectRatio: "none",
         width: t,
         height: n,
         viewBox: "0 0 14 13",
-        className: a,
+        className: s,
         xmlns: "http://www.w3.org/2000/svg",
         children: [
             (0, r.jsxs)("defs", {
                 children: [
                     (0, r.jsxs)("linearGradient", {
-                        id: d,
+                        id: c,
                         x1: "0%",
                         y1: "0%",
                         x2: "100%",

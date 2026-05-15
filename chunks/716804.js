@@ -1,8 +1,7 @@
-"use strict";
-n.d(t, { N: () => a, g: () => s });
-var r = n(64700);
-let i = r.createContext(void 0),
-    a = i.Provider;
-function s() {
-    return r.useContext(i);
+r.d(t, { N: () => o, g: () => u });
+var n = r(64700);
+let i = n.createContext(void 0),
+    o = i.Provider;
+function u() {
+    return n.useContext(i);
 }

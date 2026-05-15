@@ -1,6 +1,6 @@
 e.exports = function (e) {
     let t = "('|\\.')+",
-        n = { relevance: 0, contains: [{ begin: t }] };
+        a = { relevance: 0, contains: [{ begin: t }] };
     return {
         name: "Matlab",
         keywords: {
@@ -26,12 +26,12 @@ e.exports = function (e) {
                     },
                 ],
             },
-            { className: "built_in", begin: /true|false/, relevance: 0, starts: n },
+            { className: "built_in", begin: /true|false/, relevance: 0, starts: a },
             { begin: "[a-zA-Z][a-zA-Z_0-9]*" + t, relevance: 0 },
-            { className: "number", begin: e.C_NUMBER_RE, relevance: 0, starts: n },
+            { className: "number", begin: e.C_NUMBER_RE, relevance: 0, starts: a },
             { className: "string", begin: "'", end: "'", contains: [{ begin: "''" }] },
-            { begin: /\]|\}|\)/, relevance: 0, starts: n },
-            { className: "string", begin: '"', end: '"', contains: [{ begin: '""' }], starts: n },
+            { begin: /\]|\}|\)/, relevance: 0, starts: a },
+            { className: "string", begin: '"', end: '"', contains: [{ begin: '""' }], starts: a },
             e.COMMENT("^\\s*%\\{\\s*$", "^\\s*%\\}\\s*$"),
             e.COMMENT("%", "$"),
         ],

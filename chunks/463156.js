@@ -1,25 +1,18 @@
-i.d(t, { A: () => c });
-var l = i(627968),
-    n = i(64700),
-    s = i(311907),
-    a = i(397927),
-    r = i(958805),
-    o = i(61881),
-    d = i(985018);
-function c(e) {
-    let { isCurrentUser: t, onClose: i, className: c } = e,
-        u = (0, s.bG)([o.A], () => o.A.hasUnsavedChanges()),
-        A = n.useCallback(() => {
-            t && u ? r.A.notifyUnsavedWidgets() : i();
-        }, [t, u, i]);
-    return (0, l.jsx)("div", {
-        className: c,
-        children: (0, l.jsx)(a.K0, {
-            "aria-label": d.intl.string(d.t.cpT0Cq),
-            icon: a.PGe,
-            onClick: A,
-            variant: "secondary",
-            size: "sm",
-        }),
+n.d(l, { A: () => o });
+var i = n(627968);
+n(64700);
+var t = n(408278),
+    r = n(789645),
+    a = n(23722),
+    s = n(375708);
+function o(e) {
+    let { isCurrentUser: l, onClose: n } = e,
+        o = (0, a.A)(n, l);
+    return (0, i.jsx)(t.K, {
+        "aria-label": s.intl.string(s.t.cpT0Cq),
+        icon: r.P,
+        onClick: o,
+        variant: "secondary",
+        size: "sm",
     });
 }

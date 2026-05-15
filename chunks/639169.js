@@ -1,6 +1,6 @@
 "use strict";
-n.d(t, { C: () => i, Q: () => r });
-let r = new Set([
+n.d(t, { C: () => i, Q: () => l });
+let l = new Set([
     "1c",
     "4d",
     "abnf",
@@ -389,5 +389,5 @@ let r = new Set([
     "zep",
 ]);
 function i(e) {
-    return r.has(e.split(".").slice(-1)[0]);
+    return l.has(e.split(".").slice(-1)[0]);
 }

@@ -1,17 +1,17 @@
 "use strict";
-n.d(t, { A: () => a });
+n.d(t, { A: () => o });
 var i = n(64700),
-    s = n(795816),
-    l = n(170148),
-    r = n(641703);
-function a(e, t) {
-    let n = (0, l.z)(),
-        a = (0, r.A)(t),
-        o = (null != e && "" !== e) || a;
+    r = n(795816),
+    s = n(170148),
+    a = n(641703);
+function o(e, t) {
+    let n = (0, s.z)(),
+        o = (0, a.A)(t),
+        l = (null != e && "" !== e) || o;
     return (
         i.useEffect(() => {
-            o && n && (0, s.LV)({ guildId: e });
-        }, [e, n, o]),
-        o && n
+            l && n && (0, r.LV)({ guildId: e });
+        }, [e, n, l]),
+        l && n
     );
 }

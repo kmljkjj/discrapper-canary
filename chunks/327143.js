@@ -1,22 +1,22 @@
 "use strict";
-n.d(t, { A: () => a });
-var r = n(64700);
-function i(e, t, n) {
+n.d(t, { A: () => s });
+var i = n(64700);
+function r(e, t, n) {
     return Math.min(Math.max(Math.floor(e / t), 1), n);
 }
-let a = (0, n(456412).A)(
-    class extends r.Component {
+let s = (0, n(456412).A)(
+    class extends i.Component {
         static defaultProps = { desiredItemWidth: 200 };
         static getDerivedStateFromProps(e, t) {
-            let { width: n, desiredItemWidth: r, maxColumns: a } = e,
-                s = i(n, r, a);
-            return s !== t.columns ? { columns: s } : null;
+            let { width: n, desiredItemWidth: i, maxColumns: s } = e,
+                a = r(n, i, s);
+            return a !== t.columns ? { columns: a } : null;
         }
-        state = { columns: i(this.props.width, this.props.desiredItemWidth, this.props.maxColumns) };
+        state = { columns: r(this.props.width, this.props.desiredItemWidth, this.props.maxColumns) };
         render() {
             let { width: e, height: t, children: n } = this.props,
-                { columns: r } = this.state;
-            return n(r, e, t);
+                { columns: i } = this.state;
+            return n(i, e, t);
         }
     },
 );

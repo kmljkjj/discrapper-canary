@@ -1,10 +1,10 @@
-l.d(t, { A: () => s });
-var a = l(627968);
-l(64700);
-var n = l(503698),
-    r = l.n(n),
-    i = l(813287);
-function s(e) {
-    let { children: t, tag: l, className: n } = e;
-    return (l = null != l ? l : "h3"), (0, a.jsx)(l, { className: r()(i.D, n), children: t });
+t.d(l, { A: () => u });
+var r = t(627968);
+t(64700);
+var n = t(503698),
+    a = t.n(n),
+    s = t(402203);
+function u(e) {
+    let { children: l, tag: t, className: n } = e;
+    return (t = null != t ? t : "h3"), (0, r.jsx)(t, { className: a()(s.D, n), children: l });
 }

@@ -1,6 +1,6 @@
 e.exports = function (e) {
     let t = e.regex,
-        n = [
+        a = [
             "false",
             "synchronized",
             "int",
@@ -76,10 +76,10 @@ e.exports = function (e) {
             "precedence",
             "thisAspectInstance",
         ],
-        r = ["get", "set", "args", "call"];
+        n = ["get", "set", "args", "call"];
     return {
         name: "AspectJ",
-        keywords: n,
+        keywords: a,
         illegal: /<\/|#/,
         contains: [
             e.COMMENT(/\/\*\*/, /\*\//, {
@@ -105,7 +105,7 @@ e.exports = function (e) {
                             "extends implements pertypewithin perthis pertarget percflowbelow percflow issingleton",
                     },
                     e.UNDERSCORE_TITLE_MODE,
-                    { begin: /\([^\)]*/, end: /[)]+/, keywords: n.concat(r), excludeEnd: !1 },
+                    { begin: /\([^\)]*/, end: /[)]+/, keywords: a.concat(n), excludeEnd: !1 },
                 ],
             },
             {
@@ -137,10 +137,10 @@ e.exports = function (e) {
                 end: /[{;]/,
                 relevance: 0,
                 excludeEnd: !1,
-                keywords: n,
+                keywords: a,
                 illegal: /["\[\]]/,
                 contains: [
-                    { begin: t.concat(e.UNDERSCORE_IDENT_RE, /\s*\(/), keywords: n.concat(r), relevance: 0 },
+                    { begin: t.concat(e.UNDERSCORE_IDENT_RE, /\s*\(/), keywords: a.concat(n), relevance: 0 },
                     e.QUOTE_STRING_MODE,
                 ],
             },
@@ -150,7 +150,7 @@ e.exports = function (e) {
                 begin: /\w+ +\w+(\.\w+)?\s*\([^\)]*\)\s*((throws)[\w\s,]+)?[\{;]/,
                 returnBegin: !0,
                 end: /[{;=]/,
-                keywords: n,
+                keywords: a,
                 excludeEnd: !0,
                 contains: [
                     {
@@ -164,7 +164,7 @@ e.exports = function (e) {
                         begin: /\(/,
                         end: /\)/,
                         relevance: 0,
-                        keywords: n,
+                        keywords: a,
                         contains: [e.APOS_STRING_MODE, e.QUOTE_STRING_MODE, e.C_NUMBER_MODE, e.C_BLOCK_COMMENT_MODE],
                     },
                     e.C_LINE_COMMENT_MODE,

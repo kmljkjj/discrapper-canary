@@ -1,48 +1,48 @@
-i.d(o, { B5: () => s, Lw: () => n });
-let n = async (e) =>
+o.d(i, { B5: () => s, Lw: () => t });
+let t = async (e) =>
         window.Meticulous?.isRunningAsTest
             ? (console.debug("Running as part of a Meticulous test case, so skipping loading the Meticulous recorder."),
               { stopRecording: async () => {} })
-            : await t(e).catch((e) => (console.error(e), { stopRecording: async () => {} })),
-    t = ({
+            : await n(e).catch((e) => (console.error(e), { stopRecording: async () => {} })),
+    n = ({
         projectId: e,
-        recordingToken: o,
-        uploadIntervalMs: i,
-        snapshotLinkedStylesheets: n,
-        commitHash: t,
+        recordingToken: i,
+        uploadIntervalMs: o,
+        snapshotLinkedStylesheets: t,
+        commitHash: n,
         maxMsToBlockFor: s,
         snippetsBaseUrl: r,
-        forceRecording: d,
-        middleware: c,
+        forceRecording: c,
+        middleware: d,
         responseSanitizers: l,
-        isProduction: u,
-        version: a,
+        isProduction: a,
+        version: u,
     }) => {
-        let w = !1;
+        let p = !1;
         return new Promise((_, E) => {
-            var p;
-            let S = s ?? 2e3;
-            S > 0 &&
+            var R;
+            let w = s ?? 2e3;
+            w > 0 &&
                 setTimeout(() => {
-                    (w = !0), _({ stopRecording: async () => {} });
-                }, S);
-            let R = document.createElement("script");
-            (R.type = "text/javascript"),
-                (R.src = new URL(
-                    `${null != a ? "record/" : ""}${null == ((p = a ?? null)) ? "v1" : `v/${p}`}/meticulous-manual-init.js`,
+                    (p = !0), _({ stopRecording: async () => {} });
+                }, w);
+            let S = document.createElement("script");
+            (S.type = "text/javascript"),
+                (S.src = new URL(
+                    `${null != u ? "record/" : ""}${null == ((R = u ?? null)) ? "v1" : `v/${R}`}/meticulous-manual-init.js`,
                     r || "https://snippet.meticulous.ai",
                 ).href);
-            let O = window;
-            (O.METICULOUS_RECORDING_TOKEN = o ?? e),
-                void 0 !== i && (O.METICULOUS_UPLOAD_INTERVAL_MS = i),
-                void 0 !== t && (O.METICULOUS_APP_COMMIT_HASH = t),
-                void 0 !== n && (O.METICULOUS_SNAPSHOT_LINKED_STYLESHEETS = n),
-                void 0 !== d && (O.METICULOUS_FORCE_RECORDING = d),
-                void 0 !== u && (O.METICULOUS_IS_PRODUCTION_ENVIRONMENT = u),
-                null != l && l.length > 0 && (O.METICULOUS_NETWORK_RESPONSE_SANITIZERS = l),
-                null != c && c.length > 0 && (O.METICULOUS_RECORDER_MIDDLEWARE_V1 = c),
-                (R.onload = function () {
-                    if (w) return void console.debug("Meticulous snippet abandoned due to max blocking time reached.");
+            let T = window;
+            (T.METICULOUS_RECORDING_TOKEN = i ?? e),
+                void 0 !== o && (T.METICULOUS_UPLOAD_INTERVAL_MS = o),
+                void 0 !== n && (T.METICULOUS_APP_COMMIT_HASH = n),
+                void 0 !== t && (T.METICULOUS_SNAPSHOT_LINKED_STYLESHEETS = t),
+                void 0 !== c && (T.METICULOUS_FORCE_RECORDING = c),
+                void 0 !== a && (T.METICULOUS_IS_PRODUCTION_ENVIRONMENT = a),
+                null != l && l.length > 0 && (T.METICULOUS_NETWORK_RESPONSE_SANITIZERS = l),
+                null != d && d.length > 0 && (T.METICULOUS_RECORDER_MIDDLEWARE_V1 = d),
+                (S.onload = function () {
+                    if (p) return void console.debug("Meticulous snippet abandoned due to max blocking time reached.");
                     let e = window.__meticulous?.initialiseRecorder;
                     if ("function" != typeof e) return void E("Meticulous recorder failed to initialise.");
                     try {
@@ -61,10 +61,10 @@ let n = async (e) =>
                         },
                     });
                 }),
-                (R.onerror = () => {
+                (S.onerror = () => {
                     E("Meticulous recorder failed to initialise.");
                 }),
-                document.head.appendChild(R);
+                document.head.appendChild(S);
         });
     },
     s = async () => {

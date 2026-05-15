@@ -1,9 +1,9 @@
 "use strict";
-var r = n(108591),
-    i = n(739305),
-    a = i.aTypedArray,
-    s = i.exportTypedArrayMethod,
-    o = i.getTypedArrayConstructor;
-s("toReversed", function () {
-    return r(a(this), o(this));
+var i = n(108591),
+    r = n(739305),
+    s = r.aTypedArray,
+    a = r.exportTypedArrayMethod,
+    o = r.getTypedArrayConstructor;
+a("toReversed", function () {
+    return i(s(this), o(this));
 });

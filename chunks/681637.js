@@ -1,37 +1,41 @@
 "use strict";
-n.d(t, { A: () => I });
-var r = n(607399),
-    i = n(923408),
+n.d(t, { A: () => S });
+var i = n(607399),
+    r = n(820739),
     s = n(439372),
     a = n(5180),
     o = n(71393),
     l = n(576705),
     u = n(967198),
     c = n(488803),
-    d = n(942975),
-    _ = n(645619),
-    f = n(832547),
-    p = n(103821),
-    h = n(128069),
-    m = n(840120),
-    E = n(363487),
-    g = n(342220);
-class A extends s.A {
+    d = n(764322),
+    _ = n(868652),
+    f = n(645619),
+    h = n(832547),
+    p = n(323472),
+    E = n(103821),
+    m = n(313205),
+    g = n(383272),
+    A = n(363487),
+    I = n(342220);
+class T extends s.A {
     handleSelectedGuildChange() {
         let e = u.A.getGuildId();
         if (null == e || (0, a.ai)(e)) return;
         let t = o.A.getGuild(e);
         if (null == t) return;
-        m.Qb.trackExposure({ guildId: t.id, location: "GuildPowerupsManager" }),
-            c.x1.trackExposure({ guildId: t.id, location: "GuildPowerupsManager" }),
-            h.vu.trackExposure({ guildId: t.id, location: "GuildPowerupsManager" });
-        let n = f.A.getConfig({ location: "GuildPowerupsManager" }).enabled,
-            i = p.A.getConfig({ location: "GuildPowerupsManager" }).enabled;
-        if (!(0, E.G)(l.A, t)) {
-            let e = (n || i) && (0, g.X)();
-            if (r.Fr || !e) return;
+        c.x1.trackExposure({ guildId: t.id, location: "GuildPowerupsManager" }),
+            m.LH.trackExposure({ guildId: t.id, location: "GuildPowerupsManager" }),
+            g.g$.trackExposure({ guildId: t.id, location: "GuildPowerupsManager" }),
+            (0, c.TS)(t.id, "GuildPowerupsManager") &&
+                d.r.trackExposure({ guildId: t.id, location: "GuildPowerupsManager" });
+        let n = h.A.getConfig({ location: "GuildPowerupsManager" }).enabled,
+            r = E.A.getConfig({ location: "GuildPowerupsManager" }).enabled;
+        if (!(0, A.G)(l.A, t)) {
+            let e = (n || r) && (0, I.X)();
+            if (i.Fr || !e) return;
         }
-        _.A.shouldFetchCatalogForGuild(e) && (0, d.AK)(e), _.A.shouldFetchPowerupsForGuild(e) && (0, d.Xd)(e);
+        f.A.shouldFetchCatalogForGuild(e) && (0, _.AK)(e), f.A.shouldFetchPowerupsForGuild(e) && (0, _.Xd)(e);
     }
     handleEntitlementUpdate(e) {
         let { guildId: t } = e;
@@ -42,7 +46,11 @@ class A extends s.A {
         this.refreshGuildPowerups(t);
     }
     refreshGuildPowerups(e) {
-        !0 === (0, E.G)(l.A, o.A.getGuild(e)) && ((0, d.Xd)(e), (0, i.VU)(e));
+        if (!0 === (0, A.G)(l.A, o.A.getGuild(e))) {
+            (0, _.Xd)(e);
+            let t = p.A.getConfig({ location: "GuildPowerupsManager" }).enabled;
+            (0, r.VU)(e, { includeEnded: t });
+        }
     }
     stores = new Map().set(u.A, this.handleSelectedGuildChange);
     actions = {
@@ -51,4 +59,4 @@ class A extends s.A {
         GUILD_APPLIED_BOOSTS_UPDATE: this.handleAppliedBoostUpdate.bind(this),
     };
 }
-let I = new A();
+let S = new T();

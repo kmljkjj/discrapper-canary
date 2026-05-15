@@ -1,46 +1,46 @@
 "use strict";
-let r;
-n.d(t, { A: () => I });
-var i = n(735438),
-    a = n.n(i),
-    s = n(311907),
+let i;
+n.d(t, { A: () => g });
+var r = n(735438),
+    s = n.n(r),
+    a = n(17928),
     o = n(506774),
-    l = n(73153),
-    u = n(652215);
-let c = "GameLibraryViewStore",
-    d = 200,
-    _ = u.tSW.ASCENDING,
-    f = u.DpB.LAST_PLAYED,
-    p = !1,
-    h = a().debounce(() => {
-        (p = !1), A.emitChange();
-    }, d);
-function m(e) {
-    let { key: t, isKeyboardEvent: n } = e;
-    n && ((p = !0), h()), (r = t);
-}
-function g(e) {
-    let { direction: t, key: n } = e;
-    (_ = t), (f = n), o.w.set(c, { sortDirection: _, sortKey: f });
-}
-class E extends s.Ay.Store {
+    l = n(228366),
+    d = n(652215);
+let _ = "GameLibraryViewStore",
+    u = d.tSW.ASCENDING,
+    c = d.DpB.LAST_PLAYED,
+    E = !1,
+    h = s().debounce(() => {
+        (E = !1), f.emitChange();
+    }, 200);
+class m extends a.Ay.Store {
     static displayName = "GameLibraryViewStore";
     initialize() {
-        let e = o.w.get(c) ?? {};
-        null != e.sortDirection && null != e.sortKey && ((_ = e.sortDirection), (f = e.sortKey));
+        let e = o.w.get(_) ?? {};
+        null != e.sortDirection && null != e.sortKey && ((u = e.sortDirection), (c = e.sortKey));
     }
     get sortDirection() {
-        return _;
+        return u;
     }
     get sortKey() {
-        return f;
+        return c;
     }
     get activeRowKey() {
-        return r;
+        return i;
     }
     get isNavigatingByKeyboard() {
-        return p;
+        return E;
     }
 }
-let A = new E(l.h, { LIBRARY_TABLE_SORT_UPDATE: g, LIBRARY_TABLE_ACTIVE_ROW_ID_UPDATE: m }),
-    I = A;
+let f = new m(l.h, {
+        LIBRARY_TABLE_SORT_UPDATE: function (e) {
+            let { direction: t, key: n } = e;
+            (u = t), (c = n), o.w.set(_, { sortDirection: u, sortKey: c });
+        },
+        LIBRARY_TABLE_ACTIVE_ROW_ID_UPDATE: function (e) {
+            let { key: t, isKeyboardEvent: n } = e;
+            n && ((E = !0), h()), (i = t);
+        },
+    }),
+    g = f;

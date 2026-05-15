@@ -1,44 +1,44 @@
-n.d(t, { A: () => f, q: () => d });
-var l,
-    i = n(627968),
-    a = n(503698),
-    s = n.n(a),
-    r = n(713654),
-    o = n(573435),
-    u = n(260509),
-    c = n(129216),
-    d = (((l = {}).SMALL_32 = "SMALL_32"), l);
-let h = { SMALL_32: 24 },
-    g = { SMALL_32: [13, 11, 10, 10, 10, 10, 10] },
-    f = function (e) {
-        let { className: t, iconClassName: n, size: l, channel: a, guild: d, locked: f, hasActiveThreads: m } = e;
+s.d(e, { A: () => g, q: () => d });
+var t,
+    n = s(627968),
+    i = s(503698),
+    h = s.n(i),
+    r = s(713654),
+    c = s(573435),
+    a = s(260509),
+    u = s(23047),
+    d = (((t = {}).SMALL_32 = "SMALL_32"), t);
+let L = { SMALL_32: 24 },
+    _ = { SMALL_32: [13, 11, 10, 10, 10, 10, 10] },
+    g = function (l) {
+        let { className: e, iconClassName: s, size: t, channel: i, guild: d, locked: g, hasActiveThreads: o } = l;
         if (null == d) return null;
-        let p = (0, u.Iv)(d, 48),
-            N = g[l],
-            A = h[l],
-            E = (0, r.gU)(a, d, { locked: f, hasActiveThreads: m });
-        if (null == E) return null;
-        let x = null != d ? (0, u.Rb)(d) : "";
-        return (0, i.jsxs)("div", {
+        let A = (0, a.Iv)(d, 48),
+            m = _[t],
+            p = L[t],
+            N = (0, r.gU)(i, d, { locked: g, hasActiveThreads: o });
+        if (null == N) return null;
+        let k = null != d ? (0, a.Rb)(d) : "";
+        return (0, n.jsxs)("div", {
             role: "img",
-            className: t,
+            className: e,
             children: [
-                (0, i.jsx)(o.Ay, {
-                    mask: o.hW.GUILD_ICON_WITH_CHANNEL_TYPE,
+                (0, n.jsx)(c.Ay, {
+                    mask: c.hW.GUILD_ICON_WITH_CHANNEL_TYPE,
                     children:
-                        null != p
-                            ? (0, i.jsx)("img", { alt: "", src: p, className: c.Aq, style: { width: A, height: A } })
-                            : (0, i.jsx)("div", {
-                                  className: s()(c.Aq, c.q9),
+                        null != A
+                            ? (0, n.jsx)("img", { alt: "", src: A, className: u.Aq, style: { width: p, height: p } })
+                            : (0, n.jsx)("div", {
+                                  className: h()(u.Aq, u.q9),
                                   style: {
-                                      fontSize: x.length - 1 > N.length ? N[N.length - 1] : N[x.length - 1],
-                                      width: A,
-                                      height: A,
+                                      fontSize: k.length - 1 > m.length ? m[m.length - 1] : m[k.length - 1],
+                                      width: p,
+                                      height: p,
                                   },
-                                  children: x,
+                                  children: k,
                               }),
                 }),
-                (0, i.jsx)(E, { className: s()(c.Kk, c.Is, n), color: "currentColor" }),
+                (0, n.jsx)(N, { className: h()(u.Kk, u.Is, s), color: "currentColor" }),
             ],
         });
     };

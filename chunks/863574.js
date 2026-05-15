@@ -1,16 +1,16 @@
-n.d(t, { Tm: () => o, Wb: () => c, ug: () => d });
+n.d(t, { Tm: () => o, Wb: () => d, ug: () => c });
 var i = n(627968);
 n(64700);
 var l = n(503698),
     a = n.n(l),
     r = n(622413),
-    s = n(797232);
+    s = n(528241);
 let o = 660,
-    d = (e) =>
+    c = (e) =>
         (0, i.jsx)(r.A, { ...e, className: a()(e.className, { [s.sN]: !e.isHorizontal, [s.wO]: e.isHorizontal }) }),
-    c = (e) => {
+    d = (e) => {
         let { isHorizontal: t } = e;
-        return (0, i.jsx)(d, {
+        return (0, i.jsx)(c, {
             ...e,
             media: () =>
                 (0, i.jsx)("div", {

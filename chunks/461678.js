@@ -1,32 +1,33 @@
 n.d(t, { A: () => m });
-var i = n(627968);
+var l = n(627968);
 n(64700);
-var l = n(311907),
-    s = n(397927),
-    a = n(995102),
-    r = n(288104),
-    o = n(661504),
-    c = n(507238),
-    d = n(769591),
-    u = n(95701),
-    h = n(71393);
+var i = n(17928),
+    s = n(550079),
+    a = n(477782),
+    r = n(995102),
+    o = n(288104),
+    c = n(661504),
+    d = n(507238),
+    u = n(769591),
+    h = n(95701),
+    g = n(71393);
 function m(e) {
-    let { channel: t, closePopout: n, onSelect: m, navId: A, label: g, location: p, includeGuildMute: f } = e,
-        _ = (0, r.b)(t),
-        E = (0, o.A0)(t),
-        x = (0, l.bG)([h.A], () => h.A.getGuild(t.guild_id)),
-        C = (0, c.A)(x),
-        S = (0, d.os)("ChannelNotificationSettingsPopoutMenu") && u.B4.has(t.type);
-    return (0, i.jsxs)(s.W1t, {
+    let { channel: t, closePopout: n, onSelect: m, navId: A, label: p, location: C, includeGuildMute: E } = e,
+        x = (0, o.b)(t),
+        N = (0, c.A0)(t),
+        f = (0, i.bG)([g.A], () => g.A.getGuild(t.guild_id)),
+        _ = (0, d.A)(f),
+        T = (0, u.os)("ChannelNotificationSettingsPopoutMenu") && h.B4.has(t.type);
+    return (0, l.jsxs)(s.W, {
         "data-menu-migrated": !0,
         navId: A,
         onClose: n,
-        "aria-label": g,
+        "aria-label": p,
         onSelect: m,
         children: [
-            (0, i.jsx)(s.rXV, { children: (0, a.A)(t, p) }),
-            f ? (0, i.jsx)(s.rXV, { children: C }) : null,
-            S ? E : (0, i.jsx)(s.rXV, { children: _ }),
+            (0, l.jsx)(a.rX, { children: (0, r.A)(t, C) }),
+            E ? (0, l.jsx)(a.rX, { children: _ }) : null,
+            T ? N : (0, l.jsx)(a.rX, { children: x }),
         ],
     });
 }

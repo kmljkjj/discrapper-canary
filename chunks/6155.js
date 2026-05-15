@@ -1,95 +1,106 @@
 "use strict";
-n.d(t, { A: () => T }), n(321073);
-var r = n(627968),
-    i = n(64700),
-    a = n(311907),
-    s = n(827734),
-    o = n(397927),
-    l = n(367513),
-    u = n(31728),
-    c = n(933958),
-    d = n(587895),
-    _ = n(313961),
-    f = n(616356),
-    p = n(334463),
-    h = n(287809),
-    m = n(652215),
-    g = n(806931),
-    E = n(985018),
-    A = n(319567);
-function I(e) {
-    let { closePopout: t, idle: n, pipWindows: i, voiceChannelId: s, onSelect: h } = e;
-    n && t();
-    let A = (0, a.bG)([c.Ay], () => c.Ay.getCurrentEmbeddedActivity()),
-        I = (0, a.bG)([p.A], () => p.A.pipWindow),
-        T = (0, a.bG)([_.A], () => _.A.getSelectedParticipant(s)),
-        y = (0, a.bG)([_.A], () => _.A.getStreamParticipants(s));
-    function S(e) {
-        I?.id !== e.pipWindow.id && (0, u.mf)(e.pipWindow.id);
-        let t = e.participant;
-        null != t && t.type !== g.lp.ACTIVITY && l.A.selectParticipant(s, t.id);
-    }
-    function v(e) {
-        if (e.pipWindow.component === m.o1q.ACTIVITY && null != A) {
-            let e = d.A.getApplication(A.applicationId)?.name;
-            return null == e
-                ? E.intl.string(E.t["8raC1P"])
-                : E.intl.formatToPlainString(E.t["a9+V+V"], { activityName: e });
-        }
-        return null == e.participant || e.participant.type !== g.lp.STREAM
-            ? E.intl.string(E.t["ng/Kwl"])
-            : E.intl.formatToPlainString(E.t.sqmFRg, { username: e.participant.userNick });
-    }
-    function C() {
-        let e = [],
-            t = i.find((e) => e.component === m.o1q.VIDEO);
-        return (
-            null != t &&
-                y.forEach((n) => {
-                    let r = f.A.getActiveStreamForApplicationStream(n.stream),
-                        i = n.id === T?.id && I?.id === t.id;
-                    null == r || i || e.push({ pipWindow: t, participant: n, stream: r });
-                }),
-            e
-        );
-    }
-    function b(e) {
-        let t = e.pipWindow.id,
-            n = e.participant?.id,
-            i = v(e),
-            a = `${t}${n ?? ""}`;
-        return (0, r.jsx)(o.Drp, { id: a, label: i, action: () => S(e) }, a);
-    }
-    return (0, r.jsx)(o.W1t, {
+n.d(t, { A: () => C }), n(321073);
+var i = n(627968),
+    r = n(64700),
+    s = n(17928),
+    a = n(661531),
+    o = n(477782),
+    l = n(980707),
+    u = n(922016),
+    c = n(939249),
+    d = n(530005),
+    _ = n(367513),
+    f = n(31728),
+    h = n(933958),
+    p = n(587895),
+    E = n(313961),
+    m = n(616356),
+    g = n(334463),
+    A = n(287809),
+    I = n(652215),
+    T = n(806931),
+    S = n(375708),
+    N = n(27600);
+function y(e) {
+    let t,
+        n,
+        { closePopout: r, idle: a, pipWindows: u, voiceChannelId: c, onSelect: d } = e;
+    a && r();
+    let A = (0, s.bG)([h.Ay], () => h.Ay.getCurrentEmbeddedActivity()),
+        N = (0, s.bG)([g.A], () => g.A.pipWindow),
+        y = (0, s.bG)([E.A], () => E.A.getSelectedParticipant(c)),
+        C = (0, s.bG)([E.A], () => E.A.getStreamParticipants(c));
+    return (0, i.jsx)(l.W, {
         "data-menu-migrated": !0,
         navId: "pip-menu",
         "aria-label": "switch PIP",
-        onClose: t,
-        onSelect: h,
-        children: C().map(b),
+        onClose: r,
+        onSelect: d,
+        children: ((t = []),
+        null != (n = u.find((e) => e.component === I.o1q.VIDEO)) &&
+            C.forEach((e) => {
+                let i = m.A.getActiveStreamForApplicationStream(e.stream),
+                    r = e.id === y?.id && N?.id === n.id;
+                null == i || r || t.push({ pipWindow: n, participant: e, stream: i });
+            }),
+        t).map(function (e) {
+            let t = e.pipWindow.id,
+                n = e.participant?.id,
+                r = (function (e) {
+                    if (e.pipWindow.component === I.o1q.ACTIVITY && null != A) {
+                        let e = p.A.getApplication(A.applicationId)?.name;
+                        return null == e
+                            ? S.intl.string(S.t["8raC1P"])
+                            : S.intl.formatToPlainString(S.t["a9+V+V"], { activityName: e });
+                    }
+                    return null == e.participant || e.participant.type !== T.lp.STREAM
+                        ? S.intl.string(S.t["ng/Kwl"])
+                        : S.intl.formatToPlainString(S.t.sqmFRg, { username: e.participant.userNick });
+                })(e),
+                s = `${t}${n ?? ""}`;
+            return (0, i.jsx)(
+                o.Dr,
+                {
+                    id: s,
+                    label: r,
+                    action: () => {
+                        let t;
+                        return (
+                            N?.id !== e.pipWindow.id && (0, f.mf)(e.pipWindow.id),
+                            void (
+                                null != (t = e.participant) &&
+                                t.type !== T.lp.ACTIVITY &&
+                                _.A.selectParticipant(c, t.id)
+                            )
+                        );
+                    },
+                },
+                s,
+            );
+        }),
     });
 }
-let T = function (e) {
+let C = function (e) {
     let { voiceChannelId: t, idle: n } = e,
-        l = i.useRef(null),
-        u = Array.from((0, a.bG)([p.A], () => p.A.pipWindows).values()).filter((e) => e.component !== m.o1q.ACTIVITY),
-        c = (0, a.yK)([f.A], () => f.A.getAllActiveStreamsForChannel(t)).filter(
-            (e) => e.ownerId !== h.default.getCurrentUser()?.id && e.channelId === t,
+        o = r.useRef(null),
+        l = Array.from((0, s.bG)([g.A], () => g.A.pipWindows).values()).filter((e) => e.component !== I.o1q.ACTIVITY),
+        _ = (0, s.yK)([m.A], () => m.A.getAllActiveStreamsForChannel(t)).filter(
+            (e) => e.ownerId !== A.default.getCurrentUser()?.id && e.channelId === t,
         ),
-        d = (1 === u.length && u[0].component === m.o1q.ACTIVITY) || 0 === c.length,
-        _ = 1 === u.length && c.length <= 1;
-    return d || _
+        f = (1 === l.length && l[0].component === I.o1q.ACTIVITY) || 0 === _.length,
+        h = 1 === l.length && _.length <= 1;
+    return f || h
         ? null
-        : (0, r.jsx)(o.YNO, {
-              targetElementRef: l,
+        : (0, i.jsx)(u.Y, {
+              targetElementRef: o,
               position: "bottom",
-              renderPopout: (e) => (0, r.jsx)(I, { voiceChannelId: t, pipWindows: u, idle: n, ...e }),
+              renderPopout: (e) => (0, i.jsx)(y, { voiceChannelId: t, pipWindows: l, idle: n, ...e }),
               children: (e) =>
-                  (0, r.jsx)(o.DUT, {
-                      className: A.ro,
+                  (0, i.jsx)(c.D, {
+                      className: N.ro,
                       ...e,
-                      innerRef: l,
-                      children: (0, r.jsx)(o.FHP, { size: "md", color: s.A.unsafe_rawColors.WHITE.css }),
+                      innerRef: o,
+                      children: (0, i.jsx)(d.F, { size: "md", color: a.A.unsafe_rawColors.WHITE.css }),
                   }),
           });
 };

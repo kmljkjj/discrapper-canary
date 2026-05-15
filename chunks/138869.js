@@ -1,21 +1,19 @@
-"use strict";
-n.d(t, { A: () => d, V: () => u });
-var r = n(627968);
-n(64700);
-var i = n(503698),
-    a = n.n(i),
-    s = n(486020),
-    o = n(371794),
-    l = n(544681),
-    u = (function (e) {
-        return (e[(e.SMALL = 40)] = "SMALL"), (e[(e.MEDIUM = 66)] = "MEDIUM"), (e[(e.LARGE = 128)] = "LARGE"), e;
-    })({});
-let c = { 40: l.EX, 66: l.Y, 128: l.as },
-    d = (e) => {
-        let t,
-            { application: n, size: i, asset: u, className: d } = e;
+i.d(a, { A: () => A, V: () => p });
+var e,
+    t = i(627968);
+i(64700);
+var l = i(503698),
+    c = i.n(l),
+    n = i(486020),
+    r = i(371794),
+    d = i(512038),
+    p = (((e = {})[(e.SMALL = 40)] = "SMALL"), (e[(e.MEDIUM = 66)] = "MEDIUM"), (e[(e.LARGE = 128)] = "LARGE"), e);
+let o = { 40: d.EX, 66: d.Y, 128: d.as },
+    A = (s) => {
+        let a,
+            { application: i, size: e, asset: l, className: p } = s;
         return (
-            (t = null != u ? (0, o.YE)(n.id, u, i) : s.Ay.getApplicationIconURL({ id: n.id, icon: n.icon, size: i })),
-            (0, r.jsx)("img", { alt: "", src: t, className: a()(l.Kk, c[i], d) })
+            (a = null != l ? (0, r.YE)(i.id, l, e) : n.Ay.getApplicationIconURL({ id: i.id, icon: i.icon, size: e })),
+            (0, t.jsx)("img", { alt: "", src: a, className: c()(d.Kk, o[e], p) })
         );
     };

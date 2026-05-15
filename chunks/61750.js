@@ -1,8 +1,8 @@
 "use strict";
 n.d(t, { A: () => a });
-var r = n(627968);
+var i = n(627968);
 n(64700);
-var i = n(397927),
+var r = n(192308),
     s = n(758836);
 let a = (e) => {
     let {
@@ -15,15 +15,39 @@ let a = (e) => {
         itemConsumed: d,
         purchaseType: _ = s.gs.FIAT,
         overrideGraphic: f,
-        rentalDuration: p,
-        rentalExpiresAt: h,
+        overrideGradientColor: h,
+        rentalExpiresAt: p,
     } = e;
-    (0, i.mMO)(
+    (0, r.openModalLazy)(
         async () => {
-            if (t.skuId === s.Dp.FRACTIONAL_PREMIUM || t.skuId === s.Dp.ORB_PROFILE_BADGE) {
-                let { default: e } = await Promise.all([n.e("46952"), n.e("95481")]).then(n.bind(n, 328064));
+            if ((0, s.EZ)(t.skuId) || t.skuId === s.Dp.ORB_PROFILE_BADGE) {
+                let { default: e } = await Promise.all([
+                    n.e("69177"),
+                    n.e("18556"),
+                    n.e("64827"),
+                    n.e("92789"),
+                    n.e("84569"),
+                    n.e("18573"),
+                    n.e("93159"),
+                    n.e("62680"),
+                    n.e("86949"),
+                    n.e("71234"),
+                    n.e("23276"),
+                    n.e("75016"),
+                    n.e("36877"),
+                    n.e("27323"),
+                    n.e("21957"),
+                    n.e("54103"),
+                    n.e("86546"),
+                    n.e("32737"),
+                    n.e("3590"),
+                    n.e("98660"),
+                    n.e("14122"),
+                    n.e("25265"),
+                    n.e("95481"),
+                ]).then(n.bind(n, 328064));
                 return (n) =>
-                    (0, r.jsx)(e, {
+                    (0, i.jsx)(e, {
                         product: t,
                         analyticsLocations: a,
                         overrideTitle: o,
@@ -33,9 +57,37 @@ let a = (e) => {
                         ...n,
                     });
             }
-            let { default: e } = await Promise.all([n.e("46952"), n.e("92643")]).then(n.bind(n, 393870));
+            let { default: e } = await Promise.all([
+                n.e("69177"),
+                n.e("18556"),
+                n.e("64827"),
+                n.e("84569"),
+                n.e("18573"),
+                n.e("93159"),
+                n.e("62931"),
+                n.e("62680"),
+                n.e("86949"),
+                n.e("23276"),
+                n.e("75016"),
+                n.e("95444"),
+                n.e("36877"),
+                n.e("28152"),
+                n.e("27323"),
+                n.e("65826"),
+                n.e("49520"),
+                n.e("21957"),
+                n.e("54103"),
+                n.e("86546"),
+                n.e("32737"),
+                n.e("3590"),
+                n.e("98660"),
+                n.e("14122"),
+                n.e("2750"),
+                n.e("25265"),
+                n.e("92643"),
+            ]).then(n.bind(n, 393870));
             return (n) =>
-                (0, r.jsx)(e, {
+                (0, i.jsx)(e, {
                     product: t,
                     analyticsLocations: a,
                     overrideTitle: o,
@@ -43,8 +95,8 @@ let a = (e) => {
                     shouldShowPromotionalExperience: u,
                     purchaseType: _,
                     overrideGraphic: f,
-                    rentalDuration: p,
-                    rentalExpiresAt: h,
+                    overrideGradientColor: h,
+                    rentalExpiresAt: p,
                     ...n,
                 });
         },

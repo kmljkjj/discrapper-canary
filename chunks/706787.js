@@ -1,64 +1,64 @@
-n.d(t, { A: () => f });
+n.d(t, { A: () => h });
 var i = n(627968),
     l = n(64700),
-    s = n(497766),
-    a = n(311907),
-    r = n(397927),
+    a = n(419354),
+    r = n(17928),
+    s = n(866323),
     o = n(565645),
-    c = n(775602),
-    d = n(927813),
+    d = n(775602),
+    c = n(927813),
     u = n(614518),
-    h = n(77357);
-let m = 6 * d.A.Millis.SECOND,
-    A = 2 * d.A.Millis.SECOND,
-    g = 2 * d.A.Millis.SECOND,
-    p = (e) => `scale(${1 - -(e / 120)}) rotate(${e}deg)`;
-function f(e) {
-    let { userId: t, voiceChannelEffect: n, onComplete: d } = e,
-        { emoji: f, sentAt: _ } = n,
-        E = (0, a.bG)([c.A], () => c.A.useReducedMotion),
-        [x, C] = l.useState(!0),
-        S = !E,
-        I = (0, r.pnh)(x, {
+    _ = n(703302);
+let f = 6 * c.A.Millis.SECOND,
+    m = 2 * c.A.Millis.SECOND,
+    p = 2 * c.A.Millis.SECOND,
+    g = (e) => `scale(${1 - -(e / 120)}) rotate(${e}deg)`;
+function h(e) {
+    let { userId: t, voiceChannelEffect: n, onComplete: c } = e,
+        { emoji: h, sentAt: x } = n,
+        v = (0, r.bG)([d.A], () => d.A.useReducedMotion),
+        [A, I] = l.useState(!0),
+        C = !v,
+        E = (0, s.p)(A, {
             from: { rotate: -120 },
             enter: { rotate: 0 },
             leave: { rotate: -120 },
-            config: s.config.default,
+            config: a.config.default,
             onRest: (e, t) => {
                 let { phase: n } = t;
-                "leave" === n && d();
+                "leave" === n && c();
             },
         });
     return (l.useEffect(() => {
         let e;
         return (
-            Date.now() - _ >= g
+            Date.now() - x >= p
                 ? (0, u.a)(t)
                 : (e = setTimeout(
                       () => {
-                          C(!1), S && (0, u.a)(t);
+                          I(!1), C && (0, u.a)(t);
                       },
-                      S ? A : m,
+                      C ? m : f,
                   )),
             () => {
                 null != e && clearTimeout(e);
             }
         );
-    }, [_, t, S]),
-    S)
+    }, [x, t, C]),
+    C)
         ? null
-        : I((e, t) => {
+        : E((e, t) => {
               let { rotate: n } = e;
               return (
                   t &&
-                  (0, i.jsx)(s.animated.div, {
-                      className: h._,
-                      style: { transform: n.to(p) },
+                  (0, i.jsx)(a.animated.div, {
+                      className: _._,
+                      style: { transform: n.to(g) },
                       children: (0, i.jsx)(o.A, {
-                          className: h.F,
-                          emojiId: f.id,
-                          emojiName: f.name,
-                          animated: f.animated ?? !1,
+                          className: _.F,
+                          emojiId: h.id,
+                          emojiName: h.name,
+                          animated: h.animated ?? !1,
                       }),
                   })
               );

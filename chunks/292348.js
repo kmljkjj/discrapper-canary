@@ -1,9 +1,9 @@
 "use strict";
-n.d(t, { OW: () => u, dm: () => c, eM: () => o, ly: () => d });
-var r = n(565150),
-    i = n(762555),
-    a = n(381941);
-let s = [
+n.d(t, { OW: () => u, YK: () => l, dm: () => c, eM: () => o, ly: () => d });
+var i = n(565150),
+    r = n(762555),
+    s = n(381941);
+let a = [
         { reName: /\.jpe?g$/i, name: (e) => `image${e}.jpg`, type: "image/jpeg" },
         { reName: /\.jfif$/i, name: (e) => `image${e}.jpg`, type: "image/jpeg" },
         { reName: /\.png$/i, name: (e) => `image${e}.png`, type: "image/png" },
@@ -19,19 +19,19 @@ let s = [
         { reName: /\.mp4$/i, name: (e) => `video${e}.mp4`, type: "video/mp4" },
         { reName: /\.webm$/i, name: (e) => `video${e}.webm`, type: "image/webm" },
     ],
-    o = 524288e3;
-function l(e) {
-    let { spoiler: t } = e;
-    return t ? a._W : "";
-}
+    o = 524288e3,
+    l = 500;
 function u(e) {
     let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null,
         n = arguments.length > 2 ? arguments[2] : void 0,
         a = { id: t?.toString() ?? e.id };
     null != e.description && (a.description = e.description);
-    let s = l({ spoiler: e.spoiler });
+    let o = (function (e) {
+        let { spoiler: t } = e;
+        return t ? s._W : "";
+    })({ spoiler: e.spoiler });
     return (
-        (a.filename = `${s}${n ?? e.filename}`),
+        (a.filename = `${o}${n ?? e.filename}`),
         (a.uploaded_filename = e.uploadedFilename),
         "durationSecs" in e && null != e.durationSecs && (a.duration_secs = e.durationSecs),
         "waveform" in e && null != e.waveform && (a.waveform = e.waveform),
@@ -41,11 +41,13 @@ function u(e) {
             ((a.is_clip = !0),
             (a.title = e.clip.name),
             (a.application_id = e.clip.applicationId),
-            (a.clip_created_at = (0, i.U)(e.clip.id)),
-            (a.clip_participant_ids = (0, i.g)(e.clip.users))),
+            (a.clip_created_at = (0, r.Uq)(e.clip.createdAt)),
+            (a.clip_participant_ids = (0, r.gD)(e.clip.users)),
+            (a.clip_remote_id = e.clip.remoteClipId),
+            (a.clip_events_timeline = (0, r.lz)(e.clip))),
         "item" in e &&
             null != e.item &&
-            e.item.platform === r.xz.WEB &&
+            e.item.platform === i.xz.WEB &&
             "mimeType" in e &&
             null != e.mimeType &&
             (a.original_content_type = e.mimeType),
@@ -54,33 +56,33 @@ function u(e) {
 }
 function c(e) {
     let t = new XMLHttpRequest();
-    return new Promise((n, r) => {
+    return new Promise((n, i) => {
         t.open("GET", e, !0),
             (t.responseType = "blob"),
-            (t.onabort = (e) => r(e)),
-            (t.onerror = (e) => r(e)),
-            (t.ontimeout = (e) => r(e)),
+            (t.onabort = (e) => i(e)),
+            (t.onerror = (e) => i(e)),
+            (t.ontimeout = (e) => i(e)),
             (t.onload = () => n(t?.response?.data)),
             t.send();
     });
 }
 function d(e) {
     let t,
-        { uri: n, i: r, overrideFilename: i, overrideType: a } = e,
+        { uri: n, i, overrideFilename: r, overrideType: s } = e,
         o = n.split("/"),
         l = o[o.length - 1];
     l = l.split("?")?.[0]?.toLowerCase() ?? "";
-    let u = s.find((e) => e.reName.test(l));
-    if ((null == u && null != i && (u = s.find((e) => e.reName.test(i))), null != u && null != i)) {
-        let e = u.name(r).split(".").pop(),
-            n = i.lastIndexOf(".");
-        t = -1 !== n ? `${i.substr(0, n)}.${e}` : `${i}.${e}`;
-    } else t = null != u ? u.name(r) : (i ?? "unknown");
+    let u = a.find((e) => e.reName.test(l));
+    if ((null == u && null != r && (u = a.find((e) => e.reName.test(r))), null != u && null != r)) {
+        let e = u.name(i).split(".").pop(),
+            n = r.lastIndexOf(".");
+        t = -1 !== n ? `${r.substr(0, n)}.${e}` : `${r}.${e}`;
+    } else t = null != u ? u.name(i) : (r ?? "unknown");
     return {
         uri: n,
         filename: t,
-        type: a ?? u?.type ?? "unknown",
-        isVideo: -1 !== (a ?? u?.name(r) ?? "").indexOf("video"),
-        isImage: -1 !== (a ?? u?.name(r) ?? "").indexOf("image"),
+        type: s ?? u?.type ?? "unknown",
+        isVideo: -1 !== (s ?? u?.name(i) ?? "").indexOf("video"),
+        isImage: -1 !== (s ?? u?.name(i) ?? "").indexOf("image"),
     };
 }

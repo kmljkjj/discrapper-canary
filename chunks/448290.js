@@ -1,37 +1,36 @@
-"use strict";
-n.d(t, { A: () => p, C: () => g });
-var l = n(627968);
+n.d(t, { A: () => E, C: () => h });
+var i = n(627968);
 n(64700);
-var s = n(311907),
-    i = n(397927),
+var l = n(17928),
+    a = n(477782),
     r = n(414798),
-    a = n(734057),
-    o = n(576705),
+    o = n(734057),
+    d = n(576705),
     u = n(309010),
-    c = n(203982),
-    d = n(427262),
-    m = n(652215),
-    h = n(985018);
-function g(e, t) {
+    s = n(625494),
+    c = n(427262),
+    _ = n(652215),
+    A = n(985018);
+function h(e, t) {
     let { id: n } = e,
-        l = `@${d.Ay.getUserTag(e, { decoration: "never" })}`,
-        s = `<@${n}>`;
-    c._.dispatchToLastSubscribed(m.jej.INSERT_TEXT, { plainText: l, rawText: s }), null != t && r.A.startTyping(t);
+        i = `@${c.Ay.getUserTag(e, { decoration: "never" })}`,
+        l = `<@${n}>`;
+    s._.dispatchToLastSubscribed(_.jej.INSERT_TEXT, { plainText: i, rawText: l }), null != t && r.A.startTyping(t);
 }
-function p(e, t, n) {
-    let [r, c] = (0, s.yK)([u.A, a.A, o.A], () => {
+function E(e, t, n) {
+    let [r, s] = (0, l.yK)([u.A, o.A, d.A], () => {
             let e = u.A.getChannelId(t),
-                n = a.A.getChannel(e);
-            return [e, null != n && (n.isMultiUserDM() || o.A.can(m.xBc.SEND_MESSAGES, n))];
+                n = o.A.getChannel(e);
+            return [e, null != n && (n.isMultiUserDM() || d.A.can(_.xBc.SEND_MESSAGES, n))];
         }, [t]),
-        d = n === m.BRT.POPOUT;
-    return !c || d
+        c = n === _.BRT.POPOUT;
+    return !s || c
         ? null
-        : (0, l.jsx)(i.Drp, {
+        : (0, i.jsx)(a.Dr, {
               id: "mention",
-              label: h.intl.string(h.t.P8tvKG),
+              label: A.intl.string(A.t.P8tvKG),
               action: function () {
-                  g(e, r);
+                  h(e, r);
               },
           });
 }

@@ -1,36 +1,15 @@
-"use strict";
-n.d(t, { t: () => u });
-var r = n(627968),
-    i = n(64700),
-    a = n(503698),
-    s = n.n(a),
-    o = n(187322),
-    l = n(842867);
-function u(e, t) {
-    let n = (0, l.dG)(e);
-    return i.forwardRef(function (a, u) {
-        let {
-                children: c,
-                className: d,
-                dir: _ = "ltr",
-                orientation: f = "vertical",
-                paddingFix: p = !0,
-                fade: h = !1,
-                onScroll: m,
-                style: g,
-                ...E
-            } = a,
-            A = i.useRef(null),
-            I = (0, l._I)({ paddingFix: p, orientation: f, dir: _, className: d, scrollerRef: A, specs: n });
-        return (0, r.jsx)("div", {
-            ref: (e) => {
-                "function" == typeof u ? u(e) : null != u && (u.current = e), (A.current = e);
-            },
-            className: s()(d, { [e]: !0, [t]: h }),
-            style: (0, l.Ze)(g, f),
-            dir: _,
-            ...E,
-            children: (0, r.jsxs)(o.xp, { containerRef: A, children: [c, I] }),
-        });
+n.d(i, { default: () => l });
+var s = n(627968);
+n(64700);
+var r = n(189213),
+    e = n(985018);
+function l(t) {
+    let { onClose: i, transitionState: n, kind: l } = t;
+    return (0, s.jsx)(r.Modal, {
+        title: e.intl.string(e.t.r0DLNm),
+        subtitle: "user" === l ? e.intl.string(e.t.Fqqbhg) : e.intl.string(e.t["6Y0JlN"]),
+        actions: [{ text: e.intl.string(e.t.BddRzS), onClick: i }],
+        onClose: i,
+        transitionState: n,
     });
 }

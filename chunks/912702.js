@@ -1,6 +1,6 @@
-n.d(t, { GI: () => r, Oo: () => d, Qm: () => o, py: () => s });
-var i = n(73153),
-    l = n(198982),
+n.d(t, { GI: () => r, Oo: () => c, Qm: () => o, py: () => s });
+var i = n(228366),
+    l = n(845584),
     a = n(306522);
 let r = async (e) => {
         i.h.dispatch({ type: "GUILD_PRODUCTS_FETCH", guildId: e });
@@ -24,6 +24,6 @@ async function o(e, t, n) {
     let l = await a.Qm(e, t, n);
     return i.h.dispatch({ type: "GUILD_PRODUCT_UPDATE", product: l }), l;
 }
-async function d(e, t) {
+async function c(e, t) {
     return await a.Oo(e, t), i.h.dispatch({ type: "GUILD_PRODUCT_DELETE", productId: t }), !0;
 }

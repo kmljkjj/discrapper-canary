@@ -1,49 +1,50 @@
-"use strict";
-n.d(t, { A: () => u });
-var i = n(627968),
-    s = n(64700),
-    l = n(397927),
+n.d(t, { A: () => A });
+var l = n(627968),
+    i = n(64700),
+    s = n(523875),
+    a = n(666654),
     r = n(688810),
-    a = n(980923),
-    o = n(384059),
-    c = n(277342),
-    d = n(709562);
-function u(e) {
+    o = n(980923),
+    c = n(384059),
+    u = n(709562),
+    d = n(985018);
+function A(e) {
     let {
             selfMute: t,
             serverMute: n,
-            suppress: u,
-            centerButton: h = !1,
-            awaitingRemote: A,
-            onMouseEnter: p,
-            onMouseLeave: g,
-            onClick: m,
-            ..._
+            suppress: A,
+            centerButton: E = !1,
+            awaitingRemote: m,
+            onMouseEnter: h,
+            onMouseLeave: C,
+            onClick: g,
+            ...I
         } = e,
-        { parentAnalyticsLocation: f } = (0, r.Ay)(),
-        x = t || n || u,
-        C = h ? d.l : d.A,
-        E = (0, a.A)(t, n, u, A),
-        { events: I, play: N, Component: b } = (0, c.q)(x),
-        S = n || u ? l.O1p : b;
+        { parentAnalyticsLocation: p } = (0, r.Ay)(),
+        x = t || n || A,
+        T = E ? u.l : u.A,
+        _ = (0, o.A)(t, n, A, m),
+        { events: v, play: N, Component: f } = (0, s.L)(x ? "unmute" : "mute"),
+        j = n || A ? a.O : f;
     return (
-        s.useEffect(() => () => N(), [N, x]),
-        (0, i.jsx)(C, {
-            iconComponent: S,
+        i.useEffect(() => () => N(), [N, x]),
+        (0, l.jsx)(T, {
+            ...I,
+            iconComponent: j,
             isTrayButton: !0,
             caretColor: x ? "red" : "primaryDark",
+            caretAriaLabel: d.intl.string(d.t["+ybWO4"]),
             color: x ? "red" : void 0,
-            label: E,
+            label: _,
             onMouseEnter: (e) => {
-                p?.(e), I.onMouseEnter();
+                h?.(e), v.onMouseEnter();
             },
             onMouseLeave: (e) => {
-                g?.(e), I.onMouseLeave();
+                C?.(e), v.onMouseLeave();
             },
             onClick: (e) => {
-                m?.(e), (0, o.X)(f, o.O.MIC, t);
+                g?.(e), (0, c.X)(p, c.O.MIC, t);
             },
-            ..._,
         })
     );
 }

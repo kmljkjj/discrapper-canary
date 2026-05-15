@@ -1,39 +1,68 @@
 "use strict";
-n.d(t, { A: () => c });
-var r = n(627968);
+n.d(t, { A: () => f });
+var i = n(627968);
 n(64700);
-var i = n(158954),
-    a = n(783420),
-    s = n(204413),
-    o = n(818415),
-    l = n(788868),
-    u = n(985018);
-let c = (e) => {
-    let { gradientColor: t, title: n, subtitle: c, onClose: d, onSecondaryClick: _, videoSrc: f, loopAt: p, ...h } = e,
-        { subscribeButtonProps: m, subscriptionTier: g } = (0, s.$)({
-            subscriptionTier: l.pe.TIER_2,
-            defaultTextOverride: u.intl.string(u.t.pj0XBN),
-        }),
-        E = (0, o.A)(l.pe.TIER_2);
-    return (0, r.jsx)(a.A, {
-        subscriptionTier: g,
+var r = n(403581),
+    s = n(772707),
+    a = n(927578),
+    o = n(422936),
+    l = n(234419),
+    u = n(783420),
+    c = n(511484),
+    d = n(788868),
+    _ = n(375708);
+let f = function (e) {
+    let {
+            transitionState: t,
+            title: n,
+            subtitle: f,
+            graphic: h,
+            guildBoostProps: p,
+            onClose: E,
+            onSecondaryClick: m,
+            secondaryCTA: g,
+            badgeType: A = null,
+            subscriptionTier: I = d.pe.TIER_2,
+            hidePremiumOfferUpsell: T,
+            children: S,
+        } = e,
+        N = (0, l.V)(),
+        y = (0, o.O)(),
+        C = !T && (N?.subscription_trial?.sku_id === I || (0, c.U9)(y, I)) && null == p,
+        v = _.intl.string(_.t.pj0XBN);
+    C &&
+        (null != N
+            ? (v = (0, a.FY)({
+                  intervalType: N?.subscription_trial?.interval,
+                  intervalCount: N?.subscription_trial?.interval_count,
+              }))
+            : null != y && (v = _.intl.formatToPlainString(_.t.bkQ4bH, { percent: y.discount.amount })));
+    let O = null != N ? "free_trial" : A;
+    return (0, i.jsx)(u.A, {
+        subscriptionTier: I,
         children: (e) => {
             let { onClick: a } = e;
-            return (0, r.jsx)(i.ExpressiveModal, {
-                size: "md",
-                onClose: async () => {
-                    await d();
-                },
-                gradientColor: t,
-                graphic: { type: "video", src: f, loop: !0, loopAt: p },
+            return (0, i.jsx)(s.k, {
                 title: n,
-                subtitle: c,
+                subtitle: f,
+                graphic: h,
+                gradientColor: "nitro-pink",
+                transitionState: t,
+                onClose: async () => await E(),
                 actions: [
-                    { variant: "secondary", text: u.intl.string(u.t.ZnqyZ2), onClick: _ },
-                    { ...m, onClick: a },
+                    { text: g, variant: "secondary", size: "md", onClick: m },
+                    {
+                        text: v,
+                        variant: "expressive",
+                        size: "md",
+                        onClick: async (e) => {
+                            await E(), a(e);
+                        },
+                        icon: r.t,
+                    },
                 ],
-                ...(null != E && { badge: { text: E } }),
-                ...h,
+                ...(null !== O && { badge: { type: O, variant: "expressive" } }),
+                children: S,
             });
         },
     });

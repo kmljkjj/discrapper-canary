@@ -1,5 +1,5 @@
 "use strict";
-var r = n(121536);
+var i = n(121536);
 e.exports = function (e, t) {
-    return r[e] || (r[e] = t || {});
+    return i[e] || (i[e] = t || {});
 };

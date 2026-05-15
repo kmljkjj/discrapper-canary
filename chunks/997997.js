@@ -1,13 +1,13 @@
-n.d(e, { C: () => s, K: () => u });
-var i,
-    l = n(954571),
+n.d(t, { C: () => s, K: () => i });
+var l,
+    a = n(954571),
     r = n(652215),
     s =
-        (((i = {}).STORE_MODAL = "store_modal"),
-        (i.DETAILS_MODAL = "details_modal"),
-        (i.STORE_EMBED = "store_embed"),
-        (i.SKU_EMBED = "sku_embed"),
-        i);
-function u(t, e, n) {
-    l.default.track(r.HAw.STOREFRONT_COPY_LINK_CLICKED, { application_id: t, area: e, sku_id: n });
+        (((l = {}).STORE_MODAL = "store_modal"),
+        (l.DETAILS_MODAL = "details_modal"),
+        (l.STORE_EMBED = "store_embed"),
+        (l.SKU_EMBED = "sku_embed"),
+        l);
+function i(e, t, n) {
+    a.default.track(r.HAw.STOREFRONT_COPY_LINK_CLICKED, { application_id: e, area: t, sku_id: n });
 }

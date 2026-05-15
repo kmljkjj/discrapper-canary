@@ -1,44 +1,44 @@
 "use strict";
-n.d(t, { A: () => h });
-var r = n(64700),
-    i = n(311907),
-    a = n(946261),
-    s = n(536184),
-    o = n(523006),
-    l = n(253932),
-    u = n(723702),
-    c = n(209932),
+n.d(t, { A: () => f });
+var l = n(64700),
+    i = n(17928),
+    s = n(946261),
+    a = n(536184),
+    r = n(523006),
+    o = n(253932),
+    c = n(723702),
+    u = n(209932),
     d = n(536432),
-    _ = n(102597),
-    f = n(904054),
+    h = n(102597),
+    m = n(904054),
     p = n(257645);
-function h(e, t) {
-    let n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : (l.dG.getSetting()?.volume ?? 100),
-        h = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : p.a.DEFAULT,
-        { audioRef: m } = r.useContext(o.A),
-        [g, E] = r.useState(!1),
-        A = (0, i.bG)([c.A], () => c.A.isPlayingSound(e.soundId), [e]);
+function f(e, t) {
+    let n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : (o.dG.getSetting()?.volume ?? 100),
+        f = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : p.a.DEFAULT,
+        { audioRef: g } = l.useContext(r.A),
+        [_, x] = l.useState(!1),
+        C = (0, i.bG)([u.A], () => u.A.isPlayingSound(e.soundId), [e]);
     return {
-        playSoundboardSound: r.useCallback(
+        playSoundboardSound: l.useCallback(
             (n) => {
-                null != m.current && m.current.pause(), null != t && (0, d.Ak)(e, t, n);
+                null != g.current && g.current.pause(), null != t && (0, d.Ak)(e, t, n);
             },
-            [e, m, t],
+            [e, g, t],
         ),
-        isPlayingSound: A,
-        previewSound: r.useCallback(async () => {
-            let t = (0, _.A)(e.soundId),
-                r = new (await (0, s.A)(t))();
-            (r.src = t),
-                null != m.current && m.current.pause(),
-                u.isPlatformEmbedded && h === p.a.VOICE && r.setSinkId?.(a.voiceSinkId),
-                (m.current = r),
-                (r.currentTime = 0),
-                (r.volume = (0, f.A)(e.volume, n)),
-                r.play(),
-                E(!0),
-                r.addEventListener("pause", () => E(!1), { once: !0 });
-        }, [e, n, m, h]),
-        isPreviewingSound: g,
+        isPlayingSound: C,
+        previewSound: l.useCallback(async () => {
+            let t = (0, h.A)(e.soundId),
+                l = new (await (0, a.A)(t))();
+            (l.src = t),
+                null != g.current && g.current.pause(),
+                c.isPlatformEmbedded && f === p.a.VOICE && l.setSinkId?.(s.voiceSinkId),
+                (g.current = l),
+                (l.currentTime = 0),
+                (l.volume = (0, m.A)(e.volume, n)),
+                l.play(),
+                x(!0),
+                l.addEventListener("pause", () => x(!1), { once: !0 });
+        }, [e, n, g, f]),
+        isPreviewingSound: _,
     };
 }

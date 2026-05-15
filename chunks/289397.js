@@ -1,6 +1,4 @@
-"use strict";
-n.d(t, { n: () => i });
-let r = "https://cdn.discordapp.com/assets";
-function i(e) {
-    return `${r}/${e}`;
+i.d(e, { n: () => n });
+function n(t) {
+    return `https://cdn.discordapp.com/assets/${t}`;
 }

@@ -1,17 +1,15 @@
 "use strict";
-n.d(t, { L: () => i, i: () => r });
-var r = (function (e) {
-    return (
-        (e.CLASSIC = "classic"),
-        (e.RETRO = "retro"),
-        (e.BUBBLE = "bop"),
-        (e.DUCKY = "ducky"),
-        (e.LOFI = "lofi"),
-        (e.ASMR = "asmr"),
-        (e.DISCODO = "discodo"),
-        (e.HALLOWEEN = "halloween"),
-        (e.WINTER_HOLIDAY = "winter_holiday"),
-        e
-    );
-})({});
-let i = "custom_notification_sounds_discodo";
+n.d(t, { L: () => s, i: () => r });
+var i,
+    r =
+        (((i = {}).CLASSIC = "classic"),
+        (i.RETRO = "retro"),
+        (i.BUBBLE = "bop"),
+        (i.DUCKY = "ducky"),
+        (i.LOFI = "lofi"),
+        (i.ASMR = "asmr"),
+        (i.DISCODO = "discodo"),
+        (i.HALLOWEEN = "halloween"),
+        (i.WINTER_HOLIDAY = "winter_holiday"),
+        i);
+let s = "custom_notification_sounds_discodo";

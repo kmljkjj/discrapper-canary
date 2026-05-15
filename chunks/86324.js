@@ -1,53 +1,53 @@
-var r = i(787570),
-    n = i(872379);
-let a = new Map();
+var s = t(889544),
+    a = t(872379);
+let o = new Map();
 self.addEventListener("message", (e) => {
-    let { data: t } = e;
-    switch (t.type) {
-        case n.l.INITIALIZE:
+    let { data: r } = e;
+    switch (r.type) {
+        case a.l.INITIALIZE:
             ((e) => {
                 let {
-                        canvas: t,
-                        canvasId: i,
-                        animationId: s,
-                        assetUrl: o,
-                        assetData: h,
-                        isVisible: l,
+                        canvas: r,
+                        canvasId: t,
+                        animationId: i,
+                        assetUrl: l,
+                        assetData: n,
+                        isVisible: p,
                         shouldAnimate: c,
                     } = e,
-                    u = new r.default({
-                        canvas: t,
-                        id: s,
-                        assetUrl: o,
-                        assetData: h,
-                        isVisible: l,
+                    d = new s.default({
+                        canvas: r,
+                        id: i,
+                        assetUrl: l,
+                        assetData: n,
+                        isVisible: p,
                         shouldAnimate: c,
                         onInitialDraw: () => {
-                            self.postMessage({ type: n.l.FIRST_DRAW, canvasId: i });
+                            self.postMessage({ type: a.l.FIRST_DRAW, canvasId: t });
                         },
                         onError: () => {
-                            self.postMessage({ type: n.l.ERROR, canvasId: i });
+                            self.postMessage({ type: a.l.ERROR, canvasId: t });
                         },
                     });
-                a.set(i, u);
-            })(t);
+                o.set(t, d);
+            })(r);
             break;
-        case n.l.DROP:
+        case a.l.DROP:
             ((e) => {
-                let { canvasId: t } = e;
-                a.get(t)?.drop(), a.delete(t);
-            })(t);
+                let { canvasId: r } = e;
+                o.get(r)?.drop(), o.delete(r);
+            })(r);
             break;
-        case n.l.VISIBILITY_CHANGE:
+        case a.l.VISIBILITY_CHANGE:
             ((e) => {
-                let { canvasId: t, isVisible: i } = e;
-                a.get(t)?.setVisibility(i);
-            })(t);
+                let { canvasId: r, isVisible: t } = e;
+                o.get(r)?.setVisibility(t);
+            })(r);
             break;
-        case n.l.STATE_CHANGE:
+        case a.l.STATE_CHANGE:
             ((e) => {
-                let { canvasId: t, shouldAnimate: i, nextFrame: r } = e;
-                a.get(t)?.setState(i, r);
-            })(t);
+                let { canvasId: r, shouldAnimate: t, nextFrame: s } = e;
+                o.get(r)?.setState(t, s);
+            })(r);
     }
 });

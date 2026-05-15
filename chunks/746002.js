@@ -2,21 +2,19 @@
 n.r(t),
     n.d(t, {
         CollectiblesItemAssetFormat: () => a,
-        getCollectiblesItemAssetUrl: () => c,
+        getCollectiblesItemAssetUrl: () => l,
         parseSkuIdFromServerData: () => s.V,
     });
-var r = n(403362),
-    i = n(98434),
+var r,
+    i = n(403362),
     s = n(628856),
-    a = (function (e) {
-        return (e.ANIMATED = "animated"), (e.STATIC = "static"), (e.VIDEO = "video"), e;
-    })({});
-let o = "http://localhost:3000/_storage",
-    l = "https://cdn.discordapp.com",
-    u = "media/v1/collectibles-shop",
-    c = (e, t) =>
-        (0, i.e)("getCollectiblesItemAssetUrl") && null != e
-            ? (0, r.iT)()
-                ? `${o}/${u}/${e}/${t}`
-                : `${l}/${u}/${e}/${t}`
-            : null;
+    a = (((r = {}).ANIMATED = "animated"), (r.STATIC = "static"), (r.VIDEO = "video"), r);
+let o = "media/v1/collectibles-shop",
+    l = (e) => {
+        let { skuId: t, assetFormat: n, assetId: r } = e;
+        return null == t
+            ? null
+            : (0, i.iT)()
+              ? `http://localhost:3000/_storage/${o}/${t}/${r ? `${r}/` : ""}${n}`
+              : `https://cdn.discordapp.com/${o}/${t}/${r ? `${r}/` : ""}${n}`;
+    };

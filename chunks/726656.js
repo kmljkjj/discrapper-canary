@@ -1,22 +1,23 @@
-"use strict";
-n.d(t, { A: () => s });
-var r = n(627968);
+n.d(t, { A: () => o });
+var l = n(627968);
 n(64700);
-var i = n(397927),
-    a = n(111262);
-let s = function (e) {
+var a = n(885574),
+    i = n(661531),
+    r = n(834730),
+    s = n(12057);
+let o = function (e) {
     let { message: t } = e;
-    return (0, r.jsxs)("div", {
-        className: a.k,
+    return (0, l.jsxs)("div", {
+        className: s.k,
         children: [
-            (0, r.jsx)(i.mir, {
+            (0, l.jsx)(a.m, {
                 size: "custom",
-                className: a.K,
+                className: s.K,
                 width: 20,
                 height: 20,
-                color: i.LU0.colors.TEXT_FEEDBACK_WARNING,
+                color: i.A.colors.TEXT_FEEDBACK_WARNING,
             }),
-            (0, r.jsx)(i.Text, { variant: "text-sm/normal", color: "text-muted", children: t }),
+            (0, l.jsx)(r.E, { variant: "text-sm/normal", color: "text-muted", children: t }),
         ],
     });
 };

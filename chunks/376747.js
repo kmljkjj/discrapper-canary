@@ -1,4 +1,3 @@
-"use strict";
-n.d(t, { T: () => i, Y: () => r });
-let r = "(max-width: 485px)",
-    i = "(max-height: 450px)";
+n.d(t, { T: () => a, Y: () => l });
+let l = "(max-width: 485px)",
+    a = "(max-height: 450px)";

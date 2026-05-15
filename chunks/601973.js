@@ -1,73 +1,76 @@
 "use strict";
-n.d(t, { p: () => d });
-var r = n(627968);
+n.d(t, { p: () => c });
+var i = n(627968);
 n(64700);
-var i = n(503698),
-    a = n.n(i),
-    s = n(426333),
-    o = n(934551),
-    l = n(862301),
-    u = n(460890),
-    c = n(594597);
-function d(e) {
+var r = n(503698),
+    s = n.n(r),
+    a = n(187322),
+    o = n(285796),
+    l = n(715482),
+    d = n(862301),
+    _ = n(460890),
+    u = n(930856);
+function c(e) {
     let {
         ref: t,
         disabled: n,
-        readOnly: i,
-        loading: s,
+        readOnly: r,
+        loading: a,
         clearable: o,
-        fullWidth: u,
-        isOpen: d,
-        isInert: p,
-        hasValue: h,
-        hasError: m,
+        fullWidth: l,
+        isOpen: _,
+        isInert: c,
+        hasValue: m,
+        hasError: f,
         showChevronButton: g = !0,
-        children: E,
+        children: p,
         handleToggle: A,
         handleClear: I,
+        variant: T = "default",
     } = e;
-    return (0, r.jsxs)(l.F, {
+    return (0, i.jsxs)(d.F, {
         ref: t,
-        containerClassName: a()(c.cQ, { [c.Ij]: u }),
-        className: a()(c.Bd, { [c.ar]: d, [c.ND]: p }),
+        containerClassName: s()(u.cQ, { [u.Ij]: l }),
+        className: s()(u.Bd, { [u.ar]: _, [u.ND]: c, [u.O_]: "unsupported_payment_modal_card" === T }),
         "data-mana-component": "select-input-field",
         disabled: n,
-        readOnly: i,
-        fullWidth: u,
-        validation: m ? { hasError: !0 } : void 0,
-        "aria-busy": s,
+        readOnly: r,
+        fullWidth: l,
+        validation: f ? { hasError: !0 } : void 0,
+        "aria-busy": a,
         children: [
-            (0, r.jsx)("div", { className: c.gt, children: E }),
-            (0, r.jsx)(_, { show: !0 === o && !p && !0 === h, iconSize: g ? "xs" : "sm", onClick: I }),
-            (0, r.jsx)(f, { show: g, isOpen: d, onClick: A }),
+            (0, i.jsx)("div", { className: u.gt, children: p }),
+            (0, i.jsx)(E, { show: !0 === o && !c && !0 === m, iconSize: g ? "xs" : "sm", onClick: I }),
+            (0, i.jsx)(h, { show: g, isOpen: _, onClick: A }),
         ],
     });
 }
-function _(e) {
-    let { show: t, iconSize: n, onClick: i } = e,
-        { i18n: a } = (0, u.G9)();
+function E(e) {
+    let { show: t, iconSize: n, onClick: r } = e,
+        { i18n: s } = (0, _.G9)();
     return t
-        ? (0, r.jsx)(s.vN, {
-              children: (0, r.jsx)("button", {
-                  className: c.mt,
-                  "aria-label": a.CLEAR_SELECTION,
-                  onClick: i,
-                  children: (0, r.jsx)(o.CircleXIcon, { size: n, color: "currentColor" }),
+        ? (0, i.jsx)(a.vN, {
+              children: (0, i.jsx)("button", {
+                  className: u.mt,
+                  "aria-label": s.CLEAR_SELECTION,
+                  onClick: r,
+                  children: (0, i.jsx)(o.a, { size: n, color: "currentColor" }),
               }),
           })
-        : (0, r.jsx)("span", {});
+        : (0, i.jsx)("span", { "aria-hidden": !0 });
 }
-function f(e) {
-    let { show: t, isOpen: n, onClick: i } = e;
+function h(e) {
+    let { show: t, isOpen: n, onClick: r } = e;
     return t
-        ? (0, r.jsx)("button", {
+        ? (0, i.jsx)("button", {
               "aria-hidden": !0,
               tabIndex: -1,
-              className: c.E1,
-              onClick: i,
-              children: (0, r.jsx)("span", {
-                  className: a()(c.t4, { [c.nT]: n }),
-                  children: (0, r.jsx)(o.ChevronLargeDownIcon, { size: "refresh_sm", color: "currentColor" }),
+              className: u.E1,
+              onMouseDown: (e) => e.preventDefault(),
+              onClick: r,
+              children: (0, i.jsx)("span", {
+                  className: s()(u.t4, { [u.nT]: n }),
+                  children: (0, i.jsx)(l.g, { size: "refresh_sm", color: "currentColor" }),
               }),
           })
         : null;

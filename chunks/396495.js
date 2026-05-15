@@ -1,61 +1,62 @@
-"use strict";
-n.d(t, { b: () => m });
-var i = n(627968);
-n(64700);
-var s = n(503698),
-    l = n.n(s),
-    r = n(110259),
-    a = n(421380),
-    o = n(397927),
-    c = n(139286),
-    d = n(954571),
-    u = n(222643),
-    h = n(652215),
-    A = n(985018),
-    p = n(792427);
-function g(e) {
-    let { hidden: t, onDismiss: n } = e;
+t.d(n, { b: () => g });
+var l = t(627968);
+t(64700);
+var i = t(503698),
+    s = t.n(i),
+    a = t(562708),
+    r = t(862482),
+    o = t(789645),
+    c = t(834730),
+    u = t(403581),
+    d = t(139286),
+    A = t(174459),
+    h = t(222643),
+    m = t(652215),
+    C = t(375708),
+    E = t(648666);
+function p(e) {
+    let { hidden: n, onDismiss: t } = e;
     return (
-        (0, c.A)({ type: r.ImpressionTypes.VIEW, name: r.ImpressionNames.HD_STREAMING_POPOUT }, { disableTrack: t }, [
-            t,
+        (0, d.A)({ type: a.ImpressionTypes.VIEW, name: a.ImpressionNames.HD_STREAMING_POPOUT }, { disableTrack: n }, [
+            n,
         ]),
-        (0, i.jsxs)("div", {
-            className: l()(p.jC, { [p.R]: t }),
+        (0, l.jsxs)("div", {
+            className: s()(E.jC, { [E.R]: n }),
             children: [
-                (0, i.jsx)("img", {
-                    className: p.Sl,
+                (0, l.jsx)("img", {
+                    className: E.Sl,
                     src: "https://cdn.discordapp.com/assets/premium/roadblocks/hd_streaming.png",
                     alt: "HD Streaming Nitro Perk",
                 }),
-                (0, i.jsx)(a.$n, {
+                (0, l.jsx)(r.$n, {
                     "data-migration-pending": !0,
-                    className: p.b,
-                    "aria-label": A.intl.string(A.t.cpT0Cq),
-                    look: a.$n.Looks.BLANK,
-                    size: a.$n.Sizes.NONE,
+                    className: E.b,
+                    "aria-label": C.intl.string(C.t.cpT0Cq),
+                    look: r.$n.Looks.BLANK,
+                    size: r.$n.Sizes.NONE,
                     onClick: () => {
-                        n(), d.default.track(h.HAw.HD_STREAMING_POPOUT_DISMISSED);
+                        t(), A.default.track(m.HAw.HD_STREAMING_POPOUT_DISMISSED);
                     },
-                    children: (0, i.jsx)(o.PGe, { size: "xs", className: p.ut, color: "white" }),
+                    children: (0, l.jsx)(o.P, { size: "xs", className: E.ut, color: "white" }),
                 }),
-                (0, i.jsx)("div", {
-                    className: p.Gm,
-                    children: (0, i.jsxs)("div", {
-                        className: p.op,
+                (0, l.jsx)("div", {
+                    className: E.Gm,
+                    children: (0, l.jsxs)("div", {
+                        className: E.op,
                         children: [
-                            (0, i.jsx)(o.Text, {
-                                className: p.aV,
+                            (0, l.jsx)(c.E, {
+                                className: E.aV,
                                 variant: "text-sm/medium",
-                                children: A.intl.format(A.t.ruvD7i, {}),
+                                children: C.intl.format(C.t.ruvD7i, {}),
                             }),
-                            (0, i.jsxs)("div", {
-                                className: p.vX,
+                            (0, l.jsxs)("div", {
+                                className: E.vX,
                                 children: [
-                                    (0, i.jsx)(o.tvc, { size: "xs" }),
-                                    (0, i.jsx)(o.Text, {
-                                        className: p.aV,
+                                    (0, l.jsx)(u.t, { size: "xs" }),
+                                    (0, l.jsx)(c.E, {
+                                        className: E.aV,
                                         variant: "text-sm/medium",
-                                        children: A.intl.string(A.t["BMw+7I"]),
+                                        children: C.intl.string(C.t["BMw+7I"]),
                                     }),
                                 ],
                             }),
@@ -66,7 +67,7 @@ function g(e) {
         })
     );
 }
-function m(e) {
-    let { ...t } = e;
-    return (0, i.jsx)(u.x, { ...t, renderComponent: (e) => (0, i.jsx)(g, { ...e }) });
+function g(e) {
+    let { ...n } = e;
+    return (0, l.jsx)(h.x, { ...n, renderComponent: (e) => (0, l.jsx)(p, { ...e }) });
 }

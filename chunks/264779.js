@@ -1,107 +1,102 @@
 "use strict";
 n.d(t, {
-    Cp: () => R,
-    HB: () => w,
-    OP: () => D,
-    S0: () => L,
-    So: () => O,
-    WD: () => S,
-    b3: () => C,
+    Cp: () => y,
+    HB: () => b,
+    Ng: () => T,
+    OP: () => O,
+    S0: () => R,
+    So: () => C,
+    WD: () => I,
+    dG: () => v,
     kc: () => N,
-    kd: () => b,
+    kd: () => S,
 }),
     n(938796);
-var r = n(665260),
-    i = n(562465),
-    a = n(554146),
-    s = n(582754),
+var i = n(665260),
+    r = n(636537),
+    s = n(554146),
+    a = n(462887),
     o = n(367727),
-    l = n(773669),
-    u = n(617617),
-    c = n(835095),
-    d = n(166403),
-    _ = n(816733),
-    f = n(954571),
-    p = n(723702),
-    h = n(661191),
-    m = n(412260),
-    g = n(852218),
-    E = n(788868),
-    A = n(652215),
-    I = n(360469);
-let T = "{code}",
-    y = 2592e5;
-function S(e, t) {
-    let n = (0, s.Mw)(t) ? "logo-dark" : "logo-light",
-        r = window.GLOBAL_ENV.CDN_HOST,
-        i = "?size=256";
-    return null != r
-        ? `https://${r}/promotions/${e}/${n}${i}`
-        : `${location.protocol}${window.GLOBAL_ENV.API_ENDPOINT}/promotions/${e}/${n}${i}`;
+    l = n(617617),
+    u = n(835095),
+    c = n(166403),
+    d = n(354670),
+    _ = n(174459),
+    f = n(723702),
+    h = n(935208),
+    p = n(374200),
+    E = n(852218),
+    m = n(788868),
+    g = n(652215),
+    A = n(360469);
+function I(e, t) {
+    let n = (0, a.M)(t) ? "logo-dark" : "logo-light",
+        i = window.GLOBAL_ENV.CDN_HOST,
+        r = "?size=256";
+    return null != i
+        ? `https://${i}/promotions/${e}/${n}${r}`
+        : `${location.protocol}${window.GLOBAL_ENV.API_ENDPOINT}/promotions/${e}/${n}${r}`;
 }
-function v(e) {
-    return { code: e.code, userId: e.user_id, claimedAt: e.claimed_at, promotion: c.A.createFromServer(e.promotion) };
+function T(e) {
+    return { code: e.code, userId: e.user_id, claimedAt: e.claimed_at, promotion: u.A.createFromServer(e.promotion) };
 }
-async function C() {
-    return (
-        await i.Bo.get({
-            url: A.Rsh.CLAIMED_OUTBOUND_PROMOTION_CODES,
-            query: { locale: l.default.locale },
-            oldFormErrors: !0,
-            rejectWithError: !1,
-        })
-    ).body.map(v);
-}
-async function b(e) {
+async function S(e) {
     let t,
-        { promotionId: n, analyticsLocations: r } = e,
-        a = await i.Bo.post({ url: A.Rsh.CLAIM_OUTBOUND_PROMOTION_CODE(n), rejectWithError: !1 }),
-        s = a.body;
+        { promotionId: n, promotionTitle: i, partnerId: s, analyticsLocations: a } = e,
+        o = await r.Bo.post({ url: g.Rsh.CLAIM_OUTBOUND_PROMOTION_CODE(n), rejectWithError: !1 }),
+        l = o.body;
     return (
-        (t = I.vu.DESKTOP),
-        f.default.track(A.HAw.OUTBOUND_PROMOTION_CLAIMED, { platform: t, status: a.status, location_stack: r }),
-        v(s)
+        (t = A.vu.DESKTOP),
+        _.default.track(g.HAw.OUTBOUND_PROMOTION_CLAIMED, {
+            platform: t,
+            status: o.status,
+            location_stack: a,
+            promotion_id: n,
+            name: i ?? null,
+            partner: s ?? null,
+        }),
+        T(l)
     );
 }
 function N(e, t) {
     return null != t.outboundRedemptionUrlFormat && "" !== t.outboundRedemptionUrlFormat
-        ? t.outboundRedemptionUrlFormat.replace(T, encodeURIComponent(e))
+        ? t.outboundRedemptionUrlFormat.replace("{code}", encodeURIComponent(e))
         : (t.outboundRedemptionPageLink ?? "");
 }
-function R() {
-    let e = m.A.outboundPromotions,
-        t = m.A.consumedInboundPromotionId,
-        n = e.filter((e) => {
-            let { id: n, flags: i } = e;
-            return n !== t && !(0, r.Lt)(i, E.$3.SUPPRESS_NOTIFICATION);
-        }),
-        i =
-            u.A.settings.userContent?.recurringDismissibleContentStates[a.M.THIRD_PARTY_OUTBOUND_PROMO_NAGBAR]
+function y() {
+    let e = p.A.outboundPromotions,
+        t = p.A.consumedInboundPromotionId,
+        n = e.filter((e) => e.id !== t && !(0, i.Lt)(e.flags, m.$3.SUPPRESS_NOTIFICATION) && !v(e)),
+        r =
+            l.A.settings.userContent?.recurringDismissibleContentStates[s.M.THIRD_PARTY_OUTBOUND_PROMO_NAGBAR]
                 ?.lastDismissedObjectId,
-        s =
-            null == i
+        a =
+            null == r
                 ? n
                 : n.filter((e) => {
                       let { id: t } = e;
-                      return 1 === h.default.compare(t, i);
+                      return 1 === h.default.compare(t, r);
                   }),
-        o = d.A.getPremiumTypeSubscription(),
-        l = !!o?.hasActiveTrial,
-        c = _.A.hasAnyUnexpiredOffer(),
-        f = l || c ? s.filter((e) => e.isRedeemableByTrialUsers()) : s;
+        o = c.A.getPremiumTypeSubscription(),
+        u = !!o?.hasActiveTrial,
+        _ = d.A.hasAnyUnexpiredOffer(),
+        f = u || _ ? a.filter((e) => e.isRedeemableByTrialUsers()) : a;
     return 0 === f.length ? null : f.sort((e, t) => (new Date(e.startDate) < new Date(t.startDate) ? -1 : 1))[0].id;
 }
-function O() {
-    let e = R();
-    return null != e && !(0, o.j6)(a.M.THIRD_PARTY_OUTBOUND_PROMO_NAGBAR, e, { cooldownDurationMs: y });
+function C() {
+    let e = y();
+    return null != e && !(0, o.j6)(s.M.THIRD_PARTY_OUTBOUND_PROMO_NAGBAR, e, { cooldownDurationMs: 2592e5 });
 }
-function D(e) {
-    return !(0, p.isIOS)() || !e.hasFlag(E.$3.IS_BLOCKED_IOS);
+function v(e) {
+    return e.partnerId === E.XY;
 }
-function L(e, t) {
+function O(e) {
+    return !(0, f.isIOS)() || !e.hasFlag(m.$3.IS_BLOCKED_IOS);
+}
+function R(e, t) {
     return null != t[e.id] || e.isRedeemableByTrialUsers();
 }
-function w(e) {
-    let { promotionPartner: t, promotionType: n } = e;
-    return n === g.pt.THIRD_PARTY_OUTBOUND_RECURRING || g.SW.has(t.toLocaleLowerCase());
+function b(e) {
+    let { promotionType: t } = e;
+    return t === E.pt.THIRD_PARTY_OUTBOUND_RECURRING;
 }

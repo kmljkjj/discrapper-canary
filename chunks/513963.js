@@ -1,34 +1,34 @@
-"use strict";
-n.d(t, { A: () => c });
-var i = n(627968),
-    s = n(64700),
-    l = n(732955),
-    r = n(817281),
-    a = n(951829),
-    o = n(985018);
-function c(e) {
-    let { type: t, onConfirm: n, onClose: c, ...d } = e,
-        [u, h] = s.useState(!1),
-        A = s.useCallback(() => {
-            u && r.Ay.updatedUnsyncedSettings({ disableHideSelfStreamAndVideoConfirmationAlert: !0 }), n(), c();
-        }, [n, u, c]),
-        p = t === a.f.STREAM ? o.intl.string(o.t["/lFMWr"]) : o.intl.string(o.t.xzxhZS),
-        g = t === a.f.STREAM ? o.intl.string(o.t.xaOX7d) : o.intl.string(o.t.oU1p9O);
-    return (0, i.jsx)(l.aFV, {
+i.d(n, { A: () => c });
+var e = i(627968),
+    a = i(64700),
+    s = i(189213),
+    r = i(150934),
+    l = i(817281),
+    d = i(951829),
+    o = i(375708);
+function c(t) {
+    let { type: n, onConfirm: i, onClose: c, ...p } = t,
+        [u, S] = a.useState(!1),
+        g = a.useCallback(() => {
+            u && l.Ay.updatedUnsyncedSettings({ disableHideSelfStreamAndVideoConfirmationAlert: !0 }), i(), c();
+        }, [i, u, c]),
+        C = n === d.f.STREAM ? o.intl.string(o.t["/lFMWr"]) : o.intl.string(o.t.xzxhZS),
+        h = n === d.f.STREAM ? o.intl.string(o.t.xaOX7d) : o.intl.string(o.t.oU1p9O);
+    return (0, e.jsx)(s.Modal, {
         size: "md",
-        actionBarInput: (0, i.jsx)(l.Sc0, {
+        actionBarInput: (0, e.jsx)(r.S, {
             checked: u,
-            onChange: (e) => h(e),
+            onChange: (t) => S(t),
             label: o.intl.string(o.t["JdIQ/Y"]),
             labelType: "secondary",
         }),
         actions: [
             { variant: "secondary", text: o.intl.string(o.t["ETE/oC"]), onClick: c },
-            { variant: "primary", text: o.intl.string(o.t.BddRzS), onClick: A },
+            { variant: "primary", text: o.intl.string(o.t.BddRzS), onClick: g },
         ],
-        title: p,
-        subtitle: g,
+        title: C,
+        subtitle: h,
         onClose: c,
-        ...d,
+        ...p,
     });
 }

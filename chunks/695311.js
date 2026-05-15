@@ -1,9 +1,9 @@
 "use strict";
 n.d(t, { A: () => f });
-var r = n(311907),
-    i = n(688810),
-    a = n(211401),
-    s = n(500049),
+var i = n(17928),
+    r = n(688810),
+    s = n(211401),
+    a = n(500049),
     o = n(975412),
     l = n(355622),
     u = n(267102),
@@ -12,18 +12,18 @@ var r = n(311907),
     _ = n(652215);
 function f(e) {
     let { applicationId: t, onClose: n } = e,
-        { newestAnalyticsLocation: f } = (0, i.Ay)(),
-        p = (0, r.bG)([c.A, d.A], () => c.A.getChannel(d.A.getChannelId())),
-        h = (0, u.Us)() === _.BRT.POPOUT;
+        { newestAnalyticsLocation: f } = (0, r.Ay)(),
+        h = (0, i.bG)([c.A, d.A], () => c.A.getChannel(d.A.getChannelId())),
+        p = (0, u.Us)() === _.BRT.POPOUT;
     return () => {
         n?.(),
-            null == p || p?.isVocal()
+            null == h || h?.isVocal()
                 ? (0, o.A)({
-                      context: null != p ? { type: "channel", channel: p } : { type: "contextless" },
+                      context: null != h ? { type: "channel", channel: h } : { type: "contextless" },
                       analyticsLocation: f,
-                      openInPopout: h,
+                      openInPopout: p,
                       initialState: { applicationId: t },
                   })
-                : (0, a.R)(s.s4.TEXT, l.oU.NORMAL, { applicationId: t });
+                : (0, s.R)(a.s4.TEXT, l.oU.NORMAL, { applicationId: t }, h.id);
     };
 }

@@ -1,35 +1,33 @@
 "use strict";
-n.d(t, { QR: () => p, b: () => _, oc: () => d });
-var r = n(64700),
-    i = n(311907),
+n.d(t, { QR: () => h, b: () => f, oc: () => _ });
+var i,
+    r = n(64700),
+    s = n(17928),
     a = n(451988),
-    s = n(384904),
-    o = n(142120),
-    l = n(166532),
-    u = n(566980),
-    c = n(153084),
-    d = (function (e) {
-        return (e[(e.PENDING = 1)] = "PENDING"), (e[(e.ERROR = 2)] = "ERROR"), (e[(e.NONE = 3)] = "NONE"), e;
-    })({});
-function _(e, t, n, i) {
-    let a = arguments.length > 4 && void 0 !== arguments[4] && arguments[4],
-        s = arguments.length > 5 ? arguments[5] : void 0;
+    o = n(753390),
+    l = n(587626),
+    u = n(166532),
+    c = n(566980),
+    d = n(153084),
+    _ = (((i = {})[(i.PENDING = 1)] = "PENDING"), (i[(i.ERROR = 2)] = "ERROR"), (i[(i.NONE = 3)] = "NONE"), i);
+function f(e, t, n, i) {
+    let s = arguments.length > 4 && void 0 !== arguments[4] && arguments[4],
+        a = arguments.length > 5 ? arguments[5] : void 0;
     r.useEffect(() => {
         null != e &&
-            (1 === t && e !== l.pn.AWAITING_AUTHENTICATION
-                ? n(l.pn.AWAITING_AUTHENTICATION)
-                : e === l.pn.AWAITING_AUTHENTICATION &&
+            (1 === t && e !== u.pn.AWAITING_AUTHENTICATION
+                ? n(u.pn.AWAITING_AUTHENTICATION)
+                : e === u.pn.AWAITING_AUTHENTICATION &&
                   (2 === t
-                      ? n(l.pn.REVIEW)
-                      : 3 === t && (a ? (null != s ? s() : n(l.pn.REVIEW)) : (i(u.h.COMPLETED), n(l.pn.CONFIRM)))));
-    }, [e, t, n, i, a, s]);
+                      ? n(u.pn.REVIEW)
+                      : 3 === t && (s ? (null != a ? a() : n(u.pn.REVIEW)) : (i(c.h.COMPLETED), n(u.pn.CONFIRM)))));
+    }, [e, t, n, i, s, a]);
 }
-let f = 5e3;
-function p(e) {
-    let t = (0, i.bG)([c.A], () => c.A.awaitingPaymentId),
-        n = (0, i.bG)([o.A], () => o.A.isConnected()),
-        l = r.useRef(new a.IX());
+function h(e) {
+    let t = (0, s.bG)([d.A], () => d.A.awaitingPaymentId),
+        n = (0, s.bG)([l.A], () => l.A.isConnected()),
+        i = r.useRef(new a.IX());
     r.useEffect(() => {
-        n || null == t || 1 !== e ? l.current.stop() : l.current.start(f, () => (0, s.TK)(t));
+        n || null == t || 1 !== e ? i.current.stop() : i.current.start(5e3, () => (0, o.TK)(t));
     }, [t, e, n]);
 }

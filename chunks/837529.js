@@ -1,11 +1,11 @@
 "use strict";
 n.d(t, { Nx: () => c, Qq: () => d, Wd: () => u, Zt: () => l });
-var r = n(353640),
-    i = n(582754),
-    a = n(736653),
-    s = n(543699),
+var i = n(353640),
+    r = n(462887),
+    s = n(736653),
+    a = n(543699),
     o = n(652215);
-let l = (0, r.v)()((e) => ({
+let l = (0, i.v)()((e) => ({
     themeOverride: null,
     savedClientTheme: null,
     setThemeOverride: (t) => e({ themeOverride: t }),
@@ -14,18 +14,18 @@ let l = (0, r.v)()((e) => ({
 function u() {
     let e,
         t = l((e) => e.themeOverride),
-        n = (0, a.Ay)();
+        n = (0, s.Ay)();
     if (null == t) return null;
-    let r = null,
+    let i = null,
         u = null;
     return (
         "nitro" === t.mode
-            ? ((r = t.themeColors?.[0] ?? null),
+            ? ((i = t.themeColors?.[0] ?? null),
               (u = t.themeColors?.[1] ?? null),
-              (e = null != r && null != u ? ((0, s.tM)(r) ?? n) : n))
+              (e = null != i && null != u ? ((0, a.tM)(i) ?? n) : n))
             : (e = t.themeType ?? n),
-        e === o.NJ8.DARK && (0, i.Mw)(n) ? (e = n) : e === o.NJ8.DARK && (0, i.qB)(n) && (e = o.NJ8.DARKER),
-        { theme: e, primaryColor: r, secondaryColor: u }
+        e === o.NJ8.DARK && (0, r.M)(n) ? (e = n) : e === o.NJ8.DARK && (0, r.q)(n) && (e = o.NJ8.DARKER),
+        { theme: e, primaryColor: i, secondaryColor: u }
     );
 }
 function c() {

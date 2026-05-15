@@ -1,36 +1,39 @@
 "use strict";
-n.d(t, { Q: () => _ });
-var r = n(627968),
-    i = n(64700),
-    a = n(435371),
-    s = n(426983),
-    o = n(176128),
-    l = n(454938),
-    u = n(714991),
-    c = n(57991),
-    d = n(652215);
-function _(e) {
+n.d(t, { Q: () => f });
+var i = n(627968),
+    r = n(64700),
+    s = n(990078),
+    a = n(459192),
+    o = n(426983),
+    l = n(176128),
+    u = n(454938),
+    c = n(714991),
+    d = n(107773),
+    _ = n(652215);
+function f(e) {
     let { guild: t, children: n } = e,
-        _ = (0, l.A)(t);
-    return i.useMemo(() => {
-        if (_) {
-            let e = (0, o.Jp)(t);
-            return (0, s.K)(e) !== s._.NONE;
+        f = (0, u.A)(t);
+    return r.useMemo(() => {
+        if (f) {
+            let e = (0, l.Jp)(t);
+            return (0, o.K)(e) !== o._.NONE;
         }
         return (
-            t.features.has(d.GuildFeatures.INTERNAL_EMPLOYEE_ONLY) ||
-            t.features.has(d.GuildFeatures.HUB) ||
-            t.features.has(d.GuildFeatures.VERIFIED) ||
-            t.features.has(d.GuildFeatures.PARTNERED)
+            t.features.has(_.GuildFeatures.INTERNAL_EMPLOYEE_ONLY) ||
+            t.features.has(_.GuildFeatures.HUB) ||
+            t.features.has(_.GuildFeatures.VERIFIED) ||
+            t.features.has(_.GuildFeatures.PARTNERED)
         );
-    }, [t, _])
-        ? (0, r.jsx)(a.un, {
-              asset: _ ? (0, r.jsx)(c.A, { guild: t, size: 20 }) : (0, r.jsx)(u.A, { guild: t, size: 20 }),
+    }, [t, f])
+        ? (0, i.jsx)(a.u, {
+              asset: f
+                  ? (0, i.jsx)(d.A, { disableBoostClick: !0, guild: t, size: 20 })
+                  : (0, i.jsx)(c.A, { guild: t, size: 20 }),
               assetSize: 20,
               position: "right",
               align: "center",
               body: t.name,
               children: n,
           })
-        : (0, r.jsx)(a.m_, { position: "right", align: "center", text: t.name, children: n });
+        : (0, i.jsx)(s.m, { position: "right", align: "center", text: t.name, children: n });
 }

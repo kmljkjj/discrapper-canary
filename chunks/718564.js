@@ -1,11 +1,9 @@
 "use strict";
 n.d(t, { W: () => r });
-var r = (function (e) {
-    return (
-        (e.RAID = "raid"),
-        (e.MENTION_RAID = "mention_raid"),
-        (e.ACTIVITY_ALERTS_ENABLED = "activity_alerts_enabled"),
-        (e.INTERACTION_BLOCKED = "interaction_blocked"),
-        e
-    );
-})({});
+var i,
+    r =
+        (((i = {}).RAID = "raid"),
+        (i.MENTION_RAID = "mention_raid"),
+        (i.ACTIVITY_ALERTS_ENABLED = "activity_alerts_enabled"),
+        (i.INTERACTION_BLOCKED = "interaction_blocked"),
+        i);

@@ -1,14 +1,12 @@
 "use strict";
-n.d(t, { Lb: () => l, Mh: () => s, q0: () => a, vI: () => u, xg: () => o });
-var r = n(315069),
-    i = n(611010),
-    s = (function (e) {
-        return (e[(e.LINKED = 1)] = "LINKED"), (e[(e.OFFICIAL = 2)] = "OFFICIAL"), e;
-    })({}),
-    a = (function (e) {
-        return (e.EROTIC = "Erotic"), e;
-    })({});
-class o extends r.A {
+n.d(t, { Lb: () => c, q0: () => l, vI: () => d, xg: () => u });
+var i,
+    r,
+    s,
+    a = n(315069),
+    o = n(395671),
+    l = (((i = {}).EROTIC = "Erotic"), i);
+class u extends a.A {
     id;
     name;
     description;
@@ -24,7 +22,6 @@ class o extends r.A {
     supportsOutOfProcessOverlay;
     thirdPartySkus;
     themes;
-    linkedApplications;
     content_classification;
     constructor(e) {
         super(),
@@ -35,7 +32,7 @@ class o extends r.A {
             (this.icon_hash = e.icon_hash),
             (this.aliases = e.aliases || []),
             (this.cover_image_hash = e.cover_image_hash),
-            (this.executables = (e.executables ?? []).map(i.lg)),
+            (this.executables = (e.executables ?? []).map(o.lg)),
             (this.overlay = e.overlay || !1),
             (this.overlayWarn = e.overlayWarn || !1),
             (this.overlayCompatibilityHook = e.overlayCompatibilityHook || !1),
@@ -43,7 +40,6 @@ class o extends r.A {
             (this.supportsOutOfProcessOverlay = e.supportsOutOfProcessOverlay || !1),
             (this.thirdPartySkus = e.thirdPartySkus || []),
             (this.themes = e.themes || []),
-            (this.linkedApplications = e.linkedApplications),
             (this.content_classification = e.content_classification);
     }
     getIconURL(e) {
@@ -55,21 +51,16 @@ class o extends r.A {
         return this.themes.includes(e);
     }
 }
-var l = (function (e) {
-        return (e[(e.NONE = 0)] = "NONE"), (e[(e.WINDOWED_ONLY = 1)] = "WINDOWED_ONLY"), (e[(e.ALL = 2)] = "ALL"), e;
-    })({}),
-    u = (function (e) {
-        return (
-            (e[(e.NO_USER_REVIEWS = 0)] = "NO_USER_REVIEWS"),
-            (e[(e.OVERWHELMINGLY_POSITIVE = 1)] = "OVERWHELMINGLY_POSITIVE"),
-            (e[(e.VERY_POSITIVE = 2)] = "VERY_POSITIVE"),
-            (e[(e.POSITIVE = 3)] = "POSITIVE"),
-            (e[(e.MOSTLY_POSITIVE = 4)] = "MOSTLY_POSITIVE"),
-            (e[(e.MIXED = 5)] = "MIXED"),
-            (e[(e.MOSTLY_NEGATIVE = 6)] = "MOSTLY_NEGATIVE"),
-            (e[(e.NEGATIVE = 7)] = "NEGATIVE"),
-            (e[(e.VERY_NEGATIVE = 8)] = "VERY_NEGATIVE"),
-            (e[(e.OVERWHELMINGLY_NEGATIVE = 9)] = "OVERWHELMINGLY_NEGATIVE"),
-            e
-        );
-    })({});
+var c = (((r = {})[(r.NONE = 0)] = "NONE"), (r[(r.WINDOWED_ONLY = 1)] = "WINDOWED_ONLY"), (r[(r.ALL = 2)] = "ALL"), r),
+    d =
+        (((s = {})[(s.NO_USER_REVIEWS = 0)] = "NO_USER_REVIEWS"),
+        (s[(s.OVERWHELMINGLY_POSITIVE = 1)] = "OVERWHELMINGLY_POSITIVE"),
+        (s[(s.VERY_POSITIVE = 2)] = "VERY_POSITIVE"),
+        (s[(s.POSITIVE = 3)] = "POSITIVE"),
+        (s[(s.MOSTLY_POSITIVE = 4)] = "MOSTLY_POSITIVE"),
+        (s[(s.MIXED = 5)] = "MIXED"),
+        (s[(s.MOSTLY_NEGATIVE = 6)] = "MOSTLY_NEGATIVE"),
+        (s[(s.NEGATIVE = 7)] = "NEGATIVE"),
+        (s[(s.VERY_NEGATIVE = 8)] = "VERY_NEGATIVE"),
+        (s[(s.OVERWHELMINGLY_NEGATIVE = 9)] = "OVERWHELMINGLY_NEGATIVE"),
+        s);

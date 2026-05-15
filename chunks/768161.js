@@ -1,174 +1,181 @@
-e.d(l, { default: () => I });
-var n = e(627968),
-    a = e(64700),
-    r = e(96337),
-    i = e(997101),
-    s = e(311907),
-    u = e(732955),
-    o = e(397927),
-    d = e(384904),
-    c = e(500380),
-    C = e(518977),
-    g = e(295405),
-    h = e(954571),
-    p = e(99696),
-    f = e(667455),
-    E = e(652215),
-    m = e(818348),
-    y = e(985018),
-    A = e(615305);
-let b = r.A.filter((t) => i.M.EU_COUNTRIES.has(t.alpha2)).map((t) => ({
-    id: t.alpha2,
-    value: t.alpha2,
-    label: (0, C.Gw)(t.alpha2),
-    leading: (0, n.jsx)("img", { alt: "", src: (0, c.t)(t.alpha2), style: { height: 18 } }),
+t.d(e, { default: () => D });
+var n = t(627968),
+    a = t(64700),
+    r = t(96337),
+    u = t(997101),
+    s = t(17928),
+    i = t(189213),
+    d = t(783878),
+    o = t(292666),
+    c = t(683071),
+    h = t(753390),
+    C = t(500380),
+    f = t(423764),
+    g = t(295405),
+    p = t(174459),
+    E = t(99696),
+    m = t(667455),
+    A = t(652215),
+    y = t(818348),
+    I = t(375708),
+    _ = t(776409),
+    S = t(133112);
+let b = r.A.filter((l) => u.M.EU_COUNTRIES.has(l.alpha2)).map((l) => ({
+    id: l.alpha2,
+    value: l.alpha2,
+    label: (0, f.Gw)(l.alpha2),
+    leading: (0, n.jsx)("img", { alt: "", src: (0, C.t)(l.alpha2), style: { height: 18 } }),
 }));
-function _(t) {
+function T(l) {
     let {
-        codeInput: l,
-        isEU: e,
+        codeInput: e,
+        isEU: t,
         postalCodeInput: a,
         selectedBillingCountry: r,
-        redemptionError: i,
+        redemptionError: u,
         codeError: s,
-        billingError: u,
-        onCodeInputChange: d,
-        onPostalCodeChange: c,
-        onBillingCountryChange: C,
-    } = t;
+        billingError: i,
+        onCodeInputChange: h,
+        onPostalCodeChange: C,
+        onBillingCountryChange: f,
+    } = l;
     return (0, n.jsxs)("div", {
-        className: A.Cl,
+        className: S.Xj,
         children: [
-            null != i && (0, n.jsx)(o.wx6, { type: "critical", children: i }),
+            null != u && (0, n.jsx)(c.w, { type: "critical", children: u }),
             (0, n.jsx)("span", {
-                className: A.ZY,
-                children: (0, n.jsx)(o.ksK, {
-                    label: y.intl.string(y.t["3Ujv7z"]),
+                className: S.ZY,
+                children: (0, n.jsx)(o.k, {
+                    label: I.intl.string(_.default["Bn/CZQ"]),
                     type: "text",
-                    value: l,
-                    onChange: d,
-                    placeholder: y.intl.string(y.t.wgFgAA),
+                    value: e,
+                    onChange: h,
+                    placeholder: I.intl.string(_.default.dSPkHo),
                     error: s,
                     fullWidth: !0,
                 }),
             }),
-            e
-                ? (0, n.jsx)(o.ZiE, {
+            t
+                ? (0, n.jsx)(d.Z, {
                       selectionMode: "single",
-                      label: y.intl.string(y.t.eDdrAD),
-                      placeholder: y.intl.string(y.t.eDdrAD),
+                      label: I.intl.string(I.t.eDdrAD),
+                      placeholder: I.intl.string(I.t.eDdrAD),
                       value: r,
-                      onSelectionChange: C,
+                      onSelectionChange: f,
                       options: b,
-                      errorMessage: u,
+                      errorMessage: i,
                   })
-                : (0, n.jsx)(o.ksK, {
-                      label: y.intl.string(y.t.mfpJ9m),
+                : (0, n.jsx)(o.k, {
+                      label: I.intl.string(_.default["3jjweL"]),
                       type: "text",
                       value: a,
-                      onChange: c,
-                      placeholder: y.intl.string(y.t["9xLNmi"]),
-                      error: u,
+                      onChange: C,
+                      placeholder: I.intl.string(_.default["B+/GvM"]),
+                      error: i,
                       fullWidth: !0,
                   }),
+            (0, n.jsx)("p", {
+                className: S.Bm,
+                children: I.intl.format(_.default.CCVlIb, {
+                    giftCardTermsUrl: A.X7G.PAID_TERMS,
+                    walletTermsUrl: A.X7G.PAID_TERMS,
+                }),
+            }),
         ],
     });
 }
-function I(t) {
+function D(l) {
     let {
-            transitionState: l,
-            onClose: e,
+            transitionState: e,
+            onClose: t,
             onComplete: r,
-            initialCode: i = "",
-            withRedemptionSuccessModal: o = !1,
-            source: b,
-            loadId: I,
-        } = t,
-        [x, S] = a.useState(i),
-        [T, k] = a.useState(!1),
-        [v, D] = a.useState(""),
-        [R, M] = a.useState(null),
-        [N, j] = a.useState(null),
-        [U, w] = a.useState(null),
-        [F, O] = a.useState(null),
-        { isEU: P, displayCountry: L, savedPostalCode: G } = (0, f.A)(),
-        z = (0, s.bG)([g.A], () => g.A.hasFetchedPaymentSources);
+            initialCode: u = "",
+            withRedemptionSuccessModal: d = !1,
+            source: o,
+            loadId: c,
+        } = l,
+        [b, D] = a.useState(u),
+        [R, j] = a.useState(!1),
+        [x, M] = a.useState(""),
+        [k, v] = a.useState(null),
+        [P, w] = a.useState(null),
+        [N, U] = a.useState(null),
+        [G, O] = a.useState(null),
+        { isEU: B, displayCountry: L, savedPostalCode: F } = (0, m.A)(),
+        H = (0, s.bG)([g.A], () => g.A.hasFetchedPaymentSources);
     a.useEffect(() => {
-        z || (0, d.$o)();
-    }, [z]),
+        H || (0, h.$o)();
+    }, [H]),
         a.useEffect(() => {
-            h.default.track(E.HAw.GIFT_CARD_REDEMPTION_START, { source: b, load_id: I });
-        }, [b, I]);
-    let H = a.useRef(!1);
+            p.default.track(A.HAw.GIFT_CARD_REDEMPTION_START, { source: o, load_id: c });
+        }, [o, c]);
+    let Z = a.useRef(!1);
     a.useEffect(() => {
-        H.current || null == G || "" !== v || ((H.current = !0), D(G), O(null));
-    }, [G, v]);
-    let W = y.intl.string(y.t.ToslbL),
-        B = a.useMemo(() => {
+        Z.current || null == F || "" !== x || ((Z.current = !0), M(F), O(null));
+    }, [F, x]);
+    let W = I.intl.string(_.default["26tjwd"]),
+        X = a.useMemo(() => {
             if (null != L)
                 return {
-                    text: (0, C.Gw)(L),
-                    leadingIcon: () => (0, n.jsx)("img", { alt: "", src: (0, c.t)(L), className: A.IM }),
+                    text: (0, f.Gw)(L),
+                    leadingIcon: () => (0, n.jsx)("img", { alt: "", src: (0, C.t)(L), className: S.IM }),
                 };
         }, [L]),
-        Y = a.useCallback((t) => {
-            S(t), w(null), j(null);
+        z = a.useCallback((l) => {
+            D(l), U(null), w(null);
         }, []),
-        Z = a.useCallback(async () => {
-            let t = x.trim(),
-                l = P ? null == R : "" === v.trim(),
+        Q = a.useCallback(async () => {
+            let l = b.trim(),
+                e = B ? null == k : "" === x.trim(),
                 n = !1;
             if (
-                ("" === t && (w(y.intl.string(y.t.NeFzT7)), (n = !0)),
-                l && (O(P ? y.intl.string(y.t["+bm+zE"]) : y.intl.string(y.t.LRlhb1)), (n = !0)),
+                ("" === l && (U(I.intl.string(_.default.PZDPvQ)), (n = !0)),
+                e && (O(B ? I.intl.string(I.t["+bm+zE"]) : I.intl.string(I.t.LRlhb1)), (n = !0)),
                 !n)
             ) {
-                k(!0), j(null);
+                j(!0), w(null);
                 try {
-                    let l = await (0, p.Ng)(t, P ? void 0 : v.trim(), P ? (R ?? void 0) : void 0);
-                    r?.(l),
-                        e(),
-                        h.default.track(E.HAw.GIFT_CARD_REDEMPTION_COMPLETED, { source: b, load_id: I }),
-                        o && (0, p.cV)({ amountRedeemed: l.amount, currencyCode: l.currency, loadId: I }),
-                        (0, d.$o)().then((t) => {
-                            let l = (t?.body ?? []).find((t) => t.type === m.he.TDS_WALLET);
-                            null != l && (0, d.YP)(l.id);
+                    let e = await (0, E.Ng)(l, B ? void 0 : x.trim(), B ? (k ?? void 0) : void 0);
+                    r?.(e),
+                        t(),
+                        p.default.track(A.HAw.GIFT_CARD_REDEMPTION_COMPLETED, { source: o, load_id: c }),
+                        d && (0, E.cV)({ amountRedeemed: e.amount, currencyCode: e.currency, loadId: c }),
+                        (0, h.$o)().then((l) => {
+                            let e = (l?.body ?? []).find((l) => l.type === y.he.TDS_WALLET);
+                            null != e && (0, h.YP)(e.id);
                         });
-                } catch (t) {
-                    j(y.intl.string(y.t.OBnXjv)),
-                        h.default.track(E.HAw.GIFT_CARD_REDEMPTION_FAILED, { source: b, load_id: I });
+                } catch (l) {
+                    w((0, E.tn)(l)), p.default.track(A.HAw.GIFT_CARD_REDEMPTION_FAILED, { source: o, load_id: c });
                     return;
                 } finally {
-                    k(!1);
+                    j(!1);
                 }
             }
-        }, [x, P, R, v, r, e, o, b, I]),
-        K = a.useCallback((t) => {
-            D(t), O(null), j(null);
+        }, [b, B, k, x, r, t, d, o, c]),
+        V = a.useCallback((l) => {
+            M(l), O(null), w(null);
         }, []),
-        V = a.useCallback((t) => {
-            M(t), O(null), j(null);
+        Y = a.useCallback((l) => {
+            v(l), O(null), w(null);
         }, []);
-    return (0, n.jsx)(u.aFV, {
-        transitionState: l,
-        onClose: e,
+    return (0, n.jsx)(i.Modal, {
+        transitionState: e,
+        onClose: t,
         title: W,
-        subtitle: B,
-        input: (0, n.jsx)(_, {
-            codeInput: x,
-            isEU: P,
-            postalCodeInput: v,
-            selectedBillingCountry: R,
-            redemptionError: N,
-            codeError: U,
-            billingError: F,
-            onCodeInputChange: Y,
-            onPostalCodeChange: K,
-            onBillingCountryChange: V,
+        subtitle: X,
+        input: (0, n.jsx)(T, {
+            codeInput: b,
+            isEU: B,
+            postalCodeInput: x,
+            selectedBillingCountry: k,
+            redemptionError: P,
+            codeError: N,
+            billingError: G,
+            onCodeInputChange: z,
+            onPostalCodeChange: V,
+            onBillingCountryChange: Y,
         }),
-        actions: [
-            { variant: "secondary", size: "md", text: y.intl.string(y.t["13/7kX"]), onClick: e },
-            { variant: "primary", size: "md", text: y.intl.string(y.t.H2hHyf), loading: T, onClick: Z },
-        ],
+        actionBarInput: (0, n.jsx)("span", {}),
+        actions: [{ variant: "primary", size: "md", text: I.intl.string(_.default.hnRau6), loading: R, onClick: Q }],
     });
 }

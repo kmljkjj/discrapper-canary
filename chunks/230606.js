@@ -1,9 +1,7 @@
 "use strict";
-var r = n(860511),
-    i = n(339626),
-    a = function (e) {
-        return i(e) ? e : void 0;
-    };
+var i = n(860511),
+    r = n(339626);
 e.exports = function (e, t) {
-    return arguments.length < 2 ? a(r[e]) : r[e] && r[e][t];
+    var n;
+    return arguments.length < 2 ? (r((n = i[e])) ? n : void 0) : i[e] && i[e][t];
 };

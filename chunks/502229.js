@@ -1,80 +1,80 @@
 "use strict";
-n.d(t, { A: () => S, D: () => y });
-var r = n(627968);
+n.d(t, { A: () => S, D: () => T });
+var i = n(627968);
 n(64700);
-var i = n(397927),
-    a = n(73153),
-    s = n(973654),
+var r = n(192308),
+    s = n(228366),
+    a = n(973654),
     o = n(287809),
     l = n(954571),
-    u = n(723702),
-    c = n(955572),
-    d = n(775602),
-    _ = n(652215),
-    f = n(185928);
-let p = window.matchMedia("(prefers-reduced-motion: reduce)"),
-    h = window.matchMedia("(prefers-contrast: more)"),
-    m = window.matchMedia("(prefers-contrast: less)"),
+    _ = n(723702),
+    d = n(955572),
+    u = n(775602),
+    c = n(652215),
+    E = n(185928);
+let h = window.matchMedia("(prefers-reduced-motion: reduce)"),
+    m = window.matchMedia("(prefers-contrast: more)"),
+    f = window.matchMedia("(prefers-contrast: less)"),
     g = window.matchMedia("(prefers-color-scheme: dark)"),
-    E = window.matchMedia("(prefers-color-scheme: light)"),
+    I = window.matchMedia("(prefers-color-scheme: light)"),
     A = window.matchMedia("(forced-colors: active)"),
-    I = 5;
+    p = 5;
 function T() {
-    let e = o.default.getCurrentUser();
-    return null == e || Date.now() - e.createdAt < 864e5;
-}
-function y() {
-    return "windows" === (0, u.getOS)();
+    return "windows" === (0, _.getOS)();
 }
 let S = {
     initBasic() {
-        p.addListener(this.handleSystemPrefersReducedMotionChanged),
-            this.handleSystemPrefersReducedMotionChanged(p),
+        h.addListener(this.handleSystemPrefersReducedMotionChanged),
+            this.handleSystemPrefersReducedMotionChanged(h),
             g.addListener(this.handleSystemColorPreferencesChanged),
-            E.addListener(this.handleSystemColorPreferencesChanged),
+            I.addListener(this.handleSystemColorPreferencesChanged),
             A.addListener(this.handleSystemColorPreferencesChanged),
             this.handleSystemColorPreferencesChanged(),
-            h.addListener(this.handleSystemPrefersContrastChanged),
             m.addListener(this.handleSystemPrefersContrastChanged),
+            f.addListener(this.handleSystemPrefersContrastChanged),
             this.handleSystemPrefersContrastChanged();
     },
     init() {
         this.initBasic(),
-            a.h.subscribe("ACCESSIBILITY_COLORBLIND_TOGGLE", () => {
-                l.default.track(_.HAw.LOCAL_SETTINGS_UPDATED, { colorblind_enabled: d.A.colorblindMode });
+            s.h.subscribe("ACCESSIBILITY_COLORBLIND_TOGGLE", () => {
+                l.default.track(c.HAw.LOCAL_SETTINGS_UPDATED, { colorblind_enabled: u.A.colorblindMode });
             }),
-            a.h.subscribe("ACCESSIBILITY_SET_SATURATION", (e) => {
-                l.default.track(_.HAw.LOCAL_SETTINGS_UPDATED, { saturation_level: e.saturation });
+            s.h.subscribe("ACCESSIBILITY_SET_SATURATION", (e) => {
+                l.default.track(c.HAw.LOCAL_SETTINGS_UPDATED, { saturation_level: e.saturation });
             });
     },
     maybeShowKeyboardNavigationExplainerModal() {
-        (I = Math.max(I - 1, 0)),
-            T() ||
-                d.A.keyboardNavigationExplainerModalSeen ||
-                0 !== I ||
-                (0, i.mMO)(async () => {
-                    let { default: e } = await n.e("98186").then(n.bind(n, 645905));
-                    return (t) => (0, r.jsx)(e, { ...t });
+        let e;
+        (p = Math.max(p - 1, 0)),
+            null == (e = o.default.getCurrentUser()) ||
+                Date.now() - e.createdAt < 864e5 ||
+                u.A.keyboardNavigationExplainerModalSeen ||
+                0 !== p ||
+                (0, r.openModalLazy)(async () => {
+                    let { default: e } = await Promise.all([n.e("55805"), n.e("63309"), n.e("98186")]).then(
+                        n.bind(n, 645905),
+                    );
+                    return (t) => (0, i.jsx)(e, { ...t });
                 });
     },
     handleSystemPrefersReducedMotionChanged(e) {
-        a.h.wait(() => {
-            c.RJ(e.matches ? "reduce" : "no-preference");
+        s.h.wait(() => {
+            d.RJ(e.matches ? "reduce" : "no-preference");
         });
     },
     handleSystemColorPreferencesChanged() {
-        let e = f.Fc.NO_PREFERENCE;
-        g.matches ? (e = f.Fc.DARK) : E.matches && (e = f.Fc.LIGHT);
-        let t = (!u.isPlatformEmbedded || y()) && A.matches ? "active" : "none";
-        a.h.wait(() => {
-            s.LA(e), c.RI(t);
+        let e = E.Fc.NO_PREFERENCE;
+        g.matches ? (e = E.Fc.DARK) : I.matches && (e = E.Fc.LIGHT);
+        let t = (!_.isPlatformEmbedded || T()) && A.matches ? "active" : "none";
+        s.h.wait(() => {
+            a.LA(e), d.RI(t);
         });
     },
     handleSystemPrefersContrastChanged() {
         let e = "no-preference";
-        h.matches ? (e = "more") : m.matches && (e = "less"),
-            a.h.wait(() => {
-                c.Jb(e);
+        m.matches ? (e = "more") : f.matches && (e = "less"),
+            s.h.wait(() => {
+                d.Jb(e);
             });
     },
 };

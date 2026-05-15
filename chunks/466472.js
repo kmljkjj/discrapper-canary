@@ -1,28 +1,28 @@
-n.d(t, { JN: () => l, SA: () => a, UQ: () => o, a8: () => s });
-var i = n(73153),
-    r = n(962052);
-function a(e) {
-    r.A.queryDirectory(e, (t, n) => {
-        null == t && null != n && i.h.dispatch({ type: "INSTALLATION_LOCATION_ADD", path: e, metadata: n });
+e.d(A, { JN: () => T, SA: () => p, UQ: () => u, a8: () => c });
+var n = e(228366),
+    i = e(962052);
+function p(t) {
+    i.A.queryDirectory(t, (A, e) => {
+        null == A && null != e && n.h.dispatch({ type: "INSTALLATION_LOCATION_ADD", path: t, metadata: e });
     });
 }
-function l(e) {
-    i.h.dispatch({ type: "INSTALLATION_LOCATION_REMOVE", path: e });
+function T(t) {
+    n.h.dispatch({ type: "INSTALLATION_LOCATION_REMOVE", path: t });
 }
-function s(e, t) {
-    let { label: n, isDefault: r } = t;
-    i.h.dispatch({ type: "INSTALLATION_LOCATION_UPDATE", path: e, label: n, isDefault: r });
+function c(t, A) {
+    let { label: e, isDefault: i } = A;
+    n.h.dispatch({ type: "INSTALLATION_LOCATION_UPDATE", path: t, label: e, isDefault: i });
 }
-function o(e) {
-    let t = {},
-        n = 0;
-    for (let a of e)
-        null != a &&
-            "string" == typeof a &&
-            r.A.queryDirectory(a, (r, l) => {
-                ++n,
-                    null == r && null != l && (t[a] = l),
-                    n === e.length &&
-                        i.h.dispatch({ type: "INSTALLATION_LOCATION_FETCH_METADATA", metadataPayload: t });
+function u(t) {
+    let A = {},
+        e = 0;
+    for (let p of t)
+        null != p &&
+            "string" == typeof p &&
+            i.A.queryDirectory(p, (i, T) => {
+                ++e,
+                    null == i && null != T && (A[p] = T),
+                    e === t.length &&
+                        n.h.dispatch({ type: "INSTALLATION_LOCATION_FETCH_METADATA", metadataPayload: A });
             });
 }

@@ -1,9 +1,9 @@
 "use strict";
-n.d(t, { Ay: () => d, JM: () => o, LD: () => l });
-var r = n(735438),
-    i = n.n(r),
-    a = n(635377),
-    s = n.n(a);
+n.d(t, { Ay: () => c, JM: () => o, LD: () => l });
+var i = n(735438),
+    r = n.n(i),
+    s = n(635377),
+    a = n.n(s);
 let o = 100,
     l = [[0, 99]];
 function u(e) {
@@ -15,8 +15,7 @@ function u(e) {
         t
     );
 }
-let c = 5;
-class d {
+class c {
     _subscriptions = {};
     _onChange;
     constructor(e) {
@@ -29,13 +28,13 @@ class d {
         return u(this._get(e));
     }
     _get(e) {
-        return this._subscriptions[e] ?? new (s())({ max: c });
+        return this._subscriptions[e] ?? new (a())({ max: 5 });
     }
     clear(e) {
         delete this._subscriptions[e];
     }
     subscribe(e, t, n) {
-        let r = this._get(e);
-        return !i().isEqual(r.get(t), n) && (r.set(t, n), (this._subscriptions[e] = r), this._onChange(e, u(r)), !0);
+        let i = this._get(e);
+        return !r().isEqual(i.get(t), n) && (i.set(t, n), (this._subscriptions[e] = i), this._onChange(e, u(i)), !0);
     }
 }

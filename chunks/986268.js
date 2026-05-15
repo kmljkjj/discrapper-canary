@@ -1,92 +1,90 @@
-"use strict";
-n.d(t, { A: () => y });
-var r = n(627968);
-n(64700);
-var i = n(503698),
-    a = n.n(i),
-    s = n(311907),
-    o = n(435371),
-    l = n(397927),
-    u = n(454938),
-    c = n(714991),
-    d = n(57991),
-    _ = n(509536),
-    f = n(2697),
-    p = n(696451),
-    h = n(287809),
-    m = n(473145),
-    g = n(652215),
-    E = n(985018),
-    A = n(617286);
-function I(e) {
-    let { guild: t, isBannerVisible: n, disableBoostClick: i } = e,
-        a = (0, s.bG)([h.default, p.Ay], () => {
-            let e = h.default.getCurrentUser();
-            return p.Ay.isMember(t.id, e?.id);
+e.d(s, { A: () => g });
+var t = e(627968);
+e(64700);
+var l = e(503698),
+    o = e.n(l),
+    r = e(17928),
+    n = e(459192),
+    a = e(939249),
+    d = e(781696),
+    u = e(454938),
+    c = e(714991),
+    C = e(107773),
+    b = e(509536),
+    m = e(2697),
+    p = e(696451),
+    A = e(287809),
+    N = e(473145),
+    h = e(652215),
+    j = e(375708),
+    E = e(330243);
+function _(i) {
+    let { guild: s, isBannerVisible: e, disableBoostClick: l } = i,
+        o = (0, r.bG)([A.default, p.Ay], () => {
+            let i = A.default.getCurrentUser();
+            return p.Ay.isMember(s.id, i?.id);
         }),
-        { premiumTier: u, premiumSubscriberCount: c } = t;
-    if (0 === c && u === g.TVA.NONE) return null;
-    let d = (e) => {
-            e.stopPropagation(),
-                e.preventDefault(),
-                a &&
-                    !i &&
-                    (0, _.K)({
-                        guildId: t.id,
-                        location: { section: g.JJy.GUILD_HEADER, object: g.ZSU.BOOST_GEM_ICON },
-                    });
-        },
-        I = u === g.TVA.NONE ? E.intl.string(E.t.c2wsn6) : m.gb(u);
-    return (0, r.jsx)("div", {
-        className: A._C,
-        children: (0, r.jsx)(o.un, {
-            title: I,
-            body: E.intl.format(E.t.If4iTS, { subscriberCount: c }),
+        { premiumTier: d, premiumSubscriberCount: u } = s;
+    if (0 === u && d === h.TVA.NONE) return null;
+    let c = d === h.TVA.NONE ? j.intl.string(j.t.c2wsn6) : N.gb(d);
+    return (0, t.jsx)("div", {
+        className: E._C,
+        children: (0, t.jsx)(n.u, {
+            title: c,
+            body: j.intl.format(j.t.If4iTS, { subscriberCount: u }),
             position: "bottom",
-            children: (0, r.jsx)(l.DUT, {
-                className: A.__invalid_premiumGuildIcon,
-                onClick: d,
-                children: (0, r.jsx)(f.A, {
+            children: (0, t.jsx)(a.D, {
+                className: E.__invalid_premiumGuildIcon,
+                onClick: (i) => {
+                    i.stopPropagation(),
+                        i.preventDefault(),
+                        o &&
+                            !l &&
+                            (0, b.K4)({
+                                guildId: s.id,
+                                location: { section: h.JJy.GUILD_HEADER, object: h.ZSU.BOOST_GEM_ICON },
+                            });
+                },
+                children: (0, t.jsx)(m.A, {
                     size: 18,
-                    premiumTier: u,
-                    iconBackgroundClassName: n ? A.z_ : void 0,
-                    iconClassName: n && u !== g.TVA.TIER_3 ? A.S1 : null,
+                    premiumTier: d,
+                    iconBackgroundClassName: e ? E.z_ : void 0,
+                    iconClassName: e && d !== h.TVA.TIER_3 ? E.S1 : null,
                 }),
             }),
         }),
     });
 }
-function T(e) {
-    let { guild: t, disableColor: n, disableBoostClick: i } = e;
-    return (0, u.A)(t)
-        ? (0, r.jsx)("div", {
-              className: A.Qv,
-              children: (0, r.jsx)(d.A, {
-                  guild: t,
+function f(i) {
+    let { guild: s, disableColor: e, disableBoostClick: l } = i;
+    return (0, u.A)(s)
+        ? (0, t.jsx)("div", {
+              className: E.Qv,
+              children: (0, t.jsx)(C.A, {
+                  guild: s,
                   size: 18,
                   tooltipPosition: "bottom",
-                  tooltipColor: l.STz.Colors.PRIMARY,
-                  className: a()(A.n2, { [A.cE]: n }),
-                  disableBoostClick: i,
+                  tooltipColor: d.ST.Colors.PRIMARY,
+                  className: o()(E.n2, { [E.cE]: e }),
+                  disableBoostClick: l,
               }),
           })
-        : (0, r.jsx)("div", {
-              className: A._C,
-              children: (0, r.jsx)(c.A, {
-                  guild: t,
+        : (0, t.jsx)("div", {
+              className: E._C,
+              children: (0, t.jsx)(c.A, {
+                  guild: s,
                   size: 18,
                   tooltipPosition: "bottom",
-                  tooltipColor: l.STz.Colors.PRIMARY,
-                  className: a()(A.n2, { [A.cE]: n }),
+                  tooltipColor: d.ST.Colors.PRIMARY,
+                  className: o()(E.n2, { [E.cE]: e }),
               }),
           });
 }
-function y(e) {
-    let { guild: t, disableBoostClick: n } = e,
-        i = !1;
-    return (0, u.A)(t)
-        ? (0, r.jsx)(T, { guild: t, disableColor: !1, disableBoostClick: n })
-        : t.features.has(g.GuildFeatures.VERIFIED) || t.features.has(g.GuildFeatures.PARTNERED)
-          ? (0, r.jsx)(T, { guild: t, disableColor: !i })
-          : (0, r.jsx)(I, { guild: t, isBannerVisible: i, disableBoostClick: n });
+function g(i) {
+    let { guild: s, disableBoostClick: e } = i;
+    return (0, u.A)(s)
+        ? (0, t.jsx)(f, { guild: s, disableColor: !1, disableBoostClick: e })
+        : s.features.has(h.GuildFeatures.VERIFIED) || s.features.has(h.GuildFeatures.PARTNERED)
+          ? (0, t.jsx)(f, { guild: s, disableColor: !0 })
+          : (0, t.jsx)(_, { guild: s, isBannerVisible: !1, disableBoostClick: e });
 }

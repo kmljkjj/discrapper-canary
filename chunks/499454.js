@@ -1,33 +1,46 @@
-n.d(t, { h: () => m });
+"use strict";
+n.d(t, { h: () => _ });
 var i = n(627968);
 n(64700);
-var l = n(397927),
-    a = n(287809),
-    r = n(166403),
-    s = n(203982),
-    o = n(927578),
-    d = n(598653),
+var r = n(192308),
+    s = n(287809),
+    a = n(166403),
+    o = n(625494),
+    l = n(428262),
+    u = n(598653),
     c = n(788868),
-    u = n(652215);
-function m(e) {
-    let { processedCode: t, channelContext: m, customGiftMessage: _, giftInfo: h } = e,
+    d = n(652215);
+function _(e) {
+    let { processedCode: t, channelContext: _, customGiftMessage: f, giftInfo: h } = e,
         p = !1,
-        g = null,
-        A = a.default.getCurrentUser(),
-        f = (0, o.CC)(A?.premiumType, c.PremiumTypes.TIER_0);
-    (0, l.mMO)(
+        E = null,
+        m = s.default.getCurrentUser(),
+        g = (0, l.CC)(m?.premiumType, c.PremiumTypes.TIER_0);
+    (0, r.openModalLazy)(
         async () => {
-            let { default: e } = await n.e("14439").then(n.bind(n, 67327));
+            let { default: e } = await Promise.all([
+                n.e("94513"),
+                n.e("71670"),
+                n.e("73646"),
+                n.e("10471"),
+                n.e("35429"),
+                n.e("63645"),
+                n.e("834"),
+                n.e("25279"),
+                n.e("11133"),
+                n.e("98329"),
+                n.e("7200"),
+            ]).then(n.bind(n, 361845));
             return (n) =>
                 (0, i.jsx)(e, {
                     code: t,
-                    channelContext: m,
-                    customGiftMessage: _,
+                    channelContext: _,
+                    customGiftMessage: f,
                     emojiName: h?.emoji?.name,
                     soundId: h?.sound?.id,
                     onComplete: (e, t) => {
-                        (g = e),
-                            t && ((p = t), e.isSubscription && null == r.A.getPremiumSubscription(!1) && (0, d.o)(!0));
+                        (E = e),
+                            t && ((p = t), e.isSubscription && null == a.A.getPremiumSubscription(!1) && (0, u.o)(!0));
                     },
                     ...n,
                 });
@@ -35,11 +48,11 @@ function m(e) {
         {
             onCloseCallback: () => {
                 p &&
-                    null != g &&
-                    !f &&
-                    g.isSubscription &&
-                    g?.subscriptionPlan?.premiumSubscriptionType === c.PremiumTypes.TIER_2 &&
-                    s._.dispatch(u.jej.PREMIUM_SUBSCRIPTION_CREATED);
+                    null != E &&
+                    !g &&
+                    E.isSubscription &&
+                    E?.subscriptionPlan?.premiumSubscriptionType === c.PremiumTypes.TIER_2 &&
+                    o._.dispatch(d.jej.PREMIUM_SUBSCRIPTION_CREATED);
             },
         },
     );

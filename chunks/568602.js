@@ -1,13 +1,13 @@
 "use strict";
 n.d(t, { b: () => l });
-var r = n(627968),
-    i = n(64700),
-    a = n(735438),
-    s = n.n(a),
+var i = n(627968),
+    r = n(64700),
+    s = n(735438),
+    a = n.n(s),
     o = n(775602);
-class l extends i.Component {
+class l extends r.Component {
     static defaultProps = { isShaking: !0, intensity: 5 };
-    ref = i.createRef();
+    ref = r.createRef();
     animationFrame;
     shouldRenderFrame = !0;
     componentDidMount() {
@@ -32,14 +32,14 @@ class l extends i.Component {
         if (!t) return;
         let n = this.ref.current;
         if (this.shouldRenderFrame && null != n) {
-            let t = s().random(-e, e, !0),
-                r = s().random(-e, e, !0);
-            n.style.transform = o.A.useReducedMotion ? "" : `translate3d(${t}px,${r}px,0px)`;
+            let t = a().random(-e, e, !0),
+                i = a().random(-e, e, !0);
+            n.style.transform = o.A.useReducedMotion ? "" : `translate3d(${t}px,${i}px,0px)`;
         }
         (this.shouldRenderFrame = !this.shouldRenderFrame), (this.animationFrame = requestAnimationFrame(this.animate));
     };
     render() {
         let { className: e, children: t } = this.props;
-        return (0, r.jsx)("div", { className: e, ref: this.ref, children: t });
+        return (0, i.jsx)("div", { className: e, ref: this.ref, children: t });
     }
 }

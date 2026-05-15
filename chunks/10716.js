@@ -1,91 +1,84 @@
 "use strict";
-n.d(t, { $: () => c, A: () => T });
-var r = n(311907),
-    i = n(73153),
+n.d(t, { $: () => u, A: () => m });
+var i,
+    r = n(17928),
+    s = n(228366),
     a = n(20015),
-    s = n(253932),
-    o = n(652215);
-function l() {
+    o = n(253932),
+    l = n(652215);
+function d() {
     return { lastUsedObject: {}, useActivityUrlOverride: !1, activityUrlOverride: null, filter: "" };
 }
-let u = l();
-var c = (function (e) {
-    return (e.INITIALIZED = "INITIALIZED"), (e.LOADING = "LOADING"), (e.LOADED = "LOADED"), (e.ERROR = "ERROR"), e;
-})({});
-let d = "INITIALIZED",
-    _ = [];
-function f() {
-    (u = l()), (d = "INITIALIZED"), (_ = []);
-}
-function p() {
-    u.useActivityUrlOverride = !u.useActivityUrlOverride;
-}
-function h(e) {
-    let { activityUrlOverride: t } = e;
-    u.activityUrlOverride = t;
-}
-function m(e) {
-    let { applicationId: t, timestamp: n } = e;
-    if (null == _.find((e) => e.id === t)) return !1;
-    u.lastUsedObject[t] = n;
-}
-function g(e) {
-    let { applications: t } = e;
-    (d = "LOADED"), (_ = t.filter((e) => (0, a.n)(e, o.gfo.EMBEDDED)));
-}
-function E(e) {
-    let { type: t } = e;
-    d = "ERROR";
-}
-function A(e) {
-    let { filter: t } = e;
-    u.filter = t;
-}
-class I extends r.Ay.PersistedStore {
+let _ = d();
+var u =
+    (((i = {}).INITIALIZED = "INITIALIZED"), (i.LOADING = "LOADING"), (i.LOADED = "LOADED"), (i.ERROR = "ERROR"), i);
+let c = "INITIALIZED",
+    E = [];
+class h extends r.Ay.PersistedStore {
     static displayName = "DeveloperActivityShelfStore";
     static persistKey = "DeveloperActivityShelfStore";
     initialize(e) {
-        u = { ...l(), ...(e ?? {}) };
+        _ = { ...d(), ...(e ?? {}) };
     }
     static migrations = [(e) => (delete e.isEnabled, { ...e })];
     getState() {
-        return u;
+        return _;
     }
     getIsEnabled() {
-        return s.Q_.getSetting() && _.length > 0;
+        return o.Q_.getSetting() && E.length > 0;
     }
     getLastUsedObject() {
-        return u.lastUsedObject;
+        return _.lastUsedObject;
     }
     getUseActivityUrlOverride() {
-        return this.getIsEnabled() && u.useActivityUrlOverride;
+        return this.getIsEnabled() && _.useActivityUrlOverride;
     }
     getActivityUrlOverride() {
-        return this.getIsEnabled() ? u.activityUrlOverride : null;
+        return this.getIsEnabled() ? _.activityUrlOverride : null;
     }
     getFetchState() {
-        return d;
+        return c;
     }
     getFilter() {
-        return this.getIsEnabled() ? u.filter : "";
+        return this.getIsEnabled() ? _.filter : "";
     }
     getDeveloperShelfItems() {
-        return this.getIsEnabled() ? _ : [];
+        return this.getIsEnabled() ? E : [];
     }
     inDevModeForApplication(e) {
-        return this.getIsEnabled() && null != _.find((t) => t.id === e);
+        return this.getIsEnabled() && null != E.find((t) => t.id === e);
     }
 }
-let T = new I(i.h, {
-    LOGOUT: f,
-    DEVELOPER_ACTIVITY_SHELF_TOGGLE_USE_ACTIVITY_URL_OVERRIDE: p,
-    DEVELOPER_ACTIVITY_SHELF_SET_ACTIVITY_URL_OVERRIDE: h,
-    DEVELOPER_ACTIVITY_SHELF_MARK_ACTIVITY_USED: m,
-    DEVELOPER_ACTIVITY_SHELF_FETCH_START() {
-        d = "LOADING";
+let m = new h(s.h, {
+    LOGOUT: function () {
+        (_ = d()), (c = "INITIALIZED"), (E = []);
     },
-    DEVELOPER_ACTIVITY_SHELF_FETCH_SUCCESS: g,
-    DEVELOPER_ACTIVITY_SHELF_FETCH_FAIL: E,
-    DEVELOPER_ACTIVITY_SHELF_UPDATE_FILTER: A,
+    DEVELOPER_ACTIVITY_SHELF_TOGGLE_USE_ACTIVITY_URL_OVERRIDE: function () {
+        _.useActivityUrlOverride = !_.useActivityUrlOverride;
+    },
+    DEVELOPER_ACTIVITY_SHELF_SET_ACTIVITY_URL_OVERRIDE: function (e) {
+        let { activityUrlOverride: t } = e;
+        _.activityUrlOverride = t;
+    },
+    DEVELOPER_ACTIVITY_SHELF_MARK_ACTIVITY_USED: function (e) {
+        let { applicationId: t, timestamp: n } = e;
+        if (null == E.find((e) => e.id === t)) return !1;
+        _.lastUsedObject[t] = n;
+    },
+    DEVELOPER_ACTIVITY_SHELF_FETCH_START() {
+        c = "LOADING";
+    },
+    DEVELOPER_ACTIVITY_SHELF_FETCH_SUCCESS: function (e) {
+        let { applications: t } = e;
+        (c = "LOADED"), (E = t.filter((e) => (0, a.n)(e, l.gfo.EMBEDDED)));
+    },
+    DEVELOPER_ACTIVITY_SHELF_FETCH_FAIL: function (e) {
+        let { type: t } = e;
+        c = "ERROR";
+    },
+    DEVELOPER_ACTIVITY_SHELF_UPDATE_FILTER: function (e) {
+        let { filter: t } = e;
+        _.filter = t;
+    },
     USER_SETTINGS_PROTO_UPDATE() {},
 });

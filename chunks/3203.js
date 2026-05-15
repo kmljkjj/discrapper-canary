@@ -1,35 +1,35 @@
 "use strict";
-n.d(t, { V: () => o });
-var r = n(627968),
+n.d(t, { V: () => r });
+var l = n(627968),
     i = n(64700),
-    a = n(744682);
-let s = { click: { name: "click", start: 0, duration: 66 }, hover: { name: "hover", start: 90, duration: 40 } },
-    o = () => {
+    s = n(744682);
+let a = { click: { name: "click", start: 0, duration: 66 }, hover: { name: "hover", start: 90, duration: 40 } },
+    r = () => {
         let e = i.useRef(null),
             t = i.useCallback(() => {
                 null != e.current && e.current.play("click");
             }, []),
-            o = i.useCallback(() => {
+            r = i.useCallback(() => {
                 null != e.current && e.current.play("hover");
             }, []),
-            l = i.useCallback(() => {
+            o = i.useCallback(() => {
                 null != e.current && e.current.stopIfPlaying("hover");
             }, []),
-            u = i.useCallback(
+            c = i.useCallback(
                 (t) =>
-                    (0, r.jsx)(a.P, {
+                    (0, l.jsx)(s.P, {
                         ...t,
                         src: () => n.e("78205").then(n.t.bind(n, 582636, 19)),
                         ref: e,
-                        markers: s,
+                        markers: a,
                     }),
                 [],
             );
         return {
-            events: { onMouseEnter: o, onMouseLeave: l },
+            events: { onMouseEnter: r, onMouseLeave: o },
             play: t,
             getDuration: i.useCallback(() => e.current?.getDuration(), []),
             getCurrentFrame: i.useCallback(() => e.current?.getCurrentFrame() ?? null, []),
-            Component: u,
+            Component: c,
         };
     };

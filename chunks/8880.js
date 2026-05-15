@@ -1,15 +1,14 @@
-"use strict";
 n.d(t, { A: () => o });
-var i = n(311907),
-    s = n(73153);
-let l = { speechRate: 1, currentMessage: null },
-    r = l;
+var i = n(17928),
+    l = n(228366);
+let s = { speechRate: 1, currentMessage: null },
+    r = s;
 class a extends i.Ay.DeviceSettingsStore {
     static displayName = "TTSStore";
     static persistKey = "TTSStore";
     static migrations = [];
     initialize(e) {
-        r = { ...l, ...(e ?? null) };
+        r = { ...s, ...(e ?? null) };
     }
     isSpeakingMessage(e, t) {
         let { currentMessage: n } = r;
@@ -26,7 +25,7 @@ class a extends i.Ay.DeviceSettingsStore {
     }
 }
 let o = new a(
-    s.h,
+    l.h,
     __OVERLAY__
         ? {}
         : {

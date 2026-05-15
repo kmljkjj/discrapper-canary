@@ -1,6 +1,6 @@
 e.exports = function (e) {
     let t = e.regex,
-        n = ["GET", "POST", "HEAD", "PUT", "DELETE", "CONNECT", "OPTIONS", "PATCH", "TRACE"];
+        a = ["GET", "POST", "HEAD", "PUT", "DELETE", "CONNECT", "OPTIONS", "PATCH", "TRACE"];
     return {
         name: "Apache Access Log",
         contains: [
@@ -8,9 +8,9 @@ e.exports = function (e) {
             { className: "number", begin: /\b\d+\b/, relevance: 0 },
             {
                 className: "string",
-                begin: t.concat(/"/, t.either(...n)),
+                begin: t.concat(/"/, t.either(...a)),
                 end: /"/,
-                keywords: n,
+                keywords: a,
                 illegal: /\n/,
                 relevance: 5,
                 contains: [{ begin: /HTTP\/[12]\.\d'/, relevance: 5 }],

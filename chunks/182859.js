@@ -1,93 +1,96 @@
-n.d(t, { A: () => A });
-var i = n(627968),
-    s = n(64700),
-    l = n(503698),
-    a = n.n(l),
-    r = n(732955),
-    o = n(397927),
-    d = n(688810),
-    c = n(893598),
-    u = n(136708),
-    _ = n(985018),
-    m = n(636405),
-    g = n(519636);
-function A(e) {
+i.d(s, { A: () => k });
+var e = i(627968),
+    l = i(64700),
+    n = i(503698),
+    t = i.n(n),
+    c = i(408278),
+    r = i(192308),
+    d = i(939249),
+    o = i(834730),
+    m = i(789645),
+    x = i(688810),
+    u = i(821209),
+    h = i(853513),
+    j = i(985018),
+    v = i(437326),
+    b = i(519636);
+function k(a) {
     let {
-            guildId: t,
-            variant: l = "admin",
-            className: A,
-            analyticsLocation: x,
-            videoPlacement: h = "sidebar",
-            onDismiss: p,
-        } = e,
-        { analyticsLocations: T } = (0, d.Ay)(),
-        E = s.useCallback(() => {
-            (0, o.mMO)(async () => {
-                let { default: e } = await n.e("64251").then(n.bind(n, 430326));
-                return (n) =>
-                    (0, i.jsx)(e, {
-                        ...n,
-                        guildId: t,
-                        analyticsLocation: x,
-                        videoPlacement: h,
-                        sourceAnalyticsLocations: T,
+            guildId: s,
+            variant: n = "admin",
+            className: k,
+            analyticsLocation: N,
+            videoPlacement: p = "sidebar",
+            onDismiss: g,
+        } = a,
+        { analyticsLocations: y } = (0, x.Ay)(),
+        A = l.useCallback(() => {
+            (0, r.openModalLazy)(async () => {
+                let { default: a } = await Promise.all([i.e("6836"), i.e("85810")]).then(i.bind(i, 872233));
+                return (i) =>
+                    (0, e.jsx)(a, {
+                        ...i,
+                        guildId: s,
+                        analyticsLocation: N,
+                        videoPlacement: p,
+                        sourceAnalyticsLocations: y,
                     });
             });
-        }, [x, T, t, h]);
-    return "member" === l
-        ? (0, i.jsxs)(o.DUT, {
-              className: a()(m.iR, A),
-              onClick: E,
-              "aria-label": _.intl.string(u.default["103aY+"]),
+        }, [N, y, s, p]);
+    return "member" === n
+        ? (0, e.jsxs)(d.D, {
+              className: t()(v.iR, k),
+              onClick: A,
+              "aria-label": j.intl.string(h.default["103aY+"]),
               children: [
-                  (0, i.jsx)("img", { alt: "", className: m.xn, src: g.A }),
-                  (0, i.jsx)("div", { className: m.b1 }),
-                  (0, i.jsx)("div", {
-                      className: m.i5,
-                      children: (0, i.jsx)(o.Text, {
+                  (0, e.jsx)("img", { alt: "", className: v.xn, src: b.A }),
+                  (0, e.jsx)("div", { className: v.b1 }),
+                  (0, e.jsx)("div", {
+                      className: v.i5,
+                      children: (0, e.jsx)(o.E, {
                           variant: "text-xs/semibold",
                           color: "always-white",
-                          children: _.intl.string(u.default.diMhWc),
+                          children: j.intl.string(h.default.diMhWc),
                       }),
                   }),
-                  (0, i.jsx)(c.A, { className: m.Rr, inactive: !0, renderLinkComponent: () => null }),
+                  (0, e.jsx)(u.A, { className: v.Rr, inactive: !0, renderLinkComponent: () => null }),
               ],
           })
-        : (0, i.jsxs)("div", {
-              className: m.kL,
+        : (0, e.jsxs)("div", {
+              className: v.kL,
               children: [
-                  (0, i.jsx)("div", {
-                      className: a()(m.X8, "theme-dark"),
-                      children: (0, i.jsx)(r.K0, {
+                  (0, e.jsx)("div", {
+                      className: t()(v.X8, "theme-dark"),
+                      children: (0, e.jsx)(c.K, {
                           variant: "icon-only",
                           size: "md",
-                          "aria-label": _.intl.string(_.t.WAI6xu),
-                          onClick: p,
-                          icon: o.PGe,
+                          "aria-label": j.intl.string(j.t.WAI6xu),
+                          onClick: g,
+                          icon: m.P,
                       }),
                   }),
-                  (0, i.jsxs)(o.DUT, {
-                      className: m.iT,
-                      onClick: E,
-                      "aria-label": _.intl.string(u.default["103aY+"]),
+                  (0, e.jsxs)(d.D, {
+                      className: v.iT,
+                      onClick: A,
+                      "aria-label": j.intl.string(h.default["103aY+"]),
                       children: [
-                          (0, i.jsx)("img", { alt: "", className: m.xn, src: g.A }),
-                          (0, i.jsx)("div", { className: m.TQ }),
-                          (0, i.jsx)(c.A, { className: m.Rr, inactive: !0, renderLinkComponent: () => null }),
+                          (0, e.jsx)("img", { alt: "", className: v.xn, src: b.A }),
+                          (0, e.jsx)("div", { className: v.TQ }),
+                          (0, e.jsx)(u.A, { className: v.Rr, inactive: !0, renderLinkComponent: () => null }),
                       ],
                   }),
-                  (0, i.jsxs)("div", {
-                      className: m.FS,
+                  (0, e.jsxs)("div", {
+                      className: v.FS,
                       children: [
-                          (0, i.jsx)(o.Text, {
+                          (0, e.jsx)(o.E, {
                               variant: "text-md/semibold",
                               color: "text-strong",
-                              children: _.intl.string(u.default.diMhWc),
+                              children: j.intl.string(h.default.diMhWc),
                           }),
-                          (0, i.jsx)(o.Text, {
+                          (0, e.jsx)(o.E, {
                               variant: "text-sm/medium",
                               color: "text-muted",
-                              children: _.intl.string(u.default.pycxTr),
+                              children: j.intl.string(h.default.pycxTr),
                           }),
                       ],
                   }),

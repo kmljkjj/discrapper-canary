@@ -1,30 +1,31 @@
-r.d(t, { v: () => h });
-var n = r(627968),
-    s = r(554146),
-    l = r(342494),
-    a = r(932001),
-    i = r(966597),
-    o = r(49999),
-    c = r(985018),
-    u = r(936037);
-let d = s.M.FOR_LATER_POPOUT_COACHMARK;
-function h(e) {
-    let { location: t, targetElementRef: r } = e,
-        { enabled: s, inInbox: h } = i.A.useConfig({ location: "ForLaterCoachmarkWeb" }),
-        [_, f] = (0, a.kn)(s && t === (h ? "inbox-button" : "bookmarks-button") ? [d] : [], void 0);
-    return _ !== d
+"use strict";
+n.d(t, { v: () => _ });
+var i = n(627968),
+    r = n(554146),
+    s = n(43105),
+    a = n(131607),
+    o = n(966597),
+    l = n(49999),
+    u = n(375708),
+    c = n(936037);
+let d = r.M.FOR_LATER_POPOUT_COACHMARK;
+function _(e) {
+    let { location: t, targetElementRef: n } = e,
+        { enabled: r, inInbox: _ } = o.A.useConfig({ location: "ForLaterCoachmarkWeb" }),
+        [f, h] = (0, a.kn)(r && t === (_ ? "inbox-button" : "bookmarks-button") ? [d] : [], void 0);
+    return f !== d
         ? null
-        : (0, n.jsx)(l.AM, {
-              targetElementRef: r,
+        : (0, i.jsx)(s.A, {
+              targetElementRef: n,
               gradientColor: "purple",
               position: "bottom",
               align: "right",
               shouldShow: !0,
               caretConfig: { align: "end" },
-              onRequestClose: () => f(o.i.USER_DISMISS),
-              title: c.intl.string(c.t.qPbFK2),
-              body: c.intl.string(c.t.URrJq1),
-              actions: [{ text: c.intl.string(c.t["NX+WJN"]), onClick: () => f(o.i.USER_DISMISS) }],
-              graphic: { type: "image", src: u },
+              onRequestClose: () => h(l.i.USER_DISMISS),
+              title: u.intl.string(u.t.qPbFK2),
+              body: u.intl.string(u.t.URrJq1),
+              actions: [{ text: u.intl.string(u.t["NX+WJN"]), onClick: () => h(l.i.USER_DISMISS) }],
+              graphic: { type: "image", src: c },
           });
 }

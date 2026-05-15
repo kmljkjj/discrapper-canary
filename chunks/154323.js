@@ -1,7 +1,7 @@
 "use strict";
-n.d(t, { A: () => u });
-var r = n(311907),
-    i = n(73153);
+n.d(t, { A: () => l });
+var i = n(17928),
+    r = n(228366);
 let s = {
         highlight_mana_buttons: "Highlight mana buttons",
         highlight_mana_components: "Highlight mana components",
@@ -18,14 +18,9 @@ let s = {
         ss02: "Italic - straight l",
         ss03: "Italic - full height forms (W,M)",
         ss04: "Italic - alternate figures (3,4,5,6,7,8,9)",
-        wishlist_user_profile_account_popout_upsell:
-            "Show user profile account popout upsell (reset WISHLIST_USER_PROFILE_ACCOUNT_POPOUT_UPSELL DCF as well)",
     },
     a = {};
-function o(e) {
-    !1 === e.value ? delete a[e.toggle] : (a[e.toggle] = e.value);
-}
-class l extends r.Ay.DeviceSettingsStore {
+class o extends i.Ay.DeviceSettingsStore {
     static displayName = "DevToolsDesignTogglesStore";
     static persistKey = "DevToolsDesignTogglesStore";
     getUserAgnosticState() {
@@ -50,4 +45,8 @@ class l extends r.Ay.DeviceSettingsStore {
         });
     }
 }
-let u = new l(i.h, { DEV_TOOLS_DESIGN_TOGGLE_WEB_SET: o });
+let l = new o(r.h, {
+    DEV_TOOLS_DESIGN_TOGGLE_WEB_SET: function (e) {
+        !1 === e.value ? delete a[e.toggle] : (a[e.toggle] = e.value);
+    },
+});

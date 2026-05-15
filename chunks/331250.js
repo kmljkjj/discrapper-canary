@@ -1,15 +1,15 @@
 "use strict";
-n.d(t, { q: () => s });
-var r = n(284054),
-    i = n(260431),
-    a = n(803082);
-function s(e, t, n) {
-    let { isSelected: s } = t,
-        { isPressed: o, buttonProps: l } = (0, r.s)({ ...e, onPress: (0, i.c)(t.toggle, e.onPress) }, n);
+s.d(t, { q: () => a });
+var i = s(284054),
+    l = s(260431),
+    r = s(318473);
+function a(e, t, s) {
+    let { isSelected: a } = t,
+        { isPressed: o, buttonProps: d } = (0, i.s)({ ...e, onPress: (0, l.c)(t.toggle, e.onPress) }, s);
     return {
         isPressed: o,
-        isSelected: s,
+        isSelected: a,
         isDisabled: e.isDisabled || !1,
-        buttonProps: (0, a.v)(l, { "aria-pressed": s }),
+        buttonProps: (0, r.v)(d, { "aria-pressed": a }),
     };
 }

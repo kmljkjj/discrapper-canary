@@ -1,34 +1,34 @@
 "use strict";
 n.d(t, { KL: () => c, f1: () => l, fi: () => u });
-var r = n(311907),
-    i = n(996439),
-    a = n(800828),
-    s = n(652215);
+var i = n(17928),
+    r = n(996439),
+    s = n(800828),
+    a = n(652215);
 function o(e, t) {
-    let [n] = (0, r.bG)(
-        [a.A],
-        () => [a.A.getGameRelationshipsForUserByType(e, t), a.A.getGameRelationshipsVersion()],
+    let [n] = (0, i.bG)(
+        [s.A],
+        () => [s.A.getGameRelationshipsForUserByType(e, t), s.A.getGameRelationshipsVersion()],
         [t, e],
-        i.D,
+        r.D,
     );
     return n;
 }
 function l(e) {
-    return o(e, s.eA$.FRIEND);
+    return o(e, a.eA$.FRIEND);
 }
 function u(e) {
-    return o(e, s.eA$.PENDING_INCOMING);
+    return o(e, a.eA$.PENDING_INCOMING);
 }
 function c(e, t) {
-    let [n] = (0, r.bG)(
-        [a.A],
+    let [n] = (0, i.bG)(
+        [s.A],
         () => {
-            let n = a.A.getGameRelationshipsForUserByType(e, t),
-                r = a.A.getGameRelationshipsVersion();
-            return [n.length > 0, r];
+            let n = s.A.getGameRelationshipsForUserByType(e, t),
+                i = s.A.getGameRelationshipsVersion();
+            return [n.length > 0, i];
         },
         [t, e],
-        i.D,
+        r.D,
     );
     return n;
 }

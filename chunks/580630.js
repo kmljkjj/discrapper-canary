@@ -1,64 +1,62 @@
 "use strict";
-n.d(t, { $g: () => g, CE: () => E, Gp: () => p, RS: () => y, _J: () => I, l9: () => A, ze: () => m });
-var r = n(465323),
-    i = n(307006),
-    a = n(773669),
+n.d(t, { $g: () => h, CE: () => m, Gp: () => c, RS: () => p, _J: () => g, l9: () => f, ze: () => E });
+var i = n(465323),
+    r = n(773669),
     s = n(615405),
-    o = n(723702),
-    l = n(927578),
-    u = n(788868),
-    c = n(818348),
-    d = n(985018);
-let _ = Object.freeze(["en-CA", "en-AU", "en-NZ"]),
-    f = 1.95583;
-function p(e, t, n) {
-    let i = { ...(n ?? {}) },
-        s = n?.localeOverride ?? a.default.locale;
-    "en-US" === s && _.includes(a.default.systemLocale) && (i.currencyDisplay = "code"),
-        "en-US" === s && (0, o.isWindows)() && "en-GB" === a.default.systemLocale && (i.currencyDisplay = "code");
-    let { maximumFractionDigits: l, minimumFractionDigits: u } = i;
-    return 0 === l && null == u && (i.minimumFractionDigits = 0), (0, r.$g)(e, t, s, i);
+    a = n(723702),
+    o = n(927578),
+    l = n(788868),
+    d = n(818348),
+    _ = n(985018);
+let u = Object.freeze(["en-CA", "en-AU", "en-NZ"]);
+function c(e, t, n) {
+    let s = { ...(n ?? {}) },
+        o = n?.localeOverride ?? r.default.locale;
+    "en-US" === o && u.includes(r.default.systemLocale) && (s.currencyDisplay = "code"),
+        "en-US" === o && (0, a.isWindows)() && "en-GB" === r.default.systemLocale && (s.currencyDisplay = "code");
+    let { maximumFractionDigits: l, minimumFractionDigits: d } = s;
+    return 0 === l && null == d && (s.minimumFractionDigits = 0), (0, i.$g)(e, t, o, s);
 }
-function h(e) {
-    if (Date.now() >= new Date("2026-08-05T22:00:00Z").getTime()) return !1;
-    let t = null;
-    switch ((0, o.getPlatformName)()) {
-        case "android":
-            t = n(5255).A.getUserCountry();
-            break;
-        case "ios":
-            t = i.A.getStoreFront()?.country;
-            break;
-        default:
-            t = s.A.ipCountryCode;
-    }
-    return "BG" === t && e?.toLowerCase() === c.Yr.EUR;
+function E(e, t) {
+    let n = c(e, d.Yr.EUR, t),
+        i = c(1.95583 * e, d.Yr.BGN, t);
+    return `${n} (${i})`;
 }
-function m(e, t) {
-    let n = p(e, c.Yr.EUR, t),
-        r = p(e * f, c.Yr.BGN, t);
-    return `${n} (${r})`;
+function h(e, t, i) {
+    return !(function (e) {
+        if (Date.now() >= new Date("2026-08-05T22:00:00Z").getTime()) return !1;
+        let t = null;
+        switch ((0, a.getPlatformName)()) {
+            case "android":
+                t = n(373727).A.getUserCountry();
+                break;
+            case "ios":
+                let i = n(748368).A;
+                t = i.getStoreFront()?.country;
+                break;
+            default:
+                t = s.A.ipCountryCode;
+        }
+        return "BG" === t && e?.toLowerCase() === d.Yr.EUR;
+    })(t)
+        ? c(e, t, i)
+        : E(e, i);
 }
-function g(e, t, n) {
-    return h(t) ? m(e, n) : p(e, t, n);
-}
-function E(e, t, n) {
-    if (t === u.WT.YEAR) return d.intl.formatToPlainString(d.t["rS8FA+"], { price: e });
-    if (t === u.WT.MONTH && 1 === n) return d.intl.formatToPlainString(d.t.AbOLNu, { price: e });
-    if (t === u.WT.MONTH && n > 1) return d.intl.formatToPlainString(d.t["Qc+9ww"], { price: e, intervalCount: n });
+function m(e, t, n) {
+    if (t === l.WT.YEAR) return _.intl.formatToPlainString(_.t["rS8FA+"], { price: e });
+    if (t === l.WT.MONTH && 1 === n) return _.intl.formatToPlainString(_.t.AbOLNu, { price: e });
+    if (t === l.WT.MONTH && n > 1) return _.intl.formatToPlainString(_.t["Qc+9ww"], { price: e, intervalCount: n });
     throw Error(`Unsupported interval type: ${t}, and interval count: ${n}`);
 }
-function A(e, t) {
+function f(e, t) {
     return Intl.NumberFormat(e, { style: "percent", minimumFractionDigits: 0 }).format(t);
 }
-function I(e) {
+function g(e) {
     let t = "interval_count" in e ? e.interval_count : e.intervalCount,
-        n = (0, l.y8)(e.id);
-    return E(g(n.amount, n.currency), e.interval, t);
+        n = (0, o.y8)(e.id);
+    return m(h(n.amount, n.currency), e.interval, t);
 }
-function T(e) {
-    return e.length > 5 ? e.replace(/\.00(?=[\s)]|$)/g, "") : e;
-}
-function y(e, t, n) {
-    return T(g(e, t, n));
+function p(e, t, n) {
+    var i;
+    return (i = h(e, t, n)).length > 5 ? i.replace(/\.00(?=[\s)]|$)/g, "") : i;
 }

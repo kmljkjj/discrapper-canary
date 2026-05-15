@@ -1,15 +1,16 @@
 "use strict";
-n.d(t, { Fn: () => _, Gt: () => f, Ru: () => A });
-var r = n(64700),
-    i = n(397927),
+n.d(t, { Fn: () => E, Gt: () => h, Ru: () => g });
+var i = n(64700),
+    r = n(717421),
+    s = n(518009),
     a = n(626584),
-    s = n(87001),
-    o = n(287809),
-    l = n(531685),
-    u = n(365971),
-    c = n(392164);
-let d = new a.A("NotificationLayoutManager");
-class _ {
+    o = n(567249),
+    l = n(287809),
+    d = n(531685),
+    _ = n(365971),
+    u = n(392164);
+let c = new a.A("NotificationLayoutManager");
+class E {
     resizeObserver;
     listeners = new Map();
     queuedCompute = !1;
@@ -46,16 +47,16 @@ class _ {
         this.queuedCompute = !1;
         let t = 0,
             n = 0;
-        for (let r of this.items) {
-            let i = this.listeners.get(r.notification.id);
-            if (null == i) continue;
-            let { offsetHeight: a } = i.element;
-            (i.top !== t || i.height !== a || i.index !== n) && (e = !0),
-                (i.top = t),
-                (i.height = a),
-                (i.index = n),
-                0 === t && (this.matchHeight !== a && (e = !0), (this.matchHeight = a)),
-                (t += a + 8),
+        for (let i of this.items) {
+            let r = this.listeners.get(i.notification.id);
+            if (null == r) continue;
+            let { offsetHeight: s } = r.element;
+            (r.top !== t || r.height !== s || r.index !== n) && (e = !0),
+                (r.top = t),
+                (r.height = s),
+                (r.index = n),
+                0 === t && (this.matchHeight !== s && (e = !0), (this.matchHeight = s)),
+                (t += s + 8),
                 n++;
         }
         e && this.broadcastLayoutUpdates();
@@ -86,85 +87,76 @@ class _ {
         return this.listeners.get(e);
     }
 }
-let f = r.createContext(new _(!0));
-function p(e, t) {
-    return t && e > 4 ? 0 : t ? Math.min(1 - e / 4, 1) : 1;
-}
-function h(e, t) {
-    return t ? Math.min(1 - e / 4, 1) : 1;
-}
+let h = i.createContext(new E(!0));
 function m(e, t, n) {
     return t && 0 !== e ? 20 * Math.max(e / 5, 0) : n;
 }
-function g(e, t) {
-    return t && e > 0 ? 0 : 1;
-}
-let E = { mass: 0.8, friction: 25, tension: 320 };
-function A(e, t, n) {
-    let [a, _] = (0, i.zhh)(
+let f = { mass: 0.8, friction: 25, tension: 320 };
+function g(e, t, n) {
+    let [a, E] = (0, r.z)(
             () => ({ from: { opacity: 0, scale: 1, transform: 0, height: 0, contentOpacity: 1 } }),
             void 0,
             [],
         ),
-        A = r.useRef(_),
-        I = r.useContext(f),
-        T = r.useMemo(() => {
+        g = i.useRef(E),
+        p = i.useContext(h),
+        A = i.useMemo(() => {
             let t = !1;
             return (n) => {
                 null == n
-                    ? I.unsubscribe(e)
-                    : I.subscribe(e, n, (n) => {
-                          let { locked: r, matchHeight: i, height: a, top: _, index: f } = n;
-                          if (o.default.getCurrentUser()?.isStaff()) {
-                              let t = s.A.getWindow(c.f),
-                                  n = null != t ? l.A.windowSize((0, u.Q2)(t)) : void 0;
-                              d.info(
+                    ? p.unsubscribe(e)
+                    : p.subscribe(e, n, (n) => {
+                          let { locked: i, matchHeight: r, height: s, top: a, index: E } = n;
+                          if (l.default.getCurrentUser()?.isStaff()) {
+                              let t = o.A.getWindow(u.f),
+                                  n = null != t ? d.A.windowSize((0, _.Q2)(t)) : void 0;
+                              c.info(
                                   "Notification layout update",
-                                  { id: e, locked: r, matchHeight: i, height: a, top: _, index: f },
+                                  { id: e, locked: i, matchHeight: r, height: s, top: a, index: E },
                                   n,
                               );
                           }
-                          let { current: I } = A,
-                              T = {
-                                  opacity: p(f, r),
-                                  scale: h(f, r),
-                                  transform: m(f, r, _),
-                                  contentOpacity: g(f, r),
-                                  height: r ? i : a,
+                          let { current: h } = g,
+                              p = {
+                                  opacity: i && E > 4 ? 0 : i ? Math.min(1 - E / 4, 1) : 1,
+                                  scale: i ? Math.min(1 - E / 4, 1) : 1,
+                                  transform: m(E, i, a),
+                                  contentOpacity: i && E > 0 ? 0 : 1,
+                                  height: i ? r : s,
                               };
-                          I({
+                          h({
                               from: t
                                   ? void 0
                                   : {
                                         opacity: 0,
                                         scale: 1.1,
-                                        transform: -((r ? i : a) * 1),
+                                        transform: -((i ? r : s) * 1),
                                         contentOpacity: 1,
-                                        height: r ? i : a,
+                                        height: i ? r : s,
                                     },
-                              to: T,
-                              config: E,
+                              to: p,
+                              config: f,
                           }),
                               (t = !0);
                       });
             };
-        }, [e, I]);
+        }, [e, p]);
     return (
-        r.useLayoutEffect(() => {
-            if (t === i.wLy.YEETED) {
-                let t = I.getLayoutSpecs(e);
+        i.useLayoutEffect(() => {
+            if (t === s.wL.YEETED) {
+                let t = p.getLayoutSpecs(e);
                 if (null == t) return void n();
-                A.current({
+                g.current({
                     to: {
                         scale: 0.8,
                         opacity: 0,
-                        transform: m(t.index, I.locked, t.top) + (I.locked ? 0 : t.height / 2),
+                        transform: m(t.index, p.locked, t.top) + (p.locked ? 0 : t.height / 2),
                     },
-                    config: E,
+                    config: f,
                 }),
                     setTimeout(n, 300);
             }
-        }, [t, n, e, I]),
-        { ref: T, springs: a }
+        }, [t, n, e, p]),
+        { ref: A, springs: a }
     );
 }

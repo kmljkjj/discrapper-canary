@@ -1,13 +1,13 @@
 "use strict";
-var r = n(410323),
-    i = n(503628),
-    a = n(647055),
-    s = Object,
-    o = r("".split);
-e.exports = i(function () {
-    return !s("z").propertyIsEnumerable(0);
+var i = n(410323),
+    r = n(503628),
+    s = n(647055),
+    a = Object,
+    o = i("".split);
+e.exports = r(function () {
+    return !a("z").propertyIsEnumerable(0);
 })
     ? function (e) {
-          return "String" === a(e) ? o(e, "") : s(e);
+          return "String" === s(e) ? o(e, "") : a(e);
       }
-    : s;
+    : a;

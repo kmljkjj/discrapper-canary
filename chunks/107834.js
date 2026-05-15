@@ -1,42 +1,62 @@
-n.d(t, { A: () => C });
-var i = n(627968);
-n(64700);
-var s = n(503698),
-    r = n.n(s),
-    a = n(311907),
-    l = n(582754),
-    o = n(397927),
-    c = n(820284),
-    d = n(490415),
-    u = n(736653),
-    _ = n(742589),
-    m = n(287809),
-    A = n(927578),
-    g = n(652215),
-    E = n(788868),
-    h = n(985018),
-    p = n(187585);
-let C = a.Ay.connectStores([m.default], () => ({ user: m.default.getCurrentUser() }))(
-    (0, d.A)((e) => {
-        let { isAuthenticated: t, user: n } = e,
-            s = (0, A.TW)(n, E.PremiumTypes.TIER_2),
-            a = (0, u.Ay)();
+s.d(t, { A: () => E });
+var i = s(627968),
+    l = s(64700),
+    n = s(17928),
+    a = s(43990),
+    r = s(403581),
+    c = s(820284),
+    o = s(490415),
+    d = s(736653),
+    u = s(793574),
+    m = s(742589),
+    x = s(876587),
+    p = s(65470),
+    h = s(400669),
+    g = s(909536),
+    j = s(287809),
+    f = s(927578),
+    N = s(652215),
+    A = s(788868),
+    _ = s(375708),
+    C = s(50596);
+let E = n.Ay.connectStores([j.default], () => ({ user: j.default.getCurrentUser() }))(
+    (0, o.A)((e) => {
+        let { isAuthenticated: t, user: s } = e,
+            n = (0, f.TW)(s, A.PremiumTypes.TIER_2),
+            o = (0, d.Ay)(),
+            j = (0, g.Gh)("nitro_home_header"),
+            E = l.useRef(null);
         return (0, i.jsx)(c.A, {
-            section: g.JJy.NAVIGATION,
-            children: (0, i.jsx)(o.NPJ, {
-                theme: a,
+            section: N.JJy.NAVIGATION,
+            children: (0, i.jsx)(a.N, {
+                theme: o,
                 children: (e) =>
-                    (0, i.jsxs)(_.A, {
-                        isAuthenticated: t,
-                        className: r()(e, { [p.xD]: !s && !(0, l.Mw)(a), [p.lO]: !s && (0, l.Mw)(a) }),
-                        role: "navigation",
+                    (0, i.jsxs)(i.Fragment, {
                         children: [
-                            (0, i.jsx)(_.A.Icon, {
-                                icon: o.tvc,
-                                "aria-hidden": !0,
-                                color: s ? void 0 : o.LU0.unsafe_rawColors.PREMIUM_TIER_2_PINK.css,
+                            (0, i.jsxs)(m.A, {
+                                isAuthenticated: t,
+                                className: e,
+                                toolbar: j
+                                    ? (0, i.jsxs)("div", {
+                                          className: C.fI,
+                                          children: [
+                                              (0, i.jsx)(h.l, {
+                                                  ref: E,
+                                                  size: "sm",
+                                                  variant: "secondary",
+                                                  location: u.A.PREMIUM_WISHLIST_NITRO_MEMBER_HUB,
+                                              }),
+                                              (0, i.jsx)(p.A, { variant: "secondary", size: "sm" }),
+                                          ],
+                                      })
+                                    : void 0,
+                                role: "navigation",
+                                children: [
+                                    (0, i.jsx)(m.A.Icon, { icon: r.t, "aria-hidden": !0 }),
+                                    (0, i.jsx)(m.A.Title, { children: _.intl.string(_.t.Ipxkog) }),
+                                ],
                             }),
-                            (0, i.jsx)(_.A.Title, { children: h.intl.string(h.t.Ipxkog) }),
+                            j && n && (0, i.jsx)(x.O, { targetElementRef: E }),
                         ],
                     }),
             }),

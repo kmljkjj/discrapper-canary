@@ -1,17 +1,11 @@
 "use strict";
-let r;
-n.d(t, { A: () => d });
-var i = n(311907),
-    s = n(73153),
-    a = n(15285),
+let i;
+n.d(t, { A: () => u });
+var r = n(17928),
+    s = n(228366),
+    a = n(328153),
     o = n(760751);
-function l(e) {
-    r = e.currentGame;
-}
-function u(e) {
-    r = e.associatedGame;
-}
-class c extends i.Ay.Store {
+class l extends r.Ay.Store {
     initialize() {
         this.waitFor(o.A, a.Ay);
     }
@@ -22,7 +16,14 @@ class c extends i.Ay.Store {
         return null != t ? o.A.findGame(t) : null;
     }
     getGame() {
-        return r;
+        return i;
     }
 }
-let d = new c(s.h, { OVERLAY_INITIALIZE: l, OVERLAY_SET_ASSOCIATED_GAME: u });
+let u = new l(s.h, {
+    OVERLAY_INITIALIZE: function (e) {
+        i = e.currentGame;
+    },
+    OVERLAY_SET_ASSOCIATED_GAME: function (e) {
+        i = e.associatedGame;
+    },
+});

@@ -1,8 +1,8 @@
 "use strict";
-var r = n(19167),
-    i = n(598349),
-    a = n(321727),
-    s = n(828027);
+var i = n(19167),
+    r = n(598349),
+    s = n(321727),
+    a = n(828027);
 e.exports =
     Object.setPrototypeOf ||
     ("__proto__" in {}
@@ -11,10 +11,10 @@ e.exports =
                   t = !1,
                   n = {};
               try {
-                  (e = r(Object.prototype, "__proto__", "set"))(n, []), (t = n instanceof Array);
+                  (e = i(Object.prototype, "__proto__", "set"))(n, []), (t = n instanceof Array);
               } catch (e) {}
-              return function (n, r) {
-                  return a(n), s(r), i(n) && (t ? e(n, r) : (n.__proto__ = r)), n;
+              return function (n, i) {
+                  return s(n), a(i), r(n) && (t ? e(n, i) : (n.__proto__ = i)), n;
               };
           })()
         : void 0);

@@ -1,27 +1,30 @@
-n.d(t, { A: () => o });
-var l = n(627968);
-n(64700);
-var i = n(311907),
-    a = n(397927),
-    r = n(994500),
-    d = n(985018);
-function o(e) {
-    let { user: t, onAction: o, appContext: s } = e,
-        u = t.id,
-        [c, A] = (0, i.yK)([r.A], () => [r.A.isFriend(u), r.A.getNickname(u) ?? null], [u]);
-    if (!c) return null;
-    let g = null == A ? d.intl.string(d.t.BGYkaH) : d.intl.string(d.t["8pOYUE"]);
-    return (0, l.jsx)(a.Drp, {
-        id: null == A ? "add-friend-nickname" : "edit-friend-nickname",
-        label: g,
+e.d(t, { A: () => o });
+var i = e(627968);
+e(64700);
+var l = e(17928),
+    a = e(477782),
+    d = e(192308),
+    r = e(994500),
+    s = e(375708);
+function o(n) {
+    let { user: t, onAction: o, appContext: u } = n,
+        c = t.id,
+        [A, b] = (0, l.yK)([r.A], () => [r.A.isFriend(c), r.A.getNickname(c) ?? null], [c]);
+    if (!A) return null;
+    let p = null == b ? s.intl.string(s.t.BGYkaH) : s.intl.string(s.t["8pOYUE"]);
+    return (0, i.jsx)(a.Dr, {
+        id: null == b ? "add-friend-nickname" : "edit-friend-nickname",
+        label: p,
         action: () => {
             o?.(),
-                (0, a.mMO)(
+                (0, d.openModalLazy)(
                     async () => {
-                        let { default: e } = await n.e("59139").then(n.bind(n, 609422));
-                        return (n) => (0, l.jsx)(e, { user: t, nickname: A, ...n });
+                        let { default: n } = await Promise.all([e.e("93010"), e.e("88941"), e.e("59139")]).then(
+                            e.bind(e, 609422),
+                        );
+                        return (e) => (0, i.jsx)(n, { user: t, nickname: b, ...e });
                     },
-                    { contextKey: null != s ? (0, a.TId)(s) : void 0 },
+                    { contextKey: null != u ? (0, d.modalContextFromAppContext)(u) : void 0 },
                 );
         },
     });

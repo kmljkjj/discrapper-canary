@@ -1,50 +1,54 @@
-I.d(_, { A: () => P });
-var A = I(627968);
-I(64700);
-var S = I(397927),
-    T = I(73153),
-    C = I(847599),
-    O = I(308645),
-    N = I(239093);
-function R() {
-    e.success(), e.start_verification_check();
+t.d(A, { A: () => p });
+var _ = t(627968);
+t(64700);
+var a = t(192308),
+    s = t(228366),
+    E = t(847599),
+    i = t(308645),
+    c = t(239093);
+function n() {
+    o.success(), o.start_verification_check();
 }
-let e = {
-        open(E, _) {
-            (0, S.mMO)(
+let o = {
+        open(e, A) {
+            (0, a.openModalLazy)(
                 async () => {
-                    T.h.dispatch({ type: "SAFETY_HUB_AUTOMATED_UNDERAGE_APPEAL_MODAL_OPEN" });
-                    let { default: _ } = await I.e("9018").then(I.bind(I, 244321));
-                    return (I) => (0, A.jsx)(_, { classificationId: E, ...I });
+                    s.h.dispatch({ type: "SAFETY_HUB_AUTOMATED_UNDERAGE_APPEAL_MODAL_OPEN" });
+                    let { default: A } = await Promise.all([t.e("57750"), t.e("607"), t.e("12755"), t.e("9018")]).then(
+                        t.bind(t, 244321),
+                    );
+                    return (t) => (0, _.jsx)(A, { classificationId: e, ...t });
                 },
-                { onCloseCallback: _ },
+                { onCloseCallback: A },
             );
         },
-        openV2(E, _) {
-            (0, S.mMO)(
+        openV2(e, A) {
+            (0, a.openModalLazy)(
                 async () => {
-                    T.h.dispatch({ type: "SAFETY_HUB_AUTOMATED_UNDERAGE_APPEAL_MODAL_OPEN" });
-                    let { default: _ } = await I.e("18128").then(I.bind(I, 767379));
-                    return (I) =>
-                        (0, A.jsx)(_, {
-                            classificationId: E,
-                            entryPoint: C.q1.AUTOMATED_UNDERAGE_APPEALS,
-                            onComplete: R,
-                            ...I,
+                    s.h.dispatch({ type: "SAFETY_HUB_AUTOMATED_UNDERAGE_APPEAL_MODAL_OPEN" });
+                    let { default: A } = await Promise.all([t.e("57750"), t.e("607"), t.e("84794"), t.e("99487")]).then(
+                        t.bind(t, 595746),
+                    );
+                    return (t) =>
+                        (0, _.jsx)(A, {
+                            classificationId: e,
+                            entryPoint: E.q1.AUTOMATED_UNDERAGE_APPEALS,
+                            onComplete: n,
+                            ...t,
                         });
                 },
-                { onCloseCallback: _ },
+                { onCloseCallback: A },
             );
         },
         close() {
-            T.h.dispatch({ type: "SAFETY_HUB_AUTOMATED_UNDERAGE_APPEAL_MODAL_CLOSE" });
+            s.h.dispatch({ type: "SAFETY_HUB_AUTOMATED_UNDERAGE_APPEAL_MODAL_CLOSE" });
         },
         success() {
-            T.h.dispatch({ type: "SAFETY_HUB_AUTOMATED_UNDERAGE_APPEAL_SUBMIT_SUCCESS" });
+            s.h.dispatch({ type: "SAFETY_HUB_AUTOMATED_UNDERAGE_APPEAL_SUBMIT_SUCCESS" });
         },
         start_verification_check() {
-            T.h.dispatch({ type: "SAFETY_HUB_AUTOMATED_UNDERAGE_APPEAL_START_POLL" }),
-                setTimeout(() => (0, O.d)(), N.wQ);
+            s.h.dispatch({ type: "SAFETY_HUB_AUTOMATED_UNDERAGE_APPEAL_START_POLL" }),
+                setTimeout(() => (0, i.d)(), c.wQ);
         },
     },
-    P = e;
+    p = o;

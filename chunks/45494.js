@@ -1,153 +1,146 @@
 "use strict";
-let r;
-n.d(t, { A: () => B, m: () => E });
-var i = n(735438),
-    a = n.n(i),
-    s = n(392421),
+let i;
+n.d(t, { A: () => P, m: () => g });
+var r = n(735438),
+    s = n.n(r),
+    a = n(392421),
     o = n(602137),
     l = n(357758),
-    u = n(311907),
-    c = n(73153),
+    u = n(17928),
+    c = n(228366),
     d = n(767581),
     _ = n(853742),
     f = n(95701),
-    p = n(734057),
-    h = n(222823),
-    m = n(661191),
-    g = n(152007);
-let E = 25,
+    h = n(734057),
+    p = n(222823),
+    E = n(935208),
+    m = n(152007);
+let g = 25,
     A = !1,
     I = !0,
     T = !1,
-    y = !1,
-    S = null,
-    v = o.T.LATEST_ACTIVITY,
+    S = !1,
+    N = null,
+    y = o.T.LATEST_ACTIVITY,
     C = [],
-    b = 0,
-    N = s.n.MATCH_SOME;
+    v = 0,
+    O = a.n.MATCH_SOME;
 function R() {
     (A = !1),
         (I = !0),
         (T = !1),
-        (y = !1),
-        (S = null),
-        (v = o.T.LATEST_ACTIVITY),
-        (r = new Set()),
-        (b = 0),
+        (S = !1),
+        (N = null),
+        (y = o.T.LATEST_ACTIVITY),
+        (i = new Set()),
+        (v = 0),
         (C = []),
-        (N = s.n.MATCH_SOME);
+        (O = a.n.MATCH_SOME);
 }
-function O(e, t) {
-    return t === o.T.LATEST_ACTIVITY ? h.Ay.lastMessageId(e.id) : e.id;
+function b(e, t) {
+    return t === o.T.LATEST_ACTIVITY ? p.Ay.lastMessageId(e.id) : e.id;
 }
-function D(e) {
-    (e.channelId === S && e.sortOrder === v && (0, l._)(e.tagFilter, r) && e.tagSetting === N) || R(),
-        (S = e.channelId),
-        (v = e.sortOrder),
-        (r = e.tagFilter instanceof Set ? e.tagFilter : new Set(e.tagFilter)),
-        (N = e.tagSetting),
-        (A = !0),
-        (I = !1);
-}
-function L(e) {
-    if (e.channelId !== S || e.sortOrder !== v || !(0, l._)(e.tagFilter, r) || e.tagSetting !== N) return !1;
-    let t = e.threads.filter((e) => f.A_.has(e.type)).map((e) => e.id);
-    C = C.concat(t);
-    let n = p.A.getChannel(S);
-    null != n &&
-        n.isForumLikeChannel() &&
-        (0, _._Z)({
-            guildId: n.guild_id,
-            channelId: n.id,
-            numArchivedThreads: C.length,
-            hasMoreThreads: e.hasMore,
-            filterTagIds: Array.from(e.tagFilter),
-            sortOrder: e.sortOrder,
-        }),
-        x(),
-        (T = e.hasMore),
-        (b = e.offset + E),
-        (A = !1),
-        (I = !1);
-}
-function w(e) {
-    return (null == S || null == e.channelId || S === e.channelId) && x();
-}
-function x() {
-    if (null == S) return !1;
+function D() {
+    if (null == N) return !1;
     let e = !T,
-        t = p.A.getChannel(C[C.length - 1]),
-        n = null == t ? null : O(t, v);
-    C = a()(p.A.getAllThreadsForParent(S))
+        t = h.A.getChannel(C[C.length - 1]),
+        n = null == t ? null : b(t, y);
+    C = s()(h.A.getAllThreadsForParent(N))
         .filter((e) => e.isArchivedThread())
         .filter((t) => {
-            if (0 !== r.size) {
-                if (N === s.n.MATCH_SOME) {
-                    if (t.appliedTags?.some((e) => r.has(e)) !== !0) return !1;
-                } else if (N === s.n.MATCH_ALL) {
-                    for (let e of r.values()) if (t.appliedTags?.includes(e) !== !0) return !1;
+            if (0 !== i.size) {
+                if (O === a.n.MATCH_SOME) {
+                    if (t.appliedTags?.some((e) => i.has(e)) !== !0) return !1;
+                } else if (O === a.n.MATCH_ALL) {
+                    for (let e of i.values()) if (t.appliedTags?.includes(e) !== !0) return !1;
                 }
             }
             if (e || null == n) return !0;
             {
-                let e = null == t ? null : O(t, v);
-                return null != e && m.default.compare(e, n) >= 0;
+                let e = null == t ? null : b(t, y);
+                return null != e && E.default.compare(e, n) >= 0;
             }
         })
-        .sort((e, t) => m.default.compare(O(e, v), O(t, v)))
+        .sort((e, t) => E.default.compare(b(e, y), b(t, y)))
         .map((e) => e.id)
         .reverse()
         .value();
 }
-function P(e) {
-    if (e.channelId !== S || e.sortOrder !== v || !(0, l._)(e.tagFilter, r) || e.tagSetting !== N) return !1;
-    (A = !1), (y = !0), (I = !1);
-}
-function M(e) {
-    if (e.channel.id !== S) return !1;
-    R();
-}
-function k(e) {
+function L(e) {
     if (!(C.indexOf(e) >= 0)) return !1;
     C = C.filter((t) => t !== e);
 }
-function U(e) {
-    let { channel: t } = e;
-    return k(t.id);
-}
-function G(e) {
-    let { channel: t } = e;
-    return S === t.parent_id && !!(0, d.yr)(t.id) && void k(t.id);
-}
-let V = [];
-class F extends u.Ay.Store {
+let w = [];
+class M extends u.Ay.Store {
     static displayName = "ArchivedThreadsStore";
     initialize() {
-        this.waitFor(p.A, g.A, h.Ay);
+        this.waitFor(h.A, m.A, p.Ay);
     }
     get canLoadMore() {
-        return T && !A && !y;
+        return T && !A && !S;
     }
     get nextOffset() {
-        return b;
+        return v;
     }
     get isInitialLoad() {
         return I;
     }
-    isLoading(e, t, n, i) {
-        return S === e && v === t && (0, l._)(r, n) && N === i ? A : (R(), !1);
+    isLoading(e, t, n, r) {
+        return N === e && y === t && (0, l._)(i, n) && O === r ? A : (R(), !1);
     }
-    getThreads(e, t, n, i) {
-        return S === e && v === t && (0, l._)(r, n) && N === i ? C : V;
+    getThreads(e, t, n, r) {
+        return N === e && y === t && (0, l._)(i, n) && O === r ? C : w;
     }
 }
-let B = new F(c.h, {
+let P = new M(c.h, {
     CONNECTION_OPEN: R,
-    THREAD_DELETE: U,
-    THREAD_UPDATE: G,
-    CHANNEL_DELETE: M,
-    LOAD_ARCHIVED_THREADS: D,
-    LOAD_ARCHIVED_THREADS_SUCCESS: L,
-    LOAD_ARCHIVED_THREADS_FAIL: P,
-    RESORT_THREADS: w,
+    THREAD_DELETE: function (e) {
+        let { channel: t } = e;
+        return L(t.id);
+    },
+    THREAD_UPDATE: function (e) {
+        let { channel: t } = e;
+        return N === t.parent_id && !!(0, d.yr)(t.id) && void L(t.id);
+    },
+    CHANNEL_DELETE: function (e) {
+        if (e.channel.id !== N) return !1;
+        R();
+    },
+    LOAD_ARCHIVED_THREADS: function (e) {
+        (e.channelId === N && e.sortOrder === y && (0, l._)(e.tagFilter, i) && e.tagSetting === O) || R(),
+            (N = e.channelId),
+            (y = e.sortOrder),
+            (i = e.tagFilter instanceof Set ? e.tagFilter : new Set(e.tagFilter)),
+            (O = e.tagSetting),
+            (A = !0),
+            (I = !1);
+    },
+    LOAD_ARCHIVED_THREADS_SUCCESS: function (e) {
+        if (e.channelId !== N || e.sortOrder !== y || !(0, l._)(e.tagFilter, i) || e.tagSetting !== O) return !1;
+        let t = e.threads.filter((e) => f.A_.has(e.type)).map((e) => e.id);
+        C = C.concat(t);
+        let n = h.A.getChannel(N);
+        null != n &&
+            n.isForumLikeChannel() &&
+            (0, _._Z)({
+                guildId: n.guild_id,
+                channelId: n.id,
+                numArchivedThreads: C.length,
+                hasMoreThreads: e.hasMore,
+                filterTagIds: Array.from(e.tagFilter),
+                sortOrder: e.sortOrder,
+            }),
+            D(),
+            (T = e.hasMore),
+            (v = e.offset + g),
+            (A = !1),
+            (I = !1);
+    },
+    LOAD_ARCHIVED_THREADS_FAIL: function (e) {
+        if (e.channelId !== N || e.sortOrder !== y || !(0, l._)(e.tagFilter, i) || e.tagSetting !== O) return !1;
+        (A = !1), (S = !0), (I = !1);
+    },
+    RESORT_THREADS: function (e) {
+        return (null == N || null == e.channelId || N === e.channelId) && D();
+    },
 });

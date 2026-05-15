@@ -1,30 +1,29 @@
 "use strict";
-n.d(t, { A: () => d });
-var r = n(64700),
-    i = n(311907),
-    a = n(451988),
-    s = n(579364),
-    o = n(287809),
-    l = n(816733),
-    u = n(927578),
-    c = n(788868);
-function d(e, t) {
-    let n = (0, i.bG)([l.A], () => l.A.getUserDiscountOffer(e)),
-        [d, _] = r.useState((0, s.w)(n)),
-        f = (0, i.bG)([o.default], () => (0, u.TW)(o.default.getCurrentUser())),
-        p = e === c.q || e === c.EG;
+n.d(t, { A: () => c });
+var i = n(64700),
+    r = n(17928),
+    s = n(451988),
+    a = n(287809),
+    o = n(354670),
+    l = n(927578),
+    u = n(788868);
+function c(e, t) {
+    let n = (0, r.bG)([o.A], () => o.A.getUserDiscountOffer(e)),
+        [c, d] = i.useState(n?.hasExpired() ?? !1),
+        _ = (0, r.bG)([a.default], () => (0, l.TW)(a.default.getCurrentUser())),
+        f = e === u.q || e === u.EG;
     return (
-        r.useEffect(() => {
-            if (null == n || null == n.expires_at) return;
-            let e = new a.Ep(),
+        i.useEffect(() => {
+            if (null == n || null == n.expiresAt) return;
+            let e = new s.Ep(),
                 t = () => {
-                    let r = null != n.expires_at ? Date.parse(n.expires_at) - Date.now() : 0;
-                    e?.start(r, () => {
-                        !d && (0, s.w)(n) ? _(!0) : t();
+                    let i = null != n.expiresAt ? n.expiresAt.getTime() - Date.now() : 0;
+                    e?.start(i, () => {
+                        !c && n.hasExpired() ? d(!0) : t();
                     });
                 };
             return t(), () => e.stop();
-        }, [d, n]),
-        !d && (!f || t || p) ? n : null
+        }, [c, n]),
+        !c && (!_ || t || f) ? n : null
     );
 }

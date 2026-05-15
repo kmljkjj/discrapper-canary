@@ -1,33 +1,45 @@
 "use strict";
 n.d(t, { NJ: () => _, of: () => c, pb: () => d });
-var r,
-    i = n(627968),
+var i,
+    r = n(627968),
     s = n(64700),
     a = n(835245),
     o = n(688810),
-    l = n(672385);
+    l = n(47675);
 let u = s.createContext(null),
     c = (e) => {
-        let { value: t, children: n, isLoaded: r = !1 } = e,
-            { analyticsLocations: a } = (0, o.Ay)(),
-            c = { analyticsLocations: a, value: t },
-            d = s.useRef(c);
+        let { value: t, children: n, openedAt: i, fetchStartedAt: a, fetchEndedAt: c, isLoaded: d = !1 } = e,
+            { analyticsLocations: _ } = (0, o.Ay)(),
+            f = s.useRef(void 0),
+            h = { analyticsLocations: _, value: t },
+            p = s.useRef(h);
         return (
             s.useEffect(() => {
-                d.current = c;
+                p.current = h;
             }),
             s.useEffect(() => {
-                if (!r) return;
-                let { analyticsLocations: e, value: t } = d.current;
-                (0, l.Wn)({ action: "VIEW", analyticsLocations: e, ...t });
-            }, [r]),
-            (0, i.jsx)(u.Provider, { value: t, children: n })
+                let e = Date.now();
+                if ((null == f.current && null != i && (f.current = e - i), !d)) return;
+                let { analyticsLocations: t, value: n } = p.current;
+                (0, l.Wn)({ action: "VIEW", analyticsLocations: t, ...n }),
+                    (0, l.wd)({
+                        profileUi: "USER_PROFILE",
+                        timeToInteractiveMs: f.current,
+                        timeToLoadMs: null != i ? e - i : void 0,
+                        timeToFetchMs: null != a && null != c ? c - a : void 0,
+                        viewStartedAt: i,
+                        fetchStartedAt: a,
+                        analyticsLocations: t,
+                        ...n,
+                    });
+            }, [d]),
+            (0, r.jsx)(u.Provider, { value: t, children: n })
         );
     },
     d = (e) => {
         let {
                 layout: t,
-                userId: i,
+                userId: r,
                 guildId: o,
                 channelId: l,
                 messageId: c,
@@ -35,20 +47,20 @@ let u = s.createContext(null),
                 sourceSessionId: _,
                 showGuildProfile: f = !0,
             } = e,
-            p = (r || (r = n.t(s, 2))).useContext(u)?.sessionId;
+            h = (i || (i = n.t(s, 2))).useContext(u)?.sessionId;
         return s.useMemo(
             () => ({
                 sessionId: (0, a.A)(),
-                sourceSessionId: _ ?? p,
+                sourceSessionId: _ ?? h,
                 layout: t,
-                userId: i,
+                userId: r,
                 guildId: o,
                 channelId: l,
                 messageId: c,
                 roleId: d,
                 showGuildProfile: f,
             }),
-            [p, t, i, o, l, c, d, _, f],
+            [h, t, r, o, l, c, d, _, f],
         );
     },
     _ = () => {

@@ -1,85 +1,84 @@
 "use strict";
 n.d(t, {
-    Aq: () => _,
-    Av: () => s,
-    Ct: () => f,
-    HZ: () => d,
-    Ls: () => A,
+    Aq: () => f,
+    Av: () => a,
+    Ct: () => h,
+    HZ: () => _,
+    Ls: () => I,
     R0: () => y,
     Sn: () => p,
-    cX: () => l,
-    cZ: () => v,
+    cX: () => u,
+    cZ: () => C,
     fg: () => r,
-    j9: () => u,
-    m0: () => h,
-    q4: () => E,
-    r_: () => S,
-    t1: () => T,
-    tn: () => g,
-    uF: () => o,
+    j9: () => c,
+    m0: () => E,
+    q4: () => g,
+    r_: () => N,
+    t1: () => S,
+    tn: () => A,
+    uF: () => l,
     un: () => m,
-    uo: () => I,
-    xl: () => c,
+    uo: () => T,
+    xl: () => d,
 });
-var r = (function (e) {
-    return (e.WINDOWS = "WINDOWS"), (e.OSX = "OSX"), (e.LINUX = "LINUX"), (e.WEB = "WEB"), e;
-})({});
-let i = window.DiscordNative,
-    s = null != i,
-    a = null != i ? i.process.platform : "";
-function o() {
-    return /^win/.test(a);
-}
+var i,
+    r = (((i = {}).WINDOWS = "WINDOWS"), (i.OSX = "OSX"), (i.LINUX = "LINUX"), (i.WEB = "WEB"), i);
+let s = window.DiscordNative,
+    a = null != s,
+    o = null != s ? s.process.platform : "";
 function l() {
-    return "darwin" === a;
+    return /^win/.test(o);
 }
 function u() {
-    return "linux" === a;
+    return "darwin" === o;
 }
 function c() {
-    return o() || l() || u();
+    return "linux" === o;
 }
 function d() {
-    return "WEB" === I();
+    return l() || u() || c();
 }
 function _() {
+    return "WEB" === T();
+}
+function f() {
     return (
         null != navigator.userAgent &&
         null != navigator.userAgent.toLowerCase().match("(android ).+chrome/[.0-9]* mobile")
     );
 }
-function f() {
+function h() {
     return navigator.userAgent?.match(/android/i) != null;
 }
 function p() {
     return navigator.userAgent?.match(/Macintosh/i) != null;
 }
-function h() {
-    return "android" === a;
+function E() {
+    return "android" === o;
 }
 function m() {
-    return "ios" === a;
-}
-function E() {
-    return navigator.userAgent?.match(/OculusBrowser/i) != null;
+    return "ios" === o;
 }
 function g() {
-    return E();
+    return navigator.userAgent?.match(/OculusBrowser/i) != null;
 }
 function A() {
-    return c() || E() || s;
+    return g();
 }
 function I() {
-    return o() ? "WINDOWS" : l() ? "OSX" : u() ? "LINUX" : "WEB";
+    return d() || g() || a;
 }
 function T() {
-    return a;
+    return l() ? "WINDOWS" : u() ? "OSX" : c() ? "LINUX" : "WEB";
 }
 function S() {
-    switch (a) {
+    return o;
+}
+function N() {
+    switch (o) {
         case "ios":
         case "android":
-            return a;
+            return o;
         default:
             return "web";
     }
@@ -94,6 +93,6 @@ function y() {
         return null != window.navigator.maxTouchPoints && window.navigator.maxTouchPoints > 2 ? "ios" : "macos";
     else if (/Linux/i.test(e)) return "linux";
 }
-function v() {
-    return o() ? "win" : l() ? "osx" : void 0;
+function C() {
+    return l() ? "win" : u() ? "osx" : void 0;
 }

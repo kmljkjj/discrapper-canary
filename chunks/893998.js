@@ -1,7 +1,7 @@
 "use strict";
-n.d(t, { y: () => i });
-var r = n(651162);
-class i {
+n.d(t, { y: () => r });
+var i = n(651162);
+class r {
     title;
     body;
     categoryStoreListingId;
@@ -15,7 +15,7 @@ class i {
     isDismissible;
     dismissibleContentVersion;
     constructor(e) {
-        (this.type = r.g.WIDE_BANNER),
+        (this.type = i.g.WIDE_BANNER),
             (this.title = e.title),
             (this.body = e.body),
             (this.categoryStoreListingId = e.category_store_listing_id),
@@ -30,6 +30,6 @@ class i {
             (this.dismissibleContentVersion = e.dismissible_content_version);
     }
     static fromServer(e) {
-        return new i(e);
+        return new r(e);
     }
 }

@@ -1,0 +1,3 @@
+a.exports = JSON.parse(
+    '{"odtr7f":["Pasirink i\u0161 anksto nustatyt\u0105 tem\u0105 arba sukurk savo. Kiekvienas narys matys \u0161i\u0105 tem\u0105, kai atidarys server\u012F, ji bus pritaikyta prie nario naudojamo \u0161viesaus arba tamsaus re\u017Eimo. ",[8,"$link",["Su\u017Einoti daugiau"],[[1,"articleUrl"]]]],"XhiIAu":["Pakei\u010Diama, kaip tavo serveris atrodys, visiems nariams."],"aZpFFn":["\u012Ejungti serverio tem\u0105"],"jSrqR2":["I\u0161 anksto nustatytos spalvos"],"HkvkHP":["Kiekvienam nariui bus rodomas jo pageidaujamas \u0161viesus arba tamsus re\u017Eimas."],"zry4l5":["Per\u017Ei\u016Br\u0117ti tem\u0105"],"Ck5zxP":["I\u0161sirink tem\u0105"],"/6NbRv":["Serverio tema"]}',
+);

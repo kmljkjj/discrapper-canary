@@ -1,39 +1,44 @@
 "use strict";
-n.d(t, { W: () => c, s: () => d });
-var r = n(627968);
+n.d(t, { W: () => d, s: () => _ });
+var i = n(627968);
 n(64700);
-var i = n(311907),
-    a = n(397927),
-    s = n(20805),
-    o = n(287809),
-    l = n(301736),
-    u = n(985018);
-function c(e) {
-    return (0, s.zD)(e)
-        ? u.intl.string(u.t["4f8iut"])
-        : (0, s.Lf)(e)
-          ? u.intl.string(u.t.yX2hNy)
-          : (0, s.fe)(e)
-            ? u.intl.string(u.t.oSs8eg)
-            : u.intl.string(u.t.bK9GT1);
-}
+var r = n(17928),
+    s = n(192308),
+    a = n(477782),
+    o = n(20805),
+    l = n(287809),
+    u = n(301736),
+    c = n(375708);
 function d(e) {
-    let { user: t, entry: u, display: d, onAction: _ } = e,
-        f = (0, l.A)(),
-        p = (0, i.bG)([o.default], () => o.default.getCurrentUser());
-    if (t.id !== p?.id || "recent" !== d || !(0, s.$R)(u)) return null;
-    let h = () => {
-        (0, a.mMO)(async () => {
-            let { default: e } = await Promise.all([n.e("10117"), n.e("36946")]).then(n.bind(n, 839785));
-            return (n) => (0, r.jsx)(e, { entry: u, user: t, onAction: _, onOpenGameSettings: f, ...n });
-        });
-    };
-    return (0, r.jsx)(a.Drp, {
-        id: "delete-entry-history",
-        label: c(u),
-        action: () => {
-            _?.({ action: "PRESS_DELETE_HISTORY_MENU_ITEM" }), h();
-        },
-        color: "danger",
-    });
+    return (0, o.zD)(e)
+        ? c.intl.string(c.t["4f8iut"])
+        : (0, o.Lf)(e)
+          ? c.intl.string(c.t.yX2hNy)
+          : (0, o.fe)(e)
+            ? c.intl.string(c.t.oSs8eg)
+            : c.intl.string(c.t.bK9GT1);
+}
+function _(e) {
+    let { user: t, entry: c, display: _, onAction: f } = e,
+        h = (0, u.A)(),
+        p = (0, r.bG)([l.default], () => l.default.getCurrentUser());
+    return t.id === p?.id && "recent" === _ && (0, o.$R)(c)
+        ? (0, i.jsx)(a.Dr, {
+              id: "delete-entry-history",
+              label: d(c),
+              action: () => {
+                  f?.({ action: "PRESS_DELETE_HISTORY_MENU_ITEM" }),
+                      (0, s.openModalLazy)(async () => {
+                          let { default: e } = await Promise.all([
+                              n.e("77791"),
+                              n.e("28152"),
+                              n.e("19119"),
+                              n.e("14565"),
+                          ]).then(n.bind(n, 839785));
+                          return (n) => (0, i.jsx)(e, { entry: c, user: t, onAction: f, onOpenGameSettings: h, ...n });
+                      });
+              },
+              color: "danger",
+          })
+        : null;
 }

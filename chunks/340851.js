@@ -1,285 +1,266 @@
-"use strict";
-n.d(t, { Ay: () => K, LR: () => H, aI: () => F });
-var i = n(627968),
-    s = n(64700),
-    l = n(503698),
-    r = n.n(l),
-    a = n(311907),
-    o = n(990078),
-    c = n(397927),
-    d = n(367513),
-    u = n(442433),
-    h = n(956793),
-    A = n(401843),
-    m = n(296216),
-    p = n(323073),
-    g = n(793574),
-    _ = n(480890),
-    f = n(643501),
-    x = n(916641),
-    C = n(652896),
-    E = n(279250),
-    I = n(346846),
-    N = n(142524),
-    b = n(958140),
-    S = n(721931),
-    T = n(766319),
-    v = n(342296),
-    y = n(481947),
-    j = n(430363),
-    R = n(823854),
-    O = n(961350),
-    L = n(71393),
-    M = n(576705),
-    D = n(287809),
-    G = n(977997),
-    U = n(338234),
-    P = n(376696);
-n(281405);
-var w = n(544105),
-    k = n(502075),
-    V = n(985018),
-    B = n(934093);
-function H(e) {
+i.d(t, { Ay: () => w, LR: () => D, aI: () => U });
+var n = i(627968),
+    l = i(64700),
+    s = i(503698),
+    a = i.n(s),
+    r = i(990078),
+    d = i(834730),
+    u = i(597601),
+    c = i(922016),
+    o = i(367513),
+    m = i(442433),
+    h = i(730852),
+    A = i(401843),
+    g = i(296216),
+    p = i(793574),
+    I = i(480890),
+    x = i(47167),
+    v = i(643501),
+    f = i(916641),
+    E = i(652896),
+    N = i(279250),
+    _ = i(346846),
+    S = i(342296),
+    C = i(481947),
+    j = i(495544),
+    y = i(71393),
+    T = i(576705),
+    b = i(287809),
+    O = i(977997),
+    G = i(772800);
+i(281405);
+var V = i(544105),
+    R = i(325278),
+    k = i(375708),
+    P = i(976358);
+function D(e) {
     let { numUsers: t } = e;
-    return (0, i.jsx)("div", {
-        className: B.BN,
-        children: (0, i.jsxs)(c.Text, { color: "text-muted", variant: "text-sm/medium", children: ["+", t] }),
+    return (0, n.jsx)("div", {
+        className: P.BN,
+        children: (0, n.jsxs)(d.E, { color: "text-muted", variant: "text-sm/medium", children: ["+", t] }),
     });
 }
-function F(e) {
-    let { numAudience: t, collapsed: n } = e,
-        s = n ? t : V.intl.formatToPlainString(V.t["+v2pN2"], { count: t });
-    return (0, i.jsxs)("div", {
-        className: r()(B.yJ, { [B.Nr]: n }),
+function U(e) {
+    let { numAudience: t, collapsed: i } = e,
+        l = i ? t : k.intl.formatToPlainString(k.t["+v2pN2"], { count: t });
+    return (0, n.jsxs)("div", {
+        className: a()(P.yJ, { [P.Nr]: i }),
         children: [
-            (0, i.jsx)("div", {
-                className: B.$L,
-                children: (0, i.jsx)(c.LoC, { size: "md", color: "currentColor", className: B.wG }),
+            (0, n.jsx)("div", {
+                className: P.$L,
+                children: (0, n.jsx)(u.L, { size: "md", color: "currentColor", className: P.wG }),
             }),
-            (0, i.jsx)(c.Text, { color: "text-muted", variant: "text-sm/medium", children: s }),
+            (0, n.jsx)(d.E, { color: "text-muted", variant: "text-sm/medium", children: l }),
         ],
     });
 }
-let K = (0, m.J)(function (e) {
+let w = (0, g.J)(function (e) {
     let {
             collapsed: t,
-            user: l,
-            channel: m,
-            mute: H,
-            localMute: F,
-            localVideoDisabled: K,
-            deaf: W,
-            video: Y,
-            embeddedApplication: z,
-            serverMute: q,
-            serverDeaf: X,
-            nick: J,
-            ringing: Q,
-            speaking: $,
-            disconnected: Z,
-            connectUserDragSource: ee,
-            canDrag: et,
-            isStreaming: en,
-            isWatching: ei,
-            isGuest: es,
-            priority: el,
-            showPreview: er,
-            hidePreview: ea,
-            shouldShowHoverPopout: eo,
-            previewIsOpen: ec,
-            otherClientSessionType: ed,
-            voicePlatform: eu,
-            isSelfOnOtherClient: eh = !1,
-            tabIndex: eA,
-            location: em,
-            isSelf: ep,
-            application: eg,
-            hangStatusActivity: e_,
-            requestToStreamActivity: ef,
-            showHangStatus: ex,
+            user: s,
+            channel: d,
+            mute: u,
+            localMute: g,
+            localVideoDisabled: D,
+            deaf: U,
+            video: w,
+            embeddedApplication: M,
+            serverMute: L,
+            serverDeaf: H,
+            nick: F,
+            ringing: z,
+            speaking: Y,
+            disconnected: B,
+            connectUserDragSource: K,
+            canDrag: q,
+            isStreaming: W,
+            isWatching: $,
+            isGuest: Z,
+            priority: J,
+            showPreview: X,
+            hidePreview: Q,
+            shouldShowHoverPopout: ee,
+            otherClientSessionType: et,
+            voicePlatform: ei,
+            isSelfOnOtherClient: en = !1,
+            tabIndex: el,
+            isSelf: es,
+            application: ea,
+            game: er,
         } = e,
-        { enableUserHoverActivities: eC } = (0, U.fC)({ guildId: m.guild_id, location: "VoiceUser" }),
-        eE = s.useRef(null),
-        [eI, eN] = s.useState(!1),
-        eb = s.useRef(null),
-        eS = s.useRef(null),
-        [eT, ev] = s.useState(!1),
-        [ey, ej] = s.useState(!1),
-        [eR, eO] = s.useState(!1),
-        [eL, eM] = s.useState(!1),
-        eD = ey || eL || eR,
-        eG = eT || eD,
-        eU = ef?.session_id != null,
-        eP = (0, a.bG)([R.A], () => R.A.hasVoiceDareForUserId(l.id), [l.id]),
-        ew = (0, j.Uk)("VoiceUser") && eP,
-        ek = () => {
-            eN(!eI);
+        ed = (0, x.Ay)(d),
+        eu = l.useRef(null),
+        [ec, eo] = l.useState(!1),
+        em = l.useRef(null),
+        eh = () => {
+            eo(!ec);
         },
-        eV = (e, t) => {
-            let n = new Set(["system:click_outside", "user:escape", "user:explicit"]);
-            null != t && n.has(t) && (eR && eO(!1), ey && ej(!1)), eB();
+        eA = (e) => {
+            eg();
         },
-        eB = () => {
-            clearTimeout(eS.current), ea?.(l.id);
-        },
-        eH = (e) => {
-            eC ||
-                (e
-                    ? (eb.current = setTimeout(() => {
-                          ev(!0);
-                      }, 150 * !!ec))
-                    : clearTimeout(eb.current));
+        eg = () => {
+            clearTimeout(em.current), Q?.(s.id);
         };
-    s.useEffect(
+    l.useEffect(
         () => () => {
-            clearTimeout(eb.current), clearTimeout(eS.current);
+            clearTimeout(em.current);
         },
         [],
     );
-    let eF = (e) => {
-            e && ev(!1);
+    let ep = () => {
+            if (!W || !(0, N.eo)(d, O.A, y.A, T.A, v.default)[0]) return;
+            let e = { streamType: R.U4.GUILD, ownerId: s.id, channelId: d.id, guildId: d.guild_id };
+            j.default.getId() !== s.id && h.default.selectVoiceChannel(d.id),
+                $ ? ((0, _.A)(e), o.A.selectParticipant(e.channelId, (0, E._z)(e))) : (0, A.Nl)(e),
+                Q?.(s.id);
         },
-        eK = () => {
-            if (!(en && (0, E.eo)(m, G.A, L.A, M.A, f.default)[0])) return;
-            let e = { streamType: k.U4.GUILD, ownerId: l.id, channelId: m.id, guildId: m.guild_id };
-            O.default.getId() !== l.id && h.default.selectVoiceChannel(m.id),
-                ei ? ((0, I.A)(e), d.A.selectParticipant(e.channelId, (0, C._z)(e))) : (0, A.Nl)(e),
-                ea?.(l.id);
-        },
-        eW = (e) => {
-            (0, u.L3)(e, async () => {
-                let { default: e } = await Promise.all([n.e("97262"), n.e("42128"), n.e("84841"), n.e("49783")]).then(
-                    n.bind(n, 107632),
-                );
+        eI = (e) => {
+            (0, m.L3)(e, async () => {
+                let { default: e } = await Promise.all([
+                    i.e("80203"),
+                    i.e("685"),
+                    i.e("12697"),
+                    i.e("74389"),
+                    i.e("26132"),
+                    i.e("46652"),
+                    i.e("93190"),
+                    i.e("34552"),
+                    i.e("93103"),
+                    i.e("8757"),
+                    i.e("89673"),
+                    i.e("85968"),
+                    i.e("60195"),
+                    i.e("21921"),
+                    i.e("68403"),
+                    i.e("76418"),
+                    i.e("29787"),
+                    i.e("71210"),
+                    i.e("97558"),
+                    i.e("94000"),
+                    i.e("66495"),
+                    i.e("88342"),
+                    i.e("91994"),
+                    i.e("42451"),
+                    i.e("76665"),
+                    i.e("98965"),
+                    i.e("35313"),
+                    i.e("24198"),
+                    i.e("39171"),
+                    i.e("36564"),
+                    i.e("45996"),
+                    i.e("52229"),
+                    i.e("792"),
+                    i.e("92822"),
+                    i.e("23427"),
+                    i.e("49145"),
+                    i.e("29422"),
+                    i.e("9291"),
+                    i.e("7059"),
+                    i.e("43116"),
+                    i.e("70314"),
+                    i.e("70515"),
+                    i.e("27435"),
+                    i.e("66939"),
+                    i.e("17334"),
+                    i.e("84841"),
+                ]).then(i.bind(i, 107632));
                 return (t) =>
-                    (0, i.jsx)(e, {
+                    (0, n.jsx)(e, {
                         ...t,
-                        user: l,
-                        guildId: m.guild_id,
-                        channel: m,
+                        user: s,
+                        guildId: d.guild_id,
+                        channel: d,
                         showMediaItems: !0,
-                        showStageChannelItems: m.isGuildStageVoice(),
-                        onInteraction: (0, _.s)("GuildChannelUserContextMenu", g.A.VOICE_USER, { targetUserId: l.id }),
+                        showStageChannelItems: d.isGuildStageVoice(),
+                        onInteraction: (0, I.s)("GuildChannelUserContextMenu", p.A.VOICE_USER, { targetUserId: s.id }),
                     });
             });
         },
-        eY = (e) =>
-            ep
-                ? (0, i.jsx)(b.h, { ...e, channel: m, setIsHangStatusInputFocused: ej, setIsEmojiPickerOpen: eM })
-                : null != e_
-                  ? (0, i.jsx)(S.E, { ...e, hangStatusActivity: e_, channel: m, userId: l.id })
-                  : null,
-        ez = () => (0, i.jsx)(T.A, { userId: l.id, channel: m }),
-        eq = () =>
-            (0, p.r9)() && (0, p.UK)(m.id)
-                ? null
-                : (0, i.jsx)(N.A, { user: l, channel: m, onWatch: eK, previewIsOpen: ec, location: em }),
-        eX = (0, i.jsx)("div", {
-            className: B.kZ,
-            "data-dnd-name": m.name,
-            onMouseEnter: eh
+        ex = (0, n.jsx)("div", {
+            className: P.kZ,
+            "data-dnd-name": ed,
+            onMouseEnter: en
                 ? void 0
                 : () => {
-                      !eI &&
-                          (eC
-                              ? (eS.current = setTimeout(() => er?.(l.id), 100))
-                              : (en || ex || eU || ew) && er?.(l.id));
+                      ec || (em.current = setTimeout(() => X?.(s.id), 100));
                   },
-            onMouseLeave: eh ? void 0 : eB,
-            children: (0, i.jsx)(v.A, {
-                clickTrap: l?.id === D.default.getCurrentUser()?.id && eI,
-                targetElementRef: eE,
-                user: l,
-                guildId: m.guild_id,
-                channelId: m.id,
-                newAnalyticsLocations: [g.A.VOICE_USER],
-                shouldShow: eI,
-                onRequestClose: () => eN(!1),
-                children: (e) =>
-                    ((e) => {
-                        let n = w.hv.has(ed ?? ""),
-                            s = {
-                                user: l,
-                                speaking: $,
-                                disconnected: Z,
-                                mute: H,
-                                localMute: F,
-                                localVideoDisabled: K,
-                                isStreaming: en,
-                                isGuest: es,
-                                video: Y,
-                                priority: el,
-                                ringing: Q,
-                                deaf: W,
-                                nick: J,
-                                collapsed: t,
-                                overlap: t,
-                                serverMute: q,
-                                serverDeaf: X,
-                                tabIndex: eA,
-                                otherClientSessionType: ed,
-                                voicePlatform: eu,
-                                embeddedApplication: z,
-                                avatarContainerClass: r()({ [B.dj]: !0 }),
-                                disabled: eh && !n,
-                                selected: eI,
-                                onClick: n ? void 0 : ek,
-                                onDoubleClick: eK,
-                                onContextMenu: eW,
-                                guildId: m.guild_id,
-                                isSelf: ep,
-                                application: eg,
-                                channelId: m.id,
-                                hangStatusActivity: e_,
-                                showHangStatus: ex,
-                            };
-                        if (eh)
-                            return (0, i.jsx)(o.m, {
-                                text: (0, x.A)(ed) ?? V.intl.string(V.t.IyYqqY),
-                                children: (0, i.jsx)(y.Ay, { ref: eE, ...s }),
-                            });
-                        let a = () => null;
-                        return (
-                            ex && eG && !eC
-                                ? (a = eY)
-                                : eC
-                                  ? (a = () =>
-                                        (0, i.jsx)(P.A, {
-                                            channel: m,
-                                            user: l,
-                                            onAction: eB,
-                                            onWatchStream: en ? eK : void 0,
-                                            hangStatusActivity: e_,
-                                            renderSelfHangStatus: eY,
-                                        }))
-                                  : en
-                                    ? (a = eq)
-                                    : eU && l.id !== O.default.getId()
-                                      ? (a = ez)
-                                      : ex && (a = eY),
-                            (0, i.jsx)(c.YNO, {
-                                targetElementRef: eE,
-                                position: "right",
-                                renderPopout: a,
-                                shouldShow: (eo || (ex && eD && (!eC || ep))) && !eI,
-                                onRequestClose: eV,
-                                align: ex && eG && !ep && !eC ? "center" : void 0,
-                                spacing: 17,
-                                children: () =>
-                                    (0, i.jsx)(y.Ay, {
-                                        ...s,
-                                        ref: eE,
-                                        onMouseDown: e.onMouseDown,
-                                        onKeyDown: e.onKeyDown,
-                                        handleHoverHangStatus: eH,
-                                        handleHoverIcons: eF,
-                                        onAddHangStatusClicked: () => eO(!0),
-                                    }),
-                            })
-                        );
-                    })(e),
+            onMouseLeave: en ? void 0 : eg,
+            children: (0, n.jsx)(S.A, {
+                clickTrap: s?.id === b.default.getCurrentUser()?.id && ec,
+                targetElementRef: eu,
+                user: s,
+                guildId: d.guild_id,
+                channelId: d.id,
+                newAnalyticsLocations: [p.A.VOICE_USER],
+                shouldShow: ec,
+                onRequestClose: () => eo(!1),
+                children: (e) => {
+                    let i, l;
+                    return (
+                        (i = V.hv.has(et ?? "")),
+                        (l = {
+                            user: s,
+                            speaking: Y,
+                            disconnected: B,
+                            mute: u,
+                            localMute: g,
+                            localVideoDisabled: D,
+                            isStreaming: W,
+                            isGuest: Z,
+                            video: w,
+                            priority: J,
+                            ringing: z,
+                            deaf: U,
+                            nick: F,
+                            collapsed: t,
+                            overlap: t,
+                            serverMute: L,
+                            serverDeaf: H,
+                            tabIndex: el,
+                            otherClientSessionType: et,
+                            voicePlatform: ei,
+                            embeddedApplication: M,
+                            avatarContainerClass: a()({ [P.dj]: !0 }),
+                            disabled: en && !i,
+                            selected: ec,
+                            onClick: i ? void 0 : eh,
+                            onDoubleClick: ep,
+                            onContextMenu: eI,
+                            guildId: d.guild_id,
+                            isSelf: es,
+                            application: ea,
+                            game: er,
+                            channelId: d.id,
+                        }),
+                        en
+                            ? (0, n.jsx)(r.m, {
+                                  text: (0, f.A)(et) ?? k.intl.string(k.t.IyYqqY),
+                                  children: (0, n.jsx)(C.Ay, { ref: eu, ...l }),
+                              })
+                            : (0, n.jsx)(c.Y, {
+                                  targetElementRef: eu,
+                                  position: "right",
+                                  renderPopout: () =>
+                                      (0, n.jsx)(G.A, {
+                                          channel: d,
+                                          user: s,
+                                          onAction: eg,
+                                          onWatchStream: W ? ep : void 0,
+                                      }),
+                                  shouldShow: ee && !ec,
+                                  onRequestClose: eA,
+                                  spacing: 17,
+                                  children: () =>
+                                      (0, n.jsx)(C.Ay, {
+                                          ...l,
+                                          ref: eu,
+                                          onMouseDown: e.onMouseDown,
+                                          onKeyDown: e.onKeyDown,
+                                      }),
+                              })
+                    );
+                },
             }),
         });
-    return et ? ee(eX) : eX;
+    return q ? K(ex) : ex;
 });

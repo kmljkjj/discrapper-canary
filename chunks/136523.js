@@ -1,116 +1,116 @@
 "use strict";
-n.d(t, { default: () => v, m: () => y });
-var r = n(627968),
-    i = n(64700),
-    a = n(158954),
-    s = n(417597),
-    o = n(319400),
-    l = n(435183),
-    u = n(843472),
-    c = n(309698),
-    d = n(355622),
-    _ = n(408018),
-    f = n(133343),
-    p = n(451909),
-    h = n(383501),
-    m = n(287809),
-    g = n(954571),
-    E = n(652215),
-    A = n(985018),
-    I = n(171927),
-    T = n(379649);
-let y = "VoiceChannelStatusModal",
-    S = 500;
-function v(e) {
-    let { channel: t, transitionState: n, sourceAnalyticsLocations: v, onClose: C } = e,
-        b = (0, s.bG)([c.A], () => c.A.getChannelStatus(t)),
-        N = (0, s.bG)([h.A], () => h.A.getMediaSessionId()),
-        [R, O] = i.useState(b ?? ""),
-        [D, L] = i.useState(!1),
-        [w, x] = i.useState(null),
-        P = (0, s.bG)([m.default], () => m.default.getCurrentUser()),
-        M = R.length > S;
-    i.useEffect(() => {
-        g.default.track(E.HAw.OPEN_MODAL, {
+n.d(t, { default: () => C, m: () => y });
+var i = n(627968),
+    r = n(64700),
+    s = n(452027),
+    a = n(772707),
+    o = n(702841),
+    l = n(319400),
+    u = n(435183),
+    c = n(720149),
+    d = n(47167),
+    _ = n(882840),
+    f = n(355622),
+    h = n(408018),
+    p = n(201349),
+    E = n(451909),
+    m = n(763827),
+    g = n(287809),
+    A = n(174459),
+    I = n(652215),
+    T = n(375708),
+    S = n(700494),
+    N = n(379649);
+let y = "VoiceChannelStatusModal";
+function C(e) {
+    let { channel: t, transitionState: n, sourceAnalyticsLocations: C, onClose: v } = e,
+        O = (0, _.l)(t),
+        R = (0, o.bG)([m.A], () => m.A.getMediaSessionId()),
+        [b, D] = r.useState(O ?? ""),
+        [L, w] = r.useState(!1),
+        [M, P] = r.useState(null),
+        x = (0, o.bG)([g.default], () => g.default.getCurrentUser()),
+        U = (0, d.Ay)(t),
+        k = b.length > 500;
+    r.useEffect(() => {
+        A.default.track(I.HAw.OPEN_MODAL, {
             type: "Voice Channel Topic Modal",
             guild_id: t.guild_id,
-            location_stack: v,
+            location_stack: C,
         });
-    }, [t.guild_id, v]);
-    let k = (e) => {
-            x(new o.LG(e, e.status).getAnyErrorMessage());
+    }, [t.guild_id, C]);
+    let G = (e) => {
+            P(new l.LG(e, e.status).getAnyErrorMessage());
         },
-        U = (e) => {
-            let { invalidEmojis: n } = e;
-            if (null != n && n.length > 0) {
-                let { errorMessage: e } = u.A.validateMessage(n, P, t.id);
-                return x(e), L(!1), { hasErrors: !0 };
-            }
-            return { hasErrors: !1 };
-        },
-        G = async (e) => {
-            R === b && C(), e?.preventDefault(), x(null), L(!0);
-            let n = R.length,
-                r = R.replace(/<(a)?:[^:]+:[0-9]+>/g, "--").length,
-                i = p.Ay.parse(t, R),
-                { hasErrors: a } = U(i);
-            if (!a) {
+        F = async (e) => {
+            b === O && v(), e?.preventDefault(), P(null), w(!0);
+            let n = b.length,
+                i = b.replace(/<(a)?:[^:]+:[0-9]+>/g, "--").length,
+                r = E.Ay.parse(t, b),
+                { hasErrors: s } = ((e) => {
+                    let { invalidEmojis: n } = e;
+                    if (null != n && n.length > 0) {
+                        let { errorMessage: e } = c.A.validateMessage(n, x, t.id);
+                        return P(e), w(!1), { hasErrors: !0 };
+                    }
+                    return { hasErrors: !1 };
+                })(r);
+            if (!s) {
                 try {
-                    let e = await l.Ay.updateVoiceChannelStatus(t.id, i.content);
+                    let e = await u.Ay.updateVoiceChannelStatus(t.id, r.content);
                     204 === e.status
-                        ? (g.default.track(E.HAw.VOICE_CHANNEL_TOPIC_SET, {
+                        ? (A.default.track(I.HAw.VOICE_CHANNEL_TOPIC_SET, {
                               guild_id: t.guild_id,
                               channel_id: t.id,
-                              media_session_id: N,
+                              media_session_id: R,
                               raw_length: n,
-                              text_length: r,
-                              location_stack: v,
+                              text_length: i,
+                              location_stack: C,
                           }),
-                          C())
-                        : k(e);
+                          v())
+                        : G(e);
                 } catch (e) {
-                    k(e);
+                    G(e);
                 }
-                L(!1);
+                w(!1);
             }
         },
-        [V, F] = i.useState((0, _.x7)(R)),
-        B = (e, t, n) => {
-            O(t), F(n);
-        },
-        j = async () => (M || D || (await G()), Promise.resolve({ shouldClear: !1, shouldRefocus: !0 })),
-        H = (0, r.jsx)(a.D0$, {
-            label: A.intl.string(A.t.Fq5lwN),
-            errorMessage: w,
-            children: (0, r.jsx)(f.Ay, {
-                innerClassName: I.Tg,
-                textValue: R,
+        [V, B] = r.useState((0, h.x7)(b)),
+        H = async () => (k || L || (await F()), Promise.resolve({ shouldClear: !1, shouldRefocus: !0 })),
+        j = (0, i.jsx)(s.D, {
+            label: T.intl.string(T.t.Fq5lwN),
+            errorMessage: M,
+            children: (0, i.jsx)(p.Ay, {
+                innerClassName: S.Tg,
+                textValue: b,
                 richValue: V,
-                placeholder: A.intl.formatToPlainString(A.t.DUXxBh, { channelName: t.name }),
+                placeholder: T.intl.formatToPlainString(T.t.DUXxBh, { channelName: U }),
                 focused: !0,
                 channel: t,
-                onChange: B,
-                onSubmit: j,
-                type: d.oU.VOICE_CHANNEL_STATUS,
+                onChange: (e, t, n) => {
+                    D(t), B(n);
+                },
+                onSubmit: H,
+                type: f.oU.VOICE_CHANNEL_STATUS,
                 canMentionRoles: !1,
                 canMentionChannels: !1,
                 allowNewLines: !1,
                 parentModalKey: y,
-                maxCharacterCount: S,
-                showRemainingCharsAfterCount: S / 2,
+                maxCharacterCount: 500,
+                showRemainingCharsAfterCount: 250,
                 emojiPickerCloseOnModalOuterClick: !0,
             }),
         });
-    return (0, r.jsx)(a.ExpressiveModal, {
+    return (0, i.jsx)(a.k, {
         transitionState: n,
-        onClose: C,
-        graphic: { type: "image", src: T },
-        title: A.intl.string(A.t["5CyJBd"]),
-        subtitle: A.intl.string(A.t.NRBYju),
+        onClose: v,
+        graphic: { type: "image", src: N },
+        title: T.intl.string(T.t["5CyJBd"]),
+        subtitle: T.intl.string(T.t.NRBYju),
         actions: [
-            { variant: "secondary", text: A.intl.string(A.t["ETE/oC"]), onClick: C },
-            { variant: "primary", loading: D, disabled: M, text: A.intl.string(A.t.XqK2I2), onClick: G },
+            { variant: "secondary", text: T.intl.string(T.t["ETE/oC"]), onClick: v },
+            { variant: "primary", loading: L, disabled: k, text: T.intl.string(T.t.XqK2I2), onClick: F },
         ],
-        children: H,
+        children: j,
     });
 }

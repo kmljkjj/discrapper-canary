@@ -1,26 +1,24 @@
 "use strict";
-n.d(t, { El: () => f, Fd: () => u, nK: () => m, sJ: () => c });
-var r = n(998218);
-let i = /\p{Cf}|\p{Zl}|\p{Zp}|[^\P{Cc}\n]|[^\P{Zs} ]/gu,
-    a = /\p{Cf}|\p{Zl}|\p{Zp}|[^\P{Cc}\n\t]|[^\P{Zs} ]/gu,
-    s = ["͏", "឴", "឵", "ᅠ", "ㅤ", "ﾠ"],
-    o = RegExp(`${i.source}|${s.join("|")}`, "gu"),
-    l = RegExp(`${a.source}|${s.join("|")}`, "gu");
-function u(e) {
-    return e.replace(o, "");
+n.d(t, { El: () => d, Fd: () => o, nK: () => f, sJ: () => l });
+var i = n(998218);
+let r = ["\u034F", "\u17B4", "\u17B5", "\u1160", "\u3164", "\uFFA0"],
+    s = RegExp(`${/\p{Cf}|\p{Zl}|\p{Zp}|[^\P{Cc}\n]|[^\P{Zs} ]/gu.source}|${r.join("|")}`, "gu"),
+    a = RegExp(`${/\p{Cf}|\p{Zl}|\p{Zp}|[^\P{Cc}\n\t]|[^\P{Zs} ]/gu.source}|${r.join("|")}`, "gu");
+function o(e) {
+    return e.replace(s, "");
 }
-function c(e) {
-    return e.replace(l, "");
+function l(e) {
+    return e.replace(a, "");
 }
-let d = [
+let u = [
     {
         character: "h",
-        matcher: _([
+        matcher: c([
             "H",
-            "һ",
-            "հ",
-            "Ꮒ",
-            "ℎ",
+            "\u04BB",
+            "\u0570",
+            "\u13C2",
+            "\u210E",
             "\uD835\uDC21",
             "\uD835\uDC89",
             "\uD835\uDCBD",
@@ -33,12 +31,12 @@ let d = [
             "\uD835\uDE29",
             "\uD835\uDE5D",
             "\uD835\uDE91",
-            "ｈ",
+            "\uFF48",
         ]),
     },
     {
         character: "t",
-        matcher: _([
+        matcher: c([
             "T",
             "\uD835\uDC2D",
             "\uD835\uDC61",
@@ -57,13 +55,13 @@ let d = [
     },
     {
         character: "p",
-        matcher: _([
+        matcher: c([
             "P",
-            "ρ",
-            "ϱ",
-            "р",
-            "⍴",
-            "ⲣ",
+            "\u03C1",
+            "\u03F1",
+            "\u0440",
+            "\u2374",
+            "\u2CA3",
             "\uD835\uDC29",
             "\uD835\uDC5D",
             "\uD835\uDC91",
@@ -87,18 +85,18 @@ let d = [
             "\uD835\uDF8E",
             "\uD835\uDFBA",
             "\uD835\uDFC8",
-            "ｐ",
-            "ҏ",
+            "\uFF50",
+            "\u048F",
         ]),
     },
     {
         character: "s",
-        matcher: _([
+        matcher: c([
             "S",
-            "ƽ",
-            "ѕ",
-            "ꜱ",
-            "ꮪ",
+            "\u01BD",
+            "\u0455",
+            "\uA731",
+            "\uABAA",
             "\uD801\uDC48",
             "\uD806\uDCC1",
             "\uD835\uDC2C",
@@ -114,145 +112,180 @@ let d = [
             "\uD835\uDE34",
             "\uD835\uDE68",
             "\uD835\uDE9C",
-            "ｓ",
+            "\uFF53",
         ]),
     },
     {
         character: ":",
-        matcher: _(["ː", "˸", "։", "׃", "܃", "܄", "ः", "ઃ", "᛬", "᠃", "᠉", "⁚", "∶", "ꓽ", "꞉", "︰", "：", ";", ";"]),
+        matcher: c([
+            "\u02D0",
+            "\u02F8",
+            "\u0589",
+            "\u05C3",
+            "\u0703",
+            "\u0704",
+            "\u0903",
+            "\u0A83",
+            "\u16EC",
+            "\u1803",
+            "\u1809",
+            "\u205A",
+            "\u2236",
+            "\uA4FD",
+            "\uA789",
+            "\uFE30",
+            "\uFF1A",
+            ";",
+            "\u037E",
+        ]),
     },
     {
         character: "/",
-        matcher: _(["᜵", "⁁", "⁄", "∕", "╱", "⟋", "⧸", "Ⳇ", "⼃", "〳", "ノ", "㇓", "丿", "\uD834\uDE3A"]),
+        matcher: c([
+            "\u1735",
+            "\u2041",
+            "\u2044",
+            "\u2215",
+            "\u2571",
+            "\u27CB",
+            "\u29F8",
+            "\u2CC6",
+            "\u2F03",
+            "\u3033",
+            "\u30CE",
+            "\u31D3",
+            "\u4E3F",
+            "\uD834\uDE3A",
+        ]),
     },
 ];
-function _(e) {
+function c(e) {
     return RegExp(e.join("|"), "gu");
 }
-function f(e) {
+function d(e) {
     let t = e;
     return (
-        d.forEach((e) => {
+        u.forEach((e) => {
             t = t.replace(e.matcher, e.character);
         }),
         t
     );
 }
-let p = [
+let _ = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0,
 ];
+function f(e) {
+    let t = (function (e) {
+        if ("null" === e.origin && e.pathname.startsWith("//")) return e.protocol;
+        let t = "";
+        "" !== e.username && (t += e.username), "" !== e.password && (t += ":" + e.password), "" !== t && (t += "@");
+        let n = "//" === e.href.substr(e.protocol.length, 2);
+        return `${e.protocol}${n ? "//" : ""}${t}${e.host}`;
+    })(e);
+    return (t += h(e.pathname)), (t += h(e.search)), (t += h(e.hash));
+}
 function h(e) {
-    return e >= 0 && e < 128
-        ? 1 === p[e]
-        : !(
-              8206 === e ||
-              8207 === e ||
-              8234 === e ||
-              8235 === e ||
-              8236 === e ||
-              8237 === e ||
-              8238 === e ||
-              1564 === e ||
-              8294 === e ||
-              8295 === e ||
-              8296 === e ||
-              8297 === e ||
-              128271 === e ||
-              128272 === e ||
-              128274 === e ||
-              128275 === e ||
-              133 === e ||
-              160 === e ||
-              5760 === e ||
-              8192 === e ||
-              8193 === e ||
-              8194 === e ||
-              8195 === e ||
-              8196 === e ||
-              8197 === e ||
-              8198 === e ||
-              8199 === e ||
-              8200 === e ||
-              8201 === e ||
-              8202 === e ||
-              8232 === e ||
-              8233 === e ||
-              8239 === e ||
-              8287 === e ||
-              12288 === e ||
-              10240 === e ||
-              173 === e ||
-              847 === e ||
-              (e >= 1536 && e <= 1541) ||
-              1757 === e ||
-              1807 === e ||
-              2274 === e ||
-              4447 === e ||
-              4448 === e ||
-              6068 === e ||
-              6069 === e ||
-              6155 === e ||
-              6156 === e ||
-              6157 === e ||
-              6158 === e ||
-              8203 === e ||
-              8204 === e ||
-              8205 === e ||
-              8288 === e ||
-              8289 === e ||
-              8290 === e ||
-              8291 === e ||
-              8292 === e ||
-              8293 === e ||
-              (e >= 8298 && e <= 8303) ||
-              12644 === e ||
-              (e >= 65520 && e <= 65528) ||
-              (e >= 65024 && e <= 65039) ||
-              65279 === e ||
-              65440 === e ||
-              65529 === e ||
-              65530 === e ||
-              65531 === e ||
-              69821 === e ||
-              69837 === e ||
-              (e >= 78896 && e <= 78904) ||
-              (e >= 113824 && e <= 113827) ||
-              (e >= 119155 && e <= 119162) ||
-              (e >= 917504 && e <= 921599)
-          );
-}
-function m(e) {
-    let t = E(e);
-    return (t += g(e.pathname)), (t += g(e.search)), (t += g(e.hash));
-}
-function g(e) {
-    let t = r.A.safeDecodeURIComponent(e);
+    let t = i.A.safeDecodeURIComponent(e);
     if (null == t) return e;
     let n = "",
-        i = e,
-        a = t;
-    for (; i.length > 0; ) {
-        let e = i.codePointAt(0),
-            t = a.codePointAt(0);
+        r = e,
+        s = t;
+    for (; r.length > 0; ) {
+        let e = r.codePointAt(0),
+            t = s.codePointAt(0);
         if (e === t) {
             let t = String.fromCodePoint(e);
-            (n += t), (i = i.substring(t.length)), (a = a.substring(t.length));
+            (n += t), (r = r.substring(t.length)), (s = s.substring(t.length));
             continue;
         }
-        let r = String.fromCodePoint(t),
-            s = encodeURIComponent(r),
-            o = s === r ? 3 : s.length;
-        (n += h(t) ? r : s), (i = i.substring(o)), (a = a.substring(r.length));
+        let i = String.fromCodePoint(t),
+            a = encodeURIComponent(i),
+            o = a === i ? 3 : a.length;
+        (n += (
+            t >= 0 && t < 128
+                ? 1 !== _[t]
+                : 8206 === t ||
+                  8207 === t ||
+                  8234 === t ||
+                  8235 === t ||
+                  8236 === t ||
+                  8237 === t ||
+                  8238 === t ||
+                  1564 === t ||
+                  8294 === t ||
+                  8295 === t ||
+                  8296 === t ||
+                  8297 === t ||
+                  128271 === t ||
+                  128272 === t ||
+                  128274 === t ||
+                  128275 === t ||
+                  133 === t ||
+                  160 === t ||
+                  5760 === t ||
+                  8192 === t ||
+                  8193 === t ||
+                  8194 === t ||
+                  8195 === t ||
+                  8196 === t ||
+                  8197 === t ||
+                  8198 === t ||
+                  8199 === t ||
+                  8200 === t ||
+                  8201 === t ||
+                  8202 === t ||
+                  8232 === t ||
+                  8233 === t ||
+                  8239 === t ||
+                  8287 === t ||
+                  12288 === t ||
+                  10240 === t ||
+                  173 === t ||
+                  847 === t ||
+                  (t >= 1536 && t <= 1541) ||
+                  1757 === t ||
+                  1807 === t ||
+                  2274 === t ||
+                  4447 === t ||
+                  4448 === t ||
+                  6068 === t ||
+                  6069 === t ||
+                  6155 === t ||
+                  6156 === t ||
+                  6157 === t ||
+                  6158 === t ||
+                  8203 === t ||
+                  8204 === t ||
+                  8205 === t ||
+                  8288 === t ||
+                  8289 === t ||
+                  8290 === t ||
+                  8291 === t ||
+                  8292 === t ||
+                  8293 === t ||
+                  (t >= 8298 && t <= 8303) ||
+                  12644 === t ||
+                  (t >= 65520 && t <= 65528) ||
+                  (t >= 65024 && t <= 65039) ||
+                  65279 === t ||
+                  65440 === t ||
+                  65529 === t ||
+                  65530 === t ||
+                  65531 === t ||
+                  69821 === t ||
+                  69837 === t ||
+                  (t >= 78896 && t <= 78904) ||
+                  (t >= 113824 && t <= 113827) ||
+                  (t >= 119155 && t <= 119162) ||
+                  (t >= 917504 && t <= 921599)
+        )
+            ? a
+            : i),
+            (r = r.substring(o)),
+            (s = s.substring(i.length));
     }
     return n;
-}
-function E(e) {
-    if ("null" === e.origin && e.pathname.startsWith("//")) return e.protocol;
-    let t = "";
-    "" !== e.username && (t += e.username), "" !== e.password && (t += ":" + e.password), "" !== t && (t += "@");
-    let n = "//" === e.href.substr(e.protocol.length, 2) ? "//" : "";
-    return `${e.protocol}${n}${t}${e.host}`;
 }

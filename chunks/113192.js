@@ -1,8 +1,8 @@
 "use strict";
 n.d(t, { v: () => I });
-var r = n(627968);
+var i = n(627968);
 n(64700);
-var i = n(646865),
+var r = n(646865),
     s = n(795816),
     a = n(47294),
     o = n(688810),
@@ -12,57 +12,56 @@ var i = n(646865),
     d = n(267102),
     _ = n(447404),
     f = n(271195),
-    p = n(128286),
-    h = n(625180),
-    m = n(262579),
-    E = n(652215),
-    g = n(700063),
-    A = n(299973);
+    h = n(128286),
+    p = n(113854),
+    E = n(262579),
+    m = n(652215),
+    g = n(196436),
+    A = n(27600);
 function I(e) {
-    let { applicationId: t, onMouseDown: n, onMouseMove: I, onMouseLeave: T, onFocus: S, idle: y } = e,
-        v = (0, l.h)(t),
-        N = (0, d.Us)() === E.BRT.POPOUT,
-        { parentAnalyticsLocation: C } = (0, o.Ay)(),
-        R = () => {
-            (0, u.X)(C, u.O.POPOUT, !0),
-                (0, a.A)({
-                    onConfirm: async () => {
-                        await h.A.refreshProxyTicket({ applicationId: t }), (0, s.jp)();
-                    },
-                });
-        };
-    return (0, r.jsxs)("div", {
+    let { applicationId: t, onMouseDown: n, onMouseMove: I, onMouseLeave: T, onFocus: S, idle: N } = e,
+        y = (0, l.h)(t),
+        C = (0, d.Us)() === m.BRT.POPOUT,
+        { parentAnalyticsLocation: v } = (0, o.Ay)();
+    return (0, i.jsxs)("div", {
         className: A._v,
         onMouseMove: I,
         onMouseDown: n,
         onMouseLeave: T,
         children: [
-            (0, r.jsx)("div", {
+            (0, i.jsx)("div", {
                 className: A.K1,
-                children: (0, r.jsx)(f.X, {
-                    idle: y,
-                    title: v?.name ?? "",
+                children: (0, i.jsx)(f.X, {
+                    idle: N,
+                    title: y?.name ?? "",
                     onJumpToChannel: S,
                     preventIdleComponent: _.A,
                 }),
             }),
-            (0, r.jsx)("div", {
+            (0, i.jsx)("div", {
                 className: A.q6,
-                children: (0, r.jsxs)(c.A, {
+                children: (0, i.jsxs)(c.A, {
                     grow: 1,
                     shrink: 1,
                     justify: c.A.Justify.END,
                     align: c.A.Align.CENTER,
                     children: [
-                        N || (0, i.f)()
+                        C || (0, r.f)()
                             ? null
-                            : (0, r.jsx)(p.A, {
+                            : (0, i.jsx)(h.A, {
                                   className: g.BD,
                                   popoutOpen: !1,
-                                  onOpenPopout: R,
-                                  onClosePopout: E.FXj,
+                                  onOpenPopout: () => {
+                                      (0, u.X)(v, u.O.POPOUT, !0),
+                                          (0, a.A)({
+                                              onConfirm: async () => {
+                                                  await p.A.refreshProxyTicket({ applicationId: t }), (0, s.jp)();
+                                              },
+                                          });
+                                  },
+                                  onClosePopout: m.FXj,
                               }),
-                        (0, r.jsx)(m.A, { applicationId: t, className: g.BD }),
+                        (0, i.jsx)(E.A, { applicationId: t, className: g.BD }),
                     ],
                 }),
             }),

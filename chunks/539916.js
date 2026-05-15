@@ -1,77 +1,71 @@
 "use strict";
 n.d(t, {
-    Bu: () => g,
-    D1: () => h,
-    Ii: () => x,
-    Kd: () => m,
-    Km: () => y,
-    ME: () => A,
-    Mc: () => S,
-    QY: () => c,
-    Q_: () => u,
-    SA: () => C,
-    SD: () => I,
-    Sq: () => L,
-    Uh: () => N,
-    a5: () => v,
-    fs: () => _,
-    hv: () => R,
-    iD: () => d,
-    kq: () => l,
-    n4: () => P,
-    pA: () => f,
-    qC: () => E,
-    sd: () => p,
-    tb: () => O,
-    vK: () => w,
-    wZ: () => T,
+    Bu: () => T,
+    D1: () => A,
+    Ii: () => k,
+    Kd: () => I,
+    Km: () => v,
+    ME: () => N,
+    Mc: () => O,
+    QY: () => h,
+    Q_: () => f,
+    SA: () => b,
+    SD: () => y,
+    Sq: () => x,
+    Uh: () => L,
+    a5: () => R,
+    fs: () => E,
+    hv: () => w,
+    iD: () => p,
+    kq: () => _,
+    n4: () => G,
+    pA: () => m,
+    qC: () => S,
+    sd: () => g,
+    tb: () => M,
+    vK: () => U,
+    wZ: () => C,
 }),
     n(321073);
-var r = n(812729),
-    i = n.n(r),
-    a = n(240248),
-    s = n(652215),
-    o = n(985018);
-let l = 100,
-    u = 50,
-    c = 100,
-    d = 15,
-    _ = 50,
-    f = 10,
-    p = 100,
-    h = 4,
-    m = 1,
-    g = 13;
-var E = (function (e) {
-        return (e[(e.CUSTOMIZE = 0)] = "CUSTOMIZE"), (e[(e.BROWSE = 1)] = "BROWSE"), e;
-    })({}),
-    A = (function (e) {
-        return (e[(e.MULTIPLE_CHOICE = 0)] = "MULTIPLE_CHOICE"), (e[(e.DROPDOWN = 1)] = "DROPDOWN"), e;
-    })({}),
-    I = (function (e) {
-        return (
-            (e[(e.ONBOARDING_DEFAULT = 0)] = "ONBOARDING_DEFAULT"),
-            (e[(e.ONBOARDING_ADVANCED = 1)] = "ONBOARDING_ADVANCED"),
-            e
-        );
-    })({}),
-    T = (function (e) {
-        return (
-            (e[(e.APPLICATION = 0)] = "APPLICATION"),
-            (e[(e.PROVIDER_CONNECTED_ACCOUNT = 1)] = "PROVIDER_CONNECTED_ACCOUNT"),
-            e
-        );
-    })({});
-function y(e) {
+var i,
+    r,
+    s,
+    a,
+    o = n(812729),
+    l = n.n(o),
+    u = n(240248),
+    c = n(652215),
+    d = n(375708);
+let _ = 100,
+    f = 50,
+    h = 100,
+    p = 15,
+    E = 50,
+    m = 10,
+    g = 100,
+    A = 4,
+    I = 1,
+    T = 13;
+var S = (((i = {})[(i.CUSTOMIZE = 0)] = "CUSTOMIZE"), (i[(i.BROWSE = 1)] = "BROWSE"), i),
+    N = (((r = {})[(r.MULTIPLE_CHOICE = 0)] = "MULTIPLE_CHOICE"), (r[(r.DROPDOWN = 1)] = "DROPDOWN"), r),
+    y =
+        (((s = {})[(s.ONBOARDING_DEFAULT = 0)] = "ONBOARDING_DEFAULT"),
+        (s[(s.ONBOARDING_ADVANCED = 1)] = "ONBOARDING_ADVANCED"),
+        s),
+    C =
+        (((a = {})[(a.APPLICATION = 0)] = "APPLICATION"),
+        (a[(a.PROVIDER_CONNECTED_ACCOUNT = 1)] = "PROVIDER_CONNECTED_ACCOUNT"),
+        a);
+function v(e) {
     if (e.options.length > 0) return !1;
-    let { id: t, ...n } = S(),
-        { id: r, ...a } = e;
-    return i()(n, a);
+    let { id: t, ...n } = O(),
+        { id: i, ...r } = e;
+    return l()(n, r);
 }
-function S() {
+function O() {
     return {
         id: String(Date.now()),
-        title: o.intl.string(o.t.vY91C9),
+        title: d.intl.string(d.t.vY91C9),
         options: [],
         singleSelect: !1,
         required: !1,
@@ -79,10 +73,10 @@ function S() {
         type: 0,
     };
 }
-function v(e) {
+function R(e) {
     return { id: String(Date.now()), title: "", options: [], singleSelect: !1, required: !1, inOnboarding: e, type: 0 };
 }
-function C(e) {
+function b(e) {
     return {
         id: e.id,
         options: e.options.map((e) => ({
@@ -104,7 +98,7 @@ function C(e) {
         type: e.type,
     };
 }
-function b(e) {
+function D(e) {
     return {
         id: e.id,
         options: e.options.map((e) => ({
@@ -123,9 +117,9 @@ function b(e) {
         type: e.type,
     };
 }
-function N(e) {
+function L(e) {
     return {
-        prompts: e.prompts.map(b),
+        prompts: e.prompts.map(D),
         defaultChannelIds: e.default_channel_ids,
         responses: e.responses ?? [],
         mode: e.mode,
@@ -136,24 +130,24 @@ function N(e) {
         connections: e.connections ?? [],
     };
 }
-function R(e) {
+function w(e) {
     return null == e || (null == e.id && null == e.name);
 }
-let O = new Set([
-        s.fg2.PLAYSTATION_STAGING,
-        s.fg2.CONTACTS,
-        s.fg2.DOMAIN,
-        s.fg2.TWITTER_LEGACY,
-        s.fg2.MASTODON,
-        s.fg2.INSTAGRAM,
-        s.fg2.LEAGUE_OF_LEGENDS,
-        s.fg2.SKYPE,
+let M = new Set([
+        c.fg2.PLAYSTATION_STAGING,
+        c.fg2.CONTACTS,
+        c.fg2.DOMAIN,
+        c.fg2.TWITTER_LEGACY,
+        c.fg2.MASTODON,
+        c.fg2.INSTAGRAM,
+        c.fg2.LEAGUE_OF_LEGENDS,
+        c.fg2.SKYPE,
     ]),
-    D = Object.values(s.fg2).filter((e) => !O.has(e));
-function L(e) {
+    P = Object.values(c.fg2).filter((e) => !M.has(e));
+function x(e) {
     return 0 === e.connection_type ? `app:${e.application_id}` : `provider:${e.provider_id}`;
 }
-function w(e) {
+function U(e) {
     let [t, n] = e.split(":");
     return "app" === t && void 0 !== n && "" !== n
         ? { type: 0, applicationId: n }
@@ -161,33 +155,33 @@ function w(e) {
           ? { type: 1, providerId: n }
           : null;
 }
-function x(e) {
+function k(e) {
     let t = [];
     return (
         0 !== e.connection_type && 1 !== e.connection_type
             ? t.push("Invalid connection type")
             : (0 === e.connection_type
-                  ? ((0, a.uJ)(e.application_id) && t.push("Application ID is required for application connections"),
-                    (0, a.uJ)(e.provider_id) || t.push("Platform ID not allowed for application connections"))
+                  ? ((0, u.uJ)(e.application_id) && t.push("Application ID is required for application connections"),
+                    (0, u.uJ)(e.provider_id) || t.push("Platform ID not allowed for application connections"))
                   : 1 === e.connection_type &&
-                    ((0, a.uJ)(e.provider_id)
+                    ((0, u.uJ)(e.provider_id)
                         ? t.push("Platform ID is required for platform connections")
-                        : D.includes(e.provider_id) || t.push("Invalid platform ID"),
-                    (0, a.uJ)(e.application_id) || t.push("Application ID not allowed for platform connections")),
+                        : P.includes(e.provider_id) || t.push("Invalid platform ID"),
+                    (0, u.uJ)(e.application_id) || t.push("Application ID not allowed for platform connections")),
               null != e.description &&
-                  e.description.length > p &&
-                  t.push(`Description must be ${p} characters or less`)),
+                  e.description.length > g &&
+                  t.push(`Description must be ${g} characters or less`)),
         t
     );
 }
-function P(e) {
+function G(e) {
     let t = [],
         n = new Set();
-    for (let [r, i] of e.entries()) {
-        let e = x(i);
-        t.push(...e.map((e) => `Connection ${r + 1}: ${e}`));
-        let a = L(i);
-        n.has(a) && t.push("Duplicate connection configuration"), n.add(a);
+    for (let [i, r] of e.entries()) {
+        let e = k(r);
+        t.push(...e.map((e) => `Connection ${i + 1}: ${e}`));
+        let s = x(r);
+        n.has(s) && t.push("Duplicate connection configuration"), n.add(s);
     }
     return t;
 }

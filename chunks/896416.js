@@ -1,2 +1,2 @@
 "use strict";
-n(627968), n(64700), n(957482);
+e.exports = "/assets/a16a65c71b971e39.svg";

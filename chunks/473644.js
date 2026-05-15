@@ -1,123 +1,112 @@
-i.d(t, { A: () => v });
-var l = i(627968),
-    n = i(64700),
-    a = i(311907),
-    s = i(397927),
-    r = i(260451),
-    d = i(997590),
-    o = i(57991),
-    c = i(9994),
-    u = i(107123),
-    m = i(86376),
-    x = i(534400),
-    g = i(773669),
-    h = i(299091),
-    _ = i(473145),
-    p = i(661191),
-    A = i(652215),
-    j = i(985018),
-    E = i(492171);
-function v(e) {
-    let { guild: t, invite: i, discoveryGuild: v, showGuildTag: I = !1 } = e,
-        f = i.approximate_presence_count ?? 0,
-        T = i.approximate_member_count ?? 0,
-        C = (0, a.bG)([g.default], () => g.default.locale),
-        N = (0, u.P)(p.default.extractTimestamp(t.id), C),
-        y = (0, a.bG)([d.A], () =>
-            v?.primary_category_id != null ? d.A.getCategoryName(v.primary_category_id) : null,
+t.d(l, { A: () => N });
+var n = t(627968),
+    i = t(64700),
+    a = t(17928),
+    s = t(834730),
+    r = t(781696),
+    u = t(997590),
+    c = t(107773),
+    d = t(9994),
+    o = t(107123),
+    m = t(86376),
+    g = t(534400),
+    x = t(773669),
+    h = t(299091),
+    j = t(935208),
+    p = t(652215),
+    A = t(375708),
+    v = t(963120);
+function N(e) {
+    let { guild: l, invite: t, discoveryGuild: N, showGuildTag: _ = !1, highContrast: f = !1, hideEnglish: E = !1 } = e,
+        y = t.approximate_presence_count ?? 0,
+        S = t.approximate_member_count ?? 0,
+        b = (0, a.bG)([x.default], () => x.default.locale),
+        C = (0, o.P)(j.default.extractTimestamp(l.id), b),
+        L = (0, a.bG)([u.A], () =>
+            N?.primary_category_id != null ? u.A.getCategoryName(N.primary_category_id) : null,
         ),
-        D = t.premiumTier ?? A.TVA.NONE,
-        S = D !== A.TVA.NONE,
-        b = t.preferredLocale ?? v?.preferred_locale ?? null,
-        L = n.useMemo(() => {
-            if ("en-US" === b) return j.intl.string(j.t.LQLMGP);
-            let e = (0, j.getAvailableLocales)().find((e) => e.value === b);
-            return null != e ? j.intl.string(e.localizedName) : b;
-        }, [b]),
-        R = null != b && "" !== b,
-        U = null != y,
-        O = R || U || S,
-        G = U || S,
-        { enabled: k } = r.SH.useConfig({ location: "AcceptInviteModalGuildDetailsHeader" }),
-        M = k ? j.intl.format(j.t.hmdOwf, { tier: D }) : (0, _.gb)(D),
-        P = (0, a.bG)([h.A], () => h.A.getInvite(i.code));
-    if (null == P) return null;
-    let V = (0, c.oO)(P);
-    return (0, l.jsxs)("div", {
-        className: E.hn,
+        T = l.premiumTier ?? p.TVA.NONE,
+        R = T !== p.TVA.NONE,
+        k = l.preferredLocale ?? N?.preferred_locale ?? null,
+        I = i.useMemo(() => {
+            if ("en-US" === k) return A.intl.string(A.t.LQLMGP);
+            let e = (0, A.getAvailableLocales)().find((e) => e.value === k);
+            return null != e ? A.intl.string(e.localizedName) : k;
+        }, [k]),
+        z = ["en-US", "en-GB"].includes(k ?? ""),
+        F = null != k && "" !== k && !(E && z),
+        P = null != L,
+        D = F || P || R,
+        M = P || R,
+        G = (0, a.bG)([h.A], () => h.A.getInvite(t.code));
+    if (null == G) return null;
+    let w = (0, d.oO)(G),
+        O = f ? "text-default" : "text-subtle";
+    return (0, n.jsxs)("div", {
+        className: v.hn,
         children: [
-            (0, l.jsxs)("div", {
-                className: E.S7,
+            (0, n.jsxs)("div", {
+                className: v.S7,
                 children: [
-                    (0, l.jsx)(s.Text, {
+                    (0, n.jsx)(s.E, {
                         tag: "span",
                         variant: "heading-xl/semibold",
                         color: "text-strong",
-                        children: t.name,
+                        children: l.name,
                     }),
-                    (0, l.jsx)(o.A, {
-                        guild: t,
+                    (0, n.jsx)(c.A, {
+                        guild: l,
                         tooltipPosition: "bottom",
                         size: 18,
-                        tooltipColor: s.STz.Colors.PRIMARY,
+                        tooltipColor: r.ST.Colors.PRIMARY,
                     }),
-                    I &&
-                        V?.tag != null &&
-                        V?.badgeHash != null &&
-                        (0, l.jsx)(x.o9, {
-                            guildId: t.id,
-                            guildTag: V?.tag ?? void 0,
-                            guildBadge: V.badgeHash,
+                    _ &&
+                        w?.tag != null &&
+                        w?.badgeHash != null &&
+                        (0, n.jsx)(g.o9, {
+                            guildId: l.id,
+                            guildTag: w?.tag ?? void 0,
+                            guildBadge: w.badgeHash,
                             inline: !1,
                         }),
                 ],
             }),
-            (0, l.jsx)(m.X, { onlineCount: f, memberCount: T, className: E.He }),
-            (0, l.jsxs)("div", {
-                className: E.ov,
+            (0, n.jsx)(m.X, { onlineCount: y, memberCount: S, className: v.He, highContrast: f }),
+            (0, n.jsxs)("div", {
+                className: v.ov,
                 children: [
-                    null != N &&
-                        (0, l.jsxs)(l.Fragment, {
+                    null != C &&
+                        (0, n.jsxs)(n.Fragment, {
                             children: [
-                                (0, l.jsx)(s.Text, {
+                                (0, n.jsx)(s.E, {
                                     tag: "span",
                                     variant: "text-sm/normal",
-                                    color: "text-subtle",
-                                    children: j.intl.format(j.t.zb2Q56, { createdAtDate: N }),
+                                    color: O,
+                                    children: A.intl.format(A.t.zb2Q56, { createdAtDate: C }),
                                 }),
-                                O && (0, l.jsx)("span", { className: E.LO, "aria-hidden": !0 }),
+                                D && (0, n.jsx)("span", { className: v.LO, "aria-hidden": !0 }),
+                            ],
+                        }),
+                    F &&
+                        (0, n.jsxs)(n.Fragment, {
+                            children: [
+                                (0, n.jsx)(s.E, { tag: "span", variant: "text-sm/normal", color: O, children: I }),
+                                M && (0, n.jsx)("span", { className: v.LO, "aria-hidden": !0 }),
+                            ],
+                        }),
+                    P &&
+                        (0, n.jsxs)(n.Fragment, {
+                            children: [
+                                (0, n.jsx)(s.E, { tag: "span", variant: "text-sm/normal", color: O, children: L }),
+                                R && (0, n.jsx)("span", { className: v.LO, "aria-hidden": !0 }),
                             ],
                         }),
                     R &&
-                        (0, l.jsxs)(l.Fragment, {
-                            children: [
-                                (0, l.jsx)(s.Text, {
-                                    tag: "span",
-                                    variant: "text-sm/normal",
-                                    color: "text-subtle",
-                                    children: L,
-                                }),
-                                G && (0, l.jsx)("span", { className: E.LO, "aria-hidden": !0 }),
-                            ],
-                        }),
-                    U &&
-                        (0, l.jsxs)(l.Fragment, {
-                            children: [
-                                (0, l.jsx)(s.Text, {
-                                    tag: "span",
-                                    variant: "text-sm/normal",
-                                    color: "text-subtle",
-                                    children: y,
-                                }),
-                                S && (0, l.jsx)("span", { className: E.LO, "aria-hidden": !0 }),
-                            ],
-                        }),
-                    S &&
-                        (0, l.jsx)(s.Text, {
+                        (0, n.jsx)(s.E, {
                             tag: "span",
                             variant: "text-sm/normal",
-                            color: "text-subtle",
-                            children: M,
+                            color: O,
+                            children: A.intl.format(A.t.hmdOwf, { tier: T }),
                         }),
                 ],
             }),

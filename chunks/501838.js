@@ -1,57 +1,88 @@
 "use strict";
-n.d(t, { K6: () => _, gT: () => p, hJ: () => m, l1: () => f, ok: () => h });
-var r = n(311907),
-    i = n(517164),
+n.d(t, { mn: () => _, px: () => m, qx: () => p, rY: () => E, tR: () => f, w: () => h }), n(321073);
+var i = n(17928),
+    r = n(517164),
     s = n(20805),
-    a = n(15285),
-    o = n(622543),
-    l = n(290863),
-    u = n(832163),
-    c = n(533562),
-    d = n(652215);
+    a = n(328153),
+    o = n(841595),
+    l = n(71393),
+    u = n(290863),
+    c = n(832163),
+    d = n(533562);
 function _(e) {
-    let { userIds: t } = e,
-        n = (0, r.bG)([u.A], () => u.A.getStorefrontDetectableGameAndApplicationIds());
-    return (0, r.bG)(
-        [i.A],
-        () =>
-            t.some((e) =>
-                i.A.getUserOutbox(e)?.entries.some((e) => null != e && (0, s.zD)(e) && n.has(e.extra.application_id)),
-            ),
-        [n, t],
-    );
+    let { userIds: t } = e;
+    return (0, i.yK)([r.A, c.A], () => {
+        let e = [];
+        for (let n of t)
+            for (let t of r.A.getUserOutbox(n)?.entries ?? [])
+                if (null != t && (0, s.zD)(t)) {
+                    let n = c.A.getApplicationIdFromDetectableId(t.extra.application_id);
+                    null != n && e.push(n);
+                }
+        return e;
+    }, [t]);
 }
 function f(e) {
-    return (0, r.bG)([o.A], () => {
-        for (let t of e) {
-            let e = o.A.getMutualGuilds(t);
+    return (0, i.yK)([o.A, c.A], () => {
+        let t = [];
+        for (let n of e) {
+            let e = o.A.getMutualGuilds(n);
             if (null != e) {
-                for (let t of e) if (t.guild.features.has(d.GuildFeatures.SOCIAL_LAYER_STOREFRONT)) return !0;
+                for (let n of e)
+                    if (c.A.getStorefrontGuildIds().has(n.guild.id)) {
+                        let e = c.A.getApplicationIdFromGuildId(n.guild.id);
+                        null != e && t.push(e);
+                    }
             }
         }
-        return !1;
+        return t;
     }, [e]);
 }
-function p(e) {
+function h(e) {
     let { userIds: t } = e,
-        n = (0, r.bG)([u.A], () => u.A.getStorefrontDetectableGameAndApplicationIds()),
-        i = (0, r.bG)([l.A], () => {
-            for (let e of t)
-                for (let t of l.A.getActivities(e)) if (null != t.application_id && n.has(t.application_id)) return !0;
-            return !1;
-        }, [n, t]),
-        s = (0, c.W)();
-    return i || null != s;
+        n = (0, i.yK)([u.A, c.A], () => {
+            let e = [];
+            for (let n of t)
+                for (let t of u.A.getActivities(n))
+                    if (null != t.application_id) {
+                        let n = c.A.getApplicationIdFromDetectableId(t.application_id);
+                        null != n && e.push(n);
+                    }
+            return e;
+        }, [t]),
+        r = (0, d.W)();
+    return null != r ? [...n, r] : n;
 }
-function h() {
-    let e = (0, r.bG)([u.A], () => u.A.getStorefrontDetectableGameAndApplicationIds());
-    return (0, r.bG)([a.Ay], () => a.Ay.getGamesSeen(!1, !1).some((t) => null != t.id && e.has(t.id)), [e]);
+function p() {
+    return (0, i.yK)([a.Ay, c.A], () => {
+        let e = [];
+        for (let t of a.Ay.getGamesSeen(!1, !1))
+            if (null != t.id) {
+                let n = c.A.getApplicationIdFromDetectableId(t.id);
+                null != n && e.push(n);
+            }
+        return e;
+    });
+}
+function E() {
+    return (0, i.yK)([a.Ay, c.A], () => {
+        let e = [];
+        for (let t of a.Ay.getRunningGames())
+            if (null != t.id && a.Ay.isDetectionEnabled(t)) {
+                let n = c.A.getApplicationIdFromDetectableId(t.id);
+                null != n && e.push(n);
+            }
+        return e;
+    }, []);
 }
 function m() {
-    let e = (0, r.bG)([u.A], () => u.A.getStorefrontDetectableGameAndApplicationIds());
-    return (0, r.bG)(
-        [a.Ay],
-        () => a.Ay.getRunningGames().some((t) => null != t.id && e.has(t.id) && a.Ay.isDetectionEnabled(t)),
-        [e],
-    );
+    let e = (0, i.bG)([l.A], () => l.A.getGuildIds());
+    return (0, i.yK)([c.A], () => {
+        let t = [];
+        for (let n of e) {
+            let e = c.A.getApplicationIdFromGuildId(n);
+            null != e && t.push(e);
+        }
+        return t;
+    }, [e]);
 }

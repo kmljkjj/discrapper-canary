@@ -1,9 +1,9 @@
 "use strict";
-n.d(t, { RQ: () => g, Ri: () => m, U: () => h, bf: () => d, ed: () => f, r$: () => p, v8: () => _ });
-var r = n(296489),
-    i = n.n(r),
-    a = n(499867),
-    s = n(265690),
+n.d(t, { RQ: () => m, Ri: () => E, U: () => p, bf: () => d, ed: () => f, r$: () => h, v8: () => _ });
+var i = n(296489),
+    r = n.n(i),
+    s = n(499867),
+    a = n(265690),
     o = n(121894),
     l = n(698279);
 let u = Object.freeze({
@@ -15,13 +15,13 @@ let u = Object.freeze({
         isSearchSuggestion: !1,
         pickerId: (function () {
             let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "uid_";
-            return i()(e);
+            return r()(e);
         })(),
         isNitroLockedSectionVisible: !1,
         areOnlyNitroLockedSectionsVisible: !1,
     }),
-    c = (0, s.h)()(
-        (0, a.Zr)((e, t) => u, {
+    c = (0, a.h)()(
+        (0, s.Zr)((e, t) => u, {
             name: "expression-picker-last-active-view",
             partialize: (e) => ({ lastActiveView: e.lastActiveView }),
         }),
@@ -54,14 +54,14 @@ let u = Object.freeze({
         let n = c.getState();
         null == n.activeView ? d(n.lastActiveView ?? l.kx.EMOJI, e, t) : _();
     },
-    p = (e, t, n) => {
+    h = (e, t, n) => {
         c.getState().activeView === e ? _() : d(e, t, n);
     },
-    h = (e) => {
+    p = (e) => {
         (0, o.r)(() => c.setState({ activeView: e, lastActiveView: c.getState().activeView }));
     },
-    m = function (e) {
+    E = function (e) {
         let t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
         (0, o.r)(() => c.setState({ searchQuery: e, isSearchSuggestion: t }));
     },
-    g = c;
+    m = c;

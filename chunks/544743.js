@@ -1,20 +1,14 @@
 "use strict";
-function r(e) {
-    return null == e || null == e.end_time || new Date(e.end_time) >= new Date();
-}
 function i(e) {
     let { muted: t, mute_config: n } = e;
-    return !!t && r(n);
+    return !!t && (null == n || null == n.end_time || new Date(n.end_time) >= new Date());
 }
-function a(e) {
+function r(e) {
     let { muted: t, mute_config: n } = e;
     return !!t && null != n && null != n.end_time && new Date(n.end_time) >= new Date();
 }
-function s(e) {
-    return null == e.end_time ? null : new Date(e.end_time).getTime() - Date.now();
-}
-n.d(t, { Ay: () => o, tG: () => i, wG: () => a });
-class o {
+n.d(t, { Ay: () => s, tG: () => i, wG: () => r });
+class s {
     timers;
     constructor() {
         this.timers = {};
@@ -24,8 +18,8 @@ class o {
     }
     setTimer(e, t, n) {
         if (null == e || null == t) return !1;
-        let r = s(t);
-        return null != r && (r <= 0 || ((this.timers[e] = setTimeout(n, Math.max(0, r))), !1));
+        let i = null == t.end_time ? null : new Date(t.end_time).getTime() - Date.now();
+        return null != i && (i <= 0 || ((this.timers[e] = setTimeout(n, Math.max(0, i))), !1));
     }
     clearTimer(e) {
         null != e && e in this.timers && (clearTimeout(this.timers[e]), delete this.timers[e]);

@@ -1,18 +1,17 @@
-"use strict";
-n.d(t, { L: () => s, l: () => o });
-var r = n(627968),
-    i = n(397927);
-let a = "slayer-eligibility-check-modal";
-function s(e) {
-    let { guildId: t, skuId: s, analyticsLocations: o, onContinue: l, onClose: u } = e;
-    (0, i.mMO)(
+l.d(e, { L: () => t, l: () => s });
+var i = l(627968),
+    n = l(192308);
+let o = "slayer-eligibility-check-modal";
+function t(a) {
+    let { guildId: e, skuId: t, analyticsLocations: s, onContinue: c, onClose: d } = a;
+    (0, n.openModalLazy)(
         async () => {
-            let { default: e } = await n.e("62754").then(n.bind(n, 424185));
-            return (n) => (0, r.jsx)(e, { ...n, guildId: t, skuId: s, analyticsLocations: o, onContinue: l });
+            let { default: a } = await Promise.all([l.e("42211"), l.e("62754")]).then(l.bind(l, 424185));
+            return (l) => (0, i.jsx)(a, { ...l, guildId: e, skuId: t, analyticsLocations: s, onContinue: c });
         },
-        { modalKey: a, onCloseCallback: u },
+        { modalKey: o, onCloseCallback: d },
     );
 }
-function o() {
-    (0, i.OoC)(a);
+function s() {
+    (0, n.closeModal)(o);
 }

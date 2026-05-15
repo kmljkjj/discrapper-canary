@@ -1,63 +1,64 @@
-a.d(e, { default: () => m });
-var i = a(627968),
-    n = a(64700),
-    s = a(158954),
-    l = a(397927),
-    r = a(47167),
-    d = a(769015),
-    c = a(514810),
-    o = a(985018),
-    x = a(869527);
+i.d(a, { default: () => m });
+var e = i(627968),
+    n = i(64700),
+    s = i(189213),
+    l = i(192308),
+    r = i(834730),
+    c = i(47167),
+    d = i(137177),
+    o = i(514810),
+    x = i(985018),
+    h = i(748386);
 let m = (t) => {
-    let { channel: e, application: m, onClose: h, transitionState: u } = t,
-        p = (0, c.N)(e),
-        j = n.useCallback(
+    let { channel: a, application: m, onClose: u, transitionState: p } = t,
+        j = (0, o.N)(a),
+        v = n.useCallback(
             () => (
-                h(),
-                (0, l.mMO)(async () => {
-                    let { default: t } = await a.e("93154").then(a.bind(a, 428185));
-                    return (a) => (0, i.jsx)(t, { ...a, channelId: e.id, application: m });
+                u(),
+                (0, l.openModalLazy)(async () => {
+                    let { default: t } = await Promise.all([i.e("21060"), i.e("93154")]).then(i.bind(i, 428185));
+                    return (i) => (0, e.jsx)(t, { ...i, channelId: a.id, application: m });
                 })
             ),
-            [m, e.id, h],
+            [m, a.id, u],
         ),
-        v = (0, r.Ay)(e, !0);
-    return (0, i.jsx)(s.Modal, {
-        transitionState: u,
-        "aria-label": o.intl.string(o.t.OJknhi),
-        onClose: h,
-        title: o.intl.string(o.t.OJknhi),
+        k = (0, c.Ay)(a, !0);
+    return (0, e.jsx)(s.Modal, {
+        transitionState: p,
+        "aria-label": x.intl.string(x.t.OJknhi),
+        onClose: u,
+        title: x.intl.string(x.t.OJknhi),
         actions: [
-            { text: o.intl.string(o.t["ETE/oC"]), onClick: h, variant: "secondary" },
-            { text: o.intl.string(o.t.LLWaxQ), onClick: j, variant: "critical-primary" },
+            { text: x.intl.string(x.t["ETE/oC"]), onClick: u, variant: "secondary" },
+            { text: x.intl.string(x.t.LLWaxQ), onClick: v, variant: "critical-primary" },
         ],
-        children: (0, i.jsxs)("div", {
-            className: x.Qs,
+        children: (0, e.jsxs)("div", {
+            className: h.Qs,
             children: [
-                (0, i.jsx)(d.A, { game: m, size: d.M.XLARGE }),
-                (0, i.jsxs)("div", {
-                    className: x.yu,
+                (0, e.jsx)(d.A, { game: m, size: d.M.XLARGE }),
+                (0, e.jsxs)("div", {
+                    className: h.yu,
                     children: [
-                        (0, i.jsxs)("div", {
-                            className: x.py,
+                        (0, e.jsxs)("div", {
+                            className: h.py,
                             children: [
-                                (0, i.jsx)(l.Text, {
+                                (0, e.jsx)(r.E, {
                                     variant: "text-md/semibold",
                                     color: "text-strong",
                                     children: m.name,
                                 }),
-                                (0, i.jsx)(l.Text, {
+                                (0, e.jsx)(r.E, {
                                     variant: "text-sm/normal",
                                     color: "text-muted",
-                                    children: o.intl.format(o.t["0NJZAU"], { channelName: v }),
+                                    children: x.intl.format(x.t["0NJZAU"], { channelName: k }),
                                 }),
                             ],
                         }),
-                        null != p &&
-                            (0, i.jsxs)(i.Fragment, {
+                        null != j &&
+                            (0, e.jsxs)(e.Fragment, {
                                 children: [
-                                    (0, i.jsx)("div", { className: x.yF }),
-                                    (0, i.jsx)(l.Text, { variant: "text-xs/normal", color: "text-muted", children: p }),
+                                    (0, e.jsx)("div", { className: h.yF }),
+                                    (0, e.jsx)(r.E, { variant: "text-xs/normal", color: "text-muted", children: j }),
                                 ],
                             }),
                     ],

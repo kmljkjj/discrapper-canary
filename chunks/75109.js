@@ -1,8 +1,8 @@
 "use strict";
-n.d(t, { E: () => i, S: () => s });
-var r = n(978862);
-function i() {
-    return s(r.O), r.O;
+n.d(t, { E: () => r, S: () => s });
+var i = n(978862);
+function r() {
+    return s(i.O), i.O;
 }
 function s(e) {
     let t = (e.__SENTRY__ = e.__SENTRY__ || {});

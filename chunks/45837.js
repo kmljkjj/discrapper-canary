@@ -1,19 +1,19 @@
 "use strict";
-n.d(t, { A: () => o });
-var r = n(64700),
-    i = n(311907),
-    a = n(775602),
-    s = n(531685);
-function o() {
+n.d(t, { A: () => l });
+var i = n(64700),
+    r = n(17928),
+    s = n(775602),
+    a = n(885386),
+    o = n(531685);
+function l() {
     let e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
-        [t, n] = r.useState(!1),
-        o = (0, i.bG)([a.A], () => a.A.useReducedMotion),
-        l = (0, i.bG)([s.A], () => s.A.isFocused()),
-        u = !o && !e,
-        c = l && (t || u);
+        [t, n] = i.useState(!1),
+        l = (0, r.bG)([s.A], () => s.A.useReducedMotion),
+        u = (0, r.bG)([o.A], () => o.A.isFocused()),
+        c = a.kt.useSetting();
     return {
-        shouldAnimate: c,
-        onMouseEnter: r.useCallback(() => n(!0), []),
-        onMouseLeave: r.useCallback(() => n(!1), []),
+        shouldAnimate: u && (t || (!l && !e && c)),
+        onMouseEnter: i.useCallback(() => n(!0), []),
+        onMouseLeave: i.useCallback(() => n(!1), []),
     };
 }

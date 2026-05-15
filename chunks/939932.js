@@ -20,13 +20,13 @@ function f(e) {
                       : typeof e;
               })(e);
 }
-function h(e, t) {
+function l(e, t) {
     (null == t || t > e.length) && (t = e.length);
     for (var r = 0, n = Array(t); r < t; r++) n[r] = e[r];
     return n;
 }
-function l(e, t) {
-    return (l =
+function h(e, t) {
+    return (h =
         Object.setPrototypeOf ||
         function (e, t) {
             return (e.__proto__ = t), e;
@@ -57,9 +57,9 @@ function b(e) {
         m = e.registerHandler,
         D = e.containerDisplayName,
         k = e.getType,
-        C = e.collect,
-        w = e.options.arePropsEqual,
-        j = void 0 === w ? i.b : w,
+        w = e.collect,
+        j = e.options.arePropsEqual,
+        C = void 0 === j ? i.b : j,
         I = t.displayName || t.name || "Component",
         O = (function (e) {
             if ("function" != typeof e && null !== e)
@@ -67,10 +67,10 @@ function b(e) {
             (O.prototype = Object.create(e && e.prototype, {
                 constructor: { value: O, writable: !0, configurable: !0 },
             })),
-                e && l(O, e);
+                e && h(O, e);
             var p,
                 D,
-                w =
+                j =
                     ((p = (function () {
                         if ("u" < typeof Reflect || !Reflect.construct || Reflect.construct.sham) return !1;
                         if ("function" == typeof Proxy) return !0;
@@ -97,7 +97,7 @@ function b(e) {
                 var t;
                 if (!(this instanceof O)) throw TypeError("Cannot call a class as a function");
                 return (
-                    g(v((t = w.call(this, e))), "decoratedRef", (0, o.createRef)()),
+                    g(v((t = j.call(this, e))), "decoratedRef", (0, o.createRef)()),
                     g(v(t), "handlerId", void 0),
                     g(v(t), "manager", void 0),
                     g(v(t), "handlerMonitor", void 0),
@@ -139,7 +139,7 @@ function b(e) {
                     {
                         key: "shouldComponentUpdate",
                         value: function (e, t) {
-                            return !j(e, this.props) || !(0, i.b)(t, this.state);
+                            return !C(e, this.props) || !(0, i.b)(t, this.state);
                         },
                     },
                     {
@@ -154,7 +154,7 @@ function b(e) {
                     {
                         key: "componentDidUpdate",
                         value: function (e) {
-                            j(this.props, e) || (this.receiveProps(this.props), this.handleChange());
+                            C(this.props, e) || (this.receiveProps(this.props), this.handleChange());
                         },
                     },
                     {
@@ -185,52 +185,52 @@ function b(e) {
                                         (function (e) {
                                             if (Array.isArray(e)) return e;
                                         })((t = m(e, this.handler, this.manager))) ||
-                                        (function (e, t) {
-                                            var r,
-                                                n,
-                                                o =
+                                        (function (e) {
+                                            var t,
+                                                r,
+                                                n =
                                                     null == e
                                                         ? null
                                                         : ("u" > typeof Symbol && e[Symbol.iterator]) ||
                                                           e["@@iterator"];
-                                            if (null != o) {
-                                                var i = [],
-                                                    a = !0,
-                                                    s = !1;
+                                            if (null != n) {
+                                                var o = [],
+                                                    i = !0,
+                                                    a = !1;
                                                 try {
                                                     for (
-                                                        o = o.call(e);
-                                                        !(a = (r = o.next()).done) && (i.push(r.value), 2 !== i.length);
-                                                        a = !0
+                                                        n = n.call(e);
+                                                        !(i = (t = n.next()).done) && (o.push(t.value), 2 !== o.length);
+                                                        i = !0
                                                     );
                                                 } catch (e) {
-                                                    (s = !0), (n = e);
+                                                    (a = !0), (r = e);
                                                 } finally {
                                                     try {
-                                                        a || null == o.return || o.return();
+                                                        i || null == n.return || n.return();
                                                     } finally {
-                                                        if (s) throw n;
+                                                        if (a) throw r;
                                                     }
                                                 }
-                                                return i;
+                                                return o;
                                             }
-                                        })(t, 2) ||
-                                        (function (e, t) {
+                                        })(t) ||
+                                        (function (e) {
                                             if (e) {
-                                                if ("string" == typeof e) return h(e, 2);
-                                                var r = Object.prototype.toString.call(e).slice(8, -1);
+                                                if ("string" == typeof e) return l(e, 2);
+                                                var t = Object.prototype.toString.call(e).slice(8, -1);
                                                 if (
-                                                    ("Object" === r && e.constructor && (r = e.constructor.name),
-                                                    "Map" === r || "Set" === r)
+                                                    ("Object" === t && e.constructor && (t = e.constructor.name),
+                                                    "Map" === t || "Set" === t)
                                                 )
                                                     return Array.from(e);
                                                 if (
-                                                    "Arguments" === r ||
-                                                    /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r)
+                                                    "Arguments" === t ||
+                                                    /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)
                                                 )
-                                                    return h(e, 2);
+                                                    return l(e, 2);
                                             }
-                                        })(t, 2) ||
+                                        })(t) ||
                                         (function () {
                                             throw TypeError(
                                                 "Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.",
@@ -259,7 +259,7 @@ function b(e) {
                         key: "getCurrentState",
                         value: function () {
                             return this.handlerConnector
-                                ? C(this.handlerConnector.hooks, this.handlerMonitor, this.props)
+                                ? w(this.handlerConnector.hooks, this.handlerMonitor, this.props)
                                 : {};
                         },
                     },

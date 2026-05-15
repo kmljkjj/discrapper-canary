@@ -1,16 +1,16 @@
 "use strict";
-n.d(t, { N: () => r, e: () => s });
-var a = n(397927),
-    l = n(871123);
+n.d(t, { N: () => a, e: () => s });
+var i = n(116833),
+    r = n(871123);
 function s(e) {
-    let { imageUrl: t, backgroundImageUrl: n, altText: l, overlayImageUrl: s, customClassNames: r } = e;
+    let { imageUrl: t, backgroundImageUrl: n, altText: r, overlayImageUrl: s, customClassNames: a } = e;
     return {
         type: "dynamic",
-        component: a.Oz7.SOCIAL_LAYER_SKU_PREVIEW,
+        component: i.DynamicGraphicComponent.SOCIAL_LAYER_SKU_PREVIEW,
         aspectRatio: "16/9",
-        props: { imageUrl: t, backgroundImageUrl: n, altText: l, overlayImageUrl: s, customClassNames: r },
+        props: { imageUrl: t, backgroundImageUrl: n, altText: r, overlayImageUrl: s, customClassNames: a },
     };
 }
-function r(e) {
-    return s({ imageUrl: (0, l.fq)(e), backgroundImageUrl: (0, l.xf)(e), altText: e.name });
+function a(e) {
+    return s({ imageUrl: (0, r.fq)(e), backgroundImageUrl: (0, r.xf)(e), altText: e.name });
 }

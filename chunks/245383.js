@@ -1,54 +1,53 @@
 "use strict";
-n.d(t, { A: () => _ });
-var r = n(311907),
-    i = n(832946),
-    a = n(287809),
-    s = n(166403),
+n.d(t, { A: () => c });
+var i = n(17928),
+    r = n(832946),
+    s = n(287809),
+    a = n(166403),
     o = n(927578),
     l = n(683760),
-    u = n(788868),
-    c = n(652215),
-    d = n(985018);
-function _(e) {
-    let { subscriptionTier: t, subscriptionPlanId: n, buttonTextOverride: _, defaultTextOverride: p } = e,
-        h = (0, r.bG)([a.default], () => a.default.getCurrentUser()),
-        m = (0, r.bG)([s.A], () => s.A.getPremiumTypeSubscription()),
-        g = (0, r.bG)([l.A], () => l.A.getPremiumTypeOverride()),
-        E = p ?? d.intl.string(d.t["2pG5Ga"]),
-        A = null != m ? (0, o.EL)(m) : null,
-        I = void 0 !== g ? g : null != A ? (0, o.m6)(A.planId) : h?.premiumType,
-        T = t === u.pe.TIER_2 && null != I && [u.PremiumTypes.TIER_0, u.PremiumTypes.TIER_1].includes(I),
-        y = null != n && null != A && A?.planId !== n;
-    (T || y) && (E = d.intl.string(d.t.IJI7yk));
+    d = n(788868),
+    _ = n(652215),
+    u = n(985018);
+function c(e) {
+    let { subscriptionTier: t, subscriptionPlanId: n, buttonTextOverride: c, defaultTextOverride: E } = e,
+        h = (0, i.bG)([s.default], () => s.default.getCurrentUser()),
+        m = (0, i.bG)([a.A], () => a.A.getPremiumTypeSubscription()),
+        f = (0, i.bG)([l.A], () => l.A.getPremiumTypeOverride()),
+        g = E ?? u.intl.string(u.t["2pG5Ga"]),
+        p = null != m ? (0, o.EL)(m) : null,
+        A = void 0 !== f ? f : null != p ? (0, o.m6)(p.planId) : h?.premiumType,
+        I = t === d.pe.TIER_2 && null != A && [d.PremiumTypes.TIER_0, d.PremiumTypes.TIER_1].includes(A),
+        T = null != n && null != p && p?.planId !== n;
+    (I || T) && (g = u.intl.string(u.t.IJI7yk));
     let S = null != m && (0, o.Nc)(m);
-    if (!((null != m && m.status !== c.Dmq.ACCOUNT_HOLD && !(0, i.m1)(m.planId) && !T && !y && void 0 === g) || S))
-        return { buttonText: _ ?? E };
+    if (!((null != m && m.status !== _.Dmq.ACCOUNT_HOLD && !(0, r.m1)(m.planId) && !I && !T && void 0 === f) || S))
+        return { buttonText: c ?? g };
     {
-        let e = f({ ctaSubscriptionSkuId: t, currentPremiumType: I, isSwitchingDisabled: S, subscription: m });
+        let e = (function (e) {
+            let t,
+                n,
+                { ctaSubscriptionSkuId: i, currentPremiumType: r, isSwitchingDisabled: s, subscription: a } = e;
+            if (null != i && i !== d.pe.LEGACY && i !== d.pe.TIER_0 && i !== d.pe.TIER_1 && i !== d.pe.TIER_2)
+                return { disabledButtonText: t, disabledButtonTooltipText: n };
+            let l = null != i ? d.WN[(0, o.mH)(i)] : null,
+                _ = null != l ? d.ci[l] : null,
+                c = null != r ? d.ci[r] : null;
+            return (
+                s
+                    ? (n = (0, o.Q8)(a) ?? void 0)
+                    : null != c && null != _ && _ < c
+                      ? ((t = u.intl.string(u.t["2pG5Ga"])), (n = u.intl.string(u.t.jXaaRk)))
+                      : null != l && null != r && l === r
+                        ? ((t = u.intl.string(u.t.ymSxhy)), (n = u.intl.string(u.t.jXaaRk)))
+                        : null == l && null != r && r === d.PremiumTypes.TIER_2 && (n = u.intl.string(u.t.jXaaRk)),
+                { disabledButtonText: t, disabledButtonTooltipText: n }
+            );
+        })({ ctaSubscriptionSkuId: t, currentPremiumType: A, isSwitchingDisabled: S, subscription: m });
         return {
-            buttonText: e.disabledButtonText ?? _ ?? E,
+            buttonText: e.disabledButtonText ?? c ?? g,
             buttonTooltipText: e.disabledButtonTooltipText,
             disabled: !0,
         };
     }
-}
-function f(e) {
-    let t,
-        n,
-        { ctaSubscriptionSkuId: r, currentPremiumType: i, isSwitchingDisabled: a, subscription: s } = e;
-    if (null != r && r !== u.pe.LEGACY && r !== u.pe.TIER_0 && r !== u.pe.TIER_1 && r !== u.pe.TIER_2)
-        return { disabledButtonText: t, disabledButtonTooltipText: n };
-    let l = null != r ? u.WN[(0, o.mH)(r)] : null,
-        c = null != l ? u.ci[l] : null,
-        _ = null != i ? u.ci[i] : null;
-    return (
-        a
-            ? (n = (0, o.Q8)(s) ?? void 0)
-            : null != _ && null != c && c < _
-              ? ((t = d.intl.string(d.t["2pG5Ga"])), (n = d.intl.string(d.t.jXaaRk)))
-              : null != l && null != i && l === i
-                ? ((t = d.intl.string(d.t.ymSxhy)), (n = d.intl.string(d.t.jXaaRk)))
-                : null == l && null != i && i === u.PremiumTypes.TIER_2 && (n = d.intl.string(d.t.jXaaRk)),
-        { disabledButtonText: t, disabledButtonTooltipText: n }
-    );
 }

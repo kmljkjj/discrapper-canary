@@ -1,111 +1,111 @@
-n.d(t, { A: () => T });
-var i = n(627968);
-n(64700);
-var l = n(311907),
-    a = n(397927),
-    s = n(517164),
-    r = n(114212),
-    o = n(290863),
-    c = n(461213),
-    d = n(975571),
-    u = n(146655),
-    g = n(489379),
-    m = n(837924),
-    x = n(558628),
-    f = n(842241),
-    p = n(282797),
-    h = n(782505),
-    _ = n(83013),
-    A = n(515054),
-    I = n(518477),
-    j = n(652215),
-    v = n(985018),
-    E = n(897757);
-function T(e) {
-    let { user: t, currentUser: n, displayProfile: T, guildId: b, channelId: y, onClose: N } = e,
-        { live: S, recent: C, stream: k } = (0, u.A)(t.id),
-        { voiceChannel: R, voiceActivity: w } = (0, g.A)({ userId: t.id, guildId: b }),
-        O = (0, l.bG)([s.A], () => s.A.isFetchingUserOutbox(t.id)),
-        L = t.id === n.id,
-        P = (0, l.bG)([c.A, o.A], () => {
-            let e = L ? c.A.getStatus() : o.A.getStatus(t.id);
-            return e === a.clD.OFFLINE || e === a.clD.INVISIBLE;
+i.d(t, { A: () => y });
+var n = i(627968);
+i(64700);
+var l = i(17928),
+    s = i(652215),
+    a = i(349288),
+    r = i(517164),
+    d = i(114212),
+    o = i(290863),
+    c = i(461213),
+    u = i(975571),
+    g = i(146655),
+    m = i(489379),
+    h = i(402857),
+    x = i(353394),
+    p = i(64622),
+    j = i(986712),
+    A = i(782505),
+    f = i(83013),
+    I = i(515054),
+    S = i(518477),
+    v = i(375708),
+    E = i(740620);
+function y(e) {
+    let { user: t, currentUser: i, displayProfile: y, guildId: b, channelId: T, onClose: C } = e,
+        { live: N, recent: w, stream: R } = (0, g.A)(t.id),
+        { voiceChannel: O, voiceActivity: k } = (0, m.A)({ userId: t.id, guildId: b }),
+        L = (0, l.bG)([r.A], () => r.A.isFetchingUserOutbox(t.id)),
+        G = t.id === i.id,
+        _ = (0, l.bG)([c.A, o.A], () => {
+            let e = G ? c.A.getStatus() : o.A.getStatus(t.id);
+            return e === s.clD.OFFLINE || e === s.clD.INVISIBLE;
         }),
-        D = S.length > 0 || null != k,
-        G = T?.private !== !0 && null == k && null == w && null != R,
-        U = !P && (D || G),
-        M = C.length > 0;
-    return U || M || !O
-        ? U || M || O
-            ? (0, i.jsxs)(A.K, {
+        P = N.length > 0 || null != R,
+        M = y?.private !== !0 && null == R && null == k && null != O,
+        D = !_ && (P || M),
+        U = w.length > 0;
+    return D || U || !L
+        ? D || U || L
+            ? (0, n.jsxs)(I.K, {
                   className: E.XG,
                   fade: !0,
                   children: [
-                      U
-                          ? (0, i.jsx)(_.A, {
+                      D
+                          ? (0, n.jsx)(f.A, {
                                 heading: v.intl.string(v.t.J6STd9),
-                                children: (0, i.jsxs)("ul", {
+                                children: (0, n.jsxs)("ul", {
                                     className: E.kR,
                                     children: [
-                                        null != k &&
-                                            (0, i.jsx)("li", {
-                                                children: (0, i.jsx)(f.A, {
+                                        null != R &&
+                                            (0, n.jsx)("li", {
+                                                children: (0, n.jsx)(p.A, {
                                                     user: t,
-                                                    currentUser: n,
-                                                    stream: k,
-                                                    onClose: N,
+                                                    currentUser: i,
+                                                    stream: R,
+                                                    onClose: C,
                                                 }),
                                             }),
-                                        S.map((e, l) =>
-                                            (0, i.jsx)(
+                                        N.map((e, l) =>
+                                            (0, n.jsx)(
                                                 "li",
                                                 {
-                                                    children: (0, i.jsx)(m.A, {
+                                                    children: (0, n.jsx)(h.A, {
                                                         user: t,
-                                                        currentUser: n,
+                                                        currentUser: i,
                                                         activity: e,
-                                                        onClose: N,
+                                                        onClose: C,
                                                     }),
                                                 },
                                                 `live-${l}`,
                                             ),
                                         ),
-                                        G &&
-                                            (0, i.jsx)("li", {
-                                                children: (0, i.jsx)(p.A, {
+                                        M &&
+                                            (0, n.jsx)("li", {
+                                                children: (0, n.jsx)(j.A, {
                                                     user: t,
-                                                    currentUser: n,
-                                                    voiceChannel: R,
-                                                    onClose: N,
+                                                    currentUser: i,
+                                                    voiceChannel: O,
+                                                    onClose: C,
                                                 }),
                                             }),
                                     ],
                                 }),
                             })
                           : null,
-                      M
-                          ? (0, i.jsx)(_.A, {
+                      U
+                          ? (0, n.jsx)(f.A, {
                                 heading: v.intl.string(v.t.jzgEoL),
-                                introText: L
+                                introText: G
                                     ? v.intl.format(v.t["4bk9Ak"], {
                                           learnMoreHook: (e, t) =>
-                                              (0, i.jsx)(
-                                                  a.MzZ,
+                                              (0, n.jsx)(
+                                                  a.Anchor,
                                                   {
-                                                      href: d.A.getArticleURL(j.MVz.ACTIVITY_STATUS_SETTINGS),
+                                                      href: u.A.getArticleURL(s.MVz.ACTIVITY_STATUS_SETTINGS),
                                                       children: e,
                                                   },
                                                   t,
                                               ),
                                       })
                                     : void 0,
-                                scrollTargetId: I.bk.RECENT_ACTIVITY,
-                                children: (0, i.jsx)("ul", {
+                                scrollTargetId: S.bk.RECENT_ACTIVITY,
+                                children: (0, n.jsx)("ul", {
                                     className: E.kR,
-                                    children: C.map((e) =>
-                                        (0, i.jsx)(
+                                    children: w.map((e) =>
+                                        (0, n.jsx)(
                                             "li",
-                                            { children: (0, i.jsx)(x.A, { user: t, entry: e, onClose: N }) },
+                                            { children: (0, n.jsx)(x.A, { user: t, entry: e, onClose: C }) },
                                             e.id,
                                         ),
                                     ),
@@ -114,19 +114,19 @@ function T(e) {
                           : null,
                   ],
               })
-            : L
-              ? (0, i.jsx)(h.qv, { onClose: N })
-              : (0, i.jsx)(h.zf, { user: t, guildId: T?.guildId ?? b, channelId: y, onClose: N })
-        : (0, i.jsx)("div", {
+            : G
+              ? (0, n.jsx)(A.qv, { onClose: C })
+              : (0, n.jsx)(A.zf, { user: t, guildId: y?.guildId ?? b, channelId: T, onClose: C })
+        : (0, n.jsx)("div", {
               className: E.kR,
               children: Array.from({ length: 8 }).map((e, t) =>
-                  (0, i.jsxs)(
+                  (0, n.jsxs)(
                       "div",
                       {
                           className: E.kr,
                           children: [
-                              (0, i.jsx)(r.FQ, { width: 60, opacity: 0.08 }),
-                              (0, i.jsx)(r.FQ, { width: 135, opacity: 0.08 }),
+                              (0, n.jsx)(d.FQ, { width: 60, opacity: 0.08 }),
+                              (0, n.jsx)(d.FQ, { width: 135, opacity: 0.08 }),
                           ],
                       },
                       t,

@@ -1,91 +1,87 @@
-n.d(t, { A: () => E, R: () => p });
+n.d(t, { A: () => A, R: () => p });
 var i = n(627968),
-    r = n(64700),
-    a = n(503698),
-    l = n.n(a),
-    s = n(311907),
-    o = n(990078),
-    d = n(397927),
-    c = n(409626),
-    u = n(692969),
-    A = n(958805),
-    h = n(61881),
-    _ = n(985018),
-    m = n(461349);
+    a = n(64700),
+    l = n(503698),
+    s = n.n(l),
+    r = n(990078),
+    o = n(834730),
+    c = n(187322),
+    d = n(939249),
+    u = n(409626),
+    _ = n(692969),
+    g = n(207803),
+    f = n(485745),
+    m = n(985018),
+    x = n(442356);
 function p(e) {
     let { imageSrc: t, gameName: n } = e,
-        [a, l] = r.useState(!1),
-        s = n ?? _.intl.string(_.t.GIWFlF);
-    return a || null == t
+        [l, s] = a.useState(!1),
+        r = n ?? m.intl.string(m.t.GIWFlF);
+    return l || null == t
         ? (0, i.jsx)("div", {
               role: "img",
-              "aria-label": s,
-              className: m.Np,
-              children: (0, i.jsx)(d.Text, {
-                  variant: "text-xxs/medium",
-                  lineClamp: 3,
-                  "aria-hidden": !0,
-                  children: s,
-              }),
+              "aria-label": r,
+              className: x.Np,
+              children: (0, i.jsx)(o.E, { variant: "text-xxs/medium", lineClamp: 3, "aria-hidden": !0, children: r }),
           })
-        : (0, i.jsx)("img", { src: t, alt: s, className: m.$_, onError: () => l(!0), onLoad: () => l(!1) });
+        : (0, i.jsx)("img", { src: t, alt: r, className: x.$_, onError: () => s(!0), onLoad: () => s(!1) });
 }
-function g(e) {
-    let { imageSrc: t, gameName: n, applicationId: a, userId: g, className: E, hideTooltip: f = !1, coverRef: I } = e,
-        C = (0, s.bG)([h.A], () => h.A.hasUnsavedChanges()),
-        N = (0, u.A)({
+function I(e) {
+    let { imageSrc: t, gameName: n, applicationId: l, userId: o, className: I, hideTooltip: A = !1, coverRef: h } = e,
+        E = (0, f.A)(),
+        v = (0, _.A)({
             location: "GameCover",
-            applicationId: a,
-            source: c.Ob.UserProfile,
-            sourceUserId: g,
+            applicationId: l,
+            source: u.Ob.UserProfile,
+            sourceUserId: o,
             trackEntryPointImpression: !0,
         }),
-        T = n ?? _.intl.string(_.t.GIWFlF),
-        S = _.intl.formatToPlainString(_.t["8QLQB+"], { gameName: T }),
-        x = r.useCallback(
+        C = n ?? m.intl.string(m.t.GIWFlF),
+        b = m.intl.formatToPlainString(m.t["8QLQB+"], { gameName: C }),
+        j = a.useCallback(
             (e) => {
-                if (C) {
-                    e.preventDefault(), e.stopPropagation(), A.A.notifyUnsavedWidgets();
+                if (E) {
+                    e.preventDefault(), e.stopPropagation(), (0, g.VQ)();
                     return;
                 }
-                N?.(e);
+                v?.(e);
             },
-            [C, N],
+            [E, v],
         ),
-        v = (e) => (f ? e : (0, i.jsx)(o.m, { text: T, ariaHidden: !0, children: e }));
-    return v(
-        null == N
-            ? (0, i.jsx)(d.vN3, {
+        T = (e) => (A ? e : (0, i.jsx)(r.m, { text: C, ariaHidden: !0, children: e }));
+    return T(
+        null == v
+            ? (0, i.jsx)(c.vN, {
                   children: (0, i.jsx)("div", {
-                      ref: I,
-                      className: E,
+                      ref: h,
+                      className: I,
                       tabIndex: -1,
                       children: (0, i.jsx)(p, { imageSrc: t, gameName: n }),
                   }),
               })
-            : (0, i.jsx)(d.DUT, {
-                  innerRef: I,
-                  onClick: x,
-                  "aria-label": S,
-                  className: l()(m.vk, E),
+            : (0, i.jsx)(d.D, {
+                  innerRef: h,
+                  onClick: j,
+                  "aria-label": b,
+                  className: s()(x.vk, I),
                   children: (0, i.jsx)(p, { imageSrc: t, gameName: n }),
               }),
     );
 }
-function E(e) {
+function A(e) {
     let {
             applicationId: t,
             userId: n,
-            className: r,
-            disableInteraction: a = !1,
-            hideTooltip: s,
+            className: a,
+            disableInteraction: l = !1,
+            hideTooltip: r,
             coverRef: o,
-            ...c
+            ...d
         } = e,
-        u = l()(m.PY, r);
-    return a
-        ? (0, i.jsx)(d.vN3, {
-              children: (0, i.jsx)("div", { ref: o, className: u, tabIndex: -1, children: (0, i.jsx)(p, { ...c }) }),
+        u = s()(x.PY, a);
+    return l
+        ? (0, i.jsx)(c.vN, {
+              children: (0, i.jsx)("div", { ref: o, className: u, tabIndex: -1, children: (0, i.jsx)(p, { ...d }) }),
           })
-        : (0, i.jsx)(g, { className: u, applicationId: t, userId: n, hideTooltip: s, coverRef: o, ...c });
+        : (0, i.jsx)(I, { className: u, applicationId: t, userId: n, hideTooltip: r, coverRef: o, ...d });
 }

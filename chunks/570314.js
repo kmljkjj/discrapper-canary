@@ -1,78 +1,82 @@
-"use strict";
-n.d(t, { A: () => y });
-var r = n(627968),
-    i = n(64700),
-    a = n(311907),
-    s = n(397927),
-    o = n(177640),
-    l = n(297486),
-    u = n(342384),
-    c = n(204776),
-    d = n(734057),
-    _ = n(309010),
-    f = n(954571),
-    p = n(957565),
-    h = n(998218),
-    m = n(692848),
-    g = n(622543),
-    E = n(403777),
-    A = n(993401),
-    I = n(652215),
-    T = n(985018);
-function y(e) {
-    let { user: t, closePopout: n, ...y } = e,
-        S = i.useRef(null),
-        v = (0, a.bG)([g.A], () => g.A.getUserProfile(t.id)?.application),
-        C = (0, a.bG)([_.A, d.A], () => d.A.getChannel(_.A.getChannelId())),
-        b = (0, o.A)(C),
-        N = t.id,
-        R = i.useCallback(() => {
-            null != v &&
-                (b
-                    ? ((0, l.hg)(v.id),
-                      (0, s.OoC)((0, E.n)(N, C?.guild_id)),
+n.d(e, { A: () => x });
+var i = n(627968),
+    l = n(64700),
+    r = n(17928),
+    a = n(192308),
+    o = n(509434),
+    s = n(307301),
+    c = n(922016),
+    u = n(550079),
+    d = n(477782),
+    p = n(177640),
+    A = n(297486),
+    _ = n(342384),
+    m = n(204776),
+    h = n(734057),
+    S = n(309010),
+    g = n(954571),
+    I = n(957565),
+    f = n(998218),
+    C = n(692848),
+    E = n(841595),
+    T = n(403777),
+    P = n(993401),
+    b = n(652215),
+    v = n(985018);
+function x(t) {
+    let { user: e, closePopout: n, ...x } = t,
+        O = l.useRef(null),
+        R = (0, r.bG)([E.A], () => E.A.getUserProfile(e.id)?.application),
+        L = (0, r.bG)([S.A, h.A], () => h.A.getChannel(S.A.getChannelId())),
+        N = (0, p.A)(L),
+        y = e.id,
+        j = l.useCallback(() => {
+            null != R &&
+                (N
+                    ? ((0, A.hg)(R.id),
+                      (0, a.closeModal)((0, T.n)(y, L?.guild_id)),
                       n?.(),
-                      f.default.track(I.HAw.APP_PROFILE_OPEN_APP_BUTTON_CLICKED, { application_id: v.id }))
-                    : (0, m.o)({ applicationId: v.id, ...v }));
-        }, [v, b, N, C?.guild_id, n]),
-        O = b ? T.intl.string(T.t["Cia+A8"]) : T.intl.string(T.t.NgXl3C);
-    if (null == v || !(0, c.Ie)(v)) return null;
-    let { customInstallUrl: D } = v,
-        L = null == D || h.A.isDiscordUrl(D) ? s.j96 : s.I9m,
-        w = b ? void 0 : L;
-    return p.p5
-        ? (0, r.jsx)(s.YNO, {
-              targetElementRef: S,
-              renderPopout: (e) => {
-                  let { closePopout: t } = e;
-                  return (0, r.jsx)(s.W1t, {
+                      g.default.track(b.HAw.APP_PROFILE_OPEN_APP_BUTTON_CLICKED, { application_id: R.id }))
+                    : (0, C.o)({ applicationId: R.id, ...R }));
+        }, [R, N, y, L?.guild_id, n]),
+        U = N ? v.intl.string(v.t["Cia+A8"]) : v.intl.string(v.t.NgXl3C);
+    if (null == R || !(0, m.Ie)(R)) return null;
+    let { customInstallUrl: D } = R,
+        k = null == D || f.A.isDiscordUrl(D) ? s.j : o.I,
+        w = N ? void 0 : k;
+    return I.p5
+        ? (0, i.jsx)(c.Y, {
+              targetElementRef: O,
+              renderPopout: (t) => {
+                  let { closePopout: e } = t;
+                  return (0, i.jsx)(u.W, {
                       "data-menu-migrated-auto": !0,
                       navId: "user-bot-profile-add-app",
-                      onClose: t,
-                      "aria-label": T.intl.string(T.t.dbkxVm),
+                      onClose: e,
+                      "aria-label": v.intl.string(v.t.dbkxVm),
                       onSelect: void 0,
-                      children: (0, r.jsx)(s.rXV, {
-                          children: (0, r.jsx)(s.Drp, {
+                      children: (0, i.jsx)(d.rX, {
+                          children: (0, i.jsx)(d.Dr, {
                               id: "copy",
-                              label: T.intl.string(T.t.XWDihq),
-                              action: () => (0, p.C)((0, u.V)(v)),
+                              label: v.intl.string(v.t.XWDihq),
+                              action: () => (0, I.C)((0, _.V)(R)),
                           }),
                       }),
                   });
               },
-              children: (e) => {
-                  let { onClick: t, ...n } = e;
-                  return (0, r.jsx)(A.FD, {
-                      buttonRef: S,
+              children: (t) => {
+                  let { onClick: e, ...n } = t;
+                  return (0, i.jsx)(P.FD, {
+                      buttonRef: O,
                       action: "PRESS_ADD_APP",
-                      text: O,
+                      text: U,
                       icon: w,
-                      onContextMenu: t,
-                      onClick: R,
+                      onContextMenu: e,
+                      onClick: j,
                       ...n,
-                      ...y,
+                      ...x,
                   });
               },
           })
-        : (0, r.jsx)(A.FD, { action: "PRESS_ADD_APP", text: O, icon: w, onClick: R, variant: "primary", ...y });
+        : (0, i.jsx)(P.FD, { action: "PRESS_ADD_APP", text: U, icon: w, onClick: j, variant: "primary", ...x });
 }

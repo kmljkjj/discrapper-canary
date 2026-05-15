@@ -1,66 +1,69 @@
-"use strict";
-n.d(t, { A: () => m });
-var i = n(627968);
-n(64700);
-var s = n(417597),
-    l = n(990078),
-    r = n(397927),
-    a = n(73392),
-    o = n(665691),
-    c = n(290863),
-    d = n(994500),
-    u = n(287809),
-    h = n(427262),
-    A = n(742589),
-    p = n(985018),
-    g = n(638990);
-function m(e) {
-    let t = e.channel.getRecipientId(),
-        n = e.channel.isSystemDM(),
-        m = (0, s.bG)([u.default], () => u.default.getUser(t)),
-        _ = (0, s.bG)([c.A], () => c.A.getStatus(t)),
-        f = (0, s.bG)([c.A], () => c.A.isMobileOnline(t)),
-        x = (0, s.bG)([c.A], () => c.A.isVROnline(t)),
-        C = (0, s.bG)([d.A], () => d.A.getNickname(t)),
-        E = h.Ay.useUserTag(m),
-        I = (0, a.a)({ displayNameStyles: m?.displayNameStyles }),
-        b = (0, o.bG)({ channelId: e.channel.id });
-    return (0, i.jsxs)(i.Fragment, {
+t.d(n, { A: () => E });
+var l = t(627968);
+t(64700);
+var i = t(702841),
+    s = t(990078),
+    r = t(140735),
+    a = t(97808),
+    c = t(778712),
+    o = t(254138),
+    d = t(661531),
+    u = t(252545),
+    h = t(665691),
+    x = t(290863),
+    m = t(994500),
+    A = t(287809),
+    g = t(427262),
+    N = t(742589),
+    j = t(375708),
+    I = t(964623);
+function E(e) {
+    let n = e.channel.getRecipientId(),
+        t = e.channel.isSystemDM(),
+        E = (0, i.bG)([A.default], () => A.default.getUser(n)),
+        p = (0, i.bG)([x.A], () => x.A.getStatus(n)),
+        C = (0, i.bG)([x.A], () => x.A.isMobileOnline(n)),
+        b = (0, i.bG)([x.A], () => x.A.isVROnline(n)),
+        T = (0, i.bG)([m.A], () => m.A.getNickname(n)),
+        _ = g.Ay.useUserTag(E),
+        f = (0, u.a)({ displayNameStyles: E?.displayNameStyles }),
+        D = (0, h.bG)({ channelId: e.channel.id });
+    return (0, l.jsxs)(l.Fragment, {
         children: [
-            (0, i.jsx)(r.AC4, { children: p.intl.string(p.t.EJRzg7) }),
-            null != m &&
-                !n &&
-                (0, i.jsx)("div", {
-                    children: (0, i.jsx)(r.euF, {
-                        status: _,
-                        isMobile: f,
-                        isVR: x,
-                        className: g.my,
-                        size: r._3J.SIZE_20,
-                        "aria-label": h.Ay.getName(m),
-                        src: m.getAvatarURL(void 0, 20),
+            (0, l.jsx)(r.A, { children: j.intl.string(j.t.EJRzg7) }),
+            null != E &&
+                !t &&
+                (0, l.jsx)("div", {
+                    children: (0, l.jsx)(a.eu, {
+                        status: p,
+                        isMobile: C,
+                        isVR: b,
+                        className: I.my,
+                        size: c._3.SIZE_20,
+                        "aria-label": g.Ay.getName(E),
+                        src: E.getAvatarURL(void 0, 20),
                     }),
                 }),
-            (0, i.jsx)(A.A.Title, {
+            (0, l.jsx)(N.A.Title, {
                 level: e.level,
                 onClick: e.handleClick,
                 onContextMenu: e.handleContextMenu,
-                className: null != e.handleClick ? g.or : null,
-                children: (0, i.jsxs)(i.Fragment, {
+                className: null != e.handleClick ? I.or : null,
+                children: (0, l.jsxs)(l.Fragment, {
                     children: [
-                        (0, i.jsx)(l.m, {
-                            text: E,
+                        (0, l.jsx)(s.m, {
+                            text: _,
                             position: "bottom",
-                            children: (0, i.jsx)("span", { className: I, children: C ?? h.Ay.getName(m) }),
+                            children: (0, l.jsx)("span", { className: f, children: T ?? g.Ay.getName(E) }),
                         }),
-                        b &&
-                            (0, i.jsx)(l.m, {
-                                text: p.intl.string(p.t.QyZ4Td),
-                                children: (0, i.jsx)(r.m5V, {
+                        D &&
+                            (0, l.jsx)(s.m, {
+                                text: j.intl.string(j.t.QyZ4Td),
+                                children: (0, l.jsx)(o.m, {
                                     size: "xs",
-                                    "aria-label": p.intl.string(p.t.VHXh8a),
-                                    color: r.LU0.colors.INTERACTIVE_TEXT_DEFAULT,
-                                    className: g.vW,
+                                    "aria-label": j.intl.string(j.t.VHXh8a),
+                                    color: d.A.colors.INTERACTIVE_TEXT_DEFAULT,
+                                    className: I.vW,
                                 }),
                             }),
                     ],

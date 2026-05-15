@@ -1,73 +1,79 @@
-"use strict";
-n.d(t, { A: () => g }), n(321073);
-var r = n(627968),
-    i = n(64700),
-    s = n(311907),
-    a = n(397927),
-    o = n(282956),
-    l = n(264322),
-    u = n(997509),
-    c = n(780964),
-    d = n(630457),
-    _ = n(840065),
-    f = n(546183),
-    p = n(71393),
-    h = n(576705),
-    m = n(652215),
-    E = n(985018);
-function g(e) {
-    let { user: t, application: g, guildId: A, context: I, onItemClick: T } = e,
-        S = g?.id ?? t?.id,
-        y = p.A.getGuild(A),
-        v = (0, s.bG)([h.A], () => (null != y ? h.A.can(m.xBc.MANAGE_GUILD, y) : null)),
-        N = !0,
-        C = !0,
-        R = (0, l.ON)(A, C),
-        O = (0, l.A4)(N, C),
-        b = (0, s.bG)([f.default], () => null != f.default.getNewestTokenForApplication(S)),
-        { isUserApp: D, isGuildApp: L } = i.useMemo(() => {
-            if (null == S) return { isGuildApp: !1, isUserApp: !1 };
-            let e = Object.values(R.result?.sections ?? {}),
-                t = Object.values(O.result?.sections ?? {});
+t.d(l, { A: () => A }), t(321073);
+var n = t(627968),
+    s = t(64700),
+    i = t(17928),
+    r = t(477782),
+    a = t(282956),
+    o = t(704824),
+    c = t(264322),
+    d = t(468689),
+    u = t(780964),
+    m = t(96076),
+    p = t(766075),
+    x = t(71393),
+    h = t(576705),
+    j = t(652215),
+    N = t(375708);
+function A(e) {
+    let { user: l, application: A, guildId: g, context: v, onItemClick: I } = e,
+        _ = x.A.getGuild(g),
+        C = (0, i.bG)([h.A], () => (null != _ ? h.A.can(j.xBc.MANAGE_GUILD, _) : null)),
+        T = (0, c.ON)(g, !0),
+        E = (0, c.A4)(!0, !0),
+        f = s.useMemo(
+            () =>
+                null != A
+                    ? A.id
+                    : l?.id != null
+                      ? (T.result?.sectionIdsByBotId[l.id] ?? E.result?.sectionIdsByBotId[l.id] ?? l.id)
+                      : void 0,
+            [A, l?.id, T.result, E.result],
+        ),
+        b = l?.bot === !0 || null != A,
+        { token: y } = (0, o.U)(b ? f : null),
+        { isUserApp: S, isGuildApp: P } = s.useMemo(() => {
+            if (null == f) return { isGuildApp: !1, isUserApp: !1 };
+            let e = Object.values(T.result?.sections ?? {}),
+                l = Object.values(E.result?.sections ?? {});
             return {
-                isGuildApp: e.some((e) => e.descriptor.application?.id === S),
-                isUserApp: t.some((e) => e.descriptor.application?.id === S),
+                isGuildApp: e.some((e) => e.descriptor.application?.id === f),
+                isUserApp: l.some((e) => e.descriptor.application?.id === f),
             };
-        }, [R, O, S]);
-    i.useEffect(() => {
-        n(53656);
+        }, [T, E, f]);
+    s.useEffect(() => {
+        t(53656);
     }, []);
-    let w = i.useCallback(() => {
-            y?.id != null && (u.A.open(y.id, m.BEX.INTEGRATIONS), o.A.setSection(m.wLn.APPLICATION, S), T?.());
-        }, [S, y?.id, T]),
-        M = i.useCallback(() => {
-            (0, _.openUserSettings)(c.X.AUTHORIZED_APPS_PANEL);
+    let R = s.useCallback(() => {
+            _?.id != null && (d.A.open(_.id, j.BEX.INTEGRATIONS), a.A.setSection(j.wLn.APPLICATION, f), I?.());
+        }, [f, _?.id, I]),
+        D = s.useCallback(() => {
+            (0, p.openUserSettings)(u.X.AUTHORIZED_APPS_PANEL);
             let e = "";
-            null != g ? (e = g.name) : null != t && (e = t.username),
-                "" !== e && d.i.setState({ searchQuery: e }),
-                T?.();
-        }, [g, T, t]);
-    if (I === m.BRT.POPOUT) return null;
-    let x = [];
+            null != A ? (e = A.name) : null != l && (e = l.username),
+                "" !== e && m.iU.setState({ searchQuery: e }),
+                I?.();
+        }, [A, I, l]);
+    if (v === j.BRT.POPOUT) return null;
+    let U = [];
     return (
-        L &&
-            v &&
-            x.push(
-                (0, r.jsx)(
-                    a.Drp,
-                    { id: "manage-server-integration", label: E.intl.string(E.t.IuSJT8), action: w },
+        P &&
+            C &&
+            U.push(
+                (0, n.jsx)(
+                    r.Dr,
+                    { id: "manage-server-integration", label: N.intl.string(N.t.IuSJT8), action: R },
                     "manage-server-integration",
                 ),
             ),
-        D &&
-            b &&
-            x.push(
-                (0, r.jsx)(
-                    a.Drp,
-                    { id: "manage-authorized-app", label: E.intl.string(E.t.V8ruvz), action: M },
+        S &&
+            null != y &&
+            U.push(
+                (0, n.jsx)(
+                    r.Dr,
+                    { id: "manage-authorized-app", label: N.intl.string(N.t.V8ruvz), action: D },
                     "manage-authorized-app",
                 ),
             ),
-        x
+        U
     );
 }

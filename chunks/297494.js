@@ -1,4 +1,4 @@
-i.d(t, { H4: () => r, vc: () => a });
+i.d(t, { H4: () => s, vc: () => a });
 var n = i(735438),
     l = i(998304);
 let a = (e, t) => {
@@ -8,7 +8,7 @@ let a = (e, t) => {
             `[${i[1][0] / 255},${i[1][1] / 255},${i[1][2] / 255},`,
         );
     },
-    r = (0, n.memoize)((e) => {
+    s = (0, n.memoize)((e) => {
         let t = 0;
         for (let i = 0; i < e.length; i++) t = (t << 5) - t + e.charCodeAt(i);
         return Math.abs(t);

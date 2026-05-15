@@ -1,36 +1,38 @@
 "use strict";
-n.d(t, { A: () => _ }), n(321073);
-var r = n(311907),
-    i = n(73153),
-    a = n(141468);
-let s = 15,
-    o = new Map();
-function l(e) {
-    let { guildId: t, data: n } = e;
-    if (null == t) return !1;
-    let r = !1,
-        i = [...(o.get(t) ?? [])],
-        l = new Set(i);
-    return (
-        n.forEach((e) => {
-            e.messages.forEach((e) => {
-                let [t] = e,
-                    n = (0, a.rh)(t);
-                !l.has(n.author.id) && l.size < s && (l.add(n.author.id), i.push(n.author.id), (r = !0));
-            });
-        }),
-        r && o.set(t, i),
-        r
-    );
+n.d(t, { A: () => c }), n(321073);
+var i = n(17928),
+    r = n(228366),
+    s = n(320095);
+let a = new Map();
+function o() {
+    a = new Map();
 }
-function u() {
-    o = new Map();
-}
-let c = [];
-class d extends r.Ay.Store {
+let l = [];
+class u extends i.Ay.Store {
     static displayName = "SearchRecentMessageStore";
     getRecentMessageAuthorIds(e) {
-        return o.get(e) ?? c;
+        return a.get(e) ?? l;
     }
 }
-let _ = new d(i.h, { SEARCH_MESSAGES_SUCCESS: l, SEARCH_RECENT_MESSAGES_CLEAR: u, CONNECTION_OPEN: u });
+let c = new u(r.h, {
+    SEARCH_MESSAGES_SUCCESS: function (e) {
+        let { guildId: t, data: n } = e;
+        if (null == t) return !1;
+        let i = !1,
+            r = [...(a.get(t) ?? [])],
+            o = new Set(r);
+        return (
+            n.forEach((e) => {
+                e.messages.forEach((e) => {
+                    let [t] = e,
+                        n = (0, s.rh)(t);
+                    !o.has(n.author.id) && o.size < 15 && (o.add(n.author.id), r.push(n.author.id), (i = !0));
+                });
+            }),
+            i && a.set(t, r),
+            i
+        );
+    },
+    SEARCH_RECENT_MESSAGES_CLEAR: o,
+    CONNECTION_OPEN: o,
+});

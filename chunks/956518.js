@@ -1,19 +1,17 @@
 "use strict";
-n.d(t, { Ay: () => a, sF: () => o });
-var r = n(147964),
-    i = n(10716);
-function a(e) {
-    return o()
-        ? i.A.getState().activityUrlOverride
-        : r.A.inTestModeForEmbeddedApplication(e)
-          ? r.A.testModeOriginURL
-          : s(e);
-}
+n.d(t, { Ay: () => s, sF: () => a });
+var i = n(147964),
+    r = n(10716);
 function s(e) {
-    let t = window.GLOBAL_ENV.ACTIVITY_APPLICATION_HOST;
-    return null == t ? null : `https://${e}.${t}`;
+    var t;
+    let n;
+    return a()
+        ? r.A.getState().activityUrlOverride
+        : i.A.inTestModeForEmbeddedApplication(e)
+          ? i.A.testModeOriginURL
+          : ((t = e), null == (n = window.GLOBAL_ENV.ACTIVITY_APPLICATION_HOST) ? null : `https://${t}.${n}`);
 }
-function o() {
-    let e = i.A.getState();
+function a() {
+    let e = r.A.getState();
     return e.useActivityUrlOverride && null != e.activityUrlOverride && "" !== e.activityUrlOverride;
 }

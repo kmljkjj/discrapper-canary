@@ -1,6 +1,6 @@
 "use strict";
-var r = n(928439);
-let i = {
+var i = n(928439);
+let r = {
     AppAnalyticsManager: { inlineRequire: () => n(376151).A, hasStoreChangeListeners: !0 },
     AudioSettingsManager: {
         actions: [
@@ -16,6 +16,16 @@ let i = {
         actions: ["POST_CONNECTION_OPEN", "AUTO_UPDATER_QUIT_AND_INSTALL"],
         inlineRequire: () => n(578152).A,
     },
+    NewUpdaterExperimentManager: {
+        actions: ["POST_CONNECTION_OPEN", "LOGOUT"],
+        inlineRequire: () => n(401979).A,
+        hasStoreChangeListeners: !0,
+    },
+    RSPatchExperimentManager: {
+        actions: ["POST_CONNECTION_OPEN", "LOGOUT"],
+        inlineRequire: () => n(740535).A,
+        hasStoreChangeListeners: !0,
+    },
     AgeVerificationManager: {
         actions: ["POST_CONNECTION_OPEN", "CURRENT_USER_UPDATE", "MESSAGE_CREATE"],
         inlineRequire: () => n(722855).A,
@@ -29,7 +39,7 @@ let i = {
     },
     ChangelogManager: {
         actions: ["POST_CONNECTION_OPEN"],
-        inlineRequire: () => n(250458).A,
+        inlineRequire: () => n(927815).A,
         neverLoadBeforeConnectionOpen: !0,
     },
     ChannelCallManager: {
@@ -39,12 +49,12 @@ let i = {
     },
     ChannelSafetyWarningsManager: {
         actions: ["CHANNEL_SELECT", "CHANNEL_UPDATES"],
-        inlineRequire: () => n(10589).A,
+        inlineRequire: () => n(665440).A,
         neverLoadBeforeConnectionOpen: !0,
     },
     CommonTriggerPointManager: {
         actions: ["VOICE_CHANNEL_SELECT", "CALL_CREATE", "USER_SETTINGS_MODAL_OPEN"],
-        inlineRequire: () => n(371058).A,
+        inlineRequire: () => n(117787).A,
     },
     CommunicationDisabledManager: { inlineRequire: () => n(592713).A, loadAfterConnectionOpen: !0 },
     ConferenceModeManager: {
@@ -64,6 +74,26 @@ let i = {
     DesktopNotificationsManager: { actions: ["POST_CONNECTION_OPEN"], inlineRequire: () => n(105613).A },
     DesktopPerfAnalyticsManager: { actions: ["POST_CONNECTION_OPEN"], inlineRequire: () => n(311849).A },
     DesktopPerfHeartbeatManager: { actions: ["POST_CONNECTION_OPEN"], inlineRequire: () => n(687829).A },
+    DesktopTTIClearV8CacheExperimentManager: {
+        actions: ["POST_CONNECTION_OPEN", "LOGOUT"],
+        inlineRequire: () => n(107653).A,
+        hasStoreChangeListeners: !0,
+    },
+    DesktopTTIDnsTcpWarmupExperimentManager: {
+        actions: ["POST_CONNECTION_OPEN", "LOGOUT"],
+        inlineRequire: () => n(388427).A,
+        hasStoreChangeListeners: !0,
+    },
+    DesktopTTIEarlyUpdateCheckExperimentManager: {
+        actions: ["POST_CONNECTION_OPEN", "LOGOUT"],
+        inlineRequire: () => n(788768).A,
+        hasStoreChangeListeners: !0,
+    },
+    DesktopTTIUpdateBackoffExperimentManager: {
+        actions: ["POST_CONNECTION_OPEN", "LOGOUT"],
+        inlineRequire: () => n(516562).A,
+        hasStoreChangeListeners: !0,
+    },
     FriendOnlineTimerManager: {
         actions: [
             "POST_CONNECTION_OPEN",
@@ -72,18 +102,13 @@ let i = {
             "CONNECTION_INTERRUPTED",
             "SELF_PRESENCE_STORE_UPDATE",
         ],
-        inlineRequire: () => n(16648).A,
+        inlineRequire: () => n(470214).A,
         loadRightBeforeConnectionOpen: !0,
-    },
-    HangStatusManager: {
-        actions: ["POST_CONNECTION_OPEN", "VOICE_CHANNEL_SELECT", "LOGOUT", "GUILD_MEMBER_UPDATE"],
-        inlineRequire: () => n(314497).A,
-        hasStoreChangeListeners: !0,
     },
     TopEmojisDataManager: { actions: ["EMOJI_INTERACTION_INITIATED"], inlineRequire: () => n(347209).A },
     EntityVersionsManager: {
         actions: ["GUILD_CREATE", "DELETED_ENTITY_IDS"],
-        inlineRequire: () => n(94350).A,
+        inlineRequire: () => n(40169).A,
         loadRightBeforeConnectionOpen: !0,
     },
     ExplicitMediaManager: {
@@ -103,7 +128,7 @@ let i = {
             "CHANNEL_RTC_UPDATE_CHAT_OPEN",
             "SIDEBAR_VIEW_CHANNEL",
         ],
-        inlineRequire: () => n(581381).Ay,
+        inlineRequire: () => n(183041).Ay,
         neverLoadBeforeConnectionOpen: !0,
     },
     FeedbackManager: {
@@ -113,8 +138,6 @@ let i = {
             "EMBEDDED_ACTIVITY_CLOSE",
             "VIDEO_BACKGROUND_SHOW_FEEDBACK",
             "IN_APP_REPORTS_SHOW_FEEDBACK",
-            "BLOCK_USER_SHOW_FEEDBACK",
-            "AGE_VERIFICATION_SHOW_FEEDBACK",
         ],
         inlineRequire: () => n(651649).A,
     },
@@ -149,12 +172,12 @@ let i = {
     },
     HolidayEventsManager: {
         actions: ["NOTIFICATIONS_SET_DISABLED_SOUNDS"],
-        inlineRequire: () => n(321256).A,
+        inlineRequire: () => n(781609).A,
         hasStoreChangeListeners: !0,
     },
     GuildOnboardingManager: {
         actions: ["POST_CONNECTION_OPEN", "CHANNEL_SELECT", "GUILD_DELETE"],
-        inlineRequire: () => n(58217).A,
+        inlineRequire: () => n(280598).A,
         neverLoadBeforeConnectionOpen: !0,
     },
     GameConsoleManager: {
@@ -169,7 +192,7 @@ let i = {
             "PASSIVE_UPDATE_V2",
             "REMOTE_SESSION_DISCONNECT",
         ],
-        inlineRequire: () => n(251519).A,
+        inlineRequire: () => n(229683).A,
     },
     GuildScheduledEventManager: {
         actions: [
@@ -190,7 +213,7 @@ let i = {
             "INTERACTION_IFRAME_MODAL_CLOSE",
             "RPC_APP_DISCONNECTED",
         ],
-        inlineRequire: () => n(101306).h,
+        inlineRequire: () => n(642489).h,
     },
     LoginRequiredActionManager: { actions: ["POST_CONNECTION_OPEN"], inlineRequire: () => n(165685).A },
     MemberSafetySearchManager: {
@@ -203,7 +226,7 @@ let i = {
             "MEMBER_SAFETY_GUILD_MEMBER_SEARCH_STILL_INDEXING",
             "MEMBER_SAFETY_NEW_MEMBER_TIMESTAMP_REFRESH",
         ],
-        inlineRequire: () => n(343969).Ay,
+        inlineRequire: () => n(144073).Ay,
     },
     MemberSafetyStoreBatchUpdateManager: {
         actions: [
@@ -226,7 +249,7 @@ let i = {
             "SEARCH_MESSAGES_SUCCESS",
             "MOD_VIEW_SEARCH_MESSAGES_SUCCESS",
         ],
-        inlineRequire: () => n(265075).A,
+        inlineRequire: () => n(307060).A,
     },
     MessageManager: {
         actions: [
@@ -256,7 +279,7 @@ let i = {
         inlineRequire: () => n(753189).A,
         neverLoadBeforeConnectionOpen: !0,
     },
-    MultiAccountManager: { actions: ["LOGOUT"], inlineRequire: () => n(907498).A, loadAfterConnectionOpen: !0 },
+    MultiAccountManager: { actions: ["LOGOUT"], inlineRequire: () => n(81009).A, loadAfterConnectionOpen: !0 },
     OverlayContentProtectionManager: { actions: ["STREAM_START", "STREAM_STOP"], inlineRequire: () => n(48345).A },
     OverlayLockSideEffectManager: { actions: ["OVERLAY_SET_INPUT_LOCKED"], inlineRequire: () => n(674684).A },
     OverlayNotificationAnalyticsManager: {
@@ -265,7 +288,7 @@ let i = {
     },
     OverlayStateTrackingManager: {
         actions: ["OVERLAY_TRACK_STATE_CHANGED", "RUNNING_GAMES_CHANGE"],
-        inlineRequire: () => n(221419).A,
+        inlineRequire: () => n(284227).A,
     },
     OverlayUsageStatsManager: {
         actions: __OVERLAY__
@@ -287,12 +310,8 @@ let i = {
                   "OVERLAY_UPDATE_OVERLAY_METHOD",
                   "OVERLAY_TRACK_STATE_CHANGED",
               ],
-        inlineRequire: () => n(777414).A,
+        inlineRequire: () => n(965971).A,
         neverLoadBeforeConnectionOpen: !0,
-    },
-    OverlayWidgetPinManager: {
-        actions: ["OVERLAY_UPDATE_OVERLAY_STATE", "LAYOUT_SET_PINNED"],
-        inlineRequire: () => n(720196).A,
     },
     OverlayWindowRAFManager: {
         actions: [
@@ -332,15 +351,10 @@ let i = {
         inlineRequire: () => n(435736).Ay,
         neverLoadBeforeConnectionOpen: !0,
     },
-    OverlayNegativeWidgetExperimentManager: {
-        actions: [
-            "POST_CONNECTION_OPEN",
-            "OVERLAY_SET_NOTIFICATION_DISABLED_SETTING",
-            "EXPERIMENT_OVERRIDE_BUCKET",
-            "LAYOUT_SET_PINNED",
-        ],
-        inlineRequire: () => n(757989).A,
-        neverLoadBeforeConnectionOpen: !0,
+    OverlayFPSLimitExperimentManager: {
+        actions: ["POST_CONNECTION_OPEN", "LOGOUT"],
+        inlineRequire: () => n(186427).A,
+        hasStoreChangeListeners: !0,
     },
     BugReporterManager: {
         actions: [
@@ -386,6 +400,8 @@ let i = {
             "POST_CONNECTION_OPEN",
             "EXPERIMENTS_FETCH_SUCCESS",
             "BILLING_SUBSCRIPTION_UPDATE_SUCCESS",
+            "IAP_PURCHASE_PRODUCT_SUCCESS",
+            "GPLAY_PURCHASE_VERIFIED",
             "BILLING_USER_OFFER_ACKNOWLEDGED_SUCCESS",
             "BILLING_USER_TRIAL_OFFER_ACKNOWLEDGED_SUCCESS",
             "VIRTUAL_CURRENCY_REDEEM_SUCCESS",
@@ -402,10 +418,10 @@ let i = {
             "BILLING_PAYMENT_SOURCE_CREATE_SUCCESS",
             "VIRTUAL_CURRENCY_BALANCE_UPDATE",
         ],
-        inlineRequire: () => n(415202).A,
+        inlineRequire: () => n(794781).A,
     },
-    RelationshipManager: { actions: ["RELATIONSHIP_ADD", "FRIEND_REQUEST_ACCEPTED"], inlineRequire: () => n(681245).A },
-    RTCLatencyTestManager: { actions: ["POST_CONNECTION_OPEN"], inlineRequire: () => n(222804).A },
+    RelationshipManager: { actions: ["RELATIONSHIP_ADD", "FRIEND_REQUEST_ACCEPTED"], inlineRequire: () => n(908816).A },
+    RTCLatencyTestManager: { actions: ["POST_CONNECTION_OPEN"], inlineRequire: () => n(335560).A },
     SavedMessagesManager: {
         actions: ["POST_CONNECTION_OPEN"],
         inlineRequire: () => n(199543).A,
@@ -423,7 +439,7 @@ let i = {
     },
     SelectedChannelManager: { actions: ["GUILD_CREATE", "CHANNEL_CREATE", "LOGOUT"], inlineRequire: () => n(649813).A },
     SelfPresenceStoreManager: { inlineRequire: () => n(380020).A, hasStoreChangeListeners: !0 },
-    StageChannelRequestToSpeakMessageManager: { actions: ["VOICE_STATE_UPDATES"], inlineRequire: () => n(549001).A },
+    StageChannelRequestToSpeakMessageManager: { actions: ["VOICE_STATE_UPDATES"], inlineRequire: () => n(403895).A },
     StageMusicManager: {
         actions: [
             "VOICE_CHANNEL_SELECT",
@@ -436,17 +452,9 @@ let i = {
         ],
         inlineRequire: () => n(30108).Ay,
     },
-    StaffMemberPreloaderManager: { actions: ["POST_CONNECTION_OPEN"], inlineRequire: () => n(751446).A },
+    StaffMemberPreloaderManager: { actions: ["POST_CONNECTION_OPEN"], inlineRequire: () => n(714449).A },
     SubscriptionManager: { actions: ["POST_CONNECTION_OPEN"], inlineRequire: () => n(344584).A },
     SystemServiceManager: { actions: ["POST_CONNECTION_OPEN", "LOGOUT"], inlineRequire: () => n(199944).A },
-    VoiceFiltersCatalogManager: {
-        actions: [
-            "POST_CONNECTION_OPEN",
-            "VOICE_FILTER_CATALOG_FETCH_SUCCESS",
-            "VOICE_FILTER_DEV_TOOLS_SET_UPDATE_TIME",
-        ],
-        inlineRequire: () => n(327593).A,
-    },
     ThreadManager: {
         actions: ["CHANNEL_DELETE", "MESSAGE_CREATE", "GUILD_DELETE"],
         inlineRequire: () => n(444261).A,
@@ -454,7 +462,7 @@ let i = {
     },
     UrgentSystemDMManagerBase: {
         actions: ["POST_CONNECTION_OPEN", "MESSAGE_CREATE", "CHANNEL_SELECT"],
-        inlineRequire: () => n(24117).A,
+        inlineRequire: () => n(77584).A,
         neverLoadBeforeConnectionOpen: !0,
     },
     UserGuildSettingsManager: {
@@ -502,59 +510,28 @@ let i = {
     },
     UserSettingsManager: {
         actions: ["POST_CONNECTION_OPEN", "OVERLAY_INITIALIZE", "USER_SETTINGS_PROTO_UPDATE"],
-        inlineRequire: () => n(465761).A,
+        inlineRequire: () => n(281084).A,
     },
     VoiceChannelSettingsManager: {
         actions: ["CHANNEL_UPDATES", "VOICE_STATE_UPDATES"],
         inlineRequire: () => n(857500).A,
     },
-    VoiceFilterLoopbackManager: {
-        actions: [
-            "RTC_CONNECTION_STATE",
-            "VOICE_FILTER_LOOPBACK_TOGGLE",
-            "VOICE_FILTER_APPLIED",
-            "AUDIO_TOGGLE_SELF_MUTE",
-            "AUDIO_SET_TEMPORARY_SELF_MUTE",
-            "AUDIO_SET_SELF_MUTE",
-        ],
-        inlineRequire: () => n(423805).A,
-        hasStoreChangeListeners: !0,
-    },
-    VoiceFilterManager: {
-        actions: [
-            "VOICE_FILTER_REQUEST_SWITCH",
-            "VOICE_FILTER_DOWNLOAD_FAILED",
-            "VOICE_FILTER_DOWNLOAD_CANCELED",
-            "VOICE_FILTER_APPLIED",
-            "VOICE_FILTER_APPLY_FAILED",
-        ],
-        inlineRequire: () => n(401245).A,
-    },
     VoicePermissionManager: {
         actions: ["VOICE_CHANNEL_SELECT", "VOICE_STATE_UPDATES"],
-        inlineRequire: () => n(512835).A,
+        inlineRequire: () => n(171950).A,
     },
     VoiceProcessingErrorManager: {
         actions: ["MEDIA_ENGINE_NOISE_CANCELLATION_ERROR"],
         inlineRequire: () => n(552143).A,
     },
     GPUWorkaroundManager: { actions: ["POST_CONNECTION_OPEN"], inlineRequire: () => n(73508).A },
-    H264MFExperimentManager: {
-        actions: ["POST_CONNECTION_OPEN", "LOGOUT"],
-        inlineRequire: () => n(219678).A,
-        hasStoreChangeListeners: !0,
-    },
-    LibOpenH264ExperimentManager: {
-        actions: ["POST_CONNECTION_OPEN", "LOGOUT"],
-        inlineRequire: () => n(271282).A,
-        hasStoreChangeListeners: !0,
-    },
     NativeCrashManager: {
         actions: ["RTC_CONNECTION_STATE", "RTC_CONNECTION_VIDEO", "MEDIA_SESSION_JOINED"],
         inlineRequire: () => n(583534).A,
     },
     GuestManager: { actions: ["POST_CONNECTION_OPEN"], inlineRequire: () => n(921037).A },
     ClipsManager: {
+        hasStoreChangeListeners: !0,
         actions: [
             "RTC_CONNECTION_FLAGS",
             "RTC_CONNECTION_STATE",
@@ -568,25 +545,31 @@ let i = {
             "RUNNING_GAMES_CHANGE",
             "CLIPS_RESTART",
             "RTC_CONNECTION_VIDEO",
+            "CLIPS_SAVE_CLIP",
+            "CLIPS_PROMOTE_CLIP_CANDIDATE",
         ],
-        inlineRequire: () => n(13139).A,
+        inlineRequire: () => n(485162).A,
         neverLoadBeforeConnectionOpen: !0,
     },
     ClipDecisionEngineManager: {
         actions: [
             "CLIPS_SIGNAL_CREATED",
+            "CLIPS_ML_DETECTION",
             "CLIPS_SETTINGS_UPDATE",
             "SPEAKING",
             "GUILD_SOUNDBOARD_SOUND_PLAY_START",
             "GUILD_SOUNDBOARD_SOUND_PLAY_END",
             "VOICE_CHANNEL_SELECT",
+            "RUNNING_GAMES_CHANGE",
+            "CLIPS_SAVE_CLIP",
         ],
-        inlineRequire: () => n(63389).A,
+        inlineRequire: () => n(871421).Ay,
     },
     ClipsSignalManager: {
         actions: ["RUNNING_GAMES_CHANGE", "CLIPS_SETTINGS_UPDATE", "VOICE_CHANNEL_SELECT", "VOICE_STATE_UPDATES"],
-        inlineRequire: () => n(85413).A,
+        inlineRequire: () => n(966532).A,
     },
+    DistributedClipsManager: { actions: ["CLIPS_REMOTE_TRIGGER"], inlineRequire: () => n(429195).A },
     CustomCallSoundsManager: {
         actions: ["RTC_CONNECTION_STATE", "SOUNDBOARD_MUTE_JOIN_SOUND", "VOICE_STATE_UPDATES"],
         inlineRequire: () => n(572044).A,
@@ -628,6 +611,10 @@ let i = {
         inlineRequire: () => n(378187).A,
         neverLoadBeforeConnectionOpen: !0,
     },
+    PremiumGroupManager: {
+        actions: ["POST_CONNECTION_OPEN", "BILLING_SUBSCRIPTION_FETCH_SUCCESS"],
+        inlineRequire: () => n(817063).A,
+    },
     QuestFetchManager: {
         actions: [
             "QUESTS_FETCH_CURRENT_QUESTS_BEGIN",
@@ -644,11 +631,6 @@ let i = {
         inlineRequire: () => n(894992).A,
         hasStoreChangeListeners: !0,
         loadAfterConnectionOpen: !0,
-    },
-    VoiceChannelGameActivityManager: {
-        actions: ["RUNNING_GAMES_CHANGE", "VOICE_CHANNEL_SELECT"],
-        inlineRequire: () => n(251408).A,
-        neverLoadBeforeConnectionOpen: !0,
     },
     InappropriateConversationsManager: {
         actions: ["VIBING_WUMPUS_PLAY_MUSIC", "VIBING_WUMPUS_STOP_MUSIC", "VIBING_WUMPUS_PAUSE_MUSIC"],
@@ -672,17 +654,24 @@ let i = {
     },
     RunningGameDetectionManager: {
         actions: ["RUNNING_GAME_DELETE_ENTRY", "RUNNING_GAME_TOGGLE_DETECTION"],
-        inlineRequire: () => n(990851).A,
+        inlineRequire: () => n(881328).A,
         neverLoadBeforeConnectionOpen: !0,
     },
     RunningGameHeartbeatManager: {
-        actions: ["RUNNING_GAMES_CHANGE", "LOGOUT", "POST_CONNECTION_OPEN", "SYSTEM_SERVICE_INITIALIZE"],
-        inlineRequire: () => n(811917).A,
+        actions: [
+            "RUNNING_GAMES_CHANGE",
+            "LOGOUT",
+            "POST_CONNECTION_OPEN",
+            "SYSTEM_SERVICE_INITIALIZE",
+            "WINDOW_FOCUS",
+            "WINDOW_VISIBILITY_CHANGE",
+        ],
+        inlineRequire: () => n(208207).A,
         neverLoadBeforeConnectionOpen: !0,
     },
     DmSettingsUpsellManager: {
         actions: ["DM_SETTINGS_UPSELL_SHOW"],
-        inlineRequire: () => n(360966).A,
+        inlineRequire: () => n(510264).A,
         neverLoadBeforeConnectionOpen: !0,
     },
     ForwardGuildBreadcrumbManager: {
@@ -700,12 +689,12 @@ let i = {
     },
     SharedSpacesWarningManager: {
         actions: ["CHANNEL_SELECT", "APP_STATE_UPDATE"],
-        inlineRequire: () => n(158160).Ay,
+        inlineRequire: () => n(514581).Ay,
         neverLoadBeforeConnectionOpen: !0,
     },
     GlobalDiscoveryServersFeaturedSearchManager: {
         actions: ["POST_CONNECTION_OPEN"],
-        inlineRequire: () => n(670412).A,
+        inlineRequire: () => n(688713).A,
         neverLoadBeforeConnectionOpen: !0,
     },
     GuildPowerupsManager: {
@@ -745,7 +734,7 @@ let i = {
             "RTC_CONNECTION_VIDEO",
             "STREAM_CLOSE",
         ],
-        inlineRequire: () => n(734432).A,
+        inlineRequire: () => n(970048).A,
         neverLoadBeforeConnectionOpen: !0,
     },
     ApplicationStreamingManager: {
@@ -761,7 +750,7 @@ let i = {
             "VOICE_CHANNEL_SELECT",
             "VOICE_STATE_UPDATES",
         ],
-        inlineRequire: () => n(915872).A,
+        inlineRequire: () => n(130553).A,
         neverLoadBeforeConnectionOpen: !0,
     },
     LibdiscoreExperimentManager: { actions: [], inlineRequire: () => n(18683).A, hasStoreChangeListeners: !0 },
@@ -784,15 +773,18 @@ let i = {
             "THREAD_UPDATE",
             "USER_UPDATE",
         ],
-        inlineRequire: () => n(683213).A,
+        inlineRequire: () => n(936449).A,
         neverLoadBeforeConnectionOpen: !0,
     },
     KrispExperimentManager: {
         actions: ["RTC_CONNECTION_STATE"],
-        inlineRequire: () => n(65457).A,
+        inlineRequire: () => n(835438).A,
         hasStoreChangeListeners: !0,
     },
-    FramesWebManager: { actions: ["RPC_APP_DISCONNECTED"], inlineRequire: () => n(905579).A },
+    FramesWebManager: {
+        actions: ["RPC_APP_DISCONNECTED", "FRAME_LAUNCH", "FRAME_LAUNCH_FAIL", "FRAME_STOP"],
+        inlineRequire: () => n(809871).A,
+    },
     NotificationsInboxAutoLoadManager: {
         inlineRequire: () => n(226459).A,
         neverLoadBeforeConnectionOpen: !0,
@@ -800,7 +792,7 @@ let i = {
     },
     RequestToStreamManager: {
         actions: ["VOICE_STATE_UPDATES"],
-        inlineRequire: () => n(553366).A,
+        inlineRequire: () => n(488626).A,
         neverLoadBeforeConnectionOpen: !0,
     },
     UserApplicationIdentityManager: {
@@ -821,8 +813,29 @@ let i = {
         actions: ["AUTHENTICATOR_DELETE", "CURRENT_USER_UPDATE", "MFA_WEBAUTHN_CREDENTIALS_LOADED"],
         inlineRequire: () => n(915968).A,
     },
+    SocialLayerStorefrontAnnouncementManager: {
+        actions: [
+            "LOGOUT",
+            "POST_CONNECTION_OPEN",
+            "SOCIAL_LAYER_STOREFRONT_CONFIG_FETCH_SUCCESS",
+            "SOCIAL_LAYER_STOREFRONT_AFFINITY_FETCH_SUCCESS",
+        ],
+        inlineRequire: () => n(888668).A,
+        neverLoadBeforeConnectionOpen: !0,
+        hasStoreChangeListeners: !0,
+    },
     HavenManager: { actions: ["HAVEN_DISCONNECT"], inlineRequire: () => n(63446).A },
-    RestrictedHoursManager: { inlineRequire: () => n(425116).A, hasStoreChangeListeners: !0 },
+    RestrictedHoursManager: {
+        actions: [
+            "POST_CONNECTION_OPEN",
+            "CURRENT_USER_UPDATE",
+            "LOGOUT",
+            "NOTIFICATIONS_SET_SCREEN_DOWNTIME_REMINDER",
+        ],
+        inlineRequire: () => n(425116).A,
+        hasStoreChangeListeners: !0,
+        neverLoadBeforeConnectionOpen: !0,
+    },
     SentryExperimentFeatureFlagManager: {
         actions: [],
         inlineRequire: () => n(952719).A,
@@ -830,5 +843,23 @@ let i = {
         loadRightBeforeConnectionOpen: !0,
     },
     SocialLayerStorefrontConfigManager: { actions: ["POST_CONNECTION_OPEN"], inlineRequire: () => n(49431).A },
+    CacheRequireModuleExperimentManager: {
+        actions: [],
+        inlineRequire: () => n(964176).A,
+        hasStoreChangeListeners: !0,
+        loadRightBeforeConnectionOpen: !0,
+    },
+    ConversationsFetchManager: {
+        actions: [
+            "CHANNEL_SELECT",
+            "LOAD_MESSAGES_SUCCESS",
+            "UPDATE_VISIBLE_MESSAGES",
+            "CONVERSATIONS_FETCH_SUCCESS",
+            "CHANNEL_DELETE",
+            "LOGOUT",
+        ],
+        inlineRequire: () => n(185522).A,
+        neverLoadBeforeConnectionOpen: !0,
+    },
 };
-(0, r.n)(i);
+(0, i.n)(r);

@@ -1,76 +1,78 @@
-"use strict";
-n.d(t, { AW: () => C, Hi: () => E, UU: () => I, Vm: () => b, gZ: () => x, nY: () => f, ql: () => N, v3: () => _ });
+o.d(t, { AW: () => O, Hi: () => S, UU: () => f, Vm: () => k, gZ: () => L, ql: () => T, v3: () => g });
 var i,
-    s,
-    l = n(64700),
-    r = n(575593),
-    a = n(417597),
-    o = n(793574),
-    c = n(688810),
-    d = n(954571),
-    u = n(590180),
-    h = n(161918),
-    A = n(572595),
-    m = n(57020),
-    p = n(758836),
-    g = n(652215);
-let _ = l.createContext({ flattenProductVariants: void 0, productOverride: void 0, prioritizedCurrency: void 0 });
-function f() {
-    return l.useContext(_).flattenProductVariants;
+    n,
+    r = o(64700),
+    s = o(575593),
+    a = o(702841),
+    l = o(793574),
+    d = o(688810),
+    c = o(954571),
+    u = o(440938),
+    C = o(590180),
+    p = o(161918),
+    _ = o(572595),
+    E = o(57020),
+    I = o(758836),
+    A = o(652215);
+let g = r.createContext({ flattenProductVariants: void 0, productOverride: void 0, prioritizedCurrency: void 0 });
+function L() {
+    return r.useContext(g).prioritizedCurrency;
 }
-function x() {
-    return l.useContext(_).prioritizedCurrency;
-}
-var C =
+var O =
         (((i = {}).NONE = "none"),
         (i.NEW = "new"),
         (i.ORBS_EXCLUSIVE = "orbs_exclusive"),
         (i.LIMITED_TIME = "limited_time"),
         (i.NITRO_EXCLUSIVE = "nitro_exclusive"),
+        (i.EARLY_ACCESS = "early_access"),
         i),
-    E = (((s = {}).FIAT = "fiat"), (s.ORBS = "orbs"), s);
-let I = (e, t, n) => (i) => {
-        d.default.track(g.HAw.COLLECTIBLES_SHOP_ELEMENT_CLICKED, {
-            collectibles_shop_session_id: n?.sessionId,
+    S = (((n = {}).FIAT = "fiat"), (n.ORBS = "orbs"), n);
+let f = (e, t, o) => (i) => {
+        c.default.track(A.HAw.COLLECTIBLES_SHOP_ELEMENT_CLICKED, {
+            collectibles_shop_session_id: o?.sessionId,
             sku_id: e.skuId,
             page_type: t,
-            page_section: n?.pageSection,
-            page_category: t === p.G2.HOME ? void 0 : n?.pageCategory,
-            page_index: t === p.G2.CATALOG ? n?.pageIndex : void 0,
-            page_size: t === p.G2.CATALOG ? n?.pageSize : void 0,
-            tile_type: r.R[e.type],
-            tile_position: String(n?.tilePosition),
+            page_section: o?.pageSection,
+            page_category: t === I.G2.HOME ? void 0 : o?.pageCategory,
+            page_index: t === I.G2.CATALOG ? o?.pageIndex : void 0,
+            page_size: t === I.G2.CATALOG ? o?.pageSize : void 0,
+            tile_type: s.R[e.type],
+            tile_position: String(o?.tilePosition),
             cta_name: i,
         });
     },
-    N = (e, t, n) => {
-        let i = (0, h.Mk)(),
-            s = i?.tab,
-            { analyticsLocations: r } = (0, c.Ay)(o.A.COLLECTIBLES_SHOP_CARD),
-            d = (0, a.bG)([u.A], () => u.A.getCategoryForProduct(e.skuId)),
-            p = l.useRef(null);
-        return l.useCallback(
+    T = (e, t, o) => {
+        let i = (0, p.Mk)(),
+            n = i?.tab,
+            s = (0, u.uM)(),
+            { analyticsLocations: c } = (0, d.Ay)(l.A.COLLECTIBLES_SHOP_CARD),
+            I = (0, a.bG)([C.A], () => C.A.getCategoryForProduct(e.skuId)),
+            A = r.useRef(null);
+        return r.useCallback(
             (t) => (i) => {
-                if (null == d) return;
-                let l = (0, m.A)({ product: e });
-                (p.current = i.currentTarget),
-                    n?.(),
-                    (0, A.t)({
+                if (null == I) return;
+                let r = (0, E.A)({ product: e });
+                (A.current = i.currentTarget),
+                    o?.(),
+                    (0, _.t)({
                         product: e,
-                        category: d,
-                        shouldCheckoutWithOrbs: l,
-                        analyticsLocations: r,
+                        category: I,
+                        shouldCheckoutWithOrbs: r,
+                        analyticsLocations: c,
                         analyticsSource: t,
-                        returnRef: p,
-                        tab: s,
+                        returnRef: A,
+                        tab: n,
+                        cardId: s?.cardId,
+                        sessionId: s?.sessionId,
+                        tilePosition: s?.tilePosition,
                     });
             },
-            [e, s, d, r, n],
+            [e, n, I, c, o, s?.cardId, s?.sessionId, s?.tilePosition],
         )(t);
     },
-    b = (e) => {
-        let { flattenProductVariants: t, productOverride: n } = l.useContext(_);
-        return (0, a.bG)([u.A], () =>
-            null != n ? n : t ? u.A.getProduct(e) : u.A.getCategoryForProduct(e)?.products.find((t) => t.skuId === e),
+    k = (e) => {
+        let { flattenProductVariants: t, productOverride: o } = r.useContext(g);
+        return (0, a.bG)([C.A], () =>
+            null != o ? o : t ? C.A.getProduct(e) : C.A.getCategoryForProduct(e)?.products.find((t) => t.skuId === e),
         );
     };

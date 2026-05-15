@@ -1,23 +1,47 @@
-"use strict";
 n.d(t, { A: () => a });
-var i = n(627968);
+var l = n(627968);
 n(64700);
-var s = n(397927),
-    l = n(568065);
+var i = n(192308),
+    r = n(568065);
 function a(e, t) {
-    (0, s.mMO)(
+    (0, i.openModalLazy)(
         async () => {
             switch (t.type) {
-                case l.o9.LEVEL: {
-                    let { default: s } = await n.e("54508").then(n.bind(n, 278087));
-                    return (n) => (0, i.jsx)(s, { guildId: e, powerup: t, ...n });
+                case r.o9.LEVEL: {
+                    let { default: i } = await Promise.all([
+                        n.e("47459"),
+                        n.e("36723"),
+                        n.e("84529"),
+                        n.e("16229"),
+                        n.e("31203"),
+                        n.e("22455"),
+                        n.e("70698"),
+                        n.e("69149"),
+                        n.e("34598"),
+                        n.e("50186"),
+                        n.e("2988"),
+                    ]).then(n.bind(n, 787367));
+                    return (n) => (0, l.jsx)(i, { guildId: e, powerup: t, ...n });
                 }
-                case l.o9.PERK: {
-                    let { default: s } = await Promise.all([n.e("63379"), n.e("34249")]).then(n.bind(n, 940481));
-                    return (n) => (0, i.jsx)(s, { guildId: e, powerup: t, ...n });
+                case r.o9.PERK: {
+                    let { default: i } = await Promise.all([
+                        n.e("93110"),
+                        n.e("74389"),
+                        n.e("47459"),
+                        n.e("35912"),
+                        n.e("3930"),
+                        n.e("3663"),
+                        n.e("42749"),
+                        n.e("66147"),
+                        n.e("22455"),
+                        n.e("48111"),
+                        n.e("69149"),
+                        n.e("8710"),
+                    ]).then(n.bind(n, 288416));
+                    return (n) => (0, l.jsx)(i, { guildId: e, powerup: t, ...n });
                 }
             }
         },
-        { modalKey: l.Fq },
+        { modalKey: r.Fq },
     );
 }

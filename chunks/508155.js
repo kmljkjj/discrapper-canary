@@ -1,55 +1,55 @@
 "use strict";
 n.d(t, { t: () => o });
-var r = n(473145),
-    i = n(652215),
-    a = n(788868),
-    s = n(985018);
+var i = n(473145),
+    r = n(652215),
+    s = n(788868),
+    a = n(375708);
 let o = [
     {
-        tier: i.TVA.TIER_1,
+        tier: r.TVA.TIER_1,
         perks: [
             {
-                perkIcon: r.TP.EMOJI,
+                perkIcon: i.TP.EMOJI,
                 getCopy: () =>
-                    s.intl.formatToPlainString(s.t.Tlz0x1, { numEmojiSlots: a.TG[i.TVA.TIER_1].limits.emoji }),
+                    a.intl.formatToPlainString(a.t.Tlz0x1, { numEmojiSlots: s.TG[r.TVA.TIER_1].limits.emoji }),
             },
             {
-                perkIcon: r.TP.SOUNDBOARD,
+                perkIcon: i.TP.SOUNDBOARD,
                 getCopy: () =>
-                    s.intl.formatToPlainString(s.t["v+MIfo"], {
-                        numSoundboardSlots: a.TG[i.TVA.TIER_1].limits.soundboardSounds,
+                    a.intl.formatToPlainString(a.t["v+MIfo"], {
+                        numSoundboardSlots: s.TG[r.TVA.TIER_1].limits.soundboardSounds,
                     }),
                 isNew: !0,
             },
-            { perkIcon: r.TP.ANIMATED, getCopy: () => s.intl.string(s.t.PbAyub) },
-            { perkIcon: r.TP.AUDIO, getCopy: () => s.intl.string(s.t["WH+OeI"]) },
+            { perkIcon: i.TP.ANIMATED, getCopy: () => a.intl.string(a.t.PbAyub) },
+            { perkIcon: i.TP.AUDIO, getCopy: () => a.intl.string(a.t["WH+OeI"]) },
         ],
     },
     {
-        tier: i.TVA.TIER_2,
+        tier: r.TVA.TIER_2,
         perks: [
-            { perkIcon: r.TP.STREAM, getCopy: () => s.intl.string(s.t.y4ft4D) },
+            { perkIcon: i.TP.STREAM, getCopy: () => a.intl.string(a.t.y4ft4D) },
             {
-                perkIcon: r.TP.UPLOAD,
-                getCopy: () => s.intl.formatToPlainString(s.t.aFRl53, { uploadSizeLimit: s.intl.string(s.t.M6qV8j) }),
+                perkIcon: i.TP.UPLOAD,
+                getCopy: () => a.intl.formatToPlainString(a.t.aFRl53, { uploadSizeLimit: a.intl.string(a.t.M6qV8j) }),
             },
-            { perkIcon: r.TP.CUSTOM_ROLE_ICON, getCopy: () => s.intl.string(s.t["6PV6Qc"]) },
-            { perkIcon: r.TP.CUSTOMIZATION, getCopy: () => s.intl.string(s.t["1a5rjl"]) },
+            { perkIcon: i.TP.CUSTOM_ROLE_ICON, getCopy: () => a.intl.string(a.t["6PV6Qc"]) },
+            { perkIcon: i.TP.CUSTOMIZATION, getCopy: () => a.intl.string(a.t["1a5rjl"]) },
         ],
     },
     {
-        tier: i.TVA.TIER_3,
+        tier: r.TVA.TIER_3,
         perks: [
-            { perkIcon: r.TP.VANITY, getCopy: () => s.intl.string(s.t.adNGjW) },
+            { perkIcon: i.TP.VANITY, getCopy: () => a.intl.string(a.t.adNGjW) },
             {
-                perkIcon: r.TP.UPLOAD,
-                getCopy: () => s.intl.formatToPlainString(s.t.aFRl53, { uploadSizeLimit: s.intl.string(s.t.yMOW8D) }),
+                perkIcon: i.TP.UPLOAD,
+                getCopy: () => a.intl.formatToPlainString(a.t.aFRl53, { uploadSizeLimit: a.intl.string(a.t.yMOW8D) }),
             },
-            { perkIcon: r.TP.AUDIO, getCopy: () => s.intl.string(s.t.Tsljqo) },
-            { perkIcon: r.TP.ANIMATED, getCopy: () => s.intl.string(s.t.nRKlmC) },
+            { perkIcon: i.TP.AUDIO, getCopy: () => a.intl.string(a.t.Tsljqo) },
+            { perkIcon: i.TP.ANIMATED, getCopy: () => a.intl.string(a.t.nRKlmC) },
             {
-                perkIcon: r.TP.STAGE_VIDEO,
-                getCopy: () => s.intl.formatToPlainString(s.t.hsZ88d, { numStageSeats: i.uaN }),
+                perkIcon: i.TP.STAGE_VIDEO,
+                getCopy: () => a.intl.formatToPlainString(a.t.hsZ88d, { numStageSeats: r.uaN }),
             },
         ],
     },

@@ -1,21 +1,18 @@
 "use strict";
-n.d(t, { Ay: () => c, Vb: () => u, yE: () => l });
-var r = n(496431),
-    i = n(405269),
-    a = n(728458),
-    s = n(985018);
-let o = 6e4;
-var l = (function (e) {
-    return (
-        (e[(e.SHORT_TIME_LEFT = 0)] = "SHORT_TIME_LEFT"),
-        (e[(e.LONG_TIME_LEFT = 1)] = "LONG_TIME_LEFT"),
-        (e[(e.ENDS_IN = 2)] = "ENDS_IN"),
-        (e[(e.SHORT_TIME = 3)] = "SHORT_TIME"),
-        (e[(e.CREDITS_ENDS_IN = 4)] = "CREDITS_ENDS_IN"),
-        e
-    );
-})({});
-function u(e) {
+n.d(t, { Ay: () => _, Vb: () => d, yE: () => l });
+var i,
+    r = n(496431),
+    s = n(58703),
+    a = n(38405),
+    o = n(985018),
+    l =
+        (((i = {})[(i.SHORT_TIME_LEFT = 0)] = "SHORT_TIME_LEFT"),
+        (i[(i.LONG_TIME_LEFT = 1)] = "LONG_TIME_LEFT"),
+        (i[(i.ENDS_IN = 2)] = "ENDS_IN"),
+        (i[(i.SHORT_TIME = 3)] = "SHORT_TIME"),
+        (i[(i.CREDITS_ENDS_IN = 4)] = "CREDITS_ENDS_IN"),
+        i);
+function d(e) {
     let t = { ...e };
     if (
         (t.seconds > 0 && ((t.minutes = t.minutes + 1), (t.seconds = 0)),
@@ -35,33 +32,33 @@ function u(e) {
     }
     return t.seconds > 0 ? { days: 0, hours: 0, minutes: 1, seconds: 0 } : t;
 }
-function c(e, t) {
+function _(e, t) {
     let n;
     switch (t) {
         case 0:
-            n = { days: s.t["/wnvqA"], hours: s.t.Jsq0XN, minutes: s.t["SBd+Bs"] };
+            n = { days: o.t["/wnvqA"], hours: o.t.Jsq0XN, minutes: o.t["SBd+Bs"] };
             break;
         case 1:
-            n = { days: s.t.UD5nn5, hours: s.t.Hg8Fee, minutes: s.t.XSbQZZ };
+            n = { days: o.t.UD5nn5, hours: o.t.Hg8Fee, minutes: o.t.XSbQZZ };
             break;
         case 2:
-            n = { days: s.t.rLqNad, hours: s.t.d1LvCA, minutes: s.t.Z2LX7K };
+            n = { days: o.t.rLqNad, hours: o.t.d1LvCA, minutes: o.t.Z2LX7K };
             break;
         case 4:
-            n = { days: s.t.xQ3zuN, hours: s.t.SFU7QN, minutes: s.t.Y4FNdL };
+            n = { days: o.t.xQ3zuN, hours: o.t.SFU7QN, minutes: o.t.Y4FNdL };
             break;
         case 3:
-            n = { days: s.t.fYmirx, hours: s.t["C3RO+g"], minutes: s.t.r77oHc };
+            n = { days: o.t.fYmirx, hours: o.t["C3RO+g"], minutes: o.t.r77oHc };
             break;
         default:
             throw Error(`Unknown messageType (${t}) when rendering time left`);
     }
-    let l = u((0, r.A)(e.toDate(), o)),
-        c = "";
+    let i = d((0, r.A)(e.toDate(), 6e4)),
+        l = "";
     try {
-        c = (0, i.uN)(l, n);
+        l = (0, s.uN)(i, n);
     } catch {
         a.A.captureMessage("Error trying to format string for fractional nitro duration pill");
     }
-    return c;
+    return l;
 }

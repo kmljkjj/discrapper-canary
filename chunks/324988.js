@@ -1,12 +1,12 @@
 "use strict";
-var r = n(344815),
-    i = n(339626),
-    a = n(647055),
-    s = n(380744)("toStringTag"),
+var i = n(344815),
+    r = n(339626),
+    s = n(647055),
+    a = n(380744)("toStringTag"),
     o = Object,
     l =
         "Arguments" ===
-        a(
+        s(
             (function () {
                 return arguments;
             })(),
@@ -16,19 +16,19 @@ var r = n(344815),
             return e[t];
         } catch (e) {}
     };
-e.exports = r
-    ? a
+e.exports = i
+    ? s
     : function (e) {
-          var t, n, r;
+          var t, n, i;
           return void 0 === e
               ? "Undefined"
               : null === e
                 ? "Null"
-                : "string" == typeof (n = u((t = o(e)), s))
+                : "string" == typeof (n = u((t = o(e)), a))
                   ? n
                   : l
-                    ? a(t)
-                    : "Object" === (r = a(t)) && i(t.callee)
+                    ? s(t)
+                    : "Object" === (i = s(t)) && r(t.callee)
                       ? "Arguments"
-                      : r;
+                      : i;
       };

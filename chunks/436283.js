@@ -1,151 +1,146 @@
 "use strict";
-let r, i;
-n.d(t, { Ay: () => P });
-var a = n(311907),
-    s = n(73153),
-    o = n(843472),
+let i, r;
+n.d(t, { Ay: () => S });
+var s = n(17928),
+    a = n(228366),
+    o = n(720149),
     l = n(155718),
-    u = n(961350),
-    c = n(734057),
-    d = n(927813),
-    _ = n(337591);
-let f = 5 * d.A.Millis.MINUTE,
-    p = 10 * d.A.Millis.SECOND,
-    h = {},
+    d = n(495544),
+    _ = n(734057),
+    u = n(927813),
+    c = n(337591);
+let E = 5 * u.A.Millis.MINUTE,
+    h = 10 * u.A.Millis.SECOND,
     m = {},
+    f = {},
     g = {},
-    E = {};
-function A() {
-    (h = {}),
-        (m = {}),
-        (g = {}),
-        (E = {}),
-        setInterval(() => {
-            let e = Date.now();
-            for (let [t, n] of Object.entries(E)) e - n.insertedAt > p && delete E[t];
-        }, f);
+    p = {};
+function A(e) {
+    if (null == e) return !1;
+    let t = m[e];
+    if (null == t) return !1;
+    t.onSuccess?.(), I(e);
 }
 function I(e) {
-    let { nonce: t, messageId: n, data: r, onCreate: i, onCancel: a, onSuccess: s, onFailure: o } = e;
-    null != n && ((m[n] = t), (g[t] = n)),
-        (h[t] = { state: _.m.QUEUED, data: r, onCreate: i, onCancel: a, onSuccess: s, onFailure: o });
-}
-function T(e) {
-    let { nonce: t, interactionId: n } = e;
-    if (null == t) return !1;
-    let r = h[t];
-    if (null == r || r.state !== _.m.QUEUED) return !1;
-    (r.state = _.m.CREATED), r.onCreate?.(n);
-}
-function y(e) {
-    let { nonce: t } = e;
-    L(t);
-}
-function S(e) {
-    let { message: t } = e;
-    if (null == t.nonce) return !1;
-    {
-        let e = h[t.nonce];
-        if (null == e) return !1;
-        e.onSuccess?.(), w(t.nonce);
-    }
-}
-function v(e) {
-    let { nonce: t, errorCode: n, errorMessage: r, status: i, reasonCode: a } = e;
-    if (null == t) return !1;
-    let s = h[t];
-    if (null == s) return !1;
-    s.onFailure?.(n, r, i, a),
-        s.data.interactionType === l.G4.APPLICATION_COMMAND
-            ? w(t)
-            : (h[t] = { ...s, state: _.m.FAILED, errorCode: n, errorMessage: r });
-}
-function C(e) {
-    let { channelId: t } = e;
-    if (null == c.A.getChannel(t)) return !1;
-    for (let [e, t] of Object.entries(h)) t.state === _.m.FAILED && w(e);
-}
-function b(e) {
-    let { nonce: t } = e;
-    L(t);
-}
-function N(e) {
-    let { application: t, nonce: n } = e;
-    (i = t.id), L(n);
-}
-function R() {
-    (r = void 0), (i = void 0);
-}
-function O(e) {
-    let { modalKey: t } = e;
-    r = t;
-}
-function D(e) {
-    let t,
-        n,
-        { participants: r } = e,
-        i = u.default.getSessionId(),
-        a = u.default.getId(),
-        s = r.find((e) => e.user_id === a && e.session_id === i);
-    if (null == s || null == s.nonce) return;
-    let l = E[s.nonce];
-    null == l ? ((t = g[s.nonce]), (n = h[s.nonce])) : ((t = l.messageId), (n = l.interaction)),
-        null != n &&
-            null != t &&
-            (w(s.nonce), null != t && "channelId" in n.data && o.A.deleteMessage(n.data.channelId, t, !0));
-}
-function L(e) {
-    if (null == e) return !1;
-    let t = h[e];
-    if (null == t) return !1;
-    t.onSuccess?.(), w(e);
-}
-function w(e) {
-    if (null != E[e]) return void delete E[e];
-    let t = h[e];
-    delete h[e];
+    if (null != p[e]) return void delete p[e];
+    let t = m[e];
+    delete m[e];
     let n = g[e];
-    null != n && delete m[n], delete g[e], (E[e] = { insertedAt: Date.now(), nonce: e, messageId: n, interaction: t });
+    null != n && delete f[n], delete g[e], (p[e] = { insertedAt: Date.now(), nonce: e, messageId: n, interaction: t });
 }
-class x extends a.Ay.Store {
+class T extends s.Ay.Store {
     initialize() {
-        this.waitFor(u.default, c.A);
+        this.waitFor(d.default, _.A);
     }
     static displayName = "InteractionStore";
     getInteraction(e) {
-        let t = m[e.id];
-        return null != t ? h[t] : null;
+        let t = f[e.id];
+        return null != t ? m[t] : null;
     }
     getMessageInteractionStates() {
         let e = {};
-        for (let [t, n] of Object.entries(h)) {
-            let r = g[t];
-            null != r && (e[r] = n.state);
+        for (let [t, n] of Object.entries(m)) {
+            let i = g[t];
+            null != i && (e[i] = n.state);
         }
         return e;
     }
     canQueueInteraction(e, t) {
-        let n = m[e];
-        return (null == n || null == h[n] || h[n].state === _.m.FAILED) && (null == h[t] || h[t].state === _.m.FAILED);
+        let n = f[e];
+        return (null == n || null == m[n] || m[n].state === c.m.FAILED) && (null == m[t] || m[t].state === c.m.FAILED);
     }
     getIFrameModalApplicationId() {
-        return i;
-    }
-    getIFrameModalKey() {
         return r;
     }
+    getIFrameModalKey() {
+        return i;
+    }
+    getInteractionDebugContext(e) {
+        if (null == e) return;
+        let t = m[e];
+        if (null != t) return { interaction: t, messageId: g[e] };
+        let n = p[e];
+        if (null != n) return { interaction: n.interaction, messageId: n.messageId };
+    }
 }
-let P = new x(s.h, {
-    LOGOUT: A,
-    INTERACTION_QUEUE: I,
-    INTERACTION_CREATE: T,
-    INTERACTION_SUCCESS: y,
-    INTERACTION_FAILURE: v,
-    MESSAGE_CREATE: S,
-    CHANNEL_SELECT: C,
-    INTERACTION_IFRAME_MODAL_CREATE: N,
-    INTERACTION_IFRAME_MODAL_CLOSE: R,
-    INTERACTION_IFRAME_MODAL_KEY_CREATE: O,
-    INTERACTION_MODAL_CREATE: b,
-    EMBEDDED_ACTIVITY_UPDATE_V2: D,
+let S = new T(a.h, {
+    LOGOUT: function () {
+        (m = {}),
+            (f = {}),
+            (g = {}),
+            (p = {}),
+            setInterval(() => {
+                let e = Date.now();
+                for (let [t, n] of Object.entries(p)) e - n.insertedAt > h && delete p[t];
+            }, E);
+    },
+    INTERACTION_QUEUE: function (e) {
+        let { nonce: t, messageId: n, data: i, onCreate: r, onCancel: s, onSuccess: a, onFailure: o } = e;
+        null != n && ((f[n] = t), (g[t] = n)),
+            (m[t] = { state: c.m.QUEUED, data: i, onCreate: r, onCancel: s, onSuccess: a, onFailure: o });
+    },
+    INTERACTION_CREATE: function (e) {
+        let { nonce: t, interactionId: n } = e;
+        if (null == t) return !1;
+        let i = m[t];
+        if (null == i || i.state !== c.m.QUEUED) return !1;
+        (i.state = c.m.CREATED), i.onCreate?.(n);
+    },
+    INTERACTION_SUCCESS: function (e) {
+        let { nonce: t } = e;
+        A(t);
+    },
+    INTERACTION_FAILURE: function (e) {
+        let { nonce: t, errorCode: n, errorMessage: i, status: r, reasonCode: s } = e;
+        if (null == t) return !1;
+        let a = m[t];
+        if (null == a) return !1;
+        a.onFailure?.(n, i, r, s),
+            a.data.interactionType === l.G4.APPLICATION_COMMAND
+                ? I(t)
+                : (m[t] = { ...a, state: c.m.FAILED, errorCode: n, errorMessage: i });
+    },
+    MESSAGE_CREATE: function (e) {
+        let { message: t } = e;
+        if (null == t.nonce) return !1;
+        {
+            let e = m[t.nonce];
+            if (null == e) return !1;
+            e.onSuccess?.(), I(t.nonce);
+        }
+    },
+    CHANNEL_SELECT: function (e) {
+        let { channelId: t } = e;
+        if (null == _.A.getChannel(t)) return !1;
+        for (let [e, t] of Object.entries(m)) t.state === c.m.FAILED && I(e);
+    },
+    INTERACTION_IFRAME_MODAL_CREATE: function (e) {
+        let { application: t, nonce: n } = e;
+        (r = t.id), A(n);
+    },
+    INTERACTION_IFRAME_MODAL_CLOSE: function () {
+        (i = void 0), (r = void 0);
+    },
+    INTERACTION_IFRAME_MODAL_KEY_CREATE: function (e) {
+        let { modalKey: t } = e;
+        i = t;
+    },
+    INTERACTION_MODAL_CREATE: function (e) {
+        let { nonce: t } = e;
+        A(t);
+    },
+    EMBEDDED_ACTIVITY_UPDATE_V2: function (e) {
+        let t,
+            n,
+            { participants: i } = e,
+            r = d.default.getSessionId(),
+            s = d.default.getId(),
+            a = i.find((e) => e.user_id === s && e.session_id === r);
+        if (null == a || null == a.nonce) return;
+        let l = p[a.nonce];
+        null == l ? ((t = g[a.nonce]), (n = m[a.nonce])) : ((t = l.messageId), (n = l.interaction)),
+            null != n &&
+                null != t &&
+                (I(a.nonce), null != t && "channelId" in n.data && o.A.deleteMessage(n.data.channelId, t, !0));
+    },
 });

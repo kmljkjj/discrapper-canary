@@ -2,13 +2,13 @@ i.d(t, { A: () => m, x: () => h });
 var n,
     l = i(627968),
     a = i(64700),
-    r = i(735438),
-    o = i.n(r),
-    s = i(615300),
+    s = i(735438),
+    o = i.n(s),
+    r = i(615300),
     u = i(531685),
     d = (((n = d || {})[(n.ABOVE = 0)] = "ABOVE"), (n[(n.VISIBLE = 1)] = "VISIBLE"), (n[(n.BELOW = 2)] = "BELOW"), n);
 function c(e, t) {
-    return { toValue: e, duration: t ?? 300, easing: s.A.Easing.inOut(s.A.Easing.back()) };
+    return { toValue: e, duration: t ?? 300, easing: r.A.Easing.inOut(r.A.Easing.back()) };
 }
 function h(e, t, i) {
     if (null != t) {
@@ -23,8 +23,8 @@ class m extends a.PureComponent {
     constructor(e) {
         super(e),
             (this.state = { prevValue: null, currValue: e.value, nextValue: null }),
-            (this.prevAnimate = new s.A.Value(0)),
-            (this.currAnimate = new s.A.Value(1));
+            (this.prevAnimate = new r.A.Value(0)),
+            (this.currAnimate = new r.A.Value(1));
     }
     static getDerivedStateFromProps(e, t) {
         let { prevValue: i, currValue: n, nextValue: l } = t;
@@ -49,7 +49,7 @@ class m extends a.PureComponent {
                 : e > t
                   ? (this.currAnimate.setValue(0), (i = 2))
                   : (this.currAnimate.setValue(2), (i = 0)),
-            s.A.parallel([s.A.timing(this.prevAnimate, c(i, l)), s.A.timing(this.currAnimate, c(1, l))]).start(
+            r.A.parallel([r.A.timing(this.prevAnimate, c(i, l)), r.A.timing(this.currAnimate, c(1, l))]).start(
                 this.animateNext,
             );
     }
@@ -89,20 +89,20 @@ class m extends a.PureComponent {
                 style: { color: i, minWidth: this.getMinWidth(t) },
                 children: null != n ? n(this.padValue(t)) : this.padValue(t),
             });
-        let r = Math.max(e, t);
+        let s = Math.max(e, t);
         return (0, l.jsxs)("div", {
             ...a,
             style: { color: i, position: "relative", overflow: "hidden" },
             children: [
                 (0, l.jsx)("div", {
-                    style: { visibility: "hidden", minWidth: this.getMinWidth(r) },
-                    children: this.padValue(r),
+                    style: { visibility: "hidden", minWidth: this.getMinWidth(s) },
+                    children: this.padValue(s),
                 }),
-                (0, l.jsx)(s.A.div, {
+                (0, l.jsx)(r.A.div, {
                     style: { color: i, ...this.getAnimatedStyle(this.prevAnimate) },
                     children: null != n ? n(this.padValue(e)) : this.padValue(e),
                 }),
-                (0, l.jsx)(s.A.div, {
+                (0, l.jsx)(r.A.div, {
                     style: { color: i, ...this.getAnimatedStyle(this.currAnimate) },
                     children: null != n ? n(this.padValue(t)) : this.padValue(t),
                 }),

@@ -1,35 +1,36 @@
-a.d(t, { A: () => s });
-var n = a(627968),
-    i = a(64700),
-    r = a(397927),
-    l = a(571694),
-    o = a(954376);
-let s = i.memo(function (e) {
+"use strict";
+n.d(t, { A: () => l });
+var i = n(627968),
+    r = n(64700),
+    s = n(97808),
+    a = n(571694),
+    o = n(954376);
+let l = r.memo(function (e) {
     let {
         channel: t,
-        size: a,
-        facepileSizeOverride: i,
-        isTyping: s,
-        status: _,
+        size: n,
+        facepileSizeOverride: r,
+        isTyping: l,
+        status: u,
         className: c,
         animated: d = !1,
-        ...u
+        ..._
     } = e;
     return t.recipients.length >= 2 && null == t.icon
-        ? (0, n.jsx)(o.A, {
-              "aria-label": u["aria-label"],
-              "aria-hidden": u["aria-hidden"],
+        ? (0, i.jsx)(o.A, {
+              "aria-label": _["aria-label"],
+              "aria-hidden": _["aria-hidden"],
               className: c,
               recipients: t.recipients,
-              size: i ?? a,
-              isTyping: s,
-              status: _,
+              size: r ?? n,
+              isTyping: l,
+              status: u,
           })
-        : (0, n.jsx)(r.euF, {
-              "aria-hidden": u["aria-hidden"],
-              "aria-label": u["aria-label"],
+        : (0, i.jsx)(s.eu, {
+              "aria-hidden": _["aria-hidden"],
+              "aria-label": _["aria-label"],
               className: c,
-              size: a,
-              src: (0, l.Y)(t, 80, d),
+              size: n,
+              src: (0, a.Y)(t, 80, d),
           });
 });

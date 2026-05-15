@@ -1,17 +1,17 @@
 "use strict";
 n.d(t, { MS: () => o, OE: () => l, Qb: () => u });
-var r = n(73153),
-    i = n(976860),
-    s = n(954571),
+var i = n(228366),
+    r = n(976860),
+    s = n(174459),
     a = n(652215);
 function o() {
-    r.h.dispatch({ type: "ROUTE_CHANGED" });
+    i.h.dispatch({ type: "ROUTE_CHANGED" });
 }
 function l(e) {
-    (0, i.TX)() &&
-        (s.default.track(a.HAw.APP_BACK_FORWARD_NAVIGATED, { nav_direction: -1, nav_trigger: e }), (0, i.aX)());
+    (0, r.TX)() &&
+        (s.default.track(a.HAw.APP_BACK_FORWARD_NAVIGATED, { nav_direction: -1, nav_trigger: e }), (0, r.aX)());
 }
 function u(e) {
-    (0, i.TX)() &&
-        (s.default.track(a.HAw.APP_BACK_FORWARD_NAVIGATED, { nav_direction: 1, nav_trigger: e }), (0, i.sY)());
+    (0, r.TX)() &&
+        (s.default.track(a.HAw.APP_BACK_FORWARD_NAVIGATED, { nav_direction: 1, nav_trigger: e }), (0, r.sY)());
 }

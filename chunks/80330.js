@@ -1,40 +1,44 @@
 "use strict";
-n.d(t, { A: () => d });
-var r = n(627968),
-    i = n(64700),
+n.d(t, { A: () => f });
+var i = n(627968),
+    r = n(64700),
     s = n(503698),
     a = n.n(s),
-    o = n(397927),
-    l = n(946356),
-    u = n(985018),
-    c = n(29682);
-function d(e) {
+    o = n(140735),
+    l = n(707554),
+    u = n(939249),
+    c = n(946356),
+    d = n(375708),
+    _ = n(827839);
+function f(e) {
     let { renderCards: t, heading: n, onExpand: s } = e,
-        d = i.useId(),
-        _ = i.useMemo(() => t({ className: c.Nr }), [t]),
-        [f] = _;
-    return 0 === _.length
+        f = r.useId(),
+        h = r.useMemo(() => t({ className: _.Nr }), [t]),
+        [p] = h;
+    return 0 === h.length
         ? null
-        : (0, r.jsxs)("section", {
-              "aria-labelledby": null != n ? d : void 0,
-              className: c.kL,
+        : (0, i.jsxs)("section", {
+              "aria-labelledby": null != n ? f : void 0,
+              className: _.kL,
               children: [
-                  null != n && (0, r.jsx)(o.AC4, { children: (0, r.jsx)(o.H, { id: d, children: n }) }),
-                  (0, r.jsxs)("ul", {
-                      className: a()(c.ML, _.length > 1 && c.Kr),
-                      "aria-labelledby": null != n ? d : void 0,
-                      tabIndex: -1,
-                      children: [
-                          (0, r.jsx)("li", { className: c.Us, children: f }),
-                          _.length > 1 &&
-                              (0, r.jsx)(o.DUT, {
-                                  tag: "li",
-                                  className: c.Ee,
-                                  onClick: s,
-                                  "aria-label": u.intl.string(u.t["OBCR+p"]),
-                                  children: (0, r.jsx)(l.A.Overlay, { className: c.h9, children: null }),
-                              }),
-                      ],
+                  null != n && (0, i.jsx)(o.A, { children: (0, i.jsx)(l.H, { id: f, children: n }) }),
+                  (0, i.jsx)(l.F, {
+                      children: (0, i.jsxs)("ul", {
+                          className: a()(_.ML, h.length > 1 && _.Kr),
+                          "aria-labelledby": null != n ? f : void 0,
+                          tabIndex: -1,
+                          children: [
+                              (0, i.jsx)("li", { className: _.Us, children: p }),
+                              h.length > 1 &&
+                                  (0, i.jsx)(u.D, {
+                                      tag: "li",
+                                      className: _.Ee,
+                                      onClick: s,
+                                      "aria-label": d.intl.string(d.t["OBCR+p"]),
+                                      children: (0, i.jsx)(c.A.Overlay, { className: _.h9, children: null }),
+                                  }),
+                          ],
+                      }),
                   }),
               ],
           });

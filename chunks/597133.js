@@ -74,8 +74,8 @@ e.exports = function (e) {
                 "stdout",
                 "true",
                 "undef",
-                "π",
-                "ℯ",
+                "\u03C0",
+                "\u212F",
             ],
             built_in: [
                 "AbstractArray",
@@ -266,46 +266,42 @@ e.exports = function (e) {
                 "WeakRef",
             ],
         },
-        r = { keywords: n, illegal: /<\// },
-        i = {
-            className: "number",
-            begin: /(\b0x[\d_]*(\.[\d_]*)?|0x\.\d[\d_]*)p[-+]?\d+|\b0[box][a-fA-F0-9][a-fA-F0-9_]*|(\b\d[\d_]*(\.[\d_]*)?|\.\d[\d_]*)([eEfF][-+]?\d+)?/,
-            relevance: 0,
-        },
-        s = { className: "string", begin: /'(.|\\[xXuU][a-zA-Z0-9]+)'/ },
-        a = { className: "subst", begin: /\$\(/, end: /\)/, keywords: n },
-        o = { className: "variable", begin: "\\$" + t },
-        l = {
+        i = { keywords: n, illegal: /<\// },
+        r = { className: "subst", begin: /\$\(/, end: /\)/, keywords: n },
+        s = { className: "variable", begin: "\\$" + t },
+        a = {
             className: "string",
-            contains: [e.BACKSLASH_ESCAPE, a, o],
+            contains: [e.BACKSLASH_ESCAPE, r, s],
             variants: [
                 { begin: /\w{0,149}"""/, end: /"""\w*/, relevance: 10 },
                 { begin: /\w{0,149}"/, end: /"\w*/ },
             ],
         },
-        u = { className: "string", contains: [e.BACKSLASH_ESCAPE, a, o], begin: "`", end: "`" },
-        c = { className: "meta", begin: "@" + t },
-        d = {
-            className: "comment",
-            variants: [
-                { begin: "#=", end: "=#", relevance: 10 },
-                { begin: "#", end: "$" },
-            ],
-        };
+        o = { className: "string", contains: [e.BACKSLASH_ESCAPE, r, s], begin: "`", end: "`" };
     return (
-        (r.name = "Julia"),
-        (r.contains = [
-            i,
-            s,
-            l,
-            u,
-            c,
-            d,
+        (i.name = "Julia"),
+        (i.contains = [
+            {
+                className: "number",
+                begin: /(\b0x[\d_]*(\.[\d_]*)?|0x\.\d[\d_]*)p[-+]?\d+|\b0[box][a-fA-F0-9][a-fA-F0-9_]*|(\b\d[\d_]*(\.[\d_]*)?|\.\d[\d_]*)([eEfF][-+]?\d+)?/,
+                relevance: 0,
+            },
+            { className: "string", begin: /'(.|\\[xXuU][a-zA-Z0-9]+)'/ },
+            a,
+            o,
+            { className: "meta", begin: "@" + t },
+            {
+                className: "comment",
+                variants: [
+                    { begin: "#=", end: "=#", relevance: 10 },
+                    { begin: "#", end: "$" },
+                ],
+            },
             e.HASH_COMMENT_MODE,
             { className: "keyword", begin: "\\b(((abstract|primitive)\\s+)type|(mutable\\s+)?struct)\\b" },
             { begin: /<:/ },
         ]),
-        (a.contains = r.contains),
-        r
+        (r.contains = i.contains),
+        i
     );
 };

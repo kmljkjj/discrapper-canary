@@ -1,28 +1,26 @@
 "use strict";
 n.d(t, { q: () => d });
-var r = n(64700),
-    i = n(575593),
-    a = n(417597),
-    s = n(67480),
-    o = n(979286),
+var i = n(64700),
+    r = n(575593),
+    s = n(702841),
+    a = n(67480),
+    o = n(693477),
     l = n(590180),
-    u = n(652215);
-let c = 36e5;
+    _ = n(652215);
 function d(e, t) {
-    let n = (0, a.bG)([s.A], () => (null != e ? s.A.get(e) : null)),
-        d = null != n && n.productLine !== u.EZt.COLLECTIBLES,
-        [_, f, p, h] = (0, a.yK)([l.A], () => [
-            l.A.isFetchingProduct(e),
-            l.A.getProduct(e),
-            l.A.getProductFetchError(e),
-            l.A.getProductFetchErrorTimestamp(e),
-        ]),
-        m = null != p && null != h && Date.now() - h < c,
-        g = !0 === t && f?.type === i.R.BUNDLE && 0 === f.items.length;
+    let n = (0, s.bG)([a.A], () => (null != e ? a.A.get(e) : null)),
+        d = null != n && n.productLine !== _.EZt.COLLECTIBLES,
+        [u, c] = (0, s.yK)([l.A], () => [l.A.getProduct(e), l.A.getProductFetch(e)]),
+        E = !0 === t && u?.type === r.R.BUNDLE && 0 === u.items.length;
     return (
-        (0, r.useEffect)(() => {
-            null == e || (null != f && !g) || d || _ || m || (0, o.Jp)(e, { includeBundles: t });
-        }, [e, f, d, _, m, t, g]),
-        { product: f, isFetching: _ }
+        (0, i.useEffect)(() => {
+            null == e ||
+                (null != u && !E) ||
+                d ||
+                c?.state === "fetching" ||
+                (c?.state === "error" && null != c.endedAt && Date.now() - c.endedAt < 36e5) ||
+                (0, o.Jp)(e, { includeBundles: t });
+        }, [e, u, d, c, t, E]),
+        { product: u, isFetching: c?.state === "fetching" }
     );
 }

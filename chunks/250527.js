@@ -1,59 +1,54 @@
-"use strict";
-n.d(t, { L4: () => p, U7: () => m, _C: () => h, sf: () => g });
-var r = n(562465),
-    i = n(73153),
-    a = n(198982),
-    s = n(212455),
-    o = n(696451),
-    l = n(954571),
-    u = n(9994),
-    c = n(837011),
-    d = n(652215);
-let _ = 6e4;
-function f(e) {
-    return Date.now() - (e ?? 0) > _;
-}
-function p(e, t) {
+r.d(t, { L4: () => _, U7: () => L, _C: () => E, sf: () => I });
+var l = r(636537),
+    n = r(228366),
+    u = r(845584),
+    i = r(212455),
+    s = r(696451),
+    o = r(174459),
+    a = r(9994),
+    c = r(837011),
+    h = r(652215);
+function _(e, t) {
     if (null == e) return Promise.resolve(null);
-    let n = c.A.getFetchStatus(e) === c.X.FETCHING,
-        s = c.A.getLastSyncTimestamp(e),
-        o = c.A.getProfile(e),
-        l = f(s);
-    return n && !t
+    let r = c.A.getFetchStatus(e) === c.X.FETCHING,
+        i = c.A.getLastSyncTimestamp(e),
+        s = c.A.getProfile(e),
+        o = Date.now() - (i ?? 0) > 6e4;
+    return r && !t
         ? Promise.resolve(null)
-        : null == o || l || t
-          ? (i.h.dispatch({ type: "GUILD_PROFILE_FETCH", guildId: e }),
-            r.Bo.get({ url: d.Rsh.GUILD_PROFILE(e), rejectWithError: !1 })
+        : null == s || o || t
+          ? (n.h.dispatch({ type: "GUILD_PROFILE_FETCH", guildId: e }),
+            l.Bo.get({ url: h.Rsh.GUILD_PROFILE(e), rejectWithError: !1 })
                 .then((t) => {
-                    let n = (0, u.wr)(t.body);
-                    return i.h.dispatch({ type: "GUILD_PROFILE_FETCH_SUCCESS", guildId: e, profile: n }), n;
+                    let r = (0, a.wr)(t.body);
+                    return n.h.dispatch({ type: "GUILD_PROFILE_FETCH_SUCCESS", guildId: e, profile: r }), r;
                 })
                 .catch((t) => {
-                    let n = new a.LG(t);
-                    return i.h.dispatch({ type: "GUILD_PROFILE_FETCH_FAILURE", guildId: e, error: n }), null;
+                    let r = new u.LG(t);
+                    return n.h.dispatch({ type: "GUILD_PROFILE_FETCH_FAILURE", guildId: e, error: r }), null;
                 }))
-          : Promise.resolve(o);
+          : Promise.resolve(s);
 }
-function h(e, t) {
+function E(e, t) {
     return c.A.getIsUpdating(e)
         ? Promise.resolve(null)
-        : (i.h.dispatch({ type: "GUILD_PROFILE_UPDATE", guildId: e, updates: t }),
-          r.Bo.patch({ url: d.Rsh.GUILD_PROFILE(e), body: (0, u.ow)(t), rejectWithError: !1 })
+        : (n.h.dispatch({ type: "GUILD_PROFILE_UPDATE", guildId: e, updates: t }),
+          l.Bo.patch({ url: h.Rsh.GUILD_PROFILE(e), body: (0, a.ow)(t), rejectWithError: !1 })
               .then((t) => {
-                  let n = (0, u.wr)(t.body);
-                  return i.h.dispatch({ type: "GUILD_PROFILE_UPDATE_SUCCESS", guildId: e, profile: n }), n;
+                  let r = (0, a.wr)(t.body);
+                  return n.h.dispatch({ type: "GUILD_PROFILE_UPDATE_SUCCESS", guildId: e, profile: r }), r;
               })
               .catch((t) => {
-                  let n = new a.LG(t);
-                  return i.h.dispatch({ type: "GUILD_PROFILE_UPDATE_FAILURE", guildId: e, error: n }), null;
+                  let r = new u.LG(t);
+                  return n.h.dispatch({ type: "GUILD_PROFILE_UPDATE_FAILURE", guildId: e, error: r }), null;
               }));
 }
-async function m(e) {
-    let t = await r.Bo.get({ url: d.Rsh.GUILD_TOP_GAMES(e), rejectWithError: !1 });
-    return (0, u.MU)(t.body.top_games);
+async function L(e) {
+    let t = await l.Bo.get({ url: h.Rsh.GUILD_TOP_GAMES(e), rejectWithError: !1 });
+    return (0, a.MU)(t.body.top_games);
 }
-function g(e, t) {
-    let n = null != o.Ay.getSelfMember(e),
-        r = null != s.A.getRequest(e);
-    l.default.track(d.HAw.GUILD_PROFILE_VIEWED, { guild_id: e, location_stack: t, is_member: n, has_join_request: r });
+function I(e, t) {
+    let r = null != s.Ay.getSelfMember(e),
+        l = null != i.A.getRequest(e);
+    o.default.track(h.HAw.GUILD_PROFILE_VIEWED, { guild_id: e, location_stack: t, is_member: r, has_join_request: l });
 }

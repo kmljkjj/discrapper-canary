@@ -1,15 +1,14 @@
-var r = n(574366),
-    i = n(587779),
-    a = n(926226),
-    s = n(305327),
-    o = 1 / 0,
-    l = r ? r.prototype : void 0,
-    u = l ? l.toString : void 0;
-function c(e) {
-    if ("string" == typeof e) return e;
-    if (a(e)) return i(e, c) + "";
-    if (s(e)) return u ? u.call(e) : "";
-    var t = e + "";
-    return "0" == t && 1 / e == -o ? "-0" : t;
-}
-e.exports = c;
+var n = e(574366),
+    o = e(587779),
+    i = e(926226),
+    f = e(305327),
+    u = 1 / 0,
+    s = n ? n.prototype : void 0,
+    a = s ? s.toString : void 0;
+t.exports = function t(r) {
+    if ("string" == typeof r) return r;
+    if (i(r)) return o(r, t) + "";
+    if (f(r)) return a ? a.call(r) : "";
+    var e = r + "";
+    return "0" == e && 1 / r == -u ? "-0" : e;
+};

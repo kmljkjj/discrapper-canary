@@ -1,164 +1,167 @@
-n.d(t, { A: () => f, w: () => y });
-var i,
-    l = n(627968),
-    r = n(64700),
-    a = n(503698),
-    s = n.n(a),
-    o = n(607399),
-    c = n(311907),
-    _ = n(473193),
-    E = n(36075),
-    d = n(397927),
-    u = n(775602),
-    A = n(793574),
-    T = n(688810),
-    I = n(922301),
-    N = n(750112),
-    R = n(73392),
-    S = n(386467),
-    C = n(534400),
-    O = n(176201),
-    p = n(676608),
-    m = n(342296),
-    P = n(317525),
-    D = n(486020),
-    g = n(109054),
-    U = n(560936),
-    M = n(743981),
-    h = n(222590),
-    y = (((i = {})[(i.SYSTEM_TAG = 0)] = "SYSTEM_TAG"), (i[(i.BADGES = 1)] = "BADGES"), i);
-function f(e) {
+n.d(l, { A: () => j, w: () => b });
+var r,
+    u = n(627968),
+    t = n(64700),
+    s = n(503698),
+    a = n.n(s),
+    i = n(607399),
+    o = n(17928),
+    d = n(473193),
+    c = n(521100),
+    A = n(939249),
+    m = n(545442),
+    p = n(775602),
+    h = n(793574),
+    S = n(688810),
+    f = n(922301),
+    I = n(368919),
+    v = n(252545),
+    R = n(386467),
+    y = n(534400),
+    T = n(176201),
+    _ = n(676608),
+    g = n(342296),
+    N = n(317525),
+    x = n(486020),
+    C = n(109054),
+    E = n(560936),
+    G = n(743981),
+    M = n(334211),
+    b = (((r = {})[(r.SYSTEM_TAG = 0)] = "SYSTEM_TAG"), (r[(r.BADGES = 1)] = "BADGES"), r);
+function j(e) {
     let {
-            author: t,
+            author: l,
             message: n,
-            channel: i,
-            userOverride: a,
-            compact: y = !1,
-            withMentionPrefix: f = !1,
-            showPopout: L = !1,
-            hideGuildTag: k = !1,
-            hideSystemTag: x = !1,
-            className: G,
-            onClick: b,
-            onContextMenu: j,
-            onPopoutRequestClose: v,
-            renderPopout: B,
-            decorations: q,
-            previewGuildId: X,
-            subscribeToGroupId: F,
+            channel: r,
+            userOverride: s,
+            compact: b = !1,
+            withMentionPrefix: j = !1,
+            showPopout: O = !1,
+            hideGuildTag: D = !1,
+            hideSystemTag: w = !1,
+            className: F,
+            onClick: k,
+            onContextMenu: V,
+            onPopoutRequestClose: P,
+            renderPopout: z,
+            decorations: H,
+            previewGuildId: L,
+            subscribeToGroupId: B,
         } = e,
-        w = r.useRef(null),
-        V = r.useContext(S.A),
-        H = i?.guild_id ?? V,
-        { analyticsLocations: W } = (0, T.Ay)(A.A.USERNAME),
-        K = f ? "@" : "",
-        { nick: $, colorString: Y, colorStrings: z, colorRoleName: Q, displayNameStyles: J } = t,
-        Z = (0, c.bG)([u.A], () => u.A.roleStyle),
-        ee = "username" === Z,
-        et = (0, R.a)({ displayNameStyles: J }),
-        en = (0, c.bG)([P.A], () =>
-            null == t.guildId || null == t.colorRoleId ? null : P.A.getRole(t.guildId, t.colorRoleId),
+        U = t.useRef(null),
+        W = t.useContext(R.A),
+        $ = r?.guild_id ?? W,
+        { analyticsLocations: Z } = (0, S.Ay)(h.A.USERNAME),
+        K = j ? "@" : "",
+        { nick: Y, colorString: q, colorStrings: J, colorRoleName: Q, displayNameStyles: X } = l,
+        ee = (0, o.bG)([p.A], () => p.A.roleStyle),
+        el = "username" === ee,
+        en = (0, v.a)({ displayNameStyles: X }),
+        er = (0, o.bG)([N.A], () =>
+            null == l.guildId || null == l.colorRoleId ? null : N.A.getRole(l.guildId, l.colorRoleId),
         ),
-        ei = (0, p.jV)(X ?? H, en),
-        el = (0, g.A)(n),
-        er = r.useContext(_.C),
-        ea = er?.animate || L,
-        es = ei && (0, O.kz)(t),
-        eo = ee && es,
-        ec = i?.isPrivate() && null != J;
-    (0, U.A)({ shouldSubscribe: ec || eo, subscribeToGroupId: F, authorId: n.author.id });
-    let { gradientStyle: e_, gradientClassname: eE } = (0, d.v5K)({
-            colorStrings: z,
+        eu = (0, _.jV)(L ?? $, er),
+        et = (0, C.A)(n),
+        es = t.useContext(d.C),
+        ea = es?.animate || O,
+        ei = eu && (0, T.kz)(l),
+        eo = el && ei,
+        ed = r?.isPrivate() && null != X;
+    (0, E.A)({ shouldSubscribe: ed || eo, subscribeToGroupId: B, authorId: n.author.id });
+    let { gradientStyle: ec, gradientClassname: eA } = (0, c.v5)({
+            colorStrings: J,
             roleStyle: "username",
             includeConvenienceGlow: !0,
             animateGradient: ea,
         }),
-        ed = (0, E.CR)(K + $),
-        eu = {
-            className: s()(h.oF, et, { [eE]: eo, [h.IW]: "username" === Z && null != Y }),
+        em = (0, c.CR)(K + Y),
+        ep = {
+            className: a()(M.oF, en, { [eA]: eo, [M.IW]: "username" === ee && null != q }),
             style: (() => {
-                if (ee)
-                    return eo && null != z
-                        ? { ...e_, textDecorationColor: z?.primaryColor ?? void 0 }
-                        : null != Y
-                          ? { color: Y }
+                if (el)
+                    return eo && null != J
+                        ? { ...ec, textDecorationColor: J?.primaryColor ?? void 0 }
+                        : null != q
+                          ? { color: q }
                           : void 0;
             })(),
-            onClick: b,
-            onContextMenu: j,
-            children: ec
-                ? (0, l.jsx)(N.A, {
-                      userName: ed,
-                      displayNameStyles: J,
-                      effectDisplayType: ea ? I.G.ANIMATED : I.G.PLAIN,
+            onClick: k,
+            onContextMenu: V,
+            children: ed
+                ? (0, u.jsx)(I.A, {
+                      userName: em,
+                      displayNameStyles: X,
+                      effectDisplayType: ea ? f.G.ANIMATED : f.G.PLAIN,
                       loop: !0,
-                      shouldUnderlineOnHover: null != b,
-                      textClassName: h.Mu,
+                      shouldUnderlineOnHover: null != k,
+                      textClassName: M.Mu,
                   })
-                : ed,
-            "data-text": K + $,
-            "data-username-has-gradient": !!es || void 0,
+                : em,
+            "data-text": K + Y,
+            "data-username-has-gradient": !!ei || void 0,
         },
-        eA = r.useMemo(
+        eh = t.useMemo(
             () =>
-                k
+                D
                     ? null
-                    : (0, l.jsx)(C.Cw, {
-                          primaryGuild: t.primaryGuild,
+                    : (0, u.jsx)(y.Cw, {
+                          primaryGuild: l.primaryGuild,
                           userId: n.author.id,
-                          contextGuildId: H,
-                          className: h.s4,
-                          badgeSize: y ? M.Sl.SIZE_12 : void 0,
+                          contextGuildId: $,
+                          className: M.s4,
+                          badgeSize: b ? G.Sl.SIZE_12 : void 0,
                       }),
-            [y, t.primaryGuild, H, n.author.id, k],
+            [b, l.primaryGuild, $, n.author.id, D],
         ),
-        eT = a ?? n.author,
-        eI =
-            null != B && null != L
-                ? (0, l.jsx)(m.A, {
-                      targetElementRef: w,
-                      user: eT,
-                      renderPopout: B,
-                      shouldShow: L,
-                      shouldPreload: el,
-                      position: o.Fr ? "window_center" : "right",
+        eS = s ?? n.author,
+        ef =
+            null != z && null != O
+                ? (0, u.jsx)(g.A, {
+                      targetElementRef: U,
+                      user: eS,
+                      guildId: $,
+                      channelId: n.channel_id,
+                      renderPopout: z,
+                      shouldShow: O,
+                      shouldPreload: et,
+                      position: i.Fr ? "window_center" : "right",
                       avatarUrl:
-                          null != t.guildMemberAvatar && null != H
-                              ? (0, D.s7)({ guildId: H, userId: eT.id, avatar: t.guildMemberAvatar, size: 80 })
+                          null != l.guildMemberAvatar && null != $
+                              ? (0, x.s7)({ guildId: $, userId: eS.id, avatar: l.guildMemberAvatar, size: 80 })
                               : void 0,
-                      onRequestClose: v,
-                      clickTrap: L,
+                      onRequestClose: P,
+                      clickTrap: O,
                       children: (e) => {
-                          let { onClick: t, ...n } = e;
-                          return (0, l.jsxs)(l.Fragment, {
+                          let { onClick: l, ...n } = e;
+                          return (0, u.jsxs)(u.Fragment, {
                               children: [
-                                  (0, l.jsx)(d.DUT, {
+                                  (0, u.jsx)(A.D, {
                                       tag: "span",
-                                      innerRef: w,
+                                      innerRef: U,
                                       ...n,
-                                      ...eu,
-                                      className: s()(eu.className, h.vk, G),
+                                      ...ep,
+                                      className: a()(ep.className, M.vk, F),
                                   }),
-                                  eA,
+                                  eh,
                               ],
                           });
                       },
                   })
-                : (0, l.jsxs)(l.Fragment, {
-                      children: [(0, l.jsx)(d.DUT, { ...eu, className: s()(eu.className, G) }), eA],
+                : (0, u.jsxs)(u.Fragment, {
+                      children: [(0, u.jsx)(A.D, { ...ep, className: a()(ep.className, F) }), eh],
                   }),
-        eN = null != q ? q[0] : null,
-        eR = null != q ? q[1] : null;
-    return (0, l.jsxs)(T.f5, {
-        value: W,
+        eI = null != H ? H[0] : null,
+        ev = null != H ? H[1] : null;
+    return (0, u.jsxs)(S.f5, {
+        value: Z,
         children: [
-            null != eN && !x && y ? (0, l.jsxs)(l.Fragment, { children: [" ", eN, " "] }) : null,
-            "dot" === Z
-                ? (0, l.jsx)(d.WYI, { color: Y, colors: es ? z : null, name: Q, className: h.m4, hoverOverride: ea })
+            null != eI && !w && b ? (0, u.jsxs)(u.Fragment, { children: [" ", eI, " "] }) : null,
+            "dot" === ee
+                ? (0, u.jsx)(m.W, { color: q, colors: ei ? J : null, name: Q, className: M.m4, hoverOverride: ea })
                 : null,
-            eI,
-            null != eR ? eR : null,
-            null == eN || x || y ? null : eN,
+            ef,
+            null != ev ? ev : null,
+            null == eI || w || b ? null : eI,
         ],
     });
 }

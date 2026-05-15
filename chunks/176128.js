@@ -1,38 +1,34 @@
 "use strict";
-n.d(t, { Jp: () => s, qo: () => a });
-var r = n(860689),
-    i = n(652215),
-    a = (function (e) {
-        return (e.PUBLIC = "PUBLIC"), (e.INVITE_ONLY = "INVITE_ONLY"), (e.APPLY_TO_JOIN = "APPLY_TO_JOIN"), e;
-    })({});
-function s(e) {
-    let t = new Set(e.features),
-        n = "INVITE_ONLY";
-    t.has(i.GuildFeatures.COMMUNITY) && t.has(i.GuildFeatures.DISCOVERABLE)
-        ? (n = "PUBLIC")
-        : t.has(i.GuildFeatures.MEMBER_VERIFICATION_MANUAL_APPROVAL) &&
-          t.has(i.GuildFeatures.MEMBER_VERIFICATION_GATE_ENABLED) &&
-          (n = "APPLY_TO_JOIN");
-    let a = o(e),
-        s = 0;
-    a && (s = ((0, r.fh)(e) ? e.premiumSubscriberCount : e.premiumSubscriptionCount) ?? 0);
-    let l = (0, r.fh)(e) ? e.premiumTier : i.TVA.NONE;
+n.d(t, { Jp: () => o, qo: () => a });
+var i,
+    r = n(860689),
+    s = n(652215),
+    a = (((i = {}).PUBLIC = "PUBLIC"), (i.INVITE_ONLY = "INVITE_ONLY"), (i.APPLY_TO_JOIN = "APPLY_TO_JOIN"), i);
+function o(e) {
+    var t;
+    let n = new Set(e.features),
+        i = "INVITE_ONLY";
+    n.has(s.GuildFeatures.COMMUNITY) && n.has(s.GuildFeatures.DISCOVERABLE)
+        ? (i = "PUBLIC")
+        : n.has(s.GuildFeatures.MEMBER_VERIFICATION_MANUAL_APPROVAL) &&
+          n.has(s.GuildFeatures.MEMBER_VERIFICATION_GATE_ENABLED) &&
+          (i = "APPLY_TO_JOIN");
+    let a =
+            null != (t = e) &&
+            ((0, r.fh)(t)
+                ? t.premiumSubscriberCount > 0 || t.premiumTier > s.TVA.NONE
+                : null != t.premiumSubscriptionCount && t.premiumSubscriptionCount > 0),
+        o = 0;
+    a && (o = ((0, r.fh)(e) ? e.premiumSubscriberCount : e.premiumSubscriptionCount) ?? 0);
+    let l = (0, r.fh)(e) ? e.premiumTier : s.TVA.NONE;
     return {
-        verified: t.has(i.GuildFeatures.VERIFIED),
-        partnered: t.has(i.GuildFeatures.PARTNERED),
-        community: t.has(i.GuildFeatures.COMMUNITY),
-        staff: t.has(i.GuildFeatures.INTERNAL_EMPLOYEE_ONLY),
-        visibility: n,
+        verified: n.has(s.GuildFeatures.VERIFIED),
+        partnered: n.has(s.GuildFeatures.PARTNERED),
+        community: n.has(s.GuildFeatures.COMMUNITY),
+        staff: n.has(s.GuildFeatures.INTERNAL_EMPLOYEE_ONLY),
+        visibility: i,
         premium: a,
-        premiumSubscriberCount: s,
+        premiumSubscriberCount: o,
         premiumTier: l,
     };
-}
-function o(e) {
-    return (
-        null != e &&
-        ((0, r.fh)(e)
-            ? e.premiumSubscriberCount > 0 || e.premiumTier > i.TVA.NONE
-            : null != e.premiumSubscriptionCount && e.premiumSubscriptionCount > 0)
-    );
 }

@@ -1,9 +1,9 @@
 n.d(t, { r: () => u });
 var i = n(64700),
-    l = n(311907),
+    l = n(17928),
     s = n(380335),
     a = n(74114),
-    r = n(320501),
+    r = n(232835),
     o = n(994500),
     c = n(287809),
     d = n(652215);
@@ -28,8 +28,8 @@ function u(e) {
         }
         let i = r.A.getMessages(e.id),
             l = !i.hasMoreBefore && !i.hasMoreAfter && i.length < 25,
-            a = r.A.hasCurrentUserSentMessage(e.id),
-            A = (i.ready || t.current) && l && !a;
-        return (t.current = A), A;
+            a = r.A.hasCurrentUserSentWaveBlockingMessage(e.id),
+            p = (i.ready || t.current) && l && !a;
+        return (t.current = p), p;
     }, [m, u, e.id, h]);
 }

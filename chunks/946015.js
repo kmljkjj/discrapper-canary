@@ -1,47 +1,47 @@
-n.d(t, { s: () => A });
-var i = n(627968),
-    s = n(64700),
-    l = n(503698),
-    a = n.n(l),
-    r = n(597833),
-    o = n(913953);
-let d = { VERTICAL: r.yG, HORIZONTAL: r.OZ, HORIZONTAL_REVERSE: r.y0 },
-    c = { START: r.KF, END: r.HA, CENTER: r.pb, BETWEEN: r.G1, AROUND: r.nm },
-    u = { NO_WRAP: r.B, WRAP: r.aR, WRAP_REVERSE: r.KM },
-    _ = { START: r.j$, END: r.S_, CENTER: r.YO, STRETCH: r.ai },
-    m = { SMALL: o.sf, LARGE: o.S6 };
-class g extends s.PureComponent {
-    static defaultProps = { className: o.Gu, style: {}, wrap: !1 };
+e.d(t, { s: () => T });
+var i = e(627968),
+    r = e(64700),
+    a = e(503698),
+    n = e.n(a),
+    l = e(341440),
+    c = e(196988);
+let p = { VERTICAL: l.yG, HORIZONTAL: l.OZ, HORIZONTAL_REVERSE: l.y0 },
+    o = { START: l.KF, END: l.HA, CENTER: l.pb, BETWEEN: l.G1, AROUND: l.nm },
+    R = { NO_WRAP: l.B, WRAP: l.aR, WRAP_REVERSE: l.KM },
+    u = { START: l.j$, END: l.S_, CENTER: l.YO, STRETCH: l.ai },
+    E = { SMALL: c.sf, LARGE: c.S6 };
+class d extends r.PureComponent {
+    static defaultProps = { className: c.Gu, style: {}, wrap: !1 };
     render() {
-        let { children: e, className: t, shrink: n, grow: l, basis: r, style: d, wrap: c, ...u } = this.props,
-            _ = {
-                style: { flexGrow: l, flexShrink: n, flexBasis: r, ...d },
-                className: t === o.Gu ? t : a()(o.Gu, t),
-                ...u,
+        let { children: s, className: t, shrink: e, grow: a, basis: l, style: p, wrap: o, ...R } = this.props,
+            u = {
+                style: { flexGrow: a, flexShrink: e, flexBasis: l, ...p },
+                className: t === c.Gu ? t : n()(c.Gu, t),
+                ...R,
             };
-        if (!c && "string" != typeof e && 1 === s.Children.count(e)) {
-            let n = s.Children.only(e);
+        if (!o && "string" != typeof s && 1 === r.Children.count(s)) {
+            let e = r.Children.only(s);
             return (
-                (_.style = { ..._.style, ...n.props.style }),
-                (_.className = a()(n.props.className, t)),
-                s.cloneElement(n, _)
+                (u.style = { ...u.style, ...e.props.style }),
+                (u.className = n()(e.props.className, t)),
+                r.cloneElement(e, u)
             );
         }
-        return (0, i.jsx)("div", { ..._, children: e });
+        return (0, i.jsx)("div", { ...u, children: s });
     }
 }
-class A extends s.PureComponent {
-    static Child = g;
-    static Direction = d;
-    static Align = _;
-    static Justify = c;
-    static Wrap = u;
-    static Gutter = m;
+class T extends r.PureComponent {
+    static Child = d;
+    static Direction = p;
+    static Align = u;
+    static Justify = o;
+    static Wrap = R;
+    static Gutter = E;
     static defaultProps = {
-        direction: d.HORIZONTAL,
-        justify: c.START,
-        align: _.STRETCH,
-        wrap: u.WRAP,
+        direction: p.HORIZONTAL,
+        justify: o.START,
+        align: u.STRETCH,
+        wrap: R.WRAP,
         shrink: 1,
         grow: 1,
         basis: "auto",
@@ -49,20 +49,20 @@ class A extends s.PureComponent {
     };
     render() {
         let {
-                children: e,
+                children: s,
                 className: t,
-                direction: n,
-                justify: s,
-                align: l,
-                wrap: r,
-                shrink: d,
-                grow: c,
-                basis: u,
-                style: _,
-                gutter: m,
-                ...g
+                direction: e,
+                justify: r,
+                align: a,
+                wrap: l,
+                shrink: p,
+                grow: o,
+                basis: R,
+                style: u,
+                gutter: E,
+                ...d
             } = this.props,
-            A = { flexShrink: d, flexGrow: c, flexBasis: u, ..._ };
-        return (0, i.jsx)("div", { style: A, className: a()(o.Uu, n, s, l, r, m, t), ...g, children: e });
+            T = { flexShrink: p, flexGrow: o, flexBasis: R, ...u };
+        return (0, i.jsx)("div", { style: T, className: n()(c.Uu, e, r, a, l, E, t), ...d, children: s });
     }
 }

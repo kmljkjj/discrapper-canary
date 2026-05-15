@@ -1,48 +1,48 @@
-s.d(e, { A: () => o });
-var _ = s(627968),
-    i = s(64700),
-    a = s(503698),
-    A = s.n(a),
-    n = s(158954),
-    r = s(397927),
-    l = s(922529),
-    I = s(89300),
-    E = s(117816);
-function o(t) {
+s.d(e, { A: () => d });
+var a = s(627968),
+    A = s(64700),
+    i = s(503698),
+    l = s.n(i),
+    r = s(772707),
+    n = s(834730),
+    _ = s(922529),
+    I = s(529505),
+    h = s(117816);
+function d(t) {
     let {
         headerText: e,
         descriptionText: s,
-        infoRows: a,
-        onDismissAndStay: o,
-        onDismissAndLeave: d,
+        infoRows: i,
+        onDismissAndStay: d,
+        onDismissAndLeave: E,
         leaveButtonText: u,
-        stayButtonText: h,
+        stayButtonText: o,
         transitionState: L,
         impression: c,
     } = t;
-    return (0, _.jsx)(n.ExpressiveModal, {
+    return (0, a.jsx)(r.k, {
         transitionState: L,
-        onClose: () => (o(), Promise.resolve()),
+        onClose: () => (d(), Promise.resolve()),
         trackingProps: { impression: c },
-        graphic: { type: "image", src: E.A },
+        graphic: { type: "image", src: h.A },
         title: e,
         subtitle: s ?? void 0,
         actions: [
-            { text: h, onClick: o, variant: "secondary" },
-            { text: u, onClick: d },
+            { text: o, onClick: d, variant: "secondary" },
+            { text: u, onClick: E },
         ],
-        children: (0, _.jsx)("div", {
+        children: (0, a.jsx)("div", {
             className: I.Cu,
-            children: a.map((t, e) =>
-                (0, _.jsxs)(
-                    i.Fragment,
+            children: i.map((t, e) =>
+                (0, a.jsxs)(
+                    A.Fragment,
                     {
                         children: [
-                            (0, _.jsxs)("div", {
-                                className: A()(I.lj, t.className),
-                                children: [t.icon, (0, _.jsx)(r.Text, { variant: "text-md/medium", children: t.text })],
+                            (0, a.jsxs)("div", {
+                                className: l()(I.lj, t.className),
+                                children: [t.icon, (0, a.jsx)(n.E, { variant: "text-md/medium", children: t.text })],
                             }),
-                            e < a.length - 1 && (0, _.jsx)(l.A, {}),
+                            e < i.length - 1 && (0, a.jsx)(_.A, {}),
                         ],
                     },
                     e,

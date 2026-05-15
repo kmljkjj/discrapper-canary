@@ -1,19 +1,19 @@
 "use strict";
 n.d(t, { IE: () => u, km: () => c, rM: () => l });
-var r = n(64700),
-    i = n(735438),
-    a = n.n(i),
-    s = n(999886);
+var i = n(64700),
+    r = n(735438),
+    s = n.n(r),
+    a = n(999886);
 let o = {};
 function l() {
-    let e = (0, s.k)();
+    let e = (0, a.k)();
     return e.favoriteGifs?.gifs ?? o;
 }
 function u(e) {
     let t = l();
-    return r.useMemo(
+    return i.useMemo(
         () =>
-            a()(t)
+            s()(t)
                 .map((t, n) => ({ ...t, url: n, src: e?.(t.src, n) ?? t.src }))
                 .sortBy("order")
                 .reverse()

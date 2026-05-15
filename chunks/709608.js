@@ -1,56 +1,51 @@
-!(function (e, t) {
-    t(n(989349));
-})(0, function (e) {
+!(function (e) {
     "use strict";
-    var t =
-            "janu\xe1r_febru\xe1r_marec_apr\xedl_m\xe1j_j\xfan_j\xfal_august_september_okt\xf3ber_november_december".split(
-                "_",
-            ),
-        n = "jan_feb_mar_apr_m\xe1j_j\xfan_j\xfal_aug_sep_okt_nov_dec".split("_");
-    function r(e) {
+    function t(e) {
         return e > 1 && e < 5;
     }
-    function i(e, t, n, i) {
-        var a = e + " ";
-        switch (n) {
+    function n(e, n, i, r) {
+        var s = e + " ";
+        switch (i) {
             case "s":
-                return t || i ? "p\xe1r sek\xfand" : "p\xe1r sekundami";
+                return n || r ? "p\xe1r sek\xfand" : "p\xe1r sekundami";
             case "ss":
-                if (t || i) return a + (r(e) ? "sekundy" : "sek\xfand");
-                return a + "sekundami";
+                if (n || r) return s + (t(e) ? "sekundy" : "sek\xfand");
+                return s + "sekundami";
             case "m":
-                return t ? "min\xfata" : i ? "min\xfatu" : "min\xfatou";
+                return n ? "min\xfata" : r ? "min\xfatu" : "min\xfatou";
             case "mm":
-                if (t || i) return a + (r(e) ? "min\xfaty" : "min\xfat");
-                return a + "min\xfatami";
+                if (n || r) return s + (t(e) ? "min\xfaty" : "min\xfat");
+                return s + "min\xfatami";
             case "h":
-                return t ? "hodina" : i ? "hodinu" : "hodinou";
+                return n ? "hodina" : r ? "hodinu" : "hodinou";
             case "hh":
-                if (t || i) return a + (r(e) ? "hodiny" : "hod\xedn");
-                return a + "hodinami";
+                if (n || r) return s + (t(e) ? "hodiny" : "hod\xedn");
+                return s + "hodinami";
             case "d":
-                return t || i ? "deň" : "dňom";
+                return n || r ? "de\u0148" : "d\u0148om";
             case "dd":
-                if (t || i) return a + (r(e) ? "dni" : "dn\xed");
-                return a + "dňami";
+                if (n || r) return s + (t(e) ? "dni" : "dn\xed");
+                return s + "d\u0148ami";
             case "M":
-                return t || i ? "mesiac" : "mesiacom";
+                return n || r ? "mesiac" : "mesiacom";
             case "MM":
-                if (t || i) return a + (r(e) ? "mesiace" : "mesiacov");
-                return a + "mesiacmi";
+                if (n || r) return s + (t(e) ? "mesiace" : "mesiacov");
+                return s + "mesiacmi";
             case "y":
-                return t || i ? "rok" : "rokom";
+                return n || r ? "rok" : "rokom";
             case "yy":
-                if (t || i) return a + (r(e) ? "roky" : "rokov");
-                return a + "rokmi";
+                if (n || r) return s + (t(e) ? "roky" : "rokov");
+                return s + "rokmi";
         }
     }
-    return e.defineLocale("sk", {
-        months: t,
-        monthsShort: n,
-        weekdays: "nedeľa_pondelok_utorok_streda_štvrtok_piatok_sobota".split("_"),
-        weekdaysShort: "ne_po_ut_st_št_pi_so".split("_"),
-        weekdaysMin: "ne_po_ut_st_št_pi_so".split("_"),
+    e.defineLocale("sk", {
+        months: "janu\xe1r_febru\xe1r_marec_apr\xedl_m\xe1j_j\xfan_j\xfal_august_september_okt\xf3ber_november_december".split(
+            "_",
+        ),
+        monthsShort: "jan_feb_mar_apr_m\xe1j_j\xfan_j\xfal_aug_sep_okt_nov_dec".split("_"),
+        weekdays: "nede\u013Ea_pondelok_utorok_streda_\u0161tvrtok_piatok_sobota".split("_"),
+        weekdaysShort: "ne_po_ut_st_\u0161t_pi_so".split("_"),
+        weekdaysMin: "ne_po_ut_st_\u0161t_pi_so".split("_"),
         longDateFormat: {
             LT: "H:mm",
             LTS: "H:mm:ss",
@@ -65,25 +60,25 @@
             nextWeek: function () {
                 switch (this.day()) {
                     case 0:
-                        return "[v nedeľu o] LT";
+                        return "[v nede\u013Eu o] LT";
                     case 1:
                     case 2:
                         return "[v] dddd [o] LT";
                     case 3:
                         return "[v stredu o] LT";
                     case 4:
-                        return "[vo štvrtok o] LT";
+                        return "[vo \u0161tvrtok o] LT";
                     case 5:
                         return "[v piatok o] LT";
                     case 6:
                         return "[v sobotu o] LT";
                 }
             },
-            lastDay: "[včera o] LT",
+            lastDay: "[v\u010Dera o] LT",
             lastWeek: function () {
                 switch (this.day()) {
                     case 0:
-                        return "[minul\xfa nedeľu o] LT";
+                        return "[minul\xfa nede\u013Eu o] LT";
                     case 1:
                     case 2:
                     case 4:
@@ -100,21 +95,21 @@
         relativeTime: {
             future: "za %s",
             past: "pred %s",
-            s: i,
-            ss: i,
-            m: i,
-            mm: i,
-            h: i,
-            hh: i,
-            d: i,
-            dd: i,
-            M: i,
-            MM: i,
-            y: i,
-            yy: i,
+            s: n,
+            ss: n,
+            m: n,
+            mm: n,
+            h: n,
+            hh: n,
+            d: n,
+            dd: n,
+            M: n,
+            MM: n,
+            y: n,
+            yy: n,
         },
         dayOfMonthOrdinalParse: /\d{1,2}\./,
         ordinal: "%d.",
         week: { dow: 1, doy: 4 },
     });
-});
+})(n(989349));

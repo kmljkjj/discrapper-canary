@@ -1,40 +1,44 @@
 "use strict";
-n.d(t, { Q6: () => r, SB: () => i, TJ: () => a, n4: () => o, oA: () => s });
-var r = (function (e) {
-        return (e.PLAYING = "playing"), (e.PAUSED = "paused"), (e.ENDED = "ended"), e;
-    })({}),
-    i = (function (e) {
-        return (
-            (e.ERROR = "ERROR"),
-            (e.SOURCE_ERROR = "SOURCE_ERROR"),
-            (e.ABORT = "ABORT"),
-            (e.EMPTIED = "EMPTIED"),
-            (e.STALLED = "STALLED"),
-            (e.SUSPEND = "SUSPEND"),
-            (e.NO_VALID_SOURCE = "NO_VALID_SOURCE"),
-            (e.HLS_NETWORK_ERROR = "HLS_NETWORK_ERROR"),
-            (e.HLS_MEDIA_ERROR = "HLS_MEDIA_ERROR"),
-            (e.HLS_MUX_ERROR = "HLS_MUX_ERROR"),
-            (e.HLS_KEY_SYSTEM_ERROR = "HLS_KEY_SYSTEM_ERROR"),
-            (e.HLS_OTHER_ERROR = "HLS_OTHER_ERROR"),
-            e
-        );
-    })({}),
-    a = (function (e) {
-        return (
-            (e.PLAYBACK = "k"),
-            (e.SPACE = " "),
-            (e.SEEK_BACK = "j"),
-            (e.SEEK_FORWARD = "l"),
-            (e.CAPTION = "c"),
-            (e.FULLSCREEN = "f"),
-            (e.MUTE = "m"),
-            e
-        );
-    })({}),
-    s = (function (e) {
-        return (e.MD = "md"), (e.LG = "lg"), e;
-    })({}),
-    o = (function (e) {
-        return (e.MD = "md"), (e.LG = "lg"), e;
-    })({});
+n.d(t, { KB: () => p, Q6: () => d, SB: () => _, TJ: () => f, h$: () => c, n4: () => h, oA: () => E });
+var r,
+    i,
+    s,
+    a,
+    o,
+    l,
+    u,
+    d = (((r = {}).PLAYING = "playing"), (r.PAUSED = "paused"), (r.ENDED = "ended"), r),
+    c = (((i = {}).LOADING = "loading"), (i.BUFFERING = "buffering"), (i.READY = "ready"), i),
+    _ =
+        (((s = {}).ERROR = "ERROR"),
+        (s.SOURCE_ERROR = "SOURCE_ERROR"),
+        (s.ABORT = "ABORT"),
+        (s.EMPTIED = "EMPTIED"),
+        (s.STALLED = "STALLED"),
+        (s.SUSPEND = "SUSPEND"),
+        (s.NO_VALID_SOURCE = "NO_VALID_SOURCE"),
+        (s.HLS_NETWORK_ERROR = "HLS_NETWORK_ERROR"),
+        (s.HLS_MEDIA_ERROR = "HLS_MEDIA_ERROR"),
+        (s.HLS_MUX_ERROR = "HLS_MUX_ERROR"),
+        (s.HLS_KEY_SYSTEM_ERROR = "HLS_KEY_SYSTEM_ERROR"),
+        (s.HLS_OTHER_ERROR = "HLS_OTHER_ERROR"),
+        s),
+    f =
+        (((a = {}).PLAYBACK = "k"),
+        (a.SPACE = " "),
+        (a.SEEK_BACK = "j"),
+        (a.SEEK_FORWARD = "l"),
+        (a.CAPTION = "c"),
+        (a.FULLSCREEN = "f"),
+        (a.MUTE = "m"),
+        a),
+    E = (((o = {}).MD = "md"), (o.LG = "lg"), o),
+    h = (((l = {}).MD = "md"), (l.LG = "lg"), l),
+    p =
+        (((u = {}).VISIBILITY = "visibility"),
+        (u.FOCUS = "focus"),
+        (u.USER = "user"),
+        (u.SEEK = "seek"),
+        (u.PLAYBACK_COMPLETE = "playback_complete"),
+        (u.BUFFERING_RECOVERY = "buffering_recovery"),
+        u);

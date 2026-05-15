@@ -1,41 +1,43 @@
-n.d(t, { U: () => o });
+n.d(e, { U: () => r });
 var i = n(627968);
 n(64700);
-var l = n(397927),
-    r = n(157559),
-    a = n(818348),
-    s = n(985018);
-let o = (e, t) => {
-    let o = `group-dm-edit-modal-${e}`,
+var a = n(192308),
+    l = n(157559),
+    s = n(818348),
+    o = n(375708);
+let r = (t, e) => {
+    let r = `group-dm-edit-modal-${t}`,
         c = !1,
-        _ = (e) => {
-            c = e;
+        d = (t) => {
+            c = t;
         },
-        E = () => {
+        h = () => {
             c
-                ? r.A.show({
-                      title: s.intl.string(s.t.pvRCSu),
-                      body: s.intl.string(s.t.DRi46S),
-                      confirmText: s.intl.string(s.t["6GQDFu"]),
+                ? l.A.show({
+                      title: o.intl.string(o.t.pvRCSu),
+                      body: o.intl.string(o.t.DRi46S),
+                      confirmText: o.intl.string(o.t["6GQDFu"]),
                       confirmVariant: "critical-primary",
-                      cancelText: s.intl.string(s.t.DmDzZB),
-                      onConfirm: () => (0, l.OoC)(o),
-                      onCancel: a.tE,
+                      cancelText: o.intl.string(o.t.DmDzZB),
+                      onConfirm: () => (0, a.closeModal)(r),
+                      onCancel: s.tE,
                   })
-                : (0, l.OoC)(o);
+                : (0, a.closeModal)(r);
         };
-    (0, l.mMO)(
+    (0, a.openModalLazy)(
         async () => {
-            let { default: l } = await n.e("42455").then(n.bind(n, 66442));
+            let { default: a } = await Promise.all([n.e("93010"), n.e("41567"), n.e("95067"), n.e("42455")]).then(
+                n.bind(n, 66442),
+            );
             return (n) =>
-                (0, i.jsx)(l, {
-                    closeOrShowDiscardChangesAlert: E,
-                    setHasPendingChanges: _,
-                    channelId: e,
-                    location: t,
+                (0, i.jsx)(a, {
+                    closeOrShowDiscardChangesAlert: h,
+                    setHasPendingChanges: d,
+                    channelId: t,
+                    location: e,
                     ...n,
                 });
         },
-        { modalKey: o, onCloseRequest: E },
+        { modalKey: r, onCloseRequest: h },
     );
 };

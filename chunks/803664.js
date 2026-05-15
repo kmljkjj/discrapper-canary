@@ -1,61 +1,65 @@
-"use strict";
-n.d(t, { A: () => _ });
-var r = n(627968),
-    i = n(64700),
-    a = n(311907),
-    s = n(397927),
-    o = n(49229),
-    l = n(327166),
-    u = n(994500),
+n.d(e, { A: () => f });
+var i = n(627968),
+    l = n(64700),
+    d = n(17928),
+    r = n(192308),
+    a = n(477782),
+    u = n(717398),
+    o = n(327166),
+    s = n(994500),
     c = n(287809),
-    d = n(985018);
-function _(e) {
+    A = n(375708);
+function f(t) {
     let {
-            user: t,
-            location: _ = "ContextMenu",
-            onFriendRequestSent: f,
-            onFriendRemove: p,
-            appContext: h,
-            setLoading: m,
-        } = e,
-        { id: g, username: E, bot: A } = t,
-        I = (0, a.bG)([c.default], () => c.default.getCurrentUser()?.id === g, [g]),
-        T = (0, l.D)(g),
-        [y, S] = (0, a.yK)([u.A], () => [u.A.isFriend(g), u.A.isBlocked(g)], [g]),
-        [v, C] = i.useState(!1);
-    if (A || I) return null;
-    function b() {
-        (0, s.mMO)(
-            async () => {
-                let { ConfirmModal: e } = await Promise.resolve().then(n.bind(n, 158954));
-                return (t) =>
-                    (0, r.jsx)(e, {
-                        title: d.intl.formatToPlainString(d.t.fPLvZd, { name: E }),
-                        subtitle: d.intl.format(d.t.l5FFq6, { name: E }),
-                        confirmText: d.intl.string(d.t.cvSt1J),
-                        cancelText: d.intl.string(d.t["ETE/oC"]),
-                        onConfirm: () => {
-                            o.A.removeFriend(g, { location: _ }), C(!1), p?.();
+            user: e,
+            location: f = "ContextMenu",
+            onFriendRequestSent: x,
+            onFriendRemove: C,
+            appContext: v,
+            setLoading: g,
+        } = t,
+        { id: h, username: I, bot: b } = e,
+        m = (0, d.bG)([c.default], () => c.default.getCurrentUser()?.id === h, [h]),
+        T = (0, o.D)(h),
+        [p, y] = (0, d.yK)([s.A], () => [s.A.isFriend(h), s.A.isBlocked(h)], [h]),
+        [E, _] = l.useState(!1);
+    return b || m
+        ? null
+        : p
+          ? (0, i.jsx)(a.Dr, {
+                id: "remove-friend",
+                label: A.intl.string(A.t.cvSt1J),
+                action: function () {
+                    (0, r.openModalLazy)(
+                        async () => {
+                            let { ConfirmModal: t } = await n.e("4823").then(n.bind(n, 158954));
+                            return (e) =>
+                                (0, i.jsx)(t, {
+                                    title: A.intl.formatToPlainString(A.t.fPLvZd, { name: I }),
+                                    subtitle: A.intl.format(A.t.l5FFq6, { name: I }),
+                                    confirmText: A.intl.string(A.t.cvSt1J),
+                                    cancelText: A.intl.string(A.t["ETE/oC"]),
+                                    onConfirm: () => {
+                                        u.A.removeFriend(h, { location: f }), _(!1), C?.();
+                                    },
+                                    ...e,
+                                });
                         },
-                        ...t,
-                    });
-            },
-            { contextKey: null != h ? (0, s.TId)(h) : void 0 },
-        );
-    }
-    return y
-        ? (0, r.jsx)(s.Drp, { id: "remove-friend", label: d.intl.string(d.t.cvSt1J), action: b })
-        : (0, r.jsx)(s.Drp, {
-              id: "add-friend",
-              label: v ? d.intl.string(d.t.xMH6vD) : T,
-              action: async () => {
-                  v ||
-                      (m?.(!0),
-                      await o.A.addRelationship({ userId: g, context: { location: _ } }),
-                      C(!0),
-                      f?.(),
-                      m?.(!1));
-              },
-              disabled: S || (v && !y),
-          });
+                        { contextKey: null != v ? (0, r.modalContextFromAppContext)(v) : void 0 },
+                    );
+                },
+            })
+          : (0, i.jsx)(a.Dr, {
+                id: "add-friend",
+                label: E ? A.intl.string(A.t.xMH6vD) : T,
+                action: async () => {
+                    E ||
+                        (g?.(!0),
+                        await u.A.addRelationship({ userId: h, context: { location: f } }),
+                        _(!0),
+                        x?.(),
+                        g?.(!1));
+                },
+                disabled: y || (E && !p),
+            });
 }

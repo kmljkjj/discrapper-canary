@@ -1,9 +1,9 @@
 "use strict";
-n.d(t, { B: () => a });
-var r = n(934551),
-    i = n(245383);
-let a = (e) => {
-    let { iconOverride: t, variantOverride: n, ...a } = e,
-        { buttonText: s, disabled: o } = (0, i.A)(a);
-    return { subscribeButtonProps: { text: s, disabled: o, icon: t ?? r.NitroWheelIcon, variant: n ?? "expressive" } };
+n.d(t, { B: () => s });
+var i = n(403581),
+    r = n(245383);
+let s = (e) => {
+    let { iconOverride: t, variantOverride: n, ...s } = e,
+        { buttonText: a, disabled: o } = (0, r.A)(s);
+    return { subscribeButtonProps: { text: a, disabled: o, icon: t ?? i.t, variant: n ?? "expressive" } };
 };

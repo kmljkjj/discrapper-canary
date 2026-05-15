@@ -1,37 +1,37 @@
 "use strict";
 n.d(t, { A: () => f });
-var r = n(64700),
-    i = n(311907),
-    a = n(522305),
-    s = n(627363),
-    o = n(625180),
+var i = n(64700),
+    r = n(17928),
+    s = n(522305),
+    a = n(627363),
+    o = n(113854),
     l = n(91242),
-    u = n(207371),
+    u = n(375802),
     c = n(933958),
     d = n(748975),
     _ = n(165610);
 function f(e) {
-    let { applicationId: t, analyticsLocations: n, runBeforeLaunchAttempt: f, runAfterLaunchAttempt: p } = e,
-        { data: h } = (0, s.YY)(t),
-        m = (0, i.bG)([c.Ay], () => c.Ay.getCurrentEmbeddedActivity()),
-        g = (0, i.bG)([l.A], () => l.A.getConnectedFrame()),
-        E = (0, u.e)(h);
-    return r.useCallback(async () => {
-        if (null == t || null == h) return;
-        let e = null != m && m.applicationId === t;
-        if (null != g && g.applicationId === t)
-            return void o.A.updateFrameLayoutMode({ applicationId: g.applicationId, layoutMode: _.y.FOCUSED });
+    let { applicationId: t, analyticsLocations: n, runBeforeLaunchAttempt: f, runAfterLaunchAttempt: h } = e,
+        { data: p } = (0, a.YY)(t),
+        E = (0, r.bG)([c.Ay], () => c.Ay.getCurrentEmbeddedActivity()),
+        m = (0, r.bG)([l.A], () => l.A.getConnectedFrame()),
+        g = (0, u.e)(p);
+    return i.useCallback(async () => {
+        if (null == t || null == p) return;
+        let e = null != E && E.applicationId === t;
+        if (null != m && m.applicationId === t)
+            return void o.A.updateFrameLayoutMode({ applicationId: m.applicationId, layoutMode: _.y.FOCUSED });
         if (e) {
-            let e = m.location;
+            let e = E.location;
             (0, d.A)("guild_id" in e ? e.guild_id : null, e);
             return;
         }
         f?.();
         try {
-            E
+            g
                 ? await o.A.launchFrame({ applicationId: t })
-                : h?.bot?.id != null && (await (0, a.Q)({ appId: t, botId: h?.bot?.id, analyticsLocations: n ?? [] }));
+                : p?.bot?.id != null && (await (0, s.Q)({ appId: t, botId: p?.bot?.id, analyticsLocations: n ?? [] }));
         } catch (e) {}
-        p?.();
-    }, [n, h, t, E, m, g, p, f]);
+        h?.();
+    }, [n, p, t, g, E, m, h, f]);
 }

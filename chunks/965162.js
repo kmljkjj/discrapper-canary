@@ -1,19 +1,19 @@
 "use strict";
 n.d(t, {
-    D1: () => g,
-    Eo: () => E,
-    Hk: () => I,
-    R4: () => A,
-    Uz: () => m,
+    D1: () => E,
+    Eo: () => m,
+    Hk: () => A,
+    R4: () => g,
+    Uz: () => p,
     _V: () => h,
     d1: () => c,
     pR: () => d,
     wC: () => f,
 });
-var r = n(58149),
-    i = n(734057),
-    a = n(383501),
-    s = n(954571),
+var i = n(95561),
+    r = n(734057),
+    s = n(763827),
+    a = n(174459),
     o = n(486020),
     l = n(577718),
     u = n(652215);
@@ -29,35 +29,40 @@ function _(e) {
 function f(e) {
     return null != e ? "Video Background" : "None";
 }
-function p(e) {
-    switch (e) {
-        case l.ZQ.OPTION_1:
-            return "Cybercity";
-        case l.ZQ.OPTION_2:
-            return "Discord the Movie";
-        case l.ZQ.OPTION_3:
-            return "Wumpus Vacation";
-        case l.ZQ.OPTION_4:
-            return "Vaporwave";
-        case l.ZQ.OPTION_7:
-            return "Capernite Day";
-        case l.ZQ.OPTION_8:
-            return "Capernite Night";
-        case l.ZQ.OPTION_9:
-            return "Hacker Den";
-        case l.ZQ.OPTION_10:
-            return "Wumpice";
-    }
-}
 function h(e) {
-    return null == e ? "None" : c(e) ? "Custom" : "blur" === e ? "Blur" : `Preset - ${p(e)}`;
+    return null == e
+        ? "None"
+        : c(e)
+          ? "Custom"
+          : "blur" === e
+            ? "Blur"
+            : `Preset - ${(function (e) {
+                  switch (e) {
+                      case l.ZQ.OPTION_1:
+                          return "Cybercity";
+                      case l.ZQ.OPTION_2:
+                          return "Discord the Movie";
+                      case l.ZQ.OPTION_3:
+                          return "Wumpus Vacation";
+                      case l.ZQ.OPTION_4:
+                          return "Vaporwave";
+                      case l.ZQ.OPTION_7:
+                          return "Capernite Day";
+                      case l.ZQ.OPTION_8:
+                          return "Capernite Night";
+                      case l.ZQ.OPTION_9:
+                          return "Hacker Den";
+                      case l.ZQ.OPTION_10:
+                          return "Wumpice";
+                  }
+              })(e)}`;
 }
-function m(e, t, n) {
-    let o = a.A.getGuildId(),
-        l = a.A.getChannelId(),
-        c = i.A.getChannel(l),
-        d = (0, r.JK)(o, l, !0);
-    s.default.track(u.HAw.VIDEO_EFFECT_UPDATED, {
+function p(e, t, n) {
+    let o = s.A.getGuildId(),
+        l = s.A.getChannelId(),
+        c = r.A.getChannel(l),
+        d = (0, i.JK)(o, l, !0);
+    a.default.track(u.HAw.VIDEO_EFFECT_UPDATED, {
         location: t,
         effect_type: f(e),
         effect_detail: h(e),
@@ -67,18 +72,18 @@ function m(e, t, n) {
         guild_id: o,
         voice_state_count: d.voice_state_count,
         video_stream_count: d.video_stream_count,
-        media_session_id: a.A.getMediaSessionId(),
-        rtc_connection_id: a.A.getRTCConnectionId(),
+        media_session_id: s.A.getMediaSessionId(),
+        rtc_connection_id: s.A.getRTCConnectionId(),
         is_animated: _(e),
     });
 }
-function g(e, t, n) {
-    s.default.track(u.HAw.VIDEO_BACKGROUND_ADDED, { is_animated: _(e), is_video: t, is_from_tenor: n });
+function E(e, t, n) {
+    a.default.track(u.HAw.VIDEO_BACKGROUND_ADDED, { is_animated: _(e), is_video: t, is_from_tenor: n });
 }
-function E(e) {
-    s.default.track(u.HAw.VIDEO_BACKGROUND_DELETED, { is_animated: _(e) });
+function m(e) {
+    a.default.track(u.HAw.VIDEO_BACKGROUND_DELETED, { is_animated: _(e) });
 }
-function A(e) {
+function g(e) {
     return null == e
         ? { oneofKind: void 0 }
         : c(e)
@@ -87,7 +92,7 @@ function A(e) {
             ? { oneofKind: "blur", blur: { useBlur: !0 } }
             : { oneofKind: "presetOption", presetOption: e };
 }
-function I(e, t) {
+function A(e, t) {
     if (null == e || void 0 === e.oneofKind) return null;
     switch (e.oneofKind) {
         case "customAsset":

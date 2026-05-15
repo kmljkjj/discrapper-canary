@@ -1,69 +1,66 @@
-"use strict";
-n.d(t, { A: () => u });
-var i = n(627968),
-    s = n(64700),
-    l = n(503698),
-    a = n.n(l),
-    r = n(732955),
-    o = n(397927),
-    c = n(985018),
-    d = n(167192);
-function u(e) {
+t.d(n, { A: () => m });
+var l = t(627968),
+    i = t(64700),
+    s = t(503698),
+    a = t.n(s),
+    r = t(815021),
+    o = t(939249),
+    c = t(534514),
+    u = t(834730),
+    d = t(320448),
+    A = t(375708),
+    h = t(11699);
+function m(e) {
     let {
-            className: t,
-            iconContainerClassName: n,
-            icon: l,
-            title: u,
-            description: h,
-            userCount: A,
-            onClick: m,
+            className: n,
+            iconContainerClassName: t,
+            icon: s,
+            title: m,
+            description: C,
+            userCount: E,
+            onClick: p,
             highlight: g,
-            onDismiss: p,
+            onDismiss: x,
         } = e,
-        _ = s.useCallback(
+        I = i.useCallback(
             (e) => {
-                e.stopPropagation(), p?.();
+                e.stopPropagation(), x?.();
             },
-            [p],
+            [x],
         );
-    return (0, i.jsxs)(o.DUT, {
-        className: a()(d.kL, t, null != g && { [d.U6]: g }),
-        onClick: m,
+    return (0, l.jsxs)(o.D, {
+        className: a()(h.kL, n, null != g && { [h.U6]: g }),
+        onClick: p,
         children: [
-            (0, i.jsx)("div", { className: a()(d.Kk, n), children: l }),
-            (0, i.jsxs)("div", {
-                className: d.FS,
+            (0, l.jsx)("div", { className: a()(h.Kk, t), children: s }),
+            (0, l.jsxs)("div", {
+                className: h.FS,
                 children: [
-                    (0, i.jsx)(o.Heading, { variant: "heading-md/semibold", color: "text-strong", children: u }),
-                    (0, i.jsx)(o.Text, {
-                        variant: "text-xs/normal",
-                        color: "text-strong",
-                        className: d.mG,
-                        children: h,
-                    }),
-                    null != A && A > 0
-                        ? (0, i.jsxs)(i.Fragment, {
+                    (0, l.jsx)(c.D, { variant: "heading-md/semibold", color: "text-strong", children: m }),
+                    (0, l.jsx)(u.E, { variant: "text-xs/normal", color: "text-strong", className: h.mG, children: C }),
+                    null != E && E > 0
+                        ? (0, l.jsxs)(l.Fragment, {
                               children: [
-                                  (0, i.jsx)(o.Text, {
+                                  (0, l.jsx)(u.E, {
                                       variant: "text-xs/normal",
                                       color: "text-strong",
-                                      className: d.Om,
-                                      children: "•",
+                                      className: h.Om,
+                                      children: "\u2022",
                                   }),
-                                  (0, i.jsx)(o.Text, {
+                                  (0, l.jsx)(u.E, {
                                       variant: "text-xs/normal",
                                       color: "text-strong",
-                                      className: d.mG,
-                                      children: c.intl.format(c.t.NywdIj, { count: A }),
+                                      className: h.mG,
+                                      children: A.intl.format(A.t.NywdIj, { count: E }),
                                   }),
                               ],
                           })
                         : null,
                 ],
             }),
-            null != p
-                ? (0, i.jsx)("div", { className: d.r, children: (0, i.jsx)(r.JnF, { size: "xs", onClick: _ }) })
-                : (0, i.jsx)(o._BQ, { size: "xs", color: "currentColor", className: d.OW }),
+            null != x
+                ? (0, l.jsx)("div", { className: h.r, children: (0, l.jsx)(r.J, { size: "xs", onClick: I }) })
+                : (0, l.jsx)(d._, { size: "xs", color: "currentColor", className: h.OW }),
         ],
     });
 }

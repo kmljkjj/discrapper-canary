@@ -1,143 +1,148 @@
-n.d(t, { default: () => f });
-var i = n(627968),
-    l = n(64700),
-    s = n(158954),
-    a = n(311907),
-    r = n(435371),
-    o = n(397927),
-    d = n(71393),
-    c = n(954571),
-    u = n(554113),
-    m = n(974103),
-    g = n(903093),
-    x = n(610136),
-    h = n(336496),
-    p = n(218113),
-    A = n(652215),
-    b = n(985018),
-    _ = n(651846);
-function f(e) {
-    let { guildId: t, transitionState: n, onClose: f, analyticsData: N } = e,
-        j = (0, a.bG)([d.A], () => d.A.getGuild(t), [t]),
-        T = !!j?.features.has(A.GuildFeatures.INVITES_DISABLED),
-        [C] = l.useState(!1),
-        [v, E] = l.useState(p.f7),
-        I = (0, a.bG)([x.A], () => x.A.getGuildIncident(t)),
-        S = (0, m.w)(j),
-        y = (0, g.r2)(I) || T,
-        O = (0, g.di)(I),
-        [w, R] = l.useState(y),
-        [k, L] = l.useState(O),
-        [M, G] = l.useState(!1),
-        U = w !== y || k !== O || M,
-        D = T && !S;
-    return null == j
-        ? (f(), null)
-        : (0, i.jsx)(s.Modal, {
-              transitionState: n,
-              title: b.intl.string(b.t.oCYAc7),
+i.d(e, { default: () => N });
+var n = i(627968),
+    s = i(64700),
+    l = i(189213),
+    d = i(17928),
+    a = i(459192),
+    r = i(192308),
+    o = i(691885),
+    c = i(834730),
+    u = i(243721),
+    h = i(71393),
+    x = i(174459),
+    m = i(462116),
+    g = i(974103),
+    v = i(903093),
+    b = i(610136),
+    j = i(336496),
+    _ = i(218113),
+    p = i(652215),
+    E = i(375708),
+    C = i(226143);
+function N(t) {
+    let { guildId: e, transitionState: i, onClose: N, analyticsData: A } = t,
+        I = (0, d.bG)([h.A], () => h.A.getGuild(e), [e]),
+        S = !!I?.features.has(p.GuildFeatures.INVITES_DISABLED),
+        [f] = s.useState(!1),
+        k = (0, d.bG)([b.A], () => b.A.getGuildIncident(e)),
+        [w, y] = s.useState(() => (0, v.Z7)(k)),
+        G = (0, g.w)(I),
+        L = (0, v.r2)(k) || S,
+        T = (0, v.di)(k),
+        [D, z] = s.useState(L),
+        [Z, M] = s.useState(T),
+        [P, Q] = s.useState(!1),
+        R = D !== L || Z !== T || P,
+        U = S && !G;
+    return null == I
+        ? (N(), null)
+        : (0, n.jsx)(l.Modal, {
+              transitionState: i,
+              title: E.intl.string(E.t.oCYAc7),
               actions: [
-                  { text: b.intl.string(b.t["ETE/oC"]), onClick: f, variant: "secondary", disabled: C },
+                  { text: E.intl.string(E.t["ETE/oC"]), onClick: N, variant: "secondary", disabled: f },
                   {
-                      text: b.intl.string(b.t["pwm/z0"]),
+                      text: E.intl.string(E.t["pwm/z0"]),
                       onClick: () => {
-                          (y || O) && !w && !k
-                              ? ((0, u.tr)(j.id, !1, !1),
-                                (0, o.mMO)(() => Promise.resolve((e) => (0, i.jsx)(h.default, { ...e, guildId: t }))))
-                              : (0, u.tr)(j.id, w, k, v);
-                          let { source: e, alertType: n, messageId: l } = N;
-                          c.default.track(A.HAw.GUILD_RAID_INTERVENTION_STATE_CHANGE, {
-                              guild_id: t,
-                              source: e,
-                              raid_alert_id: l,
-                              raid_alert_type: n,
-                              intervention_type_enabled: (0, g.mR)(w, k),
-                              intervention_type_disabled: (0, g.fi)(w, k),
-                              duration: 60 * v,
+                          (L || T) && !D && !Z
+                              ? ((0, m.tr)(I.id, !1, !1),
+                                (0, r.openModalLazy)(() =>
+                                    Promise.resolve((t) => (0, n.jsx)(j.default, { ...t, guildId: e })),
+                                ))
+                              : (0, m.tr)(I.id, D, Z, w);
+                          let { source: t, alertType: i, messageId: s } = A;
+                          x.default.track(p.HAw.GUILD_RAID_INTERVENTION_STATE_CHANGE, {
+                              guild_id: e,
+                              source: t,
+                              raid_alert_id: s,
+                              raid_alert_type: i,
+                              intervention_type_enabled: (0, v.mR)(D, Z),
+                              intervention_type_disabled: (0, v.fi)(D, Z),
+                              duration: 60 * w,
                           }),
-                              f();
+                              N();
                       },
-                      loading: C,
-                      disabled: !U,
+                      loading: f,
+                      disabled: !R,
                   },
               ],
-              onClose: f,
-              children: (0, i.jsxs)("div", {
-                  className: _.rs,
+              onClose: N,
+              children: (0, n.jsxs)("div", {
+                  className: C.rs,
                   children: [
-                      (0, i.jsx)(o.l6P, {
-                          label: b.intl.string(b.t.vKYZzc),
+                      (0, n.jsx)(o.l, {
+                          label: E.intl.string(E.t.vKYZzc),
                           hideLabel: !0,
-                          placeholder: b.intl.string(b.t.vKYZzc),
-                          options: (0, p.aE)(),
-                          onSelectionChange: function (e) {
-                              E(e), G(!0);
+                          placeholder: E.intl.string(E.t.vKYZzc),
+                          options: (0, _.aE)(),
+                          onSelectionChange: function (t) {
+                              y(t), Q(!0);
                           },
-                          value: v,
+                          value: w,
                           selectionMode: "single",
                           fullWidth: !0,
                       }),
-                      (0, i.jsxs)("div", {
-                          className: _.Qb,
+                      (0, n.jsxs)("div", {
+                          className: C.Qb,
                           children: [
-                              (0, i.jsxs)("div", {
-                                  className: _.Iy,
+                              (0, n.jsxs)("div", {
+                                  className: C.Iy,
                                   children: [
-                                      (0, i.jsx)(o.Text, {
+                                      (0, n.jsx)(c.E, {
                                           variant: "text-md/semibold",
                                           color: "text-strong",
-                                          children: b.intl.string(b.t.Uwsjn6),
+                                          children: E.intl.string(E.t.Uwsjn6),
                                       }),
-                                      (0, i.jsx)(o.Text, {
+                                      (0, n.jsx)(c.E, {
                                           variant: "text-sm/normal",
                                           color: "text-muted",
-                                          children: b.intl.string(b.t.qPJkZh),
+                                          children: E.intl.string(E.t.qPJkZh),
                                       }),
                                   ],
                               }),
-                              (0, i.jsx)(r.un, {
-                                  body: b.intl.string(b.t["9GPbsV"]),
-                                  shouldShow: T,
+                              (0, n.jsx)(a.u, {
+                                  body: E.intl.string(E.t["9GPbsV"]),
+                                  shouldShow: S,
                                   asContainer: !0,
                                   element: "div",
-                                  children: (0, i.jsx)("div", {
-                                      className: _.L$,
-                                      children: (0, i.jsx)(o.dOG, {
+                                  children: (0, n.jsx)("div", {
+                                      className: C.L$,
+                                      children: (0, n.jsx)(u.d, {
                                           onChange: function () {
-                                              R((e) => !e);
+                                              z((t) => !t);
                                           },
-                                          checked: w,
-                                          disabled: D,
+                                          checked: D,
+                                          disabled: U,
                                       }),
                                   }),
                               }),
                           ],
                       }),
-                      (0, i.jsxs)("div", {
-                          className: _.Qb,
+                      (0, n.jsxs)("div", {
+                          className: C.Qb,
                           children: [
-                              (0, i.jsxs)("div", {
-                                  className: _.Iy,
+                              (0, n.jsxs)("div", {
+                                  className: C.Iy,
                                   children: [
-                                      (0, i.jsx)(o.Text, {
+                                      (0, n.jsx)(c.E, {
                                           variant: "text-md/semibold",
                                           color: "text-strong",
-                                          children: b.intl.string(b.t["wrDmA/"]),
+                                          children: E.intl.string(E.t["wrDmA/"]),
                                       }),
-                                      (0, i.jsx)(o.Text, {
+                                      (0, n.jsx)(c.E, {
                                           variant: "text-sm/normal",
                                           color: "text-muted",
-                                          children: b.intl.string(b.t.UQbJW7),
+                                          children: E.intl.string(E.t.UQbJW7),
                                       }),
                                   ],
                               }),
-                              (0, i.jsx)("div", {
-                                  className: _.L$,
-                                  children: (0, i.jsx)(o.dOG, {
+                              (0, n.jsx)("div", {
+                                  className: C.L$,
+                                  children: (0, n.jsx)(u.d, {
                                       onChange: function () {
-                                          L((e) => !e);
+                                          M((t) => !t);
                                       },
-                                      checked: k,
+                                      checked: Z,
                                   }),
                               }),
                           ],

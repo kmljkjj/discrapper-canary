@@ -1,31 +1,42 @@
-"use strict";
-n.d(t, { A: () => u });
-var r = n(64700),
-    i = n(429913),
-    a = n(403362);
-let s = 5;
-function o(e) {
-    return (t, n) => {
-        let r = e[t.id]?.score ?? 0,
-            i = e[n.id]?.score ?? 0;
-        return r !== i ? i - r : 0;
-    };
-}
-function l(e) {
-    let t = (0, i.A)(e.gameApplicationIds);
-    return r.useMemo(() => t.filter(a.Vq), [t]);
-}
-function u(e) {
-    let t = e.gameActivity,
-        n = l(e),
-        i = r.useMemo(() => {
-            let e = o(t);
-            return n.sort(e), n;
-        }, [n, t]),
-        a = r.useMemo(() => i.slice(0, s), [i]);
+l.d(t, { A: () => m });
+var s = l(64700),
+    a = l(17928),
+    i = l(997013),
+    n = l(311043),
+    r = l(569926),
+    c = l(495544),
+    d = l(403362);
+function m(e) {
+    let t,
+        l,
+        m,
+        o,
+        u = e.gameActivity,
+        x =
+            ((t = e.games),
+            (l = (0, a.bG)([c.default], () => c.default.isAuthenticated())),
+            (m = null != t && !l),
+            (0, r.x)(m ? [] : e.gameApplicationIds),
+            (o = s.useMemo(() => {
+                let e = new Map();
+                if (null == t) return e;
+                for (let l of t) e.set(l.id, new i.A(l));
+                return e;
+            }, [t])),
+            (0, a.yK)([n.A], () => e.gameApplicationIds.map((e) => n.A.getGame(e) ?? o.get(e)).filter(d.Vq))),
+        h = s.useMemo(
+            () =>
+                [...x].sort((e, t) => {
+                    let l = u[e.id]?.score ?? 0,
+                        s = u[t.id]?.score ?? 0;
+                    return l !== s ? s - l : 0;
+                }),
+            [x, u],
+        ),
+        v = s.useMemo(() => h.slice(0, 5), [h]);
     return {
-        gamesToDisplay: a,
-        lastGameToDisplay: r.useMemo(() => i[s] ?? null, [i]),
-        remainingGames: r.useMemo(() => i.slice(s), [i]),
+        gamesToDisplay: v,
+        lastGameToDisplay: s.useMemo(() => h[5] ?? null, [h]),
+        remainingGames: s.useMemo(() => h.slice(5), [h]),
     };
 }

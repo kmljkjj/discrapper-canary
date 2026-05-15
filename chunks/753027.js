@@ -1,23 +1,22 @@
 "use strict";
-n.d(t, { A: () => _ });
-var r = n(311907),
-    i = n(73153),
-    a = n(626584),
-    s = n(927813),
+n.d(t, { A: () => d });
+var i = n(17928),
+    r = n(228366),
+    s = n(626584),
+    a = n(927813),
     o = n(723176);
-let l = new a.A("FileSystemStore"),
-    u = 1048576,
-    c = 10 * s.A.Millis.MINUTE;
-class d extends r.Ay.Store {
+let l = new s.A("FileSystemStore"),
+    u = 10 * a.A.Millis.MINUTE;
+class c extends i.Ay.Store {
     isLowDisk = !1;
     constructor() {
-        super(i.h, {
+        super(r.h, {
             APP_STATE_UPDATE: (e) => this.handleAppStateUpdate(e),
             POST_CONNECTION_OPEN: () => this.handlePostConnectionOpen(),
         }),
             this.refresh(),
             this.waitFor(o.A),
-            setInterval(() => this.refresh(), c);
+            setInterval(() => this.refresh(), u);
     }
     handlePostConnectionOpen() {
         return this.refresh(), !1;
@@ -31,16 +30,16 @@ class d extends r.Ay.Store {
             ?.catch((e) => l.warn("couldn't get fs info", e));
         if (null != e) {
             let t =
-                    e.fs.available < 256 * u ||
+                    e.fs.available < 0x10000000 ||
                     e.fs.available < 3 * e.database.used ||
                     e.fs.available < 2 * e.database.total,
                 n =
-                    e.fs.available > 768 * u &&
+                    e.fs.available > 0x30000000 &&
                     e.fs.available > 4 * e.database.used &&
                     e.fs.available > 4 * e.database.total,
-                r = !!t || (!n && null);
-            null != r && this.isLowDisk !== r && ((this.isLowDisk = r), this.emitChange());
+                i = !!t || (!n && null);
+            null != i && this.isLowDisk !== i && ((this.isLowDisk = i), this.emitChange());
         }
     }
 }
-let _ = new d();
+let d = new c();

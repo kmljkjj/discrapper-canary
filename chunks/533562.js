@@ -1,6 +1,6 @@
 "use strict";
-n.d(t, { W: () => i });
-var r = n(760716);
-function i() {
-    return (0, r.i)((e) => e.overrideApplicationId) ?? void 0;
+n.d(t, { W: () => r });
+var i = n(760716);
+function r() {
+    return (0, i.i)((e) => e.overrideApplicationId) ?? void 0;
 }

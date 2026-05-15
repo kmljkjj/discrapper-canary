@@ -1,17 +1,18 @@
-n.d(t, { A: () => c });
-var i = n(627968);
-n(64700);
-var s = n(503698),
-    r = n.n(s),
-    l = n(397927),
-    o = n(985018),
-    a = n(995631);
-function c(e) {
-    let { className: t, "aria-label": n, ...s } = e;
-    return (0, i.jsx)(l.DUT, {
-        ...s,
-        "aria-label": null != n ? n : o.intl.string(o.t.N86XcP),
-        className: r()(a.x, t),
-        children: (0, i.jsx)(l.aXh, { size: "xs", color: "currentColor" }),
+s.d(r, { A: () => o });
+var i = s(627968);
+s(64700);
+var l = s(503698),
+    c = s.n(l),
+    e = s(939249),
+    n = s(285796),
+    t = s(985018),
+    u = s(814438);
+function o(a) {
+    let { className: r, "aria-label": s, ...l } = a;
+    return (0, i.jsx)(e.D, {
+        ...l,
+        "aria-label": null != s ? s : t.intl.string(t.t.N86XcP),
+        className: c()(u.x, r),
+        children: (0, i.jsx)(n.a, { size: "xs", color: "currentColor" }),
     });
 }

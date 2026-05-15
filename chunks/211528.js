@@ -1,226 +1,300 @@
-"use strict";
-n.d(t, { KS: () => b, Lw: () => L, Wf: () => v, e4: () => O, eR: () => R });
-var r = n(627968),
-    i = n(64700),
-    a = n(342393),
-    s = n(503698),
-    o = n.n(s),
-    l = n(311907),
-    u = n(397927),
-    c = n(73153),
-    d = n(156312),
-    _ = n(166532),
-    f = n(287809),
-    h = n(954571),
-    p = n(71532),
-    g = n(942340),
-    E = n(550238),
-    A = n(648335),
-    I = n(652215),
-    T = n(818348),
-    y = n(571882);
-let S = [_.pn.PAYMENT_ELEMENT],
-    v = i.memo(function (e) {
+n.d(t, { KS: () => j, Ky: () => x, Wf: () => v, e4: () => O, eR: () => L, wD: () => w });
+var l = n(627968),
+    a = n(64700),
+    i = n(342393),
+    r = n(503698),
+    s = n.n(r),
+    o = n(17928),
+    u = n(289873),
+    c = n(228366),
+    d = n(834252),
+    p = n(166532),
+    m = n(287809),
+    h = n(174459),
+    C = n(38405),
+    A = n(240248),
+    y = n(71532),
+    E = n(116673),
+    P = n(942340),
+    S = n(550238),
+    _ = n(648335),
+    T = n(652215),
+    f = n(818348),
+    I = n(235301);
+let N = [p.pn.PAYMENT_ELEMENT],
+    x = [
+        p.pn.PAYPAL_INFORMATION,
+        p.pn.VENMO_INFORMATION,
+        p.pn.CASH_APP_INFORMATION,
+        p.pn.EPS_INFORMATION,
+        p.pn.PRZELEWY24_INFORMATION,
+        p.pn.IDEAL_INFORMATION,
+    ],
+    g = new Set([p.pn.PAYMENT_ELEMENT, ...x, p.pn.ADDRESS]),
+    v = a.memo(function (e) {
         let {
-                wallets: t = [],
-                customPaymentMethodIdsToSourceTypes: n,
+                paymentMethodOrder: t,
+                wallets: n = [],
+                customPaymentMethodIdsToSourceTypes: r,
                 analyticsContext: s,
-                options: o,
-                onChange: u,
-                step: c,
-                ...d
+                options: u,
+                onChange: c,
+                step: d,
+                ...C
             } = e,
-            p = (0, l.bG)([f.default], () => {
-                let e = f.default.getCurrentUser();
+            A = (0, o.bG)([m.default], () => {
+                let e = m.default.getCurrentUser();
                 return null != e ? e.email : null;
             }),
-            g = (0, l.bG)([f.default], () => {
-                let e = f.default.getCurrentUser();
+            y = (0, o.bG)([m.default], () => {
+                let e = m.default.getCurrentUser();
                 return null != e ? e.globalName : null;
             }),
-            E = i.useCallback(
+            E = a.useCallback(
                 (e) => {
-                    if (c !== _.pn.PAYMENT_ELEMENT) return;
-                    let t = (0, A.Wn)(e.value.type, n);
-                    if ((null != u && u(e, t), null != s)) {
-                        let { contextMetadata: n, activitySessionId: r, analyticsData: i } = s,
-                            a = null != t && t !== T.he.PAYMENT_REQUEST ? A.mr[t] : e.value.type;
-                        h.default.track(I.HAw.PAYMENT_ELEMENT_CHANGED, {
+                    if (d !== p.pn.PAYMENT_ELEMENT) return;
+                    let t = (0, _.Wn)(e.value.type, r);
+                    if ((null != c && c(e, t), null != s)) {
+                        let { contextMetadata: n, activitySessionId: l, analyticsData: a } = s,
+                            i = null != t && t !== f.he.PAYMENT_REQUEST ? _.mr[t] : e.value.type;
+                        h.default.track(T.HAw.PAYMENT_ELEMENT_CHANGED, {
                             load_id: n.loadId,
-                            activity_session_id: r,
-                            location: i.location,
-                            payment_element_selected_method: a,
+                            activity_session_id: l,
+                            location: a.location,
+                            payment_element_selected_method: i,
                             payment_source_type: t,
                             complete: e.complete,
                             empty: e.empty,
                         });
                     }
                 },
-                [u, s, c, n],
+                [c, s, d, r],
             ),
-            y = i.useMemo(
+            P = a.useMemo(
                 () => ({
-                    applePay: t.includes("applePay") ? "auto" : "never",
-                    googlePay: t.includes("googlePay") ? "auto" : "never",
-                    link: t.includes("link") ? "auto" : "never",
+                    applePay: n.includes("applePay") ? "auto" : "never",
+                    googlePay: n.includes("googlePay") ? "auto" : "never",
+                    link: n.includes("link") ? "auto" : "never",
                 }),
-                [t],
+                [n],
             ),
-            S = { billingDetails: { ...(null != p && { email: p }), ...(null != g && { name: g }) } };
-        return (0, r.jsx)(a.PaymentElement, {
-            id: "stripe-payment-element",
-            options: { layout: { type: "tabs" }, wallets: y, defaultValues: S, ...o },
-            onChange: E,
-            ...d,
-        });
+            S = a.useMemo(
+                () => ({ billingDetails: { ...(null != A && { email: A }), ...(null != y && { name: y }) } }),
+                [A, y],
+            ),
+            I = a.useMemo(
+                () => ({
+                    id: "stripe-payment-element",
+                    options: { layout: { type: "tabs" }, wallets: P, defaultValues: S, paymentMethodOrder: t, ...u },
+                    onChange: E,
+                    ...C,
+                }),
+                [P, S, u, C, E, t],
+            );
+        return (0, l.jsx)(i.PaymentElement, { ...I });
     }),
-    C = (e) => {
+    M = (e) => {
         let { children: t } = e,
             { stripe: n } = (0, d.P5)(),
-            { elementsAppearance: i } = (0, g.E)();
-        return (0, r.jsx)(a.Elements, {
+            { elementsAppearance: a } = (0, P.E)(),
+            r = (0, y.PU)();
+        return (0, l.jsx)(i.Elements, {
             stripe: n,
-            options: { appearance: i, mode: "setup", currency: "usd" },
+            options: { appearance: a, locale: r, mode: "setup", currency: "usd" },
             children: t,
         });
     },
-    b = i.memo(function (e) {
-        let { options: t, renderAsStandaloneElement: n, billingAddressInfo: s, internalKey: o, ...l } = e,
-            u = i.useMemo(() => {
-                let { name: e, address: t } = (0, p._Z)(s);
-                return {
-                    name: e ?? null,
-                    ...(null != t && {
-                        address: Object.fromEntries(
-                            Object.entries(t).filter((e) => {
-                                let [t, n] = e;
-                                return void 0 !== n;
-                            }),
-                        ),
-                    }),
-                };
-            }, [s]),
-            c = i.useMemo(
-                () => (0, r.jsx)(a.AddressElement, { options: { mode: "billing", defaultValues: u, ...t }, ...l }, o),
-                [u, t, l, o],
+    b = (e) => null != e && null != e && (!(0, A.uJ)(e.line1) || !(0, A.uJ)(e.city)),
+    j = a.memo(function (e) {
+        let {
+                options: t,
+                renderAsStandaloneElement: n,
+                addressElementOnChangeFired: r,
+                billingAddressInfo: s,
+                internalKey: o,
+                ...u
+            } = e,
+            c = (0, E.z)(),
+            d = null != c && c.length > 0 ? c[0] : (0, A.uJ)(s.country) ? "" : s.country,
+            p = a.useMemo(() => {
+                let { name: e, address: t } = (0, y._Z)({ ...s, country: d });
+                return null != t && b(t)
+                    ? {
+                          ...(null != e && "" !== e && { name: e }),
+                          address: Object.fromEntries(
+                              Object.entries(t).filter((e) => {
+                                  let [t, n] = e;
+                                  return void 0 !== n;
+                              }),
+                          ),
+                      }
+                    : null != e && "" !== e
+                      ? { name: e }
+                      : null != t && null != t.country && r
+                        ? { address: { country: d } }
+                        : void 0;
+            }, [s, r, d]),
+            m = a.useMemo(() => (null != c && c.length > 0 ? c : void 0), [c]),
+            h = a.useMemo(
+                () =>
+                    (0, l.jsx)(
+                        i.AddressElement,
+                        { options: { mode: "billing", defaultValues: p, allowedCountries: m, ...t }, ...u },
+                        o,
+                    ),
+                [p, m, t, u, o],
             );
         return n
-            ? (0, r.jsxs)(C, {
+            ? (0, l.jsxs)(M, {
                   children: [
-                      (0, r.jsx)("div", {
-                          className: y.R,
-                          children: (0, r.jsx)(a.PaymentElement, { id: "stripe-payment-element" }),
+                      (0, l.jsx)("div", {
+                          className: I.R,
+                          children: (0, l.jsx)(i.PaymentElement, { id: "stripe-payment-element" }),
                       }),
-                      c,
+                      h,
                   ],
               })
-            : c;
+            : h;
     }),
-    N = (e) => {
+    R = (e) => {
         let {
                 step: t,
                 billingAddressInfo: n,
-                customPaymentMethodIdsToSourceTypes: s,
-                stripePaymentElementProps: l,
+                customPaymentMethodIdsToSourceTypes: r,
+                stripePaymentElementProps: o,
                 stripeAddressElementProps: u,
                 elementsRef: c,
                 paymentElementSelectedType: d,
-                addressElementKey: f,
-                analyticsContext: h,
+                paymentMethodOrder: m,
+                addressElementKey: h,
+                analyticsContext: C,
+                paymentElementFooter: A,
             } = e,
-            p = (0, a.useElements)();
-        i.useEffect(() => {
-            c.current = p;
-        }, [p, c]);
-        let g = S.includes(t),
-            E = t === _.pn.ADDRESS;
-        return (0, r.jsxs)("div", {
-            className: o()(y.kL, y.rf),
+            y = (0, i.useElements)();
+        a.useEffect(() => {
+            c.current = y;
+        }, [y, c]);
+        let {
+            shouldShowPaymentElement: E,
+            shouldShowAddressElement: P,
+            excludeBodySpacing: S,
+        } = a.useMemo(
+            () => ({
+                shouldShowPaymentElement: N.includes(t),
+                shouldShowAddressElement: t === p.pn.ADDRESS,
+                excludeBodySpacing: x.includes(t),
+            }),
+            [t],
+        );
+        return (0, l.jsxs)("div", {
+            className: s()(I.kL, { [I.rf]: !S }),
             children: [
-                (0, r.jsx)("div", {
-                    className: o()(g ? y.RK : [y.R, y.$u], {
-                        [y.df]: null == d,
-                        [y._m]: d === T.he.CARD,
-                        [y.JD]: d === T.he.PAYPAL,
+                (0, l.jsxs)("div", {
+                    className: s()(E ? I.RK : [I.R, I.$u], {
+                        [I.df]: null == d,
+                        [I._m]: d === f.he.CARD,
+                        [I.JD]: d === f.he.PAYPAL,
                     }),
-                    children: (0, r.jsx)(v, {
-                        ...l,
-                        customPaymentMethodIdsToSourceTypes: s,
-                        step: t,
-                        analyticsContext: h,
-                    }),
+                    children: [
+                        (0, l.jsx)(v, {
+                            ...o,
+                            paymentMethodOrder: m,
+                            customPaymentMethodIdsToSourceTypes: r,
+                            step: t,
+                            analyticsContext: C,
+                        }),
+                        E && A,
+                    ],
                 }),
-                (0, r.jsx)("div", {
-                    className: o()(y.K_, E ? y.RK : [y.R, y.vg]),
-                    children: (0, r.jsx)(b, {
+                (0, l.jsx)("div", {
+                    className: s()(I.K_, P ? I.RK : [I.R, I.vg]),
+                    children: (0, l.jsx)(j, {
                         ...u,
-                        internalKey: f,
-                        renderAsStandaloneElement: d === T.he.PAYMENT_REQUEST,
+                        internalKey: h,
+                        renderAsStandaloneElement: d === f.he.PAYMENT_REQUEST,
                         billingAddressInfo: n,
                     }),
                 }),
             ],
         });
     },
-    R = () =>
-        (0, r.jsx)("div", {
-            className: o()(y.kL, y.rf, y.g4),
-            children: (0, r.jsx)(u.y$y, { type: u.y$y.Type.PULSING_ELLIPSIS }),
+    L = () =>
+        (0, l.jsx)("div", {
+            className: s()(I.kL, I.rf, I.g4),
+            children: (0, l.jsx)(u.y, { type: u.y.Type.PULSING_ELLIPSIS }),
         }),
     O = (e) => {
         let { onSetupError: t, ...n } = e,
             {
-                elementsOptions: i,
-                isLoading: s,
-                setupError: o,
-                customPaymentMethodIdsToSourceTypes: l,
-            } = (0, g.p)({ onSetupError: t }),
-            { stripe: u } = (0, d.P5)();
-        return s || null != o || null == u
-            ? (0, r.jsx)(R, {})
-            : (0, r.jsx)(a.Elements, {
-                  stripe: u,
-                  options: { ...i },
-                  children: (0, r.jsx)(N, { ...n, customPaymentMethodIdsToSourceTypes: l }),
+                elementsOptions: a,
+                isLoading: r,
+                setupError: s,
+                customPaymentMethodIdsToSourceTypes: o,
+                paymentMethodOrder: u,
+            } = (0, P.p)({ onSetupError: t }),
+            { stripe: c } = (0, d.P5)();
+        return r || null != s || null == c
+            ? (0, l.jsx)(L, {})
+            : (0, l.jsx)(i.Elements, {
+                  stripe: c,
+                  options: a,
+                  children: (0, l.jsx)(R, { ...n, customPaymentMethodIdsToSourceTypes: o, paymentMethodOrder: u }),
               });
     },
     D = ["applePay", "googlePay", "link"],
-    L = (e) => {
+    w = (e) => {
         let {
                 step: t,
                 handleStepChange: n,
-                paymentElementsEnabled: r,
-                logger: a,
+                paymentElementsEnabled: l,
+                logger: r,
                 onBillingAddressChange: s,
                 shouldLogOnChangeEvents: o,
-                continueSessionToInitialStep: l,
+                continueSessionToInitialStep: u,
             } = e,
-            u = i.useRef(null),
-            d = i.useRef(null),
-            [f, h] = i.useState(!1),
-            [p, g] = i.useState(l === _.pn.CREDIT_CARD_INFORMATION ? T.he.CARD : null),
-            A = r && (t === _.pn.PAYMENT_ELEMENT || (t === _.pn.ADDRESS && null != p));
-        i.useEffect(() => {
-            t === _.pn.PAYMENT_ELEMENT && (d.current = null);
+            d = a.useRef(null),
+            m = a.useRef(null),
+            [h, y] = a.useState(!1),
+            [E, P] = a.useState(u === p.pn.CREDIT_CARD_INFORMATION ? f.he.CARD : null),
+            T = l && g.has(t),
+            [I, N] = a.useState(!1),
+            [x, v] = a.useState(void 0),
+            M = a.useCallback(() => {
+                v(Date.now().toString());
+            }, []);
+        a.useEffect(() => {
+            t === p.pn.PAYMENT_ELEMENT && (m.current = null);
         }, [t]);
-        let I = i.useMemo(
+        let j = a.useMemo(
                 () => ({
                     onChange: (e, t) => {
-                        o && null != a && a.log("PaymentElements onChange event:", e), h(e.complete), g(t);
+                        o && null != r && r.log("PaymentElements onChange event:", e), y(e.complete), P(t);
                     },
                     wallets: D,
                 }),
-                [a, o],
+                [r, o],
             ),
-            y = i.useMemo(
+            R = a.useMemo(
                 () => ({
+                    addressElementOnChangeFired: I,
                     onChange: (e) => {
                         let {
                                 complete: t,
-                                value: { address: n, name: r },
+                                value: { address: n, name: l },
                             } = e,
-                            i = {
-                                name: r,
+                            a = b(n);
+                        o &&
+                            null != r &&
+                            r.log("AddressElement onChange event:", {
+                                complete: t,
+                                address: n,
+                                name: l,
+                                addressElementOnChangeFired: I,
+                                isAddressSubstantial: a,
+                            }),
+                            N(!0);
+                        let i = {
+                                name: l,
                                 country: n.country,
                                 city: n.city,
                                 line1: n.line1,
@@ -228,27 +302,56 @@ let S = [_.pn.PAYMENT_ELEMENT],
                                 state: n.state,
                                 postalCode: n.postal_code,
                             },
-                            a =
-                                E.V.every((e) => {
-                                    let t = i[e];
-                                    return null != t && "" !== t;
-                                }) && t;
-                        s(i, a);
+                            u = (0, S.Qd)(i);
+                        !t ||
+                            u ||
+                            S.im.has(n.country) ||
+                            C.A.captureMessage(
+                                "Unexpected AddressElement validity mismatch: Stripe complete but address was computed invalid",
+                                {
+                                    tags: { app_context: "billing", billing_context: "payment_element" },
+                                    extra: {
+                                        isValidComputed: u,
+                                        stripeComplete: t,
+                                        country: n.country,
+                                        emptyFields: Object.entries(i)
+                                            .filter((e) => {
+                                                let [, t] = e;
+                                                return (0, A.uJ)(t);
+                                            })
+                                            .map((e) => {
+                                                let [t] = e;
+                                                return t;
+                                            }),
+                                    },
+                                },
+                            ),
+                            s(i, u && t);
                     },
                 }),
-                [s],
+                [s, o, r, I, N],
             ),
-            S = i.useCallback(
+            L = a.useCallback(() => {
+                let e;
+                s({ name: "", country: "", city: "", line1: "", line2: "", state: "", postalCode: "" }, !1),
+                    null !=
+                        (e = ((e) => {
+                            if (null == e) return;
+                            let t = e.getElement(i.AddressElement);
+                            if (null != t) return t;
+                        })(d.current)) && e.clear();
+            }, [d, s]),
+            O = a.useCallback(
                 function (e) {
                     let t = !(arguments.length > 1) || void 0 === arguments[1] || arguments[1];
-                    void 0 !== e && g(e), n(_.pn.PAYMENT_ELEMENT, t);
+                    void 0 !== e && P(e), n(p.pn.PAYMENT_ELEMENT, t), N(!1), null != E && (0, _.R8)(E) && L();
                 },
-                [n],
+                [n, L, E],
             );
-        i.useEffect(() => {
-            if (!r) return;
+        a.useEffect(() => {
+            if (!l) return;
             let e = () => {
-                S(void 0);
+                O(void 0);
             };
             return (
                 c.h.subscribe("BRAINTREE_TOKENIZE_PAYPAL_FAIL_WINDOW_CLOSED", e),
@@ -256,25 +359,23 @@ let S = [_.pn.PAYMENT_ELEMENT],
                     c.h.unsubscribe("BRAINTREE_TOKENIZE_PAYPAL_FAIL_WINDOW_CLOSED", e);
                 }
             );
-        }, [S, r]);
-        let v = i.useCallback(() => {
-                g(null);
-            }, []),
-            [C, b] = i.useState(void 0);
+        }, [O, l]);
+        let w = a.useCallback(() => {
+            P(null);
+        }, []);
         return {
-            shouldRenderPaymentElement: A,
-            stripePaymentElementProps: I,
-            stripeAddressElementProps: y,
-            combinedStripeElementsRef: u,
-            lastConfirmedSetupIntentRef: d,
-            paymentElementReady: f,
-            paymentElementSelectedType: p,
-            setPaymentElementSelectedType: g,
-            handlePaymentElementStep: S,
-            onBackFromPaymentElement: v,
-            addressElementKey: C,
-            remountAddressElement: i.useCallback(() => {
-                b(Date.now().toString());
-            }, []),
+            shouldRenderPaymentElement: T,
+            stripePaymentElementProps: j,
+            stripeAddressElementProps: R,
+            combinedStripeElementsRef: d,
+            lastConfirmedSetupIntentRef: m,
+            paymentElementReady: h,
+            paymentElementSelectedType: E,
+            setPaymentElementSelectedType: P,
+            returnToPaymentElementStep: O,
+            onBackFromPaymentElement: w,
+            addressElementKey: x,
+            remountAddressElement: M,
+            clearAddressElement: L,
         };
     };

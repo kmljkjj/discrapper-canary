@@ -1,9 +1,8 @@
-"use strict";
-n.d(t, { P: () => s });
-var i,
-    s =
-        (((i = {}).ACTIVITY = "ACTIVITY"),
-        (i.SOUNDBOARD = "SOUNDBOARD"),
-        (i.EMOJI = "EMOJI"),
-        (i.GIFTING = "GIFTING"),
-        i);
+n.d(t, { P: () => i });
+var l,
+    i =
+        (((l = {}).ACTIVITY = "ACTIVITY"),
+        (l.SOUNDBOARD = "SOUNDBOARD"),
+        (l.EMOJI = "EMOJI"),
+        (l.GIFTING = "GIFTING"),
+        l);

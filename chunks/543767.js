@@ -1,174 +1,205 @@
 "use strict";
-n.d(t, { C8: () => A, FP: () => g, Kq: () => E, OQ: () => f, sL: () => I });
-var r = n(64700),
-    i = n(284009),
-    a = n.n(i),
-    s = n(562465),
-    o = n(198982),
-    l = n(654044),
-    u = n(927578),
-    c = n(371794),
-    d = n(652215);
-async function _(e) {
+n.d(t, { $n: () => m, C8: () => I, OQ: () => h, QQ: () => g, YV: () => A, sL: () => T });
+var i = n(64700),
+    r = n(284009),
+    s = n.n(r),
+    a = n(636537),
+    o = n(228366),
+    l = n(845584),
+    u = n(570221),
+    c = n(927578),
+    d = n(371794),
+    _ = n(652215);
+async function f(e) {
     let {
             items: t,
             paymentSourceId: n,
-            trialId: r,
-            code: i,
-            applyEntitlements: a = !1,
-            currency: c,
-            renewal: _,
-            metadata: f,
+            trialId: i,
+            code: r,
+            applyEntitlements: s = !1,
+            currency: d,
+            renewal: f,
+            metadata: h,
         } = e,
         p = {
-            items: (t = (0, u.qn)(t)).map((e) => {
+            items: (t = (0, c.qn)(t)).map((e) => {
                 let { planId: t, ...n } = e;
                 return { ...n, plan_id: t };
             }),
             payment_source_id: n,
-            trial_id: r,
-            code: i,
-            apply_entitlements: a,
-            currency: c,
-            renewal: _,
-            metadata: f,
+            trial_id: i,
+            code: r,
+            apply_entitlements: s,
+            currency: d,
+            renewal: f,
+            metadata: h,
         };
     try {
-        let e = await s.Bo.post({
-            url: d.Rsh.BILLING_SUBSCRIPTIONS_PREVIEW,
-            body: p,
-            oldFormErrors: !0,
-            rejectWithError: !1,
-        });
-        return l.A.createInvoiceFromServer(e.body);
+        let e = await a.Bo.post({
+                url: _.Rsh.BILLING_SUBSCRIPTIONS_PREVIEW,
+                body: p,
+                oldFormErrors: !0,
+                rejectWithError: !1,
+            }),
+            t = u.A.createInvoiceFromServer(e.body);
+        return (
+            t.checkoutContext?.payment_sources != null &&
+                o.h.dispatch({
+                    type: "SUBSCRIPTION_PREVIEW_CHECKOUT_CONTEXT_UPDATE",
+                    checkoutContext: t.checkoutContext,
+                    paymentSourceId: n,
+                }),
+            t
+        );
     } catch (e) {
-        throw new o.Ey(e);
+        throw new l.Ey(e);
     }
 }
-async function f(e) {
+async function h(e) {
     let {
         subscriptionId: t,
         items: n,
-        paymentSourceId: r,
-        renewal: i,
-        currency: a,
-        applyEntitlements: c = !1,
-        analyticsLocations: _,
-        analyticsLocation: f,
+        paymentSourceId: i,
+        renewal: r,
+        currency: s,
+        applyEntitlements: d = !1,
+        analyticsLocations: f,
+        analyticsLocation: h,
         userDiscountOfferId: p,
     } = e;
-    null != n && (n = (0, u.qn)(n));
-    let h = {
+    null != n && (n = (0, c.qn)(n));
+    let E = {
         items: n?.map((e) => {
             let { planId: t, ...n } = e;
             return { ...n, plan_id: t };
         }),
-        payment_source_id: r,
-        renewal: i,
-        apply_entitlements: c,
-        currency: a,
+        payment_source_id: i,
+        renewal: r,
+        apply_entitlements: d,
+        currency: s,
         user_discount_offer_id: p,
     };
     try {
-        let e = await s.Bo.patch({
-            url: d.Rsh.BILLING_SUBSCRIPTION_PREVIEW(t),
-            query: { location: f, location_stack: _ },
-            body: h,
-            oldFormErrors: !0,
-            rejectWithError: !1,
-        });
-        return l.A.createInvoiceFromServer(e.body);
+        let e = await a.Bo.patch({
+                url: _.Rsh.BILLING_SUBSCRIPTION_PREVIEW(t),
+                query: { location: h, location_stack: f },
+                body: E,
+                oldFormErrors: !0,
+                rejectWithError: !1,
+            }),
+            n = u.A.createInvoiceFromServer(e.body);
+        return (
+            null != i &&
+                n.checkoutContext?.payment_sources != null &&
+                o.h.dispatch({
+                    type: "SUBSCRIPTION_PREVIEW_CHECKOUT_CONTEXT_UPDATE",
+                    checkoutContext: n.checkoutContext,
+                    paymentSourceId: i,
+                }),
+            n
+        );
     } catch (e) {
-        throw new o.Ey(e);
+        throw new l.Ey(e);
     }
 }
 async function p(e) {
-    let { paymentSourceId: t, skuId: n, subscriptionPlanId: r, currency: i, loadId: s } = e;
-    a()(n, "SKU ID is missing for one time purchase gift invoice preview");
-    let u = { gift: !0, payment_source_id: t, sku_subscription_plan_id: r, currency: i, load_id: s };
+    let { paymentSourceId: t, skuId: n, subscriptionPlanId: i, currency: r, loadId: a } = e;
+    s()(n, "SKU ID is missing for one time purchase gift invoice preview");
     try {
-        let e = await (0, c.aP)({ url: d.Rsh.STORE_SKU_PURCHASE(n), query: u, oldFormErrors: !0, rejectWithError: !1 });
-        return l.A.createInvoiceFromServer(e.body);
+        let e = await (0, d.aP)({
+            url: _.Rsh.STORE_SKU_PURCHASE(n),
+            query: { gift: !0, payment_source_id: t, sku_subscription_plan_id: i, currency: r, load_id: a },
+            oldFormErrors: !0,
+            rejectWithError: !1,
+        });
+        return u.A.createInvoiceFromServer(e.body);
     } catch (e) {
-        throw new o.Ey(e);
+        throw new l.Ey(e);
     }
 }
-async function h(e) {
+async function E(e) {
     let { subscriptionId: t, preventFetch: n } = e;
     if (n) return null;
-    let r = await s.Bo.get({ url: d.Rsh.BILLING_SUBSCRIPTION_INVOICE(t), oldFormErrors: !0, rejectWithError: !1 });
-    return l.A.createInvoiceFromServer(r.body);
+    let i = await a.Bo.get({ url: _.Rsh.BILLING_SUBSCRIPTION_INVOICE(t), oldFormErrors: !0, rejectWithError: !1 });
+    return u.A.createInvoiceFromServer(i.body);
 }
-function m(e, t) {
-    let { preventFetch: n = !1 } = e,
-        [i, a] = (0, r.useState)(null),
-        [s, o] = (0, r.useState)(null);
+function m(e, t, n) {
+    let { preventFetch: r = !1 } = e,
+        [s, a] = (0, i.useState)(null),
+        [o, l] = (0, i.useState)(null);
     return (
-        (0, r.useEffect)(() => {
+        (0, i.useEffect)(() => {
             let e = !1;
-            async function r() {
+            async function n() {
                 try {
-                    o(null), a(null);
+                    l(null);
                     let n = await t();
                     e || a(n);
                 } catch (t) {
-                    e || o(t);
+                    e || (l(t), a(null));
                 }
             }
             return (
-                n || r(),
+                r || n(),
                 () => {
                     e = !0;
                 }
             );
-        }, [n, t]),
-        [i, s]
+        }, [r, t, n]),
+        [s, o]
     );
 }
 function g(e) {
-    let t = (0, r.useRef)(e);
-    (0, r.useEffect)(() => {
+    let t = (0, i.useRef)(e),
+        n = (0, i.useRef)(!1);
+    (0, i.useEffect)(() => {
         t.current = e;
     });
-    let n = JSON.stringify(e);
+    let r = JSON.stringify(e);
     return m(
         e,
-        (0, r.useCallback)(() => p(t.current), [n]),
+        (0, i.useCallback)(() => {
+            let e = t.current,
+                i = n.current ? e : { ...e, paymentSourceId: null };
+            return (n.current = !0), p(i);
+        }, [r]),
     );
 }
-function E(e) {
+function A(e) {
     if ("subscriptionId" in e && null == e.subscriptionId) {
         let { subscriptionId: t, ...n } = e;
         e = n;
     }
-    let t = (0, r.useRef)(e);
-    (0, r.useEffect)(() => {
+    let t = (0, i.useRef)(e),
+        n = (0, i.useRef)(!1);
+    (0, i.useEffect)(() => {
         t.current = e;
     });
-    let n = JSON.stringify(e),
-        i = (0, r.useCallback)(() => {
-            let { current: e } = t;
-            return "subscriptionId" in e ? f(e) : "items" in e ? _(e) : null;
-        }, [n]);
-    return m(e, i);
+    let r = JSON.stringify(e),
+        s = (0, i.useCallback)(() => {
+            let e = t.current,
+                i = n.current ? e : { ...e, paymentSourceId: null };
+            return "subscriptionId" in i ? ((n.current = !0), h(i)) : "items" in i ? ((n.current = !0), f(i)) : null;
+        }, [r]);
+    return m(e, s);
 }
-function A(e) {
-    let t = (0, r.useRef)(e);
-    (0, r.useEffect)(() => {
+function I(e) {
+    let t = (0, i.useRef)(e);
+    (0, i.useEffect)(() => {
         t.current = e;
     });
     let n = JSON.stringify(e);
     return m(
         e,
-        (0, r.useCallback)(() => h(t.current), [n]),
+        (0, i.useCallback)(() => E(t.current), [n]),
     );
 }
-function I(e) {
+function T(e) {
     let t = e.subscriptionPlanPrice;
     return (
         e.discounts.forEach((n) => {
-            let r = n.amount / e.quantity;
-            t -= r;
+            let i = n.amount / e.quantity;
+            t -= i;
         }),
         t
     );

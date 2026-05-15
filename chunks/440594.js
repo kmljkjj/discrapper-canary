@@ -1,6 +1,6 @@
 "use strict";
-n.d(t, { A: () => i });
-var r = n(985018);
-function i(e) {
-    return null != e && "" !== e ? e : r.intl.string(r.t["2YCamo"]);
+n.d(t, { A: () => r });
+var i = n(375708);
+function r(e) {
+    return null != e && "" !== e ? e : i.intl.string(i.t["2YCamo"]);
 }

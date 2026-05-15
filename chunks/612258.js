@@ -1,14 +1,14 @@
-n.d(t, { A: () => d });
+n.d(t, { A: () => c });
 var i = n(627968),
     l = n(64700),
     a = n(620141),
-    s = n(966598),
-    r = n(224964),
+    r = n(966598),
+    s = n(224964),
     o = n(31408);
-function c(e) {
+function d(e) {
     let { callTileRef: t, isFiring: n } = e,
-        i = (0, r.A)(),
-        a = (0, s.A)(t);
+        i = (0, s.A)(),
+        a = (0, r.A)(t);
     return (
         l.useEffect(() => {
             n &&
@@ -19,6 +19,6 @@ function c(e) {
         null
     );
 }
-function d(e) {
-    return (0, i.jsx)(a.A, { confettiLocation: o.k.CALL_TILE, children: (0, i.jsx)(c, { ...e }) });
+function c(e) {
+    return (0, i.jsx)(a.A, { confettiLocation: o.k.CALL_TILE, children: (0, i.jsx)(d, { ...e }) });
 }

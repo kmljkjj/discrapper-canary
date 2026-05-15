@@ -1,58 +1,58 @@
 "use strict";
-n.d(t, { A: () => c });
-var r = n(627968),
+n.d(t, { A: () => d });
+var l = n(627968),
     i = n(64700),
-    a = n(752239),
-    s = n(397927),
+    s = n(752239),
+    a = n(349288),
+    r = n(32880),
     o = n(954571),
-    l = n(652215),
+    c = n(652215),
     u = n(985018);
-let c = (e) => {
+let d = (e) => {
     let {
             href: t,
             className: n,
-            iconClassName: c,
-            rel: d,
-            target: _,
-            mimeType: f,
-            fileName: p,
-            focusProps: h,
-            onClick: m,
-            ...g
+            iconClassName: d,
+            rel: h,
+            target: m,
+            mimeType: p,
+            fileName: f,
+            focusProps: g,
+            onClick: _,
+            ...x
         } = e,
-        E = i.useMemo(() => a.V.getDefaultLinkInterceptor(t), [t]),
+        C = i.useMemo(() => s.V.getDefaultLinkInterceptor(t), [t]),
         A = i.useCallback(
             (e) => {
-                o.default.track(l.HAw.MEDIA_DOWNLOAD_BUTTON_TAPPED, {
-                    attachment_type: f?.[0],
-                    attachment_subtype: f?.[1],
+                o.default.track(c.HAw.MEDIA_DOWNLOAD_BUTTON_TAPPED, {
+                    attachment_type: p?.[0],
+                    attachment_subtype: p?.[1],
                 }),
-                    m?.(),
-                    E?.(e);
+                    _?.(),
+                    C?.(e);
             },
-            [E, f, m],
+            [C, p, _],
         );
-    return null != p
-        ? (0, r.jsx)(s.MzZ, {
+    return null != f
+        ? (0, l.jsx)(a.Anchor, {
               href: t,
               onClick: A,
-              target: _,
-              rel: d,
+              target: m,
+              rel: h,
               className: n,
-              "aria-label": u.intl.string(u.t["1WjMbC"]),
-              focusProps: h,
-              ...g,
-              children: p,
+              focusProps: g,
+              ...x,
+              children: f,
           })
-        : (0, r.jsx)(s.MzZ, {
+        : (0, l.jsx)(a.Anchor, {
               href: t,
               onClick: A,
-              target: _,
-              rel: d,
+              target: m,
+              rel: h,
               className: n,
               "aria-label": u.intl.string(u.t["1WjMbC"]),
-              focusProps: h,
-              ...g,
-              children: (0, r.jsx)(s.s3U, { size: "md", color: "currentColor", className: c }),
+              focusProps: g,
+              ...x,
+              children: (0, l.jsx)(r.s, { size: "md", color: "currentColor", className: d }),
           });
 };

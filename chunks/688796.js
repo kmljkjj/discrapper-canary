@@ -1,110 +1,39 @@
-n.d(t, { G: () => E, default: () => I });
+"use strict";
+n.d(t, { G: () => d, default: () => _ });
 var i = n(627968);
 n(64700);
-var a = n(397927),
-    r = n(287070),
-    l = n(950191),
-    s = n(101928),
-    o = n(287809),
-    d = n(87719),
-    c = n(414345),
-    u = n(377108),
-    A = n(244975),
-    h = n(788868),
-    _ = n(652215),
-    m = n(339984),
-    g = n(985018),
-    p = n(94184);
-function E(e) {
-    let { uploadType: t, imageSrc: r, analyticsSource: l } = e,
-        s = o.default.getCurrentUser();
+var r = n(192308),
+    s = n(87719),
+    a = n(81456),
+    o = n(831318),
+    l = n(788868),
+    u = n(339984),
+    c = n(375708);
+function d(e) {
+    let { uploadType: t } = e;
     return (
-        null != s &&
-        ((0, a.mMO)(async () => {
+        (0, r.openModalLazy)(async () => {
             let { default: e } = await Promise.resolve().then(n.bind(n, 688796));
-            return (n) =>
-                (0, i.jsx)(e, {
-                    user: s,
-                    imageSrc: r,
-                    uploadType: t,
-                    analyticsSource: l,
-                    analyticsLocation: { section: _.JJy.USER_PROFILE, object: _.ZSU.BUTTON_CTA },
-                    onSecondaryClick: a.s7G,
-                    ...n,
-                });
+            return (n) => (0, i.jsx)(e, { uploadType: t, onSecondaryClick: r.closeAllModals, ...n });
         }),
-        !0)
+        !0
     );
 }
-function I(e) {
-    let {
-            user: t,
-            uploadType: n,
-            imageSrc: a,
-            onClose: o,
-            analyticsSource: _,
-            analyticsLocation: E,
-            onSecondaryClick: I,
-            ...f
-        } = e,
-        C = (0, l.Ay)(t.id),
-        { primaryColor: T, secondaryColor: N } = (0, s.A)({
-            user: t,
-            displayProfile: C,
-            pendingAvatarSrc: n === m.HL.AVATAR ? a : void 0,
-            isPreview: !0,
-        }),
-        S = n === m.HL.AVATAR || n === m.HL.BANNER,
-        x = null != a,
-        v = (0, u.u)(n === m.HL.AVATAR ? h.e.ANIMATED_AVATAR_MODAL_UPSELL : h.e.ANIMATED_BANNER_MODAL_UPSELL),
-        y = (0, u.A)(n === m.HL.AVATAR ? h.e.ANIMATED_AVATAR_MODAL_UPSELL : h.e.ANIMATED_BANNER_MODAL_UPSELL);
-    return S
-        ? (0, c.g1)({ location: "getReducedMotionImageUrl" })
-            ? (0, i.jsx)(A.F, {
-                  title: n === m.HL.AVATAR ? g.intl.string(g.t.X7tO60) : g.intl.string(g.t.zXPa2C),
-                  subtitle: n === m.HL.AVATAR ? g.intl.string(g.t.ifCRdB) : g.intl.string(g.t.yQAnf4),
-                  graphic: y,
-                  onSecondaryClick: () => {
-                      I?.(), (0, d.x)(o);
-                  },
-                  secondaryCTA: g.intl.string(g.t.PcTCB7),
-                  onClose: o,
-                  ...f,
-              })
-            : (0, i.jsx)(A.A, {
-                  artURL: x ? void 0 : v,
-                  modalClassName: x ? p.yl : void 0,
-                  modalContentClassName: x ? p.jE : void 0,
-                  type: n === m.HL.AVATAR ? h.e.ANIMATED_AVATAR_MODAL_UPSELL : h.e.ANIMATED_BANNER_MODAL_UPSELL,
-                  title: n === m.HL.AVATAR ? g.intl.string(g.t.X7tO60) : g.intl.string(g.t.zXPa2C),
-                  body: n === m.HL.AVATAR ? g.intl.string(g.t.ifCRdB) : g.intl.string(g.t.yQAnf4),
-                  glowUp: n === m.HL.AVATAR ? g.intl.string(g.t.ifCRdB) : g.intl.string(g.t.yQAnf4),
-                  onSecondaryClick: () => {
-                      I?.(), (0, d.x)(o);
-                  },
-                  secondaryCTA: g.intl.string(g.t.PcTCB7),
-                  onClose: o,
-                  enableArtBoxShadow: !1,
-                  analyticsSource: _,
-                  analyticsLocation: E,
-                  hideBackButton: !0,
-                  showEnhancedUpsell: !0,
-                  LeadingComponent: x
-                      ? (0, i.jsx)("div", {
-                            className: p.wC,
-                            children: (0, i.jsx)(r.A, {
-                                containerClassName: p.i1,
-                                user: t,
-                                canUsePremiumCustomization: !0,
-                                disabledInputs: !0,
-                                pendingAvatar: n === m.HL.AVATAR ? a : void 0,
-                                pendingBanner: n === m.HL.BANNER ? a : void 0,
-                                pendingThemeColors: [T, N],
-                                hideExampleButton: !0,
-                            }),
-                        })
-                      : void 0,
-                  ...f,
-              })
+function _(e) {
+    let { uploadType: t, onClose: n, onSecondaryClick: r, ...d } = e,
+        _ = t === u.HL.AVATAR || t === u.HL.BANNER,
+        f = (0, a.A)(t === u.HL.AVATAR ? l.e.ANIMATED_AVATAR_MODAL_UPSELL : l.e.ANIMATED_BANNER_MODAL_UPSELL);
+    return _
+        ? (0, i.jsx)(o.A, {
+              title: t === u.HL.AVATAR ? c.intl.string(c.t.X7tO60) : c.intl.string(c.t.zXPa2C),
+              subtitle: t === u.HL.AVATAR ? c.intl.string(c.t.ifCRdB) : c.intl.string(c.t.yQAnf4),
+              graphic: f,
+              onSecondaryClick: () => {
+                  r?.(), (0, s.x)(n);
+              },
+              secondaryCTA: c.intl.string(c.t.PcTCB7),
+              onClose: n,
+              ...d,
+          })
         : null;
 }

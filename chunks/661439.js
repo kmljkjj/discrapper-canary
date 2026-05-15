@@ -1,17 +1,16 @@
-"use strict";
-n.d(t, { X: () => u });
-var r = n(562465),
-    i = n(73153),
+n.d(t, { X: () => o });
+var i = n(636537),
+    s = n(228366),
     a = n(90165),
-    s = n(927813),
-    o = n(652215);
-let l = 6 * s.A.Millis.HOUR;
-async function u() {
+    r = n(927813),
+    l = n(652215);
+let c = 6 * r.A.Millis.HOUR;
+async function o() {
     let e = a.A.lastFetched;
-    if (!(null != e && Date.now() - e < l))
+    if (!(null != e && Date.now() - e < c))
         try {
-            let e = await r.Bo.get({ url: o.Rsh.USER_ACTIVITY_STATISTICS, oldFormErrors: !0, rejectWithError: !1 });
-            i.h.dispatch({ type: "USER_ACTIVITY_STATISTICS_FETCH_SUCCESS", statistics: e.body });
+            let e = await i.Bo.get({ url: l.Rsh.USER_ACTIVITY_STATISTICS, oldFormErrors: !0, rejectWithError: !1 });
+            s.h.dispatch({ type: "USER_ACTIVITY_STATISTICS_FETCH_SUCCESS", statistics: e.body });
         } catch (e) {
             return e;
         }

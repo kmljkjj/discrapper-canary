@@ -1,86 +1,92 @@
-"use strict";
-n.d(t, { A: () => g });
-var r = n(627968),
-    i = n(64700),
-    a = n(485845),
-    s = n(397927),
-    o = n(735991),
-    l = n(717048),
-    u = n(396533),
-    c = n(611371),
-    d = n(566615),
-    _ = n(985018),
-    f = n(358412),
-    p = n(206314),
-    h = n(291071);
-let m = 84;
-function g(e) {
-    let { application: t, onSelect: n } = e,
-        u = (0, d.i)(),
-        { iconURL: p } = i.useMemo(() => (0, o.X2)(t, { fakeAppIconURL: h, size: m }), [t]),
-        g = i.useMemo(
+l.r(t), l.d(t, { default: () => y });
+var n = l(627968),
+    s = l(64700),
+    i = l(485845),
+    r = l(283973),
+    a = l(664121),
+    c = l(939249),
+    u = l(834730),
+    o = l(320448),
+    d = l(534514),
+    h = l(900797),
+    f = l(827734),
+    m = l(847374),
+    x = l(735991),
+    g = l(717048),
+    p = l(396533),
+    b = l(611371),
+    v = l(566615),
+    j = l(985018),
+    N = l(442793),
+    A = l(992595),
+    _ = l(291071);
+function y(e) {
+    let { application: t, onSelect: l } = e,
+        d = (0, v.i)(),
+        { iconURL: h } = s.useMemo(() => (0, x.X2)(t, { fakeAppIconURL: _, size: 84 }), [t]),
+        f = s.useMemo(
             () =>
                 [
                     {
-                        type: a.b.USER_INSTALL,
-                        icon: s.Rvf,
-                        title: _.intl.string(_.t.aCg60P),
-                        subtitle: _.intl.string(_.t.YeiIUZ),
+                        type: i.b.USER_INSTALL,
+                        icon: r.R,
+                        title: j.intl.string(j.t.aCg60P),
+                        subtitle: j.intl.string(j.t.YeiIUZ),
                         beta: !1,
                     },
                     {
-                        type: a.b.GUILD_INSTALL,
-                        icon: s.RR9,
-                        title: _.intl.string(_.t.E64YCz),
-                        subtitle: _.intl.string(_.t.bbtoKm),
+                        type: i.b.GUILD_INSTALL,
+                        icon: a.R,
+                        title: j.intl.string(j.t.E64YCz),
+                        subtitle: j.intl.string(j.t.bbtoKm),
                         beta: !1,
                     },
                 ].filter((e) => t.integrationTypesConfig?.[e.type]?.oauth2InstallParams != null),
             [t.integrationTypesConfig],
         );
-    return (0, r.jsxs)("div", {
-        className: f.kL,
+    return (0, n.jsxs)("div", {
+        className: N.kL,
         children: [
-            (0, r.jsxs)("header", {
-                id: u,
-                className: f.wx,
+            (0, n.jsxs)("header", {
+                id: d,
+                className: N.wx,
                 children: [
-                    (0, r.jsx)(l.A, { src: p, className: f.Z2, rendersPlaceholder: !0 }),
-                    (0, r.jsx)(A, { application: t }),
-                    (0, r.jsx)(E, { application: t }),
+                    (0, n.jsx)(g.A, { src: h, className: N.Z2, rendersPlaceholder: !0 }),
+                    (0, n.jsx)(w, { application: t }),
+                    (0, n.jsx)(C, { application: t }),
                 ],
             }),
-            (0, r.jsx)("ul", {
-                className: f.Ge,
-                children: g.map((e) =>
-                    (0, r.jsxs)(
-                        s.DUT,
+            (0, n.jsx)("ul", {
+                className: N.Ge,
+                children: f.map((e) =>
+                    (0, n.jsxs)(
+                        c.D,
                         {
                             tag: "li",
-                            className: f.nM,
-                            onClick: () => n(e.type),
+                            className: N.nM,
+                            onClick: () => l(e.type),
                             children: [
-                                (0, r.jsx)(e.icon, { size: "md", color: "currentColor", className: f.hc }),
-                                (0, r.jsxs)("div", {
-                                    className: f.bL,
+                                (0, n.jsx)(e.icon, { size: "md", color: "currentColor", className: N.hc }),
+                                (0, n.jsxs)("div", {
+                                    className: N.bL,
                                     children: [
-                                        (0, r.jsxs)("div", {
-                                            className: f.pt,
+                                        (0, n.jsxs)("div", {
+                                            className: N.pt,
                                             children: [
-                                                (0, r.jsx)(s.Text, {
+                                                (0, n.jsx)(u.E, {
                                                     variant: "text-md/medium",
                                                     color: "interactive-text-active",
                                                     children: e.title,
                                                 }),
-                                                (0, r.jsx)(s.Text, {
+                                                (0, n.jsx)(u.E, {
                                                     variant: "text-xs/medium",
                                                     color: "text-muted",
                                                     children: e.subtitle,
                                                 }),
                                             ],
                                         }),
-                                        e.beta && (0, r.jsx)(c.A, {}),
-                                        (0, r.jsx)(s._BQ, { size: "md", color: "currentColor", className: f.gN }),
+                                        e.beta && (0, n.jsx)(b.A, {}),
+                                        (0, n.jsx)(o._, { size: "md", color: "currentColor", className: N.gN }),
                                     ],
                                 }),
                             ],
@@ -92,103 +98,105 @@ function g(e) {
         ],
     });
 }
-function E(e) {
+function C(e) {
     let { application: t } = e,
-        n = t.description;
-    return null == n || 0 === n.length
+        l = t.description;
+    return null == l || 0 === l.length
         ? null
-        : (0, r.jsx)("div", {
-              className: f.wt,
-              children: (0, r.jsx)("div", {
-                  className: f.bH,
-                  children: null != n && n.length > 0 ? (0, r.jsx)(T, { description: n }) : null,
+        : (0, n.jsx)("div", {
+              className: N.wt,
+              children: (0, n.jsx)("div", {
+                  className: N.bH,
+                  children: null != l && l.length > 0 ? (0, n.jsx)(L, { description: l }) : null,
               }),
           });
 }
-function A(e) {
+function w(e) {
     let { application: t } = e,
-        n = t.name,
-        i = (0, o.b7)(t);
-    return (0, r.jsxs)("div", {
-        className: f.gn,
+        l = t.name,
+        s = (0, x.b7)(t);
+    return (0, n.jsxs)("div", {
+        className: N.gn,
         children: [
-            (0, r.jsx)(s.Heading, { variant: "heading-xl/extrabold", lineClamp: 1, children: n }),
-            i
-                ? (0, r.jsx)("div", {
-                      className: f.s3,
-                      children: (0, r.jsx)(s.Text, {
+            (0, n.jsx)(d.D, { variant: "heading-xl/extrabold", lineClamp: 1, children: l }),
+            s
+                ? (0, n.jsx)("div", {
+                      className: N.s3,
+                      children: (0, n.jsx)(u.E, {
                           variant: "text-xs/medium",
                           color: "text-default",
-                          children: _.intl.string(_.t.LO4f0P),
+                          children: j.intl.string(j.t.LO4f0P),
                       }),
                   })
                 : null,
         ],
     });
 }
-let I = 3;
-function T(e) {
+function L(e) {
     let { description: t } = e,
-        [a, o] = i.useState(!0);
-    i.useLayoutEffect(() => o(!1), []);
-    let l = i.useMemo(() => {
-            let { parseBioReact: e } = n(713804);
+        [i, r] = s.useState(!0);
+    s.useLayoutEffect(() => r(!1), []);
+    let a = s.useMemo(() => {
+            let { parseBioReact: e } = l(713804);
             return e(t);
         }, [t]),
-        { ref: c, lineHeight: d, lineCount: h } = y(),
-        m = i.useMemo(() => {
-            if (null == d || null == h) return { key: 0 };
-            let e = d * h;
-            return { key: 1, minHeightOverride: Math.min(e, I * d), maxHeightOverride: e };
-        }, [h, d]),
-        { ref: g, isTransitioning: E, onTransitionEnd: A } = (0, u.A)({ isExpanded: a, ...m }),
-        T = a || E;
-    return (0, r.jsxs)("div", {
-        className: f.iQ,
+        {
+            ref: o,
+            lineHeight: d,
+            lineCount: x,
+        } = (function () {
+            let e = s.useRef(null),
+                [t, l] = s.useState(null),
+                [n, i] = s.useState(null);
+            return (
+                s.useLayoutEffect(() => {
+                    let t = e.current;
+                    if (null === t || 0 === t.clientHeight) return;
+                    let n = parseInt(getComputedStyle(t).lineHeight);
+                    isNaN(n) || (l(n), i(Math.floor(t.clientHeight / n)));
+                }, []),
+                { ref: e, lineHeight: t, lineCount: n }
+            );
+        })(),
+        g = s.useMemo(() => {
+            if (null == d || null == x) return { key: 0 };
+            let e = d * x;
+            return { key: 1, minHeightOverride: Math.min(e, 3 * d), maxHeightOverride: e };
+        }, [x, d]),
+        { ref: b, isTransitioning: v, onTransitionEnd: _ } = (0, p.A)({ isExpanded: i, ...g }),
+        y = i || v;
+    return (0, n.jsxs)("div", {
+        className: N.iQ,
         children: [
-            (0, r.jsx)("div", {
-                ref: g,
-                className: f.ZT,
-                onTransitionEnd: A,
-                children: (0, r.jsx)(s.Text, {
-                    ref: c,
-                    className: p.PT,
+            (0, n.jsx)("div", {
+                ref: b,
+                className: N.ZT,
+                onTransitionEnd: _,
+                children: (0, n.jsx)(u.E, {
+                    ref: o,
+                    className: A.PT,
                     variant: "text-sm/medium",
-                    lineClamp: T ? void 0 : I,
-                    style: { maxHeight: T ? void 0 : m.minHeightOverride },
-                    children: l,
+                    lineClamp: y ? void 0 : 3,
+                    style: { maxHeight: y ? void 0 : g.minHeightOverride },
+                    children: a,
                 }),
             }),
-            null != h && h > I
-                ? (0, r.jsxs)(s.DUT, {
-                      className: f.lP,
-                      onClick: () => o((e) => !e),
+            null != x && x > 3
+                ? (0, n.jsxs)(c.D, {
+                      className: N.lP,
+                      onClick: () => r((e) => !e),
                       children: [
-                          (0, r.jsx)(s.Text, {
+                          (0, n.jsx)(u.E, {
                               variant: "text-sm/semibold",
                               color: "text-brand",
-                              children: T ? _.intl.string(_.t.u4YJ8g) : _.intl.string(_.t["N/tajD"]),
+                              children: y ? j.intl.string(j.t.u4YJ8g) : j.intl.string(j.t["N/tajD"]),
                           }),
-                          T
-                              ? (0, r.jsx)(s.tN5, { size: "sm", color: s.LU0.colors.TEXT_BRAND })
-                              : (0, r.jsx)(s.abt, { size: "sm", color: s.LU0.colors.TEXT_BRAND }),
+                          y
+                              ? (0, n.jsx)(h.t, { size: "sm", color: f.A.colors.TEXT_BRAND })
+                              : (0, n.jsx)(m.a, { size: "sm", color: f.A.colors.TEXT_BRAND }),
                       ],
                   })
                 : null,
         ],
     });
-}
-function y() {
-    let e = i.useRef(null),
-        [t, n] = i.useState(null),
-        [r, a] = i.useState(null);
-    return (
-        i.useLayoutEffect(() => {
-            let t = e.current;
-            if (null === t || 0 === t.clientHeight) return;
-            let r = parseInt(getComputedStyle(t).lineHeight);
-            isNaN(r) || (n(r), a(Math.floor(t.clientHeight / r)));
-        }, []),
-        { ref: e, lineHeight: t, lineCount: r }
-    );
 }

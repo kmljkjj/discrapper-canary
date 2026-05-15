@@ -1,41 +1,35 @@
 "use strict";
-n.d(t, { Gy: () => r, k9: () => i, nQ: () => a, rb: () => s });
-var r = (function (e) {
-        return (
-            (e.MANUAL = "manual"),
-            (e.DISTRIBUTED = "distributed"),
-            (e.PHRASE = "phrase"),
-            (e.YELLING = "yelling"),
-            (e.GAME_EVENT = "game_event"),
-            (e.SPEAKING = "speaking"),
-            (e.SOUNDBOARD = "soundboard"),
-            e
-        );
-    })({}),
-    i = (function (e) {
-        return (
-            (e.UNKNOWN = "unknown"),
-            (e.BELOW_MINIMUM = "below_minimum"),
-            (e.MEETS_MINIMUM = "meets_minimum"),
-            (e.MEETS_AUTO_ENABLE = "meets_auto_enable"),
-            e
-        );
-    })({}),
-    a = (function (e) {
-        return (e.CLIP = "clip"), (e.SCREENSHOT = "screenshot"), (e.VOICE_CLIP = "voice_clip"), e;
-    })({}),
-    s = (function (e) {
-        return (
-            (e.KILL = "kill"),
-            (e.MULTIKILL = "multikill"),
-            (e.DEATH = "death"),
-            (e.ASSIST = "assist"),
-            (e.ITEM = "item"),
-            (e.VICTORY = "victory"),
-            (e.DEFEAT = "defeat"),
-            (e.LEVEL_UP = "level_up"),
-            (e.TREASURE = "treasure"),
-            (e.OBJECTIVE_KILL = "objective_kill"),
-            e
-        );
-    })({});
+n.d(t, { Gy: () => o, k9: () => l, nQ: () => u, rb: () => c });
+var i,
+    r,
+    s,
+    a,
+    o =
+        (((i = {}).MANUAL = "manual"),
+        (i.DISTRIBUTED = "distributed"),
+        (i.PHRASE = "phrase"),
+        (i.YELLING = "yelling"),
+        (i.LAUGHTER = "laughter"),
+        (i.GAME_EVENT = "game_event"),
+        (i.SPEAKING = "speaking"),
+        (i.SOUNDBOARD = "soundboard"),
+        i),
+    l =
+        (((r = {}).UNKNOWN = "unknown"),
+        (r.BELOW_MINIMUM = "below_minimum"),
+        (r.MEETS_MINIMUM = "meets_minimum"),
+        (r.MEETS_AUTO_ENABLE = "meets_auto_enable"),
+        r),
+    u = (((s = {}).CLIP = "clip"), (s.SCREENSHOT = "screenshot"), (s.VOICE_CLIP = "voice_clip"), s),
+    c =
+        (((a = {}).KILL = "kill"),
+        (a.MULTIKILL = "multikill"),
+        (a.DEATH = "death"),
+        (a.ASSIST = "assist"),
+        (a.ITEM = "item"),
+        (a.VICTORY = "victory"),
+        (a.DEFEAT = "defeat"),
+        (a.LEVEL_UP = "level_up"),
+        (a.TREASURE = "treasure"),
+        (a.OBJECTIVE_KILL = "objective_kill"),
+        a);

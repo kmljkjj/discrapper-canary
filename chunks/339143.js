@@ -1,9 +1,9 @@
 "use strict";
-n.d(t, { O: () => i, W: () => a });
-let r = !1;
+n.d(t, { O: () => i, W: () => s });
+let l = !1;
 function i(e) {
-    r = e;
+    l = e;
 }
-function a() {
-    return r;
+function s() {
+    return l;
 }

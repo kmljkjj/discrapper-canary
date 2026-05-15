@@ -1,9 +1,9 @@
-r.d(t, { A: () => l });
-var n = r(827343),
-    a = r(579872),
-    c = r(985018);
-function l(e, t) {
+n.d(t, { A: () => u });
+var r = n(827343),
+    a = n(579872),
+    l = n(985018);
+function u(e, t) {
     e
-        ? a.A.show({ title: c.intl.string(c.t.QZ7WSS), body: c.intl.string(c.t.Tl9JpL) })
-        : n.A.toggleSelfDeaf({ location: t });
+        ? a.A.show({ title: l.intl.string(l.t.QZ7WSS), body: l.intl.string(l.t.Tl9JpL) })
+        : r.A.toggleSelfDeaf({ location: t });
 }

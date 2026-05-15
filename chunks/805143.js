@@ -1,24 +1,24 @@
 "use strict";
 n.d(t, { Y: () => d }), n(667532);
-var r = n(64700),
-    i = n(417597),
-    a = n(576705),
-    s = n(711014),
-    o = n(287809),
-    l = n(927578),
-    u = n(652215),
-    c = n(818348);
+var l = n(64700),
+    i = n(702841),
+    s = n(576705),
+    a = n(711014),
+    r = n(287809),
+    o = n(927578),
+    c = n(652215),
+    u = n(818348);
 function d(e, t) {
-    let n = (0, i.bG)([o.default], () => o.default.getCurrentUser()),
-        d = e?.guild_id ?? u.dJq,
-        _ = (0, i.bG)([s.Ay], () => s.Ay.getFlattenedGuildIds()),
-        f = (0, i.bG)([a.A], () => null == e || null == e.guild_id || a.A.can(c.xB.USE_EXTERNAL_SOUNDS, e));
-    return r.useMemo(() => {
-        if ((l.Ay.canUseSoundboardEverywhere(n) || !t) && f) {
+    let n = (0, i.bG)([r.default], () => r.default.getCurrentUser()),
+        d = e?.guild_id ?? c.dJq,
+        h = (0, i.bG)([a.Ay], () => a.Ay.getFlattenedGuildIds()),
+        m = (0, i.bG)([s.A], () => null == e || null == e.guild_id || s.A.can(u.xB.USE_EXTERNAL_SOUNDS, e));
+    return l.useMemo(() => {
+        if ((o.Ay.canUseSoundboardEverywhere(n) || !t) && m) {
             let e = "" !== d,
-                t = e ? _.filter((e) => e !== d) : _;
+                t = e ? h.filter((e) => e !== d) : h;
             return e && t.unshift(d), t;
         }
         return [d];
-    }, [n, t, d, _, f]);
+    }, [n, t, d, h, m]);
 }

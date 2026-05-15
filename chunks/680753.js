@@ -1,16 +1,16 @@
 "use strict";
 n.d(t, { qO: () => s });
-var r = n(83220),
-    i = n(231577);
+var i = n(83220),
+    r = n(231577);
 function s(e, t = {}) {
     if (
         (t.user &&
             (!e.ipAddress && t.user.ip_address && (e.ipAddress = t.user.ip_address),
             e.did || t.did || (e.did = t.user.id || t.user.email || t.user.username)),
-        (e.timestamp = t.timestamp || (0, r.zf)()),
+        (e.timestamp = t.timestamp || (0, i.zf)()),
         t.abnormal_mechanism && (e.abnormal_mechanism = t.abnormal_mechanism),
         t.ignoreDuration && (e.ignoreDuration = t.ignoreDuration),
-        t.sid && (e.sid = 32 === t.sid.length ? t.sid : (0, i.eJ)()),
+        t.sid && (e.sid = 32 === t.sid.length ? t.sid : (0, r.eJ)()),
         void 0 !== t.init && (e.init = t.init),
         !e.did && t.did && (e.did = `${t.did}`),
         "number" == typeof t.started && (e.started = t.started),

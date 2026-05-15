@@ -3,9 +3,9 @@ var n = t(627968);
 t(64700);
 var a = t(503698),
     l = t.n(a),
-    i = t(397927),
-    r = t(449859),
-    o = t(256883);
+    i = t(349288),
+    r = t(606049),
+    o = t(632194);
 function c(e) {
     let {
         icon: s,
@@ -18,11 +18,11 @@ function c(e) {
         iconClassName: d,
         iconContainerClassName: h,
         timestampClassName: g,
-        compact: A = !1,
-        additionalContent: x,
+        compact: x = !1,
+        additionalContent: N,
     } = e;
     return (0, n.jsxs)("div", {
-        className: l()(c, { [o.kL]: !0, [o.oE]: A, [o.E]: !A }),
+        className: l()(c, { [o.kL]: !0, [o.oE]: x, [o.E]: !x }),
         children: [
             null != t && (0, n.jsx)("div", { className: l()(o.zc, h), children: t }),
             null != s &&
@@ -40,7 +40,7 @@ function c(e) {
                     (0, n.jsxs)("div", {
                         children: [m, null != a && (0, n.jsx)(r.A, { timestamp: a, timestampFormat: i, className: g })],
                     }),
-                    x,
+                    N,
                 ],
             }),
         ],
@@ -50,7 +50,7 @@ c.Action = (e) => {
     let { onClick: s, children: t } = e;
     return (0, n.jsxs)("span", {
         className: o.XI,
-        children: ["—", (0, n.jsx)(i.MzZ, { onClick: s, className: o.si, children: t })],
+        children: ["\u2014", (0, n.jsx)(i.Anchor, { onClick: s, className: o.si, children: t })],
     });
 };
 let m = c;

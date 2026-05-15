@@ -1,17 +1,17 @@
-a.d(t, { A: () => c });
-var n = a(627968),
-    i = a(64700),
-    s = a(503698),
-    l = a.n(s),
-    r = a(397927),
-    o = a(330640);
+l.d(t, { A: () => c });
+var s = l(627968),
+    i = l(64700),
+    a = l(503698),
+    n = l.n(a),
+    r = l(890856),
+    o = l(503469);
 let c = i.memo(function (e) {
-    let { onClick: t, onContextMenu: a, className: i, disabled: s, children: c, "aria-label": d, ref: u } = e;
-    return (0, n.jsx)(r.sqX, {
+    let { onClick: t, onContextMenu: l, className: i, disabled: a, children: c, "aria-label": d, ref: u } = e;
+    return (0, s.jsx)(r.s, {
         ref: u,
-        className: l()(o.Nr, i, { [o.vk]: null != t, [o.r9]: s }),
-        onContextMenu: a,
-        onClick: s ? void 0 : t,
+        className: n()(o.Nr, i, { [o.vk]: null != t, [o.r9]: a }),
+        onContextMenu: l,
+        onClick: a ? void 0 : t,
         "aria-label": d,
         children: c,
     });

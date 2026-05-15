@@ -1,7 +1,7 @@
 "use strict";
-n.d(t, { A: () => v });
-var r = n(311907),
-    i = n(73153),
+n.d(t, { A: () => h });
+var i = n(17928),
+    r = n(228366),
     s = n(956518),
     a = n(165610),
     o = n(5867);
@@ -10,57 +10,7 @@ let l = null,
     c = new Map(),
     d = new Map(),
     _ = new Map();
-function f(e) {
-    let { applicationId: t } = e;
-    u.set(t, !0);
-}
-function p(e) {
-    let { applicationId: t, proxyTicket: n } = e,
-        r = (0, s.Ay)(t);
-    null == r
-        ? u.delete(t)
-        : (u.delete(t),
-          (l = {
-              applicationId: t,
-              url: r,
-              connectedSince: Date.now(),
-              layoutMode: a.y.FOCUSED,
-              activityPanelMode: o.Gd.PANEL,
-              proxyTicket: n,
-          }));
-}
-function h(e) {
-    let { applicationId: t } = e;
-    u.delete(t);
-}
-function m(e) {
-    let { applicationId: t } = e;
-    l?.applicationId === t && (l = null);
-}
-function E(e) {
-    let { applicationId: t, layoutMode: n } = e;
-    l?.applicationId === t && (l = { ...l, layoutMode: n });
-}
-function g(e) {
-    let { activityPanelMode: t } = e;
-    null != l && (l = { ...l, activityPanelMode: t });
-}
-function A(e) {
-    return null != l && l.layoutMode !== a.y.PIP && ((l = { ...l, layoutMode: a.y.PIP }), !0);
-}
-function I(e) {
-    let { applicationId: t, lockState: n, pictureInPictureLockState: r } = e;
-    null == n ? d.delete(t) : d.set(t, n), null === r ? _.delete(t) : void 0 !== r && _.set(t, r);
-}
-function T(e) {
-    let { applicationId: t, refreshing: n } = e;
-    n ? c.set(t, !0) : c.delete(t);
-}
-function S(e) {
-    let { applicationId: t, proxyTicket: n } = e;
-    l?.applicationId === t && (l = { ...l, proxyTicket: n });
-}
-class y extends r.Ay.Store {
+class f extends i.Ay.Store {
     static displayName = "FramesStore";
     getConnectedFrame() {
         return l;
@@ -87,15 +37,55 @@ class y extends r.Ay.Store {
         return _.get(e) ?? this.getOrientationLockStateForApp(e);
     }
 }
-let v = new y(i.h, {
-    FRAME_LAUNCH_START: f,
-    FRAME_LAUNCH: p,
-    FRAME_LAUNCH_FAIL: h,
-    FRAME_STOP: m,
-    FRAME_UPDATE_LAYOUT_MODE: E,
-    FRAME_SET_PANEL_MODE: g,
-    FRAME_SET_ORIENTATION_LOCK_STATE: I,
-    FRAME_SET_PROXY_TICKET_REFRESHING: T,
-    FRAME_UPDATE_PROXY_TICKET: S,
-    CHANNEL_SELECT: A,
+let h = new f(r.h, {
+    FRAME_LAUNCH_START: function (e) {
+        let { applicationId: t } = e;
+        u.set(t, !0);
+    },
+    FRAME_LAUNCH: function (e) {
+        let { applicationId: t, proxyTicket: n } = e,
+            i = (0, s.Ay)(t);
+        null == i
+            ? u.delete(t)
+            : (u.delete(t),
+              (l = {
+                  applicationId: t,
+                  url: i,
+                  connectedSince: Date.now(),
+                  layoutMode: a.y.FOCUSED,
+                  activityPanelMode: o.Gd.PANEL,
+                  proxyTicket: n,
+              }));
+    },
+    FRAME_LAUNCH_FAIL: function (e) {
+        let { applicationId: t } = e;
+        u.delete(t);
+    },
+    FRAME_STOP: function (e) {
+        let { applicationId: t } = e;
+        l?.applicationId === t && (l = null);
+    },
+    FRAME_UPDATE_LAYOUT_MODE: function (e) {
+        let { applicationId: t, layoutMode: n } = e;
+        l?.applicationId === t && (l = { ...l, layoutMode: n });
+    },
+    FRAME_SET_PANEL_MODE: function (e) {
+        let { activityPanelMode: t } = e;
+        null != l && (l = { ...l, activityPanelMode: t });
+    },
+    FRAME_SET_ORIENTATION_LOCK_STATE: function (e) {
+        let { applicationId: t, lockState: n, pictureInPictureLockState: i } = e;
+        null == n ? d.delete(t) : d.set(t, n), null === i ? _.delete(t) : void 0 !== i && _.set(t, i);
+    },
+    FRAME_SET_PROXY_TICKET_REFRESHING: function (e) {
+        let { applicationId: t, refreshing: n } = e;
+        n ? c.set(t, !0) : c.delete(t);
+    },
+    FRAME_UPDATE_PROXY_TICKET: function (e) {
+        let { applicationId: t, proxyTicket: n } = e;
+        l?.applicationId === t && (l = { ...l, proxyTicket: n });
+    },
+    CHANNEL_SELECT: function (e) {
+        return null != l && l.layoutMode !== a.y.PIP && ((l = { ...l, layoutMode: a.y.PIP }), !0);
+    },
 });

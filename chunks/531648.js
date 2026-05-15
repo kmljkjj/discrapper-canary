@@ -1,34 +1,36 @@
 "use strict";
-n.d(t, { A: () => d, Q: () => c });
-var r = n(627968);
+n.d(t, { A: () => f, Q: () => _ });
+var i = n(627968);
 n(64700);
-var i = n(3026),
-    a = n(397927),
-    s = n(939496),
-    o = n(996988),
-    l = n(380297);
-function u(e) {
-    let { text: t, onClick: n, component: u, ...c } = e,
-        { themeType: d } = (0, s.E)(),
+var r = n(780645),
+    s = n(939249),
+    a = n(534514),
+    o = n(834730),
+    l = n(939496),
+    u = n(996988),
+    c = n(514566);
+function d(e) {
+    let { text: t, onClick: n, component: a, ...o } = e,
+        { themeType: d } = (0, l.E)(),
         _ = "string" == typeof t ? t.trim() : t;
     if (null == _ || "" === _) return null;
     let f = () =>
-        d === o.d.MODAL || d === o.d.MODAL_V2
-            ? (0, r.jsx)(u, { color: "text-default", ...c, children: _ })
-            : (0, r.jsx)(u, { color: "text-default", ...c, children: (0, r.jsx)(i.A, { children: _ }) });
+        d === u.d.MODAL || d === u.d.MODAL_V2
+            ? (0, i.jsx)(a, { color: "text-default", ...o, children: _ })
+            : (0, i.jsx)(a, { color: "text-default", ...o, children: (0, i.jsx)(r.A, { children: _ }) });
     return null != n
-        ? (0, r.jsx)(a.DUT, {
+        ? (0, i.jsx)(s.D, {
               onClick: (e) => {
                   e.stopPropagation(), n(e);
               },
-              className: l.sd,
+              className: c.sd,
               children: f(),
           })
         : f();
 }
-function c(e) {
-    return (0, r.jsx)(u, { component: a.Heading, ...e });
+function _(e) {
+    return (0, i.jsx)(d, { component: a.D, ...e });
 }
-function d(e) {
-    return (0, r.jsx)(u, { component: a.Text, ...e });
+function f(e) {
+    return (0, i.jsx)(d, { component: o.E, ...e });
 }

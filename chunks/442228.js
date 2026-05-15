@@ -1,57 +1,60 @@
 "use strict";
-n.d(t, { A: () => h });
-var r = n(627968),
-    i = n(64700),
-    a = n(503698),
-    s = n.n(a),
-    o = n(397927),
-    l = n(688810),
-    u = n(183555),
-    c = n(657331),
-    d = n(389996),
-    _ = n(985018),
-    f = n(200894);
-let p = 57.75,
-    h = i.memo(function (e) {
-        let { user: t, onClose: n, bio: a, hidePersonalInformation: h, viewFullBioDisabled: m = !1 } = e,
-            { context: g } = (0, u.NJ)(),
-            { analyticsLocations: E } = (0, l.Ay)(),
-            [A, I] = i.useState(!1),
-            [T, y] = i.useState(!1),
-            S = i.useRef(null),
-            v = (e) => {
-                (S.current = e),
-                    null == e ||
-                        (I(!T && e.scrollHeight - e.clientHeight > 1), e.getBoundingClientRect().height > p && y(!0));
-            },
-            C = () => {
-                n?.(), (0, c.openUserProfileModal)({ ...g, userId: t.id, sourceAnalyticsLocations: E });
-            },
-            b = (e) => {
-                null == S.current || S.current.contains(e.relatedTarget) || (S.current.scrollTop = 0);
-            };
-        return h || null == a || "" === a
-            ? null
-            : (0, r.jsxs)("div", {
-                  children: [
-                      (0, r.jsx)("div", {
-                          ref: v,
-                          className: s()(f.mA, T && f.Em),
-                          onBlur: b,
-                          children: (0, r.jsx)(d.A, { userBio: a, setLineClamp: !1, textColor: "text-strong" }),
-                      }),
-                      (A || T) &&
-                          (0, r.jsx)("div", {
-                              className: f.HV,
-                              children: (0, r.jsx)(o.QWc, {
-                                  textVariant: "text-xs/normal",
-                                  size: "sm",
-                                  variant: "secondary",
-                                  text: _.intl.string(_.t.YDiPq8),
-                                  onClick: C,
-                                  disabled: m,
-                              }),
+n.d(t, { A: () => E });
+var i = n(627968),
+    r = n(64700),
+    s = n(503698),
+    a = n.n(s),
+    o = n(140735),
+    l = n(707554),
+    u = n(123292),
+    c = n(688810),
+    d = n(183555),
+    _ = n(975732),
+    f = n(308244),
+    h = n(375708),
+    p = n(851929);
+let E = r.memo(function (e) {
+    let { user: t, onClose: n, bio: s, hidePersonalInformation: E, viewFullBioDisabled: m = !1 } = e,
+        { context: g } = (0, d.NJ)(),
+        { analyticsLocations: A } = (0, c.Ay)(),
+        I = r.useId(),
+        [T, S] = r.useState(!1),
+        [N, y] = r.useState(!1),
+        C = r.useRef(null);
+    return E || null == s || "" === s
+        ? null
+        : (0, i.jsxs)("section", {
+              "aria-labelledby": I,
+              children: [
+                  (0, i.jsx)(o.A, { children: (0, i.jsx)(l.H, { id: I, children: h.intl.string(h.t.ZzAR2Y) }) }),
+                  (0, i.jsx)("div", {
+                      ref: (e) => {
+                          (C.current = e),
+                              null == e ||
+                                  (S(!N && e.scrollHeight - e.clientHeight > 1),
+                                  e.getBoundingClientRect().height > 57.75 && y(!0));
+                      },
+                      className: a()(p.mA, N && p.Em),
+                      onBlur: (e) => {
+                          null == C.current || C.current.contains(e.relatedTarget) || (C.current.scrollTop = 0);
+                      },
+                      children: (0, i.jsx)(f.A, { userBio: s, setLineClamp: !1, textColor: "text-strong" }),
+                  }),
+                  (T || N) &&
+                      (0, i.jsx)("div", {
+                          className: p.HV,
+                          children: (0, i.jsx)(u.Q, {
+                              textVariant: "text-xs/normal",
+                              size: "sm",
+                              variant: "secondary",
+                              text: h.intl.string(h.t.YDiPq8),
+                              onClick: () => {
+                                  n?.(),
+                                      (0, _.openUserProfileModal)({ ...g, userId: t.id, sourceAnalyticsLocations: A });
+                              },
+                              disabled: m,
                           }),
-                  ],
-              });
-    });
+                      }),
+              ],
+          });
+});

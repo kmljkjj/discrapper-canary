@@ -1,10 +1,10 @@
 e.exports = function (e) {
     let t = e.regex,
-        n = {
+        a = {
             className: "variable",
             variants: [{ begin: /\$\d+/ }, { begin: /\$\{\w+\}/ }, { begin: t.concat(/[$@]/, e.UNDERSCORE_IDENT_RE) }],
         },
-        r = {
+        n = {
             endsWithParent: !0,
             keywords: {
                 $pattern: /[a-z_]{2,}|\/dev\/poll/,
@@ -41,16 +41,16 @@ e.exports = function (e) {
                 e.HASH_COMMENT_MODE,
                 {
                     className: "string",
-                    contains: [e.BACKSLASH_ESCAPE, n],
+                    contains: [e.BACKSLASH_ESCAPE, a],
                     variants: [
                         { begin: /"/, end: /"/ },
                         { begin: /'/, end: /'/ },
                     ],
                 },
-                { begin: "([a-z]+):/", end: "\\s", endsWithParent: !0, excludeEnd: !0, contains: [n] },
+                { begin: "([a-z]+):/", end: "\\s", endsWithParent: !0, excludeEnd: !0, contains: [a] },
                 {
                     className: "regexp",
-                    contains: [e.BACKSLASH_ESCAPE, n],
+                    contains: [e.BACKSLASH_ESCAPE, a],
                     variants: [
                         { begin: "\\s\\^", end: "\\s|\\{|;", returnEnd: !0 },
                         { begin: "~\\*?\\s+", end: "\\s|\\{|;", returnEnd: !0 },
@@ -60,7 +60,7 @@ e.exports = function (e) {
                 },
                 { className: "number", begin: "\\b\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}(:\\d{1,5})?\\b" },
                 { className: "number", begin: "\\b\\d+[kKmMgGdshdwy]?\\b", relevance: 0 },
-                n,
+                a,
             ],
         };
     return {
@@ -71,14 +71,14 @@ e.exports = function (e) {
             {
                 beginKeywords: "upstream location",
                 end: /;|\{/,
-                contains: r.contains,
+                contains: n.contains,
                 keywords: { section: "upstream location" },
             },
             { className: "section", begin: t.concat(e.UNDERSCORE_IDENT_RE + t.lookahead(/\s+\{/)), relevance: 0 },
             {
                 begin: t.lookahead(e.UNDERSCORE_IDENT_RE + "\\s"),
                 end: ";|\\{",
-                contains: [{ className: "attribute", begin: e.UNDERSCORE_IDENT_RE, starts: r }],
+                contains: [{ className: "attribute", begin: e.UNDERSCORE_IDENT_RE, starts: n }],
                 relevance: 0,
             },
         ],

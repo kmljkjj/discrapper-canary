@@ -1,64 +1,52 @@
-"use strict";
-n.d(t, { Ln: () => _, Z0: () => g, kt: () => p }), n(839272);
-var i = n(64700),
-    s = n(311907),
-    l = n(394577),
-    r = n(21119),
-    a = n(696451),
-    o = n(576705),
-    c = n(287809),
-    d = n(607567),
-    u = n(403362),
-    h = n(605431),
-    A = n(366251),
-    m = n(652215);
-function p(e) {
+i.d(t, { Ln: () => I, Z0: () => p, kt: () => A }), i(321073);
+var n = i(64700),
+    l = i(17928),
+    s = i(427358),
+    a = i(95701),
+    r = i(696451),
+    d = i(576705),
+    o = i(287809),
+    u = i(607567),
+    c = i(488926),
+    m = i(605431),
+    h = i(366251),
+    g = i(652215);
+function A(e) {
     let { channel: t } = e,
-        n = t?.guild_id,
-        { totalSuggestions: o } = l.A.useExperiment(
-            { guildId: n, location: "useVoiceInviteSuggestions" },
-            { autoTrackExposure: !1 },
-        ),
-        h = (0, s.bG)([r.A], () => r.A.getUserAffinitiesMap(), []),
-        A = new Set(
-            (0, s.bG)([d.Ay], () => (null == t ? [] : d.Ay.getVoiceStatesForChannel(t).map((e) => e.user.id)), [t]),
-        ),
-        m = (0, s.yK)(
-            [a.Ay, c.default],
-            () =>
-                a.Ay.getMembers(n)
-                    .map((e) => c.default.getUser(e.userId))
-                    .filter(u.Vq)
-                    .filter((e) => !A.has(e.id)),
-            [n, A],
-        );
-    return i
-        .useMemo(
-            () =>
-                m.toSorted((e, t) => {
-                    let { id: n } = e,
-                        { id: i } = t;
-                    return (h.get(i)?.vcProbability ?? 0) - (h.get(n)?.vcProbability ?? 0);
-                }),
-            [m, h],
-        )
-        .slice(0, o);
+        i = t?.guild_id;
+    return (0, l.yK)([s.A, u.Ay, r.Ay, o.default], () => {
+        if (null == t) return [];
+        let e = s.A.getUserAffinitiesMap(),
+            n = null != t ? u.Ay.getVoiceStatesForChannel(t) : [],
+            l = new Set();
+        n.forEach((e) => l.add(e.user.id));
+        let d = [];
+        for (let e of r.Ay.getMembers(i)) {
+            if (l.has(e.userId)) continue;
+            let i = o.default.getUser(e.userId);
+            if (null == i) continue;
+            let n = (0, a.TA)(t.type);
+            (0, c.$3)({ permission: n, user: i, context: t }) && d.push(i);
+        }
+        let m = (t) => e.get(t)?.vcProbability ?? 0;
+        return d.sort((e, t) => m(t.id) - m(e.id)).slice(0, 5);
+    }, [t, i]);
 }
-function g(e) {
+function p(e) {
     let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
-        { collapsed: n = !1 } = t,
-        l = (0, s.bG)([A.A], () => A.A.getShouldShowPopover(e.id), [e.id]);
+        { collapsed: i = !1 } = t,
+        s = (0, l.bG)([h.A], () => h.A.getShouldShowPopover(e.id), [e.id]);
     return {
-        shouldShow: l && !n,
-        dismiss: i.useCallback(() => {
-            (0, h.w)(e.id);
+        shouldShow: s && !i,
+        dismiss: n.useCallback(() => {
+            (0, m.w)(e.id);
         }, [e]),
     };
 }
-function _(e) {
+function I(e) {
     let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
-        { collapsed: n = !1 } = t,
-        i = A.A.getShouldShowPopover(e.id),
-        s = o.A.can(m.xBc.CREATE_INSTANT_INVITE, e);
-    return i && s && !n;
+        { collapsed: i = !1 } = t,
+        n = h.A.getShouldShowPopover(e.id),
+        l = d.A.can(g.xBc.CREATE_INSTANT_INVITE, e);
+    return n && l && !i;
 }

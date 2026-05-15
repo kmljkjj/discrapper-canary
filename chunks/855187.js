@@ -1,37 +1,59 @@
 "use strict";
-n.d(t, { A: () => c });
-var r = n(627968);
+n.d(t, { A: () => h });
+var i = n(627968);
 n(64700);
-var i = n(311907),
-    s = n(397927),
-    a = n(952572),
-    o = n(961350),
-    l = n(430452),
-    u = n(985018);
-function c(e, t) {
-    let c = (0, s.k34)(),
-        { videoEnabled: d, hasVideoDevice: _ } = (0, i.cf)([l.Ay], () => ({
-            videoEnabled: l.Ay.isVideoEnabled(),
-            hasVideoDevice: l.Ay.isVideoAvailable(),
+var r = n(17928),
+    s = n(373495),
+    a = n(192308),
+    o = n(477782),
+    l = n(635739),
+    u = n(39623),
+    c = n(952572),
+    d = n(495544),
+    _ = n(235058),
+    f = n(375708);
+function h(e, t) {
+    let h = (0, s.k)(),
+        { videoEnabled: p, hasVideoDevice: E } = (0, r.cf)([_.Ay], () => ({
+            videoEnabled: _.Ay.isVideoEnabled(),
+            hasVideoDevice: _.Ay.isVideoAvailable(),
         })),
-        f = (0, i.bG)([o.default], () => o.default.getId() === e),
-        p = (0, a.A)();
-    function h() {
-        (0, s.mMO)(
-            async () => {
-                let { default: e } = await Promise.all([n.e("95782"), n.e("5697")]).then(n.bind(n, 308229));
-                return (t) => (0, r.jsx)(e, { ...t, videoEnabled: d });
-            },
-            { modalKey: "camera-preview", contextKey: null != t ? (0, s.TId)(t) : c },
-        );
-    }
-    return (!d || p) && f && _
-        ? (0, r.jsx)(s.Drp, {
+        m = (0, r.bG)([d.default], () => d.default.getId() === e),
+        g = (0, c.A)();
+    return (!p || g) && m && E
+        ? (0, i.jsx)(o.Dr, {
               id: "change-video-background",
-              label: d ? u.intl.string(u.t.mZKxHb) : u.intl.string(u.t["vkV93/"]),
-              action: h,
-              icon: d ? s.fBX : s.bMW,
-              leadingAccessory: { type: "icon", icon: d ? s.fBX : s.bMW },
+              label: p ? f.intl.string(f.t.mZKxHb) : f.intl.string(f.t["vkV93/"]),
+              action: function () {
+                  (0, a.openModalLazy)(
+                      async () => {
+                          let { default: e } = await Promise.all([
+                              n.e("96527"),
+                              n.e("95840"),
+                              n.e("49909"),
+                              n.e("66759"),
+                              n.e("28367"),
+                              n.e("18441"),
+                              n.e("21690"),
+                              n.e("31644"),
+                              n.e("9915"),
+                              n.e("20287"),
+                              n.e("58337"),
+                              n.e("20683"),
+                              n.e("80436"),
+                              n.e("6809"),
+                              n.e("97162"),
+                              n.e("95782"),
+                              n.e("39176"),
+                              n.e("10534"),
+                          ]).then(n.bind(n, 308229));
+                          return (t) => (0, i.jsx)(e, { ...t, videoEnabled: p });
+                      },
+                      { modalKey: "camera-preview", contextKey: null != t ? (0, a.modalContextFromAppContext)(t) : h },
+                  );
+              },
+              icon: p ? l.f : u.b,
+              leadingAccessory: { type: "icon", icon: p ? l.f : u.b },
           })
         : null;
 }

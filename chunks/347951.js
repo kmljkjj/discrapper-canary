@@ -1,20 +1,21 @@
-n.d(t, { Fi: () => s, Ig: () => E, Wr: () => o });
-var l = n(311907),
+"use strict";
+n.d(t, { Fi: () => o, Ig: () => u, Wr: () => l });
+var i = n(17928),
     r = n(610136),
-    a = n(576705),
-    i = n(652215);
-function s(e) {
-    return (0, l.bG)([a.A], () => null != e && a.A.can(i.xBc.MANAGE_GUILD, e), [e]);
-}
+    s = n(576705),
+    a = n(652215);
 function o(e) {
-    let t = (0, l.bG)([r.A], () => (null != e ? r.A.getGuildIncident(e.id) : null));
+    return (0, i.bG)([s.A], () => null != e && s.A.can(a.xBc.MANAGE_GUILD, e), [e]);
+}
+function l(e) {
+    let t = (0, i.bG)([r.A], () => (null != e ? r.A.getGuildIncident(e.id) : null));
     return (
-        e?.features.has(i.GuildFeatures.INVITES_DISABLED) ||
+        e?.features.has(a.GuildFeatures.INVITES_DISABLED) ||
         (t?.invitesDisabledUntil != null && new Date(t.invitesDisabledUntil) > new Date())
     );
 }
-function E(e) {
-    let t = s(e),
-        n = o(e);
+function u(e) {
+    let t = o(e),
+        n = l(e);
     return t && n;
 }

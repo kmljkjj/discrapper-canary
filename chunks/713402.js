@@ -1,16 +1,16 @@
 "use strict";
 n.d(t, { J: () => o });
-var r = n(391470),
-    i = n.n(r);
-function a(e, t, n, r) {
+var i = n(391470),
+    r = n.n(i);
+function s(e, t, n, i) {
     if (null != t) {
-        let n = i()(e, t, r);
+        let n = r()(e, t, i);
         for (; e[n] !== t && n < e.length - 1; ) n += 1;
         e.splice(n, 1);
     }
-    null != n && e.splice(i()(e, n, r), 0, n);
+    null != n && e.splice(r()(e, n, i), 0, n);
 }
-let s = [];
+let a = [];
 class o {
     indexBy;
     sortBy;
@@ -42,7 +42,7 @@ class o {
     }
     values(e) {
         let t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
-        return null == e ? this.valueArray : (this.indexes(t)[e] ?? s);
+        return null == e ? this.valueArray : (this.indexes(t)[e] ?? a);
     }
     size(e) {
         return null == e ? this.valueArray.length : (this.valueIndexes[e]?.length ?? 0);
@@ -61,9 +61,9 @@ class o {
         return (
             !((null == n && null == t) || (null != n && null != t && this.isEqual(n, t))) &&
             (null != t ? this.valueMap.set(e, t) : this.valueMap.delete(e),
-            a(this.valueArray, n, t, this.sortBy),
-            null != n && this.indexBy(n).forEach((e) => a(this.getIndex(e), n, null, this.sortBy)),
-            null != t && this.indexBy(t).forEach((e) => a(this.getIndex(e), null, t, this.sortBy)),
+            s(this.valueArray, n, t, this.sortBy),
+            null != n && this.indexBy(n).forEach((e) => s(this.getIndex(e), n, null, this.sortBy)),
+            null != t && this.indexBy(t).forEach((e) => s(this.getIndex(e), null, t, this.sortBy)),
             (this.dirty = !0),
             this._version++,
             !0)

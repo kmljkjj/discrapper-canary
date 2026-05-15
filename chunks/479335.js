@@ -1,34 +1,35 @@
-n.d(t, { u: () => g });
+n.d(t, { u: () => b });
 var i = n(627968),
     l = n(64700),
-    a = n(311907),
-    r = n(397927),
+    o = n(17928),
+    r = n(477782),
+    s = n(497767),
     d = n(267102),
-    s = n(144485),
-    o = n(814278),
+    a = n(144485),
+    c = n(814278),
     u = n(259374),
-    c = n(961350),
-    A = n(985018);
-function g(e) {
-    let { userId: t, channelId: n, guildId: g, minimal: E = !1 } = e,
-        _ = (0, u.k)({ channelId: n }),
-        b = (0, a.bG)([c.default], () => c.default.getId() === t),
-        f = (0, d.Us)(),
-        m = l.useCallback(() => {
-            s.A.openSecureFramesUserVerificationModal(
+    A = n(495544),
+    g = n(985018);
+function b(e) {
+    let { userId: t, channelId: n, guildId: b, minimal: f = !1 } = e,
+        x = (0, u.k)({ channelId: n }),
+        m = (0, o.bG)([A.default], () => A.default.getId() === t),
+        v = (0, d.Us)(),
+        E = l.useCallback(() => {
+            a.A.openSecureFramesUserVerificationModal(
                 t,
                 n,
-                () => (0, o.z4)({ userId: t, channelId: n, guildId: g }),
-                f,
+                () => (0, c.z4)({ userId: t, channelId: n, guildId: b }),
+                v,
             );
-        }, [f, n, g, t]);
-    return !_ || b
+        }, [v, n, b, t]);
+    return !x || m
         ? null
-        : (0, i.jsx)(r.Drp, {
+        : (0, i.jsx)(r.Dr, {
               id: "secure-frames-user-verification",
-              label: A.intl.string(A.t["8ErYvY"]),
-              action: m,
-              icon: E ? r.V1C : null,
-              leadingAccessory: E ? { type: "icon", icon: r.V1C } : void 0,
+              label: g.intl.string(g.t["8ErYvY"]),
+              action: E,
+              icon: f ? s.V : null,
+              leadingAccessory: f ? { type: "icon", icon: s.V } : void 0,
           });
 }

@@ -1,13 +1,12 @@
-"use strict";
 n.d(t, { A: () => d });
-var r = n(627968),
-    i = n(64700),
-    a = n(503698),
-    s = n.n(a),
-    o = n(397927),
-    l = n(235986),
-    u = n(784550);
-class c extends i.PureComponent {
+var l = n(627968),
+    a = n(64700),
+    i = n(503698),
+    r = n.n(i),
+    s = n(452027),
+    o = n(235986),
+    u = n(536439);
+class c extends a.PureComponent {
     state = { changedSinceError: new Set() };
     componentDidUpdate(e) {
         if (this.props.formError !== e.formError) this.setState({ changedSinceError: new Set() });
@@ -26,37 +25,49 @@ class c extends i.PureComponent {
         return null != t[e] ? t[e] : null == n || this.state.changedSinceError.has(e) ? null : n.getFieldMessage(e);
     }
     renderFormSection = (e) => {
-        let { values: t, onFieldChange: n, onFieldFocus: i, onFieldBlur: a, layout: l, ...u } = this.props,
-            { getClassNameForLayout: c, renderInput: d, title: _, name: f, id: p, placeholder: h, ...m } = e,
-            g = {
-                ...m,
-                placeholder: h?.(),
-                error: this.getError(f),
-                value: t[f],
-                name: f,
-                "aria-labelledby": p,
+        let { values: t, onFieldChange: n, onFieldFocus: a, onFieldBlur: i, layout: o, ...u } = this.props,
+            {
+                getClassNameForLayout: c,
+                renderInput: d,
+                title: p,
+                name: m,
+                id: h,
+                placeholder: C,
+                helperText: A,
+                ...E
+            } = e,
+            y = {
+                ...E,
+                placeholder: C?.(),
+                error: this.getError(m),
+                value: t[m],
+                name: m,
+                "aria-labelledby": h,
                 onChange: n,
-                onFocus: i,
-                onBlur: a,
+                onFocus: a,
+                onBlur: i,
             };
-        return (0, r.jsx)(
+        return (0, l.jsx)(
             "div",
-            { className: s()(c?.(l)), children: (0, r.jsx)(o.D0$, { id: p, label: _(), children: d(g, u, l) }) },
-            f,
+            {
+                className: r()(c?.(o)),
+                children: (0, l.jsx)(s.D, { id: h, label: p(), helperText: A?.(), children: d(y, u, o) }),
+            },
+            m,
         );
     };
     renderFormRow = (e) => {
         let t = e.fields.map(this.renderFormSection);
-        return (0, r.jsx)(
-            l.A,
-            { className: s()(u.nM, e.className), children: t },
+        return (0, l.jsx)(
+            o.A,
+            { className: r()(u.nM, e.className), children: t },
             e.fields.map((e) => e.name).join(""),
         );
     };
     render() {
         let { form: e, className: t } = this.props,
             n = e.map(this.renderFormRow);
-        return (0, r.jsx)("div", { className: t, children: n });
+        return (0, l.jsx)("div", { className: t, children: n });
     }
 }
 let d = c;

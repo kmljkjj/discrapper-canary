@@ -1,61 +1,78 @@
-i.d(t, { A: () => o });
-var n = i(627968);
-i(64700);
-var l = i(311907),
-    s = i(397927),
-    r = i(5180),
-    a = i(576705),
-    d = i(652215),
-    c = i(985018);
-function o(e) {
-    let t = (0, l.bG)([a.A], () => a.A.can(d.xBc.MANAGE_CHANNELS, e));
+t.d(a, { A: () => u });
+var n = t(627968);
+t(64700);
+var l = t(17928),
+    i = t(477782),
+    r = t(192308),
+    c = t(5180),
+    d = t(576705),
+    s = t(652215),
+    o = t(375708);
+function u(e) {
+    let a = (0, l.bG)([d.A], () => d.A.can(s.xBc.MANAGE_CHANNELS, e));
     return __OVERLAY__
         ? null
-        : (0, r.ai)(e.id)
-          ? (0, n.jsx)(s.Drp, {
+        : (0, c.ai)(e.id)
+          ? (0, n.jsx)(i.Dr, {
                 id: "create-category",
-                label: c.intl.string(c.t["ISN+NM"]),
+                label: o.intl.string(o.t["ISN+NM"]),
                 action: () =>
-                    (0, s.mMO)(async () => {
-                        let { default: e } = await i.e("28020").then(i.bind(i, 395199));
-                        return (t) => (0, n.jsx)(e, { ...t });
+                    (0, r.openModalLazy)(async () => {
+                        let { default: e } = await Promise.all([t.e("40175"), t.e("28020")]).then(t.bind(t, 395199));
+                        return (a) => (0, n.jsx)(e, { ...a });
                     }),
             })
-          : t
+          : a
             ? [
                   (0, n.jsx)(
-                      s.Drp,
+                      i.Dr,
                       {
                           id: "create-channel",
-                          label: c.intl.string(c.t["fUYU+j"]),
+                          label: o.intl.string(o.t["fUYU+j"]),
                           action: () =>
-                              (0, s.mMO)(async () => {
-                                  let { default: t } = await Promise.all([
-                                      i.e("8018"),
-                                      i.e("93142"),
-                                      i.e("64233"),
-                                      i.e("76738"),
-                                  ]).then(i.bind(i, 409200));
-                                  return (i) => (0, n.jsx)(t, { ...i, channelType: d.rbe.GUILD_TEXT, guildId: e.id });
+                              (0, r.openModalLazy)(async () => {
+                                  let { default: a } = await Promise.all([
+                                      t.e("94513"),
+                                      t.e("11585"),
+                                      t.e("3589"),
+                                      t.e("89916"),
+                                      t.e("60773"),
+                                      t.e("8018"),
+                                      t.e("20379"),
+                                      t.e("19193"),
+                                      t.e("7775"),
+                                      t.e("58608"),
+                                      t.e("70195"),
+                                      t.e("37038"),
+                                  ]).then(t.bind(t, 946430));
+                                  return (t) => (0, n.jsx)(a, { ...t, channelType: s.rbe.GUILD_TEXT, guildId: e.id });
                               }),
                       },
                       "create-channel",
                   ),
                   (0, n.jsx)(
-                      s.Drp,
+                      i.Dr,
                       {
                           id: "create-category",
-                          label: c.intl.string(c.t["ISN+NM"]),
+                          label: o.intl.string(o.t["ISN+NM"]),
                           action: () =>
-                              (0, s.mMO)(async () => {
-                                  let { default: t } = await Promise.all([
-                                      i.e("8018"),
-                                      i.e("93142"),
-                                      i.e("64233"),
-                                      i.e("76738"),
-                                  ]).then(i.bind(i, 409200));
-                                  return (i) =>
-                                      (0, n.jsx)(t, { ...i, channelType: d.rbe.GUILD_CATEGORY, guildId: e.id });
+                              (0, r.openModalLazy)(async () => {
+                                  let { default: a } = await Promise.all([
+                                      t.e("94513"),
+                                      t.e("11585"),
+                                      t.e("3589"),
+                                      t.e("89916"),
+                                      t.e("60773"),
+                                      t.e("8018"),
+                                      t.e("20379"),
+                                      t.e("19193"),
+                                      t.e("7775"),
+                                      t.e("58608"),
+                                      t.e("70195"),
+                                      t.e("37038"),
+                                  ]).then(t.bind(t, 946430));
+                                  return (t) =>
+                                      (0, n.jsx)(a, { ...t, channelType: s.rbe.GUILD_CATEGORY, guildId: e.id });
                               }),
                       },
                       "create-category",

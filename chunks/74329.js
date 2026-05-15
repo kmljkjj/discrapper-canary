@@ -1,48 +1,49 @@
 "use strict";
-n.d(t, { A: () => d });
-var r = n(627968);
+n.d(t, { A: () => f });
+var i = n(627968);
 n(64700);
-var i = n(311907),
-    a = n(397927),
-    s = n(652896),
-    o = n(834757),
-    l = n(961350),
-    u = n(162605),
-    c = n(985018);
-function d(e, t, d) {
-    let _ = (0, o.AO)(e),
-        f = (0, i.bG)([l.default], () => l.default.getId());
+var r = n(17928),
+    s = n(192308),
+    a = n(477782),
+    o = n(695366),
+    l = n(652896),
+    u = n(834757),
+    c = n(495544),
+    d = n(116956),
+    _ = n(375708);
+function f(e, t, f) {
+    let h = (0, u.AO)(e),
+        p = (0, r.bG)([c.default], () => c.default.getId());
     if (null == e) return null;
-    let p = (0, s._z)(e),
-        h = u.A.getVideoStats(p) ?? {},
-        m = {
-            media_session_id: u.A.getMediaSessionId(p),
-            rtc_connection_id: u.A.getRtcConnectionId(p),
-            stream_region: u.A.getRegion(p),
-            max_viewers: u.A.getMaxViewers(p),
-            ...h,
-        },
-        g = () => {
-            d?.(),
+    let E = (0, l._z)(e),
+        m = d.A.getVideoStats(E) ?? {},
+        g = {
+            media_session_id: d.A.getMediaSessionId(E),
+            rtc_connection_id: d.A.getRtcConnectionId(E),
+            stream_region: d.A.getRegion(E),
+            max_viewers: d.A.getMaxViewers(E),
+            ...m,
+        };
+    return (0, i.jsx)(a.Dr, {
+        id: "report-stream-problem",
+        color: "danger",
+        label: _.intl.string(_.t.sdnCxV),
+        action: () => {
+            f?.(),
                 null != e &&
-                    (0, a.mMO)(async () => {
-                        let { default: t } = await n.e("53377").then(n.bind(n, 629304));
+                    (0, s.openModalLazy)(async () => {
+                        let { default: t } = await Promise.all([n.e("17171"), n.e("86889")]).then(n.bind(n, 292208));
                         return (n) =>
-                            (0, r.jsx)(t, {
+                            (0, i.jsx)(t, {
                                 stream: e,
-                                streamApplication: _,
-                                isStreamer: f === e?.ownerId,
-                                analyticsData: m,
+                                streamApplication: h,
+                                isStreamer: p === e?.ownerId,
+                                analyticsData: g,
                                 ...n,
                             });
                     });
-        };
-    return (0, r.jsx)(a.Drp, {
-        id: "report-stream-problem",
-        color: "danger",
-        label: c.intl.string(c.t.sdnCxV),
-        action: g,
-        icon: a.EpV,
-        leadingAccessory: { type: "icon", icon: a.EpV },
+        },
+        icon: o.E,
+        leadingAccessory: { type: "icon", icon: o.E },
     });
 }

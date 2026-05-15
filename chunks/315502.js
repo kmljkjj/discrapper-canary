@@ -1,12 +1,11 @@
-"use strict";
 n.d(t, { A: () => o });
-var i = n(627968);
+var r = n(627968);
 n(64700);
 var s = n(503698),
-    l = n.n(s),
-    a = n(397927),
-    r = n(516238);
+    i = n.n(s),
+    a = n(834730),
+    l = n(720689);
 function o(e) {
     let { hasMentions: t, truncatedCount: n, className: s } = e;
-    return (0, i.jsx)(a.Text, { className: l()(r.T, s, { [r.l]: t }), variant: "text-xs/normal", children: n });
+    return (0, r.jsx)(a.E, { className: i()(l.T, s, { [l.l]: t }), variant: "text-xs/normal", children: n });
 }

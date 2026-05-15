@@ -1,69 +1,70 @@
 "use strict";
-n.d(t, { A: () => m });
+n.d(t, { A: () => p });
 var i = n(627968);
 n(64700);
-var s = n(311907),
-    l = n(827734),
-    r = n(990078),
-    a = n(397927),
-    o = n(775602),
-    c = n(890687),
-    d = n(92246),
-    u = n(792620),
-    h = n(793683),
-    A = n(985018);
-function m(e) {
-    let { quest: t, questContent: n, sourceQuestContent: m, onClose: p, size: g = "md" } = e,
-        _ = (0, c.LS)(t),
-        f = (0, s.bG)([o.A], () => o.A.useReducedMotion),
-        x = null != (0, d._Z)(t.config),
-        C = (0, u.vv)(t),
-        E = (0, h.v)({
+var r = n(17928),
+    s = n(661531),
+    a = n(990078),
+    o = n(242644),
+    l = n(821609),
+    u = n(775602),
+    c = n(31587),
+    d = n(801365),
+    _ = n(792620),
+    f = n(793683),
+    h = n(375708);
+function p(e) {
+    let { quest: t, questContent: n, sourceQuestContent: p, onClose: E, size: m = "md" } = e,
+        g = (0, c.LS)(t),
+        A = (0, r.bG)([u.A], () => u.A.useReducedMotion),
+        I = null != (0, d._Z)(t.config),
+        T = (0, _.vv)(t),
+        S = (0, f.v)({
             quest: t,
             questContent: n,
-            sourceQuestContent: m,
-            onCloseModal: p,
+            sourceQuestContent: p,
+            onCloseModal: E,
             shouldShowShopIfAlreadyClaimed: !0,
         }),
-        I =
-            t.userStatus?.claimedAt != null
-                ? x
-                    ? A.intl.string(A.t.WYchde)
-                    : A.intl.string(A.t.vTgCWx)
-                : A.intl.string(A.t.cfY4PE),
         N =
+            t.userStatus?.claimedAt != null
+                ? I
+                    ? h.intl.string(h.t.WYchde)
+                    : h.intl.string(h.t.vTgCWx)
+                : h.intl.string(h.t.cfY4PE),
+        y =
             t.userStatus?.completedAt == null
-                ? _
-                    ? A.intl.string(A.t.NJ6Bnm)
-                    : C
-                      ? A.intl.string(A.t.USNO1K)
+                ? g
+                    ? h.intl.string(h.t.NJ6Bnm)
+                    : T
+                      ? h.intl.string(h.t.USNO1K)
                       : void 0
                 : void 0;
-    return (0, i.jsx)(r.m, {
-        text: N,
+    return (0, i.jsx)(a.m, {
+        text: y,
         children: (0, i.jsx)("div", {
-            children: (0, i.jsx)(a.Button, {
+            children: (0, i.jsx)(l.$, {
                 variant: "secondary",
                 fullWidth: !0,
                 icon: ((e, t) => {
                     if (e.userStatus?.claimedAt == null)
                         return {
                             type: "rive",
-                            asset: a.Vs8,
+                            asset: o.V,
                             riveProps: {
                                 withReducedMotion: "play",
                                 dataBinding: {
                                     locked: e.userStatus?.completedAt === null,
-                                    fill: l.A.colors.ICON_STRONG,
+                                    fill: s.A.colors.ICON_STRONG,
                                     reducedMotion: t,
                                 },
                             },
                         };
-                })(t, f),
-                onClick: E,
-                text: I,
+                })(t, A),
+                onClick: S,
+                text: N,
                 disabled: t.userStatus?.completedAt == null,
-                size: g,
+                size: m,
             }),
         }),
     });

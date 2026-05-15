@@ -1,94 +1,97 @@
-n.d(t, { A: () => y });
-var i = n(627968),
-    s = n(64700),
-    l = n(503698),
-    a = n.n(l),
-    r = n(284009),
-    o = n.n(r),
-    d = n(311907),
-    c = n(397927),
-    u = n(391048),
-    _ = n(158032),
-    m = n(362111),
-    g = n(821189),
-    A = n(637141),
-    x = n(688810),
-    h = n(160946),
-    p = n(351906),
-    T = n(295405),
-    E = n(97352),
-    S = n(927578),
-    C = n(83617),
-    f = n(615396),
-    b = n(543767),
-    N = n(652215),
-    I = n(985018),
-    v = n(107189),
-    j = n(641254);
-function y(e) {
+i.d(t, { A: () => L });
+var n = i(627968),
+    s = i(64700),
+    l = i(503698),
+    r = i.n(l),
+    a = i(284009),
+    o = i.n(a),
+    u = i(17928),
+    d = i(192308),
+    c = i(821609),
+    g = i(349288),
+    m = i(289873),
+    A = i(391048),
+    h = i(158032),
+    E = i(362111),
+    T = i(457287),
+    x = i(637141),
+    S = i(688810),
+    p = i(160946),
+    f = i(351906),
+    N = i(295405),
+    _ = i(97352),
+    C = i(927578),
+    I = i(83617),
+    b = i(615396),
+    v = i(543767),
+    j = i(652215),
+    y = i(375708),
+    O = i(652362),
+    R = i(653307);
+function L(e) {
     let {
             subscription: t,
-            onPaymentSourceAdded: n,
+            onPaymentSourceAdded: i,
             highlightAddPaymentMethodButton: l,
-            dropdownClassName: r,
-            analyticsLocation: y,
-            currentInvoicePreview: O,
-            disabled: P = !1,
+            dropdownClassName: a,
+            analyticsLocation: L,
+            currentInvoicePreview: P,
+            disabled: G = !1,
         } = e,
-        L = (0, d.bG)([p.A], () => p.A.hidePersonalInformation),
-        [D, M] = (0, d.yK)([T.A], () => [T.A.paymentSources, T.A.hasFetchedPaymentSources]),
-        G = (0, h.Y)((0, f.MP)(t)),
-        { analyticsLocations: U } = (0, x.Ay)(),
-        k = s.useMemo(() => Object.values(D).filter((e) => !e.invalid), [D]),
-        [V, w] = s.useState(!1),
-        [B, H] = s.useState(t.currency),
-        F = async (e, n, i) => {
+        U = (0, u.bG)([f.A], () => f.A.hidePersonalInformation),
+        [M, V] = (0, u.yK)([N.A], () => [N.A.paymentSources, N.A.hasFetchedPaymentSources]),
+        k = (0, p.Y)((0, b.MP)(t)),
+        { analyticsLocations: w } = (0, S.Ay)(),
+        F = s.useMemo(() => Object.values(M).filter((e) => !e.invalid), [M]),
+        [B, z] = s.useState(!1),
+        [Y, X] = s.useState(t.currency),
+        H = async (e, i, n) => {
             if (null == t) throw Error("missing subscription and paymentSource");
-            null == e ? await _.r6(t, n, i, U, y) : await _.uK(t, e, n, i, U, y), w(!1), H(n);
+            null == e ? await h.r6(t, i, n, w, L) : await h.uK(t, e, i, n, w, L), z(!1), X(i);
         },
-        Y = async (e, n, i) => {
-            w(!0);
-            let s = await (0, b.OQ)({
+        K = async (e, i, n) => {
+            z(!0);
+            let s = await (0, v.OQ)({
                     subscriptionId: t.id,
                     paymentSourceId: e?.id,
                     renewal: !0,
-                    currency: n,
-                    analyticsLocations: U,
-                    analyticsLocation: y,
+                    currency: i,
+                    analyticsLocations: w,
+                    analyticsLocation: L,
                 }),
                 l = { amount: s.subtotal, currency: s.currency };
-            O.currency !== s.currency || (O.currency === s.currency && O.total !== s.total)
-                ? await R(
+            P.currency !== s.currency || (P.currency === s.currency && P.total !== s.total)
+                ? await D(
                       s,
                       () => {
-                          i(e, n, l);
+                          n(e, i, l);
                       },
                       () => {
-                          w(!1);
+                          z(!1);
                       },
                   )
-                : i(e, n, l);
+                : n(e, i, l);
         },
-        z = (e) => {
-            let n = E.A.get(t.planIdForCurrencies);
-            o()(null != e, "paymentSource not specified for change"), o()(null != n, "Unable to fetch plan");
-            let i = (0, C._w)(n.id, e.id, !1);
-            return i.length > 0 ? i[0] : N.Yri.USD;
+        W = (e) => {
+            let i = _.A.get(t.planIdForCurrencies);
+            o()(null != e, "paymentSource not specified for change"), o()(null != i, "Unable to fetch plan");
+            let n = (0, I._w)(i.id, e.id, !1);
+            return n.length > 0 ? n[0] : j.Yri.USD;
         },
-        X = (e) => {
-            (0, C.c_)(e.id, (0, f.MP)(t)).then(() => {
-                Y(e, z(e), F);
+        Z = (e) => {
+            (0, I.c_)(e.id, (0, b.MP)(t)).then(() => {
+                K(e, W(e), H);
             }),
-                "function" == typeof n && n(e.id);
+                "function" == typeof i && i(e.id);
         },
-        W = () => {
-            (0, c.mMO)(
-                async () => (e) => (0, i.jsx)(m.default, { ...e, onAddPaymentSource: X, analyticsLocation: y }),
+        q = () => {
+            (0, d.openModalLazy)(
+                async () => (e) => (0, n.jsx)(E.default, { ...e, onAddPaymentSource: Z, analyticsLocation: L }),
                 {
                     onCloseCallback: () => {
-                        (0, u.ET)();
+                        (0, A.ET)();
                     },
-                    onCloseRequest: N.tEg,
+                    onCloseRequest: j.tEg,
                 },
             );
         };
@@ -96,78 +99,76 @@ function y(e) {
         let e;
         return (
             o()(null != t.paymentGateway, "Expected payment gateway when managed externally"),
-            (e = (0, S.tW)(t.paymentGateway, "PAYMENT_SOURCE_MANAGEMENT")),
-            (0, i.jsx)(c.MzZ, {
+            (e = (0, C.tW)(t.paymentGateway, "PAYMENT_SOURCE_MANAGEMENT")),
+            (0, n.jsx)(g.Anchor, {
                 href: e,
                 useDefaultUnderlineStyles: !1,
-                className: v.uZ,
-                children: (0, i.jsx)(c.Button, {
-                    variant: "secondary",
-                    text: I.intl.string(I.t.SgX7Ra),
-                    fullWidth: !0,
-                }),
+                className: O.uZ,
+                children: (0, n.jsx)(c.$, { variant: "secondary", text: y.intl.string(y.t.SgX7Ra), fullWidth: !0 }),
             })
         );
     }
-    if (!M || !G) return (0, i.jsx)(c.y$y, {});
-    if (!(k.length > 0))
-        return (0, i.jsx)(c.Button, {
+    if (!V || !k) return (0, n.jsx)(m.y, {});
+    if (!(F.length > 0))
+        return (0, n.jsx)(c.$, {
             fullWidth: !0,
             variant: l ? "primary" : "secondary",
-            onClick: W,
-            text: I.intl.string(I.t.CpOiEO),
+            onClick: q,
+            text: y.intl.string(y.t.CpOiEO),
         });
     {
         let e,
-            n = E.A.get(t.planIdForCurrencies);
-        o()(null != n, "Unable to fetch plan");
-        let s = (0, C._w)(n, t.paymentSourceId, !1);
-        return (0, i.jsxs)(i.Fragment, {
+            i = _.A.get(t.planIdForCurrencies);
+        o()(null != i, "Unable to fetch plan");
+        let s = (0, I._w)(i, t.paymentSourceId, !1),
+            l = null != t.paymentSourceId ? F.find((e) => e.id === t.paymentSourceId) : null,
+            u = l?.type === j.hes.TDS_WALLET;
+        return (0, n.jsxs)(n.Fragment, {
             children: [
                 ((e = t.paymentSourceId),
-                (0, i.jsx)(A.A, {
-                    prependOption: null == e ? { label: I.intl.string(I.t.iA5vA1), value: null } : null,
-                    className: r,
-                    paymentSources: k,
-                    hidePersonalInformation: L,
+                (0, n.jsx)(x.A, {
+                    prependOption: null == e ? { label: y.intl.string(y.t.iA5vA1), value: null } : null,
+                    className: a,
+                    paymentSources: F,
+                    hidePersonalInformation: U,
                     selectedPaymentSourceId: e,
                     onChange: (e) => {
-                        null != e && Y(e, z(e), F);
+                        null != e && K(e, W(e), H);
                     },
-                    onPaymentSourceAdd: W,
-                    dropdownLoading: V,
-                    disabled: P,
+                    onPaymentSourceAdd: q,
+                    dropdownLoading: B,
+                    disabled: G,
                     paymentGatewayRestrictions: t.eligiblePaymentGateways,
                 })),
-                null != t.paymentSourceId
-                    ? (0, i.jsx)(g.f, {
+                null == t.paymentSourceId || u
+                    ? null
+                    : (0, n.jsx)(T.f, {
                           currencies: s,
-                          children: (0, i.jsx)("div", {
-                              className: a()(v.Gl, j.Uu, j.Hu),
-                              children: (0, i.jsx)(g.A, {
-                                  label: I.intl.string(I.t["0YjaXf"]),
-                                  selectedCurrency: B,
+                          children: (0, n.jsx)("div", {
+                              className: r()(O.Gl, R.Uu, R.Hu),
+                              children: (0, n.jsx)(T.A, {
+                                  label: y.intl.string(y.t["0YjaXf"]),
+                                  selectedCurrency: Y,
                                   currencies: s,
                                   onChange: (e) => {
-                                      Y(void 0, e, F);
+                                      K(void 0, e, H);
                                   },
                               }),
                           }),
-                      })
-                    : null,
+                      }),
             ],
         });
     }
 }
-let R = async (e, t, s) => {
-    let l = await (0, c.mMO)(
+let D = async (e, t, s) => {
+    let l = await (0, d.openModalLazy)(
         async () => {
-            let { default: l } = await n.e("49297").then(n.bind(n, 760941));
-            return (n) => (0, i.jsx)(l, { newInvoice: e, onConfirm: t, onCancel: s, modalProps: n });
+            let { default: l } = await i.e("49297").then(i.bind(i, 760941));
+            return (i) => (0, n.jsx)(l, { newInvoice: e, onConfirm: t, onCancel: s, modalProps: i });
         },
         {
             onCloseRequest: () => {
-                null != l && (0, c.OoC)(l), s();
+                null != l && (0, d.closeModal)(l), s();
             },
         },
     );

@@ -1,26 +1,26 @@
 "use strict";
 n.d(t, {
     Kv: () => A,
-    M9: () => m,
-    MC: () => g,
+    M9: () => E,
+    MC: () => m,
     Ot: () => f,
-    UW: () => p,
-    Ub: () => h,
+    UW: () => h,
+    Ub: () => p,
     Wl: () => I,
     YP: () => T,
     jR: () => d,
     kc: () => _,
-    uk: () => E,
+    uk: () => g,
 });
-var r = n(835245),
-    i = n(773669),
-    a = n(954571),
-    s = n(403362),
+var i = n(835245),
+    r = n(773669),
+    s = n(174459),
+    a = n(403362),
     o = n(449054);
-n(670412), n(351022);
+n(688713), n(351022);
 var l = n(324580),
     u = n(652215),
-    c = n(985018);
+    c = n(375708);
 function d(e) {
     switch (e) {
         case l.o.FEATURED:
@@ -79,7 +79,7 @@ function f(e) {
             throw Error(`[getGlobalDiscoveryServerTabTitle] Unsupported tab: ${e}`);
     }
 }
-function p(e) {
+function h(e) {
     switch (e) {
         case l.o.FEATURED:
             return c.intl.string(c.t.crt84X);
@@ -97,7 +97,7 @@ function p(e) {
             return null;
     }
 }
-function h(e) {
+function p(e) {
     switch (e) {
         case l.o.FEATURED:
             return l.Iq;
@@ -114,13 +114,13 @@ function h(e) {
         case l.o.HUBS:
             return l.Us;
         default:
-            (0, s.xb)(e);
+            (0, a.xb)(e);
     }
 }
-function m(e) {
+function E(e) {
     return null == e || Date.now() - e > l.WV;
 }
-function g(e) {
+function m(e) {
     return {
         id: e.id,
         name: e.name,
@@ -138,7 +138,7 @@ function g(e) {
         emojiCount: e.emoji_count,
     };
 }
-function E(e) {
+function g(e) {
     return {
         id: e.id,
         name: e.name,
@@ -156,23 +156,23 @@ function E(e) {
     };
 }
 function A() {
-    let [e] = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : [i.default],
+    let [e] = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : [r.default],
         t = (0, l.tO)(),
         n = e.locale;
     return (t.find((e) => e.code === n) ?? t[0]).code;
 }
 async function I(e) {
-    let { loadId: t, guildId: n, index: r, categoryId: i, analyticsLocation: s, options: l } = e,
+    let { loadId: t, guildId: n, index: i, categoryId: r, analyticsLocation: a, options: l } = e,
         c = { ...l, loadId: t };
-    await o.Z2(n, s, c),
-        a.default.track(u.HAw.GUILD_DISCOVERY_GUILD_SELECTED, {
+    await o.Z2(n, a, c),
+        s.default.track(u.HAw.GUILD_DISCOVERY_GUILD_SELECTED, {
             guild_id: n,
             load_id: t,
-            card_index: r,
-            category_id: i,
-            location: s,
+            card_index: i,
+            category_id: r,
+            location: a,
         });
 }
 function T() {
-    return (0, r.A)().replace(/-/g, "");
+    return (0, i.A)().replace(/-/g, "");
 }

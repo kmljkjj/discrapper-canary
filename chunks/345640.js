@@ -1,11 +1,9 @@
 "use strict";
-n.d(t, { b: () => s });
-var r = n(311907),
-    i = n(961350),
-    a = n(977997);
-function s(e) {
-    return o(e?.id);
-}
-function o(e) {
-    return (0, r.bG)([a.A, i.default], () => a.A.isInChannel(e, i.default.getId()));
+n.d(t, { b: () => a });
+var i = n(17928),
+    r = n(495544),
+    s = n(977997);
+function a(e) {
+    var t;
+    return (t = e?.id), (0, i.bG)([s.A, r.default], () => s.A.isInChannel(t, r.default.getId()));
 }

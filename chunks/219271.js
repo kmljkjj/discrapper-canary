@@ -1,18 +1,18 @@
 "use strict";
 n.d(t, { u: () => l });
-var r = n(562465),
-    i = n(73153),
-    a = n(153488),
-    s = n(21119),
+var i = n(636537),
+    r = n(228366),
+    s = n(153488),
+    a = n(427358),
     o = n(652215);
 function l() {
     let e = !(arguments.length > 0) || void 0 === arguments[0] || arguments[0];
-    return s.A.shouldFetch() && a.A.hasConsented(o.YAq.PERSONALIZATION)
-        ? (i.h.dispatch({ type: "LOAD_USER_AFFINITIES_V2" }),
-          r.Bo.get({ url: o.Rsh.USER_AFFINITIES_V2, retries: 3 * !!e, oldFormErrors: !0, rejectWithError: !1 }).then(
+    return a.A.shouldFetch() && s.A.hasConsented(o.YAq.PERSONALIZATION)
+        ? (r.h.dispatch({ type: "LOAD_USER_AFFINITIES_V2" }),
+          i.Bo.get({ url: o.Rsh.USER_AFFINITIES_V2, retries: 3 * !!e, oldFormErrors: !0, rejectWithError: !1 }).then(
               (e) => {
                   let { body: t } = e;
-                  i.h.dispatch({
+                  r.h.dispatch({
                       type: "LOAD_USER_AFFINITIES_V2_SUCCESS",
                       affineUsers: t.user_affinities.map((e) => ({
                           otherUserId: e.other_user_id,
@@ -31,7 +31,7 @@ function l() {
                   });
               },
               () => {
-                  i.h.dispatch({ type: "LOAD_USER_AFFINITIES_V2_FAILURE" });
+                  r.h.dispatch({ type: "LOAD_USER_AFFINITIES_V2_FAILURE" });
               },
           ))
         : Promise.resolve();

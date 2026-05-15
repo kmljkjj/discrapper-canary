@@ -1,10 +1,10 @@
 "use strict";
-var r = n(123166),
-    i = n(503628),
-    a = n(860511).String;
+var i = n(123166),
+    r = n(503628),
+    s = n(860511).String;
 e.exports =
     !!Object.getOwnPropertySymbols &&
-    !i(function () {
+    !r(function () {
         var e = Symbol("symbol detection");
-        return !a(e) || !(Object(e) instanceof Symbol) || (!Symbol.sham && r && r < 41);
+        return !s(e) || !(Object(e) instanceof Symbol) || (!Symbol.sham && i && i < 41);
     });

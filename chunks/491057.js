@@ -1,8 +1,8 @@
-i.d(e, { Qt: () => r, cG: () => s });
-var n = i(627968);
-i(64700);
-let [l, s] = (0, i(786300).A)();
-function r(t) {
-    let { children: e, ...i } = t;
-    return (0, n.jsx)(l.Provider, { value: i, children: e });
+t.d(r, { Qt: () => d, cG: () => s });
+var c = t(627968);
+t(64700);
+let [i, s] = (0, t(786300).A)();
+function d(e) {
+    let { children: r, ...t } = e;
+    return (0, c.jsx)(i.Provider, { value: t, children: r });
 }

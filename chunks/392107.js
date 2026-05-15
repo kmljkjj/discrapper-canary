@@ -1,10 +1,8 @@
 "use strict";
 n.d(t, { E: () => r });
-var r = (function (e) {
-    return (
-        (e.NEW_ASSET = "NEW_ASSET"),
-        (e.EDITED_ARCHIVED_ASSET = "EDITED_ARCHIVED_ASSET"),
-        (e.ARCHIVED_ASSET = "ARCHIVED_ASSET"),
-        e
-    );
-})({});
+var i,
+    r =
+        (((i = {}).NEW_ASSET = "NEW_ASSET"),
+        (i.EDITED_ARCHIVED_ASSET = "EDITED_ARCHIVED_ASSET"),
+        (i.ARCHIVED_ASSET = "ARCHIVED_ASSET"),
+        i);

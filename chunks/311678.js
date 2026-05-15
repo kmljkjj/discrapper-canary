@@ -1,47 +1,42 @@
-"use strict";
-n.d(t, { N: () => _ });
-var r = n(627968),
-    i = n(64700),
-    a = n(503698),
-    s = n.n(a),
-    o = n(522160),
-    l = n(397927),
-    u = n(765671),
-    c = n(342860);
-let d = 100;
-function _(e) {
-    let { children: t, className: n, collapsibleContent: a, isExpanded: _ } = e,
-        [f, h] = i.useState(!1),
-        [p, g] = i.useState(!0),
-        [E, A] = i.useState(!1),
-        I = _ ?? f,
-        { ref: T, height: y = 0 } = (0, u.Ay)(),
-        { ref: S, height: v = 0 } = (0, u.Ay)(),
-        C = (0, l.zhh)(
-            { height: I ? y + v : v, config: o.config.stiff, onRest: () => A(!0) },
-            p ? "animate-never" : "respect-motion-settings",
+s.d(t, { N: () => l });
+var i = s(627968),
+    a = s(64700),
+    n = s(503698),
+    c = s.n(n),
+    r = s(785651),
+    u = s(717421),
+    h = s(765671),
+    d = s(205977);
+function l(e) {
+    let { children: t, className: s, collapsibleContent: n, isExpanded: l } = e,
+        [o, f] = a.useState(!1),
+        [m, p] = a.useState(!0),
+        [g, k] = a.useState(!1),
+        v = l ?? o,
+        { ref: x, height: N = 0 } = (0, h.Ay)(),
+        { ref: j, height: y = 0 } = (0, h.Ay)(),
+        C = (0, u.z)(
+            { height: v ? N + y : y, config: r.config.stiff, onRest: () => k(!0) },
+            m ? "animate-never" : "respect-motion-settings",
         ),
-        b = i.useCallback(() => {
-            h(!f);
-        }, [f, h]);
+        b = a.useCallback(() => {
+            f(!o);
+        }, [o, f]);
     return (
-        i.useLayoutEffect(() => {
+        a.useLayoutEffect(() => {
             let e = setTimeout(() => {
-                g(!1);
-            }, d);
+                p(!1);
+            }, 100);
             return () => clearTimeout(e);
         }, []),
-        (0, r.jsx)("div", {
-            className: s()(c.uR, { [c.$M]: I }, n),
-            children: (0, r.jsxs)(o.animated.div, {
-                className: s()(c.N0, { [c.Mm]: I && E }),
+        (0, i.jsx)("div", {
+            className: c()(d.uR, { [d.$M]: v }, s),
+            children: (0, i.jsxs)(r.animated.div, {
+                className: c()(d.N0, { [d.Mm]: v && g }),
                 style: C,
                 children: [
-                    (0, r.jsx)("div", { ref: S, className: s()(c.wx, { [c.$M]: I }), children: t({ onClick: b }) }),
-                    (0, r.jsx)(l.M1G, {
-                        enabled: !I,
-                        children: (0, r.jsx)("div", { ref: T, "aria-hidden": !I, children: a }),
-                    }),
+                    (0, i.jsx)("div", { ref: j, className: c()(d.wx, { [d.$M]: v }), children: t({ onClick: b }) }),
+                    (0, i.jsx)("div", { ref: x, inert: !v, children: n }),
                 ],
             }),
         })

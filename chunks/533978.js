@@ -1,115 +1,118 @@
-"use strict";
-n.d(t, { A: () => b });
-var i = n(627968),
-    s = n(64700),
-    l = n(311907),
-    r = n(554146),
-    a = n(621956),
-    o = n(265872),
-    c = n(442433),
-    d = n(688810),
-    u = n(384059),
-    h = n(480890),
-    A = n(160761),
-    p = n(421773),
-    g = n(536432),
-    m = n(674168),
-    _ = n(989799),
-    f = n(173660),
-    x = n(430452),
-    C = n(246356),
-    E = n(709562),
-    I = n(376086),
-    N = n(985018);
-function b(e) {
-    let { channel: t, themeable: b, whichPopoutIsOpen: S, setWhichPopoutIsOpen: T } = e,
-        { parentAnalyticsLocation: y } = (0, d.Ay)(),
+t.d(n, { A: () => _ });
+var l = t(627968),
+    i = t(64700),
+    s = t(17928),
+    a = t(554146),
+    r = t(621956),
+    o = t(922016),
+    c = t(442433),
+    u = t(688810),
+    d = t(384059),
+    A = t(480890),
+    h = t(595529),
+    m = t(421773),
+    C = t(813564),
+    E = t(674168),
+    p = t(277192),
+    g = t(173660),
+    x = t(235058),
+    I = t(246356),
+    f = t(204651),
+    T = t(376086),
+    v = t(375708);
+function _(e) {
+    let { channel: n, themeable: _, whichPopoutIsOpen: j, setWhichPopoutIsOpen: N } = e,
+        { parentAnalyticsLocation: O } = (0, u.Ay)(),
         {
-            Component: v,
-            play: j,
-            events: { onMouseEnter: R, onMouseLeave: O },
-        } = (0, a.E)(),
-        L = t.getGuildId(),
-        { mute: M, suppress: D } = (0, f.A)(t),
-        G = (0, l.bG)([x.Ay], () => x.Ay.isDeaf()),
-        U = M || D || G,
-        P = (0, g.VE)({ isSoundboardButtonDisabled: U }),
-        [w, k] = (0, A.DP)(P),
-        { analyticsLocations: V } = (0, d.Ay)(),
-        { isHovered: B, setIsHovered: H, onMouseEnter: F, onMouseLeave: K } = (0, p.A)(200, 300);
-    function W(e) {
+            Component: S,
+            play: b,
+            events: { onMouseEnter: y, onMouseLeave: R },
+        } = (0, r.E)(),
+        L = n.getGuildId(),
+        { mute: M, suppress: D } = (0, g.A)(n),
+        P = (0, s.bG)([x.Ay], () => x.Ay.isDeaf()),
+        G = M || D || P,
+        k = (0, C.VE)({ isSoundboardButtonDisabled: G }),
+        [U, V] = (0, h.DP)(k),
+        { analyticsLocations: B } = (0, u.Ay)(),
+        { isHovered: H, setIsHovered: w, onMouseEnter: Y, onMouseLeave: K } = (0, m.A)(200, 300);
+    function F(e) {
         null != L &&
             (0, c.L3)(e, async () => {
-                let { default: e } = await n.e("51111").then(n.bind(n, 323002));
-                return (t) =>
-                    (0, i.jsx)(e, {
+                let { default: e } = await t.e("11562").then(t.bind(t, 666801));
+                return (n) =>
+                    (0, l.jsx)(e, {
                         guildId: L,
-                        sourceAnalyticsLocations: V,
-                        ...t,
-                        onInteraction: (0, h.s)("SoundboardContextMenu", y),
+                        sourceAnalyticsLocations: B,
+                        ...n,
+                        onInteraction: (0, A.s)("SoundboardContextMenu", O),
                     });
             });
     }
-    function Y() {
-        (0, u.X)(y, u.O.SOUNDBOARD),
-            S === I.P.SOUNDBOARD ? (T?.(void 0), K()) : (null != S ? (j(), F()) : j(), T?.(I.P.SOUNDBOARD));
+    function X() {
+        (0, d.X)(O, d.O.SOUNDBOARD),
+            j === T.P.SOUNDBOARD ? (N?.(void 0), K()) : (null != j ? (b(), Y()) : b(), N?.(T.P.SOUNDBOARD));
     }
-    let z = s.useRef(null);
-    return (0, i.jsx)(o.Y, {
-        targetElementRef: z,
-        shouldShow: (B && (S === I.P.SOUNDBOARD || null == S)) || S === I.P.SOUNDBOARD,
+    let z = i.useCallback(() => {
+            null == j && N?.(T.P.SOUNDBOARD);
+        }, [j, N]),
+        W = i.useRef(null);
+    return (0, l.jsx)(o.Y, {
+        targetElementRef: W,
+        shouldShow: (H && (j === T.P.SOUNDBOARD || null == j)) || j === T.P.SOUNDBOARD,
         animation: o.Y.Animation.FADE,
         animationPosition: "top",
         position: "top",
         align: "center",
         spacing: 16,
         onRequestClose: () => {
-            H(!1), T?.(void 0);
+            w(!1), N?.(void 0);
         },
         renderPopout: (e) => {
-            let { closePopout: n } = e;
-            return U
+            let { closePopout: t } = e;
+            return G
                 ? null
-                : (0, i.jsx)(C.A, {
-                      children: (0, i.jsx)("div", {
-                          onMouseEnter: F,
+                : (0, l.jsx)(I.A, {
+                      children: (0, l.jsx)("div", {
+                          onMouseEnter: Y,
                           onMouseLeave: K,
-                          children: (0, i.jsx)(_.A, {
+                          onMouseDown: z,
+                          children: (0, l.jsx)(p.A, {
                               guildId: L,
-                              channel: t,
-                              onClose: n,
+                              channel: n,
+                              onClose: t,
                               gridNotice:
-                                  w === r.M.CUSTOM_CALL_SOUNDS_PICKER_UPSELL &&
-                                  (0, i.jsx)(m.m, { onClose: n, markAsDismissed: k }),
+                                  U === a.M.CUSTOM_CALL_SOUNDS_PICKER_UPSELL &&
+                                  (0, l.jsx)(E.m, { onClose: t, markAsDismissed: V }),
                               analyticsSource: "action bar button",
                           }),
                       }),
                   });
         },
         children: () =>
-            (0, i.jsx)(E.l, {
-                ref: z,
+            (0, l.jsx)(f.l, {
+                ref: W,
                 isTrayButton: !0,
-                themeable: b,
+                themeable: _,
                 label: M
-                    ? N.intl.string(N.t["Ox4/zU"])
+                    ? v.intl.string(v.t["Ox4/zU"])
                     : D
-                      ? N.intl.string(N.t["+YBKYI"])
-                      : G
-                        ? N.intl.string(N.t.X1lQli)
+                      ? v.intl.string(v.t["+YBKYI"])
+                      : P
+                        ? v.intl.string(v.t.X1lQli)
                         : void 0,
-                iconComponent: v,
-                disabled: U,
-                onContextMenu: W,
-                onClick: Y,
+                iconComponent: S,
+                disabled: G,
+                onContextMenu: F,
+                onClick: X,
                 onMouseEnter: (e) => {
-                    R(), "focus" !== e.type && F();
+                    y(), "focus" !== e.type && Y();
                 },
                 onMouseLeave: () => {
-                    null == S && (K(), O());
+                    null == j && (K(), R());
                 },
-                isActive: B || S === I.P.SOUNDBOARD,
-                color: B || S === I.P.SOUNDBOARD ? "primaryDark" : void 0,
+                isActive: H || j === T.P.SOUNDBOARD,
+                color: H || j === T.P.SOUNDBOARD ? "primaryDark" : void 0,
             }),
     });
 }

@@ -1,6 +1,6 @@
 "use strict";
-var r = n(406208),
-    i = TypeError;
+var i = n(406208),
+    r = TypeError;
 e.exports = function (e, t) {
-    if (!delete e[t]) throw new i("Cannot delete property " + r(t) + " of " + r(e));
+    if (!delete e[t]) throw new r("Cannot delete property " + i(t) + " of " + i(e));
 };

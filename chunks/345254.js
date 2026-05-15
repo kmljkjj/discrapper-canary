@@ -1,21 +1,22 @@
-n.d(t, { A: () => o });
-var i = n(627968);
-n(64700);
-var l = n(397927),
-    s = n(954571),
-    r = n(957565),
-    a = n(652215),
-    c = n(985018);
-function o(e, t) {
-    return r.p5
-        ? (0, i.jsx)(l.Drp, {
+e.d(i, { A: () => d });
+var t = e(627968);
+e(64700);
+var c = e(477782),
+    r = e(173936),
+    a = e(174459),
+    o = e(957565),
+    s = e(652215),
+    l = e(375708);
+function d(n, i) {
+    return o.p5
+        ? (0, t.jsx)(c.Dr, {
               id: "copy-link",
-              label: c.intl.string(c.t.Xrt5Po),
-              leadingAccessory: { type: "icon", icon: l.qYV },
-              icon: l.qYV,
+              label: l.intl.string(l.t.Xrt5Po),
+              leadingAccessory: { type: "icon", icon: r.q },
+              icon: r.q,
               action: () => {
-                  (0, r.C)(`${location.protocol}//${location.host}${a.BVt.CHANNEL(t.guild_id, t.id, e.id)}`),
-                      s.default.track(a.HAw.MESSAGE_LINK_COPIED, { message_id: e.id, channel: e.channel_id });
+                  (0, o.C)(`${location.protocol}//${location.host}${s.BVt.CHANNEL(i.guild_id, i.id, n.id)}`),
+                      a.default.track(s.HAw.MESSAGE_LINK_COPIED, { message_id: n.id, channel: n.channel_id });
               },
           })
         : null;

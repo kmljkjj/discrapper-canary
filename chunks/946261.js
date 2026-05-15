@@ -1,63 +1,60 @@
 "use strict";
-n.r(t), n.d(t, { WebAudioSound: () => A, playGiftSound: () => g, voiceSinkId: () => h });
-var r = n(735438),
-    i = n.n(r),
-    a = n(72978),
-    s = n(102597),
+n.r(t), n.d(t, { WebAudioSound: () => E, playGiftSound: () => h, voiceSinkId: () => f });
+var i = n(735438),
+    r = n.n(i),
+    s = n(72978),
+    a = n(102597),
     o = n(904054),
-    l = n(430452),
+    l = n(235058),
     u = n(723702),
     c = n(257645);
 let d = "default",
-    _ = 0.6,
-    f = /^( Device)?( \([^()]+\))+$/,
-    h = d;
-function p(e, t) {
-    return !!t.startsWith(e) && null != t.substring(e.length).match(f);
-}
-function g(e, t) {
-    let n = new Audio((0, s.A)(e));
+    _ = /^( Device)?( \([^()]+\))+$/,
+    f = d;
+function h(e, t) {
+    let n = new Audio((0, a.A)(e));
     (n.volume = (0, o.A)(t)), n.play();
 }
-async function E() {
+async function p() {
     if (null != window.navigator.mediaDevices)
         try {
-            let e = await window.navigator.mediaDevices.enumerateDevices(),
-                t = l.Ay.getOutputDevices(),
-                n = i()(t)
+            var e, t;
+            let n = await window.navigator.mediaDevices.enumerateDevices(),
+                i = l.Ay.getOutputDevices(),
+                a = r()(i)
                     .sortBy((e) => e.index)
                     .findIndex((e) => e.id === l.Ay.getOutputDeviceId()),
-                r = t[l.Ay.getOutputDeviceId()];
-            if (null == r) {
-                h = d;
+                o = i[l.Ay.getOutputDeviceId()];
+            if (null == o) {
+                f = d;
                 return;
             }
-            let s = e.filter((e) => "audiooutput" === e.kind && "communications" !== e.deviceId),
-                o = s[n];
-            if (p(r.name, o?.label ?? "")) {
-                h = o.deviceId;
+            let u = n.filter((e) => "audiooutput" === e.kind && "communications" !== e.deviceId),
+                c = u[a];
+            if (((e = o.name), (t = c?.label ?? "").startsWith(e) && null != t.substring(e.length).match(_))) {
+                f = c.deviceId;
                 return;
             }
             if (
-                ((o = i()(s).maxBy((e) => (0, a.stringSimilarity)(e.label, r.name))),
-                null == o || (0, a.stringSimilarity)(o.label, r.name) < _)
+                ((c = r()(u).maxBy((e) => (0, s.stringSimilarity)(e.label, o.name))),
+                null == c || 0.6 > (0, s.stringSimilarity)(c.label, o.name))
             ) {
-                h = d;
+                f = d;
                 return;
             }
-            h = o.deviceId;
+            f = c.deviceId;
         } catch {
-            h = d;
+            f = d;
         }
 }
-u.isPlatformEmbedded && (l.Ay.addChangeListener(E), E());
-let A = class {
+u.isPlatformEmbedded && (l.Ay.addChangeListener(p), p());
+let E = class {
     name;
     _volume;
     _audio;
     outputChannel;
-    constructor(e, t, n, r) {
-        (this.name = e), (this._volume = n), (this.outputChannel = r);
+    constructor(e, t, n, i) {
+        (this.name = e), (this._volume = n), (this.outputChannel = i);
     }
     get volume() {
         return this._volume;
@@ -104,16 +101,16 @@ let A = class {
             (this._audio =
                 this._audio ??
                 new Promise((e, t) => {
-                    let r = new Audio();
-                    (r.src = n(696354)(`./${this.name}.mp3`)),
-                        (r.onloadeddata = () => {
-                            (r.volume = Math.min((l.Ay.getOutputVolume() / 100) * this._volume, 1)),
-                                u.isPlatformEmbedded && r.setSinkId(this.outputChannel === c.a.DEFAULT ? d : h),
-                                e(r);
+                    let i = new Audio();
+                    (i.src = n(696354)(`./${this.name}.mp3`)),
+                        (i.onloadeddata = () => {
+                            (i.volume = Math.min((l.Ay.getOutputVolume() / 100) * this._volume, 1)),
+                                u.isPlatformEmbedded && i.setSinkId(this.outputChannel === c.a.DEFAULT ? d : f),
+                                e(i);
                         }),
-                        (r.onerror = () => t(Error("could not play audio"))),
-                        (r.onended = () => this.destroyAudio()),
-                        r.load();
+                        (i.onerror = () => t(Error("could not play audio"))),
+                        (i.onended = () => this.destroyAudio()),
+                        i.load();
                 })),
             this._audio
         );

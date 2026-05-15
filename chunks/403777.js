@@ -1,17 +1,18 @@
 "use strict";
-n.d(t, { A: () => E, n: () => f });
-var r = n(627968);
+n.d(t, { A: () => g, n: () => h });
+var i = n(627968);
 n(64700);
-var i = n(397927),
-    s = n(73153),
+var r = n(192308),
+    s = n(228366),
     a = n(272355),
     o = n(267102),
     l = n(287809),
-    u = n(958805),
-    c = n(61881),
-    d = n(652215);
-let _ = new Set();
-function f(e, t) {
+    u = n(207803),
+    c = n(958805),
+    d = n(485745),
+    _ = n(652215);
+let f = new Set();
+function h(e, t) {
     return `USER_PROFILE_MODAL_KEY:${e}:${null == t ? "" : t}`;
 }
 async function p(e) {
@@ -20,71 +21,302 @@ async function p(e) {
             tabSection: s,
             scrollTarget: a,
             guildId: p,
-            originGuildId: h,
+            originGuildId: E,
             channelId: m,
-            appContext: E,
-            customStatusPrompt: g,
-            ...A
+            appContext: g,
+            customStatusPrompt: A,
+            ...I
         } = e,
-        I = l.default.getUser(t);
-    if (null == I) return;
-    let T = l.default.getCurrentUser();
+        T = l.default.getUser(t);
     if (null == T) return;
-    let S = f(t, p);
-    _.add(
-        await (0, i.mMO)(
+    let S = l.default.getCurrentUser();
+    if (null == S) return;
+    (0, u.XQ)();
+    let N = h(t, p);
+    f.add(
+        await (0, r.openModalLazy)(
             async () => {
                 let e = (
                     await Promise.all([
-                        n.e("10614"),
-                        n.e("28936"),
-                        n.e("3916"),
-                        n.e("55905"),
-                        n.e("10117"),
-                        n.e("95814"),
-                        n.e("45672"),
+                        n.e("4803"),
+                        n.e("80203"),
+                        n.e("47459"),
+                        n.e("13392"),
+                        n.e("74389"),
+                        n.e("79924"),
+                        n.e("60361"),
+                        n.e("74103"),
+                        n.e("48626"),
+                        n.e("40671"),
+                        n.e("88295"),
+                        n.e("54266"),
+                        n.e("73435"),
+                        n.e("30170"),
+                        n.e("53317"),
+                        n.e("93110"),
+                        n.e("60513"),
+                        n.e("14831"),
+                        n.e("96527"),
+                        n.e("5959"),
+                        n.e("86028"),
+                        n.e("95664"),
+                        n.e("9432"),
+                        n.e("45650"),
+                        n.e("18556"),
+                        n.e("31837"),
+                        n.e("27660"),
+                        n.e("85484"),
+                        n.e("31135"),
+                        n.e("69177"),
+                        n.e("73953"),
+                        n.e("8506"),
+                        n.e("333"),
+                        n.e("15615"),
+                        n.e("79705"),
+                        n.e("9987"),
+                        n.e("12375"),
+                        n.e("23924"),
+                        n.e("42205"),
+                        n.e("71091"),
+                        n.e("68201"),
+                        n.e("34786"),
+                        n.e("28367"),
+                        n.e("10471"),
+                        n.e("35429"),
+                        n.e("63232"),
+                        n.e("11301"),
+                        n.e("60235"),
+                        n.e("64827"),
+                        n.e("30938"),
+                        n.e("96643"),
+                        n.e("94493"),
+                        n.e("92789"),
+                        n.e("47834"),
+                        n.e("74016"),
+                        n.e("19551"),
+                        n.e("84569"),
+                        n.e("6338"),
+                        n.e("50689"),
+                        n.e("7743"),
+                        n.e("45959"),
+                        n.e("60658"),
+                        n.e("8304"),
+                        n.e("18573"),
+                        n.e("55936"),
+                        n.e("31988"),
+                        n.e("39667"),
+                        n.e("5812"),
+                        n.e("26073"),
+                        n.e("34303"),
+                        n.e("28866"),
+                        n.e("1368"),
+                        n.e("58038"),
+                        n.e("93159"),
+                        n.e("31716"),
+                        n.e("8751"),
+                        n.e("62931"),
+                        n.e("81987"),
+                        n.e("50417"),
+                        n.e("74548"),
+                        n.e("34552"),
+                        n.e("93103"),
+                        n.e("8757"),
+                        n.e("34530"),
+                        n.e("9233"),
+                        n.e("85968"),
+                        n.e("21921"),
+                        n.e("68403"),
+                        n.e("29787"),
+                        n.e("82263"),
+                        n.e("6174"),
+                        n.e("88599"),
+                        n.e("71273"),
+                        n.e("9640"),
+                        n.e("98765"),
+                        n.e("8891"),
+                        n.e("52548"),
+                        n.e("28083"),
+                        n.e("53984"),
+                        n.e("43780"),
+                        n.e("54975"),
+                        n.e("76273"),
+                        n.e("77084"),
+                        n.e("20287"),
+                        n.e("54625"),
+                        n.e("49697"),
+                        n.e("80230"),
+                        n.e("37687"),
+                        n.e("48900"),
+                        n.e("63645"),
+                        n.e("52229"),
+                        n.e("5636"),
+                        n.e("86230"),
+                        n.e("834"),
+                        n.e("60177"),
+                        n.e("95340"),
+                        n.e("26728"),
+                        n.e("1354"),
+                        n.e("23276"),
+                        n.e("78412"),
+                        n.e("61268"),
+                        n.e("63213"),
+                        n.e("75016"),
+                        n.e("25486"),
+                        n.e("4193"),
+                        n.e("95444"),
+                        n.e("48720"),
+                        n.e("33134"),
+                        n.e("80112"),
+                        n.e("59880"),
+                        n.e("14461"),
+                        n.e("72883"),
+                        n.e("54791"),
+                        n.e("49644"),
+                        n.e("25279"),
+                        n.e("73234"),
+                        n.e("31445"),
+                        n.e("36877"),
+                        n.e("77473"),
+                        n.e("28152"),
+                        n.e("69747"),
+                        n.e("38501"),
+                        n.e("27323"),
+                        n.e("65826"),
+                        n.e("49520"),
+                        n.e("20683"),
+                        n.e("35996"),
+                        n.e("37977"),
+                        n.e("21930"),
+                        n.e("3930"),
+                        n.e("3663"),
+                        n.e("18997"),
+                        n.e("83972"),
+                        n.e("72963"),
+                        n.e("92077"),
+                        n.e("21060"),
+                        n.e("72877"),
+                        n.e("89523"),
+                        n.e("29260"),
+                        n.e("63618"),
+                        n.e("21856"),
+                        n.e("17823"),
+                        n.e("82486"),
+                        n.e("11133"),
+                        n.e("13708"),
+                        n.e("8694"),
+                        n.e("755"),
+                        n.e("607"),
+                        n.e("97069"),
+                        n.e("28752"),
+                        n.e("74907"),
+                        n.e("32207"),
+                        n.e("22067"),
+                        n.e("55266"),
+                        n.e("94138"),
+                        n.e("93461"),
+                        n.e("29413"),
+                        n.e("38042"),
+                        n.e("41786"),
+                        n.e("63333"),
+                        n.e("49333"),
+                        n.e("86262"),
+                        n.e("27752"),
+                        n.e("58262"),
+                        n.e("66523"),
+                        n.e("90804"),
+                        n.e("54241"),
+                        n.e("49490"),
+                        n.e("90779"),
+                        n.e("38090"),
+                        n.e("17460"),
+                        n.e("3168"),
+                        n.e("39808"),
+                        n.e("45724"),
+                        n.e("20491"),
+                        n.e("36926"),
+                        n.e("36674"),
+                        n.e("4374"),
+                        n.e("86546"),
+                        n.e("55895"),
+                        n.e("37065"),
+                        n.e("3590"),
+                        n.e("47339"),
+                        n.e("1719"),
+                        n.e("43372"),
+                        n.e("19119"),
+                        n.e("73566"),
+                        n.e("55033"),
+                        n.e("45419"),
+                        n.e("55552"),
+                        n.e("75090"),
+                        n.e("80262"),
+                        n.e("35476"),
+                        n.e("79211"),
+                        n.e("78"),
+                        n.e("53683"),
+                        n.e("84601"),
+                        n.e("82969"),
+                        n.e("60959"),
+                        n.e("86470"),
+                        n.e("6294"),
+                        n.e("67685"),
+                        n.e("83259"),
+                        n.e("4098"),
+                        n.e("70383"),
+                        n.e("30373"),
+                        n.e("27880"),
+                        n.e("72163"),
+                        n.e("569"),
+                        n.e("8032"),
+                        n.e("77970"),
+                        n.e("17583"),
+                        n.e("73191"),
+                        n.e("65529"),
+                        n.e("75072"),
                         n.e("49282"),
-                        n.e("96195"),
-                    ]).then(n.bind(n, 293071))
+                        n.e("35683"),
+                        n.e("54134"),
+                        n.e("94775"),
+                    ]).then(n.bind(n, 438857))
                 ).default;
                 return (t) =>
-                    (0, r.jsx)(e, {
-                        user: I,
-                        currentUser: T,
+                    (0, i.jsx)(e, {
+                        user: T,
+                        currentUser: S,
                         guildId: p,
-                        originGuildId: h ?? p,
+                        originGuildId: E ?? p,
                         initialTabSection: s,
                         initialScrollTarget: a,
                         channelId: m,
-                        customStatusPrompt: g,
+                        customStatusPrompt: A,
                         ...t,
-                        ...A,
+                        ...I,
                     });
             },
             {
-                modalKey: S,
-                contextKey: (0, i.TId)(E ?? (0, o.zd)() ?? d.BRT.APP),
+                modalKey: N,
+                contextKey: (0, r.modalContextFromAppContext)(g ?? (0, o.zd)() ?? _.BRT.APP),
                 onCloseRequest: () => {
-                    c.A.hasUnsavedChanges()
-                        ? u.A.notifyUnsavedWidgets()
-                        : ((0, i.OoC)(S), _.delete(S), u.A.clearPendingWidgets());
+                    t === S.id && (0, d.b)()
+                        ? (0, u.VQ)()
+                        : ((0, r.closeModal)(N), f.delete(N), c.A.clearPendingWidgets(), (0, u.XQ)());
                 },
             },
         ),
     );
 }
-function h() {
-    if (0 !== _.size) {
-        for (let e of _) (0, i.OoC)(e);
-        _.clear(), u.A.clearPendingWidgets();
+function E() {
+    if (0 !== f.size) {
+        for (let e of f) (0, r.closeModal)(e);
+        f.clear(), c.A.clearPendingWidgets(), (0, u.XQ)();
     }
 }
 class m extends a.A {
     _initialize() {
-        s.h.subscribe("USER_PROFILE_MODAL_OPEN", p), s.h.subscribe("USER_PROFILE_MODAL_CLOSE", h);
+        s.h.subscribe("USER_PROFILE_MODAL_OPEN", p), s.h.subscribe("USER_PROFILE_MODAL_CLOSE", E);
     }
     _terminate() {
-        s.h.unsubscribe("USER_PROFILE_MODAL_OPEN", p), s.h.unsubscribe("USER_PROFILE_MODAL_CLOSE", h);
+        s.h.unsubscribe("USER_PROFILE_MODAL_OPEN", p), s.h.unsubscribe("USER_PROFILE_MODAL_CLOSE", E);
     }
 }
-let E = new m();
+let g = new m();

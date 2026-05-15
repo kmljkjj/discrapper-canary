@@ -1,101 +1,124 @@
-"use strict";
-n.d(t, { DH: () => I, JW: () => A, a6: () => T, f7: () => m, jw: () => S, oo: () => y });
-var r = n(627968),
-    i = n(64700),
-    s = n(503698),
-    a = n.n(s),
-    o = n(435371),
-    l = n(397927),
-    u = n(966327),
-    c = n(263063),
-    d = n(403362),
-    _ = n(427262),
-    f = n(523376),
-    p = n(985018),
-    h = n(547595);
-function m(e) {
+l.d(t, { DH: () => w, JW: () => M, WH: () => B, a6: () => L, f7: () => k, jw: () => R, oo: () => D });
+var n = l(627968),
+    a = l(64700),
+    r = l(503698),
+    s = l.n(r),
+    i = l(575593),
+    c = l(17928),
+    o = l(990078),
+    d = l(834730),
+    u = l(778712),
+    m = l(315629),
+    x = l(403581),
+    h = l(104510),
+    g = l(323384),
+    v = l(966327),
+    j = l(14702),
+    p = l(575926),
+    f = l(548118),
+    N = l(319820),
+    b = l(328968),
+    E = l(403362),
+    T = l(371794),
+    y = l(427262),
+    A = l(652215),
+    C = l(788868),
+    I = l(327105),
+    S = l(985018),
+    _ = l(617956);
+function k(e) {
     let {
             header: t,
-            headerIconSrc: n,
-            bottomSubText: s,
-            label: u,
-            description: c,
-            graphic: d,
-            price: _,
-            PriceIcon: f,
-            priceTooltip: p,
-            priceSubText: m,
-            priceSubTextHasStrikethrough: g = !0,
-            target: A,
-            className: I,
+            headerIconSrc: l,
+            headerIconComponent: r,
+            bottomSubText: i,
+            label: c,
+            description: u,
+            graphic: m,
+            price: x,
+            PriceIcon: h,
+            priceTooltip: g,
+            priceSubText: v,
+            priceSubTextHasStrikethrough: j = !0,
+            target: p,
+            className: f,
         } = e,
-        T = (0, r.jsx)(E, { target: A }),
-        S = i.useMemo(() => {
-            let e = (0, r.jsxs)(l.Text, {
+        N = (0, n.jsx)(P, { target: p }),
+        b = a.useMemo(() => {
+            let e = (0, n.jsxs)(d.E, {
                 variant: "text-md/medium",
                 color: "text-default",
-                className: h.nw,
-                children: [null != f && (0, r.jsx)(f, { size: "xs" }), _],
+                className: _.nw,
+                children: [null != h && (0, n.jsx)(h, { size: "xs" }), x],
             });
-            return null != p
-                ? (0, r.jsx)(o.m_, { text: p, asContainer: !0, position: "top", align: "center", children: e })
+            return null != g
+                ? (0, n.jsx)(o.m, { text: g, asContainer: !0, position: "top", align: "center", children: e })
                 : e;
-        }, [f, _, p]);
-    return (0, r.jsxs)(r.Fragment, {
+        }, [h, x, g]),
+        E = a.useMemo(
+            () =>
+                null != r
+                    ? (0, n.jsx)("span", { className: _.nr, children: r })
+                    : null != l
+                      ? (0, n.jsx)("img", { alt: "", src: l, className: _.nr })
+                      : null,
+            [l, r],
+        );
+    return (0, n.jsxs)(n.Fragment, {
         children: [
-            (0, r.jsxs)("div", {
-                className: a()(h.kL, I),
+            (0, n.jsxs)("div", {
+                className: s()(_.kL, f),
                 children: [
-                    null != d && (0, r.jsx)("div", { className: h.Kk, children: d }),
-                    (0, r.jsxs)("div", {
-                        className: h.Qs,
+                    null != m && (0, n.jsx)("div", { className: _.Kk, children: m }),
+                    (0, n.jsxs)("div", {
+                        className: _.Qs,
                         children: [
                             null != t &&
-                                (0, r.jsxs)(l.Text, {
+                                (0, n.jsxs)(d.E, {
                                     variant: "text-sm/semibold",
                                     color: "text-muted",
-                                    lineClamp: 1,
-                                    className: h.wx,
-                                    children: [null != n && (0, r.jsx)("img", { alt: "", src: n, className: h.nr }), t],
+                                    lineClamp: 2,
+                                    className: _.wx,
+                                    children: [E, t],
                                 }),
-                            (0, r.jsxs)("div", {
-                                className: h.zH,
+                            (0, n.jsxs)("div", {
+                                className: _.zH,
                                 children: [
-                                    (0, r.jsxs)("div", {
-                                        className: h.Qq,
+                                    (0, n.jsxs)("div", {
+                                        className: _.Qq,
                                         children: [
-                                            (0, r.jsx)(l.Text, {
+                                            (0, n.jsx)(d.E, {
                                                 variant: "text-md/normal",
                                                 color: "text-default",
                                                 lineClamp: 2,
-                                                children: u,
+                                                children: c,
                                             }),
-                                            null != c &&
-                                                (0, r.jsx)(l.Text, {
+                                            null != u &&
+                                                (0, n.jsx)(d.E, {
                                                     variant: "text-sm/normal",
                                                     color: "text-muted",
                                                     lineClamp: 2,
-                                                    children: c,
+                                                    children: u,
                                                 }),
-                                            null != T &&
-                                                (0, r.jsx)(l.Text, {
+                                            null != N &&
+                                                (0, n.jsx)(d.E, {
                                                     variant: "text-sm/normal",
                                                     color: "text-muted",
                                                     lineClamp: 1,
-                                                    children: T,
+                                                    children: N,
                                                 }),
                                         ],
                                     }),
-                                    (0, r.jsxs)("div", {
-                                        className: h.p6,
+                                    (0, n.jsxs)("div", {
+                                        className: _.p6,
                                         children: [
-                                            S,
-                                            null != m &&
-                                                (0, r.jsx)(l.Text, {
-                                                    variant: g ? "text-xs/medium" : "text-sm/normal",
+                                            b,
+                                            null != v &&
+                                                (0, n.jsx)(d.E, {
+                                                    variant: j ? "text-xs/medium" : "text-sm/normal",
                                                     color: "text-muted",
-                                                    className: a()(h.Jb, { [h.Nc]: g }),
-                                                    children: m,
+                                                    className: s()(_.Jb, { [_.Nc]: j }),
+                                                    children: v,
                                                 }),
                                         ],
                                     }),
@@ -105,60 +128,102 @@ function m(e) {
                     }),
                 ],
             }),
-            null != s &&
-                (0, r.jsx)(l.Text, { variant: "text-sm/medium", color: "text-muted", className: h.dx, children: s }),
+            null != i &&
+                (0, n.jsx)(d.E, { variant: "text-sm/medium", color: "text-muted", className: _.dx, children: i }),
         ],
     });
 }
-function E(e) {
+function P(e) {
     let { target: t } = e;
     switch (t?.type) {
         case "gift":
-            return p.intl.format(f.default["2PiTTi"], {
-                username: _.Ay.getUserTag(t.user),
-                nickname: _.Ay.getName(t.user),
-                avatar: (0, r.jsx)(u.A, { user: t.user, size: l._3J.SIZE_16, className: h.RG }),
+            return S.intl.format(I.default["2PiTTi"], {
+                username: y.Ay.getUserTag(t.user),
+                nickname: y.Ay.getName(t.user),
+                avatar: (0, n.jsx)(v.A, { user: t.user, size: u._3.SIZE_16, className: _.RG }),
             });
         case "guildSubscription":
-            return p.intl.format(f.default.mXvZt2, {
+            return S.intl.format(I.default.mXvZt2, {
                 guildName: t.guild.name,
-                icon: (0, r.jsx)(c.Ay, { guild: t.guild, iconSize: 16, className: h.RG }),
+                icon: (0, n.jsx)(f.Ay, { guild: t.guild, size: f.Ay.Sizes.SMOL, className: _.RG }),
             });
         case "boost":
-            return p.intl.format(f.default["8imbq5"], {
+            return S.intl.format(I.default["8imbq5"], {
                 guildName: t.guild.name,
                 guildIcon: () =>
-                    (0, r.jsx)(c.Ay, { guild: t.guild, size: c.Ay.Sizes.SMOL, className: h.RG, active: !0 }),
+                    (0, n.jsx)(f.Ay, { guild: t.guild, size: f.Ay.Sizes.SMOL, className: _.RG, active: !0 }),
             });
         case void 0:
             return null;
         default:
-            (0, d.xb)(t);
+            (0, E.xb)(t);
     }
 }
-function g(e) {
-    let { color: t, Icon: n } = e;
-    return (0, r.jsx)(l.hLv, {
+function G(e) {
+    let { color: t, Icon: l } = e;
+    return (0, n.jsx)(m.h, {
         color: t,
-        className: h.nC,
-        children: (0, r.jsx)(n, { size: "lg", color: "var(--icon-strong)" }),
+        className: _.nC,
+        children: (0, n.jsx)(l, { size: "lg", color: "var(--icon-strong)" }),
     });
 }
-function A() {
-    return (0, r.jsx)(g, { color: "nitro-pink", Icon: l.tvc });
+function M() {
+    return (0, n.jsx)(G, { color: "nitro-pink", Icon: x.t });
 }
-function I() {
-    return (0, r.jsx)(g, { color: "nitro-green", Icon: l.tvc });
+function w() {
+    return (0, n.jsx)(G, { color: "nitro-green", Icon: x.t });
 }
-function T() {
-    return (0, r.jsx)(g, { color: "pink", Icon: l._Jp });
+function L() {
+    return (0, n.jsx)(G, { color: "pink", Icon: h._ });
 }
-function S() {
-    return (0, r.jsx)(l.k9F, { size: "lg", color: "var(--icon-muted)" });
+function R() {
+    return (0, n.jsx)(g.k, { size: "lg", color: "var(--icon-muted)" });
 }
-function y() {
-    return (0, r.jsx)("div", {
-        className: h.CX,
-        children: (0, r.jsx)(l.tvc, { size: "lg", color: "var(--neutral-1)" }),
-    });
+function D() {
+    return (0, n.jsx)("div", { className: _.CX, children: (0, n.jsx)(x.t, { size: "lg", color: "var(--neutral-1)" }) });
+}
+let O = {
+    [A.EZt.APPLICATION]: { preferredAssetType: "headerBackground" },
+    [A.EZt.GUILD_ROLE]: { preferredAssetType: "thumbnail" },
+    [A.EZt.GUILD_PRODUCT]: { preferredAssetType: "thumbnail" },
+};
+function $(e) {
+    let { skuId: t, productLine: l, applicationId: r, storeListing: s } = e,
+        i = (0, c.bG)([b.A], () => s ?? b.A.getForSKU(t), [s, t]),
+        o = O[l].preferredAssetType,
+        d = a.useMemo(
+            () =>
+                null == i
+                    ? null
+                    : "headerBackground" === o
+                      ? (i.headerBackground ?? i.thumbnail)
+                      : (i.thumbnail ?? i.headerBackground),
+            [o, i],
+        );
+    return null != d
+        ? (0, n.jsx)("img", { src: (0, T.YE)(r, d, 64), alt: "", className: _.gw })
+        : l === A.EZt.APPLICATION
+          ? (0, n.jsx)(R, {})
+          : l === A.EZt.GUILD_ROLE
+            ? (0, n.jsx)(p.h, { width: 48, height: 48 })
+            : null;
+}
+function B(e) {
+    let { sku: t, premiumType: l, product: a, storeListing: r } = e;
+    return l === C.PremiumTypes.TIER_0
+        ? (0, n.jsx)(w, {})
+        : l === C.PremiumTypes.TIER_2
+          ? (0, n.jsx)(M, {})
+          : a?.type === i.R.BUNDLE
+            ? (0, n.jsx)(j.a, { product: a, staticPreviewClassName: _.C0 })
+            : null == t
+              ? null
+              : t.productLine in O
+                ? (0, n.jsx)($, {
+                      skuId: t.id,
+                      productLine: t.productLine,
+                      applicationId: t.applicationId,
+                      storeListing: r,
+                  })
+                : (0, n.jsx)(N.r$, { sku: t, slayerProductPreviewClassName: _.gw });
 }

@@ -1,29 +1,30 @@
 var t = "[0-9](_*[0-9])*",
     n = `\\.(${t})`,
-    r = "[0-9a-fA-F](_*[0-9a-fA-F])*",
-    i = {
+    i = "[0-9a-fA-F](_*[0-9a-fA-F])*",
+    r = {
         className: "number",
         variants: [
             { begin: `(\\b(${t})((${n})|\\.)?|(${n}))[eE][+-]?(${t})[fFdD]?\\b` },
             { begin: `\\b(${t})((${n})[fFdD]?\\b|\\.([fFdD]\\b)?)` },
             { begin: `(${n})[fFdD]?\\b` },
             { begin: `\\b(${t})[fFdD]\\b` },
-            { begin: `\\b0[xX]((${r})\\.?|(${r})?\\.(${r}))[pP][+-]?(${t})[fFdD]?\\b` },
+            { begin: `\\b0[xX]((${i})\\.?|(${i})?\\.(${i}))[pP][+-]?(${t})[fFdD]?\\b` },
             { begin: "\\b(0|[1-9](_*[0-9])*)[lL]?\\b" },
-            { begin: `\\b0[xX](${r})[lL]?\\b` },
+            { begin: `\\b0[xX](${i})[lL]?\\b` },
             { begin: "\\b0(_*[0-7])*[lL]?\\b" },
             { begin: "\\b0[bB][01](_*[01])*[lL]?\\b" },
         ],
         relevance: 0,
     };
-function s(e, t, n) {
-    return -1 === n ? "" : e.replace(t, (r) => s(e, t, n - 1));
-}
 e.exports = function (e) {
     let t = e.regex,
-        n = "[\xc0-ʸa-zA-Z_$][\xc0-ʸa-zA-Z_$0-9]{0,149}",
-        r = n + s("(?:<" + n + "~~~(?:\\s*,\\s*" + n + "~~~)*>)?", /~~~/g, 2),
-        a = {
+        n = "[\xc0-\u02B8a-zA-Z_$][\xc0-\u02B8a-zA-Z_$0-9]{0,149}",
+        i =
+            n +
+            (function e(t, n, i) {
+                return -1 === i ? "" : t.replace(n, (r) => e(t, n, i - 1));
+            })("(?:<" + n + "~~~(?:\\s*,\\s*" + n + "~~~)*>)?", /~~~/g, 2),
+        s = {
             keyword: [
                 "synchronized",
                 "abstract",
@@ -74,12 +75,12 @@ e.exports = function (e) {
             type: ["char", "boolean", "long", "float", "int", "byte", "short", "double"],
             built_in: ["super", "this"],
         },
-        o = { className: "meta", begin: "@" + n, contains: [{ begin: /\(/, end: /\)/, contains: ["self"] }] },
-        l = {
+        a = { className: "meta", begin: "@" + n, contains: [{ begin: /\(/, end: /\)/, contains: ["self"] }] },
+        o = {
             className: "params",
             begin: /\(/,
             end: /\)/,
-            keywords: a,
+            keywords: s,
             relevance: 0,
             contains: [e.C_BLOCK_COMMENT_MODE],
             endsParent: !0,
@@ -87,7 +88,7 @@ e.exports = function (e) {
     return {
         name: "Java",
         aliases: ["jsp"],
-        keywords: a,
+        keywords: s,
         illegal: /<\/|#/,
         contains: [
             e.COMMENT("/\\*\\*", "\\*/", {
@@ -115,28 +116,28 @@ e.exports = function (e) {
             {
                 begin: [/record/, /\s+/, n],
                 className: { 1: "keyword", 3: "title.class" },
-                contains: [l, e.C_LINE_COMMENT_MODE, e.C_BLOCK_COMMENT_MODE],
+                contains: [o, e.C_LINE_COMMENT_MODE, e.C_BLOCK_COMMENT_MODE],
             },
             { beginKeywords: "new throw return else", relevance: 0 },
             {
-                begin: ["(?:" + r + "\\s+)", e.UNDERSCORE_IDENT_RE, /\s*(?=\()/],
+                begin: ["(?:" + i + "\\s+)", e.UNDERSCORE_IDENT_RE, /\s*(?=\()/],
                 className: { 2: "title.function" },
-                keywords: a,
+                keywords: s,
                 contains: [
                     {
                         className: "params",
                         begin: /\(/,
                         end: /\)/,
-                        keywords: a,
+                        keywords: s,
                         relevance: 0,
-                        contains: [o, e.APOS_STRING_MODE, e.QUOTE_STRING_MODE, i, e.C_BLOCK_COMMENT_MODE],
+                        contains: [a, e.APOS_STRING_MODE, e.QUOTE_STRING_MODE, r, e.C_BLOCK_COMMENT_MODE],
                     },
                     e.C_LINE_COMMENT_MODE,
                     e.C_BLOCK_COMMENT_MODE,
                 ],
             },
-            i,
-            o,
+            r,
+            a,
         ],
     };
 };

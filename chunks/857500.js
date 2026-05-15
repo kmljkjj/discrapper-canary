@@ -1,43 +1,42 @@
 "use strict";
-n.d(t, { A: () => g });
-var r = n(73153),
-    i = n(439372),
-    a = n(961350),
-    s = n(131319),
+n.d(t, { A: () => m });
+var i = n(228366),
+    r = n(439372),
+    s = n(495544),
+    a = n(131319),
     o = n(734057),
     l = n(309010),
-    u = n(117549),
-    c = n(652215);
-function d() {
-    let e = l.A.getVoiceChannelId(),
-        t = s.A.bitrate;
-    if (null == e) return;
-    let n = o.A.getChannel(e);
-    null == n || (t !== n.bitrate && r.h.dispatch({ type: "SET_CHANNEL_BITRATE", bitrate: n.bitrate }));
+    d = n(117549),
+    _ = n(652215);
+function u() {
+    !(function () {
+        let e = l.A.getVoiceChannelId(),
+            t = a.A.bitrate;
+        if (null == e) return;
+        let n = o.A.getChannel(e);
+        null == n || (t !== n.bitrate && i.h.dispatch({ type: "SET_CHANNEL_BITRATE", bitrate: n.bitrate }));
+    })(),
+        (function () {
+            let e = l.A.getVoiceChannelId(),
+                t = d.A.mode;
+            if (null == e) return;
+            let n = o.A.getChannel(e);
+            if (null == n) return;
+            let r = n.videoQualityMode ?? _.K3c.AUTO;
+            t !== r && i.h.dispatch({ type: "SET_CHANNEL_VIDEO_QUALITY_MODE", mode: r });
+        })();
 }
-function _() {
-    let e = l.A.getVoiceChannelId(),
-        t = u.A.mode;
-    if (null == e) return;
-    let n = o.A.getChannel(e);
-    if (null == n) return;
-    let i = n.videoQualityMode ?? c.K3c.AUTO;
-    t !== i && r.h.dispatch({ type: "SET_CHANNEL_VIDEO_QUALITY_MODE", mode: i });
-}
-function f() {
-    d(), _();
-}
-function p(e) {
+function c(e) {
     let { channels: t } = e;
-    for (let e of t) l.A.getVoiceChannelId() === e.id && f();
+    for (let e of t) l.A.getVoiceChannelId() === e.id && u();
 }
-function h(e) {
+function E(e) {
     let { voiceStates: t } = e;
     t.forEach((e) => {
-        a.default.getSessionId() === e.sessionId && f();
+        s.default.getSessionId() === e.sessionId && u();
     });
 }
-class m extends i.A {
-    actions = { CHANNEL_UPDATES: p, VOICE_STATE_UPDATES: h };
+class h extends r.A {
+    actions = { CHANNEL_UPDATES: c, VOICE_STATE_UPDATES: E };
 }
-let g = new m();
+let m = new h();

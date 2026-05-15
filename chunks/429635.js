@@ -1,15 +1,15 @@
-n.d(t, { A: () => i });
-var a = n(64700),
-    l = n(311907),
-    s = n(733391),
-    r = n(832163);
-function i(e) {
+l.d(t, { A: () => s });
+var n = l(64700),
+    a = l(17928),
+    i = l(733391),
+    r = l(832163);
+function s(e) {
     let { guildId: t } = e,
-        n = (0, l.bG)([r.A], () => (null != t ? r.A.getStorefrontData(t) : void 0), [t]);
+        l = (0, a.bG)([r.A], () => (null != t ? r.A.getStorefrontData(t) : void 0), [t]);
     return (
-        a.useEffect(() => {
-            null != t && n?.state !== "fetched" && n?.state !== "loading" && (0, s.Rw)(t, { eager: !1 });
-        }, [t, n]),
-        n
+        n.useEffect(() => {
+            null != t && (0, i.Rw)(t, { eager: !1 });
+        }, [t]),
+        l
     );
 }

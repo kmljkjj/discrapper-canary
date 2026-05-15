@@ -1,18 +1,18 @@
-n.d(t, { E9: () => d, jM: () => o });
-var i = n(627968),
-    l = n(64700),
-    a = n(812729),
-    r = n.n(a);
-let s = l.createContext({});
-function o() {
-    return l.useContext(s);
+r.d(t, { E9: () => o, jM: () => s });
+var n = r(627968),
+    u = r(64700),
+    l = r(812729),
+    a = r.n(l);
+let i = u.createContext({});
+function s() {
+    return u.useContext(i);
 }
-function d(e) {
-    let { newValue: t, children: n } = e,
-        a = o(),
-        d = l.useMemo(() => {
-            let e = { ...a, ...t };
-            return r()(a, e) ? (a ?? e) : e;
-        }, [a, t]);
-    return (0, i.jsx)(s.Provider, { value: d, children: n });
+function o(e) {
+    let { newValue: t, children: r } = e,
+        l = s(),
+        o = u.useMemo(() => {
+            let e = { ...l, ...t };
+            return a()(l, e) ? (l ?? e) : e;
+        }, [l, t]);
+    return (0, n.jsx)(i.Provider, { value: o, children: r });
 }

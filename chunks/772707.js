@@ -1,10 +1,10 @@
 "use strict";
 n.d(t, { k: () => l });
-var r = n(627968);
+var i = n(627968);
 n(64700);
-var i = n(224640),
-    a = n(696208),
-    s = n(430993),
+var r = n(224640),
+    s = n(696208),
+    a = n(430993),
     o = n(20742);
 function l(e) {
     let {
@@ -16,17 +16,19 @@ function l(e) {
         subtitle: d,
         actionBarInput: _,
         actions: f,
-        children: p,
-        ...h
+        children: h,
+        "aria-label": p,
+        ...E
     } = e;
-    return (0, r.jsxs)(i.d, {
-        ...h,
+    return (0, i.jsxs)(r.d, {
+        ...E,
+        "aria-label": p ?? c,
         size: t,
         paddingSize: "lg",
         children: [
-            (0, r.jsx)(o.V6, { gradientColor: n, graphic: l, badge: u, title: c, subtitle: d }),
-            (0, r.jsx)(s.c, { children: p }),
-            (0, r.jsx)(a.H, { leading: _, actions: f, actionsFullWidth: null == _ }),
+            (0, i.jsx)(o.V6, { gradientColor: n, graphic: l, badge: u, title: c, subtitle: d }),
+            (0, i.jsx)(a.c, { children: h }),
+            (0, i.jsx)(s.H, { leading: _, actions: f, actionsFullWidth: null == _ }),
         ],
     });
 }

@@ -1,18 +1,18 @@
 "use strict";
-n.d(t, { ls: () => s, uj: () => o, v1: () => a, y5: () => l });
-var r = n(506774);
+n.d(t, { ls: () => a, uj: () => r, v1: () => s, y5: () => o });
+var l = n(506774);
 let i = "MediaPlayerVolume";
-function a() {
-    let { volume: e } = r.w.get(i) ?? {};
+function s() {
+    let { volume: e } = l.w.get(i) ?? {};
     return "number" != typeof e && (e = 1), (e = Math.min(1, Math.max(0, e)));
 }
-function s(e) {
-    r.w.set(i, { volume: e, muted: o() });
+function a(e) {
+    l.w.set(i, { volume: e, muted: r() });
 }
-function o() {
-    let { muted: e } = r.w.get(i) ?? {};
+function r() {
+    let { muted: e } = l.w.get(i) ?? {};
     return "boolean" != typeof e && (e = !1), e;
 }
-function l(e) {
-    r.w.set(i, { volume: a(), muted: e });
+function o(e) {
+    l.w.set(i, { volume: s(), muted: e });
 }

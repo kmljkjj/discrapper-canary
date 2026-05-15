@@ -1,114 +1,131 @@
 "use strict";
-n.d(t, { $Y: () => g, IP: () => h, Ow: () => m, Pv: () => E }), n(321073);
-var r = n(627968),
-    i = n(64700),
+n.d(t, { $Y: () => g, IP: () => c, Ow: () => m, Pv: () => f, jQ: () => E }), n(321073);
+var i = n(627968),
+    r = n(64700),
     s = n(879821),
-    a = n(862019),
-    o = n(193439),
+    a = n(716263),
+    o = n(38339),
     l = n(503698),
-    u = n.n(l),
-    c = n(426333),
-    d = n(337836),
-    _ = n(366242);
-let f = 8,
-    p = 100,
-    h = "data-popover-layer";
-function m(e) {
+    d = n.n(l),
+    _ = n(337836),
+    u = n(625767);
+let c = "data-popover-layer",
+    E = r.createContext(null);
+function h(e) {
     let t,
         {
-            ownerDocument: n = document,
-            open: l,
-            onOpenChange: m,
-            id: E,
-            className: g,
+            focus: n = "none",
+            returnFocusElement: l,
+            ownerDocument: h = document,
+            open: m,
+            onOpenChange: f,
+            id: g,
+            className: p,
             reference: A,
             overrideTargetRect: I,
             placement: T = "bottom",
             spacing: S = 8,
-            autoFlip: y = !0,
-            crossAccessFlip: v = !0,
-            autoShift: N = !0,
-            strategy: C = "fixed",
-            portal: R = !0,
-            blockPointerEvents: O = !1,
-            children: b,
-            renderLayer: D,
-            viewportPadding: L = f,
+            autoFlip: N = !0,
+            crossAccessFlip: C = !0,
+            autoShift: R = !0,
+            strategy: O = "fixed",
+            portal: y = !0,
+            blockPointerEvents: v = !1,
+            children: D,
+            renderLayer: L,
+            viewportPadding: b = 8,
             maxHeight: w,
-            trigger: M = "click",
-            hoverDelay: x = p,
-            autoUpdate: P = !1,
+            trigger: P = "click",
+            hoverDelay: k = 100,
+            autoUpdate: M = !1,
         } = e,
-        k = i.useRef(null),
-        U = i.useMemo(() => {
+        U = r.useRef(l ?? null);
+    r.useLayoutEffect(() => {
+        U.current = l ?? null;
+    }, [l]);
+    let x = r.useMemo(() => {
             let e = [(0, s.cY)(S)];
             return (
-                y && e.push((0, s.UU)({ crossAxis: v, padding: L, boundary: n.body })),
-                N && e.push((0, s.BN)({ padding: L, limiter: (0, s.ER)(), boundary: n.body })),
+                N && e.push((0, s.UU)({ crossAxis: C, padding: b, boundary: h.body })),
+                R && e.push((0, s.BN)({ padding: b, limiter: (0, s.ER)(), boundary: h.body })),
                 e.push((0, s.jD)({ strategy: "referenceHidden" })),
                 null != w &&
                     e.push(
                         (0, s.Ej)({
-                            padding: L,
-                            boundary: n.body,
+                            padding: b,
+                            boundary: h.body,
                             apply(e) {
                                 let { availableHeight: t, elements: n } = e,
-                                    r = Math.min(w, t);
-                                n.floating.style.setProperty("--custom-floating-layer-max-height", `${r}px`);
+                                    i = Math.min(w, t);
+                                n.floating.style.setProperty("--custom-floating-layer-max-height", `${i}px`);
                             },
                         }),
                     ),
                 e
             );
-        }, [S, y, N, L, v, n, w]);
-    null != I ? (t = { reference: { getBoundingClientRect: () => I } }) : null != A && (t = { reference: A });
-    let {
-            refs: G,
+        }, [S, N, R, b, C, h, w]),
+        G = (0, a.fI)(),
+        {
+            refs: V,
             floatingStyles: F,
-            placement: V,
-            middlewareData: B,
-            update: H,
-            context: j,
+            placement: B,
+            middlewareData: H,
+            update: j,
+            context: W,
         } = (0, a.we)({
+            nodeId: G,
             placement: T,
-            open: l,
-            onOpenChange: m,
-            strategy: C,
-            middleware: U,
-            whileElementsMounted: P ? o.ll : void 0,
-            elements: t,
-        }),
-        Y = (0, a.s9)(j),
-        W = (0, a.Mk)(j, { restMs: x, delay: { open: x, close: 0 }, enabled: "hover" === M, handleClose: (0, a.iB)() }),
-        { getReferenceProps: K, getFloatingProps: $ } = (0, a.bv)([Y, W]),
-        z = B.hide?.referenceHidden ? "hidden" : "visible",
-        q = R ? d.sM : i.Fragment;
-    return (0, r.jsxs)(r.Fragment, {
+            open: m,
+            onOpenChange: f,
+            strategy: O,
+            middleware: x,
+            whileElementsMounted: M ? o.ll : void 0,
+        });
+    r.useLayoutEffect(() => {
+        null != I ? V.setPositionReference({ getBoundingClientRect: () => I }) : null != A && V.setReference(A);
+    }, [V, I, A]);
+    let Y = (0, a.s9)(W),
+        K = (0, a.Mk)(W, { restMs: k, delay: { open: k, close: 0 }, enabled: "hover" === P, handleClose: (0, a.iB)() }),
+        { getReferenceProps: z, getFloatingProps: $ } = (0, a.bv)([Y, K]),
+        q = H.hide?.referenceHidden ? "hidden" : "visible",
+        X = y ? _.sM : r.Fragment,
+        Z = r.useMemo(() => ({ focus: n }), [n]);
+    return (0, i.jsxs)(i.Fragment, {
         children: [
-            b({ ref: G.setReference, props: K() }),
-            l &&
-                (0, r.jsxs)(q, {
-                    ownerDocument: n,
-                    children: [
-                        O ? (0, r.jsx)(a.zR, {}) : null,
-                        (0, r.jsx)("div", {
-                            id: E,
-                            className: u()(g, _.q),
-                            [h]: !0,
-                            style: { ...F, visibility: z },
-                            ref: G.setFloating,
-                            ...$(),
-                            children: (0, r.jsx)(c.xp, {
-                                containerRef: k,
-                                children: D({ placement: V, update: H, hidden: "hidden" === z, shift: B.shift }),
-                            }),
-                        }),
-                    ],
-                }),
+            D({ ref: V.setReference, props: z() }),
+            (0, i.jsx)(a.$c, {
+                id: G,
+                children:
+                    m &&
+                    (0, i.jsxs)(X, {
+                        ownerDocument: h,
+                        children: [
+                            v ? (0, i.jsx)(a.zR, { lockScroll: !0 }) : null,
+                            ((t = (0, i.jsx)("div", {
+                                id: g,
+                                className: d()(p, u.q),
+                                [c]: !0,
+                                style: { ...F, visibility: q },
+                                ref: V.setFloating,
+                                ...$(),
+                                children: (0, i.jsx)(E.Provider, {
+                                    value: Z,
+                                    children: L({ placement: B, update: j, hidden: "hidden" === q, shift: H.shift }),
+                                }),
+                            })),
+                            "none" === n
+                                ? t
+                                : (0, i.jsx)(a.s3, { context: W, modal: "modal" === n, returnFocus: U, children: t })),
+                        ],
+                    }),
+            }),
         ],
     });
 }
-function E(e, t) {
+function m(e) {
+    return null == (0, a.R1)() ? (0, i.jsx)(a.P6, { children: (0, i.jsx)(h, { ...e }) }) : (0, i.jsx)(h, { ...e });
+}
+function f(e, t) {
     switch (e) {
         case "center":
         case "window_center":

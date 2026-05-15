@@ -1,65 +1,63 @@
 "use strict";
-n.d(t, { A: () => y });
-var r = n(627968),
-    i = n(64700),
-    a = n(503698),
-    s = n.n(a),
-    o = n(311907),
+n.d(t, { A: () => S });
+var i = n(627968),
+    r = n(64700),
+    s = n(503698),
+    a = n.n(s),
+    o = n(17928),
     l = n(770178),
     u = n(313961),
     c = n(47167),
     d = n(28390),
     _ = n(461782),
     f = n(447404),
-    p = n(271195),
-    h = n(994500),
-    m = n(287809),
-    g = n(732777),
-    E = n(709382),
-    A = n(185014),
-    I = n(204137),
-    T = n(976092);
-let y = (e) => {
+    h = n(271195),
+    p = n(994500),
+    E = n(287809),
+    m = n(732777),
+    g = n(709382),
+    A = n(683807),
+    I = n(161148),
+    T = n(604949);
+let S = (e) => {
     let { channel: t, width: n } = e,
-        a = (0, o.bG)([u.A], () => u.A.getFilteredParticipants(t.id)),
-        y = (0, g.A)(t.id),
-        S = i.useMemo(() => (0, c.m1)(t, m.default, h.A), [t]),
-        v = (0, d.A)(t),
-        C = n * (E.i.height / E.i.width),
-        b = 1156,
-        N = 1050,
-        [R, O] = i.useState(0.65),
-        [D, L] = i.useState({ x: 0, y: 0 }),
-        w = (0, l.w)((e) => {
+        s = (0, o.bG)([u.A], () => u.A.getFilteredParticipants(t.id)),
+        S = (0, m.A)(t.id),
+        N = r.useMemo(() => (0, c.m1)(t, E.default, p.A), [t]),
+        y = (0, d.A)(t),
+        C = n * (g.i.height / g.i.width),
+        [v, O] = r.useState(0.65),
+        [R, b] = r.useState({ x: 0, y: 0 }),
+        D = (0, l.w)((e) => {
             let { contentRect: t } = e,
-                n = Math.max((t.width / E.i.width) * 1.5, (t.height / E.i.height) * 1.5),
-                r = t.width / 2 - b * n,
-                i = t.height / 2 - N * n;
-            O(n), L({ x: r, y: i });
+                n = Math.max((t.width / g.i.width) * 1.5, (t.height / g.i.height) * 1.5),
+                i = t.width / 2 - 1156 * n,
+                r = t.height / 2 - 1050 * n;
+            O(n), b({ x: i, y: r });
         });
-    return (0, r.jsx)(_.Ay, {
+    return (0, i.jsx)(_.Ay, {
         timeout: 2e3,
         children: (e) =>
-            (0, r.jsx)(p.A, {
-                title: S,
+            (0, i.jsx)(h.A, {
+                title: N,
                 backgroundKey: t.id,
                 screenMessage: null,
-                onJumpToChannel: v,
+                onJumpToChannel: y,
                 preventIdleComponent: f.A,
                 width: n,
                 className: T.a8,
                 ...e,
-                children: (0, r.jsx)("div", {
-                    ref: w,
+                children: (0, i.jsx)("div", {
+                    ref: D,
                     className: I.n,
                     style: { width: n, height: C },
-                    children: (0, r.jsx)("div", {
-                        className: s()(A.VT, A.rh),
-                        style: { transform: `translate(${D.x}px, ${D.y}px) scale(${R})` },
-                        children: (0, r.jsx)(E.A, {
-                            roomSeats: y.seats,
-                            roomParticipants: y.participants,
-                            participants: a,
+                    children: (0, i.jsx)("div", {
+                        className: a()(A.VT, A.rh),
+                        style: { transform: `translate(${R.x}px, ${R.y}px) scale(${v})` },
+                        children: (0, i.jsx)(g.A, {
+                            roomSeats: S.seats,
+                            roomParticipants: S.participants,
+                            participants: s,
                             channel: t,
                             idle: e.idle,
                             showAmbientEffects: !1,

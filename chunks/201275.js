@@ -1,32 +1,32 @@
 "use strict";
 n.d(t, { $7: () => u, ox: () => l, qE: () => c });
-var r = n(64700),
-    i = n(311907),
-    a = n(317525),
-    s = n(71393),
+var i = n(64700),
+    r = n(17928),
+    s = n(317525),
+    a = n(71393),
     o = n(376304);
 function l(e, t) {
     if (null == e) return;
-    let { customIconSrc: n, unicodeEmoji: r } = (0, o.sE)(e, t) ?? {};
-    if (null != n || null != r) return { src: n, name: e.name, roleId: e.id, size: t, unicodeEmoji: r };
+    let { customIconSrc: n, unicodeEmoji: i } = (0, o.sE)(e, t) ?? {};
+    if (null != n || null != i) return { src: n, name: e.name, roleId: e.id, size: t, unicodeEmoji: i };
 }
 function u(e) {
     let { guildId: t, roleId: n, size: u = 20, role: c, guild: d } = e,
-        { guild: _, role: f } = (0, i.cf)(
-            [s.A, a.A],
+        { guild: _, role: f } = (0, r.cf)(
+            [a.A, s.A],
             () => ({
-                guild: null == d ? s.A.getGuild(t) : void 0,
-                role: null == c && null != n ? a.A.getRole(t, n) : void 0,
+                guild: null == d ? a.A.getGuild(t) : void 0,
+                role: null == c && null != n ? s.A.getRole(t, n) : void 0,
             }),
             [t, n, c, d],
         ),
-        p = d ?? _,
-        h = c ?? f;
-    return r.useMemo(() => {
-        if (null != p && null != h && (0, o.fm)(p, h)) return l(h, u);
-    }, [p, h, u]);
+        h = d ?? _,
+        p = c ?? f;
+    return i.useMemo(() => {
+        if (null != h && null != p && (0, o.fm)(h, p)) return l(p, u);
+    }, [h, p, u]);
 }
 function c(e, t) {
-    let n = (0, i.bG)([s.A], () => s.A.getGuild(e));
+    let n = (0, r.bG)([a.A], () => a.A.getGuild(e));
     if (null != n && (0, o.fm)(n, t)) return l(t);
 }

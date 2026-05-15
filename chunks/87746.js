@@ -1,20 +1,3 @@
-n.d(t, { Q: () => o });
-var r = n(627968);
-n(64700);
-var i = n(311907),
-    l = n(397927),
-    a = n(544231),
-    d = n(74114),
-    s = n(287809),
-    u = n(985018);
-function o(e) {
-    let t = (0, i.bG)([s.default], () => s.default.getCurrentUser()),
-        n = (0, d.l)(e.id);
-    return t?.isStaff() === !0 && e.isDM() && null == n
-        ? (0, r.jsx)(l.Drp, {
-              id: "mark-as-stranger-danger",
-              label: u.intl.string(u.t.CgWmmT),
-              action: () => (0, a.Ju)(e.id),
-          })
-        : null;
-}
+t.exports = JSON.parse(
+    '{"ihBfyA":["L\xe4gg till i Favoriter"],"PACPOV":["Spel"],"f98Qe3":["Ta bort alla klipp"],"YKst58":["Dela ditt perspektiv"],"snNYS+":["Klippalternativ"],"GPfOas":["\xc4ndra ditt kortkommando"],"DLzdl7":["\xc4ndra och dela dina klipp n\xe4r som helst h\xe4rifr\xe5n."],"4K56sP":["Discord Klipp fungerar med alla PC-spel."],"BIwQis":["Tryck p\xe5 ",[1,"keybind"]," f\xf6r att spela in ett klipp medan du spelar."],"HOUDUm":["Ange ett kortkommando f\xf6r att spela in ett klipp medan du spelar."],"m2GEpP":["Alla dina gamingstunder p\xe5 ett st\xe4lle"],"xkY5xS":["Testa att s\xf6ka efter n\xe5got annat"],"+M2iLf":["Inga klipp hittades"],"tv7emB":["Kopiera video"],"HH4Tjj":["L\xe4gg till p\xe5 ljudsk\xe4rmen"],"JbyR1U":["Filter: ",[1,"count"]],"dFu8vZ":[[1,"count"]," ",[6,"count",{"one":["nytt klipp"],"other":["nya klipp"]},0,"cardinal"]],"IZsalP":["Ta bort fr\xe5n Favoriter"],"55C2MH":["Visa alla klipp"]}',
+);

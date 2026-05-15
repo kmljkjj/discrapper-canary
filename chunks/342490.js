@@ -1,17 +1,17 @@
-"use strict";
-n.d(t, { u: () => r });
-var i = n(627968);
+n.d(e, { u: () => a });
+var s = n(627968);
 n(64700);
-var s = n(397927),
-    l = n(985018);
-function r(e) {
-    let { onClick: t, size: n } = e;
-    return (0, i.jsx)(s.Button, {
+var l = n(821609),
+    r = n(279449),
+    i = n(985018);
+function a(t) {
+    let { onClick: e, size: n } = t;
+    return (0, s.jsx)(l.$, {
         variant: "expressive",
-        onClick: t,
-        icon: s.dH6,
+        onClick: e,
+        icon: r.d,
         iconPosition: "start",
         size: n,
-        text: l.intl.string(l.t["+7XY31"]),
+        text: i.intl.string(i.t["+7XY31"]),
     });
 }

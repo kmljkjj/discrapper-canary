@@ -1,14 +1,36 @@
 n.d(t, { q: () => r });
 var i = n(627968);
 n(64700);
-var l = n(397927),
-    a = n(500208);
+var l = n(192308),
+    s = n(500208);
 function r(e, t) {
-    (0, l.mMO)(
+    (0, l.openModalLazy)(
         async () => {
-            let { default: l } = await Promise.all([n.e("49862"), n.e("67096")]).then(n.bind(n, 559947));
+            let { default: l } = await Promise.all([
+                n.e("79924"),
+                n.e("32824"),
+                n.e("52787"),
+                n.e("93110"),
+                n.e("16752"),
+                n.e("29666"),
+                n.e("3930"),
+                n.e("3663"),
+                n.e("10943"),
+                n.e("78046"),
+                n.e("51892"),
+                n.e("3710"),
+                n.e("8979"),
+                n.e("80436"),
+                n.e("38090"),
+                n.e("33416"),
+                n.e("61309"),
+                n.e("39855"),
+                n.e("35778"),
+                n.e("77663"),
+                n.e("43004"),
+            ]).then(n.bind(n, 501335));
             return (n) => (0, i.jsx)(l, { guildId: e, productId: t, ...n });
         },
-        { modalKey: a.DG },
+        { modalKey: s.DG },
     );
 }

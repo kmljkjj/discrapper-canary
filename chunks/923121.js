@@ -1,10 +1,9 @@
-"use strict";
-n.d(t, { Bq: () => x, fH: () => p, p2: () => h, q3: () => _, sF: () => u, yM: () => g, zN: () => m }), n(321073);
-var i = n(73153),
-    s = n(157559),
-    l = n(198982),
-    r = n(403362),
-    a = n(352821),
+n.d(t, { Bq: () => h, fH: () => E, p2: () => x, q3: () => _, sF: () => u, yM: () => g, zN: () => m }), n(321073);
+var i = n(228366),
+    l = n(157559),
+    s = n(845584),
+    a = n(403362),
+    r = n(352821),
     o = n(107795),
     d = n(539916),
     c = n(985018);
@@ -17,14 +16,14 @@ function m(e) {
 function g(e, t) {
     i.h.dispatch({ type: "GUILD_SETTINGS_ONBOARDING_CONNECTIONS_UPDATE", index: e, updates: t });
 }
-function x(e) {
+function h(e) {
     i.h.dispatch({ type: "GUILD_SETTINGS_ONBOARDING_CONNECTIONS_REORDER", connections: e });
 }
-function h() {
+function x() {
     i.h.dispatch({ type: "GUILD_SETTINGS_ONBOARDING_CONNECTIONS_RESET" });
 }
 async function _(e) {
-    let t = a.A.getEditedConnections(),
+    let t = r.A.getEditedConnections(),
         n = [];
     if (
         (t.forEach((e) => {
@@ -34,8 +33,8 @@ async function _(e) {
         n.length > 0)
     )
         throw (
-            (A(n),
-            s.A.show({ title: c.intl.string(c.t.ISppXw), body: n.join("\n") }),
+            (p(n),
+            l.A.show({ title: c.intl.string(c.t.ISppXw), body: n.join("\n") }),
             Error("failed to validate connections"))
         );
     i.h.dispatch({ type: "GUILD_SETTINGS_ONBOARDING_CONNECTIONS_SUBMIT" });
@@ -46,15 +45,15 @@ async function _(e) {
             (m = t),
             i.h.dispatch({ type: "GUILD_SETTINGS_ONBOARDING_CONNECTIONS_SAVE_SUCCESS", guildId: u, connections: m });
     } catch (i) {
-        let { fieldName: e, error: t } = new l.LG(i).getAnyErrorMessageAndField() ?? {},
-            n = [e, t].filter(r.Vq).join(": ");
-        throw (A([n]), s.A.show({ title: c.intl.string(c.t.iLdiqY), body: n }), i);
+        let { fieldName: e, error: t } = new s.LG(i).getAnyErrorMessageAndField() ?? {},
+            n = [e, t].filter(a.Vq).join(": ");
+        throw (p([n]), l.A.show({ title: c.intl.string(c.t.iLdiqY), body: n }), i);
     }
 }
-function A(e) {
+function p(e) {
     i.h.dispatch({ type: "GUILD_SETTINGS_ONBOARDING_CONNECTIONS_SAVE_FAILED", errors: e });
 }
-function p(e) {
+function E(e) {
     let t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
-    return t || a.A.hasChanges() ? _(e) : Promise.resolve();
+    return t || r.A.hasChanges() ? _(e) : Promise.resolve();
 }

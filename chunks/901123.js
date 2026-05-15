@@ -1,9 +1,9 @@
 "use strict";
 n.d(t, { BV: () => _, Cr: () => c, ME: () => a, YY: () => o, c$: () => u, gN: () => l });
-var r = n(323125);
+var i = n(323125),
+    r = n(758836);
 n(436317);
-var i = n(435220),
-    s = n(162157);
+var s = n(435220);
 let a = "@me",
     o = "@favorites",
     l = "@inbox",
@@ -35,20 +35,21 @@ let a = "@me",
         BILLING_PROMOTION_REDEMPTION: (e) => `/billing/promotions/${e}`,
         BILLING_PROMOTION_REDEMPTION_GENERIC: "/billing/promotions",
         BILLING_PROMOTION_DIRECT_FULFILLMENT_REDEMPTION: (e, t) => `/billing/partner-promotions/${e}/${t}`,
+        GIFT_CARD_REDEEM: "/redeem",
         FRIENDS: "/channels/@me",
         ME: "/channels/@me",
         MESSAGE_REQUESTS: "/message-requests",
         CHANNEL: (e, t, n) => {
-            let r = null == t ? `/channels/${e || a}` : `/channels/${e || a}/${t}`;
-            return null == n ? r : `${r}/${n}`;
+            let i = null == t ? `/channels/${e || a}` : `/channels/${e || a}/${t}`;
+            return null == n ? i : `${i}/${n}`;
         },
-        CHANNEL_THREAD_VIEW: (e, t, n, r) => {
-            let i = `/channels/${e}/${t}/threads/${n}`;
-            return null == r ? i : `${i}/${r}`;
+        CHANNEL_THREAD_VIEW: (e, t, n, i) => {
+            let r = `/channels/${e}/${t}/threads/${n}`;
+            return null == i ? r : `${r}/${i}`;
         },
         VOICE_CHAT_CHANNEL_PARTIAL: (e, t, n) => {
-            let r = `/voice/${e}/${t}`;
-            return null == n ? r : `${r}/${n}`;
+            let i = `/voice/${e}/${t}`;
+            return null == n ? i : `${i}/${n}`;
         },
         LOGIN: "/login",
         LOGIN_HANDOFF: "/login/handoff",
@@ -81,6 +82,7 @@ let a = "@me",
         OAUTH2_AUTHORIZED: "/oauth2/authorized",
         OAUTH2_ERROR: "/oauth2/error",
         SETTINGS: (e, t) => `/settings/${e}${null != t ? `/${t}` : ""}`,
+        DEVELOPER_ACTIVATE_APPLICATION_TEST_MODE: "/settings/advanced/activate-application-test-mode",
         SNOWSGIVING: "/snowsgiving",
         PLAYGROUND: (e, t) => {
             let n = "/playground";
@@ -113,7 +115,7 @@ let a = "@me",
         GLOBAL_DISCOVERY_APPS_PROFILE: (e) => `/discovery/applications/${e}`,
         GLOBAL_DISCOVERY_APPS_PROFILE_SECTION: (e, t) => `/discovery/applications/${e}/${t}`,
         GLOBAL_DISCOVERY_APPS_PROFILE_STORE_SKU: (e, t) =>
-            `/discovery/applications/${e}/${i.GlobalDiscoveryAppsSections.STORE}/${t}`,
+            `/discovery/applications/${e}/${s.GlobalDiscoveryAppsSections.STORE}/${t}`,
         GLOBAL_DISCOVERY_APPS_SEARCH: "/discovery/applications/search",
         GUILD_MEMBER_VERIFICATION: (e) => `/member-verification/${e}`,
         GUILD_MEMBER_VERIFICATION_FOR_HUB: (e, t) => `/member-verification-for-hub/${e}${null != t ? `/${t}` : ""}`,
@@ -124,19 +126,21 @@ let a = "@me",
         BILLING_MANAGE_SUBSCRIPTION: "/billing/premium/manage",
         BILLING_MANAGE_SUBSCRIPTION_WITH_DEEP_LINK: (e, t) =>
             `/billing/premium/manage?deep_link_type=${e}${null != t ? `&load_id=${t}` : ""}`,
-        BILLING_STANDALONE_CHECKOUT_PAGE: (e, t, n, r, i, s) =>
-            `/billing/premium/subscribe?plan_id=${e}&gift=${t}&load_id=${n}${null != r ? `&payment_method_type=${r}` : ""}${null != i ? `&deep_link_type=${i}` : ""}${null != s ? `&use_preset_offer=${s}` : ""}`,
-        BILLING_STANDALONE_GUILD_BOOST_CHECKOUT_PAGE: (e, t, n) =>
-            `/billing/guild-subscriptions/purchase?guild_id=${e}${null != t ? `&deep_link_type=${t}` : ""}${null != n ? `&load_id=${n}` : ""}`,
+        BILLING_MANAGE_SUBSCRIPTION_WITH_FLOW_TYPE: (e, t) =>
+            `/billing/premium/manage?flow_type=${e}${null != t ? `&load_id=${t}` : ""}`,
+        BILLING_STANDALONE_CHECKOUT_PAGE: (e, t, n, i, r, s, a) =>
+            `/billing/premium/subscribe?plan_id=${e}&gift=${t}&load_id=${n}${null != i ? `&payment_method_type=${i}` : ""}${null != r ? `&deep_link_type=${r}` : ""}${null != s ? `&use_preset_offer=${s}` : ""}${null != a ? `&flow_type=${a}` : ""}`,
+        BILLING_STANDALONE_GUILD_BOOST_CHECKOUT_PAGE: (e, t, n, i) =>
+            `/billing/guild-subscriptions/purchase?guild_id=${e}${null != t ? `&deep_link_type=${t}` : ""}${null != n ? `&load_id=${n}` : ""}${null != i ? `&flow_type=${i}` : ""}`,
         GUILD_BOOSTING_MARKETING: (e) => `/guilds/${e}/premium-guild-subscriptions`,
         GUILD_SETTINGS: (e, t, n) => {
-            let r = `/guilds/${e}/settings${null != t ? `/${t}` : ""}`;
-            return null == n ? r : `${r}/${n}`;
+            let i = `/guilds/${e}/settings${null != t ? `/${t}` : ""}`;
+            return null == n ? i : `${i}/${n}`;
         },
         PICK_GUILD_SETTINGS: (e, t, n) => {
-            let r = `/guilds/settings${null != e ? `/${e}` : ""}`,
-                i = null == t ? r : `${r}/${t}`;
-            return `${i}${null != n ? `?feature=${n}` : ""}`;
+            let i = `/guilds/settings${null != e ? `/${e}` : ""}`,
+                r = null == t ? i : `${i}/${t}`;
+            return `${r}${null != n ? `?feature=${n}` : ""}`;
         },
         GUILD_EVENT_DETAILS: (e, t, n) => `/events/${e}/${t}` + (null != n ? `/${n}` : ""),
         FEATURE: (e) => `/feature/${e}`,
@@ -146,22 +150,32 @@ let a = "@me",
         APPLICATION_DIRECTORY: "/application-directory",
         APPLICATION_DIRECTORY_PROFILE: (e) => `/application-directory/${e}`,
         APPLICATION_DIRECTORY_PROFILE_SECTION: (e, t) => `/application-directory/${e}/${t}`,
-        APPLICATION_DIRECTORY_PROFILE_STORE_SKU: (e, t) => `/application-directory/${e}/${s.h.STORE}/${t}`,
+        APPLICATION_DIRECTORY_PROFILE_STORE_SKU: (e, t) =>
+            `/application-directory/${e}/${s.ApplicationDirectoryProfileSections.STORE}/${t}`,
         APPLICATION_DIRECTORY_SEARCH: "/application-directory/search",
         FAMILY_CENTER: "/family-center",
         SERVER_SHOP: (e) => `/channels/${e}/shop`,
-        CHANNELS_GAME_SHOP: (e, t, n, r) => {
-            let i = `/channels/${e}/game-shop`;
-            return (i += `/${t ?? 0}`), null != n && ((i += `/${n}`), null != r && (i += `/${r}`)), i;
+        CHANNELS_GAME_SHOP: (e, t, n, i) => {
+            let r = `/channels/${e}/game-shop`;
+            return (r += `/${t ?? 0}`), null != n && ((r += `/${n}`), null != i && (r += `/${i}`)), r;
         },
         GAME_SHOP: (e, t, n) => {
-            let r = `/game-shop/${e}`;
-            return null != t && ((r += `/${t}`), null != n && (r += `/${n}`)), r;
+            let i = `/game-shop/${e}`;
+            return null != t && ((i += `/${t}`), null != n && (i += `/${n}`)), i;
         },
         GUILD_PRODUCT: (e, t) => `/channels/${e}/shop/${t}`,
         REPORT: "/report",
         REPORT_SECOND_LOOK: "/report-review",
         COLLECTIBLES_SHOP: "/shop",
+        COLLECTIBLES_SHOP_GAME_SHOP: (e, t, n, i) => {
+            let s = `/shop?tab=${r.G2.GAME_SHOPS}&applicationId=${e}`;
+            return (
+                null != t && (s += `&pageIndex=${t}`),
+                null != n && (s += `&skuId=${n}`),
+                null != i && (s += `&slug=${i}`),
+                s
+            );
+        },
         COLLECTIBLES_SHOP_WITH_TAB: (e) => `/shop?tab=${e}`,
         COLLECTIBLES_SHOP_COLLECTION_DETAIL: (e) => `/shop/collection/${e}`,
         COLLECTIBLES_SHOP_PRODUCT_DETAIL: (e) => `/shop/product/${e}`,
@@ -172,6 +186,7 @@ let a = "@me",
         CHANNEL_SUMMARY: (e, t) => `/channels/${e}/summaries/${t}`,
         USER_SUMMARIES: "/users/@me/summaries",
         QUESTS: (e) => `/quests/${e}`,
+        GAME_PROFILE: (e) => `/games/${e}`,
         ACCOUNT_REVERT: (e) => `/wasntme/${e}`,
         POWERUP_STORE: (e) => `/channels/${e}/boosts`,
         CONFERENCE_MODE: "/conference-mode",
@@ -180,4 +195,4 @@ let a = "@me",
         QUEST_PREVIEW_TOOL_2: (e) => `/quest-home?tab=preview_tool&quest_id=${e}`,
         ICYMI: "/icymi",
     }),
-    _ = (0, r.dN)(d, [":", "?", "@"]);
+    _ = (0, i.dN)(d, [":", "?", "@"]);

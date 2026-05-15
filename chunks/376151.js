@@ -1,20 +1,20 @@
 "use strict";
-n.d(t, { A: () => A });
-var r = n(451988),
-    i = n(439372),
-    a = n(855511),
-    s = n(15285),
-    o = n(847521),
-    l = n(430452),
-    u = n(383501),
+n.d(t, { A: () => g });
+var i = n(451988),
+    r = n(439372),
+    s = n(855511),
+    a = n(952818),
+    o = n(871633),
+    l = n(235058),
+    u = n(763827),
     c = n(461213),
     d = n(485296),
     _ = n(607567),
     f = n(927813),
-    h = n(58149),
+    h = n(95561),
     p = n(652215);
-let g = +f.A.Millis.MINUTE;
-class E extends i.A {
+let E = +f.A.Millis.MINUTE;
+class m extends r.A {
     _currentUserSpeaking = !1;
     _anyoneElseSpeaking = !1;
     _voiceChannelId;
@@ -32,8 +32,8 @@ class E extends i.A {
         if (this._voiceChannelId !== e) {
             if (((this._voiceChannelId = e), null == e)) return void this._reset();
             null == this._reportInterval &&
-                ((this._reportInterval = new r.IX()),
-                this._reportInterval.start(g, () => {
+                ((this._reportInterval = new i.IX()),
+                this._reportInterval.start(E, () => {
                     this._trackStartSpeaking(), this._trackStartListening();
                 }));
         }
@@ -92,9 +92,9 @@ class E extends i.A {
     }
     getGameMetadata() {
         let e = c.A.findActivity((e) => e.type === p.$pd.PLAYING),
-            t = s.Ay.getCurrentGameForAnalytics();
+            t = a.Ay.getCurrentGameForAnalytics();
         return {
-            game_platform: (0, a.A)(e),
+            game_platform: (0, s.A)(e),
             game_name: null != e ? e.name : null,
             game_exe_name: null != t ? t.exeName : null,
             game_id: null != e ? e.application_id : null,
@@ -104,4 +104,4 @@ class E extends i.A {
         };
     }
 }
-let A = new E();
+let g = new m();

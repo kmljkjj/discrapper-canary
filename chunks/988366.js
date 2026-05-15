@@ -1,10 +1,10 @@
 "use strict";
 var n = {}.propertyIsEnumerable,
-    r = Object.getOwnPropertyDescriptor;
+    i = Object.getOwnPropertyDescriptor;
 t.f =
-    r && !n.call({ 1: 2 }, 1)
+    i && !n.call({ 1: 2 }, 1)
         ? function (e) {
-              var t = r(this, e);
+              var t = i(this, e);
               return !!t && t.enumerable;
           }
         : n;

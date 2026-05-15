@@ -1,69 +1,69 @@
-"use strict";
-n.d(t, { w: () => m });
-var r = n(627968),
-    i = n(64700),
-    s = n(503698),
-    a = n.n(s),
-    o = n(311907),
-    l = n(397927),
-    u = n(565645),
-    c = n(775602),
-    d = n(713517),
-    _ = n(690521),
-    f = n(328370);
-function p(e) {
-    let { emoji: t, shouldAnimate: n } = e;
-    if (null == t) return null;
-    let i = _.Ay.isCustomEmoji(t) ? t.name : t.surrogates;
-    return (0, r.jsx)(u.A, { className: f.Pw, emojiId: t.id, emojiName: i, animated: t.animated, shouldAnimate: n });
+t.d(l, { w: () => f });
+var s = t(627968),
+    i = t(64700),
+    a = t(503698),
+    n = t.n(a),
+    r = t(17928),
+    c = t(834730),
+    o = t(3666),
+    d = t(565645),
+    m = t(775602),
+    u = t(713517),
+    x = t(690521),
+    h = t(446445);
+function v(e) {
+    let { emoji: l, shouldAnimate: t } = e;
+    if (null == l) return null;
+    let i = x.Ay.isCustomEmoji(l) ? l.name : l.surrogates;
+    return (0, s.jsx)(d.A, { className: h.Pw, emojiId: l.id, emojiName: i, animated: l.animated, shouldAnimate: t });
 }
-function h(e) {
-    let { trait: t, ellipsize: n, traitColor: s } = e,
-        u = i.useRef(null),
-        _ = (0, d.M)(u),
-        h = !(0, o.bG)([c.A], () => c.A.useReducedMotion) && _;
-    return null == t.label || t.label.length <= 0
+function j(e) {
+    let { trait: l, ellipsize: t, traitColor: a } = e,
+        o = i.useRef(null),
+        d = (0, u.M)(o),
+        x = (0, r.bG)([m.A], () => m.A.useReducedMotion);
+    return null == l.label || l.label.length <= 0
         ? null
-        : (0, r.jsxs)("div", {
-              ref: u,
-              className: a()(f.Bj, { [f.mc]: n }),
+        : (0, s.jsxs)("div", {
+              ref: o,
+              className: n()(h.Bj, { [h.mc]: t }),
               children: [
-                  (0, r.jsx)(p, { emoji: t.emoji, shouldAnimate: h }),
-                  (0, r.jsx)(l.Text, {
+                  (0, s.jsx)(v, { emoji: l.emoji, shouldAnimate: !x && d }),
+                  (0, s.jsx)(c.E, {
                       tag: "span",
-                      className: n ? f.mc : void 0,
+                      className: t ? h.mc : void 0,
                       variant: "text-sm/normal",
-                      color: s,
-                      children: t.label,
+                      color: a,
+                      children: l.label,
                   }),
               ],
           });
 }
-function m(e) {
-    let { items: t, traitColor: n = "text-default" } = e,
-        s = i.useCallback(
-            (e, t) =>
+function f(e) {
+    let { items: l, traitColor: t = "text-default" } = e,
+        a = i.useCallback(
+            (e, l) =>
                 "string" == typeof e
-                    ? (0, r.jsx)(
+                    ? (0, s.jsx)(
                           "div",
                           {
-                              className: a()(f.Bj, { [f.mc]: t.ellipsize }),
-                              children: (0, r.jsx)(l.Text, {
+                              className: n()(h.Bj, { [h.mc]: l.ellipsize }),
+                              children: (0, s.jsx)(c.E, {
                                   tag: "span",
                                   variant: "text-sm/normal",
-                                  color: n,
+                                  color: t,
                                   children: e,
                               }),
                           },
                           "overflow",
                       )
-                    : (0, r.jsx)(h, { trait: e, ellipsize: t.ellipsize, traitColor: n }, e.key),
-            [n],
+                    : (0, s.jsx)(j, { trait: e, ellipsize: l.ellipsize, traitColor: t }, e.key),
+            [t],
         ),
-        o = i.useCallback((e) => s(e, { ellipsize: !0 }), [s]),
-        u = i.useCallback((e) => s(e, { ellipsize: !1 }), [s]),
-        c = i.useCallback((e) => (0, r.jsx)(l.g2v, { items: e, renderItem: u }), [u]);
-    return 0 === t.length
+        r = i.useCallback((e) => a(e, { ellipsize: !0 }), [a]),
+        d = i.useCallback((e) => a(e, { ellipsize: !1 }), [a]),
+        m = i.useCallback((e) => (0, s.jsx)(o.g2, { items: e, renderItem: d }), [d]);
+    return 0 === l.length
         ? null
-        : (0, r.jsx)(l.ZVu, { className: f.kL, items: t, renderItem: o, renderOverflow: c, maxLines: 2, itemGapPx: 4 });
+        : (0, s.jsx)(o.ZV, { className: h.kL, items: l, renderItem: r, renderOverflow: m, maxLines: 2, itemGapPx: 4 });
 }

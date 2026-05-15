@@ -1,13 +1,12 @@
-i.d(t, { Rv: () => a });
-let n = (0, i(600975).C)({
+n.d(t, { Rv: () => i });
+let a = (0, n(240921).Ay)({
+    name: "2026-04-inappropriate-conversations-default-on",
     kind: "user",
-    id: "2025-01_inappropriate_conversations_new_defaults",
-    label: "Inappropriate Conversation Warning Default On",
     defaultConfig: { enabled: !1 },
-    treatments: [{ id: 1, label: "Inappropriate Conversation Warnings On", config: { enabled: !0 } }],
+    variations: { 0: { enabled: !1 }, 1: { enabled: !0 } },
 });
-function a(e) {
+function i(e) {
     let { location: t } = e,
-        { enabled: i } = n.useExperiment({ location: t }, { autoTrackExposure: !1 });
-    return i;
+        { enabled: n } = a.useConfig({ location: t });
+    return n;
 }

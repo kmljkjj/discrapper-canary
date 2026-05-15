@@ -1,72 +1,73 @@
-i.d(t, { P: () => E });
+i.d(t, { P: () => x });
 var n = i(627968),
     l = i(64700),
-    a = i(349288),
-    r = i(473193),
-    o = i(397927),
-    s = i(793574),
-    u = i(688810),
-    d = i(609425),
-    c = i(922301),
-    h = i(750112),
-    m = i(73392),
-    p = i(676608),
-    g = i(342296),
-    A = i(734057),
-    f = i(841549),
-    T = i(560936);
-function E(e) {
+    o = i(349288),
+    a = i(473193),
+    r = i(614820),
+    s = i(463930),
+    u = i(793574),
+    d = i(688810),
+    c = i(609425),
+    h = i(922301),
+    p = i(368919),
+    m = i(252545),
+    g = i(676608),
+    A = i(342296),
+    f = i(734057),
+    T = i(841549),
+    v = i(560936);
+function x(e) {
     let {
             user: t,
             channelId: i,
-            guildId: E,
-            messageId: I,
-            stopPropagation: x = !1,
+            guildId: x,
+            messageId: E,
+            stopPropagation: R = !1,
             ariaLabel: N,
-            enableDisplayNameStyles: v = !1,
+            enableDisplayNameStyles: I = !1,
         } = e,
-        R = l.useRef(null),
-        { analyticsLocations: j } = (0, u.Ay)(s.A.USERNAME),
-        S = (0, p.Ay)(E, t?.id),
-        b = (0, d.A)({ userId: t?.id, guildId: E }),
-        C = (0, m.a)({ displayNameStyles: b }),
-        y = l.useCallback(
+        j = l.useRef(null),
+        { analyticsLocations: b } = (0, d.Ay)(u.A.USERNAME),
+        S = (0, g.Ay)(x, t?.id),
+        C = (0, c.A)({ userId: t?.id, guildId: x }),
+        y = (0, m.a)({ displayNameStyles: C }),
+        O = l.useCallback(
             (e) => {
-                let n = A.A.getChannel(i);
-                null != n && null != t && (0, f.wQ)(e, t, n);
+                let n = f.A.getChannel(i);
+                null != n && null != t && (0, T.wQ)(e, t, n);
             },
             [t, i],
         ),
-        _ = l.useContext(r.C);
+        L = l.useContext(a.C);
     return (
-        (0, T.A)({ subscribeToGroupId: I, authorId: t?.id, shouldSubscribe: v && null != b && null == E }),
+        (0, v.A)({ subscribeToGroupId: E, authorId: t?.id, shouldSubscribe: I && null != C && null == x }),
         l.useCallback(
-            (e) => (l, r) => {
-                let s = e?.colorStrings,
-                    d = S && null != s && null != s.primaryColor && null != s.secondaryColor,
+            (e) => (l, a) => {
+                let u = e?.colorStrings,
+                    c = S && null != u && null != u.primaryColor && null != u.secondaryColor,
                     m = (t, i) => {
-                        if (!v || null == b || null != E)
-                            return (0, n.jsx)(o.V30, {
+                        if (!I || null == C || null != x)
+                            return (0, n.jsx)(s.V, {
                                 ...(null != t ? t : {}),
-                                ref: R,
-                                onContextMenu: y,
-                                name: (0, o.Oer)(l) ?? "",
+                                ref: j,
+                                onContextMenu: O,
+                                name: (0, r.O)(l) ?? "",
                                 colorString: e?.colorString ?? null,
                                 roleName: e?.colorRoleName,
-                                colorStrings: d ? s : null,
+                                colorStrings: c ? u : null,
                                 "aria-label": N,
-                                className: C,
+                                className: y,
                             });
                         {
-                            let e = _?.animate || i?.isShown ? c.G.ANIMATED : c.G.PLAIN;
-                            return (0, n.jsx)(a.Anchor, {
+                            let e = L?.animate || i?.isShown ? h.G.ANIMATED : h.G.PLAIN;
+                            return (0, n.jsx)(o.Anchor, {
                                 ...(null != t ? t : {}),
-                                ref: R,
-                                onContextMenu: y,
+                                ref: j,
+                                onContextMenu: O,
                                 "aria-label": N,
-                                children: (0, n.jsx)(h.A, {
-                                    userName: (0, o.Oer)(l) ?? "",
-                                    displayNameStyles: b,
+                                children: (0, n.jsx)(p.A, {
+                                    userName: (0, r.O)(l) ?? "",
+                                    displayNameStyles: C,
                                     effectDisplayType: e,
                                     shouldUnderlineOnHover: !0,
                                     loop: !0,
@@ -75,17 +76,17 @@ function E(e) {
                         }
                     };
                 return (0, n.jsx)(
-                    u.f5,
+                    d.f5,
                     {
-                        value: j,
+                        value: b,
                         children:
                             null != t
-                                ? (0, n.jsx)(g.A, {
-                                      targetElementRef: R,
+                                ? (0, n.jsx)(A.A, {
+                                      targetElementRef: j,
                                       user: t,
-                                      guildId: E,
+                                      guildId: x,
                                       channelId: i,
-                                      messageId: I,
+                                      messageId: E,
                                       roleId: e?.colorRoleId,
                                       clickTrap: !0,
                                       children: (e, t) => {
@@ -93,7 +94,7 @@ function E(e) {
                                           return m(
                                               {
                                                   onClick: (e) => {
-                                                      x && null != e && e.stopPropagation(), i(e);
+                                                      R && null != e && e.stopPropagation(), i(e);
                                                   },
                                                   ...n,
                                               },
@@ -103,10 +104,10 @@ function E(e) {
                                   })
                                 : m(void 0, void 0),
                     },
-                    r,
+                    a,
                 );
             },
-            [j, t, i, E, I, y, x, N, S, C, _?.animate, b, v],
+            [b, t, i, x, E, O, R, N, S, y, L?.animate, C, I],
         )
     );
 }

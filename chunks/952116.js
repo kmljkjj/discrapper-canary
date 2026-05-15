@@ -1,34 +1,35 @@
-s.d(t, { A: () => d });
-var r = s(627968);
+s.d(t, { A: () => h });
+var l = s(627968);
 s(64700);
-var n = s(397927),
-    a = s(235986),
+var n = s(834730),
+    a = s(821609),
+    r = s(235986),
     i = s(13008),
-    l = s(854378),
-    o = s(985018),
-    h = s(930774),
-    c = s(473169);
-function d(e) {
-    let { title: t, subtitle: s, error: d, onSubmit: u, onCancel: p } = e;
-    return (0, r.jsxs)(a.A, {
-        direction: a.A.Direction.VERTICAL,
+    o = s(854378),
+    c = s(985018),
+    u = s(91443),
+    d = s(818050);
+function h(e) {
+    let { title: t, subtitle: s, error: h, onSubmit: p, onCancel: f } = e;
+    return (0, l.jsxs)(r.A, {
+        direction: r.A.Direction.VERTICAL,
         children: [
-            (0, r.jsx)(l.hE, { className: c.QB, children: t }),
-            (0, r.jsx)(l.tK, { className: h.p6, children: s }),
-            (0, r.jsxs)("div", {
+            (0, l.jsx)(o.hE, { className: d.QB, children: t }),
+            (0, l.jsx)(o.tK, { className: u.p6, children: s }),
+            (0, l.jsxs)("div", {
                 children: [
-                    (0, r.jsx)(i.A, { inputClassName: h.IX, onSubmit: u }),
-                    null != d ? (0, r.jsx)(n.Text, { className: h.z3, variant: "text-sm/normal", children: d }) : null,
+                    (0, l.jsx)(i.A, { inputClassName: u.IX, onSubmit: p }),
+                    null != h ? (0, l.jsx)(n.E, { className: u.z3, variant: "text-sm/normal", children: h }) : null,
                 ],
             }),
-            null != p &&
-                (0, r.jsx)("div", {
-                    className: h.x6,
-                    children: (0, r.jsx)(n.Button, {
-                        text: o.intl.string(o.t["ETE/oC"]),
+            null != f &&
+                (0, l.jsx)("div", {
+                    className: u.x6,
+                    children: (0, l.jsx)(a.$, {
+                        text: c.intl.string(c.t["ETE/oC"]),
                         variant: "secondary",
                         fullWidth: !0,
-                        onClick: p,
+                        onClick: f,
                     }),
                 }),
         ],

@@ -1,13 +1,11 @@
-!(function (e, t) {
-    t(n(989349));
-})(0, function (e) {
+!(function (e) {
     "use strict";
     var t = "ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.".split("_"),
         n = "ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic".split("_");
-    return e.defineLocale("es-us", {
+    e.defineLocale("es-us", {
         months: "enero_febrero_marzo_abril_mayo_junio_julio_agosto_septiembre_octubre_noviembre_diciembre".split("_"),
-        monthsShort: function (e, r) {
-            return e ? (/-MMM-/.test(r) ? n[e.month()] : t[e.month()]) : t;
+        monthsShort: function (e, i) {
+            return e ? (/-MMM-/.test(i) ? n[e.month()] : t[e.month()]) : t;
         },
         monthsParseExact: !0,
         weekdays: "domingo_lunes_martes_mi\xe9rcoles_jueves_viernes_s\xe1bado".split("_"),
@@ -56,8 +54,8 @@
             y: "un a\xf1o",
             yy: "%d a\xf1os",
         },
-        dayOfMonthOrdinalParse: /\d{1,2}º/,
+        dayOfMonthOrdinalParse: /\d{1,2}\xba/,
         ordinal: "%d\xba",
         week: { dow: 0, doy: 6 },
     });
-});
+})(n(989349));

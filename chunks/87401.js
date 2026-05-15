@@ -1,37 +1,36 @@
-"use strict";
-n.d(t, { A: () => o });
-var i = n(311907),
-    s = n(73153),
-    l = n(988794);
-let r = {};
-class a extends i.Ay.PersistedStore {
+t.d(n, { A: () => o });
+var l = t(17928),
+    i = t(228366),
+    s = t(988794);
+let a = {};
+class r extends l.Ay.PersistedStore {
     static displayName = "EventBannerStore";
     static persistKey = "EventBanner";
     initialize(e) {
-        null != e && (r = e.dismissedEventIds ?? {});
+        null != e && (a = e.dismissedEventIds ?? {});
     }
     isEventDismissed(e) {
-        return null != r[e];
+        return null != a[e];
     }
     getState() {
-        return { dismissedEventIds: r };
+        return { dismissedEventIds: a };
     }
 }
-let o = new a(s.h, {
+let o = new r(i.h, {
     EVENT_BANNER_DISMISS: function (e) {
-        let { eventId: t } = e;
-        r = { ...r, [t]: !0 };
+        let { eventId: n } = e;
+        a = { ...a, [n]: !0 };
     },
     GUILD_SCHEDULED_EVENT_UPDATE: function (e) {
-        let { guildScheduledEvent: t } = e;
-        if ((t.status !== l.XG.CANCELED && t.status !== l.XG.COMPLETED) || null == r[t.id]) return !1;
-        let n = { ...r };
-        delete n[t.id], (r = n);
+        let { guildScheduledEvent: n } = e;
+        if ((n.status !== s.XG.CANCELED && n.status !== s.XG.COMPLETED) || null == a[n.id]) return !1;
+        let t = { ...a };
+        delete t[n.id], (a = t);
     },
     GUILD_SCHEDULED_EVENT_DELETE: function (e) {
-        let { guildScheduledEvent: t } = e;
-        if (null == r[t.id]) return !1;
-        let n = { ...r };
-        delete n[t.id], (r = n);
+        let { guildScheduledEvent: n } = e;
+        if (null == a[n.id]) return !1;
+        let t = { ...a };
+        delete t[n.id], (a = t);
     },
 });

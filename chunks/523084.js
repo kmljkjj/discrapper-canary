@@ -1,56 +1,59 @@
-t.d(a, { default: () => m });
-var n = t(627968),
-    s = t(64700),
-    i = t(106778),
-    r = t(311907),
-    l = t(397927),
-    d = t(775602),
-    c = t(524246),
-    o = t(14368),
-    u = t(413526);
-function m(e) {
-    let { title: a, description: t, image: m, button: p, ...x } = e,
-        g = (0, r.bG)([d.A], () => d.A.useReducedMotion),
-        f = s.useRef(null),
-        h = s.useRef(new i.OH()),
-        [v, j] = s.useState(null);
+a.d(t, { A: () => _ });
+var n = a(627968),
+    r = a(64700),
+    i = a(106778),
+    s = a(17928),
+    o = a(935462),
+    l = a(534514),
+    d = a(834730),
+    c = a(775602),
+    u = a(524246),
+    p = a(14368),
+    m = a(372165);
+function _(e) {
+    let { title: t, description: a, image: _, button: f, ...x } = e,
+        v = (0, s.bG)([c.A], () => c.A.useReducedMotion),
+        g = r.useRef(null),
+        h = r.useRef(new i.OH()),
+        [k, b] = r.useState(null);
     return (0, n.jsxs)(n.Fragment, {
         children: [
-            (0, n.jsx)(i.Fk, { ref: j, className: u.Lb, environment: h.current }),
-            (0, n.jsxs)(l.EOs, {
+            (0, n.jsx)(i.Fk, { ref: b, className: m.Lb, environment: h.current }),
+            (0, n.jsxs)(o.EO, {
                 "data-migration-pending": !0,
-                className: u.yl,
-                size: l.rIJ.DYNAMIC,
+                className: m.yl,
+                size: o.rI.DYNAMIC,
                 ...x,
                 parentComponent: "GuildPowerupActivateModal",
                 children: [
-                    (0, n.jsx)(l.$mQ, {
+                    (0, n.jsx)(o.$m, {
                         "data-migration-pending": !0,
-                        className: u._F,
+                        className: m._F,
                         scrollbarType: "none",
                         children: (0, n.jsxs)("div", {
-                            className: u.kL,
-                            ref: f,
+                            className: m.kL,
+                            ref: g,
                             children: [
-                                m,
+                                _,
                                 (0, n.jsxs)("div", {
-                                    className: u.hQ,
+                                    className: m.hQ,
                                     children: [
-                                        (0, n.jsx)(l.Heading, { variant: "heading-xl/extrabold", children: a }),
-                                        (0, n.jsx)(l.Text, {
-                                            tag: "span",
-                                            className: u.h_,
-                                            variant: "text-sm/normal",
-                                            children: t,
-                                        }),
-                                        p,
+                                        (0, n.jsx)(l.D, { variant: "heading-xl/extrabold", children: t }),
+                                        null != a &&
+                                            (0, n.jsx)(d.E, {
+                                                tag: "span",
+                                                className: m.h_,
+                                                variant: "text-sm/normal",
+                                                children: a,
+                                            }),
+                                        f,
                                     ],
                                 }),
                             ],
                         }),
                     }),
-                    (0, n.jsx)(l.s_y, { "data-migration-pending": !0, className: u.VN, onClick: x.onClose }),
-                    !g && (0, n.jsx)(c.A, { confettiTarget: f.current, confettiCanvas: v, sprites: (0, o.rA)() }),
+                    (0, n.jsx)(o.s_, { "data-migration-pending": !0, className: m.VN, onClick: x.onClose }),
+                    !v && (0, n.jsx)(u.A, { confettiTarget: g.current, confettiCanvas: k, sprites: (0, p.rA)() }),
                 ],
             }),
         ],

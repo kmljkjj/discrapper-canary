@@ -1,9 +1,9 @@
 "use strict";
-n.d(t, { n: () => g });
-var r = n(562465),
-    i = n(499979),
-    a = n(451988),
-    s = n(73153),
+n.d(t, { n: () => E });
+var i = n(636537),
+    r = n(499979),
+    s = n(451988),
+    a = n(228366),
     o = n(773669),
     l = n(189081),
     u = n(645243),
@@ -11,43 +11,40 @@ var r = n(562465),
     d = n(652215);
 let _ = 10 * c.A.Millis.MINUTE,
     f = 10 * c.A.Millis.MINUTE,
-    p = +c.A.Millis.MINUTE,
-    h = {};
-function m(e, t) {
-    null == h[t] && (h[t] = new a.Ep()),
-        h[t].start(_ + Math.random() * f, () => {
-            null != l.A.getLibraryApplication(e, t) && g(e, t);
-        });
-}
-async function g(e, t) {
+    h = +c.A.Millis.MINUTE,
+    p = {};
+async function E(e, t) {
     let n = arguments.length > 2 && void 0 !== arguments[2] && arguments[2],
-        a = o.default.locale;
+        c = o.default.locale;
     return (
-        s.h.dispatch({ type: "APPLICATION_BUILD_FETCH_START", applicationId: e, branchId: t, locale: a }),
-        n && (await (0, i.yy)(Math.random() * p)),
-        r.Bo.get({
+        a.h.dispatch({ type: "APPLICATION_BUILD_FETCH_START", applicationId: e, branchId: t, locale: c }),
+        n && (await (0, r.yy)(Math.random() * h)),
+        i.Bo.get({
             url: d.Rsh.APPLICATION_LIVE_BUILD(e, t),
-            query: { platform: (0, u.O)(), locale: a },
+            query: { platform: (0, u.O)(), locale: c },
             oldFormErrors: !0,
             rejectWithError: !1,
         }).then(
             (n) => {
-                let r = n.body;
-                0 === r.manifests.length
-                    ? s.h.dispatch({ type: "APPLICATION_BUILD_NOT_FOUND", applicationId: e, branchId: t })
-                    : s.h.dispatch({
+                let i = n.body;
+                0 === i.manifests.length
+                    ? a.h.dispatch({ type: "APPLICATION_BUILD_NOT_FOUND", applicationId: e, branchId: t })
+                    : a.h.dispatch({
                           type: "APPLICATION_BUILD_FETCH_SUCCESS",
                           applicationId: e,
                           branchId: t,
-                          locale: a,
-                          build: r,
+                          locale: c,
+                          build: i,
                       });
             },
             (n) => {
-                let { status: r } = n;
-                404 === r
-                    ? s.h.dispatch({ type: "APPLICATION_BUILD_NOT_FOUND", applicationId: e, branchId: t })
-                    : m(e, t);
+                let { status: i } = n;
+                if (404 === i) a.h.dispatch({ type: "APPLICATION_BUILD_NOT_FOUND", applicationId: e, branchId: t });
+                else
+                    null == p[t] && (p[t] = new s.Ep()),
+                        p[t].start(_ + Math.random() * f, () => {
+                            null != l.A.getLibraryApplication(e, t) && E(e, t);
+                        });
             },
         )
     );

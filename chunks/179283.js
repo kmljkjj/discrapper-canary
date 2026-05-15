@@ -1,37 +1,36 @@
-"use strict";
-n.d(t, { P: () => _ });
-var r = n(627968),
-    i = n(64700),
-    a = n(503698),
-    s = n.n(a),
-    o = n(397927),
-    l = n(115703),
-    u = n(438842),
-    c = n(879472),
-    d = n(838934);
-function _(e) {
-    let { profile: t, className: n } = e,
-        { gamesToDisplay: a, lastGameToDisplay: _, remainingGames: f } = (0, l.A)(t),
-        p = i.useMemo(
+l.d(t, { P: () => I });
+var i = l(627968),
+    n = l(64700),
+    r = l(503698),
+    s = l.n(r),
+    a = l(834730),
+    u = l(115703),
+    c = l(438842),
+    o = l(879472),
+    d = l(890653);
+function I(e) {
+    let { profile: t, className: l } = e,
+        { gamesToDisplay: r, lastGameToDisplay: I, remainingGames: A } = (0, u.A)(t),
+        _ = n.useMemo(
             () => t.traits.map((e, t) => ({ key: `trait-${t}`, ...e })).filter((e) => e.label.length > 0),
             [t],
         ),
-        h = t.description.length > 0;
-    return h || a.length > 0 || p.length > 0
-        ? (0, r.jsxs)("div", {
-              className: s()(d.rf, n),
+        E = t.description.length > 0;
+    return E || r.length > 0 || _.length > 0
+        ? (0, i.jsxs)("div", {
+              className: s()(d.rf, l),
               children: [
-                  h
-                      ? (0, r.jsx)(o.Text, { variant: "text-sm/normal", color: "text-subtle", children: t.description })
+                  E
+                      ? (0, i.jsx)(a.E, { variant: "text-sm/normal", color: "text-subtle", children: t.description })
                       : null,
-                  (0, r.jsx)(u.A, {
-                      gamesToDisplay: a,
-                      lastGameToDisplay: _,
-                      remainingGames: f,
+                  (0, i.jsx)(c.A, {
+                      gamesToDisplay: r,
+                      lastGameToDisplay: I,
+                      remainingGames: A,
                       activity: t.gameActivity,
                   }),
-                  (0, r.jsx)(c.w, { items: p }),
+                  (0, i.jsx)(o.w, { items: _ }),
               ],
           })
-        : (0, r.jsx)("div", { className: d.C3 });
+        : (0, i.jsx)("div", { className: d.C3 });
 }

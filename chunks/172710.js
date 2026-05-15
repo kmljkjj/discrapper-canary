@@ -1,46 +1,46 @@
 "use strict";
 n.d(t, { Mp: () => u, Pt: () => l, QX: () => c, mN: () => d });
-var r = n(723702),
-    i = n(210528),
-    a = n(981616),
-    s = n(272984);
+var i = n(723702),
+    r = n(210528),
+    s = n(981616),
+    a = n(272984);
 function o(e, t, n) {
     let o;
-    (0, r.isDesktop)() || (o = window.open("", "_blank")),
-        (0, a.LI)(e, t)
+    (0, i.isDesktop)() || (o = window.open("", "_blank")),
+        (0, s.LI)(e, t)
             .then((e) => n(e))
             .then((e) => {
                 let { resourceType: t, resourceId: n } = e,
-                    r = i.A.isProtocolRegistered() ? s.RQ.PLAYER_OPEN(t, n) : s.RQ.WEB_OPEN(t, n);
-                null != o ? (o.location.href = r) : window.open(r);
+                    i = r.A.isProtocolRegistered() ? a.RQ.PLAYER_OPEN(t, n) : a.RQ.WEB_OPEN(t, n);
+                null != o ? (o.location.href = i) : window.open(i);
             })
             .catch(() => {
                 null != o && o.close();
             });
 }
 function l() {
-    window.open(s.RQ.PREMIUM_SITE);
+    window.open(a.RQ.PREMIUM_SITE);
 }
 function u(e) {
     let { sync_id: t, metadata: n } = e;
     if (null == t) return;
-    let r = (0, s.NJ)(n?.type ?? s.M0.TRACK);
-    if (null == r) return;
-    let a = i.A.isProtocolRegistered() ? s.RQ.PLAYER_OPEN(r, t) : s.RQ.WEB_OPEN(r, t);
-    window.open(a);
+    let i = (0, a.NJ)(n?.type ?? a.M0.TRACK);
+    if (null == i) return;
+    let s = r.A.isProtocolRegistered() ? a.RQ.PLAYER_OPEN(i, t) : a.RQ.WEB_OPEN(i, t);
+    window.open(s);
 }
 function c(e, t) {
     o(e, t, (t) => {
         let { album_id: n } = t;
-        return { resourceType: (0, s.NJ)(e.metadata?.type) === s.M0.EPISODE ? s.M0.SHOW : s.M0.ALBUM, resourceId: n };
+        return { resourceType: (0, a.NJ)(e.metadata?.type) === a.M0.EPISODE ? a.M0.SHOW : a.M0.ALBUM, resourceId: n };
     });
 }
 function d(e, t, n) {
     o(e, t, (e) => {
         let { artist_ids: t } = e;
         if (null == t) throw Error("no artist ids in metadata");
-        let r = t[n];
-        if (null == r) throw Error("invalid artist index");
-        return { resourceType: s.M0.ARTIST, resourceId: r };
+        let i = t[n];
+        if (null == i) throw Error("invalid artist index");
+        return { resourceType: a.M0.ARTIST, resourceId: i };
     });
 }

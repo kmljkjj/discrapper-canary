@@ -1,12 +1,11 @@
 "use strict";
-n.d(t, { o: () => o }), n(321073);
-var r = n(711371);
-let i = 250,
-    a = new WeakMap(),
+n.d(t, { o: () => a }), n(321073);
+var l = n(820066);
+let i = new WeakMap(),
     s = new WeakMap(),
-    o = {
+    a = {
         isMerging: (e) => s.get(e) ?? !0,
-        isSaving: (e) => a.get(e) ?? !0,
+        isSaving: (e) => i.get(e) ?? !0,
         withoutMerging(e, t) {
             let n = this.isMerging(e);
             s.set(e, !1);
@@ -18,64 +17,64 @@ let i = 250,
         },
         withoutSaving(e, t) {
             let n = this.isSaving(e);
-            a.set(e, !1);
+            i.set(e, !1);
             try {
                 t();
             } finally {
-                a.set(e, n);
+                i.set(e, n);
             }
         },
-        withSingleEntry: (e, t) => l(e, "other", !1, t),
-        withMergedEntry: (e, t) => l(e, "other", !0, t),
+        withSingleEntry: (e, t) => r(e, "other", !1, t),
+        withMergedEntry: (e, t) => r(e, "other", !0, t),
         currentEntry: (e) => (e.history.stack.length > 0 ? e.history.stack[e.history.index] : null),
         insertOrMergeEntry(e, t) {
             let n = !(arguments.length > 2) || void 0 === arguments[2] || arguments[2],
-                r = o.currentEntry(e);
-            o.isMerging(e) && r?.mergeable ? this.mergeEntry(e, n) : this.insertEntry(e, t, n);
+                l = a.currentEntry(e);
+            a.isMerging(e) && l?.mergeable ? this.mergeEntry(e, n) : this.insertEntry(e, t, n);
         },
         insertEntry(e, t) {
             let n = !(arguments.length > 2) || void 0 === arguments[2] || arguments[2],
-                a = arguments.length > 3 ? arguments[3] : void 0,
+                i = arguments.length > 3 ? arguments[3] : void 0,
                 s = arguments.length > 4 ? arguments[4] : void 0;
-            (s = s ?? e.selection), (a = a ?? r.VW.richValue(e));
-            let { history: l } = e,
-                u = o.currentEntry(e);
+            (s = s ?? e.selection), (i = i ?? l.VW.richValue(e));
+            let { history: r } = e,
+                o = a.currentEntry(e);
             for (
-                null != u && (u.mergeable = !1), l.stack.length > 0 && (l.stack.length = l.index + 1);
-                l.stack.length >= i;
+                null != o && (o.mergeable = !1), r.stack.length > 0 && (r.stack.length = r.index + 1);
+                r.stack.length >= 250;
             )
-                l.stack.shift();
-            l.stack.push({ type: t, mergeable: n, createdAt: Date.now(), value: a, selection: s }),
-                (l.index = l.stack.length - 1);
+                r.stack.shift();
+            r.stack.push({ type: t, mergeable: n, createdAt: Date.now(), value: i, selection: s }),
+                (r.index = r.stack.length - 1);
         },
         mergeEntry(e) {
             let t = !(arguments.length > 1) || void 0 === arguments[1] || arguments[1],
                 { selection: n } = e,
-                i = r.VW.richValue(e),
-                a = o.currentEntry(e);
-            null != a && ((a.value = i), (a.selection = n), t || (a.mergeable = !1));
+                i = l.VW.richValue(e),
+                s = a.currentEntry(e);
+            null != s && ((s.value = i), (s.selection = n), t || (s.mergeable = !1));
         },
     };
-function l(e, t, n, i) {
-    let s = e.children,
-        l = e.selection,
-        u = o.isSaving(e);
-    a.set(e, !1);
+function r(e, t, n, s) {
+    let r = e.children,
+        o = e.selection,
+        c = a.isSaving(e);
+    i.set(e, !1);
     try {
-        let a = i();
+        let i = s();
         return (
-            u &&
+            c &&
                 (n
-                    ? o.mergeEntry(e)
-                    : e.children !== s
-                      ? o.insertEntry(e, t, !1)
-                      : o.isMerging(e) &&
+                    ? a.mergeEntry(e)
+                    : e.children !== r
+                      ? a.insertEntry(e, t, !1)
+                      : a.isMerging(e) &&
                         null != e.selection &&
-                        (null == l || !r.ZF.equals(e.selection, l)) &&
-                        o.mergeEntry(e)),
-            a
+                        (null == o || !l.ZF.equals(e.selection, o)) &&
+                        a.mergeEntry(e)),
+            i
         );
     } finally {
-        a.set(e, u);
+        i.set(e, c);
     }
 }

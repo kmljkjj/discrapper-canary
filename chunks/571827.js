@@ -1,98 +1,84 @@
-l.d(t, { A: () => d });
-var n = l(627968);
+l.d(t, { A: () => u });
+var s = l(627968);
 l(64700);
-var s = l(575593),
-    i = l(397927),
-    r = l(688810),
-    a = l(404374),
+var n = l(575593),
+    i = l(192308),
+    r = l(403581),
+    a = l(834730),
+    o = l(404374),
     c = l(788868),
-    o = l(985018),
-    u = l(682655);
-function d(e) {
-    let { itemType: t, onClose: d } = e,
-        { newestAnalyticsLocation: m } = (0, r.Ay)(),
-        p =
-            t === s.R.AVATAR_DECORATION
+    A = l(985018),
+    d = l(485466);
+function u(e) {
+    let { itemType: t, onClose: u } = e,
+        E =
+            t === n.R.AVATAR_DECORATION
                 ? c.e.AVATAR_DECORATION_MODAL_UPSELL
-                : t === s.R.PROFILE_EFFECT
+                : t === n.R.PROFILE_EFFECT
                   ? c.e.PROFILE_EFFECT_MODAL_UPSELL
-                  : t === s.R.NAMEPLATE
+                  : t === n.R.NAMEPLATE
                     ? c.e.NAMEPLATE_MODAL_UPSELL
                     : null;
-    return null == p
+    return null == E
         ? null
-        : (0, n.jsxs)("div", {
-              className: u.hc,
+        : (0, s.jsxs)("div", {
+              className: d.hc,
               children: [
-                  (0, n.jsx)(i.tvc, { className: u.ax, size: "md", color: a.k0.PREMIUM_TIER_2 }),
-                  (0, n.jsx)(i.Text, {
-                      className: u.cf,
+                  (0, s.jsx)(r.t, { className: d.ax, size: "md", color: o.k0.PREMIUM_TIER_2 }),
+                  (0, s.jsx)(a.E, {
+                      className: d.cf,
                       variant: "text-md/medium",
                       children:
-                          p === c.e.AVATAR_DECORATION_MODAL_UPSELL
-                              ? o.intl.format(o.t["aFR/EI"], {
+                          E === c.e.AVATAR_DECORATION_MODAL_UPSELL
+                              ? A.intl.format(A.t["aFR/EI"], {
                                     onClick: () => {
-                                        (0, i.mMO)(async () => {
-                                            let { default: e } = await Promise.all([
-                                                l.e("14138"),
-                                                l.e("49924"),
-                                                l.e("59701"),
-                                                l.e("62396"),
-                                            ]).then(l.bind(l, 948265));
+                                        (0, i.openModalLazy)(async () => {
+                                            let { default: e } = await Promise.all([l.e("93513"), l.e("64864")]).then(
+                                                l.bind(l, 948265),
+                                            );
                                             return (t) =>
-                                                (0, n.jsx)(e, {
-                                                    premiumUpsellType: p,
-                                                    title: o.intl.string(o.t.JI7uhc),
-                                                    body: o.intl.string(o.t["5XvsdZ"]),
-                                                    glowUp: o.intl.string(o.t["5XvsdZ"]),
-                                                    analyticsSource: m,
-                                                    onSecondaryClick: d,
+                                                (0, s.jsx)(e, {
+                                                    premiumUpsellType: E,
+                                                    title: A.intl.string(A.t.JI7uhc),
+                                                    body: A.intl.string(A.t["5XvsdZ"]),
+                                                    onSecondaryClick: u,
                                                     ...t,
                                                 });
                                         });
                                     },
                                 })
-                              : p === c.e.PROFILE_EFFECT_MODAL_UPSELL
-                                ? o.intl.format(o.t.eWNONM, {
+                              : E === c.e.PROFILE_EFFECT_MODAL_UPSELL
+                                ? A.intl.format(A.t.eWNONM, {
                                       onClick: () => {
-                                          (0, i.mMO)(async () => {
-                                              let { default: e } = await Promise.all([
-                                                  l.e("14138"),
-                                                  l.e("49924"),
-                                                  l.e("59701"),
-                                                  l.e("62396"),
-                                              ]).then(l.bind(l, 948265));
+                                          (0, i.openModalLazy)(async () => {
+                                              let { default: e } = await Promise.all([l.e("93513"), l.e("64864")]).then(
+                                                  l.bind(l, 948265),
+                                              );
                                               return (t) =>
-                                                  (0, n.jsx)(e, {
-                                                      premiumUpsellType: p,
-                                                      title: o.intl.string(o.t.sYm15X),
-                                                      body: o.intl.string(o.t["Hza+Bu"]),
-                                                      glowUp: o.intl.string(o.t["Hza+Bu"]),
-                                                      analyticsSource: m,
-                                                      onSecondaryClick: d,
+                                                  (0, s.jsx)(e, {
+                                                      premiumUpsellType: E,
+                                                      title: A.intl.string(A.t.sYm15X),
+                                                      body: A.intl.string(A.t["Hza+Bu"]),
+                                                      onSecondaryClick: u,
                                                       ...t,
                                                   });
                                           });
                                       },
                                   })
-                                : p === c.e.NAMEPLATE_MODAL_UPSELL
-                                  ? o.intl.format(o.t.G6b8TF, {
+                                : E === c.e.NAMEPLATE_MODAL_UPSELL
+                                  ? A.intl.format(A.t.G6b8TF, {
                                         onClick: () => {
-                                            (0, i.mMO)(async () => {
+                                            (0, i.openModalLazy)(async () => {
                                                 let { default: e } = await Promise.all([
-                                                    l.e("14138"),
-                                                    l.e("49924"),
-                                                    l.e("59701"),
-                                                    l.e("62396"),
+                                                    l.e("93513"),
+                                                    l.e("64864"),
                                                 ]).then(l.bind(l, 948265));
                                                 return (t) =>
-                                                    (0, n.jsx)(e, {
-                                                        premiumUpsellType: p,
-                                                        title: o.intl.string(o.t.k7UN4k),
-                                                        body: o.intl.string(o.t["0/QPxO"]),
-                                                        glowUp: o.intl.string(o.t["0/QPxO"]),
-                                                        analyticsSource: m,
-                                                        onSecondaryClick: d,
+                                                    (0, s.jsx)(e, {
+                                                        premiumUpsellType: E,
+                                                        title: A.intl.string(A.t.k7UN4k),
+                                                        body: A.intl.string(A.t["0/QPxO"]),
+                                                        onSecondaryClick: u,
                                                         ...t,
                                                     });
                                             });

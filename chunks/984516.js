@@ -1,52 +1,53 @@
-"use strict";
-n.d(t, { A: () => f });
-var r = n(627968),
-    i = n(64700),
-    a = n(397927),
-    s = n(975807),
-    o = n(975571),
-    l = n(500049),
-    u = n(902527),
-    c = n(652215),
-    d = n(985018),
-    _ = n(615074);
-function f(e) {
-    let { padding: t = !1 } = e,
-        n = i.useCallback(() => {
-            (0, s.A)(o.A.getAppsSupportURL(c.MVz.APPS_LEARN_MORE));
+i.d(e, { A: () => L });
+var s = i(627968),
+    n = i(64700),
+    r = i(534514),
+    A = i(834730),
+    a = i(821609),
+    l = i(975807),
+    o = i(975571),
+    I = i(500049),
+    N = i(902527),
+    c = i(652215),
+    _ = i(985018),
+    E = i(834951);
+function L(t) {
+    let { padding: e = !1 } = t,
+        i = n.useCallback(() => {
+            (0, l.A)(o.A.getAppsSupportURL(c.MVz.APPS_LEARN_MORE));
         }, []),
-        { trackSectionImpressionRef: f } = (0, u.A)({ sectionName: l.yK.NEW_TO_APPS, numItems: 1, numVisibleItems: 1 });
-    return (0, r.jsx)("div", {
-        className: t ? _.pK : void 0,
-        children: (0, r.jsxs)("div", {
-            ref: (e) => {
-                f.current = e;
+        { trackSectionImpressionRef: L } = (0, N.A)({ sectionName: I.yK.NEW_TO_APPS, numItems: 1, numVisibleItems: 1 });
+    return (0, s.jsx)("div", {
+        className: e ? E.pK : void 0,
+        children: (0, s.jsxs)("div", {
+            ref: (t) => {
+                L.current = t;
             },
-            className: _.kL,
+            className: E.kL,
             children: [
-                (0, r.jsxs)("div", {
-                    className: _.rf,
+                (0, s.jsxs)("div", {
+                    className: E.rf,
                     children: [
-                        (0, r.jsx)(a.Heading, {
+                        (0, s.jsx)(r.D, {
                             variant: "heading-lg/bold",
                             color: "text-strong",
-                            children: d.intl.string(d.t["kw8/Ec"]),
+                            children: _.intl.string(_.t["kw8/Ec"]),
                         }),
-                        (0, r.jsx)(a.Text, {
+                        (0, s.jsx)(A.E, {
                             variant: "text-xs/normal",
                             color: "text-default",
-                            children: d.intl.string(d.t.GZoV1O),
+                            children: _.intl.string(_.t.GZoV1O),
                         }),
                     ],
                 }),
-                (0, r.jsx)(a.Button, {
+                (0, s.jsx)(a.$, {
                     variant: "primary",
-                    text: d.intl.string(d.t.Ye51oT),
-                    "aria-label": d.intl.formatToPlainString(d.t.xx5Sug, {
-                        sectionTitle: d.intl.string(d.t["kw8/Ec"]),
-                        sectionBody: d.intl.string(d.t.GZoV1O),
+                    text: _.intl.string(_.t.Ye51oT),
+                    "aria-label": _.intl.formatToPlainString(_.t.xx5Sug, {
+                        sectionTitle: _.intl.string(_.t["kw8/Ec"]),
+                        sectionBody: _.intl.string(_.t.GZoV1O),
                     }),
-                    onClick: n,
+                    onClick: i,
                 }),
             ],
         }),

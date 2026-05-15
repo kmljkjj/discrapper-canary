@@ -1,69 +1,68 @@
-"use strict";
-n.d(t, { J: () => l, v: () => a }),
-    n(393431),
-    n(532706),
-    n(42231),
-    n(232424),
-    n(949626),
-    n(767709),
-    n(65162),
-    n(508300);
-var i = n(284009),
-    s = n.n(i);
-function r(e) {
-    if (null != e)
-        return btoa(String.fromCharCode(...new Uint8Array(e)))
+a.d(e, { J: () => s, v: () => o }),
+    a(393431),
+    a(532706),
+    a(42231),
+    a(232424),
+    a(949626),
+    a(767709),
+    a(65162),
+    a(508300);
+var n = a(284009),
+    i = a.n(n);
+function r(t) {
+    if (null != t)
+        return btoa(String.fromCharCode(...new Uint8Array(t)))
             .replace(/\+/g, "-")
             .replace(/\//g, "_")
             .replace(/=/g, "");
 }
-async function l(e, t) {
-    var n;
-    let i,
-        l = JSON.parse(e),
-        a = PublicKeyCredential.parseRequestOptionsFromJSON(l.publicKey),
-        o = { ...l, publicKey: a, signal: t };
+async function s(t, e) {
+    var a;
+    let n,
+        s = JSON.parse(t),
+        o = PublicKeyCredential.parseRequestOptionsFromJSON(s.publicKey),
+        c = { ...s, publicKey: o, signal: e };
     return (
-        (i = (n = await navigator.credentials.get(o)).response),
-        s()(i instanceof AuthenticatorAssertionResponse, "WebAuthn: Cannot parse attestation response for assertion"),
+        (n = (a = await navigator.credentials.get(c)).response),
+        i()(n instanceof AuthenticatorAssertionResponse, "WebAuthn: Cannot parse attestation response for assertion"),
         JSON.stringify({
-            authenticatorAttachment: n.authenticatorAttachment,
-            clientExtensionResults: n.getClientExtensionResults(),
-            id: n.id,
-            rawId: r(n.rawId),
+            authenticatorAttachment: a.authenticatorAttachment,
+            clientExtensionResults: a.getClientExtensionResults(),
+            id: a.id,
+            rawId: r(a.rawId),
             response: {
-                authenticatorData: r(i.authenticatorData),
-                clientDataJSON: r(i.clientDataJSON),
-                signature: r(i.signature),
-                userHandle: r(i.userHandle),
+                authenticatorData: r(n.authenticatorData),
+                clientDataJSON: r(n.clientDataJSON),
+                signature: r(n.signature),
+                userHandle: r(n.userHandle),
             },
-            type: n.type,
+            type: a.type,
         })
     );
 }
-async function a(e, t) {
-    var n;
-    let i,
-        l = JSON.parse(e),
-        a = PublicKeyCredential.parseCreationOptionsFromJSON(l.publicKey),
-        o = { ...l, publicKey: a, signal: t };
+async function o(t, e) {
+    var a;
+    let n,
+        s = JSON.parse(t),
+        o = PublicKeyCredential.parseCreationOptionsFromJSON(s.publicKey),
+        c = { ...s, publicKey: o, signal: e };
     return (
-        (i = (n = await navigator.credentials.create(o)).response),
-        s()(i instanceof AuthenticatorAttestationResponse, "WebAuthn: Cannot parse assertion response for attestation"),
+        (n = (a = await navigator.credentials.create(c)).response),
+        i()(n instanceof AuthenticatorAttestationResponse, "WebAuthn: Cannot parse assertion response for attestation"),
         JSON.stringify({
-            authenticatorAttachment: n.authenticatorAttachment,
-            clientExtensionResults: n.getClientExtensionResults(),
-            id: n.id,
-            rawId: r(n.rawId),
+            authenticatorAttachment: a.authenticatorAttachment,
+            clientExtensionResults: a.getClientExtensionResults(),
+            id: a.id,
+            rawId: r(a.rawId),
             response: {
-                attestationObject: r(i.attestationObject),
-                authenticatorData: r(i.getAuthenticatorData()),
-                clientDataJSON: r(i.clientDataJSON),
-                publicKey: r(i.getPublicKey()),
-                publicKeyAlgorithm: i.getPublicKeyAlgorithm(),
-                transports: i.getTransports(),
+                attestationObject: r(n.attestationObject),
+                authenticatorData: r(n.getAuthenticatorData()),
+                clientDataJSON: r(n.clientDataJSON),
+                publicKey: r(n.getPublicKey()),
+                publicKeyAlgorithm: n.getPublicKeyAlgorithm(),
+                transports: n.getTransports(),
             },
-            type: n.type,
+            type: a.type,
         })
     );
 }

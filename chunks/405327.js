@@ -1,11 +1,11 @@
 e.exports = function (e) {
     let t = { className: "subst", variants: [{ begin: "\\$[A-Za-z0-9_]+" }] },
-        n = {
+        a = {
             className: "subst",
             variants: [{ begin: /\$\{/, end: /\}/ }],
             keywords: "true false null this is new super",
         },
-        r = {
+        n = {
             className: "number",
             relevance: 0,
             variants: [
@@ -13,21 +13,21 @@ e.exports = function (e) {
                 { match: /\b0[xX][0-9A-Fa-f][0-9A-Fa-f_]*\b/ },
             ],
         },
-        i = {
+        r = {
             className: "string",
             variants: [
                 { begin: "r'''", end: "'''" },
                 { begin: 'r"""', end: '"""' },
                 { begin: "r'", end: "'", illegal: "\\n" },
                 { begin: 'r"', end: '"', illegal: "\\n" },
-                { begin: "'''", end: "'''", contains: [e.BACKSLASH_ESCAPE, t, n] },
-                { begin: '"""', end: '"""', contains: [e.BACKSLASH_ESCAPE, t, n] },
-                { begin: "'", end: "'", illegal: "\\n", contains: [e.BACKSLASH_ESCAPE, t, n] },
-                { begin: '"', end: '"', illegal: "\\n", contains: [e.BACKSLASH_ESCAPE, t, n] },
+                { begin: "'''", end: "'''", contains: [e.BACKSLASH_ESCAPE, t, a] },
+                { begin: '"""', end: '"""', contains: [e.BACKSLASH_ESCAPE, t, a] },
+                { begin: "'", end: "'", illegal: "\\n", contains: [e.BACKSLASH_ESCAPE, t, a] },
+                { begin: '"', end: '"', illegal: "\\n", contains: [e.BACKSLASH_ESCAPE, t, a] },
             ],
         };
-    n.contains = [r, i];
-    let s = [
+    a.contains = [n, r];
+    let i = [
             "Comparable",
             "DateTime",
             "Duration",
@@ -55,7 +55,7 @@ e.exports = function (e) {
             "Element",
             "ElementList",
         ],
-        a = s.map((e) => `${e}?`);
+        o = i.map((e) => `${e}?`);
     return {
         name: "Dart",
         keywords: {
@@ -127,8 +127,8 @@ e.exports = function (e) {
                 "with",
                 "yield",
             ],
-            built_in: s
-                .concat(a)
+            built_in: i
+                .concat(o)
                 .concat([
                     "Never",
                     "Null",
@@ -142,7 +142,7 @@ e.exports = function (e) {
             $pattern: /[A-Za-z][A-Za-z0-9_]*\??/,
         },
         contains: [
-            i,
+            r,
             e.COMMENT(/\/\*\*(?!\/)/, /\*\//, { subLanguage: "markdown", relevance: 0 }),
             e.COMMENT(/\/{3,} ?/, /$/, { contains: [{ subLanguage: "markdown", begin: ".", end: "$", relevance: 0 }] }),
             e.C_LINE_COMMENT_MODE,
@@ -154,7 +154,7 @@ e.exports = function (e) {
                 excludeEnd: !0,
                 contains: [{ beginKeywords: "extends implements" }, e.UNDERSCORE_TITLE_MODE],
             },
-            r,
+            n,
             { className: "meta", begin: "@[A-Za-z]+" },
             { begin: "=>" },
         ],

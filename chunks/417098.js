@@ -1,85 +1,80 @@
 "use strict";
-n.d(t, { $T: () => I, Hv: () => _, PM: () => A, Z_: () => E, eC: () => g, zr: () => f });
-var r = n(627968);
+n.d(t, { $T: () => I, Hv: () => p, PM: () => A, Z_: () => m, eC: () => g, zr: () => E });
+var i = n(627968);
 n(64700);
-var i = n(503698),
-    s = n.n(i),
+var r = n(503698),
+    s = n.n(r),
     a = n(607399),
-    o = n(397927),
-    l = n(954571),
-    u = n(652215),
-    c = n(985018),
-    d = n(504226);
-let _ = Object.freeze({
-    DEFAULT: d.Lx,
-    NEUTRAL: d.NT,
-    BRAND: d.x8,
-    WARNING: d.SO,
-    DANGER: d.HW,
-    INFO: d.io,
-    STREAMER_MODE: d.kL,
-    CUSTOM: d.P4,
-    SPOTIFY: d.AU,
-    PLAYSTATION: d._9,
-    PREMIUM_TIER_0: d.zw,
-    PREMIUM_TIER_1: d.G_,
-    PREMIUM_TIER_2: d.NS,
+    o = n(187322),
+    l = n(349288),
+    u = n(939249),
+    c = n(789645),
+    d = n(174459),
+    _ = n(652215),
+    f = n(375708),
+    h = n(580537);
+let p = Object.freeze({
+    DEFAULT: h.Lx,
+    NEUTRAL: h.NT,
+    BRAND: h.x8,
+    WARNING: h.SO,
+    DANGER: h.HW,
+    INFO: h.io,
+    STREAMER_MODE: h.kL,
+    CUSTOM: h.P4,
+    SPOTIFY: h.AU,
+    PLAYSTATION: h._9,
+    PREMIUM_TIER_0: h.zw,
+    PREMIUM_TIER_1: h.G_,
+    PREMIUM_TIER_2: h.NS,
 });
-function f(e) {
-    let { children: t, className: n, minor: i = !1, ...a } = e;
-    return (0, r.jsx)(o.vN3, {
-        children: (0, r.jsx)("button", { className: s()(d.x6, n, { [d.oy]: i }), ...a, children: t }),
+function E(e) {
+    let { children: t, className: n, minor: r = !1, ...a } = e;
+    return (0, i.jsx)(o.vN, {
+        children: (0, i.jsx)("button", { className: s()(h.x6, n, { [h.oy]: r }), ...a, children: t }),
     });
 }
-function p(e) {
-    null != e && l.default.track(u.HAw.APP_NOTICE_PRIMARY_CTA_OPENED, { notice_type: e });
-}
-function h(e) {
-    null != e && l.default.track(u.HAw.APP_NOTICE_CLOSED, { notice_type: e });
-}
-function m(e, t) {
-    l.default.track(u.HAw.APP_NOTICE_ANCHOR_CLICKED, { notice_type: e, href: t });
-}
-function E(e) {
-    let { children: t, noticeType: n, ...i } = e;
-    return (0, r.jsx)(f, {
-        ...i,
+function m(e) {
+    let { children: t, noticeType: n, ...r } = e;
+    return (0, i.jsx)(E, {
+        ...r,
         onClick: (e) => {
-            null != i.onClick && i.onClick(e), p(n);
+            null != r.onClick && r.onClick(e),
+                null != n && d.default.track(_.HAw.APP_NOTICE_PRIMARY_CTA_OPENED, { notice_type: n });
         },
         children: t,
     });
 }
 function g(e) {
-    let { children: t, href: n, noticeType: i, ...s } = e;
-    return (0, r.jsx)(o.MzZ, {
+    let { children: t, href: n, noticeType: r, ...s } = e;
+    return (0, i.jsx)(l.Anchor, {
         ...s,
-        className: d.x6,
+        className: h.x6,
         href: n,
         onClick: (e) => {
-            s.onClick?.(e), m(i, n);
+            s.onClick?.(e), d.default.track(_.HAw.APP_NOTICE_ANCHOR_CLICKED, { notice_type: r, href: n });
         },
         children: t,
     });
 }
 function A(e) {
-    let { onClick: t, noticeType: n, className: i } = e;
-    return (0, r.jsx)(o.DUT, {
+    let { onClick: t, noticeType: n, className: r } = e;
+    return (0, i.jsx)(u.D, {
         focusProps: { offset: 6 },
-        className: s()(d.b, i),
+        className: s()(h.b, r),
         onClick: () => {
-            t(), h(n);
+            t(), null != n && d.default.track(_.HAw.APP_NOTICE_CLOSED, { notice_type: n });
         },
-        "aria-label": c.intl.string(c.t.WAI6xu),
-        children: (0, r.jsx)(o.PGe, { size: "sm", color: "currentColor", className: d.ut }),
+        "aria-label": f.intl.string(f.t.WAI6xu),
+        children: (0, i.jsx)(c.P, { size: "sm", color: "currentColor", className: h.ut }),
     });
 }
 function I(e) {
-    let { color: t = _.DEFAULT, className: n, style: i, ref: o, children: l } = e;
-    return (0, r.jsx)("div", {
+    let { color: t = p.DEFAULT, className: n, style: r, ref: o, children: l } = e;
+    return (0, i.jsx)("div", {
         ref: o,
-        className: s()(d.lm, { [d.Fr]: a.Fr }, n, t),
-        style: null != i ? i : void 0,
+        className: s()(h.lm, { [h.Fr]: a.Fr }, n, t),
+        style: null != r ? r : void 0,
         children: l,
     });
 }

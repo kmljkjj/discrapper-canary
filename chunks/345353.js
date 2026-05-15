@@ -1,5 +1,5 @@
 "use strict";
-function r(e) {
+function i(e) {
     return Promise.resolve(null);
 }
-n.d(t, { N: () => r });
+n.d(t, { N: () => i });

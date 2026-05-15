@@ -1,43 +1,44 @@
-"use strict";
-n.d(t, { Ay: () => _, Be: () => l, Nj: () => u, y3: () => c });
-var r = n(627968),
-    i = n(64700),
-    s = n(503698),
-    a = n.n(s),
-    o = n(21159),
-    l = (function (e) {
-        return (
-            (e.UNKNOWN = "unknown"),
-            (e.VISA = "visa"),
-            (e.DISCOVER = "discover"),
-            (e.MASTERCARD = "mastercard"),
-            (e.AMEX = "amex"),
-            (e.PAYPAL = "paypal"),
-            (e.PAYMENT_REQUEST = "paymentRequest"),
-            (e.G_PAY = "gPay"),
-            (e.DINERS = "diners"),
-            (e.JCB = "jcb"),
-            (e.UNIONPAY = "unionpay"),
-            (e.SOFORT = "sofort"),
-            (e.PRZELEWY24 = "przelewy24"),
-            (e.GIROPAY = "giropay"),
-            (e.PAYSAFECARD = "paysafecard"),
-            (e.GCASH = "gcash"),
-            (e.GRABPAY = "grabpay"),
-            (e.MOMO_WALLET = "momo_wallet"),
-            (e.VENMO = "venmo"),
-            (e.KAKAOPAY = "kakaopay"),
-            (e.GOPAY_WALLET = "gopay_wallet"),
-            (e.BANCONTACT = "bancontact"),
-            (e.EPS = "eps"),
-            (e.IDEAL = "ideal"),
-            (e.CASH_APP = "cash_app"),
-            (e.APPLE = "apple"),
-            (e.APPLE_LIGHT = "apple_light"),
-            e
-        );
-    })({});
-function u(e) {
+n.d(t, { Ay: () => b, Be: () => u, Nj: () => p, y3: () => _ });
+var a,
+    r = n(627968),
+    l = n(64700),
+    i = n(503698),
+    s = n.n(i),
+    o = n(355522),
+    c = n(37766),
+    d = n(34382),
+    u =
+        (((a = {}).UNKNOWN = "unknown"),
+        (a.VISA = "visa"),
+        (a.DISCOVER = "discover"),
+        (a.MASTERCARD = "mastercard"),
+        (a.AMEX = "amex"),
+        (a.PAYPAL = "paypal"),
+        (a.PAYMENT_REQUEST = "paymentRequest"),
+        (a.G_PAY = "gPay"),
+        (a.DINERS = "diners"),
+        (a.JCB = "jcb"),
+        (a.UNIONPAY = "unionpay"),
+        (a.SOFORT = "sofort"),
+        (a.PRZELEWY24 = "przelewy24"),
+        (a.GIROPAY = "giropay"),
+        (a.PAYSAFECARD = "paysafecard"),
+        (a.GCASH = "gcash"),
+        (a.GRABPAY = "grabpay"),
+        (a.MOMO_WALLET = "momo_wallet"),
+        (a.VENMO = "venmo"),
+        (a.KAKAOPAY = "kakaopay"),
+        (a.GOPAY_WALLET = "gopay_wallet"),
+        (a.BANCONTACT = "bancontact"),
+        (a.EPS = "eps"),
+        (a.IDEAL = "ideal"),
+        (a.CASH_APP = "cash_app"),
+        (a.APPLE = "apple"),
+        (a.APPLE_LIGHT = "apple_light"),
+        (a.BANK = "bank"),
+        (a.GIFT_CARD = "gift_card"),
+        a);
+function p(e) {
     let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "dark";
     if ("light" === t) {
         if ("apple" === e) return n(685430);
@@ -94,17 +95,21 @@ function u(e) {
             return n(511403);
     }
 }
-let c = { SMALL: o.cardIconSmall, MEDIUM: o.cardIconMedium, LARGE: o.cardIconLarge, XLARGE: o.cardIconXLarge };
-class d extends i.PureComponent {
-    static Types = l;
-    static Sizes = c;
+let _ = { SMALL: d.cardIconSmall, MEDIUM: d.cardIconMedium, LARGE: d.cardIconLarge, XLARGE: d.cardIconXLarge };
+class m extends l.PureComponent {
+    static Types = u;
+    static Sizes = _;
     static getType(e) {
-        return null == e ? "unknown" : l[e.replace(/[^a-z0-9_]/gi, "").toUpperCase()] || "unknown";
+        return null == e ? "unknown" : u[e.replace(/[^a-z0-9_]/gi, "").toUpperCase()] || "unknown";
     }
-    static defaultProps = { size: c.SMALL, flipped: !1 };
+    static defaultProps = { size: _.SMALL, flipped: !1 };
     render() {
-        let { flipped: e, type: t, className: n, size: i } = this.props;
-        return (0, r.jsx)("div", { className: a()(i, o[t], n, { [o.flipped]: e }), children: t });
+        let { flipped: e, type: t, className: n, size: a } = this.props;
+        return "bank" === t
+            ? (0, r.jsx)(o.M, { className: n })
+            : "gift_card" === t
+              ? (0, r.jsx)(c._, { className: n, size: "lg" })
+              : (0, r.jsx)("div", { className: s()(a, d[t], n, { [d.flipped]: e }), children: t });
     }
 }
-let _ = d;
+let b = m;

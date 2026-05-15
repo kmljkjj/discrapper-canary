@@ -1,122 +1,118 @@
 "use strict";
-n.d(t, { J: () => p });
-var r = n(627968),
-    i = n(64700),
-    a = n(503698),
-    s = n.n(a),
+n.d(t, { J: () => h });
+var i = n(627968),
+    r = n(64700),
+    s = n(503698),
+    a = n.n(s),
     o = n(129844),
-    l = n(974213),
-    u = n(426333),
-    c = n(934551),
-    d = n(331322),
-    _ = n(834730),
-    f = n(264005);
-function p(e) {
+    l = n(47948),
+    d = n(187322),
+    _ = n(820081),
+    u = n(331322),
+    c = n(834730),
+    E = n(197452);
+function h(e) {
     let {
             checked: t,
             description: n,
-            onChange: a,
-            disabled: p = !1,
-            displayOnly: h,
-            label: m,
+            onChange: s,
+            disabled: h = !1,
+            displayOnly: m,
+            label: f,
             labeledBy: g,
-            leadingIcon: E,
+            leadingIcon: p,
             value: A,
             labelType: I = "primary",
             usageVariant: T = "single",
         } = e,
-        y = (0, i.useRef)(null),
-        S = (0, i.useRef)(null),
-        v = (0, i.useRef)(null),
-        [C, b] = (0, i.useState)(void 0),
-        N = (0, i.useRef)(!1),
-        R = null != m && "" !== m,
-        O = null != n && "" !== n,
-        D = null != E ? E : null;
-    (0, i.useEffect)(() => {
-        if (!N.current) {
-            N.current = !0;
+        S = (0, r.useRef)(null),
+        N = (0, r.useRef)(null),
+        C = (0, r.useRef)(null),
+        [R, O] = (0, r.useState)(void 0),
+        y = (0, r.useRef)(!1),
+        v = null != p ? p : null;
+    (0, r.useEffect)(() => {
+        if (!y.current) {
+            y.current = !0;
             return;
         }
-        b(t ? "animateIn" : "animateOut");
+        O(t ? "animateIn" : "animateOut");
     }, [t]);
-    let L = (e) => {
-            null != a && a(e);
-        },
-        w = s()(f.checkboxOption, "string" == typeof C && f[C], "indicator" !== T && f.spacing),
-        x = (0, r.jsxs)(r.Fragment, {
+    let D = a()(E.checkboxOption, "string" == typeof R && E[R], "indicator" !== T && E.spacing),
+        L = (0, i.jsxs)(i.Fragment, {
             children: [
-                (0, r.jsxs)("div", {
-                    className: f.checkboxIndicator,
-                    ref: y,
+                (0, i.jsxs)("div", {
+                    className: E.checkboxIndicator,
+                    ref: S,
                     "aria-hidden": !0,
                     children: [
-                        (0, r.jsx)("svg", {
-                            className: f.checkmark,
+                        (0, i.jsx)("svg", {
+                            className: E.checkmark,
                             width: 20,
                             height: 20,
                             viewBox: "0 0 20 20",
                             fill: "none",
                             "aria-hidden": !0,
-                            children: (0, r.jsx)("circle", {
-                                className: f.dot,
+                            children: (0, i.jsx)("circle", {
+                                className: E.dot,
                                 cx: "10",
                                 cy: "10",
                                 r: "1.1",
                                 fill: "currentColor",
                             }),
                         }),
-                        (0, r.jsx)(c.CheckmarkSmallBoldIcon, {
-                            className: f.checkStroke,
-                            size: "sm",
-                            color: "currentColor",
-                        }),
+                        (0, i.jsx)(_.B, { className: E.checkStroke, size: "sm", color: "currentColor" }),
                     ],
                 }),
-                R &&
-                    (0, r.jsxs)(d.B, {
+                null != f &&
+                    "" !== f &&
+                    (0, i.jsxs)(u.B, {
                         gap: 4,
                         children: [
-                            (0, r.jsxs)(o.J, {
-                                className: f.label,
+                            (0, i.jsxs)(o.J, {
+                                className: E.label,
                                 children: [
-                                    null != D &&
-                                        (0, r.jsx)(D, {
-                                            className: f.leadingIcon,
+                                    null != v &&
+                                        (0, i.jsx)(v, {
+                                            className: E.leadingIcon,
                                             size: "sm",
                                             color: "currentColor",
                                             "aria-hidden": !0,
                                             focusable: !1,
                                         }),
-                                    (0, r.jsx)(_.E, {
+                                    (0, i.jsx)(c.E, {
                                         variant: "text-md/normal",
                                         color: "primary" === I ? "text-strong" : "text-subtle",
-                                        children: m,
+                                        children: f,
                                     }),
                                 ],
                             }),
-                            O && (0, r.jsx)(_.E, { variant: "text-sm/normal", color: "text-subtle", children: n }),
+                            null != n &&
+                                "" !== n &&
+                                (0, i.jsx)(c.E, { variant: "text-sm/normal", color: "text-subtle", children: n }),
                         ],
                     }),
             ],
         });
-    return h
-        ? (0, r.jsx)("div", { className: w, "data-selected": t || void 0, "data-disabled": p || void 0, children: x })
-        : (0, r.jsx)(u.vN, {
-              focusTarget: S,
-              ringTarget: v,
-              children: (0, r.jsx)(l.Sc, {
-                  ref: v,
-                  inputRef: S,
+    return m
+        ? (0, i.jsx)("div", { className: D, "data-selected": t || void 0, "data-disabled": h || void 0, children: L })
+        : (0, i.jsx)(d.vN, {
+              focusTarget: N,
+              ringTarget: C,
+              children: (0, i.jsx)(l.Sc, {
+                  ref: C,
+                  inputRef: N,
                   "aria-labelledby": g,
                   isSelected: t,
-                  onChange: L,
-                  isDisabled: p,
-                  isReadOnly: h,
+                  onChange: (e) => {
+                      null != s && s(e);
+                  },
+                  isDisabled: h,
+                  isReadOnly: m,
                   "data-mana-component": "checkbox",
-                  className: w,
+                  className: D,
                   value: String(A),
-                  children: x,
+                  children: L,
               }),
           });
 }

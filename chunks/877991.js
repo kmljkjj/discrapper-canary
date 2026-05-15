@@ -1,13 +1,16 @@
-n.d(t, { L: () => o });
+"use strict";
+n.d(t, { L: () => l });
 var i = n(189551),
-    s = n(186111),
-    r = n(203982),
+    r = n(186111),
+    s = n(625494),
     a = n(652215),
-    l = n(307731);
-let o = {
+    o = n(307731);
+let l = {
     binds: ["mod+e"],
     comboKeysBindGlobal: !0,
     action: () =>
-        !(s.A.getLayers().length > 0) &&
-        ((0, i.K)(l.Vl.SearchEmojiKeybindPressed), r._.dispatchToLastSubscribed(a.jej.TOGGLE_EMOJI_POPOUT), !1),
+        !(r.A.getLayers().length > 0) &&
+        ((0, i.K)(o.EmojiInteractionPoint.SearchEmojiKeybindPressed),
+        s._.dispatchToLastSubscribed(a.jej.TOGGLE_EMOJI_POPOUT),
+        !1),
 };

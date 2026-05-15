@@ -1,56 +1,65 @@
-i.d(t, { A: () => c });
-var n = i(627968);
-i(64700);
-var l = i(311907),
-    s = i(397927),
-    r = i(855687),
-    a = i(576705),
-    d = i(652215),
-    o = i(985018);
-function c(e) {
-    let { source: t, guild: i, channel: n, stageInstance: s } = e,
-        d = (0, l.bG)([a.A], () => (0, r.K)(a.A, i, n, s)),
-        o = A(t, i, n),
-        c = g(t, n);
-    return d ? o : c;
+t.d(n, { A: () => E });
+var i = t(627968);
+t(64700);
+var l = t(17928),
+    r = t(477782),
+    o = t(241541),
+    a = t(192308),
+    c = t(855687),
+    d = t(576705),
+    s = t(652215),
+    u = t(375708);
+function E(e) {
+    let { source: n, guild: t, channel: i, stageInstance: r } = e,
+        o = (0, l.bG)([d.A], () => (0, c.K)(d.A, t, i, r)),
+        a = p(n, t, i),
+        s = A(n, i);
+    return o ? a : s;
 }
-function u(e, t) {
-    return (null != t && [d.PE1.GUILD_HEADER, d.PE1.GUILD_CONTEXT_MENU].includes(t)) || null == e
-        ? o.intl.string(o.t.Sd8Ixw)
-        : e.type === d.rbe.GUILD_VOICE
-          ? o.intl.string(o.t["EE+P0H"])
-          : o.intl.string(o.t["0jeAXt"]);
+function D(e, n) {
+    return (null != n && [s.PE1.GUILD_HEADER, s.PE1.GUILD_CONTEXT_MENU].includes(n)) || null == e
+        ? u.intl.string(u.t.Sd8Ixw)
+        : e.type === s.rbe.GUILD_VOICE
+          ? u.intl.string(u.t["EE+P0H"])
+          : u.intl.string(u.t["0jeAXt"]);
 }
-let A = (e, t, l) => {
-        if (null == t) return null;
-        let r = u(l, e);
-        return (0, n.jsx)(s.Drp, {
+let p = (e, n, l) => {
+        if (null == n) return null;
+        let c = D(l, e);
+        return (0, i.jsx)(r.Dr, {
             id: "invite-people",
-            label: r,
+            label: c,
             color: "brand",
-            icon: e === d.PE1.GUILD_HEADER ? s.DpX : void 0,
-            leadingAccessory: e === d.PE1.GUILD_HEADER ? { type: "icon", icon: s.DpX } : void 0,
+            icon: e === s.PE1.GUILD_HEADER ? o.D : void 0,
+            leadingAccessory: e === s.PE1.GUILD_HEADER ? { type: "icon", icon: o.D } : void 0,
             action: () =>
-                (0, s.mMO)(async () => {
-                    let { default: s } = await Promise.all([i.e("43600"), i.e("28136"), i.e("8421")]).then(
-                        i.bind(i, 234355),
-                    );
-                    return (i) => (0, n.jsx)(s, { ...i, guild: t, channel: l, source: e });
+                (0, a.openModalLazy)(async () => {
+                    let { default: r } = await Promise.all([
+                        t.e("49909"),
+                        t.e("54266"),
+                        t.e("59957"),
+                        t.e("28136"),
+                        t.e("16084"),
+                        t.e("97073"),
+                        t.e("87317"),
+                        t.e("22547"),
+                    ]).then(t.bind(t, 1310));
+                    return (t) => (0, i.jsx)(r, { ...t, guild: n, channel: l, source: e });
                 }),
         });
     },
-    g = (e, t) => {
-        let l = u(t, e);
-        return (0, n.jsx)(s.Drp, {
+    A = (e, n) => {
+        let l = D(n, e);
+        return (0, i.jsx)(r.Dr, {
             id: "invite-people",
             label: l,
             color: "brand",
-            icon: e === d.PE1.GUILD_HEADER ? s.DpX : void 0,
-            leadingAccessory: e === d.PE1.GUILD_HEADER ? { type: "icon", icon: s.DpX } : void 0,
+            icon: e === s.PE1.GUILD_HEADER ? o.D : void 0,
+            leadingAccessory: e === s.PE1.GUILD_HEADER ? { type: "icon", icon: o.D } : void 0,
             action: () =>
-                (0, s.mMO)(async () => {
-                    let { default: e } = await i.e("62751").then(i.bind(i, 132610));
-                    return (t) => (0, n.jsx)(e, { ...t });
+                (0, a.openModalLazy)(async () => {
+                    let { default: e } = await t.e("62751").then(t.bind(t, 132610));
+                    return (n) => (0, i.jsx)(e, { ...n });
                 }),
         });
     };

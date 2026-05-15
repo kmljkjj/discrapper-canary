@@ -1,17 +1,17 @@
 e.exports = function (e) {
     let t = e.regex,
-        n = /(?:(?:[a-zA-Z]|\.[._a-zA-Z])[._a-zA-Z0-9]*)|\.(?!\d)/,
-        r = t.either(
+        a = /(?:(?:[a-zA-Z]|\.[._a-zA-Z])[._a-zA-Z0-9]*)|\.(?!\d)/,
+        n = t.either(
             /0[xX][0-9a-fA-F]+\.[0-9a-fA-F]*[pP][+-]?\d+i?/,
             /0[xX][0-9a-fA-F]+(?:[pP][+-]?\d+)?[Li]?/,
             /(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?[Li]?/,
         ),
-        i = /[=!<>:]=|\|\||&&|:::?|<-|<<-|->>|->|\|>|[-+*\/?!$&|:<=>@^~]|\*\*/,
-        s = t.either(/[()]/, /[{}]/, /\[\[/, /[[\]]/, /\\/, /,/);
+        r = /[=!<>:]=|\|\||&&|:::?|<-|<<-|->>|->|\|>|[-+*\/?!$&|:<=>@^~]|\*\*/,
+        i = t.either(/[()]/, /[{}]/, /\[\[/, /[[\]]/, /\\/, /,/);
     return {
         name: "R",
         keywords: {
-            $pattern: n,
+            $pattern: a,
             keyword: "function if in break next repeat else for while",
             literal: "NULL NA TRUE FALSE Inf NaN NA_integer_|10 NA_real_|10 NA_character_|10 NA_complex_|10",
             built_in:
@@ -32,7 +32,7 @@ e.exports = function (e) {
                         contains: [
                             {
                                 scope: "variable",
-                                variants: [{ match: n }, { match: /`(?:\\.|[^`\\])+`/ }],
+                                variants: [{ match: a }, { match: /`(?:\\.|[^`\\])+`/ }],
                                 endsParent: !0,
                             },
                         ],
@@ -59,15 +59,15 @@ e.exports = function (e) {
             {
                 relevance: 0,
                 variants: [
-                    { scope: { 1: "operator", 2: "number" }, match: [i, r] },
-                    { scope: { 1: "operator", 2: "number" }, match: [/%[^%]*%/, r] },
-                    { scope: { 1: "punctuation", 2: "number" }, match: [s, r] },
-                    { scope: { 2: "number" }, match: [/[^a-zA-Z0-9._]|^/, r] },
+                    { scope: { 1: "operator", 2: "number" }, match: [r, n] },
+                    { scope: { 1: "operator", 2: "number" }, match: [/%[^%]*%/, n] },
+                    { scope: { 1: "punctuation", 2: "number" }, match: [i, n] },
+                    { scope: { 2: "number" }, match: [/[^a-zA-Z0-9._]|^/, n] },
                 ],
             },
-            { scope: { 3: "operator" }, match: [n, /\s+/, /<-/, /\s+/] },
-            { scope: "operator", relevance: 0, variants: [{ match: i }, { match: /%[^%]*%/ }] },
-            { scope: "punctuation", relevance: 0, match: s },
+            { scope: { 3: "operator" }, match: [a, /\s+/, /<-/, /\s+/] },
+            { scope: "operator", relevance: 0, variants: [{ match: r }, { match: /%[^%]*%/ }] },
+            { scope: "punctuation", relevance: 0, match: i },
             { begin: "`", end: "`", contains: [{ begin: /\\./ }] },
         ],
     };

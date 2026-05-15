@@ -1,47 +1,46 @@
 "use strict";
 n.d(t, {
-    Hi: () => d,
-    LQ: () => i,
-    OE: () => c,
-    VH: () => o,
-    W_: () => l,
-    XK: () => u,
-    hj: () => s,
-    kw: () => a,
-    sm: () => r,
-    z4: () => _,
+    Hi: () => p,
+    LQ: () => l,
+    OE: () => h,
+    VH: () => d,
+    W_: () => _,
+    XK: () => f,
+    hj: () => c,
+    kw: () => u,
+    sm: () => o,
+    z4: () => E,
 });
-var r = (function (e) {
-    return (e.ANY = "$any"), (e.ALL = "$all"), e;
-})({});
-let i = "RPC_PRIVATE_SCOPE",
-    a = "RPC_PRIVATE_LIMITED_SCOPE",
-    s = "RPC_LOCAL_SCOPE",
-    o = "RPC_AUTHENTICATED_SCOPE",
-    l = "RPC_EMBEDDED_APP_SCOPE";
-var u = (function (e) {
-    return (
-        (e.USER_SETTINGS = "USER_SETTINGS"),
-        (e.CHANGELOG = "CHANGELOG"),
-        (e.LIBRARY = "LIBRARY"),
-        (e.STORE_HOME = "STORE_HOME"),
-        (e.STORE_LISTING = "STORE_LISTING"),
-        (e.CHANNEL = "CHANNEL"),
-        (e.GAME_SHOP = "GAME_SHOP"),
-        (e.PICK_GUILD_SETTINGS = "PICK_GUILD_SETTINGS"),
-        (e.QUEST_HOME = "QUEST_HOME"),
-        (e.DISCOVERY_GAME_RESULTS = "DISCOVERY_GAME_RESULTS"),
-        (e.OAUTH2 = "OAUTH2"),
-        (e.FEATURES = "FEATURES"),
-        (e.SHOP = "SHOP"),
-        (e.ACTIVITIES = "ACTIVITIES"),
-        (e.QUEST_PREVIEW_TOOL = "QUEST_PREVIEW_TOOL"),
-        (e.ONE_TIME_LOGIN = "ONE_TIME_LOGIN"),
-        (e.PLAYGROUND = "PLAYGROUND"),
-        e
-    );
-})({});
-function c(e) {
+var i,
+    r,
+    s,
+    a,
+    o = (((i = {}).ANY = "$any"), (i.ALL = "$all"), i);
+let l = "RPC_PRIVATE_SCOPE",
+    u = "RPC_PRIVATE_LIMITED_SCOPE",
+    c = "RPC_LOCAL_SCOPE",
+    d = "RPC_AUTHENTICATED_SCOPE",
+    _ = "RPC_EMBEDDED_APP_SCOPE";
+var f =
+    (((r = {}).USER_SETTINGS = "USER_SETTINGS"),
+    (r.CHANGELOG = "CHANGELOG"),
+    (r.LIBRARY = "LIBRARY"),
+    (r.STORE_HOME = "STORE_HOME"),
+    (r.STORE_LISTING = "STORE_LISTING"),
+    (r.CHANNEL = "CHANNEL"),
+    (r.GAME_SHOP = "GAME_SHOP"),
+    (r.PICK_GUILD_SETTINGS = "PICK_GUILD_SETTINGS"),
+    (r.QUEST_HOME = "QUEST_HOME"),
+    (r.DISCOVERY_GAME_RESULTS = "DISCOVERY_GAME_RESULTS"),
+    (r.OAUTH2 = "OAUTH2"),
+    (r.FEATURES = "FEATURES"),
+    (r.SHOP = "SHOP"),
+    (r.ACTIVITIES = "ACTIVITIES"),
+    (r.QUEST_PREVIEW_TOOL = "QUEST_PREVIEW_TOOL"),
+    (r.ONE_TIME_LOGIN = "ONE_TIME_LOGIN"),
+    (r.PLAYGROUND = "PLAYGROUND"),
+    r);
+function h(e) {
     switch (e) {
         case "USER_SETTINGS":
             return "settings";
@@ -72,31 +71,26 @@ function c(e) {
             return e;
     }
 }
-var d = (function (e) {
-        return (
-            (e[(e.APPLICATION_NOT_FOUND = 101)] = "APPLICATION_NOT_FOUND"),
-            (e[(e.DISK_LOW = 2022)] = "DISK_LOW"),
-            (e[(e.DISK_PERMISSION_DENIED = 2025)] = "DISK_PERMISSION_DENIED"),
-            (e[(e.POST_INSTALL_FAILED = 2025)] = "POST_INSTALL_FAILED"),
-            (e[(e.REDISTRIBUTABLE_INSTALL_FAILED = 2026)] = "REDISTRIBUTABLE_INSTALL_FAILED"),
-            (e[(e.APPLICATION_LOAD_FAILED = 2034)] = "APPLICATION_LOAD_FAILED"),
-            (e[(e.DESERIALIZATION_FAILED = 2047)] = "DESERIALIZATION_FAILED"),
-            (e[(e.INTERRUPTED = 2055)] = "INTERRUPTED"),
-            (e[(e.MAX_REQUEST_RETRIES_EXCEEDED = 2058)] = "MAX_REQUEST_RETRIES_EXCEEDED"),
-            (e[(e.AUTHENTICATION_FAILED = 2063)] = "AUTHENTICATION_FAILED"),
-            (e[(e.IO_PERMISSION_DENIED = 2064)] = "IO_PERMISSION_DENIED"),
-            (e[(e.NO_MANIFESTS = 2065)] = "NO_MANIFESTS"),
-            (e[(e.POST_INSTALL_CANCELLED = 2066)] = "POST_INSTALL_CANCELLED"),
-            (e[(e.API_ERROR = 2069)] = "API_ERROR"),
-            (e[(e.FILE_NAME_TOO_LONG = 2072)] = "FILE_NAME_TOO_LONG"),
-            (e[(e.NOT_ENTITLED = 2073)] = "NOT_ENTITLED"),
-            (e[(e.APPLICATION_LOCK_FAILED = 2076)] = "APPLICATION_LOCK_FAILED"),
-            (e[(e.NOT_DIRECTORY = 2077)] = "NOT_DIRECTORY"),
-            (e[(e.INVALID_DRIVE = 2078)] = "INVALID_DRIVE"),
-            (e[(e.DISK_FULL = 2080)] = "DISK_FULL"),
-            e
-        );
-    })({}),
-    _ = (function (e) {
-        return (e.IPC = "ipc"), (e.WEBSOCKET = "ws"), (e.HTTP = "http"), (e.POST_MESSAGE = "post_message"), e;
-    })({});
+var p =
+        (((s = {})[(s.APPLICATION_NOT_FOUND = 101)] = "APPLICATION_NOT_FOUND"),
+        (s[(s.DISK_LOW = 2022)] = "DISK_LOW"),
+        (s[(s.DISK_PERMISSION_DENIED = 2025)] = "DISK_PERMISSION_DENIED"),
+        (s[(s.POST_INSTALL_FAILED = 2025)] = "POST_INSTALL_FAILED"),
+        (s[(s.REDISTRIBUTABLE_INSTALL_FAILED = 2026)] = "REDISTRIBUTABLE_INSTALL_FAILED"),
+        (s[(s.APPLICATION_LOAD_FAILED = 2034)] = "APPLICATION_LOAD_FAILED"),
+        (s[(s.DESERIALIZATION_FAILED = 2047)] = "DESERIALIZATION_FAILED"),
+        (s[(s.INTERRUPTED = 2055)] = "INTERRUPTED"),
+        (s[(s.MAX_REQUEST_RETRIES_EXCEEDED = 2058)] = "MAX_REQUEST_RETRIES_EXCEEDED"),
+        (s[(s.AUTHENTICATION_FAILED = 2063)] = "AUTHENTICATION_FAILED"),
+        (s[(s.IO_PERMISSION_DENIED = 2064)] = "IO_PERMISSION_DENIED"),
+        (s[(s.NO_MANIFESTS = 2065)] = "NO_MANIFESTS"),
+        (s[(s.POST_INSTALL_CANCELLED = 2066)] = "POST_INSTALL_CANCELLED"),
+        (s[(s.API_ERROR = 2069)] = "API_ERROR"),
+        (s[(s.FILE_NAME_TOO_LONG = 2072)] = "FILE_NAME_TOO_LONG"),
+        (s[(s.NOT_ENTITLED = 2073)] = "NOT_ENTITLED"),
+        (s[(s.APPLICATION_LOCK_FAILED = 2076)] = "APPLICATION_LOCK_FAILED"),
+        (s[(s.NOT_DIRECTORY = 2077)] = "NOT_DIRECTORY"),
+        (s[(s.INVALID_DRIVE = 2078)] = "INVALID_DRIVE"),
+        (s[(s.DISK_FULL = 2080)] = "DISK_FULL"),
+        s),
+    E = (((a = {}).IPC = "ipc"), (a.WEBSOCKET = "ws"), (a.HTTP = "http"), (a.POST_MESSAGE = "post_message"), a);

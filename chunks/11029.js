@@ -1,7 +1,7 @@
 "use strict";
-n.d(t, { D: () => a });
-var r = n(73153),
-    i = n(793943);
-let a = () => {
-    (0, i.Jp)(), r.h.dispatch({ type: "CLIENT_THEMES_EDITOR_CLOSE" });
+n.d(t, { D: () => s });
+var i = n(228366),
+    r = n(793943);
+let s = () => {
+    (0, r.Jp)(), i.h.dispatch({ type: "CLIENT_THEMES_EDITOR_CLOSE" });
 };

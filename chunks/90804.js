@@ -1,36 +1,35 @@
 "use strict";
-n.d(t, { A: () => _ });
-var r = n(717125),
-    i = n(262763),
-    a = n(721592),
-    s = n(734057),
+n.d(t, { A: () => u });
+var i = n(717125),
+    r = n(262763),
+    s = n(721592),
+    a = n(734057),
     o = n(576705),
     l = n(309010),
-    u = n(977997);
-let c = 1e4;
+    _ = n(977997);
 class d extends Error {}
-async function _(e) {
-    let { channelId: t, timeoutMs: n = c, bypassChangeModal: _ = !1 } = e,
-        f = s.A.getChannel(t);
+async function u(e) {
+    let { channelId: t, timeoutMs: n = 1e4, bypassChangeModal: u = !1 } = e,
+        c = a.A.getChannel(t);
     if (
-        null == f ||
-        !(await i.A.handleVoiceConnect({
+        null == c ||
+        !(await r.A.handleVoiceConnect({
             bypassGuildIdCheck: !0,
-            bypassChangeModal: _,
-            channel: f,
-            connected: u.A.isInChannel(t),
-            needSubscriptionToAccess: (0, a.p)(t, s.A, r.A, o.A).needSubscriptionToAccess,
+            bypassChangeModal: u,
+            channel: c,
+            connected: _.A.isInChannel(t),
+            needSubscriptionToAccess: (0, s.p)(t, a.A, i.A, o.A).needSubscriptionToAccess,
         }))
     )
         return !1;
-    let p = new Promise((e, r) => {
-        let i = setTimeout(() => {
-            r(new d("Joining voice channel has timed out."));
+    let E = new Promise((e, i) => {
+        let r = setTimeout(() => {
+            i(new d("Joining voice channel has timed out."));
         }, n);
-        l.A.addConditionalChangeListener(() => l.A.getVoiceChannelId() !== t || (clearTimeout(i), e(), !1));
+        l.A.addConditionalChangeListener(() => l.A.getVoiceChannelId() !== t || (clearTimeout(r), e(), !1));
     });
     try {
-        await p;
+        await E;
     } catch (e) {
         if (e instanceof d) return !1;
         throw e;

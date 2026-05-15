@@ -1,29 +1,23 @@
-n.d(t, { t: () => o, x: () => d });
-var r = n(64700),
-    a = n(989349),
-    s = n.n(a),
-    l = n(112848),
-    i = n(788868);
-function d(e, t) {
-    return Math.max(0, u(e, t).diff(s()(), "days"));
-}
-function u(e, t) {
+"use strict";
+n.d(t, { t: () => u });
+var i = n(64700),
+    r = n(989349),
+    s = n.n(r),
+    a = n(655752),
+    o = n(878784);
+function l(e, t) {
     return s()(e).add(t, "months").add(1, "day");
 }
-function o() {
-    let e = (0, l.$F)(),
-        t = (0, l.Xb)();
-    return (0, r.useMemo)(() => {
-        let n;
+function u() {
+    let e = (0, a.P)(),
+        t = (0, o.Xb)();
+    return (0, i.useMemo)(() => {
         if (null == e || null == t) return null;
-        if (e.status === l.Wo.UPCOMING) n = e.tenureReqNumMonths;
-        else {
-            let t = i.sp.indexOf(e.id),
-                r = i.sp[t + 1];
-            if (null == r || -1 === t) return null;
-            n = i.VD[r].tenureReqNumMonths;
-        }
-        let r = u(t, n);
-        return { days: d(t, n), months: Math.max(0, Math.round(r.diff(s()(), "months", !0))) };
+        let n = e.tenureReqNumMonths,
+            i = l(t, n);
+        return {
+            days: Math.max(0, l(t, n).diff(s()(), "days")),
+            months: Math.max(0, Math.round(i.diff(s()(), "months", !0))),
+        };
     }, [e, t]);
 }

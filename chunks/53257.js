@@ -1,9 +1,9 @@
 "use strict";
-n.d(t, { A: () => i });
-var r = n(652215);
-function i(e) {
+n.d(t, { A: () => r });
+var i = n(652215);
+function r(e) {
     return (
-        (e.type === r.$pd.LISTENING || e.type === r.$pd.WATCHING) &&
+        (e.type === i.$pd.LISTENING || e.type === i.$pd.WATCHING) &&
         e.timestamps?.start != null &&
         null != e.timestamps.end
     );

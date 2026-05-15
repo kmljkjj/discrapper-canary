@@ -1,6 +1,6 @@
 "use strict";
-n.d(t, { Ay: () => l, di: () => o, lr: () => s });
-let { Layer: r, LayerContainer: i, LayerProvider: a } = (0, n(397927).AyR)("Chat"),
-    s = i,
-    o = a,
-    l = r;
+n.d(t, { Ay: () => l, di: () => o, lr: () => a });
+let { Layer: i, LayerContainer: r, LayerProvider: s } = (0, n(83379).Ay)("Chat"),
+    a = r,
+    o = s,
+    l = i;

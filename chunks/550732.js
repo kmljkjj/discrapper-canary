@@ -1,87 +1,91 @@
-n.d(t, { C: () => N });
-var l = n(627968);
-n(64700);
-var a = n(991660),
-    r = n(158954),
-    s = n(311907),
-    i = n(397927),
-    o = n(587895),
-    c = n(212534),
-    d = n(272859),
-    u = n(957565),
-    m = n(943775),
-    p = n(997997),
-    A = n(816709),
-    h = n(652215),
-    C = n(985018),
-    E = n(23928),
-    x = n(52379);
-function N(e) {
-    let { appId: t, skuId: n, transitionState: N, onClose: I, children: f, footer: _ } = e,
-        g = (0, s.bG)([o.A, c.A], () => o.A.getApplication(t) ?? c.A.getApplicationRecord(t), [t]),
-        { data: T } = (0, d.d)(n);
-    if (null == g) return null;
-    let v = (0, m.A)(g, 25),
-        { termsOfServiceUrl: j, privacyPolicyUrl: S } = g;
-    if (T?.applicationId !== t)
-        return (0, l.jsx)(r.Modal, {
-            actions: [{ onClick: I, text: C.intl.string(C.t.BddRzS), variant: "primary" }],
-            onClose: I,
+s.d(l, { C: () => p });
+var e = s(627968);
+s(64700);
+var i = s(991660),
+    r = s(189213),
+    n = s(224640),
+    a = s(20742),
+    o = s(364840),
+    c = s(17928),
+    d = s(834730),
+    x = s(408278),
+    u = s(173936),
+    m = s(691540),
+    h = s(857250),
+    j = s(97483),
+    v = s(587895),
+    E = s(212534),
+    g = s(272859),
+    A = s(957565),
+    S = s(943775),
+    _ = s(997997),
+    T = s(816709),
+    N = s(652215),
+    R = s(375708),
+    I = s(150171),
+    C = s(967744);
+function p(t) {
+    let { appId: l, skuId: s, transitionState: p, onClose: f, children: O, footer: P } = t,
+        U = (0, c.bG)([v.A, E.A], () => v.A.getApplication(l) ?? E.A.getApplicationRecord(l), [l]),
+        { data: k } = (0, g.d)(s);
+    if (null == U) return null;
+    let D = (0, S.A)(U, 25),
+        { termsOfServiceUrl: L, privacyPolicyUrl: F } = U;
+    if (k?.applicationId !== l)
+        return (0, e.jsx)(r.Modal, {
+            actions: [{ onClick: f, text: R.intl.string(R.t.BddRzS), variant: "primary" }],
+            onClose: f,
             size: "sm",
-            transitionState: N,
-            title: C.intl.string(C.t["0Bf80I"]),
-            children: (0, l.jsx)(i.Text, {
+            transitionState: p,
+            title: R.intl.string(R.t["0Bf80I"]),
+            children: (0, e.jsx)(d.E, {
                 variant: "text-md/normal",
                 color: "text-default",
-                className: E.$r,
-                children: C.intl.string(C.t.omH3bq),
+                className: I.$r,
+                children: R.intl.string(R.t.omH3bq),
             }),
         });
-    let O = null != v ? (0, l.jsx)("img", { src: v.href, alt: "", className: E.Z2 }) : void 0;
-    return (0, l.jsxs)(r.dWK, {
-        onClose: I,
+    let b = null != D ? (0, e.jsx)("img", { src: D.href, alt: "", className: I.Z2 }) : void 0;
+    return (0, e.jsxs)(n.d, {
+        onClose: f,
         size: "lg",
-        transitionState: N,
+        transitionState: p,
+        "aria-label": U.name,
         children: [
-            (0, l.jsx)(r.rQ0, { leading: O, title: g.name }),
-            (0, l.jsx)(a.A, { children: (0, l.jsx)("main", { className: x.bodyInner, children: f }) }),
-            (0, l.jsx)(r.jlY, {
-                children: (0, l.jsxs)("div", {
-                    className: E.qr,
+            (0, e.jsx)(a.rQ, { leading: b, title: U.name }),
+            (0, e.jsx)(i.A, { children: (0, e.jsx)("main", { className: C.bodyInner, children: O }) }),
+            (0, e.jsx)(o.j, {
+                children: (0, e.jsxs)("div", {
+                    className: I.qr,
                     children: [
-                        null != j || null != S
-                            ? (0, l.jsx)(i.Text, {
+                        null != L || null != F
+                            ? (0, e.jsx)(d.E, {
                                   color: "text-strong",
                                   variant: "text-sm/normal",
-                                  children: (0, l.jsx)(A.A, { termsOfServiceUrl: j, privacyPolicyUrl: S }),
+                                  children: (0, e.jsx)(T.A, { termsOfServiceUrl: L, privacyPolicyUrl: F }),
                               })
-                            : (0, l.jsx)(i.Text, {
+                            : (0, e.jsx)(d.E, {
                                   color: "text-strong",
                                   variant: "text-xs/normal",
-                                  children: C.intl.string(C.t["3ZY+0D"]),
+                                  children: R.intl.string(R.t["3ZY+0D"]),
                               }),
-                        (0, l.jsxs)("div", {
-                            className: E.Hq,
+                        (0, e.jsxs)("div", {
+                            className: I.Hq,
                             children: [
-                                u.p5 &&
-                                    (0, l.jsx)(i.K0, {
-                                        "aria-label": C.intl.string(C.t.WqhZss),
-                                        icon: () => (0, l.jsx)(i.qYV, { size: "xs", color: "currentColor" }),
+                                A.p5 &&
+                                    (0, e.jsx)(x.K, {
+                                        "aria-label": R.intl.string(R.t.WqhZss),
+                                        icon: () => (0, e.jsx)(u.q, { size: "xs", color: "currentColor" }),
                                         onClick: () => {
-                                            let e = `${location.protocol}//${location.host}${h.BVt.GLOBAL_DISCOVERY_APPS_PROFILE_STORE_SKU(t, n)}`;
-                                            (0, u.C)(e, () =>
-                                                (0, i.showToast)(
-                                                    (0, i.createToast)(
-                                                        C.intl.string(C.t["L/PwZf"]),
-                                                        i.ToastType.SUCCESS,
-                                                    ),
-                                                ),
+                                            let t = `${location.protocol}//${location.host}${N.BVt.GLOBAL_DISCOVERY_APPS_PROFILE_STORE_SKU(l, s)}`;
+                                            (0, A.C)(t, () =>
+                                                (0, m.P0)((0, h.o)(R.intl.string(R.t["L/PwZf"]), j.Ck.SUCCESS)),
                                             ),
-                                                (0, p.K)(t, p.C.DETAILS_MODAL, n);
+                                                (0, _.K)(l, _.C.DETAILS_MODAL, s);
                                         },
                                         variant: "icon-only",
                                     }),
-                                _,
+                                P,
                             ],
                         }),
                     ],

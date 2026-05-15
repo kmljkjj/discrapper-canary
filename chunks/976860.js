@@ -1,38 +1,38 @@
 "use strict";
-let r, i, a;
+let i, r, s;
 n.d(t, {
-    EL: () => I,
-    JK: () => y,
-    MX: () => N,
+    EL: () => A,
+    JK: () => T,
+    MX: () => v,
     PR: () => S,
-    SB: () => b,
+    SB: () => C,
     TX: () => p,
-    UC: () => v,
-    aX: () => R,
-    bG: () => T,
-    m: () => C,
-    pX: () => E,
-    sY: () => O,
-    uh: () => A,
+    UC: () => N,
+    aX: () => O,
+    bG: () => I,
+    m: () => y,
+    pX: () => m,
+    sY: () => R,
+    uh: () => g,
 }),
     n(321073),
     n(323874),
     n(14289),
     n(35956);
-var s = n(830845),
+var a = n(830845),
     o = n(626584),
-    l = n(203982),
+    l = n(625494),
     u = n(824865),
     c = n(652215);
 let d = new o.A("Routing/Utils"),
     _ = [c.dSh.DEVELOPER_PORTAL];
 __OVERLAY__
-    ? (r = (0, s.sC)())
-    : (r = (0, s.zR)()).block((e, t) => {
+    ? (i = (0, a.sC)())
+    : (i = (0, a.zR)()).block((e, t) => {
           if ("POP" === t && !p()) return !1;
       });
 let f = !1,
-    h = r.listen((e, t) => {
+    h = i.listen((e, t) => {
         "REPLACE" !== t && ((f = !0), h());
     });
 function p() {
@@ -42,7 +42,7 @@ function p() {
     }
     return n(712687).A.close(), !0;
 }
-function g(e, t) {
+function E(e, t) {
     return (
         !!("string" == typeof e && _.some((t) => e.startsWith(t))) &&
         (d.log(`${t} - route to external path ${e}`),
@@ -51,43 +51,43 @@ function g(e, t) {
         !0)
     );
 }
-function E(e, t) {
-    if (g(e, "assign")) return;
+function m(e, t) {
+    if (E(e, "assign")) return;
     d.log(`transitionTo - Transitioning to ${e}`);
     let n = t?.source,
-        s = t?.sourceLocationStack;
-    if (null == t) r.push(e);
+        a = t?.sourceLocationStack;
+    if (null == t) i.push(e);
     else {
         let n = new URL(e, `https:${window.GLOBAL_ENV.WEBAPP_ENDPOINT}`);
-        r.push({ pathname: n.pathname, search: n.search, hash: n.hash, ...t });
+        i.push({ pathname: n.pathname, search: n.search, hash: n.hash, ...t });
     }
-    (i = n), (a = s);
+    (r = n), (s = a);
 }
-function A(e, t, n, r) {
+function g(e, t, n, i) {
     d.log(`transitionToGuild - Transitioning to ${JSON.stringify({ guildId: e, channelId: t, messageId: n })}`),
-        E(c.BVt.CHANNEL(e, t, n), r);
+        m(c.BVt.CHANNEL(e, t, n), i);
 }
-function I() {
-    return null != i && u.n.has(i);
+function A() {
+    return null != r && u.n.has(r);
 }
-function T(e, t, n) {
-    g(e, "replace") ||
-        (d.log(`Replacing route with ${e}`), "string" == typeof e ? r.replace(e, t) : r.replace(e), (i = n));
+function I(e, t, n) {
+    E(e, "replace") ||
+        (d.log(`Replacing route with ${e}`), "string" == typeof e ? i.replace(e, t) : i.replace(e), (r = n));
 }
-function y() {
-    return r;
-}
-function S() {
+function T() {
     return i;
 }
-function v() {
-    return a;
+function S() {
+    return r;
+}
+function N() {
+    return s;
+}
+function y(e) {
+    return null == e && (e = i.location.pathname ?? ""), !e.startsWith(c.BVt.HANDOFF);
 }
 function C(e) {
-    return null == e && (e = r.location.pathname ?? ""), !e.startsWith(c.BVt.HANDOFF);
-}
-function b(e) {
-    if ((null == e && (e = r.location.pathname ?? ""), e.startsWith(c.BVt.LOGIN))) return c.S3d.LOGIN;
+    if ((null == e && (e = i.location.pathname ?? ""), e.startsWith(c.BVt.LOGIN))) return c.S3d.LOGIN;
     if (e.startsWith(c.BVt.REGISTER)) return c.S3d.REGISTER;
     if (e.startsWith(c.BVt.INVITE(""))) return c.S3d.INVITE;
     if (e.startsWith(c.BVt.VERIFY)) return c.S3d.VERIFY;
@@ -104,12 +104,12 @@ function b(e) {
     else if (e.startsWith(c.BVt.ACCOUNT_REVERT(""))) return c.S3d.ACCOUNT_REVERT;
     return e;
 }
-function N() {
+function v() {
     return f;
 }
-function R() {
-    p() && ((i = null), r.goBack());
-}
 function O() {
-    p() && ((i = null), r.goForward());
+    p() && ((r = null), i.goBack());
+}
+function R() {
+    p() && ((r = null), i.goForward());
 }

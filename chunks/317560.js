@@ -1,43 +1,78 @@
-"use strict";
-n.d(t, { R: () => o, j: () => l });
-var r = n(627968),
-    i = n(397927),
-    s = n(733391);
+n.d(t, { R: () => i, j: () => u });
+var l = n(627968),
+    r = n(192308);
 let a = "social-layer-storefront-product-details-modal",
-    o = (e) => {
+    i = (e) => {
         let {
-            skuId: t,
-            applicationId: o,
-            guildId: l,
-            isStorefront: u,
+            getSocialLayerStorefrontLink: t,
+            skuId: i,
+            applicationId: u,
+            isStorefront: o,
+            giftRecipient: s,
+            giftingOrigin: d,
             analyticsLocations: c,
-            analyticsContext: d,
-            onClose: _,
+            analyticsContext: A,
+            onClose: E,
         } = e;
-        (0, s.iR)(l, t, "openSocialLayerStorefrontProductDetailsModal"),
-            (0, i.mMO)(
-                async () => {
-                    let { default: e } = await Promise.all([n.e("40396"), n.e("67851")]).then(n.bind(n, 108105));
-                    return (n) =>
-                        (0, r.jsx)(e, {
-                            ...n,
-                            skuId: t,
-                            applicationId: o,
-                            guildId: l,
-                            isStorefront: u,
-                            analyticsLocations: c,
-                            analyticsContext: d,
-                        });
+        (0, r.openModalLazy)(
+            async () => {
+                let { default: e } = await Promise.all([
+                    n.e("46438"),
+                    n.e("40671"),
+                    n.e("94925"),
+                    n.e("54266"),
+                    n.e("89553"),
+                    n.e("49909"),
+                    n.e("29020"),
+                    n.e("94573"),
+                    n.e("9233"),
+                    n.e("86814"),
+                    n.e("52617"),
+                    n.e("37021"),
+                    n.e("18024"),
+                    n.e("69747"),
+                    n.e("21930"),
+                    n.e("72963"),
+                    n.e("36149"),
+                    n.e("32326"),
+                    n.e("16916"),
+                    n.e("44326"),
+                    n.e("51778"),
+                    n.e("45830"),
+                    n.e("20382"),
+                    n.e("93766"),
+                    n.e("73165"),
+                    n.e("52511"),
+                    n.e("34268"),
+                    n.e("63333"),
+                    n.e("52212"),
+                    n.e("76361"),
+                    n.e("36768"),
+                    n.e("9935"),
+                    n.e("71000"),
+                ]).then(n.bind(n, 283627));
+                return (n) =>
+                    (0, l.jsx)(e, {
+                        ...n,
+                        skuId: i,
+                        applicationId: u,
+                        isStorefront: o,
+                        analyticsLocations: c,
+                        analyticsContext: A,
+                        giftRecipient: s,
+                        giftingOrigin: d,
+                        getSocialLayerStorefrontLink: t,
+                    });
+            },
+            {
+                modalKey: a,
+                allowsNavigation: o,
+                onCloseCallback: () => {
+                    E?.();
                 },
-                {
-                    modalKey: a,
-                    allowsNavigation: u,
-                    onCloseCallback: () => {
-                        _?.();
-                    },
-                },
-            );
+            },
+        );
     };
-function l() {
-    (0, i.kBI)(a) && (0, i.OoC)(a);
+function u() {
+    (0, r.hasModalOpen)(a) && (0, r.closeModal)(a);
 }

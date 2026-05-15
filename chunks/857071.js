@@ -1,109 +1,94 @@
 "use strict";
-n.d(t, { A: () => C });
-var r = n(311907),
-    i = n(73153),
-    a = n(260509),
-    s = n(696451),
+n.d(t, { A: () => f });
+var i = n(17928),
+    r = n(228366),
+    s = n(260509),
+    a = n(696451),
     o = n(71393),
     l = n(287809),
-    u = n(652215);
-let c = [],
-    d = {},
-    _ = null;
-function f(e) {
-    let t = new Set([...(e ?? [])]);
-    return [...c].reduce((e, n) => (t.has(n) ? e : p(n) || e), !1);
-}
-function p(e) {
-    let t = c.indexOf(e);
+    d = n(652215);
+let _ = [],
+    u = {},
+    c = null;
+function E(e) {
+    let t = _.indexOf(e);
     if (t > -1) {
-        let n = [...c];
-        return n.splice(t, 1), (c = n), delete d[e], !0;
+        let n = [..._];
+        return n.splice(t, 1), (_ = n), delete u[e], !0;
     }
     return !1;
 }
 function h(e) {
-    return !(e === u.ME || c.includes(e)) && ((c = [...c, e]), !0);
+    return !(e === d.ME || _.includes(e)) && ((_ = [..._, e]), !0);
 }
-function m(e, t) {
-    null != t && (d[e] = t);
-}
-function g(e) {
-    let { guildId: t, lurker: n, source: r, directoryChannelId: i, loadId: a } = e;
-    if (n) {
-        switch ((h(t), m(t, a), r)) {
-            case u.Q4z.MOBILE_GUILD_DISCOVERY:
-                _ = { type: u.Q4z.MOBILE_GUILD_DISCOVERY };
-                break;
-            case u.Q4z.DIRECTORY_ENTRY:
-                _ = { type: u.Q4z.DIRECTORY_ENTRY, directoryChannelId: i };
-                break;
-            default:
-                _ = null;
-        }
-        return !0;
-    }
-    return !1;
-}
-function E(e) {
-    let { guild: t } = e;
-    return !!(null != t.joined_at && c.includes(t.id)) && (p(t.id), (_ = null), !0);
-}
-function A(e) {
-    let { guildId: t, joinedAt: n, user: r } = e,
-        i = r.id === l.default.getCurrentUser()?.id,
-        a = null == n;
-    return !!i && !a && !!c.includes(t) && (p(t), (_ = null), !0);
-}
-function I(e) {
-    let { guild: t } = e;
-    return !!c.includes(t.id) && (p(t.id), (_ = null), !0);
-}
-function T(e) {
-    let { ignoredGuildIds: t } = e,
-        n = f(t);
-    return n && (_ = null), n;
-}
-function y(e) {
-    let { lurkingGuildId: t, lurkingSource: n } = e;
-    return h(t), (_ = n), !0;
-}
-function S() {
-    c = o.A.getGuildsArray()
-        .filter((e) => (0, a.DG)(e))
-        .map((e) => e.id);
-}
-class v extends r.Ay.Store {
+class m extends i.Ay.Store {
     static displayName = "LurkingStore";
     initialize() {
-        this.waitFor(s.Ay, o.A, l.default);
+        this.waitFor(a.Ay, o.A, l.default);
     }
     lurkingGuildIds() {
-        return c;
+        return _;
     }
     mostRecentLurkedGuildId() {
-        return 0 === c.length ? null : c[c.length - 1];
+        return 0 === _.length ? null : _[_.length - 1];
     }
     isLurking(e) {
         let t = o.A.getGuild(e);
         if (null == t) return !1;
-        let n = s.Ay.isCurrentUserGuest(e),
-            r = (0, a.DG)(t);
-        return !!(!n && r);
+        let n = a.Ay.isCurrentUserGuest(e),
+            i = (0, s.DG)(t);
+        return !!(!n && i);
     }
     getLurkingSource() {
-        return _;
+        return c;
     }
     getLoadId(e) {
-        return null != e ? d[e] : null;
+        return null != e ? u[e] : null;
     }
 }
-let C = new v(i.h, {
-    CONNECTION_OPEN: S,
-    GUILD_JOIN: g,
-    GUILD_STOP_LURKING: T,
-    GUILD_STOP_LURKING_FAILURE: y,
-    GUILD_CREATE: E,
-    GUILD_DELETE: I,
-    GUILD_MEMBER_ADD: A,
+let f = new m(r.h, {
+    CONNECTION_OPEN: function () {
+        _ = o.A.getGuildsArray()
+            .filter((e) => (0, s.DG)(e))
+            .map((e) => e.id);
+    },
+    GUILD_JOIN: function (e) {
+        let { guildId: t, lurker: n, source: i, directoryChannelId: r, loadId: s } = e;
+        if (n) {
+            switch ((h(t), null != s && (u[t] = s), i)) {
+                case d.Q4z.MOBILE_GUILD_DISCOVERY:
+                    c = { type: d.Q4z.MOBILE_GUILD_DISCOVERY };
+                    break;
+                case d.Q4z.DIRECTORY_ENTRY:
+                    c = { type: d.Q4z.DIRECTORY_ENTRY, directoryChannelId: r };
+                    break;
+                default:
+                    c = null;
+            }
+            return !0;
+        }
+        return !1;
+    },
+    GUILD_STOP_LURKING: function (e) {
+        let t,
+            { ignoredGuildIds: n } = e,
+            i = ((t = new Set([...(n ?? [])])), [..._].reduce((e, n) => (t.has(n) ? e : E(n) || e), !1));
+        return i && (c = null), i;
+    },
+    GUILD_STOP_LURKING_FAILURE: function (e) {
+        let { lurkingGuildId: t, lurkingSource: n } = e;
+        return h(t), (c = n), !0;
+    },
+    GUILD_CREATE: function (e) {
+        let { guild: t } = e;
+        return !!(null != t.joined_at && _.includes(t.id)) && (E(t.id), (c = null), !0);
+    },
+    GUILD_DELETE: function (e) {
+        let { guild: t } = e;
+        return !!_.includes(t.id) && (E(t.id), (c = null), !0);
+    },
+    GUILD_MEMBER_ADD: function (e) {
+        let { guildId: t, joinedAt: n, user: i } = e;
+        return i.id === l.default.getCurrentUser()?.id && null != n && !!_.includes(t) && (E(t), (c = null), !0);
+    },
 });

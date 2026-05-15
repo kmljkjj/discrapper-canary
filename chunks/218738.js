@@ -1,75 +1,88 @@
-n.d(t, { default: () => b });
+n.d(t, { default: () => f });
 var i = n(627968),
     a = n(64700),
     _ = n(110259),
-    o = n(397927),
-    r = n(930932),
-    l = n(382935),
-    s = n(835806),
-    c = n(954571),
-    d = n(652215),
-    m = n(670455),
-    u = n(985018),
-    p = n(716829);
-function b(e) {
-    let { isStreamer: t, stream: b, streamApplication: g, onClose: f, transitionState: E, analyticsData: S } = e;
+    r = n(192308),
+    o = n(930932),
+    l = n(878234),
+    s = n(382935),
+    c = n(835806),
+    d = n(954571),
+    b = n(652215),
+    u = n(670455),
+    m = n(985018),
+    p = n(564082);
+function f(e) {
+    let { isStreamer: t, stream: f, streamApplication: g, onClose: E, transitionState: S, analyticsData: h } = e;
     a.useEffect(() => {
-        c.default.track(d.HAw.OPEN_MODAL, {
+        d.default.track(b.HAw.OPEN_MODAL, {
             type: "Stream Problem Report",
-            other_user_id: b.ownerId,
+            other_user_id: f.ownerId,
             application_id: null != g ? g.id : null,
             application_name: null != g ? g.name : null,
             game_id: null != g ? g.id : null,
             source: "Stream End",
         });
-    }, [b.ownerId, g]);
-    let A = u.intl.string(u.t["5smP3R"]),
-        j = u.intl.string(u.t["0uxA2V"]),
-        R = u.intl.string(u.t.CqjnLN),
+    }, [f.ownerId, g]);
+    let j = m.intl.string(m.t["5smP3R"]),
+        x = m.intl.string(m.t["0uxA2V"]),
+        A = m.intl.string(m.t.CqjnLN),
         T = {
             impressionName: _.ImpressionNames.STREAM_FEEDBACK_MODAL,
             impressionProperties: {
-                media_session_id: S.media_session_id,
-                rtc_connection_id: S.rtc_connection_id,
-                parent_media_session_id: S.parent_media_session_id,
+                media_session_id: h.media_session_id,
+                rtc_connection_id: h.rtc_connection_id,
+                parent_media_session_id: h.parent_media_session_id,
             },
         },
-        h = {
-            value: t ? m.Eq.STREAMING : m.Eq.STREAM_WATCHING,
-            label: u.intl.string(t ? p.default["0ZBLiZ"] : p.default.TVTIT1),
-            problemsHeader: u.intl.string(u.t["6Y1t5P"]),
-            problemOptions: (0, r.wq)({ isStreamer: t }),
-            freeformConfig: { value: m.j6.FREEFORM, label: u.intl.string(u.t.emlT91) },
+        R = {
+            value: t ? u.Eq.STREAMING : u.Eq.STREAM_WATCHING,
+            label: m.intl.string(t ? p.default["0ZBLiZ"] : p.default.TVTIT1),
+            problemsHeader: m.intl.string(m.t["6Y1t5P"]),
+            problemOptions: (0, o.wq)({ isStreamer: t }),
+            freeformConfig: { value: u.j6.FREEFORM, label: m.intl.string(m.t.emlT91) },
         };
-    return (0, i.jsx)(l.A, {
+    return (0, i.jsx)(s.A, {
         onSubmit: function (e) {
-            let { dontShowAgain: t, rating: a, feedback: _, category: l, problem: c } = e;
-            t && (0, r.n3)({ feedbackType: m.MW.STREAM, location: "StreamFeedback" }),
-                null == a ||
-                    ((0, s.A)({
-                        problem: c?.value ?? null,
-                        category: l,
-                        variant: c?.variant ?? null,
-                        stream: b,
-                        feedback: _,
-                        streamApplication: g,
-                        analyticsData: S,
-                        location: "Stream End",
-                        rating: a,
-                    }),
-                    null != c &&
-                        (0, o.mMO)(async () => {
-                            let { default: e } = await n.e("37836").then(n.bind(n, 845671));
-                            return (t) => (0, i.jsx)(e, { body: u.intl.string(u.t.mMTVnv), ...t });
-                        }));
+            let { dontShowAgain: t, rating: a, feedback: _, category: s, problem: d } = e;
+            if (
+                (t && (0, o.n3)({ feedbackType: u.MW.STREAM, location: "StreamFeedback" }), null != a) &&
+                ((0, c.A)({
+                    problem: d?.value ?? null,
+                    category: s,
+                    variant: d?.variant ?? null,
+                    stream: f,
+                    feedback: _,
+                    streamApplication: g,
+                    analyticsData: h,
+                    location: "Stream End",
+                    rating: a,
+                }),
+                null != d)
+            ) {
+                if ((0, l.r)(a, s, d))
+                    return void (0, r.openModalLazy)(async () => {
+                        let { default: e } = await n.e("69791").then(n.bind(n, 72514));
+                        return (t) =>
+                            (0, i.jsx)(e, {
+                                ...t,
+                                mediaSessionId: h.media_session_id,
+                                rtcConnectionId: h.rtc_connection_id,
+                            });
+                    });
+                (0, r.openModalLazy)(async () => {
+                    let { default: e } = await n.e("37836").then(n.bind(n, 845671));
+                    return (t) => (0, i.jsx)(e, { body: m.intl.string(m.t.mMTVnv), ...t });
+                });
+            }
         },
-        onClose: f,
-        ratingHeader: A,
+        onClose: E,
+        ratingHeader: j,
         ratingEmojiKind: "face",
-        ratingBody: t ? j : R,
-        categoriesHeader: u.intl.string(p.default.tq8598),
-        optionsTree: [h],
+        ratingBody: t ? x : A,
+        categoriesHeader: m.intl.string(p.default.tq8598),
+        optionsTree: [R],
         impression: T,
-        transitionState: E,
+        transitionState: S,
     });
 }

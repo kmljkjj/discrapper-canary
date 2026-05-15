@@ -1,112 +1,113 @@
-t.d(a, { K: () => u });
-let r = new Map(),
-    n = !1;
+"use strict";
+n.d(t, { K: () => o });
+let i = new Map(),
+    r = !1;
 try {
-    n = "exceptZero" === new Intl.NumberFormat("de-DE", { signDisplay: "exceptZero" }).resolvedOptions().signDisplay;
+    r = "exceptZero" === new Intl.NumberFormat("de-DE", { signDisplay: "exceptZero" }).resolvedOptions().signDisplay;
 } catch {}
-let i = !1;
+let s = !1;
 try {
-    i = "unit" === new Intl.NumberFormat("de-DE", { style: "unit", unit: "degree" }).resolvedOptions().style;
+    s = "unit" === new Intl.NumberFormat("de-DE", { style: "unit", unit: "degree" }).resolvedOptions().style;
 } catch {}
-let o = { degree: { narrow: { default: "\xb0", "ja-JP": " 度", "zh-TW": "度", "sl-SI": " \xb0" } } };
-class u {
+let a = { degree: { narrow: { default: "\xb0", "ja-JP": " \u5EA6", "zh-TW": "\u5EA6", "sl-SI": " \xb0" } } };
+class o {
     format(e) {
-        let a = "";
+        let t = "";
         if (
-            ((a =
-                n || null == this.options.signDisplay
+            ((t =
+                r || null == this.options.signDisplay
                     ? this.numberFormatter.format(e)
-                    : (function (e, a, t) {
-                          if ("auto" === a) return e.format(t);
+                    : (function (e, t, n) {
+                          if ("auto" === t) return e.format(n);
                           {
-                              if ("never" === a) return e.format(Math.abs(t));
-                              let r = !1;
+                              if ("never" === t) return e.format(Math.abs(n));
+                              let i = !1;
                               if (
-                                  ("always" === a
-                                      ? (r = t > 0 || Object.is(t, 0))
-                                      : "exceptZero" === a &&
-                                        (Object.is(t, -0) || Object.is(t, 0) ? (t = Math.abs(t)) : (r = t > 0)),
-                                  !r)
+                                  ("always" === t
+                                      ? (i = n > 0 || Object.is(n, 0))
+                                      : "exceptZero" === t &&
+                                        (Object.is(n, -0) || Object.is(n, 0) ? (n = Math.abs(n)) : (i = n > 0)),
+                                  !i)
                               )
-                                  return e.format(t);
+                                  return e.format(n);
                               {
-                                  let a = e.format(-t),
-                                      r = e.format(t),
-                                      n = a.replace(r, "").replace(/\u200e|\u061C/, "");
+                                  let t = e.format(-n),
+                                      i = e.format(n),
+                                      r = t.replace(i, "").replace(/\u200e|\u061C/, "");
                                   return (
-                                      1 != [...n].length &&
+                                      1 != [...r].length &&
                                           console.warn(
                                               "@react-aria/i18n polyfill for NumberFormat signDisplay: Unsupported case",
                                           ),
-                                      a.replace(r, "!!!").replace(n, "+").replace("!!!", r)
+                                      t.replace(i, "!!!").replace(r, "+").replace("!!!", i)
                                   );
                               }
                           }
                       })(this.numberFormatter, this.options.signDisplay, e)),
-            "unit" === this.options.style && !i)
+            "unit" === this.options.style && !s)
         ) {
-            var t;
-            let { unit: e, unitDisplay: r = "short", locale: n } = this.resolvedOptions();
-            if (!e) return a;
-            let i = null == (t = o[e]) ? void 0 : t[r];
-            a += i[n] || i.default;
+            var n;
+            let { unit: e, unitDisplay: i = "short", locale: r } = this.resolvedOptions();
+            if (!e) return t;
+            let s = null == (n = a[e]) ? void 0 : n[i];
+            t += s[r] || s.default;
         }
-        return a;
+        return t;
     }
     formatToParts(e) {
         return this.numberFormatter.formatToParts(e);
     }
-    formatRange(e, a) {
-        if ("function" == typeof this.numberFormatter.formatRange) return this.numberFormatter.formatRange(e, a);
-        if (a < e) throw RangeError("End date must be >= start date");
-        return `${this.format(e)} \u{2013} ${this.format(a)}`;
+    formatRange(e, t) {
+        if ("function" == typeof this.numberFormatter.formatRange) return this.numberFormatter.formatRange(e, t);
+        if (t < e) throw RangeError("End date must be >= start date");
+        return `${this.format(e)} \u{2013} ${this.format(t)}`;
     }
-    formatRangeToParts(e, a) {
+    formatRangeToParts(e, t) {
         if ("function" == typeof this.numberFormatter.formatRangeToParts)
-            return this.numberFormatter.formatRangeToParts(e, a);
-        if (a < e) throw RangeError("End date must be >= start date");
-        let t = this.numberFormatter.formatToParts(e),
-            r = this.numberFormatter.formatToParts(a);
+            return this.numberFormatter.formatRangeToParts(e, t);
+        if (t < e) throw RangeError("End date must be >= start date");
+        let n = this.numberFormatter.formatToParts(e),
+            i = this.numberFormatter.formatToParts(t);
         return [
-            ...t.map((e) => ({ ...e, source: "startRange" })),
-            { type: "literal", value: " – ", source: "shared" },
-            ...r.map((e) => ({ ...e, source: "endRange" })),
+            ...n.map((e) => ({ ...e, source: "startRange" })),
+            { type: "literal", value: " \u2013 ", source: "shared" },
+            ...i.map((e) => ({ ...e, source: "endRange" })),
         ];
     }
     resolvedOptions() {
         let e = this.numberFormatter.resolvedOptions();
         return (
-            n || null == this.options.signDisplay || (e = { ...e, signDisplay: this.options.signDisplay }),
-            i ||
+            r || null == this.options.signDisplay || (e = { ...e, signDisplay: this.options.signDisplay }),
+            s ||
                 "unit" !== this.options.style ||
                 (e = { ...e, style: "unit", unit: this.options.unit, unitDisplay: this.options.unitDisplay }),
             e
         );
     }
-    constructor(e, a = {}) {
-        (this.numberFormatter = (function (e, a = {}) {
-            let { numberingSystem: t } = a;
+    constructor(e, t = {}) {
+        (this.numberFormatter = (function (e, t = {}) {
+            let { numberingSystem: n } = t;
             if (
-                (t && e.includes("-nu-") && (e.includes("-u-") || (e += "-u-"), (e += `-nu-${t}`)),
-                "unit" === a.style && !i)
+                (n && e.includes("-nu-") && (e.includes("-u-") || (e += "-u-"), (e += `-nu-${n}`)),
+                "unit" === t.style && !s)
             ) {
-                var n;
-                let { unit: e, unitDisplay: t = "short" } = a;
+                var r;
+                let { unit: e, unitDisplay: n = "short" } = t;
                 if (!e) throw Error('unit option must be provided with style: "unit"');
-                if (!(null == (n = o[e]) ? void 0 : n[t])) throw Error(`Unsupported unit ${e} with unitDisplay = ${t}`);
-                a = { ...a, style: "decimal" };
+                if (!(null == (r = a[e]) ? void 0 : r[n])) throw Error(`Unsupported unit ${e} with unitDisplay = ${n}`);
+                t = { ...t, style: "decimal" };
             }
-            let u =
+            let o =
                 e +
-                (a
-                    ? Object.entries(a)
-                          .sort((e, a) => (e[0] < a[0] ? -1 : 1))
+                (t
+                    ? Object.entries(t)
+                          .sort((e, t) => (e[0] < t[0] ? -1 : 1))
                           .join()
                     : "");
-            if (r.has(u)) return r.get(u);
-            let l = new Intl.NumberFormat(e, a);
-            return r.set(u, l), l;
-        })(e, a)),
-            (this.options = a);
+            if (i.has(o)) return i.get(o);
+            let l = new Intl.NumberFormat(e, t);
+            return i.set(o, l), l;
+        })(e, t)),
+            (this.options = t);
     }
 }

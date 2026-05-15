@@ -1,47 +1,45 @@
-"use strict";
-n.d(t, { _3: () => f, aG: () => m, b2: () => _, n6: () => p });
-var r = n(64700),
-    i = n(458217),
-    a = n(397927),
-    s = n(724442),
-    o = n(654107),
-    l = n(486020),
-    u = n(835517),
-    c = n(652215);
-let d = 512;
-function _() {
-    return (0, a.rdh)(a.LU0.colors.GUILD_PROFILE_BANNER_BACKGROUND_DEFAULT);
+t.d(l, { _3: () => x, aG: () => v, b2: () => u, n6: () => h });
+var s = t(64700),
+    i = t(458217),
+    a = t(602853),
+    n = t(661531),
+    r = t(724442),
+    c = t(654107),
+    o = t(486020),
+    d = t(835517),
+    m = t(652215);
+function u() {
+    return (0, a.r)(n.A.colors.GUILD_PROFILE_BANNER_BACKGROUND_DEFAULT);
 }
-function f(e) {
-    let t = e.customBanner;
-    if (null != t && e.features?.includes(c.GuildFeatures.DISCOVERABLE)) {
-        if (l.aq.test(t)) return `url(${t}) center / cover`;
-        let n = l.Ay.getGuildDiscoverySplashURL({ id: e.id, splash: t, size: d * (0, u.A)() });
-        if (null != n) return `url(${n}) center / cover`;
+function x(e) {
+    let l = e.customBanner;
+    if (null != l && e.features?.includes(m.GuildFeatures.DISCOVERABLE)) {
+        if (o.aq.test(l)) return `url(${l}) center / cover`;
+        let t = o.Ay.getGuildDiscoverySplashURL({ id: e.id, splash: l, size: 512 * (0, d.A)() });
+        if (null != t) return `url(${t}) center / cover`;
     }
     return null;
 }
-function p(e) {
-    let t = (0, i.Pf)(e, 1.75);
-    return `radial-gradient(105.43% 127.05% at 50.1% 127.05%, ${t} 20.65%, ${e} 85.16%)`;
-}
 function h(e) {
-    return null == e.icon
-        ? null
-        : l.aq.test(e.icon)
-          ? e.icon
-          : l.Ay.getGuildIconURL({ id: e.id, icon: e.icon, size: 64 });
+    let l = (0, i.Pf)(e, 1.75);
+    return `radial-gradient(105.43% 127.05% at 50.1% 127.05%, ${l} 20.65%, ${e} 85.16%)`;
 }
-function m(e) {
-    let { profile: t, defaultColor: n, forceDefaultColor: i } = e,
-        a = i ? null : h(t),
-        l = r.useRef(n),
-        u = (0, s.A)(l),
-        c = (0, o.Ay)(a, u);
-    return (r.useEffect(() => {
-        l.current = c;
-    }, [c]),
+function v(e) {
+    var l;
+    let { profile: t, defaultColor: i, forceDefaultColor: a } = e,
+        n =
+            a || null == (l = t).icon
+                ? null
+                : o.aq.test(l.icon)
+                  ? l.icon
+                  : o.Ay.getGuildIconURL({ id: l.id, icon: l.icon, size: 64 }),
+        d = s.useRef(i),
+        m = (0, r.A)(d),
+        u = (0, c.Ay)(n, m);
+    return (s.useEffect(() => {
+        d.current = u;
+    }, [u]),
     null == t.icon)
-        ? n
-        : c;
+        ? i
+        : u;
 }

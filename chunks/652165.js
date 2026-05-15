@@ -1,69 +1,54 @@
-n.d(t, { B4: () => u, o6: () => c });
-var r = n(835245);
-n(192308);
-var a = n(397927),
-    o = n(73153),
-    i = n(589078),
-    _ = n(301518),
-    l = n(373856),
-    d = n(652215);
-n(231723);
+o.d(t, { B4: () => n, o6: () => h });
+var p = o(192308),
+    a = o(228366),
+    d = o(622207);
 let s = "orb-checkout-payment-modal-key",
-    c = () => (0, a.Ry6)(s),
-    u = (e) => {
+    h = () => (0, p.useHasModalOpen)(s),
+    n = (e) => {
         let {
                 skuId: t,
-                onCheckoutSuccess: n,
-                analyticsLocations: o = [],
-                analyticsSourceLocation: i,
-                onCloseCallback: c,
+                onComplete: o,
+                analyticsLocations: p = [],
+                analyticsSourceLocation: a,
+                discoverySessionId: d,
+                applicationId: s,
+                onCloseCallback: h,
             } = e,
-            u = (0, r.A)(),
-            p = !1;
-        return f({
-            loadId: u,
+            n = !1;
+        return c({
+            discoverySessionId: d,
             skuId: t,
-            onCheckoutSuccess: (e) => {
-                p || n(e), (p = !0);
+            onComplete: (e) => {
+                n || o(e), (n = !0);
             },
-            analyticsLocations: o,
-            analyticsSourceLocation: i,
-            onCloseCallback: () => {
-                (0, _.S)({ checkoutSucceeded: p }), c?.();
-            },
-            onCloseRequest: () => {
-                p ||
-                    (0, l.g)(d.HAw.PAYMENT_FLOW_CANCELED, {
-                        loadId: u,
-                        skuId: t,
-                        analyticsLocations: o,
-                        analyticsSourceLocation: i,
-                    }),
-                    (0, a.OoC)(s);
-            },
+            applicationId: s,
+            analyticsLocations: p,
+            analyticsSourceLocation: a,
+            onCloseCallback: h,
         });
     },
-    f = (e) => {
+    c = (e) => {
         let {
-            loadId: t,
-            skuId: n,
-            onCheckoutSuccess: r,
-            analyticsLocations: a = [],
-            analyticsSourceLocation: _,
+            discoverySessionId: t,
+            skuId: o,
+            onComplete: p,
+            analyticsLocations: h = [],
+            analyticsSourceLocation: n,
+            applicationId: c,
             onCloseCallback: l,
-            onCloseRequest: d,
         } = e;
         return (
-            o.h.wait(() => {
-                o.h.dispatch({ type: "PAYMENT_MODAL_OPEN" });
+            a.h.wait(() => {
+                a.h.dispatch({ type: "PAYMENT_MODAL_OPEN" });
             }),
-            (0, i.Tt)().openCheckoutModal({
-                loadId: t,
-                skuId: n,
-                analyticsLocations: a,
-                analyticsSourceLocation: _,
-                flowSpecificOptions: { onCheckoutSuccess: r },
-                openModalOptions: { onCloseCallback: l, modalKey: s, onCloseRequest: d },
+            (0, d.Tt)().openCheckoutModal({
+                discoverySessionId: t,
+                skuId: o,
+                applicationId: c,
+                analyticsLocations: h,
+                analyticsSourceLocation: n,
+                onComplete: p,
+                openModalOptions: { onCloseCallback: l, modalKey: s },
             })
         );
     };

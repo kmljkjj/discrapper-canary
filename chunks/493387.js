@@ -1,22 +1,22 @@
-"use strict";
-n.d(t, { A: () => E }), n(321073);
+n.d(t, { A: () => N }), n(321073);
 var i = n(627968),
-    s = n(64700),
-    l = n(503698),
-    a = n.n(l),
+    l = n(64700),
+    a = n(503698),
+    s = n.n(a),
     r = n(615300),
-    o = n(311907),
-    c = n(73939),
-    d = n(582754),
-    u = n(397927),
-    h = n(736653),
-    A = n(531685),
-    m = n(85448),
-    g = n(806931),
-    p = n(941493),
-    _ = n(641254),
-    f = n(861303);
-let x = {
+    o = n(17928),
+    c = n(868285),
+    d = n(462887),
+    u = n(778712),
+    h = n(890856),
+    p = n(736653),
+    m = n(531685),
+    A = n(85448),
+    x = n(806931),
+    g = n(464466),
+    C = n(653307),
+    f = n(571876);
+let E = {
     SCALE_MIN: 0.7,
     SCALE_MAX: 1,
     DURATION_IN: 300,
@@ -24,7 +24,7 @@ let x = {
     EASING_IN: r.A.Easing.inOut(r.A.Easing.back()),
     EASING_OUT: r.A.Easing.quad,
 };
-class C extends s.PureComponent {
+class y extends l.PureComponent {
     scaleAnimation = new r.A.Value(0);
     spriteAnimation = new r.A.Value(0);
     spriteOpacity = new r.A.Value(0);
@@ -41,25 +41,25 @@ class C extends s.PureComponent {
         t.setValue(0),
             n.setValue(0),
             r.A.parallel([
-                r.A.timing(t, { toValue: 1, duration: x.DURATION_IN, easing: x.EASING_IN }),
+                r.A.timing(t, { toValue: 1, duration: E.DURATION_IN, easing: E.EASING_IN }),
                 r.A.timing(n, { toValue: 1, duration: 200 }),
             ]).start(e);
     }
     componentWillLeave(e) {
-        let { scaleAnimation: t, spriteAnimation: n, spriteOpacity: i, widthAnimation: s } = this;
+        let { scaleAnimation: t, spriteAnimation: n, spriteOpacity: i, widthAnimation: l } = this;
         i.setValue(1), n.setValue(0);
-        let l = [];
-        for (let e = 0; e < 23; e++) l.push(r.A.timing(n, { toValue: -26 * e, duration: 17 }));
+        let a = [];
+        for (let e = 0; e < 23; e++) a.push(r.A.timing(n, { toValue: -26 * e, duration: 17 }));
         r.A.sequence([
-            r.A.timing(t, { toValue: 0, duration: x.DURATION_OUT, easing: x.EASING_OUT }),
-            r.A.sequence(l),
-            r.A.timing(s, { toValue: 0, duration: 125 }),
+            r.A.timing(t, { toValue: 0, duration: E.DURATION_OUT, easing: E.EASING_OUT }),
+            r.A.sequence(a),
+            r.A.timing(l, { toValue: 0, duration: 125 }),
         ]).start(e);
     }
     getScaleStyle() {
         let { scaleAnimation: e } = this;
         return r.A.accelerate({
-            transform: [{ scale: e.interpolate({ inputRange: [0, 1], outputRange: [x.SCALE_MIN, x.SCALE_MAX] }) }],
+            transform: [{ scale: e.interpolate({ inputRange: [0, 1], outputRange: [E.SCALE_MIN, E.SCALE_MAX] }) }],
             opacity: e,
         });
     }
@@ -77,51 +77,51 @@ class C extends s.PureComponent {
     }
     render() {
         let { theme: e, children: t, className: n } = this.props,
-            s = (0, d.Mw)(e),
-            l = a()(p._y, { [f.cp]: s, [f.QB]: !s });
+            l = (0, d.M)(e),
+            a = s()(g._y, { [f.cp]: l, [f.QB]: !l });
         return (0, i.jsxs)(r.A.div, {
             role: "listitem",
-            className: a()(p.kY, n),
+            className: s()(g.kY, n),
             style: this.getWidthStyle(),
             children: [
                 (0, i.jsx)("div", {
-                    className: a()(p.XY, _.xM, _.wq, _.Hu),
-                    children: (0, i.jsx)(r.A.div, { className: l, style: this.getSpriteStyle() }),
+                    className: s()(g.XY, C.xM, C.wq, C.Hu),
+                    children: (0, i.jsx)(r.A.div, { className: a, style: this.getSpriteStyle() }),
                 }),
                 (0, i.jsx)(r.A.div, { style: this.getScaleStyle(), children: t }),
             ],
         });
     }
 }
-function E(e) {
+function N(e) {
     var t;
-    let { participants: n, onContextMenu: s, className: l, onClick: r, width: d, guildId: _ } = e,
-        f = (0, h.Ay)(),
-        x = ((t = n.length), ((0, u.FT9)(u._3J.SIZE_80) + 16) * t > d ? u._3J.SIZE_40 : u._3J.SIZE_80),
-        E = (0, o.bG)([A.A], () => A.A.isFocused()),
-        I = n.map((e) => {
-            if (e.type !== g.lp.USER) return null;
-            let { user: t, voiceState: n, speaking: l, ringing: a } = e;
+    let { participants: n, onContextMenu: l, className: a, onClick: r, width: d, guildId: C } = e,
+        f = (0, p.Ay)(),
+        E = ((t = n.length), ((0, u.FT)(u._3.SIZE_80) + 16) * t > d ? u._3.SIZE_40 : u._3.SIZE_80),
+        N = (0, o.bG)([m.A], () => m.A.isFocused()),
+        j = n.map((e) => {
+            if (e.type !== x.lp.USER) return null;
+            let { user: t, voiceState: n, speaking: a, ringing: s } = e;
             return (0, i.jsx)(
-                C,
+                y,
                 {
-                    className: p.Wp,
-                    width: (0, u.FT9)(x),
+                    className: g.Wp,
+                    width: (0, u.FT)(E),
                     theme: f,
-                    children: (0, i.jsx)(u.sqX, {
+                    children: (0, i.jsx)(h.s, {
                         "aria-label": t.username,
                         onClick: (t) => r?.(e, t),
-                        onContextMenu: (t) => s?.(e, t),
+                        onContextMenu: (t) => l?.(e, t),
                         children: (0, i.jsx)(
-                            m.A,
+                            A.A,
                             {
                                 userId: t.id,
-                                src: t.getAvatarURL(_, (0, u.FT9)(x), l && E),
-                                size: x,
+                                src: t.getAvatarURL(C, (0, u.FT)(E), a && N),
+                                size: E,
                                 muted: n?.isVoiceMuted() ?? !1,
                                 deafen: n?.isVoiceDeafened() ?? !1,
-                                speaking: l,
-                                ringing: a,
+                                speaking: a,
+                                ringing: s,
                             },
                             e.id,
                         ),
@@ -130,5 +130,5 @@ function E(e) {
                 t.id,
             );
         });
-    return (0, i.jsx)(c.F, { component: "div", role: "list", className: a()(p.zr, l), children: I });
+    return (0, i.jsx)(c.F, { component: "div", role: "list", className: s()(g.zr, a), children: j });
 }

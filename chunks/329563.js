@@ -1,16 +1,18 @@
 "use strict";
-var r = n(626584),
-    i = n(279234);
-let a = new r.A("libdiscore");
+var i = n(626584),
+    r = n(279234);
+let s = new i.A("libdiscore");
 !(async function () {
     try {
-        __OVERLAY__ || (await (0, i.P)());
+        __OVERLAY__ || (await (0, r.P)());
     } catch (e) {
-        a.error("Failed to initialize libdiscore", e);
+        s.error("Failed to initialize libdiscore", e);
     }
-    try {
-        n(186433);
-    } finally {
-        n(837921).Ay.indexLoadedAsync();
-    }
+    setTimeout(() => {
+        try {
+            n(862917);
+        } finally {
+            n(19575).Ay.indexLoadedAsync();
+        }
+    }, 0);
 })();

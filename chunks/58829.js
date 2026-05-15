@@ -1,74 +1,91 @@
-t.d(e, { default: () => _ });
-var l = t(627968);
-t(64700);
-var i = t(284009),
-    a = t.n(i),
-    s = t(158954),
-    c = t(397927),
-    o = t(730134),
-    r = t(289498),
-    p = t(681819),
-    d = t(985018),
-    u = t(28243);
-function m(n) {
-    let { onComplete: e, excludedPlatformTypes: t, includedPlatformTypes: i } = n,
-        a = (0, p.gn)();
-    return (0, l.jsx)("div", {
-        className: u.lA,
-        children: a
-            .filter((n) => !t?.has(n.type) && (null == i || i.has(n.type)))
-            .map((n) =>
-                (0, l.jsx)(
-                    r.A,
-                    { type: n.type, className: u.W2, innerClassName: u.Uz, onConnect: () => e(n.type) },
-                    n.type,
+e.d(l, { default: () => b });
+var t = e(627968);
+e(64700);
+var i = e(284009),
+    s = e.n(i),
+    a = e(189213),
+    c = e(834730),
+    r = e(939249),
+    o = e(534514),
+    d = e(730134),
+    u = e(289498),
+    p = e(941314),
+    m = e(858177),
+    x = e(429913),
+    h = e(672130),
+    j = e(874490),
+    f = e(534952),
+    v = e(375708),
+    N = e(977498);
+function g(n) {
+    let {
+            onComplete: l,
+            excludedPlatformTypes: e,
+            includedPlatformTypes: i,
+            includeApplicationConnections: s = !0,
+        } = n,
+        a = (0, p.useIsRiotSocialSDKMigrationEnabled)({ location: "User Settings Connections" }),
+        c = (0, x.A)(s && a ? f.tX.filter((n) => !e?.has(n) && (null == i || i.has(n))) : []),
+        r = (0, j.gn)();
+    return (0, t.jsxs)("div", {
+        className: N.lA,
+        children: [
+            c.map((n) => null != n && (0, t.jsx)(h.A, { application: n, className: N.W2, innerClassName: N.Uz }, n.id)),
+            r
+                .filter((n) => !e?.has(n.type) && (null == i || i.has(n.type)))
+                .map((n) =>
+                    (0, t.jsx)(
+                        u.A,
+                        { type: n.type, className: N.W2, innerClassName: N.Uz, onConnect: () => l(n.type) },
+                        n.type,
+                    ),
                 ),
-            ),
+        ],
     });
 }
-function x(n) {
-    let { integrations: e, onCompleteApplication: t } = n;
-    if (null == e || null == t) return null;
-    let i = e.filter((n) => n.application?.roleConnectionsVerificationUrl != null);
+function C(n) {
+    let { integrations: l, onCompleteApplication: e } = n;
+    if (null == l || null == e) return null;
+    let i = l.filter((n) => n.application?.roleConnectionsVerificationUrl != null);
     return 0 === i.length
         ? null
-        : (0, l.jsxs)(l.Fragment, {
+        : (0, t.jsxs)(t.Fragment, {
               children: [
-                  (0, l.jsx)(c.Text, {
+                  (0, t.jsx)(c.E, {
                       variant: "text-sm/medium",
                       color: "interactive-text-default",
-                      className: u.jS,
-                      children: d.intl.string(d.t.PHjkRE),
+                      className: N.jS,
+                      children: v.intl.string(v.t.PHjkRE),
                   }),
-                  (0, l.jsx)("div", {
-                      className: u.$v,
+                  (0, t.jsx)("div", {
+                      className: N.$v,
                       children: i.map((n) => {
-                          let e = n.application;
-                          a()(null != e, "application is null");
-                          let i = e?.bot;
+                          let l = n.application;
+                          s()(null != l, "application is null");
+                          let i = l?.bot;
                           return (
-                              a()(null != i, "bot is null"),
-                              (0, l.jsxs)(
-                                  c.DUT,
+                              s()(null != i, "bot is null"),
+                              (0, t.jsxs)(
+                                  r.D,
                                   {
-                                      onClick: () => t(e.id),
-                                      className: u.pW,
+                                      onClick: () => e(l.id),
+                                      className: N.pW,
                                       children: [
-                                          (0, l.jsx)(o.A, { user: i, className: u.In }),
-                                          (0, l.jsxs)("div", {
-                                              className: u.RM,
+                                          (0, t.jsx)(d.A, { user: i, className: N.In }),
+                                          (0, t.jsxs)("div", {
+                                              className: N.RM,
                                               children: [
-                                                  (0, l.jsx)(c.Heading, {
+                                                  (0, t.jsx)(o.D, {
                                                       variant: "heading-sm/semibold",
-                                                      className: u.p4,
-                                                      children: e.name,
+                                                      className: N.p4,
+                                                      children: l.name,
                                                   }),
-                                                  null != e.description && e.description.length > 0
-                                                      ? (0, l.jsx)(c.Text, {
+                                                  null != l.description && l.description.length > 0
+                                                      ? (0, t.jsx)(c.E, {
                                                             variant: "text-xs/normal",
                                                             color: "text-default",
-                                                            className: u.p4,
-                                                            children: e.description,
+                                                            className: N.p4,
+                                                            children: l.description,
                                                         })
                                                       : null,
                                               ],
@@ -83,35 +100,94 @@ function x(n) {
               ],
           });
 }
-function _(n) {
+function y(n) {
+    let { applicationId: l, onCompleteIdentityApplication: e } = n,
+        i = (0, m.O)(l);
+    if (null == i) return null;
+    let s = i.bot;
+    return (0, t.jsxs)(r.D, {
+        onClick: () => e(i.id),
+        className: N.pW,
+        children: [
+            null != s ? (0, t.jsx)(d.A, { user: s, className: N.In }) : null,
+            (0, t.jsxs)("div", {
+                className: N.RM,
+                children: [
+                    (0, t.jsx)(o.D, { variant: "heading-sm/semibold", className: N.p4, children: i.name }),
+                    null != i.description && i.description.length > 0
+                        ? (0, t.jsx)(c.E, {
+                              variant: "text-xs/normal",
+                              color: "text-default",
+                              className: N.p4,
+                              children: i.description,
+                          })
+                        : null,
+                ],
+            }),
+        ],
+    });
+}
+function A(n) {
+    let { gameApplicationIds: l, onCompleteIdentityApplication: e } = n;
+    return null == l || 0 === l.length || null == e
+        ? null
+        : (0, t.jsxs)(t.Fragment, {
+              children: [
+                  (0, t.jsx)(c.E, {
+                      variant: "text-sm/medium",
+                      color: "interactive-text-default",
+                      className: N.jS,
+                      children: v.intl.string(v.t.y3ZnnU),
+                  }),
+                  (0, t.jsx)("div", {
+                      className: N.$v,
+                      children: l.map((n) => (0, t.jsx)(y, { applicationId: n, onCompleteIdentityApplication: e }, n)),
+                  }),
+              ],
+          });
+}
+function b(n) {
     let {
-        transitionState: e,
-        onComplete: t,
+        transitionState: l,
+        onComplete: e,
         onClose: i,
-        excludedPlatformTypes: a,
+        excludedPlatformTypes: s,
         includedPlatformTypes: c,
-        integrations: o,
-        onCompleteApplication: r,
+        integrations: r,
+        onCompleteApplication: o,
+        includeApplicationConnections: d,
+        gameApplicationIds: u,
+        onCompleteIdentityApplication: p,
     } = n;
-    return (0, l.jsxs)(s.Modal, {
-        title: d.intl.string(d.t.syl6HS),
-        transitionState: e,
+    return (0, t.jsxs)(a.Modal, {
+        title: v.intl.string(v.t.syl6HS),
+        transitionState: l,
         onClose: i,
         actions: [],
         children: [
-            (0, l.jsx)(m, {
+            (0, t.jsx)(g, {
                 onComplete: function (n) {
-                    t(n), i();
+                    e(n), i();
                 },
-                excludedPlatformTypes: a,
+                excludedPlatformTypes: s,
                 includedPlatformTypes: c,
+                includeApplicationConnections: d,
             }),
-            (0, l.jsx)(x, {
-                integrations: o,
+            (0, t.jsx)(C, {
+                integrations: r,
                 onCompleteApplication:
-                    null != r
+                    null != o
                         ? function (n) {
-                              r?.(n), i();
+                              o?.(n), i();
+                          }
+                        : void 0,
+            }),
+            (0, t.jsx)(A, {
+                gameApplicationIds: u ?? null,
+                onCompleteIdentityApplication:
+                    null != p
+                        ? function (n) {
+                              p?.(n), i();
                           }
                         : void 0,
             }),

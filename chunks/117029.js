@@ -1,204 +1,208 @@
-n.d(t, { A: () => x });
-var i = n(627968),
-    l = n(64700),
+n.d(t, { A: () => j });
+var l = n(627968),
+    i = n(64700),
     s = n(503698),
     a = n.n(s),
     r = n(735438),
     o = n(451988),
-    c = n(435371),
-    d = n(397927),
-    u = n(964486),
+    u = n(990078),
+    c = n(939249),
+    d = n(408278),
+    m = n(92259),
+    p = n(106236),
+    g = n(218429),
+    f = n(964486),
     h = n(461782),
-    m = n(430452),
-    A = n(40056),
-    g = n(985018),
-    p = n(895283),
-    f = n(6923);
-function _(e) {
+    A = n(235058),
+    x = n(40056),
+    v = n(375708),
+    E = n(473772),
+    C = n(590782);
+function I(e) {
     e.preventDefault(), e.stopPropagation();
 }
-function E(e) {
+function _(e) {
     return (1 & e.buttons) == 1;
 }
-let x = l.memo(function (e) {
+let j = i.memo(function (e) {
     let { mirror: t = !1, streamId: n, paused: s } = e,
-        { onActive: x, onPreventIdle: C, onAllowIdle: S } = l.useContext(h.k3),
+        { onActive: j, onPreventIdle: S, onAllowIdle: N } = i.useContext(h.k3),
         {
-            enabled: I,
-            zoomLevel: T,
-            minZoom: N,
-            maxZoom: y,
-            isDragging: b,
-            isWheeling: v,
-            isSlidering: j,
-            setIsSlidering: R,
-            doZoom: M,
-            isZooming: D,
-            videoAspectRatio: O,
-            wrapperRef: L,
+            enabled: b,
+            zoomLevel: y,
+            minZoom: w,
+            maxZoom: T,
+            isDragging: R,
+            isWheeling: k,
+            isSlidering: D,
+            setIsSlidering: O,
+            doZoom: L,
+            isZooming: M,
+            videoAspectRatio: F,
+            wrapperRef: V,
             panOffset: P,
-            setPanOffset: w,
-            clampPanOffset: k,
-        } = l.useContext(A.e9),
-        [U, G] = l.useState(!1),
-        F = l.useRef(null),
-        H = T > N,
-        B = l.useCallback(() => {
-            C("interact");
-        }, [C]),
-        V = l.useCallback(() => {
-            G(!1), S("interact");
+            setPanOffset: G,
+            clampPanOffset: H,
+        } = i.useContext(x.e9),
+        [U, z] = i.useState(!1),
+        W = i.useRef(null),
+        $ = y > w,
+        B = i.useCallback(() => {
+            S("interact");
         }, [S]),
-        K = l.useMemo(() => {
-            let e = 120 * Math.min(O, 32 / 9);
+        Y = i.useCallback(() => {
+            z(!1), N("interact");
+        }, [N]),
+        Z = i.useMemo(() => {
+            let e = 120 * Math.min(F, 32 / 9);
             return { "--custom-zoom-minimap-width": `${e}px`, "--custom-zoom-minimap-height": "120px" };
-        }, [O]),
-        z = l.useCallback(
+        }, [F]),
+        K = i.useCallback(
             (e) => {
-                if (null == F.current || null == L.current) return;
-                let t = F.current.getBoundingClientRect(),
-                    n = L.current.clientWidth,
-                    i = L.current.clientHeight,
-                    l = e.x - t.left,
+                if (null == W.current || null == V.current) return;
+                let t = W.current.getBoundingClientRect(),
+                    n = V.current.clientWidth,
+                    l = V.current.clientHeight,
+                    i = e.x - t.left,
                     s = e.y - t.top;
-                w(k({ x: (0.5 - l / t.width) * n * T, y: (0.5 - s / t.height) * i * T }));
+                G(H({ x: (0.5 - i / t.width) * n * y, y: (0.5 - s / t.height) * l * y }));
             },
-            [k, T, L, w],
+            [H, y, V, G],
         ),
-        W = l.useCallback(
+        Q = i.useCallback(
             (e) => {
-                E(e) && (e.preventDefault(), e.stopPropagation(), G(!0), z({ x: e.clientX, y: e.clientY }));
+                _(e) && (e.preventDefault(), e.stopPropagation(), z(!0), K({ x: e.clientX, y: e.clientY }));
             },
-            [z],
+            [K],
         ),
-        Y = l.useCallback(
+        X = i.useCallback(
             (e) => {
-                U && (e.preventDefault(), e.stopPropagation(), z({ x: e.clientX, y: e.clientY }));
+                U && (e.preventDefault(), e.stopPropagation(), K({ x: e.clientX, y: e.clientY }));
             },
-            [U, z],
+            [U, K],
         ),
-        q = l.useCallback(
+        q = i.useCallback(
             (e) => {
-                !U || E(e) || (e.preventDefault(), e.stopPropagation(), G(!1));
+                !U || _(e) || (e.preventDefault(), e.stopPropagation(), z(!1));
             },
             [U],
         ),
-        J = m.Ay.getVideoComponent(),
-        $ = l.useMemo(() => {
-            let e = null != L.current ? L.current.clientWidth : 1,
-                t = null != L.current ? L.current.clientHeight : 1,
-                n = 1 / T,
-                i = 1 / T,
-                l = 0.5 - P.x / (e * T),
-                s = 0.5 - P.y / (t * T);
+        J = A.Ay.getVideoComponent(),
+        ee = i.useMemo(() => {
+            let e = null != V.current ? V.current.clientWidth : 1,
+                t = null != V.current ? V.current.clientHeight : 1,
+                n = 1 / y,
+                l = 1 / y,
+                i = 0.5 - P.x / (e * y),
+                s = 0.5 - P.y / (t * y);
             return {
-                "--custom-zoom-indicator-left": `${100 * ((0, r.clamp))(l - n / 2, 0, 1 - n)}%`,
-                "--custom-zoom-indicator-top": `${100 * ((0, r.clamp))(s - i / 2, 0, 1 - i)}%`,
+                "--custom-zoom-indicator-left": `${100 * ((0, r.clamp))(i - n / 2, 0, 1 - n)}%`,
+                "--custom-zoom-indicator-top": `${100 * ((0, r.clamp))(s - l / 2, 0, 1 - l)}%`,
                 "--custom-zoom-indicator-width": `${100 * n}%`,
-                "--custom-zoom-indicator-height": `${100 * i}%`,
+                "--custom-zoom-indicator-height": `${100 * l}%`,
                 "--custom-zoom-indicator-transition":
-                    b || U || v || j
+                    R || U || k || D
                         ? "none"
                         : "top 0.1s ease-out, left 0.1s ease-out, width 0.1s ease-out, height 0.1s ease-out",
             };
-        }, [b, U, v, j, P, T, L]),
-        Z = l.useCallback(
+        }, [R, U, k, D, P, y, V]),
+        et = i.useCallback(
             (e) => {
-                e.preventDefault(), e.stopPropagation(), M(T - 0.25, A.qd, "button");
+                e.preventDefault(), e.stopPropagation(), L(y - 0.25, x.qd, "button");
             },
-            [M, T],
+            [L, y],
         ),
-        X = l.useCallback(
+        en = i.useCallback(
             (e) => {
-                e.preventDefault(), e.stopPropagation(), M(T + 0.25, A.qd, "button");
+                e.preventDefault(), e.stopPropagation(), L(y + 0.25, x.qd, "button");
             },
-            [M, T],
+            [L, y],
         ),
-        Q = l.useRef(null),
-        ee = l.useCallback(
+        el = i.useRef(null),
+        ei = i.useCallback(
             (e) => {
-                R(!0),
-                    M(e, A.qd, "slider"),
-                    x(),
-                    null == Q.current && (Q.current = new o.Ep()),
-                    Q.current.start(100, () => {
-                        R(!1);
+                O(!0),
+                    L(e, x.qd, "slider"),
+                    j(),
+                    null == el.current && (el.current = new o.Ep()),
+                    el.current.start(100, () => {
+                        O(!1);
                     });
             },
-            [M, x, R],
+            [L, j, O],
         );
-    return ((0, u.l0)(() => {
-        Q.current?.stop();
+    return ((0, f.l0)(() => {
+        el.current?.stop();
     }),
-    I && null != n)
-        ? (0, i.jsxs)("div", {
-              className: a()(f.ne, { [f.Ge]: D || H }),
+    b && null != n)
+        ? (0, l.jsxs)("div", {
+              className: a()(C.ne, { [C.Ge]: M || $ }),
               onMouseEnter: B,
-              onMouseLeave: V,
-              onClick: _,
+              onMouseLeave: Y,
+              onClick: I,
               children: [
-                  (D || H) &&
-                      (0, i.jsx)(d.DUT, {
-                          onClick: _,
+                  (M || $) &&
+                      (0, l.jsx)(c.D, {
+                          onClick: I,
                           onMouseEnter: B,
-                          onMouseLeave: V,
-                          children: (0, i.jsxs)("div", {
-                              ref: F,
-                              className: f.Wc,
-                              style: K,
-                              onMouseDown: W,
-                              onMouseMove: Y,
+                          onMouseLeave: Y,
+                          children: (0, l.jsxs)("div", {
+                              ref: W,
+                              className: C.Wc,
+                              style: Z,
+                              onMouseDown: Q,
+                              onMouseMove: X,
                               onMouseUp: q,
                               children: [
-                                  (0, i.jsx)(J, {
-                                      className: a()(f.BZ, { [p.mirror]: t }),
+                                  (0, l.jsx)(J, {
+                                      className: a()(C.BZ, { [E.mirror]: t }),
                                       streamId: n,
                                       paused: s,
                                       reportContainerResized: !1,
                                   }),
-                                  (0, i.jsx)("div", { className: f.xq, style: $ }),
+                                  (0, l.jsx)("div", { className: C.xq, style: ee }),
                               ],
                           }),
                       }),
-                  (0, i.jsxs)("div", {
-                      className: f.xu,
+                  (0, l.jsxs)("div", {
+                      className: C.xu,
                       children: [
-                          (D || H) &&
-                              (0, i.jsxs)(i.Fragment, {
+                          (M || $) &&
+                              (0, l.jsxs)(l.Fragment, {
                                   children: [
-                                      (0, i.jsx)(c.m_, {
-                                          text: g.intl.string(g.t.M6Cmwy),
+                                      (0, l.jsx)(u.m, {
+                                          text: v.intl.string(v.t.M6Cmwy),
                                           position: "top",
-                                          children: (0, i.jsx)(d.K0, {
-                                              icon: d.V0_,
-                                              onClick: Z,
-                                              disabled: T <= N,
+                                          children: (0, l.jsx)(d.K, {
+                                              icon: m.V,
+                                              onClick: et,
+                                              disabled: y <= w,
                                               variant: "overlay-secondary",
                                               size: "sm",
-                                              "aria-label": g.intl.string(g.t.M6Cmwy),
+                                              "aria-label": v.intl.string(v.t.M6Cmwy),
                                           }),
                                       }),
-                                      (0, i.jsx)(d.Apm, {
-                                          minValue: N,
-                                          maxValue: y,
-                                          initialValue: T,
-                                          value: T,
-                                          asValueChanges: ee,
+                                      (0, l.jsx)(p.A, {
+                                          minValue: w,
+                                          maxValue: T,
+                                          initialValue: y,
+                                          value: y,
+                                          asValueChanges: ei,
                                           onValueRender: (e) => `${Math.round(100 * e)}%`,
-                                          "aria-label": g.intl.string(g.t.grzPmr),
+                                          "aria-label": v.intl.string(v.t.grzPmr),
                                       }),
                                   ],
                               }),
-                          (0, i.jsx)(c.m_, {
-                              text: g.intl.string(g.t["9hMafy"]),
+                          (0, l.jsx)(u.m, {
+                              text: v.intl.string(v.t["9hMafy"]),
                               position: "top",
-                              children: (0, i.jsx)(d.K0, {
-                                  icon: d.r1u,
-                                  onClick: X,
-                                  disabled: T >= y,
+                              children: (0, l.jsx)(d.K, {
+                                  icon: g.r,
+                                  onClick: en,
+                                  disabled: y >= T,
                                   variant: "overlay-secondary",
                                   size: "sm",
-                                  "aria-label": g.intl.string(g.t["9hMafy"]),
+                                  "aria-label": v.intl.string(v.t["9hMafy"]),
                               }),
                           }),
                       ],

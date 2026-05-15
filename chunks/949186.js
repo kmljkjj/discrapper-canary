@@ -1,13 +1,11 @@
 "use strict";
-var r = n(410323),
-    i = Error,
-    s = r("".replace),
-    a = (function (e) {
-        return String(new i(e).stack);
-    })("zxcasd"),
+var i = n(410323),
+    r = Error,
+    s = i("".replace),
+    a = String(new r("zxcasd").stack),
     o = /\n\s*at [^:]*:[^\n]*/,
     l = o.test(a);
 e.exports = function (e, t) {
-    if (l && "string" == typeof e && !i.prepareStackTrace) for (; t--; ) e = s(e, o, "");
+    if (l && "string" == typeof e && !r.prepareStackTrace) for (; t--; ) e = s(e, o, "");
     return e;
 };

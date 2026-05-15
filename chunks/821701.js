@@ -1,8 +1,8 @@
-n.d(t, { A: () => a });
-var i = n(417597),
-    s = n(590180),
-    r = n(4227);
+l.d(t, { A: () => a });
+var n = l(417597),
+    i = l(590180),
+    s = l(4227);
 let a = (e) => {
-    let [t, n] = (0, i.yK)([s.A], () => [s.A.getCategoryForProduct(e), s.A.getProduct(e)]);
-    return { category: t, product: n, purchase: (0, i.bG)([r.A], () => r.A.getPurchase(e)) };
+    let [t, l] = (0, n.yK)([i.A], () => [i.A.getCategoryForProduct(e), i.A.getProduct(e)]);
+    return { category: t, product: l, purchase: (0, n.bG)([s.A], () => s.A.getPurchase(e)) };
 };

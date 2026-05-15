@@ -1,15 +1,14 @@
 "use strict";
-n.d(t, { H: () => f });
-var r = n(680753),
-    i = n(875565),
+n.d(t, { H: () => _ });
+var i = n(680753),
+    r = n(875565),
     s = n(272469),
     a = n(231577),
     o = n(834932),
     l = n(83220),
     u = n(487851),
     c = n(286788);
-let d = 100;
-class _ {
+class d {
     constructor() {
         (this._notifyingListeners = !1),
             (this._scopeListeners = []),
@@ -24,7 +23,7 @@ class _ {
             (this._propagationContext = { traceId: (0, o.el)(), spanId: (0, o.ZF)() });
     }
     clone() {
-        let e = new _();
+        let e = new d();
         return (
             (e._breadcrumbs = [...this._breadcrumbs]),
             (e._tags = { ...this._tags }),
@@ -68,7 +67,7 @@ class _ {
     setUser(e) {
         return (
             (this._user = e || { email: void 0, id: void 0, ip_address: void 0, username: void 0 }),
-            this._session && (0, r.qO)(this._session, { user: e }),
+            this._session && (0, i.qO)(this._session, { user: e }),
             this._notifyScopeListeners(),
             this
         );
@@ -115,8 +114,8 @@ class _ {
     update(e) {
         if (!e) return this;
         let t = "function" == typeof e ? e(this) : e,
-            [n, r] =
-                t instanceof f ? [t.getScopeData(), t.getRequestSession()] : (0, i.Qd)(t) ? [e, e.requestSession] : [],
+            [n, i] =
+                t instanceof _ ? [t.getScopeData(), t.getRequestSession()] : (0, r.Qd)(t) ? [e, e.requestSession] : [],
             { tags: s, extra: a, user: o, contexts: l, level: u, fingerprint: c = [], propagationContext: d } = n || {};
         return (
             (this._tags = { ...this._tags, ...s }),
@@ -126,7 +125,7 @@ class _ {
             u && (this._level = u),
             c.length && (this._fingerprint = c),
             d && (this._propagationContext = d),
-            r && (this._requestSession = r),
+            i && (this._requestSession = i),
             this
         );
     }
@@ -150,11 +149,11 @@ class _ {
         );
     }
     addBreadcrumb(e, t) {
-        let n = "number" == typeof t ? t : d;
+        let n = "number" == typeof t ? t : 100;
         if (n <= 0) return this;
-        let r = { timestamp: (0, l.lu)(), ...e };
+        let i = { timestamp: (0, l.lu)(), ...e };
         return (
-            this._breadcrumbs.push(r),
+            this._breadcrumbs.push(i),
             this._breadcrumbs.length > n &&
                 ((this._breadcrumbs = this._breadcrumbs.slice(-n)),
                 this._client && this._client.recordDroppedEvent("buffer_overflow", "log_item")),
@@ -203,19 +202,19 @@ class _ {
     captureException(e, t) {
         let n = t && t.event_id ? t.event_id : (0, a.eJ)();
         if (!this._client) return s.vF.warn("No client configured on scope - will not capture exception!"), n;
-        let r = Error("Sentry syntheticException");
+        let i = Error("Sentry syntheticException");
         return (
-            this._client.captureException(e, { originalException: e, syntheticException: r, ...t, event_id: n }, this),
+            this._client.captureException(e, { originalException: e, syntheticException: i, ...t, event_id: n }, this),
             n
         );
     }
     captureMessage(e, t, n) {
-        let r = n && n.event_id ? n.event_id : (0, a.eJ)();
-        if (!this._client) return s.vF.warn("No client configured on scope - will not capture message!"), r;
-        let i = Error(e);
+        let i = n && n.event_id ? n.event_id : (0, a.eJ)();
+        if (!this._client) return s.vF.warn("No client configured on scope - will not capture message!"), i;
+        let r = Error(e);
         return (
-            this._client.captureMessage(e, t, { originalException: e, syntheticException: i, ...n, event_id: r }, this),
-            r
+            this._client.captureMessage(e, t, { originalException: e, syntheticException: r, ...n, event_id: i }, this),
+            i
         );
     }
     captureEvent(e, t) {
@@ -236,4 +235,4 @@ class _ {
             (this._notifyingListeners = !1));
     }
 }
-let f = _;
+let _ = d;

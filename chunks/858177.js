@@ -1,22 +1,19 @@
-"use strict";
-n.d(t, { O: () => h }), n(321073);
-var r = n(64700),
-    i = n(735438),
-    a = n.n(i),
-    s = n(311907),
-    o = n(451988),
-    l = n(627363),
-    u = n(587895);
-let c = 20,
-    d = 6e4;
-class _ {
+i.d(t, { O: () => m }), i(321073);
+var n = i(64700),
+    l = i(735438),
+    s = i.n(l),
+    a = i(17928),
+    r = i(451988),
+    d = i(627363),
+    o = i(587895);
+class u {
     _lastFetchedAttempted = new Map();
     _pending = new Set();
-    _flushHandler = new o.J_(32, () => this._flush());
+    _flushHandler = new r.J_(32, () => this._flush());
     request(e) {
         if (this._pending.has(e)) return;
         let t = this._lastFetchedAttempted.get(e);
-        (null != t && Date.now() - t < d) || (this._pending.add(e), this._flushHandler.delay(!1));
+        (null != t && Date.now() - t < 6e4) || (this._pending.add(e), this._flushHandler.delay(!1));
     }
     _flush() {
         let e = [];
@@ -25,30 +22,30 @@ class _ {
         }),
             this._pending.clear();
         let t = [],
-            n = [];
+            i = [];
         e.forEach((e) => {
-            u.A.didFetchingApplicationFail(e) ? n.push(e) : t.push(e);
+            o.A.didFetchingApplicationFail(e) ? i.push(e) : t.push(e);
         }),
             t.length > 0 &&
-                a()
-                    .chunk(t, c)
+                s()
+                    .chunk(t, 20)
                     .forEach((e) => {
-                        l.Ay.fetchApplications(e, !1);
+                        d.Ay.fetchApplications(e, !1);
                     }),
-            n.length > 0 &&
-                a()
-                    .chunk(n, c)
+            i.length > 0 &&
+                s()
+                    .chunk(i, 20)
                     .forEach((e) => {
-                        l.Ay.fetchApplications(e, !0);
+                        d.Ay.fetchApplications(e, !0);
                     });
     }
 }
-let f = new _();
-function p(e) {
-    r.useEffect(() => {
-        null != e && "" !== e && f.request(e);
-    }, [e]);
-}
-function h(e) {
-    return p(e), (0, s.bG)([u.A], () => (null != e && "" !== e ? u.A.getApplication(e) : null), [e]);
+let c = new u();
+function m(e) {
+    return (
+        n.useEffect(() => {
+            null != e && "" !== e && c.request(e);
+        }, [e]),
+        (0, a.bG)([o.A], () => (null != e && "" !== e ? o.A.getApplication(e) : null), [e])
+    );
 }

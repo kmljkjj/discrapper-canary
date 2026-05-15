@@ -1,50 +1,50 @@
-"use strict";
-n.d(t, { A: () => p });
-var i = n(627968),
-    s = n(64700),
-    l = n(397927),
-    r = n(688810),
-    a = n(592982),
-    o = n(384059),
-    c = n(480890),
-    d = n(246356),
-    u = n(709562),
-    h = n(806931),
-    A = n(985018);
-let p = (e) => {
-    let { channel: t, remoteMode: n = !1 } = e,
-        { parentAnalyticsLocation: p } = (0, r.Ay)(),
-        g = s.useRef(null);
-    return (0, i.jsx)(l.YNO, {
-        targetElementRef: g,
+t.d(n, { A: () => C });
+var l = t(627968),
+    i = t(64700),
+    s = t(922016),
+    a = t(365199),
+    r = t(688810),
+    o = t(592982),
+    c = t(384059),
+    u = t(480890),
+    d = t(246356),
+    A = t(204651),
+    h = t(806931),
+    m = t(375708);
+let C = (e) => {
+    let { channel: n, remoteMode: t = !1 } = e,
+        { parentAnalyticsLocation: C } = (0, r.Ay)(),
+        E = i.useRef(null);
+    return (0, l.jsx)(s.Y, {
+        targetElementRef: E,
         renderPopout: (e) => {
-            let { closePopout: s } = e;
-            return (0, i.jsx)(d.A, {
-                children: (0, i.jsx)(a.A, {
-                    onClose: s,
-                    channel: t,
-                    remoteMode: n,
-                    onInteraction: (0, c.s)("MoreSettingsMenu", p, { entrypoint: h.GK.THREE_DOT }),
+            let { closePopout: i } = e;
+            return (0, l.jsx)(d.A, {
+                children: (0, l.jsx)(o.A, {
+                    onClose: i,
+                    channel: n,
+                    remoteMode: t,
+                    onInteraction: (0, u.s)("MoreSettingsMenu", C, { entrypoint: h.GK.THREE_DOT }),
                 }),
             });
         },
         align: "right",
         position: "top",
-        animation: l.YNO.Animation.FADE,
+        animation: s.Y.Animation.FADE,
         spacing: 16,
-        children: (e, t) => {
-            let { onClick: n } = e,
-                { isShown: s } = t;
-            return (0, i.jsx)(u.l, {
-                ref: g,
+        children: (e, n) => {
+            let { onClick: t } = e,
+                { isShown: i } = n;
+            return (0, l.jsx)(A.l, {
+                ref: E,
                 isTrayButton: !0,
                 onClick: (e) => {
-                    (0, o.X)(p, o.O.MORE), n(e);
+                    (0, c.X)(C, c.O.MORE), t(e);
                 },
-                label: A.intl.string(A.t.PdRCRg),
-                iconComponent: l.jNK,
+                label: m.intl.string(m.t.PdRCRg),
+                iconComponent: a.j,
                 color: "primaryDark",
-                isActive: s,
+                isActive: i,
             });
         },
     });

@@ -1,294 +1,339 @@
-"use strict";
-n.d(t, { A: () => w });
-var r = n(627968),
-    i = n(64700),
-    s = n(503698),
-    a = n.n(s),
-    o = n(827734),
-    l = n(843282),
-    u = n(990078),
-    c = n(732955),
-    d = n(397927),
-    _ = n(887555),
-    f = n(6151),
-    p = n(826469),
-    h = n(812745),
-    m = n(202613),
-    E = n(975571),
-    g = n(652215),
-    A = n(818348),
-    I = n(985018),
-    T = n(101541);
-let S = "***@***.***",
-    y = "****",
-    v = "***",
-    N = new m.YS({ id: f.a, brand: h.Ay.Types.UNKNOWN, type: g.hes.CARD });
-function C(e, t) {
-    if (e instanceof m.YS)
-        return e.id === f.a
-            ? { brand: null, label: I.intl.string(I.t.eQ2bLp) }
-            : {
-                  brand: t ? h.Ay.Types.UNKNOWN : e.brand,
-                  label: I.intl.formatToPlainString(I.t.QvBAQk, { last4: t ? y : e.last4 }),
-              };
-    if (e instanceof m.SJ) return { brand: h.Ay.Types.PAYPAL, label: t ? S : e.email };
-    if (e instanceof m.A0) return { brand: h.Ay.Types.SOFORT, label: t ? S : e.email };
-    if (e instanceof m.Qh) return { brand: h.Ay.Types.GIROPAY, label: I.intl.string(I.t["y+0MQZ"]) };
-    if (e instanceof m.Tu) return { brand: h.Ay.Types.PRZELEWY24, label: t ? S : e.email };
-    else if (e instanceof m.Ux) return { brand: h.Ay.Types.PAYSAFECARD, label: I.intl.string(I.t.e3APTT) };
-    else if (e instanceof m.F_) return { brand: h.Ay.Types.GCASH, label: I.intl.string(I.t.PjehcF) };
-    else if (e instanceof m.Xj) return { brand: h.Ay.Types.GRABPAY, label: I.intl.string(I.t.T5davE) };
-    else if (e instanceof m.am) return { brand: h.Ay.Types.MOMO_WALLET, label: I.intl.string(I.t.J0A1Vk) };
-    else if (e instanceof m._1) return { brand: h.Ay.Types.VENMO, label: t ? v : "@" + e.username };
-    else if (e instanceof m.i6) return { brand: h.Ay.Types.KAKAOPAY, label: I.intl.string(I.t.CSVexi) };
-    else if (e instanceof m.cg) return { brand: h.Ay.Types.GOPAY_WALLET, label: I.intl.string(I.t["43J8JK"]) };
-    else if (e instanceof m.UG) return { brand: h.Ay.Types.BANCONTACT, label: I.intl.string(I.t["1ITkfq"]) };
-    else if (e instanceof m.rJ)
-        return { brand: h.Ay.Types.EPS, label: I.intl.format(I.t.hSPoZw, { bank: (0, _.j)(e.bank) }) };
-    else if (e instanceof m.EE)
+l.d(t, { A: () => U });
+var n = l(627968),
+    r = l(64700),
+    a = l(503698),
+    i = l.n(a),
+    s = l(702841),
+    u = l(661531),
+    c = l(843282),
+    o = l(990078),
+    d = l(821609),
+    m = l(289873),
+    x = l(695366),
+    f = l(834730),
+    h = l(109936),
+    p = l(753390),
+    g = l(546605),
+    C = l(176095),
+    v = l(6151),
+    y = l(46054),
+    b = l(826469),
+    j = l(812745),
+    A = l(202613),
+    T = l(975571),
+    N = l(580630),
+    L = l(935208),
+    E = l(652215),
+    _ = l(818348),
+    S = l(375708),
+    w = l(327105),
+    P = l(776409),
+    I = l(714246);
+let M = "***@***.***",
+    k = new A.YS({ id: v.a, brand: j.Ay.Types.UNKNOWN, type: E.hes.CARD });
+function O(e, t, l) {
+    if (e instanceof A.YS)
+        return e.id === v.a
+            ? { brand: null, label: S.intl.string(S.t.eQ2bLp) }
+            : "link" === e.brand && "0000" === e.last4
+              ? {
+                    brand: j.Ay.Types.BANK,
+                    label: S.intl.formatToPlainString(S.t.ixNwPL, {
+                        date: t ? "********" : new Date(L.default.extractTimestamp(e.id)).toLocaleDateString(),
+                    }),
+                }
+              : {
+                    brand: t ? j.Ay.Types.UNKNOWN : e.brand,
+                    label: S.intl.formatToPlainString(S.t.QvBAQk, { last4: t ? "****" : e.last4 }),
+                };
+    if (e instanceof A.SJ) return { brand: j.Ay.Types.PAYPAL, label: t ? M : e.email };
+    if (e instanceof A.A0) return { brand: j.Ay.Types.SOFORT, label: t ? M : e.email };
+    if (e instanceof A.Qh) return { brand: j.Ay.Types.GIROPAY, label: S.intl.string(S.t["y+0MQZ"]) };
+    if (e instanceof A.Tu) return { brand: j.Ay.Types.PRZELEWY24, label: t ? M : e.email };
+    else if (e instanceof A.Ux) return { brand: j.Ay.Types.PAYSAFECARD, label: S.intl.string(S.t.e3APTT) };
+    else if (e instanceof A.F_) return { brand: j.Ay.Types.GCASH, label: S.intl.string(S.t.PjehcF) };
+    else if (e instanceof A.Xj) return { brand: j.Ay.Types.GRABPAY, label: S.intl.string(S.t.T5davE) };
+    else if (e instanceof A.am) return { brand: j.Ay.Types.MOMO_WALLET, label: S.intl.string(S.t.J0A1Vk) };
+    else if (e instanceof A._1) return { brand: j.Ay.Types.VENMO, label: t ? "***" : "@" + e.username };
+    else if (e instanceof A.i6) return { brand: j.Ay.Types.KAKAOPAY, label: S.intl.string(S.t.CSVexi) };
+    else if (e instanceof A.cg) return { brand: j.Ay.Types.GOPAY_WALLET, label: S.intl.string(S.t["43J8JK"]) };
+    else if (e instanceof A.UG) return { brand: j.Ay.Types.BANCONTACT, label: S.intl.string(S.t["1ITkfq"]) };
+    else if (e instanceof A.rJ)
+        return { brand: j.Ay.Types.EPS, label: S.intl.format(S.t.hSPoZw, { bank: (0, h.j)(e.bank) }) };
+    else if (e instanceof A.EE)
         return {
-            brand: h.Ay.Types.IDEAL,
+            brand: j.Ay.Types.IDEAL,
             label:
-                null == e.bank ? I.intl.string(I.t.nSbwqC) : I.intl.format(I.t["9kUlRU"], { bank: (0, _.o)(e.bank) }),
+                null == e.bank ? S.intl.string(S.t.nSbwqC) : S.intl.format(S.t["9kUlRU"], { bank: (0, h.o)(e.bank) }),
         };
-    else if (e instanceof m.FQ) return { brand: h.Ay.Types.CASH_APP, label: t ? v : e.username };
-    else if (e instanceof m.LQ) return { brand: null, label: I.intl.string(I.t["5/Y1kC"]) };
+    else if (e instanceof A.FQ) return { brand: j.Ay.Types.CASH_APP, label: t ? "***" : e.username };
+    else if (e instanceof A.LQ)
+        return {
+            brand: j.Ay.Types.GIFT_CARD,
+            label:
+                null != l
+                    ? S.intl.formatToPlainString(P.default["Jz6+Oj"], { amount: l })
+                    : S.intl.string(P.default["/FQWfA"]),
+        };
     throw Error("Invalid Payment Source");
 }
-function R(e, t, n) {
-    if (t.value === f.a) return (0, r.jsx)("div", { className: T.wC, children: t.label });
-    if (null != e) {
-        let t = e instanceof p.A ? e.source : e,
-            { brand: i, label: s } = C(t, n);
-        return (0, r.jsxs)("div", {
-            className: T.IF,
+function G(e) {
+    return e instanceof b.A ? e.source : e;
+}
+function R(e) {
+    let { paymentSource: t, selectOption: l, hidePersonalInformation: r } = e,
+        a = null != t ? G(t) : null,
+        u = a?.type === E.hes.TDS_WALLET,
+        c = (0, s.bG)([C.A], () => {
+            if (!u) return null;
+            let e = C.A.getBalance(a.id);
+            return null != e ? (0, N.$g)(e.amount, e.currency) : null;
+        }, [u, a]);
+    if (l.value === v.a) return (0, n.jsx)("div", { className: I.wC, children: l.label });
+    if (null != a) {
+        let { brand: e, label: t } = O(a, r, c);
+        return (0, n.jsxs)("div", {
+            className: I.IF,
             children: [
-                null != i ? (0, r.jsx)(h.Ay, { type: h.Ay.getType(i) }) : null,
-                (0, r.jsx)("div", { className: a()(T.wC, { [T.z3]: t.invalid }), children: s }),
+                null != e ? (0, n.jsx)(j.Ay, { type: j.Ay.getType(e) }) : null,
+                (0, n.jsx)("div", { className: i()(I.wC, { [I.z3]: a.invalid }), children: t }),
             ],
         });
     }
-    return (0, r.jsx)("div", { className: T.wC, children: t.label });
+    return (0, n.jsx)("div", { className: I.wC, children: l.label });
 }
-function O(e) {
-    let { isTrial: t, selectedPaymentSource: n, paymentSources: r, defaultPaymentSourceId: i } = e,
-        s = n instanceof p.A ? n.source : n;
-    if (null != s) {
-        if (t && !s.canRedeemTrial()) return I.intl.string(I.t.SvheW9);
-        if (t && s.hasFlag(A.rI.NEW))
-            return I.intl.format(I.t.d7ZLKA, {
-                helpDeskArticle: E.A.getArticleURL(g.MVz.PAYMENT_AUTHORIZATION_CHARGE),
-            });
-    }
-    let a = r.filter((e) => e instanceof p.A);
-    if (a.length > 0) {
-        if (!a.some((e) => e.enabled)) return I.intl.string(I.t.OqbMBV);
-        if (null != i) {
-            let e = a.find((e) => e.id === i),
-                t = null != e && !e.enabled,
-                r = null != n && n.id !== i;
-            if (t && r) return I.intl.string(I.t.cB98Am);
-        }
-    }
-    return null;
-}
-let b = (e) => {
-        let {
-                selectedPaymentSourceId: t,
-                paymentSources: n,
-                prependOption: r,
-                hidePersonalInformation: s,
-                onChange: a,
-                onPaymentSourceAdd: o,
-                paymentGatewayRestrictions: l,
-                includeNewPaymentSourceOption: u,
-            } = e,
-            c = 0 === n.length,
-            d = (e) => {
-                if (e === f.a) null != o && o();
-                else {
-                    let t = n.find((t) => t.id === e),
-                        r = t instanceof p.A ? t.source : t;
-                    null != a && a(r);
-                }
-            },
-            _ = null != r ? [r] : [],
-            h = [..._, ...n, ...(u ? [N] : [])].map((e, t) => {
-                if (e instanceof p.A) {
-                    let { brand: t, label: n } = C(e.source, s);
-                    return { value: e.id, label: n, brand: t, disabled: !e.enabled };
-                }
-                if (e instanceof m.Ay) {
-                    let t,
-                        { brand: n, label: r } = C(e, s);
-                    return (
-                        (t = e === N || null == l || !(l.length > 0) || l.includes(e.paymentGateway)),
-                        { value: e.id, label: r, brand: n, disabled: !t }
-                    );
-                }
-                return { key: t, value: e.value, label: e.label };
-            }),
-            E = i.useMemo(() => n.find((e) => e.id === t), [n, t]),
-            g = t;
-        if (null == g && null != l && l.length > 0) {
-            let e = n.filter((e) => l.includes(e.paymentGateway));
-            g = 0 === e.length ? f.a : e[0].id;
-        }
-        return {
-            hasNoPaymentSources: c,
-            handleChange: d,
-            prependOptions: _,
-            paymentSourceOptions: h,
-            paymentSource: E,
-            selectedPaymentSourceId: g,
-        };
-    },
-    D = (e) => {
+let D = (e) => {
         let {
                 onPaymentSourceAdd: t,
-                dropdownLoading: n,
-                disabled: s,
-                handleChange: a,
-                paymentSourceOptions: o,
-                selectedPaymentSourceId: l,
-                newPaymentMethodOptionLabel: u,
-                noticeMessage: c,
+                dropdownLoading: l,
+                disabled: a,
+                handleChange: i,
+                paymentSourceOptions: s,
+                selectedPaymentSourceId: u,
+                newPaymentMethodOptionLabel: c,
+                noticeMessage: o,
             } = e,
-            d = i.useMemo(
+            d = r.useMemo(
                 () =>
-                    o.map((e) => {
-                        let { label: t, brand: n, ...r } = e;
-                        return { id: null != r.key ? `${r.key}` : r.value, label: t ?? "", icon: n ?? void 0, ...r };
+                    s.map((e) => {
+                        let { label: t, brand: l, ...n } = e;
+                        return { id: null != n.key ? `${n.key}` : n.value, label: t ?? "", icon: l ?? void 0, ...n };
                     }),
-                [o],
+                [s],
             ),
-            _ = i.useMemo(
+            m = r.useMemo(
                 () => ({
-                    label: I.intl.string(I.t["u+Cw58"]),
-                    value: l ?? null,
+                    value: u ?? null,
                     options: d,
-                    onChange: a,
+                    onChange: i,
                     onNew: null != t ? t : () => {},
-                    disabled: s || n,
-                    newPaymentMethodOptionLabel: u,
+                    disabled: a || l,
+                    newPaymentMethodOptionLabel: c,
                 }),
-                [l, d, a, t, s, n, u],
+                [u, d, i, t, a, l, c],
             );
-        return (0, r.jsx)(f.v, { ..._, noticeMessage: c });
+        return (0, n.jsx)(v.v, { ...m, noticeMessage: o });
     },
-    L = (e) => {
-        let { onClick: t, shouldUseUnifiedCheckoutUI: n } = e,
-            s = i.useMemo(
-                () =>
-                    (0, r.jsx)(c.$nd, {
-                        variant: "primary",
-                        fullWidth: !0,
-                        onClick: t,
-                        text: I.intl.string(I.t.eQ2bLp),
-                    }),
-                [t],
-            );
-        return n
-            ? (0, r.jsxs)(r.Fragment, {
-                  children: [
-                      (0, r.jsx)(d.Text, {
-                          variant: "text-md/medium",
-                          color: "text-strong",
-                          className: T.bM,
-                          children: I.intl.string(I.t["u+Cw58"]),
-                      }),
-                      s,
-                  ],
-              })
-            : s;
+    B = (e) => {
+        let { onClick: t } = e;
+        return (0, n.jsx)(d.$, { variant: "primary", fullWidth: !0, onClick: t, text: S.intl.string(S.t.eQ2bLp) });
     };
-function w(e) {
+function U(e) {
     let {
-            label: t,
-            selectedPaymentSourceId: n,
-            paymentSources: s,
+            selectedPaymentSourceId: t,
+            paymentSources: l,
             prependOption: a,
-            hidePersonalInformation: c,
-            onChange: _,
-            onPaymentSourceAdd: f,
-            isTrial: p = !1,
-            disabled: h = !1,
-            className: m,
-            optionClassName: E,
-            dropdownLoading: g,
-            paymentGatewayRestrictions: A,
-            shouldUseUnifiedCheckoutUI: S,
-            newPaymentMethodOptionLabel: y,
-            defaultPaymentSourceId: v,
-            tooltipText: N,
+            hidePersonalInformation: i,
+            onChange: d,
+            onPaymentSourceAdd: h,
+            isTrial: j = !1,
+            disabled: L = !1,
+            className: P,
+            optionClassName: M,
+            dropdownLoading: U,
+            paymentGatewayRestrictions: V,
+            shouldUseUnifiedCheckoutUI: F,
+            newPaymentMethodOptionLabel: W,
+            defaultPaymentSourceId: Y,
+            tooltipText: Z,
         } = e,
         {
-            hasNoPaymentSources: C,
-            handleChange: w,
-            paymentSource: M,
-            paymentSourceOptions: x,
-            selectedPaymentSourceId: P,
-        } = b({
-            selectedPaymentSourceId: n,
-            paymentSources: s,
+            hasNoPaymentSources: H,
+            handleChange: z,
+            paymentSource: $,
+            paymentSourceOptions: K,
+            selectedPaymentSourceId: Q,
+            isStoreCountryEnabled: q,
+        } = ((e) => {
+            let {
+                    selectedPaymentSourceId: t,
+                    paymentSources: l,
+                    prependOption: n,
+                    hidePersonalInformation: a,
+                    onChange: i,
+                    onPaymentSourceAdd: u,
+                    paymentGatewayRestrictions: c,
+                    includeNewPaymentSourceOption: o,
+                } = e,
+                d = (0, g.vg)("PaymentSourceDropdown"),
+                m = r.useMemo(() => l.find((e) => G(e) instanceof A.LQ)?.id ?? null, [l]);
+            r.useEffect(() => {
+                null != m && (0, p.YP)(m);
+            }, [m]);
+            let x = (0, s.bG)([C.A], () => {
+                    if (null == m) return null;
+                    let e = C.A.getBalance(m);
+                    return null != e ? (0, N.$g)(e.amount, e.currency) : null;
+                }, [m]),
+                f = 0 === l.length,
+                h = null != n ? [n] : [],
+                y = [...h, ...l, ...(o ? [k] : [])].map((e, t) => {
+                    if (e instanceof b.A) {
+                        let t,
+                            { brand: l, label: n } = O(e.source, a, x);
+                        return (
+                            d &&
+                                (e.enabled
+                                    ? null != e.relocationCountry && (t = S.intl.string(w.default.pWSgIu))
+                                    : (t = S.intl.string(w.default["Kv+vV7"]))),
+                            { value: e.id, label: n, brand: l, disabled: !e.enabled, tooltipText: t }
+                        );
+                    }
+                    if (e instanceof A.Ay) {
+                        let t,
+                            { brand: l, label: n } = O(e, a, x);
+                        return (
+                            (t = e === k || null == c || !(c.length > 0) || c.includes(e.paymentGateway)),
+                            { value: e.id, label: n, brand: l, disabled: !t }
+                        );
+                    }
+                    return { key: t, value: e.value, label: e.label };
+                }),
+                j = r.useMemo(() => {
+                    let e = t;
+                    if (null == e && null != c && c.length > 0) {
+                        let t = l.filter((e) => c.includes(e.paymentGateway));
+                        e = 0 === t.length ? v.a : t[0].id;
+                    }
+                    if (d) {
+                        let t = l.filter((e) => e instanceof b.A);
+                        t.length > 0 && t.every((e) => !e.enabled) && (e = v.a);
+                    }
+                    return e;
+                }, [t, c, l, d]);
+            return {
+                hasNoPaymentSources: f,
+                handleChange: (e) => {
+                    if (e === v.a) null != u && u();
+                    else {
+                        let t = l.find((t) => t.id === e),
+                            n = t instanceof b.A ? t.source : t;
+                        null != i && i(n);
+                    }
+                },
+                prependOptions: h,
+                paymentSourceOptions: y,
+                paymentSource: r.useMemo(() => l.find((e) => e.id === j), [l, j]),
+                selectedPaymentSourceId: j,
+                isStoreCountryEnabled: d,
+            };
+        })({
+            selectedPaymentSourceId: t,
+            paymentSources: l,
             prependOption: a,
-            hidePersonalInformation: c,
-            onChange: _,
-            onPaymentSourceAdd: f,
-            paymentGatewayRestrictions: A,
-            includeNewPaymentSourceOption: !S,
+            hidePersonalInformation: i,
+            onChange: d,
+            onPaymentSourceAdd: h,
+            paymentGatewayRestrictions: V,
+            includeNewPaymentSourceOption: !F,
         }),
-        k = i.useMemo(() => new Map(s.map((e) => [e.id, e])), [s]),
-        U = O({ isTrial: p, selectedPaymentSource: M, paymentSources: s, defaultPaymentSourceId: v });
-    if (g)
-        return (0, r.jsx)("div", {
-            className: T.hN,
-            children: (0, r.jsx)(d.y$y, { type: d.y$y.Type.WANDERING_CUBES }),
+        J = r.useMemo(() => new Map(l.map((e) => [e.id, e])), [l]),
+        X = (function (e) {
+            let {
+                    isTrial: t,
+                    selectedPaymentSource: l,
+                    paymentSources: n,
+                    defaultPaymentSourceId: r,
+                    isStoreCountryEnabled: a,
+                } = e,
+                i = l instanceof b.A ? l.source : l;
+            if (null != i) {
+                if (t && !i.canRedeemTrial()) return S.intl.string(S.t.SvheW9);
+                if (t && i.hasFlag(_.rI.NEW))
+                    return S.intl.format(S.t.d7ZLKA, {
+                        helpDeskArticle: T.A.getArticleURL(E.MVz.PAYMENT_AUTHORIZATION_CHARGE),
+                    });
+            }
+            let s = n.filter((e) => e instanceof b.A);
+            if (s.length > 0) {
+                if (!s.some((e) => e.enabled))
+                    return a ? S.intl.string(w.default["3kMstB"]) : S.intl.string(S.t.OqbMBV);
+                if (null != r) {
+                    let e = s.find((e) => e.id === r),
+                        t = null != e && !e.enabled,
+                        n = null != l && l.id !== r;
+                    if (t && n) return a ? S.intl.string(w.default.Y6lY0I) : S.intl.string(S.t.cB98Am);
+                }
+            }
+            return null;
+        })({
+            isTrial: j,
+            selectedPaymentSource: $,
+            paymentSources: l,
+            defaultPaymentSourceId: Y,
+            isStoreCountryEnabled: q,
         });
-    if (C) return (0, r.jsx)(L, { onClick: f, shouldUseUnifiedCheckoutUI: S });
-    let G = S
-            ? (0, r.jsx)(D, {
-                  onPaymentSourceAdd: f,
-                  disabled: h,
-                  handleChange: w,
-                  paymentSourceOptions: x,
-                  selectedPaymentSourceId: P,
-                  newPaymentMethodOptionLabel: y,
-                  noticeMessage: U,
+    if (U) return (0, n.jsx)("div", { className: I.hN, children: (0, n.jsx)(m.y, { type: m.y.Type.WANDERING_CUBES }) });
+    if (H) return (0, n.jsx)(B, { onClick: h });
+    let ee = F
+            ? (0, n.jsx)(D, {
+                  onPaymentSourceAdd: h,
+                  disabled: L,
+                  handleChange: z,
+                  paymentSourceOptions: K,
+                  selectedPaymentSourceId: Q,
+                  newPaymentMethodOptionLabel: W,
+                  noticeMessage: X,
               })
-            : (0, r.jsx)(l.Te, {
-                  options: x,
-                  value: P,
-                  label: t,
-                  onChange: w,
-                  isDisabled: h,
-                  className: m,
-                  optionClassName: E,
-                  placeholder: I.intl.string(I.t["8lqkf8"]),
+            : (0, n.jsx)(c.Te, {
+                  options: K,
+                  value: Q,
+                  onChange: z,
+                  isDisabled: L,
+                  className: P,
+                  optionClassName: M,
+                  placeholder: S.intl.string(S.t["8lqkf8"]),
                   renderOptionValue: (e) => {
-                      let [t] = e;
-                      return R(null == t.value ? void 0 : k.get(t.value), t, c);
+                      let [t] = e,
+                          l = null == t.value ? void 0 : J.get(t.value);
+                      return (0, n.jsx)(R, { paymentSource: l, selectOption: t, hidePersonalInformation: i });
                   },
-                  renderOptionLabel: (e) => R(null == e.value ? void 0 : k.get(e.value), e, c),
+                  renderOptionLabel: (e) => {
+                      let t = null == e.value ? void 0 : J.get(e.value);
+                      return (0, n.jsx)(R, { paymentSource: t, selectOption: e, hidePersonalInformation: i });
+                  },
                   "data-migration-pending": !0,
               }),
-        F = null != N ? (0, r.jsx)(u.m, { asContainer: !0, text: N, children: G }) : G;
-    return (0, r.jsxs)(r.Fragment, {
+        et = null != Z ? (0, n.jsx)(o.m, { asContainer: !0, text: Z, children: ee }) : ee;
+    return (0, n.jsxs)(n.Fragment, {
         children: [
-            F,
-            null == U || S
+            et,
+            null == X || F
                 ? null
-                : (0, r.jsxs)("div", {
-                      className: T.ot,
+                : (0, n.jsxs)("div", {
+                      className: I.ot,
                       children: [
-                          (0, r.jsx)(d.EpV, {
+                          (0, n.jsx)(x.E, {
                               size: "custom",
                               width: 20,
                               height: 20,
-                              className: T.fT,
-                              color: o.A.unsafe_rawColors.YELLOW_300.css,
+                              className: I.fT,
+                              color: u.A.unsafe_rawColors.YELLOW_300.css,
                           }),
-                          (0, r.jsx)(d.Text, { variant: "text-xs/normal", children: U }),
+                          (0, n.jsx)(f.E, {
+                              variant: "text-xs/normal",
+                              children: "string" == typeof X ? y.A.parse(X, !1, { allowLinks: !0 }) : X,
+                          }),
                       ],
                   }),
         ],

@@ -1,18 +1,17 @@
-"use strict";
-n.d(t, { A: () => c });
-var i = n(627968);
-n(64700);
-var s = n(311907),
-    l = n(397927),
-    r = n(249288),
-    a = n(221598),
-    o = n(985018);
+t.d(n, { A: () => c });
+var l = t(627968);
+t(64700);
+var i = t(17928),
+    s = t(477782),
+    a = t(249288),
+    r = t(221598),
+    o = t(375708);
 function c(e) {
-    let t = (0, s.bG)([r.A], () => r.A.getToastsEnabled(e));
-    return (0, i.jsx)(l.sLh, {
+    let n = (0, i.bG)([a.A], () => a.A.getToastsEnabled(e));
+    return (0, l.jsx)(s.sL, {
         id: "show-call-chat-toasts",
         label: o.intl.string(o.t["5NL5vT"]),
-        checked: t,
-        action: () => a.A.setCallChatToastsEnabled(e, !t),
+        checked: n,
+        action: () => r.A.setCallChatToastsEnabled(e, !n),
     });
 }

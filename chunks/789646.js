@@ -1,4 +1,4 @@
-n.d(t, { Mg: () => s, RZ: () => d });
+n.d(t, { Mg: () => s, RZ: () => c });
 var i = n(627968),
     l = n(64700),
     a = n(403362);
@@ -13,18 +13,18 @@ function o(e) {
         o = l.useMemo(() => ({ actionButtonRef: n, pollAnswerRef: a, manageFocusOnAction: s }), [n, a, s]);
     return (0, i.jsx)(r.Provider, { value: o, children: t });
 }
-function d(e) {
+function c(e) {
     let { children: t } = e,
         [n, r] = l.useState(),
         s = l.useRef(null),
-        d = l.useRef(null);
+        c = l.useRef(null);
     return (
         l.useEffect(() => {
-            "POLL_ANSWERS" === n && null != d.current && d.current?.ref?.focus(),
+            "POLL_ANSWERS" === n && null != c.current && c.current?.ref?.focus(),
                 "ACTION_BUTTON" === n && null != s.current && s.current?.focus();
         }, [n]),
         (0, i.jsx)(o, {
-            pollAnswerRef: d,
+            pollAnswerRef: c,
             actionButtonRef: s,
             manageFocusOnAction: (e) => {
                 switch (e) {

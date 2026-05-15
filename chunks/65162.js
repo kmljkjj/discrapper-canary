@@ -1,19 +1,19 @@
 "use strict";
-var r = n(710821),
-    i = n(739305),
-    a = n(464046),
-    s = n(120394),
+var i = n(710821),
+    r = n(739305),
+    s = n(464046),
+    a = n(120394),
     o = n(900923),
-    l = i.aTypedArray,
-    u = i.getTypedArrayConstructor;
-(0, i.exportTypedArrayMethod)(
+    l = r.aTypedArray,
+    u = r.getTypedArrayConstructor;
+(0, r.exportTypedArrayMethod)(
     "with",
     {
         with: function (e, t) {
             var n = l(this),
-                i = s(e),
-                c = a(n) ? o(t) : +t;
-            return r(n, u(n), i, c);
+                r = a(e),
+                c = s(n) ? o(t) : +t;
+            return i(n, u(n), r, c);
         },
     }.with,
     !(function () {

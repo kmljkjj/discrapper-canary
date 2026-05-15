@@ -1,11 +1,2 @@
 "use strict";
-var r = {
-    textButton: "textButton__7a01b",
-    text: "text__7a01b",
-    primary: "primary__7a01b",
-    secondary: "secondary__7a01b",
-    "always-white": "always-white__7a01b",
-    critical: "critical__7a01b",
-    button: "button__7a01b",
-};
-n.r((e.exports = r));
+e.exports = "/assets/e367fadc958467a5.svg";

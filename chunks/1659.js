@@ -1,8 +1,7 @@
-"use strict";
-n.d(t, { m: () => i });
-var r = n(7864);
-function i(e, t) {
-    let n = e.tags?.guild_connections !== void 0,
-        i = t.tags?.guild_connections !== void 0;
-    return n && !i ? 1 : !n && i ? -1 : (0, r.AT)(e, t);
+s.d(n, { m: () => c });
+var t = s(7864);
+function c(i, n) {
+    let s = i.tags?.guild_connections !== void 0,
+        c = n.tags?.guild_connections !== void 0;
+    return s && !c ? 1 : !s && c ? -1 : (0, t.AT)(i, n);
 }

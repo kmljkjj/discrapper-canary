@@ -1,24 +1,28 @@
-n.d(t, { A: () => A, L: () => h });
-var i = n(627968),
-    l = n(64700),
-    s = n(503698),
-    a = n.n(s),
-    r = n(284009),
-    o = n.n(r),
-    d = n(397927),
-    c = n(240248),
-    u = n(946274),
-    m = n(652215),
-    g = n(985018),
-    x = n(315628);
-function h(e) {
-    let { className: t, icon: n = null } = e;
-    return (0, i.jsx)(d.NPJ, {
-        theme: m.NJ8.LIGHT,
-        children: (e) => (0, i.jsx)("div", { className: a()(x.XD, t, e), children: n }),
+a.d(l, { A: () => C, L: () => f });
+var n = a(627968),
+    s = a(64700),
+    i = a(503698),
+    t = a.n(i),
+    r = a(284009),
+    c = a.n(r),
+    d = a(43990),
+    h = a(534514),
+    o = a(349288),
+    u = a(187322),
+    m = a(939249),
+    x = a(240248),
+    p = a(946274),
+    N = a(652215),
+    j = a(375708),
+    v = a(15132);
+function f(e) {
+    let { className: l, icon: a = null } = e;
+    return (0, n.jsx)(d.N, {
+        theme: N.NJ8.LIGHT,
+        children: (e) => (0, n.jsx)("div", { className: t()(v.XD, l, e), children: a }),
     });
 }
-class p extends l.PureComponent {
+class g extends s.PureComponent {
     static defaultProps = {
         name: "",
         makeURL: (e) => e,
@@ -29,103 +33,116 @@ class p extends l.PureComponent {
         maxFileSizeBytes: 1 / 0,
         icon: null,
     };
-    inputRef = l.createRef();
+    inputRef = s.createRef();
     handleExternalFileChange(e) {
-        o()(null != this.inputRef.current, "ImageInputRef asked to handleExternalFileChange when not mounted"),
+        c()(null != this.inputRef.current, "ImageInputRef asked to handleExternalFileChange when not mounted"),
             this.inputRef.current.handleFileChange(e);
     }
     handleRemove = () => {
         this.props.onChange(null);
     };
+    handleActivateUpload = () => {
+        this.inputRef.current?.activateUploadDialogue();
+    };
     render() {
         let e,
-            t,
-            n,
             l,
+            a,
+            s,
             {
-                image: s,
+                image: i,
                 hint: r,
-                name: o,
-                makeURL: p,
-                disabled: A,
-                onChange: b,
-                showIcon: _,
-                showIconDisabled: f,
-                className: N,
-                imageClassName: j,
-                iconClassName: T,
-                iconWrapperClassName: C,
-                icon: v,
-                hideSize: E,
-                imageStyle: I,
-                showRemoveButton: S,
-                maxFileSizeBytes: y,
-                onFileSizeError: O,
-                onOpenImageSelectModal: w,
-                "aria-label": R,
+                name: c,
+                makeURL: d,
+                disabled: g,
+                onChange: C,
+                showIcon: R,
+                showIconDisabled: k,
+                className: b,
+                imageClassName: w,
+                iconClassName: D,
+                iconWrapperClassName: F,
+                icon: y,
+                hideSize: A,
+                imageStyle: U,
+                showRemoveButton: z,
+                maxFileSizeBytes: I,
+                onFileSizeError: Y,
+                onOpenImageSelectModal: S,
+                "aria-label": X,
             } = this.props;
         if (
-            (null != (e = null != s && /^data:/.test(s) ? s : p(s))
-                ? (t = `url("${e}")`)
-                : null != o &&
-                  (n = (0, i.jsx)(d.Heading, {
+            (null != (e = null != i && /^data:/.test(i) ? i : d(i))
+                ? (l = `url("${e}")`)
+                : null != c &&
+                  (a = (0, n.jsx)(h.D, {
                       variant: "heading-xxl/normal",
                       color: "always-white",
-                      className: x.nX,
-                      children: (0, c.oN)(o),
+                      className: v.nX,
+                      children: (0, x.oN)(c),
                   })),
-            A)
+            g)
         )
-            return (0, i.jsx)("div", {
-                className: a()(x.WY, x.r9, N),
-                children: (0, i.jsxs)("div", {
-                    className: a()(x.Yp, j),
-                    style: { ...I, backgroundImage: t },
-                    children: [n, f && (0, i.jsx)("div", { className: a()(x.XD, x.$N, T), children: v })],
+            return (0, n.jsx)("div", {
+                className: t()(v.WY, v.r9, b),
+                children: (0, n.jsxs)("div", {
+                    className: t()(v.Yp, w),
+                    style: { ...U, backgroundImage: l },
+                    children: [a, k && (0, n.jsx)("div", { className: t()(v.XD, v.$N, D), children: y })],
                 }),
             });
-        null != s
-            ? (l = (0, i.jsx)(d.MzZ, {
-                  className: x.DT,
+        null != i
+            ? (s = (0, n.jsx)(o.Anchor, {
+                  className: v.DT,
                   onClick: this.handleRemove,
-                  children: g.intl.string(g.t.N86XcP),
+                  children: j.intl.string(j.t.N86XcP),
               }))
-            : E || (l = (0, i.jsx)("small", { className: x.UZ, children: g.intl.format(g.t.AH4c7Y, { size: m.eQT }) }));
-        let k = R ?? r ?? g.intl.string(g.t["Ge+941"]);
-        return (0, i.jsxs)("div", {
-            className: a()(x.WY, N),
+            : A || (s = (0, n.jsx)("small", { className: v.UZ, children: j.intl.format(j.t.AH4c7Y, { size: N.eQT }) }));
+        let B = X ?? r ?? j.intl.string(j.t["Ge+941"]);
+        return (0, n.jsxs)("div", {
+            className: t()(v.WY, b),
             children: [
-                (0, i.jsx)(d.vN3, {
+                (0, n.jsx)(u.vN, {
                     within: !0,
-                    children: (0, i.jsxs)("div", {
-                        className: _ ? a()(x.U1, C) : void 0,
+                    children: (0, n.jsxs)("div", {
+                        className: R ? t()(v.U1, F) : void 0,
                         children: [
-                            (0, i.jsxs)("div", {
-                                className: a()(x.Yp, j),
-                                style: { ...I, backgroundImage: t },
+                            (0, n.jsxs)("div", {
+                                className: t()(v.Yp, w),
+                                style: { ...U, backgroundImage: l },
                                 children: [
-                                    (0, i.jsx)("span", { "aria-hidden": !0, children: n }),
-                                    null != w
-                                        ? (0, i.jsx)(d.DUT, { className: x.c4, "aria-label": k, onClick: w })
-                                        : (0, i.jsx)(u.Ay, {
-                                              ref: this.inputRef,
-                                              onChange: b,
-                                              className: x.c4,
-                                              "aria-label": k,
-                                              tabIndex: 0,
-                                              maxFileSizeBytes: y,
-                                              onFileSizeError: O,
+                                    (0, n.jsx)("span", { "aria-hidden": !0, children: a }),
+                                    null != S
+                                        ? (0, n.jsx)(m.D, { className: v.c4, "aria-label": B, onClick: S })
+                                        : (0, n.jsxs)(n.Fragment, {
+                                              children: [
+                                                  (0, n.jsx)(p.Ay, {
+                                                      ref: this.inputRef,
+                                                      onChange: C,
+                                                      className: v.c4,
+                                                      "aria-label": B,
+                                                      tabIndex: -1,
+                                                      "aria-hidden": !0,
+                                                      maxFileSizeBytes: I,
+                                                      onFileSizeError: Y,
+                                                  }),
+                                                  (0, n.jsx)(m.D, {
+                                                      className: v.c4,
+                                                      "aria-label": B,
+                                                      onClick: this.handleActivateUpload,
+                                                  }),
+                                              ],
                                           }),
                                 ],
                             }),
-                            null != r && (0, i.jsx)("div", { className: x.$J, "aria-hidden": "true", children: r }),
-                            _ && (0, i.jsx)(h, { className: T, icon: v }),
+                            null != r && (0, n.jsx)("div", { className: v.$J, "aria-hidden": "true", children: r }),
+                            R && (0, n.jsx)(f, { className: D, icon: y }),
                         ],
                     }),
                 }),
-                S ? l : null,
+                z ? s : null,
             ],
         });
     }
 }
-let A = p;
+let C = g;

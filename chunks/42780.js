@@ -1,114 +1,142 @@
-"use strict";
-n.d(t, { Ay: () => A, CG: () => g, J$: () => m });
-var r = n(627968);
-n(64700);
-var i = n(503698),
-    s = n.n(i),
-    a = n(397927),
-    o = n(573435),
-    l = n(946274),
-    u = n(145497),
-    c = n(179283),
-    d = n(123213),
-    _ = n(86376),
-    f = n(649640),
-    p = n(339984),
-    h = n(838934);
+i.d(l, { Ay: () => v, CG: () => h, J$: () => m });
+var t = i(627968);
+i(64700);
+var n = i(503698),
+    s = i.n(n),
+    a = i(192308),
+    r = i(187322),
+    u = i(22231),
+    c = i(573435),
+    o = i(946274),
+    d = i(145497),
+    I = i(179283),
+    A = i(123213),
+    C = i(86376),
+    E = i(649640),
+    _ = i(339984),
+    N = i(375708),
+    g = i(890653);
 function m(e) {
-    let { profile: t, className: n } = e,
-        i = (0, f._3)(t);
-    return null != i
-        ? (0, r.jsx)("div", { className: s()(n, h.vK), style: { background: i } })
-        : (0, r.jsx)(E, { profile: t, className: n });
+    let { profile: l, className: i } = e,
+        n = (0, E._3)(l);
+    return null != n
+        ? (0, t.jsx)("div", { className: s()(i, g.vK), style: { background: n } })
+        : (0, t.jsx)(x, { profile: l, className: i });
 }
-function E(e) {
-    let { profile: t, className: n } = e,
-        i = (0, f.b2)(),
-        a = (0, f.aG)({ profile: t, defaultColor: i.hex(), forceDefaultColor: null != t.brandColorPrimary }),
-        o = t.brandColorPrimary ?? a;
-    return (0, r.jsx)("div", { className: s()(n, h.vK), style: { background: (0, f.n6)(o) } });
+function x(e) {
+    let { profile: l, className: i } = e,
+        n = (0, E.b2)(),
+        a = (0, E.aG)({ profile: l, defaultColor: n.hex(), forceDefaultColor: null != l.brandColorPrimary }),
+        r = l.brandColorPrimary ?? a;
+    return (0, t.jsx)("div", { className: s()(i, g.vK), style: { background: (0, E.n6)(r) } });
 }
-function g(e) {
-    let { profile: t, onIconChange: i } = e;
-    if (null == i)
-        return (0, r.jsx)("div", {
-            className: h.H,
-            children: (0, r.jsx)(o.Ay, {
-                mask: o.hW.CLAN_ICON,
-                width: 70,
-                height: 70,
-                children: (0, r.jsx)("div", {
-                    className: h.R3,
-                    children: (0, r.jsx)(u.j, { guildId: t.id, guildName: t.name, guildIcon: t.icon, iconSize: 64 }),
-                }),
-            }),
-        });
-    function c(e, t) {
-        null != i &&
-            (0, a.mMO)(async () => {
-                let { default: s } = await Promise.all([
-                    n.e("14138"),
-                    n.e("49924"),
-                    n.e("59701"),
-                    n.e("35929"),
-                    n.e("74571"),
-                    n.e("32751"),
-                ]).then(n.bind(n, 142630));
-                return (n) =>
-                    (0, r.jsx)(s, {
-                        uploadType: p.HL.GUILD_ICON,
-                        imageUri: e,
-                        file: t,
-                        onCrop: (e) => {
-                            let { imageUri: t } = e;
-                            return i(t);
-                        },
-                        ...n,
-                    });
-            }, {});
-    }
-    return (0, r.jsx)("div", {
-        className: h.H,
-        children: (0, r.jsx)(a.vN3, {
-            within: !0,
-            children: (0, r.jsx)(o.Ay, {
-                mask: o.hW.CLAN_ICON,
-                width: 70,
-                height: 70,
-                children: (0, r.jsxs)("div", {
-                    className: s()(h.R3, h.vk),
-                    children: [
-                        (0, r.jsx)(u.j, { guildId: t.id, guildName: t.name, guildIcon: t.icon, iconSize: 64 }),
-                        (0, r.jsx)("div", { className: h.Lw }),
-                        (0, r.jsx)(a.R2l, { size: "custom", className: h.QY, width: 20, height: 20, color: "white" }),
-                        (0, r.jsx)(l.Ay, { tabIndex: 0, onChange: c }),
-                    ],
-                }),
-            }),
-        }),
-    });
+function h(e) {
+    let { profile: l, onIconChange: n } = e;
+    return null == n
+        ? (0, t.jsx)("div", {
+              className: g.H,
+              children: (0, t.jsx)(c.Ay, {
+                  mask: c.hW.CLAN_ICON,
+                  width: 70,
+                  height: 70,
+                  children: (0, t.jsx)("div", {
+                      className: g.R3,
+                      children: (0, t.jsx)(d.j, { guildId: l.id, guildName: l.name, guildIcon: l.icon, iconSize: 64 }),
+                  }),
+              }),
+          })
+        : (0, t.jsx)("div", {
+              className: g.H,
+              children: (0, t.jsx)(r.vN, {
+                  within: !0,
+                  children: (0, t.jsx)(c.Ay, {
+                      mask: c.hW.CLAN_ICON,
+                      width: 70,
+                      height: 70,
+                      children: (0, t.jsxs)("div", {
+                          className: s()(g.R3, g.vk),
+                          children: [
+                              (0, t.jsx)(d.j, { guildId: l.id, guildName: l.name, guildIcon: l.icon, iconSize: 64 }),
+                              (0, t.jsx)("div", { className: g.Lw }),
+                              (0, t.jsx)(u.R, {
+                                  size: "custom",
+                                  className: g.QY,
+                                  width: 20,
+                                  height: 20,
+                                  color: "white",
+                              }),
+                              (0, t.jsx)(o.Ay, {
+                                  tabIndex: 0,
+                                  onChange: function (e, l) {
+                                      null != n &&
+                                          (0, a.openModalLazy)(async () => {
+                                              let { default: s } = await Promise.all([
+                                                  i.e("80203"),
+                                                  i.e("43908"),
+                                                  i.e("8308"),
+                                                  i.e("73953"),
+                                                  i.e("43662"),
+                                                  i.e("63232"),
+                                                  i.e("88941"),
+                                                  i.e("62680"),
+                                                  i.e("48804"),
+                                                  i.e("33902"),
+                                                  i.e("99999"),
+                                                  i.e("18546"),
+                                                  i.e("90244"),
+                                                  i.e("50342"),
+                                                  i.e("63726"),
+                                                  i.e("93513"),
+                                                  i.e("1530"),
+                                                  i.e("7406"),
+                                                  i.e("55524"),
+                                                  i.e("90017"),
+                                                  i.e("89908"),
+                                                  i.e("74571"),
+                                                  i.e("50348"),
+                                              ]).then(i.bind(i, 142630));
+                                              return (i) =>
+                                                  (0, t.jsx)(s, {
+                                                      uploadType: _.HL.GUILD_ICON,
+                                                      imageUri: e,
+                                                      file: l,
+                                                      onCrop: (e) => {
+                                                          let { imageUri: l } = e;
+                                                          return n(l);
+                                                      },
+                                                      ...i,
+                                                  });
+                                          }, {});
+                                  },
+                                  "aria-label": N.intl.string(N.t.r3JdsT),
+                              }),
+                          ],
+                      }),
+                  }),
+              }),
+          });
 }
-function A(e) {
+function v(e) {
     let {
-            profile: t,
-            onIconChange: n,
-            className: i,
+            profile: l,
+            onIconChange: i,
+            className: n,
             disableCTA: a,
-            CTAOverride: o,
-            onClose: l,
-            disableGuildNameClick: u,
+            CTAOverride: r,
+            onClose: u,
+            disableGuildNameClick: c,
         } = e,
-        f = null;
+        o = null;
     return (
-        null != o ? (f = o) : a || (f = (0, r.jsx)(d.A, { profile: t, onComplete: l })),
-        (0, r.jsxs)("div", {
-            className: s()(h.kL, i),
+        null != r ? (o = r) : a || (o = (0, t.jsx)(A.A, { profile: l, onComplete: u })),
+        (0, t.jsxs)("div", {
+            className: s()(g.kL, n),
             children: [
-                (0, r.jsx)(m, { profile: t }),
-                (0, r.jsx)(g, { onIconChange: n, profile: t }),
-                (0, r.jsx)(_.A, { profile: t, disableGuildNameClick: u }),
-                (0, r.jsx)(c.P, { profile: t }),
-                null != f && (0, r.jsx)("div", { className: h.UD, children: f }),
+                (0, t.jsx)(m, { profile: l }),
+                (0, t.jsx)(h, { onIconChange: i, profile: l }),
+                (0, t.jsx)(C.A, { profile: l, disableGuildNameClick: c }),
+                (0, t.jsx)(I.P, { profile: l }),
+                null != o && (0, t.jsx)("div", { className: g.UD, children: o }),
             ],
         })
     );

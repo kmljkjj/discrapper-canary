@@ -1,48 +1,48 @@
 "use strict";
 n.d(t, { l: () => a });
-var r = n(64700),
+var l = n(64700),
     i = n(267102),
     s = n(374803);
 function a(e) {
     let { editorHeight: t, type: n, state: a } = e,
-        [o, l] = r.useState(void 0),
-        u = a?.query,
-        c = a?.isVisible,
-        { renderWindow: d } = r.useContext(i.Ay),
-        _ = r.useCallback(() => {
-            if (null != a && (null == u || !c)) return void l(void 0);
-            if (u?.type === s.DB.GIFS || (null != n && !n.autocomplete?.alwaysUseLayer)) return void l(null);
+        [r, o] = l.useState(void 0),
+        c = a?.query,
+        u = a?.isVisible,
+        { renderWindow: d } = l.useContext(i.Ay),
+        h = l.useCallback(() => {
+            if (null != a && (null == c || !u)) return void o(void 0);
+            if (c?.type === s.DB.GIFS || (null != n && !n.autocomplete?.alwaysUseLayer)) return void o(null);
             let e = d.document.getSelection(),
                 t = null != e && e.rangeCount > 0 ? e.getRangeAt(0) : null;
             if (null == t) return;
-            let r = t.startContainer,
+            let l = t.startContainer,
                 i = t.startOffset;
-            for (; null != r; ) {
-                if (r.nodeType !== Node.TEXT_NODE || null == r.nodeValue) return void l(null);
-                if (r.nodeValue?.length === 0) {
-                    (r = r.previousSibling), (i = r?.nodeValue?.length ?? 0);
+            for (; null != l; ) {
+                if (l.nodeType !== Node.TEXT_NODE || null == l.nodeValue) return void o(null);
+                if (l.nodeValue?.length === 0) {
+                    (l = l.previousSibling), (i = l?.nodeValue?.length ?? 0);
                     continue;
                 }
-                null != u && (i >= u.queryText.length ? (i -= u.queryText.length) : (i = 0));
+                null != c && (i >= c.queryText.length ? (i -= c.queryText.length) : (i = 0));
                 break;
             }
-            if (null == r) return;
-            let o = d.document.createRange();
-            o.setStart(r, i), o.setEnd(r, i);
-            let _ = o.getBoundingClientRect();
-            _?.height !== 0 && l(_ ?? null);
-        }, [d.document, a, c, u, n]);
+            if (null == l) return;
+            let r = d.document.createRange();
+            r.setStart(l, i), r.setEnd(l, i);
+            let h = r.getBoundingClientRect();
+            h?.height !== 0 && o(h ?? null);
+        }, [d.document, a, u, c, n]);
     return (
-        r.useEffect(
+        l.useEffect(
             () => (
-                d.document.addEventListener("selectionchange", _),
-                () => d.document.removeEventListener("selectionchange", _)
+                d.document.addEventListener("selectionchange", h),
+                () => d.document.removeEventListener("selectionchange", h)
             ),
-            [d.document, _],
+            [d.document, h],
         ),
-        r.useEffect(() => {
-            _();
-        }, [_, t]),
-        o
+        l.useEffect(() => {
+            h();
+        }, [h, t]),
+        r
     );
 }

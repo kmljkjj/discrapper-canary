@@ -4,11 +4,11 @@ e.exports = function (e) {
             variants: [{ begin: "\\b([gtps][A-Z]{1}[a-zA-Z0-9]*)(\\[.+\\])?(?:\\s*?)" }, { begin: "\\$_[A-Z]+" }],
             relevance: 0,
         },
-        n = [e.C_BLOCK_COMMENT_MODE, e.HASH_COMMENT_MODE, e.COMMENT("--", "$"), e.COMMENT("[^:]//", "$")],
-        r = e.inherit(e.TITLE_MODE, {
+        a = [e.C_BLOCK_COMMENT_MODE, e.HASH_COMMENT_MODE, e.COMMENT("--", "$"), e.COMMENT("[^:]//", "$")],
+        n = e.inherit(e.TITLE_MODE, {
             variants: [{ begin: "\\b_*rig[A-Z][A-Za-z0-9_\\-]*" }, { begin: "\\b_[a-z0-9\\-]+" }],
         }),
-        i = e.inherit(e.TITLE_MODE, { begin: "\\b([A-Za-z0-9_\\-]+)\\b" });
+        r = e.inherit(e.TITLE_MODE, { begin: "\\b([A-Za-z0-9_\\-]+)\\b" });
     return {
         name: "LiveCode",
         case_insensitive: !1,
@@ -27,13 +27,13 @@ e.exports = function (e) {
                 className: "function",
                 beginKeywords: "function",
                 end: "$",
-                contains: [t, i, e.APOS_STRING_MODE, e.QUOTE_STRING_MODE, e.BINARY_NUMBER_MODE, e.C_NUMBER_MODE, r],
+                contains: [t, r, e.APOS_STRING_MODE, e.QUOTE_STRING_MODE, e.BINARY_NUMBER_MODE, e.C_NUMBER_MODE, n],
             },
-            { className: "function", begin: "\\bend\\s+", end: "$", keywords: "end", contains: [i, r], relevance: 0 },
+            { className: "function", begin: "\\bend\\s+", end: "$", keywords: "end", contains: [r, n], relevance: 0 },
             {
                 beginKeywords: "command on",
                 end: "$",
-                contains: [t, i, e.APOS_STRING_MODE, e.QUOTE_STRING_MODE, e.BINARY_NUMBER_MODE, e.C_NUMBER_MODE, r],
+                contains: [t, r, e.APOS_STRING_MODE, e.QUOTE_STRING_MODE, e.BINARY_NUMBER_MODE, e.C_NUMBER_MODE, n],
             },
             {
                 className: "meta",
@@ -43,8 +43,8 @@ e.exports = function (e) {
             e.QUOTE_STRING_MODE,
             e.BINARY_NUMBER_MODE,
             e.C_NUMBER_MODE,
-            r,
-        ].concat(n),
+            n,
+        ].concat(a),
         illegal: ";$|^\\[|^=|&|\\{",
     };
 };

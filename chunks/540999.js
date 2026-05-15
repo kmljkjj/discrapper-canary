@@ -1,21 +1,21 @@
 "use strict";
 n.d(t, { A: () => f });
-var r = n(311907),
-    i = n(73153),
-    a = n(572009),
-    s = n(71393),
+var i = n(17928),
+    r = n(228366),
+    s = n(572009),
+    a = n(71393),
     o = n(287809),
     l = n(688151),
     u = n(115093);
 let c = "production" === u.B.DEVELOPMENT || window.GLOBAL_ENV.RELEASE_CHANNEL === u.B.STAGING;
 function d() {
-    c = (0, a.I9)(o.default.getCurrentUser());
+    c = (0, s.I9)(o.default.getCurrentUser());
 }
-class _ extends r.Ay.Store {
+class _ extends i.Ay.Store {
     static displayName = "DeveloperExperimentStore";
     isDeveloper = !1;
     initialize() {
-        this.waitFor(o.default, s.A),
+        this.waitFor(o.default, a.A),
             Object.defineProperties(this, { isDeveloper: { configurable: !1, get: () => c, set: () => {} } }),
             d(),
             setTimeout(() => Object.freeze(this));
@@ -26,4 +26,4 @@ class _ extends r.Ay.Store {
             : null;
     }
 }
-let f = new _(i.h, { CONNECTION_OPEN: d, OVERLAY_INITIALIZE: d, CURRENT_USER_UPDATE: d });
+let f = new _(r.h, { CONNECTION_OPEN: d, OVERLAY_INITIALIZE: d, CURRENT_USER_UPDATE: d });

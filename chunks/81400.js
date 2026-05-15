@@ -1,62 +1,67 @@
-n.d(t, { EC: () => p, j8: () => m, uZ: () => N }), n(938796);
+"use strict";
+n.d(t, { EC: () => I, j8: () => T, uZ: () => A }), n(938796);
 var i = n(64700),
-    l = n(417597),
-    r = n(159001),
-    s = n(780964),
-    a = n(961350),
-    o = n(696451),
-    c = n(71393),
-    d = n(576705),
-    u = n(967198),
-    _ = n(229527),
-    E = n(652215),
-    T = n(340837),
-    A = n(355097),
-    I = n(985018);
-function N(e) {
-    return (0, l.bG)([a.default, o.Ay], () => {
+    r = n(702841),
+    s = n(159001),
+    a = n(507553),
+    o = n(591179),
+    l = n(780964),
+    u = n(495544),
+    c = n(696451),
+    d = n(71393),
+    _ = n(576705),
+    f = n(967198),
+    h = n(229527),
+    p = n(652215),
+    E = n(340837),
+    m = n(355097),
+    g = n(375708);
+function A(e) {
+    return (0, r.bG)([u.default, c.Ay], () => {
         if (null == e) return !1;
-        let t = a.default.getId();
-        return (0, _.TR)(o.Ay.getMember(e, t));
+        let t = u.default.getId();
+        return (0, h.TR)(c.Ay.getMember(e, t));
     }, [e]);
 }
-function p(e) {
-    return (0, l.cf)([a.default, o.Ay, u.A, c.A], () => {
+function I(e) {
+    return (0, r.cf)([u.default, c.Ay, f.A, d.A], () => {
         let t = { nick: void 0, bio: void 0 },
-            n = u.A.getGuildId(),
+            n = f.A.getGuildId(),
             i = e ?? n,
-            l = c.A.getGuild(i);
-        if (null == l || null == i) return t;
-        let r = a.default.getId(),
-            s = o.Ay.getMember(i, r),
-            d = (0, _.wR)(s?.flags);
+            r = d.A.getGuild(i);
+        if (null == r || null == i) return t;
+        let s = u.default.getId(),
+            a = c.Ay.getMember(i, s),
+            o = (0, h.wR)(a?.flags);
         return (
-            0 === d.size ||
-                (d.has(T.D.AUTOMOD_QUARANTINED_USERNAME_OR_GUILD_NICKNAME) &&
+            0 === o.size ||
+                (o.has(E.D.AUTOMOD_QUARANTINED_USERNAME_OR_GUILD_NICKNAME) &&
                     (null == e
-                        ? (t.nick = [I.intl.formatToPlainString(I.t.WBUh3O, { guildName: l.name ?? "" })])
-                        : (t.nick = [I.intl.string(I.t.EPZCrM)])),
-                d.has(T.D.AUTOMOD_QUARANTINED_BIO) && (t.bio = [I.intl.string(I.t.dZh1vz)])),
+                        ? (t.nick = [g.intl.formatToPlainString(g.t.WBUh3O, { guildName: r.name ?? "" })])
+                        : (t.nick = [g.intl.string(g.t.EPZCrM)])),
+                o.has(E.D.AUTOMOD_QUARANTINED_BIO) && (t.bio = [g.intl.string(g.t.dZh1vz)])),
             t
         );
     }, [e]);
 }
-function m(e) {
-    let { guildId: t, scrollPosition: a, analyticsLocations: o } = e,
-        u = (0, l.bG)([c.A], () => c.A.getGuild(t), [t]),
-        _ = (0, l.bG)([d.A], () => null != u && d.A.can(E.xBc.CHANGE_NICKNAME, u), [u]);
+function T(e) {
+    let { guildId: t, scrollPosition: c, analyticsLocations: f } = e,
+        h = (0, r.bG)([d.A], () => d.A.getGuild(t), [t]),
+        E = (0, r.bG)([_.A], () => null != h && _.A.can(p.xBc.CHANGE_NICKNAME, h), [h]),
+        g = (0, o.X)("AutomodQuarantineUtils");
     return [
         i.useCallback(() => {
-            if (null == u) return;
-            E.nc_.PROFILE_CUSTOMIZATION;
-            let e = A.Eq.GUILD;
-            _ ? (0, r.V2)(u.id) : (e = A.Eq.USER_PROFILE);
-            {
-                let { openUserSettings: t } = n(840065),
-                    { default: i } = n(955838);
-                i.setState({ subsection: e, scrollPosition: a }), t(s.X.PROFILE_PANEL, { analyticsLocations: o });
+            if (null == h) return;
+            p.nc_.PROFILE_CUSTOMIZATION;
+            let e = m.Eq.GUILD;
+            if ((E ? (0, s.V2)(h.id) : (e = m.Eq.USER_PROFILE), g)) {
+                let { openUserProfileModal: e } = n(975732);
+                e({ userId: u.default.getId(), guildId: h.id, sourceAnalyticsLocations: f });
+            } else {
+                let { openUserSettings: t } = n(858897);
+                a.A.setState({ subsection: e, scrollPosition: c }), t(l.X.PROFILE_PANEL, { analyticsLocations: f });
             }
-        }, [_, a, o, u]),
-        _,
+        }, [E, c, f, h, g]),
+        E,
     ];
 }

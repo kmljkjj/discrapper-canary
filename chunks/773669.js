@@ -1,46 +1,45 @@
 "use strict";
 n.r(t), n.d(t, { default: () => h });
-var r = n(311907),
-    i = n(73153),
-    a = n(11057),
-    s = n(77729),
+var i = n(17928),
+    r = n(228366),
+    s = n(724066),
+    a = n(77729),
     o = n(617617),
     l = n(985018);
-async function u() {
-    if (s.A?.app?.getPreferredSystemLanguages != null) {
-        let e = await s.A.app.getPreferredSystemLanguages().then((e) => e[0]);
+async function d() {
+    if (a.A?.app?.getPreferredSystemLanguages != null) {
+        let e = await a.A.app.getPreferredSystemLanguages().then((e) => e[0]);
         if (null != e && "" !== e) return e;
     }
     return l.systemLocale;
 }
-let c = l.intl.currentLocale,
-    d = l.systemLocale;
-function _() {
+let _ = l.intl.currentLocale,
+    u = l.systemLocale;
+function c() {
     let e = o.A.settings.localization?.locale?.value;
-    return null != e && "" !== e && e !== c && ((c = e), (0, a.Av)(c), !0);
+    return null != e && "" !== e && e !== _ && ((_ = e), (0, s.Av)(_), !0);
 }
-function f(e) {
-    (c = e.locale), (0, a.Av)(c);
-}
-u().then((e) => {
-    d = e;
+d().then((e) => {
+    u = e;
 });
-class p extends r.Ay.Store {
+class E extends i.Ay.Store {
     static displayName = "LocaleStore";
     initialize() {
-        this.waitFor(o.A), _(), (0, a.Av)(c);
+        this.waitFor(o.A), c(), (0, s.Av)(_);
     }
     get locale() {
-        return c;
+        return _;
     }
     get systemLocale() {
-        return d;
+        return u;
     }
 }
-let h = new p(i.h, {
-    OVERLAY_INITIALIZE: _,
-    CACHE_LOADED: _,
-    CONNECTION_OPEN: _,
-    USER_SETTINGS_PROTO_UPDATE: _,
-    USER_SETTINGS_LOCALE_OVERRIDE: f,
+let h = new E(r.h, {
+    OVERLAY_INITIALIZE: c,
+    CACHE_LOADED: c,
+    CONNECTION_OPEN: c,
+    USER_SETTINGS_PROTO_UPDATE: c,
+    USER_SETTINGS_LOCALE_OVERRIDE: function (e) {
+        (_ = e.locale), (0, s.Av)(_);
+    },
 });

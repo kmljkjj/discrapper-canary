@@ -1,9 +1,10 @@
+"use strict";
 n.d(t, { P: () => a });
 var i = n(64700),
-    s = n(311907),
-    r = n(49463);
+    r = n(17928),
+    s = n(736056);
 function a(e) {
-    let [t, n] = (0, s.yK)([r.A], () => [r.A.getAllUserExperimentDescriptors(), r.A.getGuildExperiments()]);
+    let [t, n] = (0, r.yK)([s.A], () => [s.A.getAllUserExperimentDescriptors(), s.A.getGuildExperiments()]);
     i.useEffect(() => {
         e.trigger();
     }, [e, t, n]);

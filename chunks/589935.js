@@ -1,139 +1,148 @@
-n.d(t, { Ay: () => j });
+n.d(t, { Ay: () => Y });
 var l = n(627968),
     r = n(64700),
     a = n(503698),
     i = n.n(a),
-    s = n(311907),
-    o = n(990078),
-    E = n(397927),
-    u = n(686956),
-    c = n(966327),
-    _ = n(429913),
-    d = n(47167),
-    g = n(769015),
-    A = n(967144),
-    T = n(576622),
-    I = n(734057),
-    N = n(696451),
-    h = n(351906),
-    m = n(287809),
-    S = n(509402),
-    G = n(562153),
-    O = n(266047),
-    C = n(221950),
-    R = n(11541),
-    L = n(985018),
-    D = n(745483);
-let f = r.memo(function () {
-        return (0, l.jsx)(o.m, {
+    s = n(17928),
+    E = n(990078),
+    u = n(834730),
+    _ = n(430392),
+    c = n(39619),
+    o = n(836480),
+    A = n(101277),
+    d = n(173936),
+    T = n(687966),
+    g = n(939249),
+    I = n(778712),
+    N = n(463930),
+    G = n(66834),
+    O = n(966327),
+    S = n(429913),
+    D = n(47167),
+    R = n(137177),
+    m = n(967144),
+    L = n(903209),
+    h = n(734057),
+    C = n(696451),
+    M = n(351906),
+    U = n(287809),
+    x = n(509402),
+    f = n(562153),
+    p = n(151781),
+    F = n(221950),
+    P = n(11541),
+    k = n(375708),
+    j = n(334046);
+let v = r.memo(function () {
+        return (0, l.jsx)(E.m, {
             "data-pending-richtooltip-migration": !0,
-            text: L.intl.string(L.t["vu/MiQ"]),
-            children: (0, l.jsx)(E.Text, {
+            text: k.intl.string(k.t["vu/MiQ"]),
+            children: (0, l.jsx)(u.E, {
                 variant: "text-sm/medium",
                 color: "text-muted",
-                className: D.IV,
-                children: L.intl.string(L.t.yobFdm),
+                className: j.IV,
+                children: k.intl.string(k.t.yobFdm),
             }),
         });
     }),
-    x = r.memo(function () {
-        return (0, l.jsx)(o.m, {
-            text: L.intl.string(L.t.OrCp9h),
-            children: (0, l.jsx)(E.Text, {
+    X = r.memo(function () {
+        return (0, l.jsx)(E.m, {
+            text: k.intl.string(k.t.OrCp9h),
+            children: (0, l.jsx)(u.E, {
                 variant: "text-sm/medium",
                 color: "text-muted",
-                className: D.IV,
-                children: L.intl.string(L.t["4upToT"]),
+                className: j.IV,
+                children: k.intl.string(k.t["4upToT"]),
             }),
         });
     }),
-    M = {
-        [R.UP.UNSPECIFIED]: {
-            type: R.UP.UNSPECIFIED,
-            getJoinTypeLabel: () => L.intl.string(L.t.DvMBkS),
+    b = {
+        [P.UP.UNSPECIFIED]: {
+            type: P.UP.UNSPECIFIED,
+            getJoinTypeLabel: () => k.intl.string(k.t.DvMBkS),
             icon: null,
             hasTooltip: !1,
         },
-        [R.UP.BOT]: {
-            type: R.UP.BOT,
-            getJoinTypeLabel: () => L.intl.string(L.t.HumZAi),
-            icon: (0, l.jsx)(E.CnV, { size: "custom", color: "currentColor", className: D.XY, height: 12, width: 12 }),
+        [P.UP.BOT]: {
+            type: P.UP.BOT,
+            getJoinTypeLabel: () => k.intl.string(k.t.HumZAi),
+            icon: (0, l.jsx)(_.C, { size: "custom", color: "currentColor", className: j.XY, height: 12, width: 12 }),
             hasTooltip: !0,
         },
-        [R.UP.INTEGRATION]: {
-            type: R.UP.INTEGRATION,
-            getJoinTypeLabel: () => L.intl.string(L.t.gmCUFw),
-            icon: (0, l.jsx)(E.XC7, { size: "custom", color: "currentColor", height: 12, width: 12 }),
+        [P.UP.INTEGRATION]: {
+            type: P.UP.INTEGRATION,
+            getJoinTypeLabel: () => k.intl.string(k.t.gmCUFw),
+            icon: (0, l.jsx)(c.X, { size: "custom", color: "currentColor", height: 12, width: 12 }),
             hasTooltip: !1,
         },
-        [R.UP.DISCOVERY]: {
-            type: R.UP.DISCOVERY,
-            getJoinTypeLabel: () => L.intl.string(L.t["Ql/e9Y"]),
-            icon: (0, l.jsx)(E.QGJ, { size: "custom", color: "currentColor", height: 12, width: 12 }),
+        [P.UP.DISCOVERY]: {
+            type: P.UP.DISCOVERY,
+            getJoinTypeLabel: () => k.intl.string(k.t["Ql/e9Y"]),
+            icon: (0, l.jsx)(o.Q, { size: "custom", color: "currentColor", height: 12, width: 12 }),
             hasTooltip: !1,
         },
-        [R.UP.HUB]: {
-            type: R.UP.HUB,
-            getJoinTypeLabel: () => L.intl.string(L.t.Op8B3O),
-            icon: (0, l.jsx)(E.Pfh, { size: "custom", color: "currentColor", height: 12, width: 12 }),
+        [P.UP.HUB]: {
+            type: P.UP.HUB,
+            getJoinTypeLabel: () => k.intl.string(k.t.Op8B3O),
+            icon: (0, l.jsx)(A.P, { size: "custom", color: "currentColor", height: 12, width: 12 }),
             hasTooltip: !1,
         },
-        [R.UP.INVITE]: {
-            type: R.UP.INVITE,
+        [P.UP.INVITE]: {
+            type: P.UP.INVITE,
             getJoinTypeLabel: (e) => e,
-            icon: (0, l.jsx)(E.qYV, { size: "custom", color: "currentColor", height: 12, width: 12 }),
+            icon: (0, l.jsx)(d.q, { size: "custom", color: "currentColor", height: 12, width: 12 }),
             hasTooltip: !0,
         },
-        [R.UP.VANITY_URL]: {
-            type: R.UP.VANITY_URL,
+        [P.UP.VANITY_URL]: {
+            type: P.UP.VANITY_URL,
             getJoinTypeLabel: (e) => e,
-            icon: (0, l.jsx)(E.qYV, { size: "custom", color: "currentColor", height: 12, width: 12 }),
+            icon: (0, l.jsx)(d.q, { size: "custom", color: "currentColor", height: 12, width: 12 }),
             hasTooltip: !1,
         },
-        [R.UP.MANUAL_MEMBER_VERIFICATION]: {
-            type: R.UP.MANUAL_MEMBER_VERIFICATION,
+        [P.UP.MANUAL_MEMBER_VERIFICATION]: {
+            type: P.UP.MANUAL_MEMBER_VERIFICATION,
             getJoinTypeLabel: (e) =>
-                null != e ? L.intl.formatToPlainString(L.t["VHLp+u"], { code: e }) : L.intl.string(L.t.vdu7oS),
-            icon: (0, l.jsx)(S.A, { height: 12, width: 12 }),
+                null != e ? k.intl.formatToPlainString(k.t["VHLp+u"], { code: e }) : k.intl.string(k.t.vdu7oS),
+            icon: (0, l.jsx)(x.A, { height: 12, width: 12 }),
             hasTooltip: !0,
         },
-        [R.UP.SOCIAL_LAYER_INTEGRATION_LINKED_CHANNEL]: {
-            type: R.UP.SOCIAL_LAYER_INTEGRATION_LINKED_CHANNEL,
-            getJoinTypeLabel: () => L.intl.string(L.t["9/ZreX"]),
-            icon: (0, l.jsx)(E._xR, { size: "custom", color: "currentColor", height: 12, width: 12 }),
+        [P.UP.SOCIAL_LAYER_INTEGRATION_LINKED_CHANNEL]: {
+            type: P.UP.SOCIAL_LAYER_INTEGRATION_LINKED_CHANNEL,
+            getJoinTypeLabel: () => k.intl.string(k.t["9/ZreX"]),
+            icon: (0, l.jsx)(T._, { size: "custom", color: "currentColor", height: 12, width: 12 }),
             hasTooltip: !0,
         },
     };
-function p(e) {
-    let { guildId: t, inviterUser: n, joinSourceType: a, className: o, onClickInviter: u } = e,
-        _ = (0, s.bG)([N.Ay], () => (null == n ? null : N.Ay.getMember(t, n.id)), [n, t]),
-        d = (0, A.gn)(_?.guildId, _?.userId, _?.colorStrings ?? null),
-        g = r.useCallback(
+function B(e) {
+    let { guildId: t, inviterUser: n, joinSourceType: a, className: E, onClickInviter: _ } = e,
+        c = (0, s.bG)([C.Ay], () => (null == n ? null : C.Ay.getMember(t, n.id)), [n, t]),
+        o = (0, m.gn)(c?.guildId, c?.userId, c?.colorStrings ?? null),
+        A = r.useCallback(
             (e) => {
-                e.stopPropagation(), e.preventDefault(), null != n && u?.(n);
+                e.stopPropagation(), e.preventDefault(), null != n && _?.(n);
             },
-            [n, u],
+            [n, _],
         );
     return null == n
         ? null
         : (0, l.jsxs)("div", {
-              className: i()(D.u6, o),
+              className: i()(j.u6, E),
               children: [
-                  (0, l.jsx)(E.Text, {
+                  (0, l.jsx)(u.E, {
                       variant: "text-xs/medium",
-                      children: a !== R.UP.BOT ? L.intl.string(L.t.azhY2u) : L.intl.string(L.t["2ByN2n"]),
+                      children: a !== P.UP.BOT ? k.intl.string(k.t.azhY2u) : k.intl.string(k.t["2ByN2n"]),
                   }),
-                  (0, l.jsxs)(E.DUT, {
-                      className: i()(D.kp, null != u && D.vk),
-                      onClick: g,
+                  (0, l.jsxs)(g.D, {
+                      className: i()(j.kp, null != _ && j.vk),
+                      onClick: A,
                       children: [
-                          (0, l.jsx)(c.A, { user: n, size: E._3J.SIZE_16 }),
-                          (0, l.jsx)(E.Text, {
+                          (0, l.jsx)(O.A, { user: n, size: I._3.SIZE_16 }),
+                          (0, l.jsx)(u.E, {
                               variant: "text-xs/medium",
-                              children: (0, l.jsx)(E.gyj, {
-                                  name: G.Ay.getName(t, null, n),
-                                  colorString: _?.colorString ?? null,
-                                  colorStrings: d,
+                              children: (0, l.jsx)(N.g, {
+                                  name: f.Ay.getName(t, null, n),
+                                  colorString: c?.colorString ?? null,
+                                  colorStrings: o,
                               }),
                           }),
                       ],
@@ -141,187 +150,184 @@ function p(e) {
               ],
           });
 }
-function U(e) {
+function y(e) {
     let { channel: t, className: n } = e,
-        r = (0, d.Ay)(t, !0);
+        r = (0, D.Ay)(t, !0);
     return (0, l.jsx)("div", {
-        className: i()(D.kp, n),
-        children: (0, l.jsx)(E.Text, {
+        className: i()(j.kp, n),
+        children: (0, l.jsx)(u.E, {
             variant: "text-xs/medium",
-            children: L.intl.format(L.t["2VQq2p"], { channelName: r ?? L.intl.string(L.t.zLZPmk) }),
+            children: k.intl.format(k.t["2VQq2p"], { channelName: r ?? k.intl.string(k.t.zLZPmk) }),
         }),
     });
 }
-function k(e) {
-    let { children: t, hasTooltip: n, guildId: a, inviterUser: i, joinSourceType: E, joinSourceChannelId: u } = e,
-        c = (0, s.bG)([I.A], () => I.A.getChannel(u)),
-        _ = (0, d.Ay)(c, !0),
-        g = !!n && (E === R.UP.SOCIAL_LAYER_INTEGRATION_LINKED_CHANNEL || null != i),
-        A = r.useMemo(
+function V(e) {
+    let { children: t, hasTooltip: n, guildId: a, inviterUser: i, joinSourceType: u, joinSourceChannelId: _ } = e,
+        c = (0, s.bG)([h.A], () => h.A.getChannel(_)),
+        o = (0, D.Ay)(c, !0),
+        A = !!n && (u === P.UP.SOCIAL_LAYER_INTEGRATION_LINKED_CHANNEL || null != i),
+        d = r.useMemo(
             () =>
-                E === R.UP.SOCIAL_LAYER_INTEGRATION_LINKED_CHANNEL
-                    ? (0, l.jsx)(U, { channel: c })
-                    : (0, l.jsx)(p, { guildId: a, inviterUser: i, joinSourceType: E }),
-            [E, a, i, c],
+                u === P.UP.SOCIAL_LAYER_INTEGRATION_LINKED_CHANNEL
+                    ? (0, l.jsx)(y, { channel: c })
+                    : (0, l.jsx)(B, { guildId: a, inviterUser: i, joinSourceType: u }),
+            [u, a, i, c],
         );
-    if (!g) return t;
+    if (!A) return t;
     let T =
-        E === R.UP.SOCIAL_LAYER_INTEGRATION_LINKED_CHANNEL
-            ? L.intl.formatToPlainString(L.t["2VQq2p"], { channelName: _ ?? L.intl.string(L.t.zLZPmk) })
-            : E === R.UP.BOT
-              ? L.intl.string(L.t["2ByN2n"])
-              : L.intl.string(L.t.azhY2u);
-    return (0, l.jsx)(o.m, { "aria-label": T, __unsupportedReactNodeAsText: A, children: t });
+        u === P.UP.SOCIAL_LAYER_INTEGRATION_LINKED_CHANNEL
+            ? k.intl.formatToPlainString(k.t["2VQq2p"], { channelName: o ?? k.intl.string(k.t.zLZPmk) })
+            : u === P.UP.BOT
+              ? k.intl.string(k.t["2ByN2n"])
+              : k.intl.string(k.t.azhY2u);
+    return (0, l.jsx)(E.m, { "aria-label": T, __unsupportedReactNodeAsText: d, children: t });
 }
-function b(e) {
+function H(e) {
     let { type: t } = e,
-        n = (0, R.eN)(t);
+        n = (0, P.eN)(t);
     return null == n
         ? null
-        : (0, l.jsx)("div", { className: D.c5, style: { width: 12, height: 12, backgroundImage: n } });
+        : (0, l.jsx)("div", { className: j.c5, style: { width: 12, height: 12, backgroundImage: n } });
 }
-function F(e) {
+function w(e) {
     let {
             sourceInviteCode: t,
             joinSourceType: n,
             joinSourceApplicationId: a,
-            integrationType: o,
-            joinSourceChannelId: u,
+            integrationType: E,
+            joinSourceChannelId: _,
             showJoinMethodContextAsFooter: c,
-            guildId: d,
+            guildId: o,
             inviterUser: A,
-            onClickInviter: T,
-            ...N
+            onClickInviter: d,
+            ...T
         } = e,
-        h = null != n ? M[n] : null,
-        m = n === R.UP.INTEGRATION && null != o,
-        S = (0, _.h)(a),
-        G = (0, s.bG)([I.A], () => I.A.getChannel(u)),
-        O = r.useCallback(
+        I = null != n ? b[n] : null,
+        N = n === P.UP.INTEGRATION && null != E,
+        G = (0, S.h)(a),
+        O = (0, s.bG)([h.A], () => h.A.getChannel(_)),
+        D = r.useCallback(
             (e) => {
                 switch ((e.stopPropagation(), e.preventDefault(), !0)) {
                     case null == t && null == n:
                     case null == n:
                         return;
-                    case n === R.UP.INVITE && null != t:
-                        return void (0, C.Ld)(d, {
+                    case n === P.UP.INVITE && null != t:
+                        return void (0, F.Ld)(o, {
                             selectedSourceInviteCode: t?.trim() ?? void 0,
                             selectedJoinSourceType: n,
                         });
                     default:
-                        return void (0, C.Ld)(d, {
+                        return void (0, F.Ld)(o, {
                             selectedSourceInviteCode: null,
                             selectedJoinSourceType: n ?? void 0,
                         });
                 }
             },
-            [d, n, t],
+            [o, n, t],
         );
     switch (!0) {
-        case null == h:
+        case null == I:
         case null == n:
-        case n === R.UP.UNSPECIFIED:
-            return (0, l.jsx)(f, { ...N });
-        case null != o && m:
-            return (0, l.jsxs)(E.DUT, {
-                className: D.B$,
-                ...N,
-                "aria-label": (0, R.v8)(o),
+        case n === P.UP.UNSPECIFIED:
+            return (0, l.jsx)(v, { ...T });
+        case null != E && N:
+            return (0, l.jsxs)(g.D, {
+                className: j.B$,
+                ...T,
+                "aria-label": (0, P.v8)(E),
                 role: "button",
                 tabIndex: 0,
-                onClick: O,
+                onClick: D,
                 children: [
-                    (0, l.jsx)(b, { type: o }),
-                    (0, l.jsx)(E.Text, { variant: "text-sm/medium", children: (0, R.v8)(o) }),
+                    (0, l.jsx)(H, { type: E }),
+                    (0, l.jsx)(u.E, { variant: "text-sm/medium", children: (0, P.v8)(E) }),
                 ],
             });
-        case n === R.UP.SOCIAL_LAYER_INTEGRATION_LINKED_CHANNEL && null != S:
+        case n === P.UP.SOCIAL_LAYER_INTEGRATION_LINKED_CHANNEL && null != G:
             return (0, l.jsxs)("div", {
-                className: i()(c && D.TS),
+                className: i()(c && j.TS),
                 children: [
-                    (0, l.jsxs)(E.DUT, {
-                        className: D.SH,
-                        ...N,
-                        "aria-label": h?.getJoinTypeLabel(t ?? void 0),
+                    (0, l.jsxs)(g.D, {
+                        className: j.SH,
+                        ...T,
+                        "aria-label": I?.getJoinTypeLabel(t ?? void 0),
                         role: "button",
                         tabIndex: 0,
-                        onClick: O,
+                        onClick: D,
                         children: [
-                            (0, l.jsx)(g.A, { game: S, size: g.M.XXSMALL }),
-                            (0, l.jsx)(E.Text, { variant: "text-sm/medium", className: D.YL, children: S.name }),
+                            (0, l.jsx)(R.A, { game: G, size: R.M.XXSMALL }),
+                            (0, l.jsx)(u.E, { variant: "text-sm/medium", className: j.YL, children: G.name }),
                         ],
                     }),
-                    c && (0, l.jsx)(U, { channel: G }),
+                    c && (0, l.jsx)(y, { channel: O }),
                 ],
             });
-        case null != h:
+        case null != I:
             return (0, l.jsxs)("div", {
-                className: i()(c && D.TS),
+                className: i()(c && j.TS),
                 children: [
-                    (0, l.jsxs)(E.DUT, {
-                        className: D.B$,
-                        ...N,
-                        "aria-label": h?.getJoinTypeLabel(t ?? void 0),
+                    (0, l.jsxs)(g.D, {
+                        className: j.B$,
+                        ...T,
+                        "aria-label": I?.getJoinTypeLabel(t ?? void 0),
                         role: "button",
                         tabIndex: 0,
-                        onClick: O,
+                        onClick: D,
                         children: [
-                            h?.icon,
-                            (0, l.jsx)(E.Text, {
-                                variant: "text-sm/medium",
-                                children: h?.getJoinTypeLabel(t ?? void 0),
-                            }),
+                            I?.icon,
+                            (0, l.jsx)(u.E, { variant: "text-sm/medium", children: I?.getJoinTypeLabel(t ?? void 0) }),
                         ],
                     }),
                     c &&
-                        (0, l.jsx)(p, {
-                            guildId: d,
+                        (0, l.jsx)(B, {
+                            guildId: o,
                             inviterUser: A,
                             joinSourceType: n,
-                            className: D.nz,
-                            onClickInviter: T,
+                            className: j.nz,
+                            onClickInviter: d,
                         }),
                 ],
             });
         default:
-            return (0, l.jsx)(f, { ...N });
+            return (0, l.jsx)(v, { ...T });
     }
 }
-let j = r.memo(function (e) {
+let Y = r.memo(function (e) {
     let { userId: t, guildId: n, showJoinMethodContextAsFooter: a, onClickInviter: i } = e,
-        o = (0, s.bG)([O.A], () => O.A.getEnhancedMember(n, t), [n, t]),
-        E = o?.inviterId ?? null,
-        c = (0, s.bG)([m.default], () => m.default.getUser(E), [E]);
+        E = (0, s.bG)([p.A], () => p.A.getEnhancedMember(n, t), [n, t]),
+        u = E?.inviterId ?? null,
+        _ = (0, s.bG)([U.default], () => U.default.getUser(u), [u]);
     r.useEffect(() => {
-        null != E && (u.A.requestMembersById(n, [E]), (0, T.A)(E, void 0, { guildId: n }));
-    }, [n, E]);
-    let _ = (0, s.bG)([h.A], () => h.A.hideInstantInvites, []);
-    if (null == o) return (0, l.jsx)(f, {});
+        null != u && (G.A.requestMembersById(n, [u]), (0, L.A)(u, void 0, { guildId: n }));
+    }, [n, u]);
+    let c = (0, s.bG)([M.A], () => M.A.hideInstantInvites, []);
+    if (null == E) return (0, l.jsx)(v, {});
     let {
-            sourceInviteCode: d,
-            joinSourceType: g,
-            joinSourceChannelId: A,
-            joinSourceApplicationId: I,
-            integrationType: N,
-        } = o,
-        S = null != g ? M[g] : null,
-        G = S?.hasTooltip ?? !1;
-    return (g === R.UP.INVITE || g === R.UP.VANITY_URL || (g === R.UP.MANUAL_MEMBER_VERIFICATION && null != d)) && _
-        ? (0, l.jsx)(x, {})
-        : (0, l.jsx)(k, {
-              hasTooltip: G && !a,
-              inviterUser: c ?? null,
+            sourceInviteCode: o,
+            joinSourceType: A,
+            joinSourceChannelId: d,
+            joinSourceApplicationId: T,
+            integrationType: g,
+        } = E,
+        I = null != A ? b[A] : null,
+        N = I?.hasTooltip ?? !1;
+    return (A === P.UP.INVITE || A === P.UP.VANITY_URL || (A === P.UP.MANUAL_MEMBER_VERIFICATION && null != o)) && c
+        ? (0, l.jsx)(X, {})
+        : (0, l.jsx)(V, {
+              hasTooltip: N && !a,
+              inviterUser: _ ?? null,
               guildId: n,
-              joinSourceType: g,
-              joinSourceChannelId: A,
-              children: (0, l.jsx)(F, {
-                  sourceInviteCode: d,
-                  joinSourceType: g,
-                  joinSourceApplicationId: I,
-                  joinSourceChannelId: A,
-                  integrationType: N,
+              joinSourceType: A,
+              joinSourceChannelId: d,
+              children: (0, l.jsx)(w, {
+                  sourceInviteCode: o,
+                  joinSourceType: A,
+                  joinSourceApplicationId: T,
+                  joinSourceChannelId: d,
+                  integrationType: g,
                   showJoinMethodContextAsFooter: a,
-                  inviterUser: c ?? null,
+                  inviterUser: _ ?? null,
                   guildId: n,
                   onClickInviter: i,
               }),

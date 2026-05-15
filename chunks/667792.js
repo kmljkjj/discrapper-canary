@@ -1,3 +1,118 @@
-k.exports = JSON.parse(
-    '{"tq8598":["您遇到什麼問題？"],"PL2l6A":["麥克風或音訊"],"FVhMw6":["連線或延遲"],"Moa3W9":["通話中的對象"],"0ZBLiZ":["正在直播"],"TVTIT1":["觀看直播"],"0WFzPh":["視訊攝影機"],"nWQLXk":["虛擬背景"],"kbbtwi":["其他人說我的音訊有問題"],"Q5Dsaz":["有人出現回音"],"1DnNRO":["其他人的音質很差"],"ftSvQ0":["我完全聽不到其他人的聲音"],"GWypH+":["其他人完全聽不到我的聲音"],"2IG95D":["我聽不到遊戲的音訊"],"4qlGrO":["我使用麥克風時出現問題"],"05VSjm":["我無法使用正確的音訊裝置"],"J2FWpi":["我無法使用正確的麥克風"],"Fx8+Jk":["我無法使用正確的耳機或喇叭"],"anHk1/":["有人的背景雜音很大聲"],"RK9DUi":["有人的聲音斷斷續續"],"yGe0BL":["有人的聲音聽起來像機器人"],"RuTscn":["有人的音量太大"],"WyMQjL":["有人的音量太小"],"1o77I3":["有人的音量太小/太大"],"RGRgmM":["音訊延遲"],"gMHKDJ":["我無法連線"],"y5k8Jq":["我通話時延遲很嚴重"],"y06Ayn":["連線時間很久"],"K5vYQA":["有人的聲音斷斷續續"],"f2914v":["有人的聲音聽起來像機器人"],"zk+QL1":["音訊和視訊不同步"],"PLBRzF":["有人從事惡意或不當的行為"],"zIC+8Y":["其他人說我的直播音質很差"],"RRZZZb":["其他人說我的直播畫面全黑"],"8ceyQy":["其他人說我的直播畫面模糊或粗糙"],"w+kiDF":["其他人無法載入我的直播"],"JS6akP":["其他人說我的直播視訊和音訊不同步"],"3PKSkd":["其他人說我的直播畫面很卡"],"iMxexK":["其他人說我的直播畫面有延遲"],"HaZSC3":["其他人說聽不到我直播的聲音"],"TaIrh5":["我聽不到遊戲的音訊"],"/nlKuG":["我的直播突然中斷"],"k7bdGE":["這場直播的音訊品質很低"],"aml28x":["直播畫面全黑"],"qdBn3L":["直播畫面模糊或粗糙"],"jU9Zs8":["我無法載入直播"],"JfAvQp":["直播的音訊和視訊不同步"],"V3EeCH":["直播畫面卡住或停頓"],"hi1Y39":["直播延遲了"],"DOOlop":["我聽不見這場直播"],"jPD998":["我的直播突然中斷"],"ie5nCG":["我的虛擬背景有東西在閃"],"zYumoj":["我的虛擬背景擷取錯誤"],"Gg/Y1X":["我移動時，虛擬背景就會延遲"],"calUNv":["我的虛擬背景模糊或出現光暈"],"Bh+02d":["我的視訊攝影機畫面全黑"],"QbC6La":["我找不到或者打不開視訊攝影機"],"k7Idoz":["有人的視訊攝影機畫面模糊或粗糙"],"8I/GUL":["有人的視訊攝影機畫面很卡"],"R+wqwU":["有人的視訊攝影機畫面全黑"],"vRDE5O":["音訊和視訊不同步"]}',
-);
+n.d(t, { default: () => E }), n(801541);
+var s = n(627968),
+    r = n(64700),
+    i = n(284009),
+    a = n.n(i),
+    l = n(889137),
+    u = n(189213),
+    o = n(17928),
+    d = n(231723),
+    c = n(331322),
+    m = n(292666),
+    h = n(834730),
+    g = n(631670),
+    p = n(546727),
+    x = n(5052),
+    f = n(836602),
+    b = n(287809),
+    v = n(927578),
+    U = n(652215),
+    j = n(375708),
+    C = n(621979);
+function E(e) {
+    var t;
+    let { transitionState: n, onClose: i } = e,
+        E = (0, o.bG)([b.default], () => {
+            let e = b.default.getCurrentUser();
+            return a()(null != e, "ChangeUsernameModal: currentUser cannot be undefined"), e;
+        }),
+        k = r.useMemo(() => v.Ay.canEditDiscriminator(E) && !E.hasUniqueUsername(), [E]),
+        [y, w] = r.useState(E.username),
+        [R, S] = r.useState(E.discriminator),
+        [q, A] = r.useState(""),
+        [L, M] = r.useState(!1),
+        T = (0, o.bG)([f.A], () => f.A.getErrors()),
+        W = E.hasUniqueUsername(),
+        z = (0, x.i)(y, W, !1, E.username),
+        B = r.useRef(null),
+        D = r.useMemo(() => T?.username?.[0] ?? T?.discriminator?.[0], [T]);
+    r.useEffect(() => {
+        n === d.ip.ENTERED && B.current?.focus();
+    }, [n]);
+    let N = R !== E.discriminator;
+    async function P(e) {
+        e.preventDefault(), M(!0);
+        let t = await (0, g._L)({ username: y, discriminator: k ? R : void 0, password: q });
+        M(!1), t?.ok && i();
+    }
+    return (0, s.jsx)("form", {
+        onSubmit: P,
+        children: (0, s.jsx)(u.Modal, {
+            onClose: i,
+            transitionState: n,
+            title: j.intl.string(j.t.m5or54),
+            subtitle: j.intl.string(j.t.SLJvy0),
+            actions: [
+                { variant: "secondary", text: j.intl.string(j.t["ETE/oC"]), onClick: i },
+                { variant: "primary", text: j.intl.string(j.t.i4jeWR), type: "submit", loading: L },
+            ],
+            children: (0, s.jsxs)(c.B, {
+                gap: 16,
+                children: [
+                    (0, s.jsxs)("div", {
+                        children: [
+                            (0, s.jsxs)(c.B, {
+                                direction: "horizontal",
+                                gap: 4,
+                                children: [
+                                    (0, s.jsx)(m.k, {
+                                        label: j.intl.string(j.t.TWzdWj),
+                                        error: D,
+                                        name: "username",
+                                        value: y,
+                                        maxLength: U.d0r,
+                                        onChange: w,
+                                        inputRef: B,
+                                        fullWidth: !0,
+                                        ...((t = E.hasUniqueUsername()),
+                                        (0, l.YW)(z)
+                                            .with({ type: p.q.ERROR, message: l.P.select() }, (e) => ({ error: e }))
+                                            .with({ type: p.q.AVAILABLE, message: l.P.select() }, (e) => ({
+                                                successMessage: e,
+                                            }))
+                                            .otherwise(() => (t ? { helperText: j.intl.string(j.t.z7c4bP) } : {}))),
+                                    }),
+                                    !E.hasUniqueUsername() &&
+                                        (0, s.jsx)(m.k, {
+                                            name: "discriminator",
+                                            "aria-label": j.intl.string(j.t.ozumaN),
+                                            maxLength: 4,
+                                            value: R,
+                                            onChange: S,
+                                            disabled: !k,
+                                            leading: "#",
+                                        }),
+                                ],
+                            }),
+                            N
+                                ? (0, s.jsx)(h.E, {
+                                      variant: "text-xs/normal",
+                                      color: "text-default",
+                                      className: C.Z,
+                                      children: j.intl.string(j.t.mConUX),
+                                  })
+                                : null,
+                        ],
+                    }),
+                    (0, s.jsx)(m.k, {
+                        label: j.intl.string(j.t.TmdnJ3),
+                        error: T?.password?.[0],
+                        type: "password",
+                        value: q,
+                        onChange: A,
+                    }),
+                ],
+            }),
+        }),
+    });
+}

@@ -1,6 +1,7 @@
-n.d(t, { k: () => i });
-var a = n(397927),
-    s = n(830215);
-function i(e) {
-    (0, a.s7G)(), s.A.logout(e);
+"use strict";
+n.d(t, { k: () => s });
+var i = n(192308),
+    r = n(830215);
+function s(e) {
+    (0, i.closeAllModals)(), r.A.logout(e);
 }

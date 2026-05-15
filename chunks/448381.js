@@ -1,28 +1,27 @@
-n.d(t, { EF: () => u, NI: () => d, Xg: () => o, wz: () => m }), n(938796);
-var i = n(665260),
-    s = n(77350),
-    l = n(639169),
-    a = n(652215);
-let r = /\.(mp3|m4a|ogg|opus|wav|flac)$/i,
-    o = (e) => "IMAGE" === e || "VIDEO" === e || "CLIP" === e || "VISUAL_PLACEHOLDER" === e,
-    u = (e) => "IMAGE" === e || "VIDEO" === e || "VISUAL_PLACEHOLDER" === e;
-function d(e, t) {
-    let { filename: n, width: o, height: u } = e;
-    if (t && null != o && o > 0 && null != u && u > 0)
-        if ((0, s.u)(n)) return "IMAGE";
-        else if ((0, s.AE)(n) && null != e.proxy_url) return (0, i.Lt)(e.flags ?? 0, a.sbO.IS_CLIP) ? "CLIP" : "VIDEO";
+r.d(u, { NI: () => s, Xg: () => i, wz: () => L }), r(938796);
+var n = r(665260),
+    e = r(59318),
+    t = r(639169),
+    I = r(652215);
+let E = /\.(mp3|m4a|ogg|opus|wav|flac)$/i,
+    i = (l) => "IMAGE" === l || "VIDEO" === l || "CLIP" === l || "VISUAL_PLACEHOLDER" === l;
+function s(l, u) {
+    let { filename: r, width: i, height: s } = l;
+    if (u && null != i && i > 0 && null != s && s > 0)
+        if ((0, e.u)(r)) return "IMAGE";
+        else if ((0, e.AE)(r) && null != l.proxy_url) return (0, n.Lt)(l.flags ?? 0, I.sbO.IS_CLIP) ? "CLIP" : "VIDEO";
         else return "INVALID";
-    return null != t && r.test(n) && null != e.url
+    return null != u && E.test(r) && null != l.url
         ? "AUDIO"
-        : null != e.url && (0, l.C)(n)
+        : null != l.url && (0, t.C)(r)
           ? "PLAINTEXT_PREVIEW"
           : "OTHER";
 }
-function m(e) {
-    let { contentType: t, width: n, height: i } = e;
-    if (null != n && n > 0 && null != i && i > 0) {
-        if ((0, s.tT)(t)) return "IMAGE";
-        else if ((0, s.XB)(t)) return "VIDEO";
+function L(l) {
+    let { contentType: u, width: r, height: n } = l;
+    if (null != r && r > 0 && null != n && n > 0) {
+        if ((0, e.tT)(u)) return "IMAGE";
+        else if ((0, e.XB)(u)) return "VIDEO";
     }
     return "VISUAL_PLACEHOLDER";
 }

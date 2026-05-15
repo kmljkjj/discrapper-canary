@@ -1,45 +1,45 @@
 "use strict";
 n.d(t, { Ay: () => d, Vi: () => c, pO: () => _ }), n(938796), n(321073);
-var r = n(284009),
-    i = n.n(r),
-    a = n(9842),
-    s = n(427157),
+var i = n(284009),
+    r = n.n(i),
+    s = n(9842),
+    a = n(889227),
     o = n(287809),
     l = n(195880),
     u = n(652215);
 function c(e) {
-    let { id: t, username: n, avatar: r, discriminator: i, bot: a, globalName: s } = e;
-    return { id: t, username: n, avatar: r, discriminator: i, bot: a, global_name: s };
+    let { id: t, username: n, avatar: i, discriminator: r, bot: s, globalName: a, primaryGuild: o } = e;
+    return { id: t, username: n, avatar: i, discriminator: r, bot: s, global_name: a, primary_guild: o };
 }
 function d(e) {
     let {
             channelId: t,
             content: n,
-            tts: r = !1,
+            tts: i = !1,
             type: d = u.lAJ.DEFAULT,
             messageReference: _,
             allowedMentions: f,
             author: h,
             flags: p,
-            nonce: g,
-            poll: E,
-            sharedCustomTheme: A,
-            changelogId: I,
-            giftingPrompt: T,
-            boostingPrompt: y,
+            nonce: E,
+            poll: m,
+            sharedCustomTheme: g,
+            changelogId: A,
+            giftingPrompt: I,
+            boostingPrompt: T,
             state: S,
         } = e,
-        v = [];
-    if (d === u.lAJ.REPLY && (i()(null != _, "Replies must have a message reference"), null == f || f.replied_user)) {
-        let e = a.A.getMessageByReference(_);
-        e?.state === a.a.LOADED && v.push(c(e.message.author));
+        N = [];
+    if (d === u.lAJ.REPLY && (r()(null != _, "Replies must have a message reference"), null == f || f.replied_user)) {
+        let e = s.A.getMessageByReference(_);
+        e?.state === s.a.LOADED && N.push(c(e.message.author));
     }
     return (
         null == h && (h = o.default.getCurrentUser()),
-        h instanceof s.A && (h = c(h)),
-        i()(null != h, "createMessage: author cannot be undefined"),
+        h instanceof a.A && (h = c(h)),
+        r()(null != h, "createMessage: author cannot be undefined"),
         {
-            id: g ?? (0, l.m)(),
+            id: E ?? (0, l.m)(),
             type: d,
             content: n,
             channel_id: t,
@@ -47,36 +47,36 @@ function d(e) {
             attachments: [],
             embeds: [],
             pinned: !1,
-            mentions: v,
+            mentions: N,
             mention_channels: [],
             mention_roles: [],
             mention_everyone: !1,
             timestamp: new Date().toISOString(),
-            state: S || u.cmJ.SENDING,
-            tts: r,
+            state: S ?? u.cmJ.SENDING,
+            tts: i,
             message_reference: _,
             message_snapshots: [],
             flags: p,
-            nonce: g,
-            poll: E,
-            shared_client_theme: A,
-            changelog_id: I,
-            gifting_prompt: T,
-            boosting_prompt: y,
+            nonce: E,
+            poll: m,
+            shared_client_theme: g,
+            changelog_id: A,
+            gifting_prompt: I,
+            boosting_prompt: T,
         }
     );
 }
 function _(e) {
-    let { messageId: t, channelId: n, content: r, embeds: i, loggingName: a } = e;
+    let { messageId: t, channelId: n, content: i, embeds: r, loggingName: s } = e;
     return {
         id: t ?? (0, l.m)(),
         type: u.lAJ.DEFAULT,
         flags: u.pr7.EPHEMERAL,
-        content: r,
+        content: i,
         channel_id: n,
         author: { id: u.oIV, username: "Clyde", discriminator: u.h3J, avatar: "clyde", bot: !0 },
         attachments: [],
-        embeds: i ?? [],
+        embeds: r ?? [],
         pinned: !1,
         mentions: [],
         mention_channels: [],
@@ -85,6 +85,6 @@ function _(e) {
         timestamp: new Date().toISOString(),
         state: u.cmJ.SENT,
         tts: !1,
-        loggingName: a,
+        loggingName: s,
     };
 }

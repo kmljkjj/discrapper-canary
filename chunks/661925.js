@@ -1,51 +1,62 @@
-n.d(e, { default: () => g });
-var i = n(627968),
-    l = n(64700),
-    a = n(284009),
-    r = n.n(a),
-    s = n(158954),
-    u = n(311907),
-    d = n(397927),
-    o = n(452357),
-    c = n(287809),
-    m = n(985018),
-    f = n(143021);
-let g = function (t) {
-    let { onClose: e, transitionState: a } = t,
-        g = (0, u.bG)([c.default], () => c.default.getCurrentUser()),
-        [k, b] = l.useState(!1),
-        C = l.useCallback(() => (e?.(), Promise.resolve()), [e]),
-        x = l.useCallback(() => {
+n.d(e, { default: () => C });
+var a = n(627968),
+    i = n(64700),
+    l = n(284009),
+    r = n.n(l),
+    s = n(189213),
+    o = n(17928),
+    c = n(192308),
+    d = n(834730),
+    u = n(940856),
+    m = n(287809),
+    k = n(375708),
+    p = n(696850);
+let C = function (t) {
+    let { onClose: e, transitionState: l } = t,
+        C = (0, o.bG)([m.default], () => m.default.getCurrentUser()),
+        [b, f] = i.useState(!1),
+        g = i.useCallback(() => (e?.(), Promise.resolve()), [e]),
+        h = i.useCallback(() => {
             e?.(),
-                (0, d.mMO)(async () => {
-                    let { default: t } = await Promise.all([n.e("83269"), n.e("17726")]).then(n.bind(n, 350116));
-                    return (e) => (0, i.jsx)(t, { ...e });
+                (0, c.openModalLazy)(async () => {
+                    let { default: t } = await Promise.all([
+                        n.e("97570"),
+                        n.e("93010"),
+                        n.e("88941"),
+                        n.e("62680"),
+                        n.e("32606"),
+                        n.e("27323"),
+                        n.e("20577"),
+                        n.e("47999"),
+                        n.e("65861"),
+                    ]).then(n.bind(n, 97060));
+                    return (e) => (0, a.jsx)(t, { ...e });
                 });
         }, [e]),
-        p = l.useCallback(() => {
+        x = i.useCallback(() => {
             e?.(),
-                r()(null != g, "ResendEmailVerificationButton: currentUser cannot be undefined"),
-                b(!0),
-                (0, o.S)(g).finally(() => b(!1));
-        }, [g, e]),
-        h = l.useMemo(
+                r()(null != C, "ResendEmailVerificationButton: currentUser cannot be undefined"),
+                f(!0),
+                (0, u.S)(C).finally(() => f(!1));
+        }, [C, e]),
+        v = i.useMemo(
             () =>
-                g?.email == null
-                    ? [{ text: m.intl.string(m.t.ydw5nX), onClick: x, variant: "primary" }]
+                C?.email == null
+                    ? [{ text: k.intl.string(k.t.ydw5nX), onClick: h, variant: "primary" }]
                     : [
-                          { text: m.intl.string(m.t.Vm8akB), onClick: x, variant: "secondary" },
-                          { text: m.intl.string(m.t.lm1UKt), onClick: p, variant: "primary", loading: k },
+                          { text: k.intl.string(k.t.Vm8akB), onClick: h, variant: "secondary" },
+                          { text: k.intl.string(k.t.lm1UKt), onClick: x, variant: "primary", loading: b },
                       ],
-            [g, x, p, k],
+            [C, h, x, b],
         );
-    return (0, i.jsxs)(s.Modal, {
-        title: m.intl.string(m.t.UZLrY1),
-        transitionState: a,
-        onClose: C,
-        actions: h,
+    return (0, a.jsxs)(s.Modal, {
+        title: k.intl.string(k.t.UZLrY1),
+        transitionState: l,
+        onClose: g,
+        actions: v,
         children: [
-            (0, i.jsx)("div", { className: f.p }),
-            (0, i.jsx)(d.Text, { variant: "text-md/normal", className: f.i, children: m.intl.string(m.t["0LgOKH"]) }),
+            (0, a.jsx)("div", { className: p.p }),
+            (0, a.jsx)(d.E, { variant: "text-md/normal", className: p.i, children: k.intl.string(k.t["0LgOKH"]) }),
         ],
     });
 };

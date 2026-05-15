@@ -1,50 +1,51 @@
-n.d(t, { GQ: () => h, NF: () => A, QG: () => g, Tp: () => x, ZR: () => p, ne: () => f });
-var i = n(311907),
-    l = n(554146),
-    a = n(826673),
-    r = n(367727),
-    s = n(927813),
-    o = n(661191),
-    d = n(851746),
+"use strict";
+n.d(t, { GQ: () => h, NF: () => m, QG: () => E, Tp: () => A, ZR: () => p, ne: () => g });
+var i = n(17928),
+    r = n(554146),
+    s = n(826673),
+    a = n(281678),
+    o = n(927813),
+    l = n(935208),
+    u = n(851746),
     c = n(894374),
-    u = n(103411),
-    m = n(49999),
-    _ = n(985018);
+    d = n(103411),
+    _ = n(49999),
+    f = n(375708);
 function h(e) {
-    let t = (e - Date.now()) / s.A.Millis.HOUR;
+    let t = (e - Date.now()) / o.A.Millis.HOUR;
     return t > 24
-        ? _.intl.formatToPlainString(_.t["g9s+dA"], { numDays: Math.floor(t / 24) })
+        ? f.intl.formatToPlainString(f.t["g9s+dA"], { numDays: Math.floor(t / 24) })
         : t >= 1
-          ? _.intl.formatToPlainString(_.t.k9v33y, { numHours: Math.floor(t) })
-          : _.intl.formatToPlainString(_.t["/d0GmT"], { numMinutes: Math.floor(60 * t) });
+          ? f.intl.formatToPlainString(f.t.k9v33y, { numHours: Math.floor(t) })
+          : f.intl.formatToPlainString(f.t["/d0GmT"], { numMinutes: Math.floor(60 * t) });
 }
-let p = () => (0, a.k8)(l.M.REFERRAL_PROGRAM_NITRO_TAB_BADGE),
-    g = () => {
-        (0, a.Dr)(l.M.REFERRAL_PROGRAM_NITRO_TAB_BADGE);
+let p = () => (0, s.k8)(r.M.REFERRAL_PROGRAM_NITRO_TAB_BADGE),
+    E = () => {
+        (0, s.Dr)(r.M.REFERRAL_PROGRAM_NITRO_TAB_BADGE);
     },
-    A = (e) => {
+    m = (e) => {
         let { trialOffer: t } = e;
         if (null == t) return !1;
         let n = void 0 !== t.referrer_id,
             i = void 0 === t.redeemed_at,
-            l = new Date(o.default.extractTimestamp(t.id)),
-            a = new Date();
-        return n && i && a >= l;
+            r = new Date(l.default.extractTimestamp(t.id)),
+            s = new Date();
+        return n && i && s >= r;
     },
-    f = (e) => {
+    g = (e) => {
         null != e
-            ? (0, r.qr)(l.M.REFERRAL_PROGRAM_POPOVER_V2, e, { dismissAction: m.i.INDIRECT_ACTION })
-            : (0, a.Dr)(l.M.REFERRAL_PROGRAM_POPOVER);
+            ? (0, a.qr)(r.M.REFERRAL_PROGRAM_POPOVER_V2, e, { dismissAction: _.i.INDIRECT_ACTION })
+            : (0, s.Dr)(r.M.REFERRAL_PROGRAM_POPOVER);
     },
-    x = () => {
+    A = () => {
         let e,
-            t = (0, u.m)(!1),
-            n = (0, i.bG)([d.A], () => d.A.getReferralsRemaining()),
-            r = (0, i.bG)([d.A], () => d.A.getReminderStateId());
+            t = (0, d.m)(!1),
+            n = (0, i.bG)([u.A], () => u.A.getReferralsRemaining()),
+            a = (0, i.bG)([u.A], () => u.A.getReminderStateId());
         return (
             (e = (0, c.A)({ location: "ReferralProgramUtils" })
-                ? null != r && !(0, a.u$)(l.M.REFERRAL_PROGRAM_POPOVER_V2, r).isDismissed
-                : !(0, a.k8)(l.M.REFERRAL_PROGRAM_POPOVER)),
+                ? null != a && !(0, s.u$)(r.M.REFERRAL_PROGRAM_POPOVER_V2, a).isDismissed
+                : !(0, s.k8)(r.M.REFERRAL_PROGRAM_POPOVER)),
             t && e && null != n && n > 0
         );
     };

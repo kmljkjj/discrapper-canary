@@ -1,74 +1,79 @@
 "use strict";
-n.d(t, { A: () => A });
-var r = n(64700),
-    i = n(621466),
-    a = n(311907),
-    s = n(192308),
-    o = n(397927),
+n.d(t, { A: () => g });
+var i = n(64700),
+    r = n(621466),
+    s = n(17928),
+    a = n(192308),
+    o = n(312138),
     l = n(775121),
-    u = n(955572),
-    c = n(775602),
-    d = n(502229),
-    _ = n(532624),
-    f = n(350535),
-    p = n(650583);
-function h(e) {
+    d = n(955572),
+    _ = n(775602),
+    u = n(502229),
+    c = n(532624),
+    E = n(350535),
+    h = n(650583);
+function m(e) {
     let t = e.ctrlKey || e.altKey || e.metaKey;
-    e.key !== p.N$.Tab ||
+    e.key !== h.N$.Tab ||
         t ||
         __OVERLAY__ ||
-        (0, s.hasAnyModalOpen)() ||
-        d.A.maybeShowKeyboardNavigationExplainerModal();
+        (0, a.hasAnyModalOpen)() ||
+        u.A.maybeShowKeyboardNavigationExplainerModal();
 }
-function m(e) {
-    let t = f.Cy("shift"),
-        n = f.Cy("tab");
-    if (e.key === p.N$.Tab && e.shiftKey && null != t && null != n)
-        return [
-            [p.zY.KEYBOARD_KEY, t],
-            [p.zY.KEYBOARD_KEY, n],
-        ];
-    let r = p.G1.get(e.key);
-    if (null != r) {
-        let e = f.Cy(r);
-        if (null != e) return [[p.zY.KEYBOARD_KEY, e]];
-    }
-    return null;
+function f() {
+    (0, d.Bm)();
 }
-function g(e, t) {
-    let n = (0, i.Cw)((0, i.BF)(e)?.activeElement);
-    if ((n && e.key !== p.N$.Tab) || e.ctrlKey || e.altKey || e.metaKey || (e.key !== p.N$.Tab && e.shiftKey)) return;
-    let r = m(e);
-    null == r ||
-        _.Ay.hasExactKeybind(r) ||
-        l.A.hasBind(f.Qd(r[0]) ?? "") ||
-        ((0, u.uS)(), n && !t && e.preventDefault());
-}
-function E() {
-    (0, u.Bm)();
-}
-let A = function (e, t) {
-    let n = (0, a.bG)([c.A], () => c.A.keyboardModeEnabled);
-    (0, o.OpQ)(n);
-    let i = (0, r.useCallback)(
+let g = function (e, t) {
+    let n = (0, s.bG)([_.A], () => _.A.keyboardModeEnabled);
+    (0, o.Op)(n);
+    let a = (0, i.useCallback)(
         (e) => {
-            g(e, t);
+            !(function (e, t) {
+                let n = (0, r.Cw)((0, r.BF)(e)?.activeElement);
+                if (
+                    (n && e.key !== h.N$.Tab) ||
+                    e.ctrlKey ||
+                    e.altKey ||
+                    e.metaKey ||
+                    (e.key !== h.N$.Tab && e.shiftKey)
+                )
+                    return;
+                let i = (function (e) {
+                    let t = E.Cy("shift"),
+                        n = E.Cy("tab");
+                    if (e.key === h.N$.Tab && e.shiftKey && null != t && null != n)
+                        return [
+                            [h.zY.KEYBOARD_KEY, t],
+                            [h.zY.KEYBOARD_KEY, n],
+                        ];
+                    let i = h.G1.get(e.key);
+                    if (null != i) {
+                        let e = E.Cy(i);
+                        if (null != e) return [[h.zY.KEYBOARD_KEY, e]];
+                    }
+                    return null;
+                })(e);
+                null == i ||
+                    c.Ay.hasExactKeybind(i) ||
+                    l.A.hasBind(E.Qd(i[0]) ?? "") ||
+                    ((0, d.uS)(), n && !t && e.preventDefault());
+            })(e, t);
         },
         [t],
     );
     return (
-        (0, r.useLayoutEffect)(
+        (0, i.useLayoutEffect)(
             () => (
                 n
-                    ? (e.addEventListener("mousedown", E), e.addEventListener("keydown", h))
-                    : e.addEventListener("keydown", i),
+                    ? (e.addEventListener("mousedown", f), e.addEventListener("keydown", m))
+                    : e.addEventListener("keydown", a),
                 () => {
                     n
-                        ? (e.removeEventListener("mousedown", E), e.removeEventListener("keydown", h))
-                        : e.removeEventListener("keydown", i);
+                        ? (e.removeEventListener("mousedown", f), e.removeEventListener("keydown", m))
+                        : e.removeEventListener("keydown", a);
                 }
             ),
-            [e, i, n],
+            [e, a, n],
         ),
         n
     );

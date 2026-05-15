@@ -1,55 +1,55 @@
-t.d(n, { A: () => E });
+t.d(n, { A: () => f });
 var r = t(627968);
 t(64700);
-var i = t(311907),
-    l = t(397927),
+var l = t(17928),
+    i = t(477782),
     a = t(442433),
-    d = t(734057),
+    u = t(734057),
     s = t(576705),
-    u = t(1193),
-    o = t(589051),
-    c = t(145567),
+    d = t(140069),
+    c = t(589051),
+    o = t(145567),
     A = t(34307),
-    g = t(652215),
-    f = t(822889),
-    h = t(985018);
-function E(e, n) {
-    let { hasChat: t } = (0, o.M8)("useOverlayTextChatToggleMenuItem"),
-        E = "DM_USER" === e.kind ? e.userId : null,
-        I = (0, i.bG)([d.A], () => (null != E ? (d.A.getDMFromUserId(E) ?? null) : null), [E]),
-        p = "CHANNEL" === e.kind ? e.channel.id : I,
-        v = (0, i.bG)([u.A], () => {
-            if (null == p) return !1;
-            let [e] = u.A.getSessionEntries();
-            for (let n of e) if (n.channelId === p) return !0;
-            return u.A.getSelectedChannelId() === p;
-        }, [p]),
-        _ = "CHANNEL" === e.kind ? e.channel : null,
-        x = (0, i.bG)(
+    E = t(652215),
+    I = t(499214),
+    v = t(375708);
+function f(e, n) {
+    let { hasChat: t } = (0, c.M8)("useOverlayTextChatToggleMenuItem"),
+        f = "DM_USER" === e.kind ? e.userId : null,
+        N = (0, l.bG)([u.A], () => (null != f ? (u.A.getDMFromUserId(f) ?? null) : null), [f]),
+        g = "CHANNEL" === e.kind ? e.channel.id : N,
+        S = (0, l.bG)([d.A], () => {
+            if (null == g) return !1;
+            let [e] = d.A.getSessionEntries();
+            for (let n of e) if (n.channelId === g) return !0;
+            return d.A.getSelectedChannelId() === g;
+        }, [g]),
+        D = "CHANNEL" === e.kind ? e.channel : null,
+        h = (0, l.bG)(
             [s.A],
             () =>
-                !!(null == _ || _.isDM() || _.isMultiUserDM() || _.isPrivate()) ||
-                s.A.can(g.xBc.READ_MESSAGE_HISTORY, _),
-            [_],
+                !!(null == D || D.isDM() || D.isMultiUserDM() || D.isPrivate()) ||
+                s.A.can(E.xBc.READ_MESSAGE_HISTORY, D),
+            [D],
         );
-    return v && null != p
-        ? (0, r.jsx)(l.Drp, {
+    return S && null != g
+        ? (0, r.jsx)(i.Dr, {
               id: "close-chat",
-              label: h.intl.string(f.default.ERApc4),
+              label: v.intl.string(I.default.ERApc4),
               action: () => {
-                  (0, c.lu)({ channelId: p, widgetType: n, secondaryValue: "context_menu_close_chat" }), (0, a.Z_)();
+                  (0, o.lu)({ channelId: g, widgetType: n, secondaryValue: "context_menu_close_chat" }), (0, a.Z_)();
               },
           })
-        : t && x
-          ? (0, r.jsx)(l.Drp, {
+        : t && h
+          ? (0, r.jsx)(i.Dr, {
                 id: "open-chat",
-                label: h.intl.string(f.default.KWrMk5),
+                label: v.intl.string(I.default.KWrMk5),
                 action: () => {
                     switch (e.kind) {
                         case "CHANNEL":
-                            (0, c.D$)({
+                            (0, o.D$)({
                                 target: {
-                                    kind: c.bB.CHANNEL,
+                                    kind: o.bB.CHANNEL,
                                     channelId: e.channel.id,
                                     guildId: e.guildId,
                                     messageId: null,
@@ -69,12 +69,12 @@ function E(e, n) {
                             }
                             (async () => {
                                 try {
-                                    await (0, c.D$)({
+                                    await (0, o.D$)({
                                         target: {
-                                            kind: c.bB.DM_USER,
+                                            kind: o.bB.DM_USER,
                                             userId: e.userId,
                                             messageId: null,
-                                            existingChannelId: I,
+                                            existingChannelId: N,
                                         },
                                         source: A.B.MANUAL,
                                         widgetType: n,

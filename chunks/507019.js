@@ -1,18 +1,17 @@
 "use strict";
-n.d(t, { A: () => s });
-var r = n(157559),
-    i = n(49229),
-    a = n(985018);
-function s(e) {
-    let t = () => {
-        i.A.clearPendingRelationships();
-    };
-    r.A.show({
-        title: a.intl.string(a.t.z2pFjo),
-        body: a.intl.formatToPlainString(a.t["0nTvEw"], { incomingRequestCount: e }),
-        confirmText: a.intl.string(a.t["cY+Oob"]),
+n.d(t, { A: () => a });
+var i = n(157559),
+    r = n(717398),
+    s = n(375708);
+function a(e) {
+    i.A.show({
+        title: s.intl.string(s.t.z2pFjo),
+        body: s.intl.formatToPlainString(s.t["0nTvEw"], { incomingRequestCount: e }),
+        confirmText: s.intl.string(s.t["cY+Oob"]),
         confirmVariant: "critical-primary",
-        cancelText: a.intl.string(a.t["ETE/oC"]),
-        onConfirm: t,
+        cancelText: s.intl.string(s.t["ETE/oC"]),
+        onConfirm: () => {
+            r.A.clearPendingRelationships();
+        },
     });
 }

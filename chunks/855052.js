@@ -1,12 +1,13 @@
 "use strict";
-n.d(t, { A: () => u });
-var r = n(315069),
-    i = n(611010),
-    a = n(520606),
-    s = n(872472),
-    o = n(721932),
-    l = n(652215);
-class u extends r.A {
+n.d(t, { Ay: () => c, C3: () => _, Lh: () => d, y9: () => f });
+var i = n(315069),
+    r = n(395671),
+    s = n(520606),
+    a = n(872472),
+    o = n(394300),
+    l = n(721932),
+    u = n(652215);
+class c extends i.A {
     id;
     userId;
     items;
@@ -19,31 +20,33 @@ class u extends r.A {
             (this.applications = e.applications ?? void 0);
     }
     static fromServer(e) {
-        let { user_id: t, wishlist_items: n, ...r } = e,
-            c = n.map((e) => {
+        let { user_id: t, wishlist_items: n, ...i } = e,
+            d = n.map((e) => {
                 switch (e.sku_product_line) {
-                    case l.EZt.COLLECTIBLES:
-                        return s.A.fromServer(e);
-                    case l.EZt.SOCIAL_LAYER_GAME_ITEM:
+                    case u.EZt.COLLECTIBLES:
+                        return a.A.fromServer(e);
+                    case u.EZt.SOCIAL_LAYER_GAME_ITEM:
+                        return l.A.fromServer(e);
+                    case u.EZt.PREMIUM:
                         return o.A.fromServer(e);
                     default:
-                        return a.A.fromServer(e);
+                        return s.A.fromServer(e);
                 }
             });
-        return new u({
-            ...r,
+        return new c({
+            ...i,
             userId: t,
-            items: c,
-            applications: r.applications?.map((e) => i.Ay.createFromServer(e)) ?? void 0,
+            items: d,
+            applications: i.applications?.map((e) => r.Ay.createFromServer(e)) ?? void 0,
         });
     }
-    getSkuIds() {
-        return this.items.map((e) => e.skuId);
-    }
-    hasSkuId(e) {
-        return this.items.some((t) => t.skuId === e);
-    }
-    getProductLines() {
-        return new Set(this.items.map((e) => e.skuProductLine));
-    }
+}
+function d(e) {
+    return e.items.map((e) => e.skuId);
+}
+function _(e, t) {
+    return e.items.some((e) => e.skuId === t);
+}
+function f(e) {
+    return new Set(e.items.map((e) => e.skuProductLine));
 }

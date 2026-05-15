@@ -1,15 +1,13 @@
 "use strict";
 n.d(t, { M: () => r });
-var r = (function (e) {
-    return (
-        (e.STARTING = "starting"),
-        (e.STARTUP_FAILED = "startup_failed"),
-        (e.MISSING_STOCK = "missing_stock"),
-        (e.SLEEPING = "sleeping"),
-        (e.OFFLINE = "offline"),
-        (e.ONLINE = "online"),
-        (e.DELETED = "deleted"),
-        (e.PROVIDER_ERRORED = "provider_errored"),
-        e
-    );
-})({});
+var i,
+    r =
+        (((i = {}).STARTING = "starting"),
+        (i.STARTUP_FAILED = "startup_failed"),
+        (i.MISSING_STOCK = "missing_stock"),
+        (i.SLEEPING = "sleeping"),
+        (i.OFFLINE = "offline"),
+        (i.ONLINE = "online"),
+        (i.DELETED = "deleted"),
+        (i.PROVIDER_ERRORED = "provider_errored"),
+        i);

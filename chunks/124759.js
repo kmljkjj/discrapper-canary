@@ -1,46 +1,45 @@
 "use strict";
 n.d(t, {
-    SP: () => l,
-    Vi: () => s,
-    bK: () => _,
-    dH: () => d,
-    dR: () => u,
-    e$: () => c,
-    hs: () => o,
-    pj: () => f,
+    SP: () => u,
+    Vi: () => o,
+    bK: () => f,
+    dH: () => _,
+    dR: () => c,
+    e$: () => d,
+    hs: () => l,
+    pj: () => h,
     wX: () => a,
 });
-var r = n(136722),
-    i = n(652215);
+var i,
+    r = n(136722),
+    s = n(652215);
 let a = "publicSuccessModalSeen",
-    s = "667560445975986187",
-    o = "669627189624307712",
-    l = "1",
-    u = [
-        i.xBc.ADMINISTRATOR,
-        i.xBc.KICK_MEMBERS,
-        i.xBc.BAN_MEMBERS,
-        i.xBc.MANAGE_GUILD,
-        i.xBc.MANAGE_CHANNELS,
-        i.xBc.MANAGE_ROLES,
-        i.xBc.MANAGE_MESSAGES,
-        i.xBc.MANAGE_GUILD_EXPRESSIONS,
-        i.xBc.CREATE_GUILD_EXPRESSIONS,
-        i.xBc.MANAGE_EVENTS,
-        i.xBc.CREATE_EVENTS,
-        i.xBc.MODERATE_MEMBERS,
-        i.xBc.MENTION_EVERYONE,
+    o = "667560445975986187",
+    l = "669627189624307712",
+    u = "1",
+    c = [
+        s.xBc.ADMINISTRATOR,
+        s.xBc.KICK_MEMBERS,
+        s.xBc.BAN_MEMBERS,
+        s.xBc.MANAGE_GUILD,
+        s.xBc.MANAGE_CHANNELS,
+        s.xBc.MANAGE_ROLES,
+        s.xBc.MANAGE_MESSAGES,
+        s.xBc.MANAGE_GUILD_EXPRESSIONS,
+        s.xBc.CREATE_GUILD_EXPRESSIONS,
+        s.xBc.MANAGE_EVENTS,
+        s.xBc.CREATE_EVENTS,
+        s.xBc.MODERATE_MEMBERS,
+        s.xBc.MENTION_EVERYONE,
+        s.xBc.MANAGE_OFFICIAL_MESSAGES,
     ],
-    c = r.kg(...u),
-    d = 1e3,
-    _ = "Enable Community Modal";
-var f = (function (e) {
-    return (
-        (e.INTRO = "intro"),
-        (e.SAFETY_CHECK = "safety_check"),
-        (e.BASICS = "basics"),
-        (e.FINISH = "finish"),
-        (e.RULES = "rules"),
-        e
-    );
-})({});
+    d = r.kg(...c),
+    _ = 1e3,
+    f = "Enable Community Modal";
+var h =
+    (((i = {}).INTRO = "intro"),
+    (i.SAFETY_CHECK = "safety_check"),
+    (i.BASICS = "basics"),
+    (i.FINISH = "finish"),
+    (i.RULES = "rules"),
+    i);

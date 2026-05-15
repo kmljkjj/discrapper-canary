@@ -1,25 +1,23 @@
 "use strict";
-n.d(t, { A: () => c, q: () => s });
-var r = n(311907),
-    i = n(73153),
-    a = n(540999);
-let s = 460,
+n.d(t, { A: () => d, q: () => a });
+var i = n(17928),
+    r = n(228366),
+    s = n(540999);
+let a = 460,
     o = {
         sidebarWidth: 460,
         lastOpenTabId: null,
+        lastOpenSubTabId: null,
         displayTools: !1,
         showDevWidget: !1,
         devWidgetPosition: { x: 0, y: 0 },
         sortedScreenKeys: [],
     };
-function l(e) {
-    a.A.isDeveloper && (o = { ...o, ...e.settings });
-}
-class u extends r.Ay.DeviceSettingsStore {
+class l extends i.Ay.DeviceSettingsStore {
     static displayName = "DevToolsSettingsStore";
     static persistKey = "DevToolsSettingsStore";
     initialize(e) {
-        (o = e ?? o), (i.h.actionLogger.persist = a.A.isDeveloper);
+        (o = e ?? o), (r.h.actionLogger.persist = s.A.isDeveloper);
     }
     getUserAgnosticState() {
         return o;
@@ -30,11 +28,14 @@ class u extends r.Ay.DeviceSettingsStore {
     get lastOpenTabId() {
         return o.lastOpenTabId ?? null;
     }
+    get lastOpenSubTabId() {
+        return o.lastOpenSubTabId ?? null;
+    }
     get displayTools() {
-        return a.A.isDeveloper && o.displayTools;
+        return s.A.isDeveloper && o.displayTools;
     }
     get showDevWidget() {
-        return a.A.isDeveloper && o.showDevWidget;
+        return s.A.isDeveloper && o.showDevWidget;
     }
     get devWidgetPosition() {
         return o.devWidgetPosition;
@@ -43,4 +44,8 @@ class u extends r.Ay.DeviceSettingsStore {
         return o.sortedScreenKeys;
     }
 }
-let c = new u(i.h, { DEV_TOOLS_SETTINGS_UPDATE: l });
+let d = new l(r.h, {
+    DEV_TOOLS_SETTINGS_UPDATE: function (e) {
+        s.A.isDeveloper && (o = { ...o, ...e.settings });
+    },
+});

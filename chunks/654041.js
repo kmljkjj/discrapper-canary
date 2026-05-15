@@ -1,92 +1,68 @@
-n.d(t, { default: () => M });
+n.d(e, { default: () => h });
 var i = n(627968),
-    r = n(64700),
-    a = n(835245),
-    s = n(158954),
-    o = n(554146),
-    l = n(397927),
-    u = n(379848),
+    s = n(64700),
+    o = n(835245),
+    a = n(189213),
+    l = n(509434),
+    r = n(834730),
     c = n(95035),
-    d = n(632738),
-    A = n(105428),
-    _ = n(975571),
-    E = n(935649),
-    f = n(847599),
-    R = n(36149),
+    A = n(632738),
+    d = n(975571),
+    R = n(139716),
+    u = n(847599),
+    _ = n(36149),
     p = n(737567),
-    C = n(40449),
+    E = n(40449),
     m = n(652215),
-    I = n(239093),
-    h = n(985018),
-    x = n(891921);
-let M = function (e) {
-    let { transitionState: t, entryPoint: n, onClose: M } = e,
-        [T, k] = r.useState(o.M.AGE_VERIFICATION_SURVEY_MODAL_GET_STARTED),
-        S = r.useRef(T),
-        [b, g] = (0, u.kn)([T], void 0, !0),
-        { loading: P, initiateAgeVerification: U } = (0, R.nn)({ onComplete: M, entryPoint: n }),
-        v = r.useMemo(() => (0, a.A)(), []),
-        L = (0, p.I)("age_verification_get_started_modal"),
-        N = r.useRef(!1);
+    x = n(239093),
+    I = n(375708),
+    M = n(481446);
+let h = function (t) {
+    let { transitionState: e, entryPoint: n, onClose: h } = t,
+        { loading: P, initiateAgeVerification: S } = (0, _.nn)({ onComplete: h, entryPoint: n }),
+        T = s.useMemo(() => (0, o.A)(), []),
+        U = (0, p.I)("age_verification_get_started_modal");
     return (
-        r.useEffect(() => {
-            S.current = b;
-        }, [b]),
-        r.useLayoutEffect(
-            () => () => {
-                if (N.current) return;
-                let e = S.current;
-                null != e &&
-                    ((N.current = !0),
-                    A.A.maybeOpenAgeVerificationUserFeedback({
-                        location: "age_verification_get_started_modal",
-                        visibleContent: e,
-                    }));
-            },
-            [],
-        ),
-        r.useEffect(() => {
-            (0, f.Bs)(v, f.WU.PRIMARY, n);
-        }, [v, n]),
-        (0, i.jsxs)(s.Modal, {
-            transitionState: t,
-            onClose: M,
-            title: (0, R.ST)(n),
-            subtitle: (0, R.mK)(n),
+        s.useEffect(() => {
+            (0, u.Bs)(T, u.WU.PRIMARY, n);
+        }, [T, n]),
+        (0, i.jsxs)(a.Modal, {
+            transitionState: e,
+            onClose: h,
+            title: (0, _.ST)(n),
+            subtitle: (0, _.mK)(n),
             actions: [
                 {
-                    text: h.intl.string(h.t.SJMnkX),
+                    text: I.intl.string(I.t.SJMnkX),
                     loading: P,
-                    icon: l.I9m,
+                    icon: l.I,
                     iconPosition: "end",
                     onClick: async () => {
-                        (0, f.St)(v, f.WU.PRIMARY, f._7.GET_STARTED),
-                            k(o.M.AGE_VERIFICATION_SURVEY_MODAL_CLOSE),
-                            await U();
+                        (0, u.St)(T, u.WU.PRIMARY, u._7.GET_STARTED), await S();
                     },
                 },
             ],
             actionBarInput: (0, i.jsxs)(c.A, {
                 onClick: () => {
-                    E.A.openUrl(_.A.getArticleURL(m.MVz.TIGGER_PAWTECT_LEARN_MORE)),
-                        (0, f.St)(v, f.WU.PRIMARY, f._7.LEARN_MORE);
+                    R.A.openUrl(d.A.getArticleURL(m.MVz.TIGGER_PAWTECT_LEARN_MORE)),
+                        (0, u.St)(T, u.WU.PRIMARY, u._7.LEARN_MORE);
                 },
-                className: x.A,
-                children: [h.intl.string(h.t["aA6q/z"]), (0, i.jsx)(l.I9m, { size: "xs", color: "currentColor" })],
+                className: M.A,
+                children: [I.intl.string(I.t["aA6q/z"]), (0, i.jsx)(l.I, { size: "xs", color: "currentColor" })],
             }),
             children: [
-                (0, C.f6)(v).map((e, t) => {
-                    let { title: n, description: r } = e;
-                    return (0, i.jsx)(d.PQ, { title: n, description: r, listType: "numbered", index: t }, t);
+                (0, E.f6)(T).map((t, e) => {
+                    let { title: n, description: s } = t;
+                    return (0, i.jsx)(A.PQ, { title: n, description: s, listType: "numbered", index: e }, e);
                 }),
-                !L &&
-                    (0, i.jsx)(l.Text, {
+                !U &&
+                    (0, i.jsx)(r.E, {
                         variant: "text-xs/medium",
                         color: "text-muted",
-                        className: x.B,
-                        children: h.intl.format(h.t.pJAxgQ, {
+                        className: M.B,
+                        children: I.intl.format(I.t.pJAxgQ, {
                             handleOnRequestHook: () => {
-                                E.A.openUrl(I.d$.APPEALS_LINK), (0, f.St)(v, f.WU.PRIMARY, f._7.MANUAL_REVIEW_REQUEST);
+                                R.A.openUrl(x.d$.APPEALS_LINK), (0, u.St)(T, u.WU.PRIMARY, u._7.MANUAL_REVIEW_REQUEST);
                             },
                         }),
                     }),

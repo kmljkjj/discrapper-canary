@@ -1,86 +1,89 @@
-n.d(t, { default: () => d });
-var s = n(627968),
-    a = n(64700),
-    i = n(732955),
-    l = n(397927),
-    o = n(985018),
-    r = n(574592);
-function E(e) {
+s.d(t, { default: () => c });
+var n = s(627968),
+    l = s(64700),
+    a = s(189213),
+    o = s(359778),
+    i = s(834730),
+    r = s(292666),
+    d = s(985018),
+    h = s(786055);
+function u(e) {
     let {
             title: t,
-            actionText: n,
-            children: E,
-            transitionState: d,
-            onClose: c,
-            handleSubmit: u,
-            onError: h,
-            skipErrorMsgAbortCode: R,
-            onPasswordChange: I,
+            actionText: s,
+            children: u,
+            transitionState: c,
+            onClose: p,
+            handleSubmit: f,
+            onError: C,
+            skipErrorMsgAbortCode: g,
+            onPasswordChange: m,
+            variant: y = "primary",
         } = e,
-        [p, _] = a.useState(""),
-        [f, g] = a.useState(null),
-        [C, m] = a.useState(!1),
-        A = a.useCallback(async () => {
-            await c();
-        }, [c]),
-        y =
-            a.Children.count(E) > 0
-                ? (0, s.jsx)(l.ZpM, {
-                      type: l.ZpM.Types.WARNING,
-                      className: r.Nr,
-                      children: (0, s.jsx)(l.Text, { color: "currentColor", variant: "text-md/normal", children: E }),
+        [b, x] = l.useState(""),
+        [A, k] = l.useState(null),
+        [v, R] = l.useState(!1),
+        S = l.useCallback(async () => {
+            await p();
+        }, [p]),
+        j =
+            l.Children.count(u) > 0
+                ? (0, n.jsx)(o.Z, {
+                      type: o.Z.Types.WARNING,
+                      className: h.Nr,
+                      children: (0, n.jsx)(i.E, { color: "currentColor", variant: "text-md/normal", children: u }),
                   })
                 : null;
-    return (0, s.jsx)("form", {
+    return (0, n.jsx)("form", {
         onSubmit: (e) => {
             e.preventDefault(),
-                m(!0),
-                u(p)
+                R(!0),
+                f(b)
                     .then(
-                        (e) => c(e ?? void 0),
+                        (e) => p(e ?? void 0),
                         (e) => {
                             let t;
                             null != e.body &&
-                                (h?.(e.body),
+                                (C?.(e.body),
                                 (t = e.body),
-                                (null == R || t?.code !== R) &&
+                                (null == g || t?.code !== g) &&
                                     (e.body.password
-                                        ? (g(e.body.password), m(!1))
-                                        : e.body.message && (g(e.body.message), m(!1))));
+                                        ? (k(e.body.password), R(!1))
+                                        : e.body.message && (k(e.body.message), R(!1))));
                         },
                     )
-                    .finally(() => m(!1));
+                    .finally(() => R(!1));
         },
-        children: (0, s.jsxs)(i.aFV, {
+        children: (0, n.jsxs)(a.Modal, {
             title: t,
             actions: [
-                { text: o.intl.string(o.t["ETE/oC"]), onClick: A, variant: "secondary" },
-                { text: n ?? o.intl.string(o.t["cY+Oob"]), type: "submit", disabled: C || 0 === p.length },
+                { text: d.intl.string(d.t["ETE/oC"]), onClick: S, variant: "secondary" },
+                { text: s ?? d.intl.string(d.t["cY+Oob"]), type: "submit", variant: y, disabled: v || 0 === b.length },
             ],
-            onClose: A,
-            transitionState: d,
+            onClose: S,
+            transitionState: c,
             children: [
-                y,
-                (0, s.jsxs)("div", {
-                    className: r.YK,
+                j,
+                (0, n.jsxs)("div", {
+                    className: h.YK,
                     children: [
-                        (0, s.jsx)(l.ksK, {
+                        (0, n.jsx)(r.k, {
                             type: "password",
-                            label: o.intl.string(o.t["CIGa+7"]),
+                            label: d.intl.string(d.t["CIGa+7"]),
                             autoComplete: "current-password",
                             autoFocus: !0,
-                            value: p,
+                            value: b,
                             onChange: (e) => {
-                                I?.(e), _(e);
+                                m?.(e), x(e);
                             },
                             required: !0,
                         }),
-                        null != f && "" !== f
-                            ? (0, s.jsxs)(l.Text, {
+                        null != A && "" !== A
+                            ? (0, n.jsxs)(i.E, {
                                   variant: "text-xs/normal",
                                   color: "text-feedback-critical",
-                                  className: r.z3,
-                                  children: [" ", f, " "],
+                                  className: h.z3,
+                                  children: [" ", A, " "],
                               })
                             : null,
                     ],
@@ -89,5 +92,5 @@ function E(e) {
         }),
     });
 }
-E.key = () => "password-confirm-modal";
-let d = E;
+u.key = () => "password-confirm-modal";
+let c = u;

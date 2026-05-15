@@ -2,39 +2,39 @@ n.d(t, { A: () => r, J: () => s });
 var i = n(627968);
 n(64700);
 var l = n(21878),
-    a = n(756369);
+    a = n(970848);
 function r(e) {
     let {
         channelMessageProps: { message: t, channel: n, compact: r = !1 },
         hasSpoilerEmbeds: s,
         hasBailedAst: o,
-        handleContextMenu: d,
-        isInteracting: c,
+        handleContextMenu: c,
+        isInteracting: d,
         isAutomodBlockedMessage: u,
-        isMessageSnapshot: m,
-        renderThreadAccessory: _,
+        isMessageSnapshot: _,
+        renderThreadAccessory: m,
         renderSuppressEmbeds: h,
         renderReactions: p,
         forceAddReactions: g,
-        disableComponentInteractivity: A,
-        className: f,
+        disableComponentInteractivity: f,
+        className: x,
     } = e;
     return u
         ? null
         : (0, i.jsx)(l.A, {
               message: t,
               children: (0, i.jsx)(a.Ay, {
-                  className: f,
-                  isInteracting: c,
+                  className: x,
+                  isInteracting: d,
                   message: t,
                   channel: n,
                   compact: r,
                   hasSpoilerEmbeds: s,
                   hasBailedAst: o,
-                  isMessageSnapshot: m,
-                  onMediaItemContextMenu: d,
-                  renderThreadAccessory: _,
-                  disableComponentInteractivity: A,
+                  isMessageSnapshot: _,
+                  onMediaItemContextMenu: c,
+                  renderThreadAccessory: m,
+                  disableComponentInteractivity: f,
                   renderSuppressEmbeds: h,
                   forceAddReactions: g,
                   renderReactions: p,
@@ -47,8 +47,8 @@ function s(e, t, n) {
         channel: r,
         compact: s = !1,
         renderThreadAccessory: o,
-        disableReactionCreates: d,
-        disableReactionUpdates: c,
+        disableReactionCreates: c,
+        disableReactionUpdates: d,
     } = e;
     return (0, i.jsx)(a.OC, {
         message: l,
@@ -57,7 +57,7 @@ function s(e, t, n) {
         hasSpoilerEmbeds: t,
         hasBailedAst: n,
         renderThreadAccessory: o,
-        disableReactionCreates: d,
-        disableReactionUpdates: c,
+        disableReactionCreates: c,
+        disableReactionUpdates: d,
     });
 }

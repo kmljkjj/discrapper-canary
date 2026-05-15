@@ -1,15 +1,15 @@
 n.d(t, { A: () => u });
-var i = n(311907),
-    l = n(73153),
+var i = n(17928),
+    l = n(228366),
     a = n(967198);
 let r = null,
     s = null,
     o = { reportedMessages: {} };
-function d() {
+function c() {
     let e = a.A.getLastSelectedGuildId();
     e !== r && ((s = null), (r = e ?? null));
 }
-class c extends i.Ay.PersistedStore {
+class d extends i.Ay.PersistedStore {
     static displayName = "ReportToModStore";
     static persistKey = "ReportToModStore";
     static migrations = [(e) => ({ reportedMessages: e?.reportedMessages ?? {} })];
@@ -21,7 +21,7 @@ class c extends i.Ay.PersistedStore {
                     return [t, new Set(n)];
                 }),
             )),
-            this.syncWith([a.A], d);
+            this.syncWith([a.A], c);
     }
     getState() {
         return o;
@@ -36,7 +36,7 @@ class c extends i.Ay.PersistedStore {
         return o.reportedMessages[e]?.has(t) ?? !1;
     }
 }
-let u = new c(l.h, {
+let u = new d(l.h, {
     REPORT_TO_MOD_REPORT_MESSAGE_SUCCESS: function (e) {
         let { channelId: t, messageId: n } = e;
         null == o.reportedMessages[t] && (o.reportedMessages[t] = new Set()), o.reportedMessages[t].add(n);

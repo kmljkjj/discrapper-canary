@@ -1,20 +1,17 @@
-"use strict";
-n.d(t, { a: () => d, t: () => l });
-var r = n(627968);
-n(64700);
-var i = n(503698),
-    a = n.n(i),
-    s = n(397927),
-    o = n(459127);
-let l = { DEFAULT: "default", DESCRIPTION: "description" },
-    u = "modeDefault",
-    c = "modeDisabled";
-function d(e) {
-    let { type: t = l.DEFAULT, className: n, disabled: i, children: d, style: _, ...f } = e,
-        p = u;
+a.d(t, { a: () => l, t: () => c });
+var s = a(627968);
+a(64700);
+var d = a(503698),
+    i = a.n(d),
+    r = a(834730),
+    n = a(234818);
+let c = { DEFAULT: "default", DESCRIPTION: "description" };
+function l(e) {
+    let { type: t = c.DEFAULT, className: a, disabled: d, children: l, style: p, ...u } = e,
+        o = "modeDefault";
     return (
-        i && (p = c),
-        (0, r.jsx)(s.Text, { variant: "text-sm/normal", className: a()(o[t], n, o[p]), style: _, ...f, children: d })
+        d && (o = "modeDisabled"),
+        (0, s.jsx)(r.E, { variant: "text-sm/normal", className: i()(n[t], a, n[o]), style: p, ...u, children: l })
     );
 }
-d.Types = l;
+l.Types = c;

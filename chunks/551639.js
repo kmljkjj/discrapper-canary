@@ -1,7 +1,5 @@
 "use strict";
-n.d(t, { az: () => a });
-let r = "⁨",
-    i = "⁩";
-function a(e) {
-    return null == e || 0 === e.length ? e : r + e + i;
+function i(e) {
+    return null == e || 0 === e.length ? e : "\u2068" + e + "\u2069";
 }
+n.d(t, { az: () => i });

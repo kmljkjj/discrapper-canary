@@ -1,12 +1,12 @@
 "use strict";
-var r = n(860511),
-    i = n(257943),
+var i = n(860511),
+    r = n(257943),
     s = n(485155),
     a = n(693510),
     o = n(503628),
-    l = r.RegExp,
+    l = i.RegExp,
     u = l.prototype;
-i &&
+r &&
     o(function () {
         var e = !0;
         try {
@@ -16,16 +16,16 @@ i &&
         }
         var t = {},
             n = "",
-            r = e ? "dgimsy" : "gimsy",
-            i = function (e, r) {
+            i = e ? "dgimsy" : "gimsy",
+            r = function (e, i) {
                 Object.defineProperty(t, e, {
                     get: function () {
-                        return (n += r), !0;
+                        return (n += i), !0;
                     },
                 });
             },
             s = { dotAll: "s", global: "g", ignoreCase: "i", multiline: "m", sticky: "y" };
-        for (var a in (e && (s.hasIndices = "d"), s)) i(a, s[a]);
-        return Object.getOwnPropertyDescriptor(u, "flags").get.call(t) !== r || n !== r;
+        for (var a in (e && (s.hasIndices = "d"), s)) r(a, s[a]);
+        return Object.getOwnPropertyDescriptor(u, "flags").get.call(t) !== i || n !== i;
     }) &&
     s(u, "flags", { configurable: !0, get: a });

@@ -2,37 +2,40 @@
 n.d(t, {
     $J: () => I,
     IG: () => S,
-    UR: () => E,
+    UR: () => m,
     W1: () => A,
-    b6: () => C,
+    _Q: () => C,
+    b6: () => v,
     bg: () => g,
-    pu: () => v,
-    se: () => R,
+    pu: () => y,
+    se: () => O,
     v0: () => T,
 }),
     n(321073),
+    n(323874),
+    n(14289),
+    n(35956),
     n(134528),
     n(947204);
-var r = n(412703),
-    i = n(73153),
-    s = n(975807),
-    a = n(882997),
-    o = n(780964),
-    l = n(203982),
-    u = n(723702),
-    c = n(245853),
-    d = n(561844);
-n(234932);
-var _ = n(651892),
+var i = n(835245),
+    r = n(412703),
+    s = n(228366),
+    a = n(975807),
+    o = n(773952),
+    l = n(780964),
+    u = n(625494),
+    c = n(723702),
+    d = n(561844),
+    _ = n(651892),
     f = n(792620),
-    p = n(654487),
-    h = n(652215),
-    m = n(985018);
-function E(e) {
+    h = n(190107),
+    p = n(652215),
+    E = n(375708);
+function m(e) {
     let t = (0, f.t)({ quest: e }) || (0, f.fE)({ quest: e }),
         n = (0, f.uD)(e),
-        r = [];
-    return t && r.push(p.fO.DESKTOP), n && r.push(p.fO.CONSOLE), r;
+        i = [];
+    return t && i.push(h.fO.DESKTOP), n && i.push(h.fO.CONSOLE), i;
 }
 function g(e) {
     let t = Object.keys(e.config.taskConfigV2.tasks),
@@ -40,10 +43,10 @@ function g(e) {
     for (let e of t)
         switch (e) {
             case r.n.PLAY_ON_XBOX:
-                n.push(h.fg2.XBOX);
+                n.push(p.fg2.XBOX);
                 break;
             case r.n.PLAY_ON_PLAYSTATION:
-                n.push(h.fg2.PLAYSTATION);
+                n.push(p.fg2.PLAYSTATION);
         }
     return n;
 }
@@ -53,37 +56,52 @@ function A(e) {
     return t || n;
 }
 function I(e) {
-    return "xbox" === e.connected_account_type ? h.fg2.XBOX : h.fg2.PLAYSTATION;
+    return "xbox" === e.connected_account_type ? p.fg2.XBOX : p.fg2.PLAYSTATION;
 }
 function T(e, t) {
-    let { platformType: n, quest: r } = e;
+    let { platformType: n, quest: i } = e;
     (0, d.Y5)({
-        questId: r.id,
+        questId: i.id,
         questContent: t.content,
         sourceQuestContent: t.sourceQuestContent,
         questContentCTA: t.ctaContent,
         impressionId: t.impressionId,
     }),
-        (0, a.A)({ platformType: n, location: t.ctaContent });
+        (0, o.A)({ platformType: n, location: t.ctaContent });
 }
 function S(e) {
-    return I(e) === h.fg2.XBOX ? m.t["mytEv+"] : m.t.iDiwby;
+    return I(e) === p.fg2.XBOX ? E.t["mytEv+"] : E.t.iDiwby;
 }
-function y(e) {
-    let t = e.config.ctaConfig;
-    if (null == t) return null;
-    if (((0, u.isIOS)() || "ios" === (0, u.getOS)()) && t.ios?.iosAppId != null) {
-        let e = t.ios.iosAppId.startsWith("id") ? t.ios.iosAppId : `id${t.ios.iosAppId}`;
-        return `https://apps.apple.com/app/${e}`;
+function N(e) {
+    if (((0, c.isIOS)() || "ios" === (0, c.getOS)()) && e.ios?.iosAppId != null) {
+        let t = e.ios.iosAppId.startsWith("id") ? e.ios.iosAppId : `id${e.ios.iosAppId}`;
+        return `https://apps.apple.com/app/${t}`;
     }
-    return ((0, u.isAndroid)() || "android" === (0, u.getOS)()) && t.android?.androidAppId != null
-        ? `https://play.google.com/store/apps/details?id=${t.android.androidAppId}`
+    return ((0, c.isAndroid)() || "android" === (0, c.getOS)()) && e.android?.androidAppId != null
+        ? `https://play.google.com/store/apps/details?id=${e.android.androidAppId}`
         : null;
 }
-function v(e, t) {
-    let n = (0, _.Jx)(e.config),
-        r = y(e);
-    null != r && (n = r),
+function y(e, t) {
+    let n,
+        r,
+        s = (0, _.Jx)(e.config),
+        o = null == (n = e.config.ctaConfig) ? null : N({ url: (0, _.Jx)(e.config), android: n.android, ios: n.ios });
+    null != o && (s = o),
+        (function (e) {
+            try {
+                return new URL(e).searchParams.has("dclid");
+            } catch {
+                return !1;
+            }
+        })(s) &&
+            (s = (function (e, t) {
+                try {
+                    let n = new URL(e);
+                    return n.searchParams.set("dclid", t), n.toString();
+                } catch {
+                    return e;
+                }
+            })(s, (r = (0, i.A)()))),
         (0, d.Y5)({
             questId: e.id,
             questContent: t.content,
@@ -91,30 +109,46 @@ function v(e, t) {
             questContentPosition: t.position,
             impressionId: t.impressionId,
             sourceQuestContent: t.sourceQuestContent,
+            clickId: r,
         }),
-        l._.dispatch(h.jej.QUEST_GAME_LINK_OPENED),
-        c.YX.getConfig({ location: "quest_open_game_link" }).enabled,
-        (0, s.A)(n);
-}
-function N() {
-    {
-        let { openUserSettings: e } = n(840065);
-        e(o.X.CONNECTIONS_PANEL);
-    }
+        u._.dispatch(p.jej.QUEST_GAME_LINK_OPENED),
+        (0, a.A)(s);
 }
 function C(e, t) {
-    let { quest: n } = e;
+    let { adContentId: n, adCreativeType: i, cta: r } = e,
+        s = r.url,
+        o = N(r);
+    null != o && (s = o),
+        (0, d.vK)({
+            adContentId: n,
+            adCreativeType: i,
+            questContent: t.content,
+            questContentCTA: t.ctaContent,
+            questContentPosition: t.position,
+            impressionId: t.impressionId,
+            sourceQuestContent: t.sourceQuestContent,
+        }),
+        u._.dispatch(p.jej.QUEST_GAME_LINK_OPENED),
+        (0, a.A)(s);
+}
+function v(e, t) {
+    let { quest: i } = e;
     (0, d.Y5)({
-        questId: n.id,
+        questId: i.id,
         questContent: t.content,
         questContentPosition: t.position,
         questContentCTA: t.ctaContent,
         impressionId: t.impressionId,
         sourceQuestContent: t.sourceQuestContent,
     }),
-        N();
+        (function () {
+            {
+                let { openUserSettings: e } = n(858897);
+                e(l.X.CONNECTIONS_PANEL);
+            }
+        })();
 }
-function R(e, t) {
+function O(e, t) {
     let { quest: n } = e;
     (0, d.Y5)({
         questId: n.id,
@@ -125,11 +159,12 @@ function R(e, t) {
         impressionId: t.impressionId,
         sourceQuestContent: t.sourceQuestContent,
     });
-    let r = g(n);
-    if (1 === r.length) return (0, a.A)({ platformType: r.at(0) });
-    i.h.dispatch({
+    let i = g(n);
+    if (1 === i.length) return (0, o.A)({ platformType: i.at(0) });
+    s.h.dispatch({
         type: "CONNECTIONS_GRID_MODAL_SHOW",
-        onComplete: (e) => (0, a.A)({ platformType: e }),
-        includedPlatformTypes: new Set(r),
+        onComplete: (e) => (0, o.A)({ platformType: e }),
+        includedPlatformTypes: new Set(i),
+        includeApplicationConnections: !1,
     });
 }

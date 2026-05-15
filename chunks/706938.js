@@ -1,10 +1,10 @@
 "use strict";
-var r = n(257943),
-    i = n(4940),
-    a = n(231977);
-e.exports = r
+var i = n(257943),
+    r = n(4940),
+    s = n(231977);
+e.exports = i
     ? function (e, t, n) {
-          return i.f(e, t, a(1, n));
+          return r.f(e, t, s(1, n));
       }
     : function (e, t, n) {
           return (e[t] = n), e;

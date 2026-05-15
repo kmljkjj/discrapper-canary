@@ -1,91 +1,82 @@
 "use strict";
-n.d(t, { A: () => R });
-var r = n(311907),
-    i = n(73153),
-    a = n(212455),
-    s = n(463347),
+n.d(t, { A: () => I });
+var i = n(17928),
+    r = n(228366),
+    s = n(212455),
+    a = n(463347),
     o = n(334465),
     l = n(976860),
-    u = n(961350),
-    c = n(650048),
-    d = n(71393),
-    _ = n(652215);
-let f = -1,
+    d = n(495544),
+    _ = n(650048),
+    u = n(71393),
+    c = n(652215);
+let E = null,
     h = null,
-    p = null,
-    g = {};
-function E(e) {
-    return e === _.ME ? null : (e ?? null);
+    m = {};
+function f() {
+    null != E && null == u.A.getGuild(E) && null == s.A.getRequest(E) && (E = null),
+        null != h && null == u.A.getGuild(h) && null == s.A.getRequest(h) && (h = null),
+        g(E);
 }
-function A() {
-    null != h && null == d.A.getGuild(h) && null == a.A.getRequest(h) && (h = null),
-        null != p && null == d.A.getGuild(p) && null == a.A.getRequest(p) && (p = null),
-        T(h);
+function g(e) {
+    null != e && (m[e] = Date.now());
 }
-function I(e) {
-    (h = e.selectedGuildId), (p = void 0), A();
-}
-function T(e) {
-    null != e && (g[e] = Date.now());
-}
-function y(e) {
-    let { guildId: t } = e;
-    if (h === t) return !1;
-    T(h), T(t), null != t && (p = t), (h = t);
-}
-function S(e) {
+function p(e) {
     let t = !1;
     return (
-        delete g[e],
-        p === e && ((p = null), (t = !0)),
-        h === e && (d.A.getGuildsArray().find((t) => t.id !== e), (h = null), (0, l.bG)(_.BVt.ME), (t = !0)),
+        delete m[e],
+        h === e && ((h = null), (t = !0)),
+        E === e && (u.A.getGuildsArray().find((t) => t.id !== e), (E = null), (0, l.bG)(c.BVt.ME), (t = !0)),
         t
     );
 }
-function v(e) {
-    let {
-        guild: { id: t, unavailable: n },
-    } = e;
-    return !0 !== n && S(t);
-}
-function C(e) {
-    let { guildId: t, user: n } = e;
-    return n.id === u.default.getId() && S(t);
-}
-function b() {
-    (h = null), (p = null);
-}
-class N extends r.Ay.PersistedStore {
+class A extends i.Ay.PersistedStore {
     static displayName = "SelectedGuildStore";
     static persistKey = "SelectedGuildStore";
     initialize(e) {
         this.mustEmitChanges((e) => "CONNECTION_OPEN" !== e.type),
-            this.waitFor(u.default, c.A, d.A, a.A),
-            (g = e?.selectedGuildTimestampMillis ?? {}),
-            (h = e?.selectedGuildId ?? null),
-            (p = e?.lastSelectedGuildId ?? null);
-        let t = c.A.lastNonVoiceRoute,
-            n = (0, o.B)(t, { path: _.BVt.CHANNEL(s.pv.guildId()) });
-        E(n?.params?.guildId);
+            this.waitFor(d.default, _.A, u.A, s.A),
+            (m = e?.selectedGuildTimestampMillis ?? {}),
+            (E = e?.selectedGuildId ?? null),
+            (h = e?.lastSelectedGuildId ?? null);
+        let t = _.A.lastNonVoiceRoute,
+            n = (0, o.B)(t, { path: c.BVt.CHANNEL(a.pv.guildId()) });
+        n?.params?.guildId, c.ME;
     }
     getState() {
-        return { selectedGuildTimestampMillis: g, selectedGuildId: h, lastSelectedGuildId: p };
+        return { selectedGuildTimestampMillis: m, selectedGuildId: E, lastSelectedGuildId: h };
     }
     getGuildId() {
-        return h;
+        return E;
     }
     getLastSelectedGuildId() {
-        return p;
+        return h;
     }
     getLastSelectedTimestamp(e) {
-        return h === e ? f : g[e];
+        return E === e ? -1 : m[e];
     }
 }
-let R = new N(i.h, {
-    CONNECTION_OPEN: A,
-    OVERLAY_INITIALIZE: I,
-    CHANNEL_SELECT: y,
-    GUILD_MEMBER_REMOVE: C,
-    GUILD_DELETE: v,
-    LOGOUT: b,
+let I = new A(r.h, {
+    CONNECTION_OPEN: f,
+    OVERLAY_INITIALIZE: function (e) {
+        (E = e.selectedGuildId), (h = void 0), f();
+    },
+    CHANNEL_SELECT: function (e) {
+        let { guildId: t } = e;
+        if (E === t) return !1;
+        g(E), g(t), null != t && (h = t), (E = t);
+    },
+    GUILD_MEMBER_REMOVE: function (e) {
+        let { guildId: t, user: n } = e;
+        return n.id === d.default.getId() && p(t);
+    },
+    GUILD_DELETE: function (e) {
+        let {
+            guild: { id: t, unavailable: n },
+        } = e;
+        return !0 !== n && p(t);
+    },
+    LOGOUT: function () {
+        (E = null), (h = null);
+    },
 });

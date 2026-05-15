@@ -1,19 +1,31 @@
-i.d(e, { A: () => u });
-var n = i(627968),
-    l = i(64700),
-    r = i(503698),
-    s = i.n(r),
-    a = i(813516),
-    o = i(50397);
-let d = l.forwardRef(function (t, e) {
-        let { className: i, isBeforeGroup: l = !1, ...r } = t,
-            { children: d } = r;
-        return (0, n.jsx)(a.A, {
-            ...r,
-            ref: e,
-            role: "separator",
-            "aria-label": "string" == typeof d ? d : void 0,
-            className: s()(i, { [o.yF]: !0, [o.ov]: null != d, [o.rd]: l }),
-        });
+n.d(t, { A: () => h });
+var i = n(627968),
+    l = n(64700),
+    a = n(503698),
+    s = n.n(a),
+    r = n(837381),
+    o = n(813516),
+    c = n(985018),
+    d = n(798204);
+let u = l.forwardRef(function (e, t) {
+        let n,
+            { className: l, isBeforeGroup: a = !1, itemId: u, ...h } = e,
+            { children: m, isUnread: A } = h,
+            { role: g, onFocus: p, ..._ } = (0, r.rm)(u ?? "");
+        return (
+            "string" == typeof m && A
+                ? (n = `${c.intl.string(c.t.y2b7CA)}, ${m}`)
+                : "string" == typeof m
+                  ? (n = m)
+                  : A && (n = c.intl.string(c.t.y2b7CA)),
+            (0, i.jsx)(o.A, {
+                ...h,
+                ...(null != u ? { ..._, onFocus: p } : void 0),
+                ref: t,
+                role: "separator",
+                "aria-label": n,
+                className: s()(l, { [d.yF]: !0, [d.ov]: null != m, [d.rd]: a }),
+            })
+        );
     }),
-    u = l.memo(d);
+    h = l.memo(u);

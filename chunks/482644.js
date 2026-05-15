@@ -1,121 +1,123 @@
 "use strict";
-n.r(t), n.d(t, { baseRules: () => b, customRules: () => T });
-var l = n(627968),
-    s = n(64700),
-    i = n(503698),
-    r = n.n(i),
-    a = n(791332),
-    o = n.n(a),
-    u = n(397927),
-    c = n(398590),
-    d = n(46054),
-    m = n(976860),
-    h = n(780964),
-    g = n(840065),
-    A = n(954571),
-    f = n(652215),
-    p = n(559868),
-    x = n(816169);
-let v = o().defaultRules.link,
-    C = { section: f.JJy.SETTINGS_CHANGELOG },
-    N = (e) => {
-        let { level: t, children: n, className: l } = e,
-            i = (0, u.$Il)(),
-            r = parseInt(t, 10),
-            a = isNaN(r) ? 1 : r;
-        return s.createElement(`h${i + a - 1}`, { className: l }, n);
+l.r(t), l.d(t, { baseRules: () => C, customRules: () => T });
+var i = l(627968),
+    r = l(64700),
+    n = l(503698),
+    a = l.n(n),
+    s = l(791332),
+    o = l.n(s),
+    c = l(707554),
+    d = l(192308),
+    u = l(349288),
+    _ = l(398590),
+    h = l(46054),
+    p = l(976860),
+    m = l(780964),
+    g = l(858897),
+    f = l(954571),
+    A = l(652215),
+    b = l(559868),
+    v = l(198964);
+let E = o().defaultRules.link,
+    x = { section: A.JJy.SETTINGS_CHANGELOG },
+    I = (e) => {
+        let { level: t, children: l, className: i } = e,
+            n = (0, c.$)(),
+            a = parseInt(t, 10),
+            s = isNaN(a) ? 1 : a;
+        return r.createElement(`h${n + s - 1}`, { className: i }, l);
     },
-    b = null != d.A ? d.A.defaultRules : null,
+    C = null != h.A ? h.A.defaultRules : null,
     T = {
         link: {
-            parse(e, t, n) {
-                let l,
-                    s = e[2],
-                    i = s.startsWith("https://discordapp.com/nitro") || s.startsWith("https://discord.com/nitro"),
-                    r = s.startsWith("/activities");
+            parse(e, t, l) {
+                let i,
+                    r = e[2],
+                    n = r.startsWith("https://discordapp.com/nitro") || r.startsWith("https://discord.com/nitro"),
+                    a = r.startsWith("/activities");
                 return (
-                    (l = i
+                    (i = n
                         ? (e) => {
-                              A.default.track(f.HAw.PREMIUM_PROMOTION_OPENED, { location: C }),
-                                  (0, g.openUserSettings)(h.X.NITRO_PANEL),
-                                  n.changeLog.track(f.HAw.CHANGE_LOG_CTA_CLICKED, { cta_type: "nitro" }),
-                                  (0, u.OoC)(p.lb),
+                              f.default.track(A.HAw.PREMIUM_PROMOTION_OPENED, { location: x }),
+                                  (0, g.openUserSettings)(m.X.NITRO_PANEL),
+                                  l.changeLog.track(A.HAw.CHANGE_LOG_CTA_CLICKED, { cta_type: "nitro" }),
+                                  (0, d.closeModal)(b.lb),
                                   e.preventDefault();
                           }
-                        : r
+                        : a
                           ? (e) => {
-                                (0, m.pX)(s),
-                                    n.changeLog.track(f.HAw.CHANGE_LOG_CTA_CLICKED, {
-                                        ...A.default.getCampaignParams(s),
+                                (0, p.pX)(r),
+                                    l.changeLog.track(A.HAw.CHANGE_LOG_CTA_CLICKED, {
+                                        ...f.default.getCampaignParams(r),
                                     }),
-                                    (0, c.bz)(),
-                                    (0, u.OoC)(p.lb),
+                                    (0, _.bz)(),
+                                    (0, d.closeModal)(b.lb),
                                     e.preventDefault();
                             }
                           : () => {
-                                n && "function" == typeof n.onLinkClick && n.onLinkClick(s),
-                                    n.changeLog.track(f.HAw.CHANGE_LOG_CTA_CLICKED, {
-                                        target: s,
+                                l && "function" == typeof l.onLinkClick && l.onLinkClick(r),
+                                    l.changeLog.track(A.HAw.CHANGE_LOG_CTA_CLICKED, {
+                                        target: r,
                                         cta_type: "inline_link",
-                                        ...A.default.getCampaignParams(s),
+                                        ...f.default.getCampaignParams(r),
                                     });
                             }),
-                    { ...v.parse(e, t, n), callToAction: l }
+                    { ...E.parse(e, t, l), callToAction: i }
                 );
             },
-            react: (e, t, n) =>
-                (0, l.jsx)(
-                    u.MzZ,
+            react: (e, t, l) =>
+                (0, i.jsx)(
+                    u.Anchor,
                     {
                         href: o().sanitizeUrl(e.target),
                         title: e.title,
                         onClick: e.callToAction,
                         target: "_blank",
                         className: e.callToAction ? "cta" : void 0,
-                        children: t(e.content, n),
+                        children: t(e.content, l),
                     },
-                    n.key,
+                    l.key,
                 ),
         },
         lheading: (e) => ({
-            react: (t, n, s) => {
-                var i;
-                return (0, l.jsx)(
-                    N,
+            react: (t, l, r) => {
+                var n;
+                return (0, i.jsx)(
+                    I,
                     {
                         level: t.level,
-                        className: r()(
-                            x["heading-md/bold"],
-                            ...(null == (i = t.className) ? [] : i.split(" ").map((t) => e[t])),
+                        className: a()(
+                            v["heading-md/bold"],
+                            ...(null == (n = t.className) ? [] : n.split(" ").map((t) => e[t])),
                         ),
-                        children: n(t.content, s),
+                        children: l(t.content, r),
                     },
-                    s.key,
+                    r.key,
                 );
             },
         }),
         heading: {
-            react: (e, t, n) =>
-                (0, l.jsx)(N, { level: e.level, className: x["heading-md/bold"], children: t(e.content, n) }, n.key),
+            react: (e, t, l) =>
+                (0, i.jsx)(I, { level: e.level, className: v["heading-md/bold"], children: t(e.content, l) }, l.key),
         },
         image: {
-            react(e, t, s) {
-                let i = n(274516)(`./${e.target}`);
-                return (0, l.jsx)("img", { alt: e.alt, src: i }, s.key);
+            react(e, t, r) {
+                let n = l(274516)(`./${e.target}`);
+                return (0, i.jsx)("img", { alt: e.alt, src: n }, r.key);
             },
         },
-        blockQuote: { react: b?.blockQuote.react },
+        blockQuote: { react: C?.blockQuote.react },
         list: (e) => ({
-            react(t, n, s) {
-                let i = t.ordered ? "ol" : "ul",
-                    a = t.items.map((t, i) =>
-                        (0, l.jsx)("li", { className: r()(x["text-md/normal"], e.listItem), children: n(t, s) }, i),
+            react(t, l, r) {
+                let n = t.ordered ? "ol" : "ul",
+                    s = t.items.map((t, n) =>
+                        (0, i.jsx)("li", { className: a()(v["text-md/normal"], e.listItem), children: l(t, r) }, n),
                     );
-                return (0, l.jsx)(i, { className: e.list, start: t.start, children: a }, s.key);
+                return (0, i.jsx)(n, { className: e.list, start: t.start, children: s }, r.key);
             },
         }),
         paragraph: (e) => ({
-            react: (t, n, s) =>
-                (0, l.jsx)("p", { className: r()(x["text-md/normal"], e.paragraph), children: n(t.content, s) }, s.key),
+            react: (t, l, r) =>
+                (0, i.jsx)("p", { className: a()(v["text-md/normal"], e.paragraph), children: l(t.content, r) }, r.key),
         }),
     };

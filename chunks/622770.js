@@ -1,17 +1,16 @@
-"use strict";
-n.d(t, { A: () => h });
+a.d(t, { A: () => u });
 var i,
-    s = n(627968);
-n(64700);
-var l = n(503698),
-    r = n.n(l),
-    a = n(397927),
-    o = n(709562),
-    c = n(639939),
+    n = a(627968);
+a(64700);
+var s = a(503698),
+    l = a.n(s),
+    r = a(847374),
+    o = a(709562),
+    c = a(850481),
     d = (((i = d || {})[(i.UP = 0)] = "UP"), (i[(i.DOWN = 1)] = "DOWN"), i);
-function u(e) {
-    let { direction: t, className: n, themeable: i, ...l } = e;
-    return (0, s.jsx)(o.A, { className: r()(n, c.U, { [c.up]: 0 === t }), iconComponent: a.abt, themeable: i, ...l });
+function _(e) {
+    let { direction: t, className: a, themeable: i, ...s } = e;
+    return (0, n.jsx)(o.A, { className: l()(a, c.U, { [c.up]: 0 === t }), iconComponent: r.a, themeable: i, ...s });
 }
-u.Directions = d;
-let h = u;
+_.Directions = d;
+let u = _;

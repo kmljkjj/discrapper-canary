@@ -1,21 +1,21 @@
 "use strict";
-n.d(t, { q: () => S });
-var r = n(627968),
-    i = n(64700),
+n.d(t, { l: () => y, q: () => S });
+var i = n(627968),
+    r = n(64700),
     s = n(503698),
     a = n.n(s),
-    o = n(884362),
+    o = n(887129),
     l = n(602034),
     u = n(837381),
-    c = n(827734),
+    c = n(661531),
     d = n(658675),
     _ = n(820081),
     f = n(475825),
-    p = n(289873),
-    h = n(834730),
-    m = n(992251),
-    E = n(801461),
-    g = n(336389);
+    h = n(289873),
+    p = n(834730),
+    E = n(992251),
+    m = n(801461),
+    g = n(329296);
 let A = c.A.modules.select.OPTION_HEIGHT.resolve(),
     I = A + 4;
 function T(e) {
@@ -30,113 +30,114 @@ function S(e) {
             disabled: d = !1,
             selectionMode: _ = "single",
             items: S,
-            defaultSelectedItems: N,
-            selectedItems: C,
-            onSelectionChange: R,
-            activeDescendantIndex: O,
+            defaultSelectedItems: C,
+            selectedItems: v,
+            onSelectionChange: O,
+            activeDescendantIndex: R,
             shouldFocusWrap: b = !1,
             renderListItem: D,
             renderEmptyState: L,
             maxVisibleItems: w = 5,
             loading: M = !1,
-            onBlur: x,
-            onFocus: P,
-            typeahead: k = !1,
+            onBlur: P,
+            onFocus: x,
+            typeahead: U = !1,
         } = e,
-        U = i.useId(),
-        G = n ?? U,
-        F = i.useRef(null),
-        V = i.useMemo(() => S.map((e, t) => ({ ...e, index: t })), [S]),
-        [B, H] = i.useState(N ?? []),
-        j = null != C,
-        Y = j ? C : B,
+        k = r.useId(),
+        G = n ?? k,
+        F = r.useRef(null),
+        V = r.useMemo(() => S.map((e, t) => ({ ...e, index: t })), [S]),
+        [B, H] = r.useState(C ?? []),
+        j = null != v,
+        Y = j ? v : B,
         W = (0, o.Ay)({
             id: G,
-            defaultFocused: null != O ? (0, E.ZN)(G, O) : void 0,
+            defaultFocused: null != R ? (0, m.ZN)(G, R) : void 0,
             async scrollToEnd() {},
             async scrollToStart() {},
             isEnabled: !d,
             wrap: b,
             preserveFocusPosition: !1,
+            useVirtualFocus: -1 === s,
         });
-    i.useEffect(() => {
+    r.useEffect(() => {
         requestAnimationFrame(() => {
-            null != O && F.current?.scrollToIndex({ section: 0, row: O });
+            null != R && F.current?.scrollToIndex({ section: 0, row: R });
         });
-    }, [G, O]);
-    let { activeIndex: K, handleKeyDown: $ } = v(k, V);
-    i.useEffect(() => {
-        if (null != K && k) {
-            let e = (0, l.t$)(G, (0, E.ZN)(G, K)),
+    }, [G, R]);
+    let { activeIndex: K, handleKeyDown: z } = y(U, V);
+    r.useEffect(() => {
+        if (null != K && U && -1 !== s) {
+            let e = (0, l.t$)(G, (0, m.ZN)(G, K)),
                 t = document.querySelector((0, l.Mz)(e));
             t?.focus();
         }
-    }, [K, V, k, G]);
-    let z = i.useCallback((e, t) => (T(V[t]) ? I : A), [V]),
-        q = i.useCallback(
+    }, [K, V, U, G, s]);
+    let $ = r.useCallback((e, t) => (T(V[t]) ? I : A), [V]),
+        q = r.useCallback(
             (e) => {
                 if (!0 === c && 1 === Y.length && Y.includes(e)) return;
-                let t = (0, E.qH)(_, Y, e);
-                j || H(t), R?.(t);
+                let t = (0, m.qH)(_, Y, e);
+                j || H(t), O?.(t);
             },
-            [c, Y, R, j, _],
+            [c, Y, O, j, _],
         ),
-        Z = i.useCallback((e, t) => {
-            let { label: n, description: i } = e,
+        Z = r.useCallback((e, t) => {
+            let { label: n, description: r } = e,
                 s = T(e);
-            return (0, r.jsxs)("div", {
+            return (0, i.jsxs)("div", {
                 className: g.uN,
                 "data-has-description": s || void 0,
                 children: [
-                    (0, r.jsx)(h.E, { variant: "text-md/medium", color: "currentColor", className: g.vF, children: n }),
+                    (0, i.jsx)(p.E, { variant: "text-md/medium", color: "currentColor", className: g.vF, children: n }),
                     s &&
-                        (0, r.jsx)(h.E, {
+                        (0, i.jsx)(p.E, {
                             id: t,
                             variant: "text-sm/normal",
                             color: "text-subtle",
                             lineClamp: 1,
                             className: g.vL,
-                            children: i,
+                            children: r,
                         }),
                 ],
             });
         }, []);
     return (
         (t = M
-            ? (0, r.jsx)("div", {
+            ? (0, i.jsx)("div", {
                   className: g.vG,
                   "aria-busy": !0,
-                  children: (0, r.jsx)(p.y, { type: p.t.PULSING_ELLIPSIS, className: g.S, itemClassName: g.Ci }),
+                  children: (0, i.jsx)(h.y, { type: h.t.PULSING_ELLIPSIS, className: g.S, itemClassName: g.Ci }),
               })
             : V.length > 0
-              ? (0, r.jsx)(f.Ei, {
+              ? (0, i.jsx)(f.Ei, {
                     ref: F,
                     style: {
                         height: null != w ? `${V.slice(0, w).reduce((e, t) => e + (T(t) ? I : A), 0)}px` : "100%",
                     },
                     role: void 0,
                     tabIndex: s,
-                    rowHeight: z,
+                    rowHeight: $,
                     sections: [V.length],
                     sectionHeight: 0,
                     renderSection: () => null,
                     renderRow: (e) => {
                         let { row: t } = e,
                             n = V[t],
-                            i = (0, E.ZN)(G, t),
-                            a = null == D && T(n) ? `${i}-desc` : void 0,
+                            r = (0, m.ZN)(G, t),
+                            a = null == D && T(n) ? `${r}-desc` : void 0,
                             o = 0 !== Y.length && null != Y.find((e) => e.id === n.id);
-                        return (0, r.jsx)(
-                            y,
+                        return (0, i.jsx)(
+                            N,
                             {
                                 ...n,
-                                id: i,
+                                id: r,
                                 descriptionId: a,
                                 tabIndex: s,
                                 selectionMode: _,
                                 selected: o,
                                 disabled: d || n.disabled,
-                                focused: t === O,
+                                focused: t === R,
                                 onClick: () => {
                                     d || n.disabled || q(n);
                                 },
@@ -146,19 +147,19 @@ function S(e) {
                         );
                     },
                 })
-              : (L?.() ?? (0, r.jsx)(m.o, {}))),
-        (0, r.jsx)(u.hD, {
+              : (L?.() ?? (0, i.jsx)(E.o, {}))),
+        (0, i.jsx)(u.hD, {
             navigator: W,
-            children: (0, r.jsx)(u.PR, {
+            children: (0, i.jsx)(u.PR, {
                 children: (e) => {
-                    let { ref: n, onKeyDown: i, ...o } = e;
-                    return (0, r.jsx)("div", {
-                        onBlur: x,
-                        onFocus: P,
+                    let { ref: n, onKeyDown: r, ...o } = e;
+                    return (0, i.jsx)("div", {
+                        onBlur: P,
+                        onFocus: x,
                         "aria-busy": M,
                         ref: n,
                         onKeyDown: (e) => {
-                            i?.(e), $(e);
+                            r?.(e), z(e);
                         },
                         ...o,
                         role: "listbox",
@@ -173,11 +174,11 @@ function S(e) {
         })
     );
 }
-function y(e) {
+function N(e) {
     let {
             children: t,
             id: n,
-            descriptionId: i,
+            descriptionId: r,
             tabIndex: s,
             selected: a,
             disabled: o,
@@ -185,31 +186,36 @@ function y(e) {
             selectionMode: c,
             onClick: f,
         } = e,
-        p = (0, u.rm)(n);
-    function h() {
-        return "multiple" === c
-            ? (0, r.jsx)(d.P, { checked: a })
-            : a
-              ? (0, r.jsx)(_.B, { color: "currentColor", size: "refresh_sm" })
-              : null;
-    }
-    return (0, r.jsxs)("div", {
-        ...p,
+        h = (0, u.rm)(n);
+    return (0, i.jsxs)("div", {
+        ...h,
         id: n,
         className: g.Vu,
         role: "option",
-        tabIndex: -1 === s ? -1 : p.tabIndex,
+        tabIndex: -1 === s ? -1 : h.tabIndex,
         onClick: f,
         "aria-disabled": o,
         "aria-selected": a,
-        "aria-describedby": i,
+        "aria-describedby": r,
         "data-focus-visible": l,
-        children: [t, (0, r.jsx)("div", { className: g.Dt, "aria-hidden": !0, children: h() })],
+        children: [
+            t,
+            (0, i.jsx)("div", {
+                className: g.Dt,
+                "aria-hidden": !0,
+                children:
+                    "multiple" === c
+                        ? (0, i.jsx)(d.P, { checked: a })
+                        : a
+                          ? (0, i.jsx)(_.B, { color: "currentColor", size: "refresh_sm" })
+                          : null,
+            }),
+        ],
     });
 }
-function v(e, t) {
-    let [n, r] = i.useState(""),
-        s = i.useMemo(
+function y(e, t) {
+    let [n, i] = r.useState(""),
+        s = r.useMemo(
             () =>
                 e
                     ? t.map((e) =>
@@ -218,15 +224,15 @@ function v(e, t) {
                     : [],
             [t, e],
         ),
-        a = i.useCallback((e) => {
-            e.metaKey || e.ctrlKey || e.altKey || e.shiftKey || e.key.length > 1 || r((t) => t + e.key);
+        a = r.useCallback((e) => {
+            e.metaKey || e.ctrlKey || e.altKey || e.shiftKey || e.key.length > 1 || i((t) => t + e.key);
         }, []),
-        o = i.useRef(null);
+        o = r.useRef(null);
     return (
-        i.useEffect(
+        r.useEffect(
             () => (
                 (o.current = setTimeout(() => {
-                    r("");
+                    i("");
                 }, 750)),
                 () => {
                     clearTimeout(o.current);
@@ -235,7 +241,7 @@ function v(e, t) {
             [n],
         ),
         {
-            activeIndex: i.useMemo(() => {
+            activeIndex: r.useMemo(() => {
                 if ("" === n || !e) return null;
                 let t = s.findIndex((e) => e.startsWith(n.toLowerCase()));
                 return t >= 0 ? t : null;

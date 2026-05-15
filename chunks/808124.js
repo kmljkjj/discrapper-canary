@@ -1,224 +1,230 @@
-"use strict";
-n.d(t, { A: () => N });
+n.d(t, { A: () => O });
 var i = n(627968),
-    s = n(64700),
-    l = n(503698),
-    r = n.n(l),
-    a = n(311907),
-    o = n(397927),
-    c = n(517461),
-    d = n(770178),
-    u = n(418126),
-    h = n(266626),
-    A = n(998740),
-    p = n(732777),
-    g = n(709382),
-    m = n(287245),
-    _ = n(615658),
-    f = n(592044),
-    x = n(100449),
-    C = n(588703),
-    E = n(985018),
-    I = n(185014);
-let b = (e) => {
-        let { channel: t, idle: n, className: l, participants: a } = e,
-            h = (0, p.A)(t.id),
-            [A, b] = s.useState(!1),
-            N = s.useCallback(
+    l = n(64700),
+    a = n(503698),
+    s = n.n(a),
+    r = n(17928),
+    o = n(187322),
+    c = n(408278),
+    d = n(432017),
+    u = n(353182),
+    h = n(534890),
+    p = n(92259),
+    m = n(218429),
+    A = n(834730),
+    x = n(517461),
+    g = n(770178),
+    C = n(418126),
+    f = n(266626),
+    E = n(998740),
+    y = n(732777),
+    N = n(709382),
+    j = n(287245),
+    v = n(615658),
+    I = n(592044),
+    T = n(100449),
+    _ = n(368662),
+    R = n(375708),
+    S = n(683807);
+let P = (e) => {
+        let { channel: t, idle: n, className: a, participants: r } = e,
+            f = (0, y.A)(t.id),
+            [E, P] = l.useState(!1),
+            O = l.useCallback(
                 (e) => {
-                    u.Ay.update(t.id, { seat: e });
+                    C.Ay.update(t.id, { seat: e });
                 },
                 [t.id],
             ),
-            [S, T] = (0, c.V)("haven-show-chat", !1);
-        s.useEffect(() => {
+            [b, L] = (0, x.V)("haven-show-chat", !1);
+        l.useEffect(() => {
             setTimeout(() => {
-                b(!0);
+                P(!0);
             }, 2500);
         }, []);
-        let [v, y] = s.useState(0.65),
-            [j, R] = s.useState(0.65),
-            [O, L] = s.useState(0.65),
-            [M, D] = s.useState({ x: 0, y: 0 }),
-            [G, U] = s.useState(!1),
-            [P, w] = s.useState(0),
-            [k, V] = s.useState({ x: 0, y: 0 }),
-            [B, H] = s.useState({ x: 0, y: 0 }),
-            [F, K] = s.useState(!1),
-            W = s.useRef(null),
-            [Y, z] = s.useState(null),
-            X = (0, d.w)((e) => {
+        let [M, D] = l.useState(0.65),
+            [U, w] = l.useState(0.65),
+            [V, B] = l.useState(0.65),
+            [k, H] = l.useState({ x: 0, y: 0 }),
+            [F, G] = l.useState(!1),
+            [z, W] = l.useState(0),
+            [Y, K] = l.useState({ x: 0, y: 0 }),
+            [X, Z] = l.useState({ x: 0, y: 0 }),
+            [q, Q] = l.useState(!1),
+            $ = l.useRef(null),
+            [J, ee] = l.useState(null),
+            et = (0, g.w)((e) => {
                 let { contentRect: t, target: n } = e,
                     i = n.getBoundingClientRect(),
-                    s = t.width,
-                    l = t.height,
-                    r = (s / g.i.width) * 1.5,
-                    a = (l / g.i.height) * 1.5,
-                    o = (s / g.i.width) * 1.1,
-                    c = (l / g.i.height) * 1.1;
-                V({ x: s / 2 + i.x, y: l / 2 + i.y });
-                let d = Math.max(r, a);
-                if ((y(Math.max(o, c)), L(d), null != W.current)) {
-                    let e = W.current.getBoundingClientRect();
-                    z({ x: e.left - i.left, y: e.top - i.top });
+                    l = t.width,
+                    a = t.height,
+                    s = (l / N.i.width) * 1.5,
+                    r = (a / N.i.height) * 1.5,
+                    o = (l / N.i.width) * 1.1,
+                    c = (a / N.i.height) * 1.1;
+                K({ x: l / 2 + i.x, y: a / 2 + i.y });
+                let d = Math.max(s, r);
+                if ((D(Math.max(o, c)), B(d), null != $.current)) {
+                    let e = $.current.getBoundingClientRect();
+                    ee({ x: e.left - i.left, y: e.top - i.top });
                 }
             }),
-            q = s.useCallback(
+            en = l.useCallback(
                 (e) => {
-                    let t = Math.max(e, v),
-                        n = X.current?.getBoundingClientRect();
+                    let t = Math.max(e, M),
+                        n = et.current?.getBoundingClientRect();
                     if (null == n) return;
                     let i = { x: 1156, y: 1110 },
-                        s = !0,
-                        l = 0,
-                        r = n.height / t;
-                    for (; s && l < 10; ) (s = i.y + r / 2 > 1536) && (i.y -= 32), l++;
-                    let a = i.x * t,
+                        l = !0,
+                        a = 0,
+                        s = n.height / t;
+                    for (; l && a < 10; ) (l = i.y + s / 2 > 1536) && (i.y -= 32), a++;
+                    let r = i.x * t,
                         o = i.y * t,
-                        c = n.width / 2 - a,
+                        c = n.width / 2 - r,
                         d = n.height / 2 - o;
-                    R(t), D({ x: c, y: d });
+                    w(t), H({ x: c, y: d });
                 },
-                [X, v],
+                [et, M],
             );
-        s.useEffect(() => {
-            q(O);
-        }, [O, q]);
-        let J = s.useCallback(
+        l.useEffect(() => {
+            en(V);
+        }, [V, en]);
+        let ei = l.useCallback(
             (e) => {
-                let t = X.current?.getBoundingClientRect();
+                let t = et.current?.getBoundingClientRect();
                 if (null == t) return;
-                let n = t.height / j,
-                    i = t.width / j,
-                    s = { x: e.x / j, y: e.y / j },
-                    l = e.y / j > 0,
-                    r = e.x / j > 0,
-                    a = s.y - n < -1536,
-                    o = s.x - i < -2180;
-                a || l || r || o || D(e);
+                let n = t.height / U,
+                    i = t.width / U,
+                    l = { x: e.x / U, y: e.y / U },
+                    a = e.y / U > 0,
+                    s = e.x / U > 0,
+                    r = l.y - n < -1536,
+                    o = l.x - i < -2180;
+                r || a || s || o || H(e);
             },
-            [X, j],
+            [et, U],
         );
-        return (0, i.jsx)(o.vN3, {
+        return (0, i.jsx)(o.vN, {
             children: (0, i.jsxs)("div", {
-                ref: X,
-                className: r()(I.km, l),
+                ref: et,
+                className: s()(S.km, a),
                 onClick: () => {
-                    w(0);
+                    W(0);
                 },
-                onMouseDown: () => U(Date.now()),
+                onMouseDown: () => G(Date.now()),
                 onMouseUp: (e) => {
-                    if (null != X.current) {
-                        if (P < 2) {
+                    if (null != et.current) {
+                        if (z < 2) {
                             let n = Date.now(),
-                                i = X.current.getBoundingClientRect(),
-                                s = { x: (e.pageX - i.x - M.x) / j, y: (e.pageY - i.y - M.y) / j };
-                            !1 !== G && n - G > 250 && u.Ay.update(t.id, { position: s });
+                                i = et.current.getBoundingClientRect(),
+                                l = { x: (e.pageX - i.x - k.x) / U, y: (e.pageY - i.y - k.y) / U };
+                            !1 !== F && n - F > 250 && C.Ay.update(t.id, { position: l });
                         }
-                        U(!1);
+                        G(!1);
                     }
                 },
                 onMouseMove: (e) => {
-                    !1 !== G &&
-                        (w(P + Math.abs(e.movementX) + Math.abs(e.movementY)),
-                        J({ x: M.x + e.movementX, y: M.y + e.movementY })),
-                        H({ x: e.pageX, y: e.pageY });
+                    !1 !== F &&
+                        (W(z + Math.abs(e.movementX) + Math.abs(e.movementY)),
+                        ei({ x: k.x + e.movementX, y: k.y + e.movementY })),
+                        Z({ x: e.pageX, y: e.pageY });
                 },
                 children: [
                     (0, i.jsx)("div", {
-                        className: I.VT,
-                        style: { transform: `translate(${M.x}px, ${M.y}px) scale(${j}) ` },
-                        children: (0, i.jsx)(g.A, {
-                            roomSeats: h.seats,
-                            roomParticipants: h.participants,
-                            participants: a,
+                        className: S.VT,
+                        style: { transform: `translate(${k.x}px, ${k.y}px) scale(${U}) ` },
+                        children: (0, i.jsx)(N.A, {
+                            roomSeats: f.seats,
+                            roomParticipants: f.participants,
+                            participants: r,
                             channel: t,
                             idle: n,
-                            skipNewUserEducation: !A,
-                            onSeatClick: N,
+                            skipNewUserEducation: !E,
+                            onSeatClick: O,
                         }),
                     }),
                     (0, i.jsxs)("div", {
-                        className: r()(I.nM, I.vf),
+                        className: s()(S.nM, S.vf),
                         children: [
                             (0, i.jsxs)("div", {
-                                className: r()(I.nM, { [I.R]: n }),
+                                className: s()(S.nM, { [S.R]: n }),
                                 children: [
                                     (0, i.jsx)("div", {
-                                        ref: W,
-                                        children: (0, i.jsx)(o.K0, {
+                                        ref: $,
+                                        children: (0, i.jsx)(c.K, {
                                             variant: "icon-only",
-                                            "aria-label": E.intl.string(C.default.W7TAH4),
-                                            icon: o.T7G,
+                                            "aria-label": R.intl.string(_.default.W7TAH4),
+                                            icon: d.T,
                                             disabled: n,
                                             onClick: (e) => {
-                                                e.preventDefault(), e.stopPropagation(), K(!F);
+                                                e.preventDefault(), e.stopPropagation(), Q(!q);
                                             },
                                         }),
                                     }),
-                                    (0, i.jsx)(o.K0, {
+                                    (0, i.jsx)(c.K, {
                                         variant: "icon-only",
-                                        "aria-label": E.intl.string(C.default.O7EDNk),
-                                        icon: S ? o._mZ : o.oyn,
+                                        "aria-label": R.intl.string(_.default.O7EDNk),
+                                        icon: b ? u._ : h.o,
                                         disabled: n,
                                         onClick: (e) => {
-                                            e.preventDefault(), e.stopPropagation(), T(!S);
+                                            e.preventDefault(), e.stopPropagation(), L(!b);
                                         },
                                     }),
                                 ],
                             }),
-                            (0, i.jsx)(m.A, { channel: t, idle: n, showChat: S ?? !1 }),
+                            (0, i.jsx)(j.A, { channel: t, idle: n, showChat: b ?? !1 }),
                             (0, i.jsxs)("div", {
-                                className: r()(I.nM, { [I.R]: n }),
+                                className: s()(S.nM, { [S.R]: n }),
                                 children: [
-                                    (0, i.jsx)(o.K0, {
+                                    (0, i.jsx)(c.K, {
                                         variant: "icon-only",
                                         "aria-label": "Zoom out Haven",
-                                        icon: o.V0_,
+                                        icon: p.V,
                                         disabled: n,
                                         onClick: (e) => {
-                                            e.preventDefault(), e.stopPropagation(), q(j - 0.05);
+                                            e.preventDefault(), e.stopPropagation(), en(U - 0.05);
                                         },
                                     }),
-                                    (0, i.jsx)(o.K0, {
+                                    (0, i.jsx)(c.K, {
                                         variant: "icon-only",
                                         "aria-label": "Zoom in Haven",
-                                        icon: o.r1u,
+                                        icon: m.r,
                                         disabled: n,
                                         onClick: (e) => {
-                                            e.preventDefault(), e.stopPropagation(), q(j + 0.05);
+                                            e.preventDefault(), e.stopPropagation(), en(U + 0.05);
                                         },
                                     }),
                                 ],
                             }),
                         ],
                     }),
-                    (0, i.jsx)(x.A, { channel: t, participants: a }),
-                    (0, i.jsx)(f.A, {
-                        open: F,
-                        close: () => K(!1),
-                        triggerRef: W,
-                        style: null != Y ? { left: Y.x, top: Y.y } : void 0,
+                    (0, i.jsx)(T.A, { channel: t, participants: r }),
+                    (0, i.jsx)(I.A, {
+                        open: q,
+                        close: () => Q(!1),
+                        triggerRef: $,
+                        style: null != J ? { left: J.x, top: J.y } : void 0,
                     }),
-                    (0, i.jsx)(_.A, {}),
+                    (0, i.jsx)(v.A, {}),
                     (0, i.jsx)("div", {
-                        className: r()(I.Lw, { [I.FD]: A }),
+                        className: s()(S.Lw, { [S.FD]: E }),
                         children: (0, i.jsx)("div", {
-                            className: I.dH,
-                            children: (0, i.jsx)(o.Text, { variant: "display-lg", children: "Welcome to Haven" }),
+                            className: S.dH,
+                            children: (0, i.jsx)(A.E, { variant: "display-lg", children: "Welcome to Haven" }),
                         }),
                     }),
                 ],
             }),
         });
     },
-    N = (e) => {
-        let t = h.s.useConfig({ location: "Haven" }).enabled,
-            n = (0, a.bG)([A.A], () => A.A.isUserConnected(e.channel.id));
-        return (s.useEffect(() => {
-            !t || n || u.Ay.connect(e.channel.id);
+    O = (e) => {
+        let t = f.s.useConfig({ location: "Haven" }).enabled,
+            n = (0, r.bG)([E.A], () => E.A.isUserConnected(e.channel.id));
+        return (l.useEffect(() => {
+            !t || n || C.Ay.connect(e.channel.id);
         }, [e.channel.id, n, t]),
         t)
-            ? (0, i.jsx)(b, { ...e })
+            ? (0, i.jsx)(P, { ...e })
             : null;
     };

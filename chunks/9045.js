@@ -1,11 +1,11 @@
 "use strict";
-n.d(t, { A: () => s });
-var r = n(64700),
-    i = n(735438),
-    a = n(572808);
-let s = (e) =>
-    r.useMemo(() => {
-        let t = (0, i.clamp)(e.avatar, 0, a.oo.length - 1),
-            n = a.qS[a.oo[t]];
-        return null == n && (n = a.qS[a.PZ.IMP]), n;
+n.d(t, { A: () => a });
+var i = n(64700),
+    r = n(735438),
+    s = n(572808);
+let a = (e) =>
+    i.useMemo(() => {
+        let t = (0, r.clamp)(e.avatar, 0, s.oo.length - 1),
+            n = s.qS[s.oo[t]];
+        return null == n && (n = s.qS[s.PZ.IMP]), n;
     }, [e.avatar]);

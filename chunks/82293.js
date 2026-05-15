@@ -1,56 +1,50 @@
 "use strict";
-n.d(t, { A: () => m, e: () => l });
-var r = n(635377),
-    i = n.n(r),
-    a = n(311907),
-    s = n(73153);
-let o = 20;
-var l = (function (e) {
-    return (
-        (e[(e.NOT_FETCHED = 0)] = "NOT_FETCHED"),
-        (e[(e.FETCHING = 1)] = "FETCHING"),
-        (e[(e.FETCHED = 2)] = "FETCHED"),
-        (e[(e.ERROR = 3)] = "ERROR"),
-        e
-    );
-})({});
+n.d(t, { A: () => f, e: () => l });
+var i,
+    r = n(635377),
+    s = n.n(r),
+    a = n(17928),
+    o = n(228366),
+    l =
+        (((i = {})[(i.NOT_FETCHED = 0)] = "NOT_FETCHED"),
+        (i[(i.FETCHING = 1)] = "FETCHING"),
+        (i[(i.FETCHED = 2)] = "FETCHED"),
+        (i[(i.ERROR = 3)] = "ERROR"),
+        i);
 function u(e) {
-    let { applicationId: t, guildId: n, page: r } = e;
-    return `applicationId:${t} guildId:${n} page:${r}`;
+    let { applicationId: t, guildId: n, page: i } = e;
+    return `applicationId:${t} guildId:${n} page:${i}`;
 }
-let c = new (i())({ max: o }),
+let c = new (s())({ max: 20 }),
     d = {};
-function _(e) {
-    let { applicationId: t, guildId: n, page: r } = e,
-        i = u({ applicationId: t, guildId: n, page: r });
-    d = { ...d, [i]: 1 };
-}
-function f(e) {
-    let { applicationId: t, guildId: n, similarApplications: r, loadId: i, page: a, totalPages: s } = e,
-        o = u({ applicationId: t, guildId: n, page: a });
-    c.set(o, { lastFetchTimeMs: Date.now(), applications: r, loadId: i, page: a, totalPages: s }),
-        (d = { ...d, [o]: 2 });
-}
-function p(e) {
-    let { applicationId: t, guildId: n, page: r } = e,
-        i = u({ applicationId: t, guildId: n, page: r });
-    d = { ...d, [i]: 3 };
-}
-class h extends a.Ay.Store {
+class _ extends a.Ay.Store {
     static displayName = "ApplicationDirectorySimilarApplicationsStore";
     getSimilarApplications(e) {
-        let { applicationId: t, guildId: n, page: r } = e;
+        let { applicationId: t, guildId: n, page: i } = e;
         if (null == t) return;
-        let i = u({ applicationId: t, guildId: n, page: r });
-        return c.get(i);
+        let r = u({ applicationId: t, guildId: n, page: i });
+        return c.get(r);
     }
     getFetchState(e) {
-        let { applicationId: t, guildId: n, page: r } = e;
-        if (null != t) return d[u({ applicationId: t, guildId: n, page: r })];
+        let { applicationId: t, guildId: n, page: i } = e;
+        if (null != t) return d[u({ applicationId: t, guildId: n, page: i })];
     }
 }
-let m = new h(s.h, {
-    APPLICATION_DIRECTORY_FETCH_SIMILAR_APPLICATIONS: _,
-    APPLICATION_DIRECTORY_FETCH_SIMILAR_APPLICATIONS_SUCCESS: f,
-    APPLICATION_DIRECTORY_FETCH_SIMILAR_APPLICATIONS_FAILURE: p,
+let f = new _(o.h, {
+    APPLICATION_DIRECTORY_FETCH_SIMILAR_APPLICATIONS: function (e) {
+        let { applicationId: t, guildId: n, page: i } = e,
+            r = u({ applicationId: t, guildId: n, page: i });
+        d = { ...d, [r]: 1 };
+    },
+    APPLICATION_DIRECTORY_FETCH_SIMILAR_APPLICATIONS_SUCCESS: function (e) {
+        let { applicationId: t, guildId: n, similarApplications: i, loadId: r, page: s, totalPages: a } = e,
+            o = u({ applicationId: t, guildId: n, page: s });
+        c.set(o, { lastFetchTimeMs: Date.now(), applications: i, loadId: r, page: s, totalPages: a }),
+            (d = { ...d, [o]: 2 });
+    },
+    APPLICATION_DIRECTORY_FETCH_SIMILAR_APPLICATIONS_FAILURE: function (e) {
+        let { applicationId: t, guildId: n, page: i } = e,
+            r = u({ applicationId: t, guildId: n, page: i });
+        d = { ...d, [r]: 3 };
+    },
 });

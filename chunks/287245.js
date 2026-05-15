@@ -1,69 +1,70 @@
-"use strict";
-n.d(t, { A: () => v });
+n.d(t, { A: () => P });
 var i = n(627968),
-    s = n(64700),
-    l = n(503698),
-    a = n.n(l),
-    r = n(397927),
-    o = n(73153),
-    c = n(843472),
-    d = n(355622),
-    u = n(408018),
-    h = n(133343),
-    A = n(609425),
-    m = n(922301),
-    g = n(750112),
-    p = n(451909),
-    _ = n(538355),
-    f = n(854627),
-    x = n(447404),
-    C = n(320501),
-    E = n(203982),
+    l = n(64700),
+    a = n(503698),
+    s = n.n(a),
+    r = n(97808),
+    o = n(778712),
+    c = n(834730),
+    d = n(364522),
+    u = n(228366),
+    h = n(720149),
+    p = n(355622),
+    m = n(408018),
+    A = n(201349),
+    x = n(609425),
+    g = n(922301),
+    C = n(368919),
+    f = n(451909),
+    E = n(375199),
+    y = n(854627),
+    N = n(447404),
+    j = n(232835),
+    v = n(625494),
     I = n(427262),
-    N = n(652215),
-    b = n(985018),
-    S = n(739699);
-let T = (e) => {
-        let { channel: t, message: n, out: s = !1, noAnimate: l = !1 } = e,
-            o = (0, _.A)(n, {
+    T = n(652215),
+    _ = n(375708),
+    R = n(200252);
+let S = (e) => {
+        let { channel: t, message: n, out: l = !1, noAnimate: a = !1 } = e,
+            d = (0, E.A)(n, {
                 hideSimpleEmbedContent: !0,
                 formatInline: !1,
                 noStyleAndInteraction: !1,
-                isInteracting: !1,
                 allowDevLinks: !1,
                 allowLinks: !1,
                 previewLinkTarget: !1,
             }),
-            c = n.author,
-            d = I.Ay.getName(c),
-            u = (0, A.A)({ userId: c.id, guildId: t.guild_id }),
-            { avatarSrc: h, avatarDecorationSrc: p } = (0, f.A)({ userId: c.id, guildId: t.guild_id, size: 48 });
+            u = n.author,
+            h = I.Ay.getName(u),
+            p = (0, x.A)({ userId: u.id, guildId: t.guild_id }),
+            { avatarSrc: m, avatarDecorationSrc: A } = (0, y.A)({ userId: u.id, guildId: t.guild_id, size: 48 });
         return (0, i.jsxs)("div", {
-            className: a()(S.iU, { [S.FD]: s, [S.Tf]: l }),
+            className: s()(R.iU, { [R.FD]: l, [R.Tf]: a }),
             children: [
                 (0, i.jsx)("div", {
-                    children: (0, i.jsx)(r.euF, {
-                        src: h,
-                        avatarDecoration: p,
-                        size: r._3J.SIZE_24,
+                    children: (0, i.jsx)(r.eu, {
+                        src: m,
+                        avatarDecoration: A,
+                        size: o._3.SIZE_24,
                         "aria-label": "User Avatar",
                         isTyping: !1,
                     }),
                 }),
-                (0, i.jsx)(g.A, { userName: d, displayNameStyles: u, effectDisplayType: m.G.STATIC, loop: !0 }),
+                (0, i.jsx)(C.A, { userName: h, displayNameStyles: p, effectDisplayType: g.G.STATIC, loop: !0 }),
                 (0, i.jsxs)("div", {
-                    className: S.fi,
+                    className: R.fi,
                     children: [
-                        (0, i.jsx)(r.Text, { variant: "text-md/normal", className: S.Qs, children: o.content }),
+                        (0, i.jsx)(c.E, { variant: "text-md/normal", className: R.Qs, children: d.content }),
                         n.attachments.length > 0 &&
                             (0, i.jsx)("div", {
-                                className: a()(S.nM, S.rQ),
+                                className: s()(R.nM, R.rQ),
                                 children: n.attachments
                                     .filter((e) => !e.spoiler && e.content_type?.startsWith("image"))
                                     .map((e) =>
                                         (0, i.jsx)(
                                             "img",
-                                            { src: e.url, width: 128, className: S.oh, alt: b.intl.string(b.t.X4IxWL) },
+                                            { src: e.url, width: 128, className: R.oh, alt: _.intl.string(_.t.X4IxWL) },
                                             e.id,
                                         ),
                                     ),
@@ -73,47 +74,47 @@ let T = (e) => {
             ],
         });
     },
-    v = (e) => {
-        let { channel: t, idle: n, showChat: l } = e,
-            A = s.useRef(new Set()),
-            [m, g] = s.useState([]),
-            [_, f] = s.useState(0),
-            I = s.useRef(null),
-            b = s.useRef(!1),
-            [v, y] = s.useState(!0),
-            [j, R] = s.useState(""),
-            [O, L] = s.useState((0, u.x7)(j));
-        s.useEffect(() => {
-            let e = A.current;
+    P = (e) => {
+        let { channel: t, idle: n, showChat: a } = e,
+            r = l.useRef(new Set()),
+            [o, c] = l.useState([]),
+            [x, g] = l.useState(0),
+            C = l.useRef(null),
+            E = l.useRef(!1),
+            [y, I] = l.useState(!0),
+            [_, P] = l.useState(""),
+            [O, b] = l.useState((0, m.x7)(_));
+        l.useEffect(() => {
+            let e = r.current;
             return () => {
                 e.size > 0 && [...e].forEach((e) => clearTimeout(e));
             };
         }, []),
-            s.useEffect(() => {
-                let e = () => y(!0),
-                    t = () => y(!1);
+            l.useEffect(() => {
+                let e = () => I(!0),
+                    t = () => I(!1);
                 return (
-                    E._.subscribe(N.jej.TEXTAREA_FOCUS, e),
-                    E._.subscribe(N.jej.TEXTAREA_BLUR, t),
+                    v._.subscribe(T.jej.TEXTAREA_FOCUS, e),
+                    v._.subscribe(T.jej.TEXTAREA_BLUR, t),
                     () => {
-                        E._.unsubscribe(N.jej.TEXTAREA_FOCUS, e), E._.unsubscribe(N.jej.TEXTAREA_BLUR, t);
+                        v._.unsubscribe(T.jej.TEXTAREA_FOCUS, e), v._.unsubscribe(T.jej.TEXTAREA_BLUR, t);
                     }
                 );
             }, []),
-            s.useEffect(() => {
-                let e = I.current;
+            l.useEffect(() => {
+                let e = C.current;
                 null != e && e.scrollTo({ top: e.scrollHeight, behavior: "smooth" });
-            }, [I]),
-            s.useEffect(() => {
+            }, [C]),
+            l.useEffect(() => {
                 let e = Date.now();
-                g(
-                    C.A.getMessages(t.id)
+                c(
+                    j.A.getMessages(t.id)
                         ._array.filter((t) => t.timestamp.getTime() > e - 12e5)
                         .slice(-50),
                 );
             }, [t]);
-        let M = s.useCallback((e) => {
-                g((t) => {
+        let L = l.useCallback((e) => {
+                c((t) => {
                     if (!t.some((t) => t.id === e.id)) {
                         let n = [...t, e];
                         return n.length > 50 && n.shift(), n;
@@ -121,40 +122,40 @@ let T = (e) => {
                     return t;
                 });
             }, []),
-            D = s.useMemo(() => {
-                let e = m[m.length - 1];
+            M = l.useMemo(() => {
+                let e = o[o.length - 1];
                 if (null == e) return !0;
-                if (_ + 100 > Date.now()) return !1;
+                if (x + 100 > Date.now()) return !1;
                 let t = Date.now() > e.timestamp.getTime() + 5e3;
                 if (!t) {
                     let e = setTimeout(() => {
-                        f(Date.now()), A.current.delete(e);
+                        g(Date.now()), r.current.delete(e);
                     }, 5500);
-                    A.current.add(e);
+                    r.current.add(e);
                 }
                 return t;
-            }, [m, _]);
+            }, [o, x]);
         return (
-            s.useEffect(() => {
+            l.useEffect(() => {
                 let e = (e) => {
                     let { channelId: n, message: i } = e,
-                        s = C.A.getMessage(i.channel_id, i.id);
-                    if (n === t.id && s?.state === "SENT") {
-                        M(s);
+                        l = j.A.getMessage(i.channel_id, i.id);
+                    if (n === t.id && l?.state === "SENT") {
+                        L(l);
                         let e = setTimeout(() => {
-                            A.current.delete(e);
-                            let t = I.current;
+                            r.current.delete(e);
+                            let t = C.current;
                             null != t && t.scrollTo({ top: t.scrollHeight, behavior: "smooth" });
                         }, 10);
-                        A.current.add(e);
+                        r.current.add(e);
                     }
                 };
-                return o.h.subscribe("MESSAGE_CREATE", e), () => o.h.unsubscribe("MESSAGE_CREATE", e);
+                return u.h.subscribe("MESSAGE_CREATE", e), () => u.h.unsubscribe("MESSAGE_CREATE", e);
             }, []),
             (0, i.jsxs)("div", {
-                className: a()(S.X2, { [S.R]: !l }),
-                onMouseEnter: () => (b.current = !0),
-                onMouseLeave: () => (b.current = !1),
+                className: s()(R.X2, { [R.R]: !a }),
+                onMouseEnter: () => (E.current = !0),
+                onMouseLeave: () => (E.current = !1),
                 onWheel: (e) => {
                     e.preventDefault(), e.stopPropagation();
                 },
@@ -162,42 +163,42 @@ let T = (e) => {
                     e.preventDefault(), e.stopPropagation();
                 },
                 children: [
-                    (0, i.jsx)(x.A, {
+                    (0, i.jsx)(N.A, {
                         children: (0, i.jsx)("div", {
-                            className: a()(S.TE, { [S.N7]: n }),
-                            children: (0, i.jsx)(r.HOs, {
-                                className: a()(S.b6, { [S.N7]: D && n }),
-                                ref: I,
-                                children: m.map((e) => (0, i.jsx)(T, { channel: t, message: e, noAnimate: !0 }, e.id)),
+                            className: s()(R.TE, { [R.N7]: n }),
+                            children: (0, i.jsx)(d.Ip, {
+                                className: s()(R.b6, { [R.N7]: M && n }),
+                                ref: C,
+                                children: o.map((e) => (0, i.jsx)(S, { channel: t, message: e, noAnimate: !0 }, e.id)),
                             }),
                         }),
                     }),
-                    (0, i.jsx)(h.Ay, {
-                        className: a()(S.CQ, { [S.N7]: n && 0 === j.length }),
-                        innerClassName: S.hF,
-                        type: d.oU.HAVEN,
+                    (0, i.jsx)(A.Ay, {
+                        className: s()(R.CQ, { [R.N7]: n && 0 === _.length }),
+                        innerClassName: R.hF,
+                        type: p.oU.HAVEN,
                         channel: t,
-                        textValue: j,
+                        textValue: _,
                         richValue: O,
                         placeholder: "Send message",
-                        onFocus: () => y(!0),
-                        onBlur: () => y(!1),
-                        focused: v,
-                        disabled: !l,
+                        onFocus: () => I(!0),
+                        onBlur: () => I(!1),
+                        focused: y,
+                        disabled: !a,
                         showValueWhenDisabled: !0,
                         onChange: (e, t, n) => {
-                            t !== j && (R(t), L(n));
+                            t !== _ && (P(t), b(n));
                         },
                         onSubmit: async (e) => {
                             let { value: n } = e,
                                 i = n.trim();
                             if (0 === i.length) return { shouldClear: !1, shouldRefocus: !1 };
-                            let s = p.Ay.parse(t, i);
+                            let l = f.Ay.parse(t, i);
                             try {
                                 return (
-                                    await c.A.sendMessage(t.id, s, !0, { location: "Haven" }),
-                                    R(""),
-                                    L((0, u.x7)("")),
+                                    await h.A.sendMessage(t.id, l, !0, { location: "Haven" }),
+                                    P(""),
+                                    b((0, m.x7)("")),
                                     { shouldClear: !0, shouldRefocus: !1 }
                                 );
                             } catch {

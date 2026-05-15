@@ -1,30 +1,30 @@
-n.d(t, { A: () => d });
+n.d(t, { A: () => u });
 var i = n(627968),
-    l = n(64700),
-    r = n(503698),
-    s = n.n(r),
-    a = n(397927),
-    o = n(985018),
-    E = n(228763);
-let c = { BLOCK: E.om, INLINE: E.mG };
-class _ extends l.PureComponent {
-    static Types = c;
+    r = n(64700),
+    a = n(503698),
+    o = n.n(a),
+    s = n(834730),
+    l = n(985018),
+    c = n(158226);
+let _ = { BLOCK: c.om, INLINE: c.mG };
+class d extends r.PureComponent {
+    static Types = _;
     render() {
-        let { children: e, className: t, textClassName: n, type: l = c.BLOCK, style: r } = this.props;
+        let { children: e, className: t, textClassName: n, type: r = _.BLOCK, style: a } = this.props;
         return (0, i.jsxs)("div", {
-            className: s()(t, l),
-            style: r,
+            className: o()(t, r),
+            style: a,
             children: [
-                (0, i.jsxs)(a.Text, {
+                (0, i.jsxs)(s.E, {
                     variant: "text-sm/bold",
                     tag: "div",
                     color: "text-feedback-positive",
-                    className: E.AD,
-                    children: [o.intl.string(o.t["8tvIiN"]), ":"],
+                    className: c.AD,
+                    children: [l.intl.string(l.t["8tvIiN"]), ":"],
                 }),
-                (0, i.jsx)(a.Text, { className: s()(E.uN, n), variant: "text-sm/normal", children: e }),
+                (0, i.jsx)(s.E, { className: o()(c.uN, n), variant: "text-sm/normal", children: e }),
             ],
         });
     }
 }
-let d = _;
+let u = d;

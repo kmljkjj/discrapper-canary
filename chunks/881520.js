@@ -1,23 +1,24 @@
 "use strict";
-n.d(t, { A: () => c });
-var r = n(311907),
-    i = n(73153),
-    a = n(37962);
-let s = {};
-function o(e) {
-    let { feedbackType: t, cooldown: n, chance: r } = e;
-    s[t] = { ...a.u[t], cooldown: n, chance: r };
-}
-function l(e) {
-    let { feedbackType: t } = e;
-    delete s[t];
-}
-class u extends r.Ay.Store {
+n.d(t, { A: () => l });
+var i = n(17928),
+    r = n(228366),
+    s = n(37962);
+let a = {};
+class o extends i.Ay.Store {
     static displayName = "FeedbackOverrideStore";
     static persistKey = "feedbackOverrides";
     initialize() {}
     getFeedbackConfig(e) {
-        return s[e];
+        return a[e];
     }
 }
-let c = new u(i.h, { FEEDBACK_OVERRIDE_SET: o, FEEDBACK_OVERRIDE_CLEAR: l });
+let l = new o(r.h, {
+    FEEDBACK_OVERRIDE_SET: function (e) {
+        let { feedbackType: t, cooldown: n, chance: i } = e;
+        a[t] = { ...s.u[t], cooldown: n, chance: i };
+    },
+    FEEDBACK_OVERRIDE_CLEAR: function (e) {
+        let { feedbackType: t } = e;
+        delete a[t];
+    },
+});

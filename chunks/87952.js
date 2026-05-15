@@ -1,16 +1,16 @@
 "use strict";
-n.d(t, { A: () => s });
-var r = n(64700),
-    i = n(739508),
-    a = n(71532);
-function s() {
-    let [e, t] = r.useState(null);
+n.d(t, { A: () => a });
+var i = n(64700),
+    r = n(739508),
+    s = n(71532);
+function a() {
+    let [e, t] = i.useState(null);
     return (
-        r.useEffect(() => {
-            (0, a.Cv)()
+        i.useEffect(() => {
+            (0, s.Cv)()
                 .then((e) => t(e))
                 .catch((e) => {
-                    (0, i.pM)(e);
+                    (0, r.pM)(e);
                 });
         }, []),
         e

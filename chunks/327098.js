@@ -1,17 +1,17 @@
 "use strict";
-n.d(t, { A: () => o });
-var r = n(311907),
+n.d(t, { A: () => r });
+var l = n(17928),
     i = n(933958),
-    a = n(429913),
-    s = n(574520);
-function o(e) {
-    let t = (0, r.bG)([s.A], () => s.A.getMatchingActivity(e)),
-        [n, o] = (0, a.A)([t?.application_id, "application_id" in e.extra ? e.extra.application_id : void 0]);
+    s = n(429913),
+    a = n(352139);
+function r(e) {
+    let t = (0, l.bG)([a.A], () => a.A.getMatchingActivity(e)),
+        [n, r] = (0, s.A)([t?.application_id, "application_id" in e.extra ? e.extra.application_id : void 0]);
     return {
         activity: t,
-        embeddedActivity: (0, r.bG)([i.Ay], () => i.Ay.getEmbeddedActivityForUserId(e.author_id, n?.id)),
-        anyMatchingApplication: n ?? o,
+        embeddedActivity: (0, l.bG)([i.Ay], () => i.Ay.getEmbeddedActivityForUserId(e.author_id, n?.id)),
+        anyMatchingApplication: n ?? r,
         activityApplication: n,
-        fallbackApplication: o,
+        fallbackApplication: r,
     };
 }

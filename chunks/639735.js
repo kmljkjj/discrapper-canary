@@ -1,38 +1,39 @@
-a.d(t, { A: () => s });
-var n = a(311907),
-    i = a(73153);
-let c = { canPlayWowMoment: !1, isFetchingWowMomentMedia: !1, wowMomentWumpusMediaUrl: null };
-class o extends n.Ay.Store {
+"use strict";
+n.d(t, { A: () => o });
+var i = n(17928),
+    r = n(228366);
+let s = { canPlayWowMoment: !1, isFetchingWowMomentMedia: !1, wowMomentWumpusMediaUrl: null };
+class a extends i.Ay.Store {
     static displayName = "PurchasedItemsFestivityStore";
     getState() {
-        return c;
+        return s;
     }
     get canPlayWowMoment() {
-        return c.canPlayWowMoment;
+        return s.canPlayWowMoment;
     }
     get isFetchingWowMomentMedia() {
-        return c.isFetchingWowMomentMedia;
+        return s.isFetchingWowMomentMedia;
     }
     get wowMomentWumpusMedia() {
-        return c.wowMomentWumpusMediaUrl;
+        return s.wowMomentWumpusMediaUrl;
     }
 }
-let s = new o(i.h, {
+let o = new a(r.h, {
     LOGOUT: function () {
-        c = { canPlayWowMoment: !1, isFetchingWowMomentMedia: !1, wowMomentWumpusMediaUrl: null };
+        s = { canPlayWowMoment: !1, isFetchingWowMomentMedia: !1, wowMomentWumpusMediaUrl: null };
     },
     PURCHASED_ITEMS_FESTIVITY_SET_CAN_PLAY_WOW_MOMENT: function (e) {
         let { value: t } = e;
-        c.canPlayWowMoment = t;
+        s.canPlayWowMoment = t;
     },
     PURCHASED_ITEMS_FESTIVITY_IS_FETCHING_WOW_MOMENT_MEDIA: function () {
-        c.isFetchingWowMomentMedia = !0;
+        s.isFetchingWowMomentMedia = !0;
     },
     PURCHASED_ITEMS_FESTIVITY_FETCH_WOW_MOMENT_MEDIA_SUCCESS: function (e) {
         let { wumpusMedia: t } = e;
-        (c.wowMomentWumpusMediaUrl = t), (c.isFetchingWowMomentMedia = !1);
+        (s.wowMomentWumpusMediaUrl = t), (s.isFetchingWowMomentMedia = !1);
     },
     PURCHASED_ITEMS_FESTIVITY_FETCH_WOW_MOMENT_MEDIA_FAILURE: function () {
-        (c.isFetchingWowMomentMedia = !1), (c.canPlayWowMoment = !1);
+        (s.isFetchingWowMomentMedia = !1), (s.canPlayWowMoment = !1);
     },
 });

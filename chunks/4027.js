@@ -1,129 +1,148 @@
-e.d(t, { default: () => G });
-var i = e(627968);
-e(64700);
-var l = e(397927),
-    r = e(442433),
-    a = e(847767),
-    d = e(358367),
-    s = e(468389),
-    u = e(793574),
-    c = e(50268),
-    o = e(93055),
-    h = e(133238),
-    A = e(795144),
-    f = e(671470),
-    g = e(73028),
-    j = e(961350),
-    _ = e(605691),
-    x = e(848977),
-    b = e(995102),
-    m = e(652215),
-    p = e(985018);
-function v(n) {
-    let { channel: t, onSelect: a } = n,
-        d = t.isOwner(j.default.getId()),
-        o = (0, x.A)(t),
-        _ = (0, b.A)(t),
-        m = (0, c.A)({ id: t.id, label: p.intl.string(p.t.gFHI3k) }),
-        v = (0, s.A)(t),
-        O = (0, h.y)(t),
-        G = (0, A.A)(t),
-        X = (0, f.A)(t),
-        y = d
-            ? (0, i.jsx)(l.Drp, {
+i.d(n, { default: () => O });
+var t = i(627968);
+i(64700);
+var l = i(477782),
+    r = i(192308),
+    d = i(980707),
+    a = i(442433),
+    s = i(847767),
+    c = i(358367),
+    j = i(468389),
+    u = i(793574),
+    o = i(50268),
+    x = i(313281),
+    h = i(133238),
+    g = i(572763),
+    X = i(671470),
+    A = i(73028),
+    _ = i(495544),
+    b = i(605691),
+    m = i(848977),
+    M = i(995102),
+    U = i(652215),
+    p = i(375708);
+function E(e) {
+    let { channel: n, onSelect: s } = e,
+        c = n.isOwner(_.default.getId()),
+        x = (0, m.A)(n),
+        b = (0, M.A)(n),
+        U = (0, o.A)({ id: n.id, label: p.intl.string(p.t.gFHI3k) }),
+        E = (0, j.A)(n),
+        N = (0, h.y)(n),
+        O = (0, g.A)(n),
+        f = (0, X.A)(n),
+        C = c
+            ? (0, t.jsx)(l.Dr, {
                   id: "instant-invites",
                   label: p.intl.string(p.t.ngRFjZ),
                   action: () =>
-                      (0, l.mMO)(async () => {
-                          let { default: n } = await e.e("48574").then(e.bind(e, 830541));
-                          return (e) => (0, i.jsx)(n, { channelId: t.id, ...e });
+                      (0, r.openModalLazy)(async () => {
+                          let { default: e } = await Promise.all([
+                              i.e("93561"),
+                              i.e("23199"),
+                              i.e("83299"),
+                              i.e("49579"),
+                              i.e("40333"),
+                              i.e("66580"),
+                              i.e("99108"),
+                              i.e("32305"),
+                          ]).then(i.bind(i, 409352));
+                          return (i) => (0, t.jsx)(e, { channelId: n.id, ...i });
                       }),
               })
             : null;
-    return null == t || t.isManaged()
+    return null == n || n.isManaged()
         ? null
-        : (0, i.jsxs)(l.W1t, {
+        : (0, t.jsxs)(d.W, {
               "data-menu-migrated-auto": !0,
               navId: "gdm-context",
               "aria-label": p.intl.string(p.t.Xm41aV),
-              onClose: r.Z_,
-              onSelect: a,
+              onClose: a.Z_,
+              onSelect: s,
               children: [
-                  (0, i.jsx)(l.rXV, { children: o }),
-                  (0, i.jsx)(l.rXV, { children: X }),
-                  (0, i.jsx)(l.rXV, { children: G }),
-                  (0, i.jsxs)(l.rXV, {
+                  (0, t.jsx)(l.rX, { children: x }),
+                  (0, t.jsxs)(l.rX, { children: [f, O] }),
+                  (0, t.jsxs)(l.rX, {
                       children: [
-                          y,
-                          (0, i.jsx)(l.Drp, {
+                          C,
+                          (0, t.jsx)(l.Dr, {
                               id: "edit-gdm",
                               label: p.intl.string(p.t["5Q9+/L"]),
-                              action: () => (0, g.U)(t.id, u.A.GROUP_DM_CONTEXT_MENU),
+                              action: () => (0, A.U)(n.id, u.A.GROUP_DM_CONTEXT_MENU),
                           }),
                       ],
                   }),
-                  (0, i.jsx)(l.rXV, { children: v }),
-                  (0, i.jsx)(l.rXV, { children: _ }),
-                  (0, i.jsx)(l.rXV, { children: O }),
-                  (0, i.jsx)(l.rXV, { children: m }),
+                  (0, t.jsx)(l.rX, { children: E }),
+                  (0, t.jsx)(l.rX, { children: b }),
+                  (0, t.jsx)(l.rX, { children: N }),
+                  (0, t.jsx)(l.rX, { children: U }),
               ],
           });
 }
-function O(n) {
-    let { channel: t, selected: a, onSelect: d } = n,
-        o = t.isOwner(j.default.getId()),
-        A = (0, x.A)(t),
-        f = (0, b.A)(t),
-        m = (0, _.A)(t, a),
-        v = (0, c.A)({ id: t.id, label: p.intl.string(p.t.gFHI3k) }),
-        O = (0, s.A)(t),
-        G = (0, h.m)(t),
-        X = (0, h.y)(t),
-        y = o
-            ? (0, i.jsx)(l.Drp, {
+function N(e) {
+    let { channel: n, selected: s, onSelect: c } = e,
+        x = n.isOwner(_.default.getId()),
+        g = (0, m.A)(n),
+        X = (0, M.A)(n),
+        U = (0, b.A)(n, s),
+        E = (0, o.A)({ id: n.id, label: p.intl.string(p.t.gFHI3k) }),
+        N = (0, j.A)(n),
+        O = (0, h.m)(n),
+        f = (0, h.y)(n),
+        C = x
+            ? (0, t.jsx)(l.Dr, {
                   id: "instant-invites",
                   label: p.intl.string(p.t.ngRFjZ),
                   action: () =>
-                      (0, l.mMO)(async () => {
-                          let { default: n } = await e.e("48574").then(e.bind(e, 830541));
-                          return (e) => (0, i.jsx)(n, { channelId: t.id, ...e });
+                      (0, r.openModalLazy)(async () => {
+                          let { default: e } = await Promise.all([
+                              i.e("93561"),
+                              i.e("23199"),
+                              i.e("83299"),
+                              i.e("49579"),
+                              i.e("40333"),
+                              i.e("66580"),
+                              i.e("99108"),
+                              i.e("32305"),
+                          ]).then(i.bind(i, 409352));
+                          return (i) => (0, t.jsx)(e, { channelId: n.id, ...i });
                       }),
               })
             : null;
-    return null == t || t.isManaged()
+    return null == n || n.isManaged()
         ? null
-        : (0, i.jsxs)(l.W1t, {
+        : (0, t.jsxs)(d.W, {
               "data-menu-migrated-auto": !0,
               navId: "gdm-context",
               "aria-label": p.intl.string(p.t.Xm41aV),
-              onClose: r.Z_,
-              onSelect: d,
+              onClose: a.Z_,
+              onSelect: c,
               children: [
-                  (0, i.jsx)(l.rXV, { children: A }),
-                  (0, i.jsx)(l.rXV, { children: G }),
-                  (0, i.jsxs)(l.rXV, {
+                  (0, t.jsx)(l.rX, { children: g }),
+                  (0, t.jsx)(l.rX, { children: O }),
+                  (0, t.jsxs)(l.rX, {
                       children: [
-                          y,
-                          (0, i.jsx)(l.Drp, {
+                          C,
+                          (0, t.jsx)(l.Dr, {
                               id: "edit-gdm",
                               label: p.intl.string(p.t["5Q9+/L"]),
-                              action: () => (0, g.U)(t.id, u.A.GROUP_DM_CONTEXT_MENU),
+                              action: () => (0, A.U)(n.id, u.A.GROUP_DM_CONTEXT_MENU),
                           }),
                       ],
                   }),
-                  (0, i.jsx)(l.rXV, { children: O }),
-                  (0, i.jsx)(l.rXV, { children: f }),
-                  (0, i.jsxs)(l.rXV, { children: [X, m] }),
-                  (0, i.jsx)(l.rXV, { children: v }),
+                  (0, t.jsx)(l.rX, { children: N }),
+                  (0, t.jsx)(l.rX, { children: X }),
+                  (0, t.jsxs)(l.rX, { children: [f, U] }),
+                  (0, t.jsx)(l.rX, { children: E }),
               ],
           });
 }
-let G = (0, d.A)(
-    (0, a.A)(
-        function (n) {
-            return (0, o.DZ)() ? (0, i.jsx)(v, { ...n }) : (0, i.jsx)(O, { ...n });
+let O = (0, c.A)(
+    (0, s.A)(
+        function (e) {
+            return (0, x.DZ)() ? (0, t.jsx)(E, { ...e }) : (0, t.jsx)(N, { ...e });
         },
-        { object: m.ZSU.CONTEXT_MENU },
+        { object: U.ZSU.CONTEXT_MENU },
     ),
     [u.A.CONTEXT_MENU, u.A.GROUP_DM_MENU],
 );

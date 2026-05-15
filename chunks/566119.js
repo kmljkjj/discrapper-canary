@@ -1,30 +1,16 @@
-r.d(t, { CC: () => i, Jv: () => u, RQ: () => m, WD: () => s, b: () => p, gP: () => c, o8: () => o, ue: () => d });
-var n = r(954571),
-    a = r(652215);
-function l(e, t) {
-    n.default.track(a.HAw.PREMIUM_TENURE_REWARDS_ORBS_CTA_CLICKED, { cta_type: e, program_state: t });
+"use strict";
+n.d(t, { RQ: () => o, b: () => l, gP: () => a });
+var i = n(174459),
+    r = n(652215);
+function s(e, t) {
+    i.default.track(r.HAw.PREMIUM_TENURE_REWARDS_ORBS_CTA_CLICKED, { cta_type: e, program_state: t });
 }
-let s = (e) => {
-        l("shop_orbs", e);
+let a = () => {
+        s("balance_popover_upsell");
     },
-    i = (e) => {
-        l("view_billing", e);
+    o = () => {
+        s("balance_popover_next_drop");
     },
-    d = (e) => {
-        l("update_billing", e);
-    },
-    u = (e) => {
-        l("resubscribe", e);
-    },
-    o = (e) => {
-        l("orbs_card_helpdesk", e);
-    },
-    c = () => {
-        l("balance_popover_upsell");
-    },
-    m = () => {
-        l("balance_popover_next_drop");
-    },
-    p = () => {
-        l("balance_popover_helpdesk");
+    l = () => {
+        s("balance_popover_helpdesk");
     };

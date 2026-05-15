@@ -1,24 +1,23 @@
-"use strict";
-n.d(t, { V: () => r });
-var i = n(64700),
-    s = n(506774),
-    l = n(964486);
-function r(e, t) {
-    let [n, r] = i.useState(() => {
-        let n = s.w.get(e);
-        return null != n ? n : t;
+s.d(e, { V: () => n });
+var u = s(64700),
+    a = s(506774),
+    l = s(964486);
+function n(t, e) {
+    let [s, n] = u.useState(() => {
+        let s = a.w.get(t);
+        return null != s ? s : e;
     });
     return (
         (0, l.Ay)(() => {
-            null == s.w.get(e) && s.w.set(e, t);
+            null == a.w.get(t) && a.w.set(t, e);
         }),
         [
-            n,
-            i.useCallback(
-                (t) => {
-                    r(t), s.w.set(e, t);
+            s,
+            u.useCallback(
+                (e) => {
+                    n(e), a.w.set(t, e);
                 },
-                [e],
+                [t],
             ),
         ]
     );

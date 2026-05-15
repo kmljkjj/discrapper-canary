@@ -1,54 +1,53 @@
-"use strict";
-n.d(t, { f: () => u });
-var i = n(627968),
-    s = n(64700),
-    l = n(311907),
-    r = n(397927),
-    a = n(534963),
-    o = n(470710),
-    c = n(717518),
-    d = n(985018);
-function u(e) {
-    let t = (0, l.bG)([o.A], () => o.A.getCall(e), [e]),
-        n = (0, l.bG)([c.A], () => c.A.getRegions(null));
-    s.useEffect(() => {
-        null == n && a.A.fetchRegions(null);
-    }, [n]);
-    let u = s.useMemo(
+t.d(n, { f: () => d });
+var l = t(627968),
+    i = t(64700),
+    s = t(17928),
+    a = t(477782),
+    r = t(534963),
+    o = t(470710),
+    c = t(717518),
+    u = t(375708);
+function d(e) {
+    let n = (0, s.bG)([o.A], () => o.A.getCall(e), [e]),
+        t = (0, s.bG)([c.A], () => c.A.getRegions(null));
+    i.useEffect(() => {
+        null == t && r.A.fetchRegions(null);
+    }, [t]);
+    let d = i.useMemo(
             () =>
-                null != t && t.regionUpdated && null != n && null != t.region
-                    ? (n.find((e) => {
-                          let { id: n } = e;
-                          return n === t.region;
-                      }) ?? { name: t.region, id: t.region })
-                    : { id: "automatic", name: d.intl.string(d.t.JEmsap) },
-            [t, n],
+                null != n && n.regionUpdated && null != t && null != n.region
+                    ? (t.find((e) => {
+                          let { id: t } = e;
+                          return t === n.region;
+                      }) ?? { name: n.region, id: n.region })
+                    : { id: "automatic", name: u.intl.string(u.t.JEmsap) },
+            [n, t],
         ),
-        h = s.useCallback(
+        A = i.useCallback(
             (e) => {
-                null != t && a.A.changeCallRegion(t.channelId, e.id);
+                null != n && r.A.changeCallRegion(n.channelId, e.id);
             },
-            [t],
+            [n],
         ),
-        A = s.useMemo(
+        h = i.useMemo(
             () =>
-                null == n || 0 === n.length
+                null == t || 0 === t.length
                     ? null
-                    : n.map((e) => {
-                          let { id: t, name: n } = e;
-                          return (0, i.jsx)(
-                              r.iDA,
+                    : t.map((e) => {
+                          let { id: n, name: t } = e;
+                          return (0, l.jsx)(
+                              a.iD,
                               {
-                                  id: `region-${t}`,
+                                  id: `region-${n}`,
                                   group: "region-select",
-                                  label: n,
-                                  checked: t === u.id,
-                                  action: () => h(e),
+                                  label: t,
+                                  checked: n === d.id,
+                                  action: () => A(e),
                               },
-                              `region-${t}`,
+                              `region-${n}`,
                           );
                       }),
-            [n, u, h],
+            [t, d, A],
         );
-    return (0, i.jsx)(r.Drp, { id: "region-select", label: d.intl.string(d.t.w8gMqh), subtext: u.name, children: A });
+    return (0, l.jsx)(a.Dr, { id: "region-select", label: u.intl.string(u.t.w8gMqh), subtext: d.name, children: h });
 }

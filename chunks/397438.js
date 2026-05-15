@@ -1,56 +1,33 @@
 "use strict";
-n.d(t, { A: () => g });
-var r = n(311907),
-    i = n(506774),
-    a = n(73153),
-    s = n(617617);
+n.d(t, { A: () => c });
+var i = n(17928),
+    r = n(506774),
+    s = n(228366),
+    a = n(617617);
 let o = {},
     l = {};
-function u() {
-    let e = s.A.settings;
+function d() {
+    let e = a.A.settings;
     return {
         gifAutoPlay: e.textAndImages?.gifAutoPlay?.value,
         animateEmoji: e.textAndImages?.animateEmoji?.value,
         animateStickers: e.textAndImages?.animateStickers?.value,
     };
 }
-function c() {
-    return (l = u()), !1;
-}
-function d() {
-    o = {};
-}
 function _() {
-    o = {};
+    return (l = d()), !1;
 }
-function f(e) {
-    let { settings: t } = e;
-    o = { ...o, ...t };
-}
-function p(e) {
-    let { settings: t } = e;
-    for (let e of t) delete o[e];
-}
-function h() {
-    let e = u(),
-        t = !1;
-    for (let n in e) {
-        let r = n;
-        e[r] !== l[r] && (delete o[r], (t = !0));
-    }
-    return t;
-}
-class m extends r.Ay.PersistedStore {
+class u extends i.Ay.PersistedStore {
     static displayName = "UserSettingsOverridesStore";
     static persistKey = "UserSettingsOverridesStore";
     static migrations = [
         () => {
-            let e = i.w.get("UserSettingsStoreOverrides") ?? {};
-            return i.w.remove("UserSettingsStoreOverrides"), e;
+            let e = r.w.get("UserSettingsStoreOverrides") ?? {};
+            return r.w.remove("UserSettingsStoreOverrides"), e;
         },
     ];
     initialize(e) {
-        (o = e ?? {}), this.syncWith([s.A], c);
+        (o = e ?? {}), this.syncWith([a.A], _);
     }
     getState() {
         return o;
@@ -62,10 +39,25 @@ class m extends r.Ay.PersistedStore {
         return o[e];
     }
 }
-let g = new m(a.h, {
-    USER_SETTINGS_PROTO_UPDATE: h,
-    USER_SETTINGS_OVERRIDE_APPLY: f,
-    USER_SETTINGS_OVERRIDE_CLEAR: p,
-    LOGOUT: d,
-    LOGIN_SUCCESS: _,
+let c = new u(s.h, {
+    USER_SETTINGS_PROTO_UPDATE: function () {
+        let e = d(),
+            t = !1;
+        for (let n in e) e[n] !== l[n] && (delete o[n], (t = !0));
+        return t;
+    },
+    USER_SETTINGS_OVERRIDE_APPLY: function (e) {
+        let { settings: t } = e;
+        o = { ...o, ...t };
+    },
+    USER_SETTINGS_OVERRIDE_CLEAR: function (e) {
+        let { settings: t } = e;
+        for (let e of t) delete o[e];
+    },
+    LOGOUT: function () {
+        o = {};
+    },
+    LOGIN_SUCCESS: function () {
+        o = {};
+    },
 });

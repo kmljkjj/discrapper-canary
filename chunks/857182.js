@@ -1,6 +1,6 @@
 n.d(t, { A: () => r });
-var i = n(562465),
-    l = n(73153),
+var i = n(636537),
+    l = n(228366),
     a = n(652215);
 let r = {
     createChannelFollower: (e, t) =>

@@ -1,45 +1,47 @@
+"use strict";
 n.d(t, {
-    $5: () => m,
+    $5: () => _,
     P$: () => c,
-    Qm: () => u,
+    Qm: () => d,
+    Z7: () => g,
     _J: () => p,
-    di: () => g,
+    di: () => E,
     fi: () => h,
-    k$: () => d,
-    mR: () => _,
-    ql: () => f,
-    r2: () => A,
-    yc: () => o,
+    k$: () => u,
+    mR: () => f,
+    ql: () => A,
+    r2: () => m,
+    yc: () => l,
 }),
     n(321073);
 var i = n(989349),
-    l = n.n(i),
-    a = n(834409),
-    r = n(218113),
-    s = n(985018);
-let o = { month: "numeric", day: "numeric", hour: "numeric", minute: "2-digit" };
-function d(e) {
+    r = n.n(i),
+    s = n(834409),
+    a = n(218113),
+    o = n(375708);
+let l = { month: "numeric", day: "numeric", hour: "numeric", minute: "2-digit" };
+function u(e) {
     return (
-        (null != e.dmSpamDetectedAt && l()(e.dmSpamDetectedAt).add(r.Qs, "hours") > l()()) ||
-        (null != e.raidDetectedAt && l()(e.raidDetectedAt).add(r.Qs, "hours") > l()())
+        (null != e.dmSpamDetectedAt && r()(e.dmSpamDetectedAt).add(a.Qs, "hours") > r()()) ||
+        (null != e.raidDetectedAt && r()(e.raidDetectedAt).add(a.Qs, "hours") > r()())
     );
 }
 function c(e) {
-    return null != e.raidDetectedAt && l()(e.raidDetectedAt).add(r.Qs, "hours") > l()();
+    return null != e.raidDetectedAt && r()(e.raidDetectedAt).add(a.Qs, "hours") > r()();
 }
-function u(e) {
-    return null != e.dmSpamDetectedAt && l()(e.dmSpamDetectedAt).add(r.Qs, "hours") > l()();
+function d(e) {
+    return null != e.dmSpamDetectedAt && r()(e.dmSpamDetectedAt).add(a.Qs, "hours") > r()();
 }
-function m(e) {
-    return null == e ? void 0 : c(e) ? a.V.JOIN_RAID : a.V.DM_RAID;
+function _(e) {
+    return null == e ? void 0 : c(e) ? s.V.JOIN_RAID : s.V.DM_RAID;
 }
-function _(e, t) {
+function f(e, t) {
     let n = [];
-    return e && n.push(a.ZE.INVITES_DISABLED), t && n.push(a.ZE.DMS_DISABLED), n;
+    return e && n.push(s.ZE.INVITES_DISABLED), t && n.push(s.ZE.DMS_DISABLED), n;
 }
 function h(e, t) {
     let n = [];
-    return e || n.push(a.ZE.INVITES_DISABLED), t || n.push(a.ZE.DMS_DISABLED), n;
+    return e || n.push(s.ZE.INVITES_DISABLED), t || n.push(s.ZE.DMS_DISABLED), n;
 }
 function p(e) {
     return (
@@ -47,32 +49,36 @@ function p(e) {
         (null != e.invitesDisabledUntil && new Date(e.invitesDisabledUntil) > new Date())
     );
 }
-function g(e) {
+function E(e) {
     return e?.dmsDisabledUntil != null && new Date(e.dmsDisabledUntil) > new Date();
 }
-function A(e) {
+function m(e) {
     return e?.invitesDisabledUntil != null && new Date(e.invitesDisabledUntil) > new Date();
 }
-function f(e, t) {
+function g(e) {
+    let t = e?.lockdownDurationHours;
+    return null != t && (0, a.aE)().some((e) => e.value === t) ? t : a.f7;
+}
+function A(e, t) {
     let n = e.dmsDisabledUntil ?? e.invitesDisabledUntil;
     if (null == n) return "";
     let i = null != e.dmsDisabledUntil,
-        l = null != e.invitesDisabledUntil;
+        r = null != e.invitesDisabledUntil;
     switch (!0) {
-        case i && l:
-            return s.intl.formatToPlainString(s.t.hCZitf, {
+        case i && r:
+            return o.intl.formatToPlainString(o.t.hCZitf, {
                 guildName: t,
-                time: new Date(n).toLocaleString(s.intl.currentLocale, o),
+                time: new Date(n).toLocaleString(o.intl.currentLocale, l),
             });
         case i:
-            return s.intl.formatToPlainString(s.t["HNKxf+"], {
+            return o.intl.formatToPlainString(o.t["HNKxf+"], {
                 guildName: t,
-                time: new Date(n).toLocaleString(s.intl.currentLocale, o),
+                time: new Date(n).toLocaleString(o.intl.currentLocale, l),
             });
-        case l:
-            return s.intl.formatToPlainString(s.t.M3iSyL, {
+        case r:
+            return o.intl.formatToPlainString(o.t.M3iSyL, {
                 guildName: t,
-                time: new Date(n).toLocaleString(s.intl.currentLocale, o),
+                time: new Date(n).toLocaleString(o.intl.currentLocale, l),
             });
         default:
             return "";

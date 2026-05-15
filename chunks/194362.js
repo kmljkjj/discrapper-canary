@@ -1,11 +1,11 @@
-n.d(t, { a: () => i });
-var a = n(104798),
-    l = n(652215);
-async function i(e) {
-    let t = a.A.generateNonce();
+a.d(t, { a: () => r });
+var n = a(104798),
+    c = a(652215);
+async function r(e) {
+    let t = n.A.generateNonce();
     try {
-        let n = await a.A.createHandoffToken(t);
-        return l.X7G.DEVELOPER_PORTAL_LOGIN_HANDOFF(t, n, e);
+        let a = await n.A.createHandoffToken(t);
+        return c.X7G.DEVELOPER_PORTAL_LOGIN_HANDOFF(t, a, e);
     } catch {
         return `//${window.GLOBAL_ENV.DEVELOPERS_ENDPOINT}/${e}`;
     }

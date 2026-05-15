@@ -1,46 +1,54 @@
 "use strict";
-n.d(t, { A: () => d });
-var r = n(627968),
-    i = n(64700),
-    a = n(503698),
-    s = n.n(a),
-    o = n(435371),
-    l = n(397927),
-    u = n(985018),
-    c = n(915534);
-let d = i.forwardRef(function (e, t) {
-    let {
-        className: n,
-        src: i,
-        unicodeEmoji: a,
-        name: d,
-        size: _ = 20,
-        enableTooltip: f = !0,
-        enableHeight: p = !0,
-        onClick: h,
-    } = e;
-    if (null == i && null == a) return null;
-    let m = () => {
-        let e = (0, r.jsx)("img", {
-            ref: t,
-            alt: u.intl.formatToPlainString(u.t["9+YWrE"], { name: d }),
-            className: s()(c.U, n, { [c.v]: null != h }),
-            height: p ? _ : void 0,
-            src: i,
-            width: _,
-        });
-        return (null != a &&
-            (e = (0, r.jsx)("img", {
-                ref: t,
-                alt: a.allNamesString,
-                className: s()(c.U, n, { [c.v]: null != h }),
-                height: p ? _ : void 0,
-                src: a.url,
-                width: _,
-            })),
-        null == h)
-            ? (0, r.jsx)(l.vN3, { offset: { left: 5 }, children: e })
-            : (0, r.jsx)(l.DUT, { onClick: h, tag: "span", focusProps: { offset: { left: 5 } }, children: e });
-    };
-    return (0, r.jsx)(o.m_, { asContainer: !0, text: d, "aria-label": !1, shouldShow: f, tag: "span", children: m() });
+n.d(t, { A: () => _ });
+var i = n(627968),
+    r = n(64700),
+    s = n(503698),
+    a = n.n(s),
+    o = n(990078),
+    l = n(187322),
+    u = n(939249),
+    c = n(375708),
+    d = n(877217);
+let _ = r.forwardRef(function (e, t) {
+    let n,
+        {
+            className: r,
+            src: s,
+            unicodeEmoji: _,
+            name: f,
+            size: h = 20,
+            enableTooltip: p = !0,
+            enableHeight: E = !0,
+            onClick: m,
+        } = e;
+    return null == s && null == _
+        ? null
+        : (0, i.jsx)(o.m, {
+              asContainer: !0,
+              text: f,
+              "aria-label": !1,
+              shouldShow: p,
+              tag: "span",
+              children:
+                  ((n = (0, i.jsx)("img", {
+                      ref: t,
+                      alt: c.intl.formatToPlainString(c.t["9+YWrE"], { name: f }),
+                      className: a()(d.U, r, { [d.v]: null != m }),
+                      height: E ? h : void 0,
+                      src: s,
+                      width: h,
+                  })),
+                  (null != _ &&
+                      (n = (0, i.jsx)("img", {
+                          ref: t,
+                          alt: _.allNamesString,
+                          className: a()(d.U, r, { [d.v]: null != m }),
+                          height: E ? h : void 0,
+                          src: _.url,
+                          width: h,
+                      })),
+                  null == m)
+                      ? (0, i.jsx)(l.vN, { offset: { left: 5 }, children: n })
+                      : (0, i.jsx)(u.D, { onClick: m, tag: "span", focusProps: { offset: { left: 5 } }, children: n })),
+          });
 });

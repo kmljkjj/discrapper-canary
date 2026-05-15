@@ -1,70 +1,68 @@
-"use strict";
-n.d(t, { i: () => d });
-var r = n(627968),
-    i = n(64700),
-    a = n(503698),
-    s = n.n(a),
-    o = n(460890),
-    l = n(830149),
-    u = (function (e) {
-        return (e.XXSMALL = "xxsmall"), (e.XSMALL = "xsmall"), (e.SMALL = "small"), (e.LARGE = "large"), e;
-    })(u || {});
-let c = "indeterminate";
-function d(e) {
-    let t,
+e.d(r, { i: () => c });
+var l,
+    n = e(627968),
+    s = e(64700),
+    i = e(503698),
+    t = e.n(i),
+    u = e(460890),
+    m = e(563852),
+    o = (((l = o || {}).XXSMALL = "xxsmall"), (l.XSMALL = "xsmall"), (l.SMALL = "small"), (l.LARGE = "large"), l);
+let d = "indeterminate";
+function c(a) {
+    let r,
         {
-            className: n,
-            percent: a,
-            size: u = "small",
-            foregroundColor: d = "var(--progressbar-indicator-background)",
-            backgroundColor: _ = "var(--progressbar-track-background)",
-            foregroundGradientColor: f,
-            animate: p = !0,
-            stepNumber: h,
-            stepCount: m,
-        } = e,
-        { i18n: g } = (0, o.G9)(),
-        E = null != a ? a : null != h && null != m ? (h / (m + 1)) * 100 : 0;
-    t = null != f ? { background: `linear-gradient(to right, ${f[0]}, ${f[1]})` } : { backgroundColor: d };
-    let A = i.useMemo(() => {
-        let e = { role: "progressbar", "aria-label": "Progress Bar" };
+            className: e,
+            percent: l,
+            size: i = "small",
+            foregroundColor: o = "var(--progressbar-indicator-background)",
+            backgroundColor: c = "var(--progressbar-track-background)",
+            foregroundGradientColor: g,
+            animate: b = !0,
+            stepNumber: p,
+            stepCount: v,
+        } = a,
+        { i18n: h } = (0, u.G9)(),
+        x = null != l ? l : null != p && null != v ? (p / (v + 1)) * 100 : 0;
+    r = null != g ? { background: `linear-gradient(to right, ${g[0]}, ${g[1]})` } : { backgroundColor: o };
+    let k = s.useMemo(() => {
+        let a = { role: "progressbar", "aria-label": "Progress Bar" };
         return (
-            null != h && null != m
-                ? ((e["aria-valuenow"] = h),
-                  (e["aria-valuemin"] = 1),
-                  (e["aria-valuemax"] = m),
-                  (e["aria-label"] = g.STEP_INDICATOR(h, m)))
-                : null != a &&
-                  "number" == typeof a &&
-                  ((e["aria-valuenow"] = a),
-                  (e["aria-valuemin"] = 0),
-                  (e["aria-valuemax"] = 100),
-                  (e["aria-label"] = g.PERCENT_COMPLETE(Math.round(a)))),
-            e
+            null != p && null != v
+                ? ((a["aria-valuenow"] = p),
+                  (a["aria-valuemin"] = 1),
+                  (a["aria-valuemax"] = v),
+                  (a["aria-label"] = h.STEP_INDICATOR(p, v)))
+                : null != l &&
+                  "number" == typeof l &&
+                  ((a["aria-valuenow"] = l),
+                  (a["aria-valuemin"] = 0),
+                  (a["aria-valuemax"] = 100),
+                  (a["aria-label"] = h.PERCENT_COMPLETE(Math.round(l)))),
+            a
         );
-    }, [h, m, a, g]);
-    return (0, r.jsx)("div", {
-        className: s()(n, l.progress, l[u]),
-        style: { backgroundColor: _ },
-        ...A,
+    }, [p, v, l, h]);
+    return (0, n.jsx)("div", {
+        className: t()(e, m.progress, m[i]),
+        style: { backgroundColor: c },
+        ...k,
         children:
-            E !== c && "number" == typeof E
-                ? (0, r.jsx)("div", {
-                      className: s()(l.progressBar, l[u], { [l.animating]: p }),
-                      style: { transform: `translate3d(${Math.min(Math.max(0, E), 100) - 100}%, 0, 0)`, ...t },
+            x !== d && "number" == typeof x
+                ? (0, n.jsx)("div", {
+                      className: t()(m.progressBar, m[i], { [m.animating]: b }),
+                      style: { transform: `translate3d(${Math.min(Math.max(0, x), 100) - 100}%, 0, 0)`, ...r },
                   })
-                : (0, r.jsxs)(i.Fragment, {
+                : (0, n.jsxs)(s.Fragment, {
                       children: [
-                          (0, r.jsx)("div", {
-                              className: s()(l.indeterminateBar1, l[u], { [l.animating]: p }),
-                              style: t,
+                          (0, n.jsx)("div", {
+                              className: t()(m.indeterminateBar1, m[i], { [m.animating]: b }),
+                              style: r,
                           }),
-                          (0, r.jsx)("div", {
-                              className: s()(l.indeterminateBar2, l[u], { [l.animating]: p }),
-                              style: t,
+                          (0, n.jsx)("div", {
+                              className: t()(m.indeterminateBar2, m[i], { [m.animating]: b }),
+                              style: r,
                           }),
                       ],
                   }),
     });
 }
-(d.Sizes = u), (d.INDETERMINATE = c);
+(c.Sizes = o), (c.INDETERMINATE = d);

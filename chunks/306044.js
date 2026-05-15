@@ -1,27 +1,26 @@
 "use strict";
-let r;
-n.d(t, { A: () => h, v: () => p }), n(321073);
-var i = n(735438),
-    s = n.n(i),
+let i;
+n.d(t, { A: () => h, v: () => E }), n(321073);
+var r = n(735438),
+    s = n.n(r),
     a = n(77729),
     o = n(626584),
     l = n(723702),
-    u = n(837921);
-let c = [],
-    d = "dosbox.exe";
-function _(e) {
+    d = n(19575);
+let _ = [];
+function u(e) {
     return (e = e.toLowerCase()), (0, l.isWindows)() && (e = (e = e.replace(/^[a-z]:/, "")).replace(/\\/g, "/")), e;
 }
-function f(e) {
+function c(e) {
     null != e &&
         "" !== e &&
-        ((e = _(e)).endsWith("/") || (e += "/"), c.push(e), (0, l.isLinux)() && c.push("/var" + e));
+        ((e = u(e)).endsWith("/") || (e += "/"), _.push(e), (0, l.isLinux)() && _.push("/var" + e));
 }
-function p(e) {
-    e = _(e);
+function E(e) {
+    e = u(e);
     let t = !1;
     if (
-        (c.forEach((n) => {
+        (_.forEach((n) => {
             !t && e.startsWith(n) && ((e = e.substr(n.length)), (t = !0));
         }),
         !t)
@@ -31,34 +30,34 @@ function p(e) {
         let t = e.lastIndexOf(".app/");
         -1 !== t && (e = e.substr(0, t + 4));
     }
-    return (e = e.includes(d) ? e.split("/").slice(-3).join("/") : e.split("/").slice(-2).join("/"));
+    return (e = e.includes("dosbox.exe") ? e.split("/").slice(-3).join("/") : e.split("/").slice(-2).join("/"));
 }
 async function h() {
-    if (null != r) return r;
+    if (null != i) return i;
     try {
-        await u.Ay.ensureModule("discord_game_utils"), (r = await u.Ay.requireModule("discord_game_utils"));
+        await d.Ay.ensureModule("discord_game_utils"), (i = await d.Ay.requireModule("discord_game_utils"));
     } catch (e) {
         new o.A("GamesActionCreators").error("could not load discord_game_utils", e);
     }
     if ((0, l.isWindows)()) {
         let e = a.A.process.env;
-        f(e.LOCALAPPDATA),
-            f(e["PROGRAMFILES(X86)"]),
-            f(e.PROGRAMFILES),
-            f(e.PROGRAMW6432),
-            f(e.PROGRAMDATA),
-            f("/games/"),
-            f("/steamlibrary/steamapps/common/");
+        c(e.LOCALAPPDATA),
+            c(e["PROGRAMFILES(X86)"]),
+            c(e.PROGRAMFILES),
+            c(e.PROGRAMW6432),
+            c(e.PROGRAMDATA),
+            c("/games/"),
+            c("/steamlibrary/steamapps/common/");
     } else
-        (0, l.isMac)() ? f("/Applications") : (0, l.isLinux)() && (f("/app/bin"), f("/usr/bin"), f("/usr/local/bin"));
+        (0, l.isMac)() ? c("/Applications") : (0, l.isLinux)() && (c("/app/bin"), c("/usr/bin"), c("/usr/local/bin"));
     let e = a.A.app.getPath;
     return (
-        f(await e("home")),
-        f(await e("appData")),
-        f(await e("desktop")),
-        f(await e("documents")),
-        f(await e("downloads")),
-        (c = s().uniq(c)).sort((e, t) => t.length - e.length),
-        r
+        c(await e("home")),
+        c(await e("appData")),
+        c(await e("desktop")),
+        c(await e("documents")),
+        c(await e("downloads")),
+        (_ = s().uniq(_)).sort((e, t) => t.length - e.length),
+        i
     );
 }

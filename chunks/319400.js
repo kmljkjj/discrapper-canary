@@ -1,55 +1,67 @@
 "use strict";
-n.d(t, { LG: () => u, MS: () => a });
-let r = 50035,
-    i = "__root_errors";
-var a = (function (e) {
-    return (e.HCAPTCHA = "hcaptcha"), (e.RECAPTCHA = "recaptcha"), (e.RECAPTCHA_ENTERPRISE = "recaptcha_enterprise"), e;
-})({});
-function s(e) {
+n.d(t, { LG: () => o, MS: () => s });
+let i = "__root_errors";
+var r,
+    s =
+        (((r = {}).HCAPTCHA = "hcaptcha"),
+        (r.RECAPTCHA = "recaptcha"),
+        (r.RECAPTCHA_ENTERPRISE = "recaptcha_enterprise"),
+        (r.TURNSTILE = "turnstile"),
+        r);
+function a(e) {
     return e.map((e) => ({ code: "UNKNOWN", message: e }));
 }
-function o(e) {
-    let t = {};
-    for (let [n, r] of Object.entries(e)) {
-        if ("_misc" === n) {
-            t._errors = s(r);
-            continue;
-        }
-        let e = {};
-        (e._errors = s(r)), (t[n] = e);
-    }
-    return t;
-}
-function l(e, t) {
-    if ("string" == typeof e) return { message: e, code: t };
-    if (null == e.body) return { status: e.status };
-    let n = e.body;
-    return null == e.body.message ||
-        Array.isArray(e.body.message) ||
-        (null != e.body.code && Array.isArray(e.body.code))
-        ? null != n && "captcha_key" in n
-            ? {
-                  code: -1,
-                  captchaFields: n,
-                  status: e.status,
-                  message: n.captcha_key.length > 0 ? n.captcha_key[0] : void 0,
-              }
-            : { status: e.status, code: r, errors: o(n) }
-        : { message: n.message, code: n.code, retryAfter: n.retry_after, errors: n.errors, status: e.status };
-}
-class u extends Error {
+class o extends Error {
     code;
     retryAfter;
     errors;
     status;
     captchaFields;
     constructor(e, t, n = "An unexpected error occurred.") {
-        const { message: r, code: i, retryAfter: a, errors: s, status: o, captchaFields: u } = l(e, t);
-        super(r ?? n),
-            (this.code = i ?? -1),
-            (this.retryAfter = a),
-            (this.errors = s),
-            (this.status = o),
+        const {
+            message: i,
+            code: r,
+            retryAfter: s,
+            errors: o,
+            status: l,
+            captchaFields: u,
+        } = (function (e, t) {
+            if ("string" == typeof e) return { message: e, code: t };
+            if (null == e.body) return { status: e.status };
+            let n = e.body;
+            return null == e.body.message ||
+                Array.isArray(e.body.message) ||
+                (null != e.body.code && Array.isArray(e.body.code))
+                ? null != n && "captcha_key" in n
+                    ? {
+                          code: -1,
+                          captchaFields: n,
+                          status: e.status,
+                          message: n.captcha_key.length > 0 ? n.captcha_key[0] : void 0,
+                      }
+                    : {
+                          status: e.status,
+                          code: 50035,
+                          errors: (function (e) {
+                              let t = {};
+                              for (let [n, i] of Object.entries(e)) {
+                                  if ("_misc" === n) {
+                                      t._errors = a(i);
+                                      continue;
+                                  }
+                                  let e = {};
+                                  (e._errors = a(i)), (t[n] = e);
+                              }
+                              return t;
+                          })(n),
+                      }
+                : { message: n.message, code: n.code, retryAfter: n.retry_after, errors: n.errors, status: e.status };
+        })(e, t);
+        super(i ?? n),
+            (this.code = r ?? -1),
+            (this.retryAfter = s),
+            (this.errors = o),
+            (this.status = l),
             (this.captchaFields = u ?? {}),
             (this.cause = e);
     }
@@ -75,8 +87,8 @@ class u extends Error {
                     let [n, r] = e;
                     "_errors" === n ||
                         Object.entries(this.getAllFieldErrorsUnder(r)).forEach((e) => {
-                            let [r, a] = e;
-                            r === i ? (t[n] = a) : (t[`${n}.${r}`] = a);
+                            let [r, s] = e;
+                            r === i ? (t[n] = s) : (t[`${n}.${r}`] = s);
                         });
                 }),
             t

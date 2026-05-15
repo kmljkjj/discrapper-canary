@@ -1,2 +1,2 @@
 "use strict";
-e.exports = { R: "tooltipContainer__7bebc", A: "tooltipWordmarkContainer__7bebc" };
+e.exports = "/assets/881ed827548f38c6.svg";

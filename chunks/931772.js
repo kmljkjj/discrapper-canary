@@ -1,23 +1,14 @@
 "use strict";
-n.d(t, { A: () => l });
+n.d(t, { A: () => o });
 var r = n(440745),
     i = n.n(r),
-    a = n(317097),
-    s = n(315069);
-let o = (e) =>
-    null == e
-        ? e
-        : {
-              backgroundColors: e.background_colors.map((e) => i()((0, a.Hl)(e))),
-              buttonColors: e.button_colors.map((e) => i()((0, a.Hl)(e))),
-              confettiColors: e.confetti_colors.map((e) => i()((0, a.Hl)(e))),
-          };
-class l extends s.A {
+    s = n(317097),
+    a = n(315069);
+class o extends a.A {
     storeListingId;
     skuId;
     name;
     summary;
-    unpublishedAt;
     styles;
     constructor(e) {
         super(),
@@ -25,12 +16,22 @@ class l extends s.A {
             (this.skuId = e.skuId),
             (this.name = e.name),
             (this.summary = e.summary?.trim()),
-            (this.unpublishedAt = e.unpublishedAt),
             (this.styles = e.styles);
     }
     static fromServer(e) {
-        let { store_listing_id: t, sku_id: n, unpublished_at: r, styles: i, ...a } = e,
-            s = null != r ? new Date(r) : null;
-        return new l({ ...a, storeListingId: t, skuId: n, unpublishedAt: s, styles: o(i) });
+        let { store_listing_id: t, sku_id: n, styles: r, ...a } = e;
+        return new o({
+            ...a,
+            storeListingId: t,
+            skuId: n,
+            styles:
+                null == r
+                    ? r
+                    : {
+                          backgroundColors: r.background_colors.map((e) => i()((0, s.Hl)(e))),
+                          buttonColors: r.button_colors.map((e) => i()((0, s.Hl)(e))),
+                          confettiColors: r.confetti_colors.map((e) => i()((0, s.Hl)(e))),
+                      },
+        });
     }
 }

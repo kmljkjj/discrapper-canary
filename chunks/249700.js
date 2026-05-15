@@ -1,5 +1,5 @@
 n.d(t, { A: () => r }), n(938796);
-var i = n(843472),
+var i = n(720149),
     l = n(545152),
     a = n(381941);
 function r(e, t, n) {
@@ -8,11 +8,11 @@ function r(e, t, n) {
         null != t.interactionData && null != r.applicationId && (0, l.x)(t, e, r);
         return;
     }
-    let { content: s, tts: o, messageReference: d, flags: c, nonce: u } = t;
+    let { content: s, tts: o, messageReference: c, flags: d, nonce: u } = t;
     i.A.sendMessage(e.id, { content: s, tts: o, invalidEmojis: [], validNonShortcutEmojis: [] }, void 0, {
         nonce: u,
-        flags: c,
-        messageReference: d ?? void 0,
+        flags: d,
+        messageReference: c ?? void 0,
         ...r,
         location: a.Hx.RETRY,
     });

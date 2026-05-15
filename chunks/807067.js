@@ -1,196 +1,201 @@
-"use strict";
-n.d(t, { f: () => M }), n(938796);
-var i = n(627968),
-    s = n(64700),
-    l = n(835245),
-    r = n(724002),
-    a = n(287174),
-    o = n(487899),
-    c = n(311907),
-    d = n(397927),
-    u = n(793574),
-    h = n(688810),
-    A = n(735991),
-    p = n(786115),
-    g = n(975412),
-    m = n(392054),
-    _ = n(354138),
-    f = n(111042),
-    x = n(767599),
-    C = n(267102),
-    E = n(246356),
-    I = n(111162),
-    b = n(954571),
-    N = n(795816),
-    S = n(887700),
-    T = n(855446),
-    v = n(652215),
-    y = n(985018),
-    j = n(176187);
-let R = a.K.APP_LAUNCHER_IN_VOICE_BANNER,
-    O = `vc-activities-${(0, l.A)()}`;
-function L(e) {
-    let t,
-        n,
-        { channel: l, openInPopout: a, onClick: h } = e,
-        { fetchState: m, voiceBannerCollection: C } =
-            ((t = (0, c.bG)([I.default], () => I.default.onlyShowPreviewAppCollections) ? r.W.PREVIEW : r.W.ACTIVE),
-            s.useEffect(() => {
-                (0, _.An)({ surface: R, activeState: t });
-            }, [t]),
+t.d(n, { f: () => V }), t(938796);
+var l = t(627968),
+    i = t(64700),
+    s = t(835245),
+    a = t(724002),
+    r = t(287174),
+    o = t(487899),
+    c = t(17928),
+    u = t(939249),
+    d = t(305866),
+    A = t(707554),
+    h = t(140735),
+    m = t(323384),
+    C = t(834730),
+    E = t(320448),
+    p = t(793574),
+    g = t(688810),
+    x = t(735991),
+    I = t(786115),
+    f = t(975412),
+    T = t(392054),
+    v = t(993748),
+    _ = t(111042),
+    j = t(939635),
+    N = t(267102),
+    O = t(246356),
+    S = t(111162),
+    b = t(174459),
+    y = t(795816),
+    R = t(648027),
+    L = t(855446),
+    M = t(652215),
+    D = t(375708),
+    P = t(976524);
+let G = r.K.APP_LAUNCHER_IN_VOICE_BANNER,
+    k = `vc-activities-${(0, s.A)()}`;
+function U(e) {
+    let n,
+        t,
+        { channel: s, openInPopout: r, onClick: d } = e,
+        { fetchState: A, voiceBannerCollection: h } =
+            ((n = (0, c.bG)([S.default], () => S.default.onlyShowPreviewAppCollections) ? a.W.PREVIEW : a.W.ACTIVE),
+            i.useEffect(() => {
+                (0, v.An)({ surface: G, activeState: n });
+            }, [n]),
             {
-                fetchState: (0, c.bG)([f.A], () => f.A.getFetchState({ surface: R, activeState: t })),
-                voiceBannerCollection: (0, c.bG)([f.A], () => f.A.getCollections({ surface: R, activeState: t }))[0],
+                fetchState: (0, c.bG)([_.A], () => _.A.getFetchState({ surface: G, activeState: n })),
+                voiceBannerCollection: (0, c.bG)([_.A], () => _.A.getCollections({ surface: G, activeState: n }))[0],
             }),
-        E = m === f.e.FETCHING,
-        b = s.useMemo(() => {
-            let e = C?.application_directory_collection_items[0];
+        m = A === _.e.FETCHING,
+        C = i.useMemo(() => {
+            let e = h?.application_directory_collection_items[0];
             return null == e ? null : e.type === o.L.APPLICATION_BANNER ? e : null;
-        }, [C?.application_directory_collection_items]),
-        { trackItemImpressionRef: N } = (0, p.A)({
-            applicationId: b?.application.id ?? "",
-            applicationFlags: b?.application.flags,
+        }, [h?.application_directory_collection_items]),
+        { trackItemImpressionRef: E } = (0, I.A)({
+            applicationId: C?.application.id ?? "",
+            applicationFlags: C?.application.flags,
             sectionName: "app_launcher_in_voice_banner",
-            sectionPosition: b?.position,
+            sectionPosition: C?.position,
             sectionOverallPosition: 0,
-            promotionalLabel: null != b ? (0, A.Ii)(b.application) : void 0,
+            promotionalLabel: null != C ? (0, x.Ii)(C.application) : void 0,
         });
-    return null == b || null == C || E
+    return null == C || null == h || m
         ? null
-        : (null != b.id &&
-              null != b.image_hash &&
-              (n = (0, x.DH)({ itemId: b.id, hash: b.image_hash, containerWidth: 584 })),
-          (0, i.jsxs)(d.DUT, {
-              className: j.V8,
-              innerRef: N,
+        : (null != C.id &&
+              null != C.image_hash &&
+              (t = (0, j.DH)({ itemId: C.id, hash: C.image_hash, containerWidth: 584 })),
+          (0, l.jsxs)(u.D, {
+              className: P.V8,
+              innerRef: E,
               onClick: () => {
-                  h(),
-                      (0, g.A)({
-                          context: { type: "channel", channel: l },
-                          openInPopout: a,
-                          analyticsLocation: u.A.APP_LAUNCHER_IN_VOICE_BANNER,
-                          initialState: { applicationId: b.application.id },
+                  d(),
+                      (0, f.A)({
+                          context: { type: "channel", channel: s },
+                          openInPopout: r,
+                          analyticsLocation: p.A.APP_LAUNCHER_IN_VOICE_BANNER,
+                          initialState: { applicationId: C.application.id },
                       });
               },
               children: [
-                  (0, i.jsx)("img", { alt: b.description, src: n, className: j.W_ }),
-                  (0, i.jsx)("div", { className: j.LV }),
+                  (0, l.jsx)("img", { alt: C.description, src: t, className: P.W_ }),
+                  (0, l.jsx)("div", { className: P.LV }),
               ],
           }));
 }
-let M = s.forwardRef(function (e, t) {
-    var n;
-    let { channel: l, isHovered: r, closePopout: a, onMouseEnter: o, onMouseLeave: c, onClick: A, className: p } = e,
-        { id: _, guild_id: f } = l;
-    s.useEffect(() => {
-        b.default.track(v.HAw.ACTIVITIES_CENTER_CONTROL_TRAY_BUTTON_HOVERED, { channel_id: _, guild_id: f });
-    }, [_, f]),
-        s.useEffect(() => {
-            r || a();
-        }, [a, r]);
-    let x = (0, C.Us)(),
-        { analyticsLocations: I, newestAnalyticsLocation: R } = (0, h.Ay)(u.A.ACTIVITIES_MINI_SHELF),
-        M = x === v.BRT.POPOUT,
-        D = ((n = l.getGuildId()), (0, S.A)({ guildId: n }).slice(0, 5));
-    s.useEffect(() => {
-        let e = setTimeout(() => N.LK(), 1e3);
+let V = i.forwardRef(function (e, n) {
+    var t;
+    let { channel: s, isHovered: a, closePopout: r, onMouseEnter: o, onMouseLeave: c, onClick: x, className: I } = e,
+        { id: v, guild_id: _ } = s;
+    i.useEffect(() => {
+        b.default.track(M.HAw.ACTIVITIES_CENTER_CONTROL_TRAY_BUTTON_HOVERED, { channel_id: v, guild_id: _ });
+    }, [v, _]),
+        i.useEffect(() => {
+            a || r();
+        }, [r, a]);
+    let j = (0, N.Us)(),
+        { analyticsLocations: S, newestAnalyticsLocation: G } = (0, g.Ay)(p.A.ACTIVITIES_MINI_SHELF),
+        V = j === M.BRT.POPOUT,
+        B = ((t = s.getGuildId()), (0, R.A)({ guildId: t }).slice(0, 5));
+    i.useEffect(() => {
+        let e = setTimeout(() => y.LK(), 1e3);
         return () => clearTimeout(e);
     }, []);
-    let G = s.useCallback(() => {
-            (0, g.A)({
-                context: null != l ? { type: "channel", channel: l } : { type: "contextless" },
-                openInPopout: M,
-                analyticsLocation: R,
+    let H = i.useCallback(() => {
+            (0, f.A)({
+                context: null != s ? { type: "channel", channel: s } : { type: "contextless" },
+                openInPopout: V,
+                analyticsLocation: G,
             }),
                 c(),
-                A();
-        }, [l, R, A, c, M]),
-        U = s.useCallback(
+                x();
+        }, [s, G, x, c, V]),
+        w = i.useCallback(
             (e) => {
                 o(),
-                    b.default.track(v.HAw.ACTIVITIES_MINI_SHELF_HOVERED, {
-                        channel_id: l.id,
-                        guild_id: l.getGuildId(),
+                    b.default.track(M.HAw.ACTIVITIES_MINI_SHELF_HOVERED, {
+                        channel_id: s.id,
+                        guild_id: s.getGuildId(),
                     });
             },
-            [o, l],
+            [o, s],
         );
-    return (0, i.jsx)(h.f5, {
-        value: I,
-        children: (0, i.jsx)(E.A, {
-            children: (0, i.jsxs)(d.lGe, {
-                ref: t,
-                "aria-labelledby": O,
-                className: p,
+    return (0, l.jsx)(g.f5, {
+        value: S,
+        children: (0, l.jsx)(O.A, {
+            children: (0, l.jsxs)(d.l, {
+                ref: n,
+                "aria-labelledby": k,
+                className: I,
                 children: [
-                    (0, i.jsx)(d.Fmo, {
+                    (0, l.jsx)(A.F, {
                         forceLevel: 2,
-                        children: (0, i.jsx)(d.AC4, {
-                            children: (0, i.jsx)(d.H, { id: O, children: y.intl.string(y.t["2lnYtB"]) }),
+                        children: (0, l.jsx)(h.A, {
+                            children: (0, l.jsx)(A.H, { id: k, children: D.intl.string(D.t["2lnYtB"]) }),
                         }),
                     }),
-                    (0, i.jsxs)("div", {
-                        className: j.kL,
-                        onMouseEnter: U,
+                    (0, l.jsxs)("div", {
+                        className: P.kL,
+                        onMouseEnter: w,
                         onMouseLeave: c,
                         children: [
-                            (0, i.jsxs)("div", {
-                                className: j.gn,
+                            (0, l.jsxs)("div", {
+                                className: P.gn,
                                 children: [
-                                    (0, i.jsxs)("div", {
-                                        className: j.gH,
+                                    (0, l.jsxs)("div", {
+                                        className: P.gH,
                                         children: [
-                                            (0, i.jsx)(d.k9F, {
+                                            (0, l.jsx)(m.k, {
                                                 size: "md",
-                                                className: j.ch,
+                                                className: P.ch,
                                                 color: "var(--interactive-text-active)",
                                             }),
-                                            (0, i.jsx)(d.Text, {
+                                            (0, l.jsx)(C.E, {
                                                 variant: "eyebrow",
-                                                children: y.intl.string(y.t.f3Cz25),
+                                                children: D.intl.string(D.t.f3Cz25),
                                             }),
                                         ],
                                     }),
-                                    (0, i.jsxs)(d.DUT, {
-                                        className: j.hc,
-                                        onClick: G,
+                                    (0, l.jsxs)(u.D, {
+                                        className: P.hc,
+                                        onClick: H,
                                         children: [
-                                            (0, i.jsx)(d.Text, {
+                                            (0, l.jsx)(C.E, {
                                                 variant: "eyebrow",
-                                                children: y.intl.string(y.t["K8+z4S"]),
+                                                children: D.intl.string(D.t["K8+z4S"]),
                                             }),
-                                            (0, i.jsx)(d._BQ, {
+                                            (0, l.jsx)(E._, {
                                                 size: "custom",
                                                 width: 12,
                                                 height: 12,
                                                 color: "var(--interactive-text-active)",
-                                                className: j.O6,
+                                                className: P.O6,
                                             }),
                                         ],
                                     }),
                                 ],
                             }),
-                            (0, i.jsx)(L, {
-                                openInPopout: M,
-                                channel: l,
+                            (0, l.jsx)(U, {
+                                openInPopout: V,
+                                channel: s,
                                 onClick: () => {
-                                    A(), a();
+                                    x(), r();
                                 },
                             }),
-                            (0, i.jsx)("div", {
-                                className: j.ht,
-                                children: D.map((e) =>
-                                    (0, i.jsx)(
-                                        T.C,
+                            (0, l.jsx)("div", {
+                                className: P.ht,
+                                children: B.map((e) =>
+                                    (0, l.jsx)(
+                                        L.C,
                                         {
-                                            context: { channel: l, type: "channel" },
+                                            context: { channel: s, type: "channel" },
                                             activityItem: e,
                                             onClick: () => {
-                                                a(), A();
+                                                r(), x();
                                             },
-                                            aspectRatio: T.C.AspectRatio.THIRTEEN_BY_ELEVEN,
-                                            animatedDivClass: j.KU,
-                                            commandOrigin: m.iw.MINI_SHELF,
+                                            aspectRatio: L.C.AspectRatio.THIRTEEN_BY_ELEVEN,
+                                            animatedDivClass: P.KU,
+                                            commandOrigin: T.iw.MINI_SHELF,
                                         },
                                         e.application.id,
                                     ),

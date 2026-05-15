@@ -1,19 +1,19 @@
 "use strict";
-n.d(t, { Jb: () => o, b4: () => a, oR: () => s, qf: () => i });
-var r = n(73153);
-function i(e, t, n) {
-    return new Promise((i) => {
+n.d(t, { Jb: () => o, b4: () => a, oR: () => s, qf: () => r });
+var i = n(228366);
+function r(e, t, n) {
+    return new Promise((r) => {
         setTimeout(() => {
-            r.h.dispatch({ type: "ACTIVITY_INVITE_MODAL_OPEN", activity: e, isPrivate: t, context: n, resolve: i });
+            i.h.dispatch({ type: "ACTIVITY_INVITE_MODAL_OPEN", activity: e, isPrivate: t, context: n, resolve: r });
         }, 0);
     });
 }
 function s(e) {
-    r.h.dispatch({ type: "ACTIVITY_INVITE_MODAL_QUERY", query: e });
+    i.h.dispatch({ type: "ACTIVITY_INVITE_MODAL_QUERY", query: e });
 }
 function a(e) {
-    r.h.dispatch({ type: "ACTIVITY_INVITE_MODAL_SEND", channelId: e });
+    i.h.dispatch({ type: "ACTIVITY_INVITE_MODAL_SEND", channelId: e });
 }
 function o(e) {
-    r.h.dispatch({ type: "ACTIVITY_INVITE_MODAL_SEND", userId: e });
+    i.h.dispatch({ type: "ACTIVITY_INVITE_MODAL_SEND", userId: e });
 }

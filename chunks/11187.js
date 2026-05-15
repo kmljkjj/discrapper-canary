@@ -1,29 +1,22 @@
-"use strict";
-n.d(t, { QL: () => o, mW: () => s });
-var r = n(652215);
-function i(e) {
-    return "Klipy" === e;
-}
-function a(e) {
-    return i(e);
-}
-function s(e) {
-    if (!a(e.providerName)) return;
+r.d(t, { QL: () => l, mW: () => n });
+var s = r(652215);
+function n(e) {
+    if ("Klipy" !== e.providerName) return;
     let { thumbnail: t } = e;
     if (null != t) return t.proxyURL ?? t.url ?? t.uri;
 }
-function o(e, t, n) {
-    let i = null != t ? { [t]: 1 } : {},
-        { offset: a, limit: s, results: o, totalResults: l } = n ?? {};
+function l(e, t, r) {
+    let n = null != t ? { [t]: 1 } : {},
+        { offset: l, limit: i, results: a, totalResults: o } = r ?? {};
     return {
-        search_type: r.I4_.GIF,
+        search_type: s.I4_.GIF,
         load_id: e,
-        limit: s,
-        offset: a,
-        page: null != s && null != a ? Math.floor(a / s) + 1 : 1,
-        total_results: l,
-        page_results: null != o ? o : null,
-        num_modifiers: Object.keys(i).length,
-        modifiers: i,
+        limit: i,
+        offset: l,
+        page: null != i && null != l ? Math.floor(l / i) + 1 : 1,
+        total_results: o,
+        page_results: null != a ? a : null,
+        num_modifiers: Object.keys(n).length,
+        modifiers: n,
     };
 }

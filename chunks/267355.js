@@ -1,15 +1,15 @@
 "use strict";
 n.r(t), n.d(t, { isOverlayChannelVisible: () => c, isOverlayCurrentlyVisibleAndUnlocked: () => u });
-var r = n(87001),
-    i = n(9302),
-    s = n(1193),
-    a = n(395011),
+var i = n(567249),
+    r = n(9302),
+    s = n(140069),
+    a = n(489277),
     o = n(222506),
     l = n(392164);
 function u() {
     let e = a.A.getTargetPID();
     return (
-        !(null == e || e === i.UNSET_PID || !a.A.isFocused(e) || o.A.isInputLocked(e)) && !!r.A.getWindowVisible(l.f)
+        !(null == e || e === r.UNSET_PID || !a.A.isFocused(e) || o.A.isInputLocked(e)) && !!i.A.getWindowVisible(l.f)
     );
 }
 function c(e) {

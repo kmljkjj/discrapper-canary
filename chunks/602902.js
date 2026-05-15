@@ -1,64 +1,211 @@
-n.d(t, { K: () => x }), n(321073);
+"use strict";
+n.d(t, { K: () => m }), n(321073);
 var i = n(627968);
 n(64700);
-var l = n(192308),
-    a = n(397927),
-    r = n(294454),
-    s = n(118517),
+var r = n(192308),
+    s = n(294454),
+    a = n(118517),
     o = n(734057),
-    d = n(31717),
-    c = n(320501),
-    u = n(954571),
-    m = n(661191),
-    _ = n(518960),
-    h = n(372684),
-    p = n(439818),
-    g = n(399925),
-    A = n(696016),
-    f = n(652215);
-async function x(e, t) {
-    let { channelId: x, analyticsLocations: E, messageReference: C } = t,
-        I = o.A.getChannel(x);
+    l = n(31717),
+    u = n(232835),
+    c = n(174459),
+    d = n(518960),
+    _ = n(372684),
+    f = n(439818),
+    h = n(607814),
+    p = n(696016),
+    E = n(652215);
+async function m(e, t) {
+    let { channelId: m, analyticsLocations: g, messageReference: A } = t,
+        I = o.A.getChannel(m);
     if (null != I) {
-        if (null != C) {
-            let e = c.A.getMessage(C.channel_id, C.message_id);
-            null != e && (0, s.Yf)({ message: e, channel: I, shouldMention: !1, showMentionToggle: !1 });
+        if (null != A) {
+            let e = u.A.getMessage(A.channel_id, A.message_id);
+            null != e && (0, a.Yf)({ message: e, channel: I, shouldMention: !1, showMentionToggle: !1 });
         }
         try {
             let t = [],
                 n = [];
             for (let i of e) {
-                let e = await (0, g.VO)(i),
-                    l = i.name ?? (0, A.cM)(m.default.extractTimestamp(i.id)),
-                    a = (0, p.A)(l);
-                if (i.type === h.nQ.CLIP || i.type === h.nQ.VOICE_CLIP) {
-                    let l = `${"" !== a ? a : "clip"}.mp4`;
-                    t.push(new File([e], l, { type: "video/mp4" })), n.push({ clip: i });
-                } else if (i.type === h.nQ.SCREENSHOT) {
-                    let i = `${"" !== a ? a : "screenshot"}.jpeg`;
+                let e = await (0, h.VO)(i),
+                    r = i.name ?? (0, p.cM)(i.createdAt),
+                    s = (0, f.A)(r);
+                if (i.type === _.nQ.CLIP || i.type === _.nQ.VOICE_CLIP) {
+                    let r = `${"" !== s ? s : "clip"}.mp4`;
+                    t.push(new File([e], r, { type: "video/mp4" })), n.push({ clip: i });
+                } else if (i.type === _.nQ.SCREENSHOT) {
+                    let i = `${"" !== s ? s : "screenshot"}.jpeg`;
                     t.push(new File([e], i, { type: "image/jpeg" })), n.push({});
                 }
-                u.default.track(f.HAw.CLIP_SHARED, {
-                    location_stack: E,
+                c.default.track(E.HAw.CLIP_SHARED, {
+                    location_stack: g,
                     guild_id: I.guild_id,
                     channel_id: I.id,
                     channel_type: I.type,
                     application_id: i.applicationId,
-                    clip_id: i.id,
+                    clip_uuid: i.id,
                 });
             }
-            (0, _.R)(t, I, d.C.ChannelMessage, { filesMetadata: n, origin: "unknown:clip_share" }), l.closeAllModals();
+            (0, d.R)(t, I, l.C.ChannelMessage, { filesMetadata: n, origin: "unknown:clip_share" }), r.closeAllModals();
         } catch (e) {
-            throw (A.nx.error(e), e);
+            throw (p.nx.error(e), e);
         }
     } else
-        (0, a.mMO)(
+        (0, r.openModalLazy)(
             async () => {
-                let { default: t } = await Promise.all([n.e("96758"), n.e("43622"), n.e("75838")]).then(
-                    n.bind(n, 243258),
-                );
-                return (n) => (0, i.jsx)(t, { ...n, clips: e, analyticsLocations: E });
+                let { default: t } = await Promise.all([
+                    n.e("54266"),
+                    n.e("73953"),
+                    n.e("93110"),
+                    n.e("95664"),
+                    n.e("40671"),
+                    n.e("43778"),
+                    n.e("74389"),
+                    n.e("22513"),
+                    n.e("13498"),
+                    n.e("9023"),
+                    n.e("32993"),
+                    n.e("80203"),
+                    n.e("48157"),
+                    n.e("42971"),
+                    n.e("96527"),
+                    n.e("39995"),
+                    n.e("25568"),
+                    n.e("16254"),
+                    n.e("28951"),
+                    n.e("19360"),
+                    n.e("18125"),
+                    n.e("71934"),
+                    n.e("29690"),
+                    n.e("79924"),
+                    n.e("7053"),
+                    n.e("13233"),
+                    n.e("24092"),
+                    n.e("74103"),
+                    n.e("21530"),
+                    n.e("24199"),
+                    n.e("207"),
+                    n.e("89281"),
+                    n.e("57036"),
+                    n.e("98839"),
+                    n.e("88941"),
+                    n.e("76602"),
+                    n.e("34530"),
+                    n.e("28229"),
+                    n.e("62680"),
+                    n.e("61379"),
+                    n.e("21825"),
+                    n.e("98125"),
+                    n.e("18441"),
+                    n.e("76640"),
+                    n.e("25693"),
+                    n.e("43039"),
+                    n.e("28154"),
+                    n.e("48804"),
+                    n.e("88077"),
+                    n.e("32606"),
+                    n.e("18401"),
+                    n.e("14879"),
+                    n.e("13681"),
+                    n.e("53729"),
+                    n.e("10004"),
+                    n.e("55314"),
+                    n.e("89094"),
+                    n.e("29177"),
+                    n.e("33902"),
+                    n.e("32551"),
+                    n.e("31658"),
+                    n.e("4369"),
+                    n.e("23353"),
+                    n.e("53930"),
+                    n.e("46270"),
+                    n.e("86949"),
+                    n.e("50015"),
+                    n.e("11523"),
+                    n.e("66900"),
+                    n.e("1555"),
+                    n.e("44695"),
+                    n.e("21690"),
+                    n.e("44376"),
+                    n.e("99999"),
+                    n.e("31644"),
+                    n.e("70653"),
+                    n.e("45723"),
+                    n.e("70697"),
+                    n.e("18546"),
+                    n.e("38835"),
+                    n.e("37622"),
+                    n.e("90244"),
+                    n.e("18943"),
+                    n.e("67861"),
+                    n.e("84103"),
+                    n.e("1518"),
+                    n.e("9915"),
+                    n.e("53614"),
+                    n.e("96123"),
+                    n.e("31825"),
+                    n.e("36320"),
+                    n.e("23354"),
+                    n.e("20320"),
+                    n.e("95387"),
+                    n.e("31390"),
+                    n.e("99657"),
+                    n.e("47017"),
+                    n.e("90889"),
+                    n.e("51243"),
+                    n.e("46248"),
+                    n.e("44265"),
+                    n.e("99141"),
+                    n.e("98793"),
+                    n.e("92731"),
+                    n.e("25990"),
+                    n.e("11527"),
+                    n.e("63095"),
+                    n.e("68647"),
+                    n.e("66541"),
+                    n.e("63070"),
+                    n.e("64615"),
+                    n.e("96443"),
+                    n.e("87225"),
+                    n.e("75134"),
+                    n.e("93158"),
+                    n.e("84967"),
+                    n.e("55184"),
+                    n.e("23216"),
+                    n.e("87079"),
+                    n.e("25637"),
+                    n.e("31145"),
+                    n.e("78707"),
+                    n.e("73547"),
+                    n.e("84456"),
+                    n.e("99593"),
+                    n.e("61935"),
+                    n.e("62168"),
+                    n.e("55602"),
+                    n.e("28128"),
+                    n.e("58157"),
+                    n.e("91381"),
+                    n.e("10034"),
+                    n.e("73500"),
+                    n.e("25252"),
+                    n.e("77084"),
+                    n.e("44780"),
+                    n.e("18997"),
+                    n.e("16916"),
+                    n.e("65617"),
+                    n.e("36946"),
+                    n.e("92639"),
+                    n.e("44385"),
+                    n.e("40963"),
+                    n.e("90480"),
+                    n.e("66031"),
+                    n.e("94317"),
+                    n.e("95008"),
+                    n.e("23601"),
+                    n.e("92871"),
+                ]).then(n.bind(n, 243258));
+                return (n) => (0, i.jsx)(t, { ...n, clips: e, analyticsLocations: g });
             },
-            { stackingBehavior: "stack", modalKey: r.aU },
+            { stackingBehavior: "stack", modalKey: s.aU },
         );
 }

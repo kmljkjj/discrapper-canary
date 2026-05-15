@@ -1,9 +1,10 @@
-n.d(t, { v: () => s });
-let a = null;
-function s() {
-    if (null == a)
+"use strict";
+n.d(t, { v: () => r });
+let i = null;
+function r() {
+    if (null == i)
         try {
-            a = new AudioContext();
+            i = new AudioContext();
         } catch (e) {}
-    return a;
+    return i;
 }

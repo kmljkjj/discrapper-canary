@@ -1,42 +1,45 @@
 "use strict";
-n.r(t), n.d(t, { Anchor: () => d });
-var r = n(627968),
-    i = n(64700),
+n.r(t), n.d(t, { Anchor: () => E });
+var i = n(627968),
+    r = n(64700),
     s = n(503698),
     a = n.n(s),
     o = n(470562),
-    l = n(158954),
+    l = n(531142),
+    d = n(939249),
+    _ = n(187322),
     u = n(752239),
-    c = n(68380);
-function d(e) {
+    c = n(983763);
+function E(e) {
     let {
         href: t,
         onClick: n,
         className: s,
-        children: d,
-        rel: _,
-        target: f,
-        useDefaultUnderlineStyles: p = !0,
-        title: h,
-        style: m,
-        focusProps: E,
-        ref: g,
-        ...A
+        children: E,
+        rel: h,
+        target: m,
+        useDefaultUnderlineStyles: f = !0,
+        title: g,
+        style: p,
+        focusProps: A,
+        ref: I,
+        role: T,
+        ...S
     } = e;
     null != t && null == n && (n = u.V.getDefaultLinkInterceptor(t));
-    let I = i.useContext(l.gmh),
-        T = {
-            className: a()(c.Y, { [c.D]: p }, s),
+    let N = r.useContext(l.g),
+        C = {
+            className: a()(c.Y, { [c.D]: f }, s),
             href: t,
             onClick: n,
-            rel: null != _ ? _ : void 0,
-            target: null != f ? f : void 0,
-            title: null != h ? h : void 0,
-            style: null != m ? m : void 0,
+            rel: null != h ? h : void 0,
+            target: null != m ? m : void 0,
+            title: null != g ? g : void 0,
+            style: null != p ? p : void 0,
         };
-    return (null == t || (0, o.e)(t) || ((T.rel = "noreferrer noopener"), (T.target = "_blank")),
-    I && delete T.href,
+    return (null == t || (0, o.e)(t) || ((C.rel = "noreferrer noopener"), (C.target = "_blank")),
+    N && delete C.href,
     null != n)
-        ? (0, r.jsx)(l.DUT, { tag: "a", ...A, ...T, onClick: n, focusProps: E, innerRef: g, children: d })
-        : (0, r.jsx)(l.vN3, { ...E, children: (0, r.jsx)("a", { ...A, ...T, ref: g, children: d }) });
+        ? (0, i.jsx)(d.D, { tag: "a", ...S, ...C, onClick: n, focusProps: A, innerRef: I, role: "link", children: E })
+        : (0, i.jsx)(_.vN, { ...A, children: (0, i.jsx)("a", { ...S, ...C, ref: I, children: E }) });
 }

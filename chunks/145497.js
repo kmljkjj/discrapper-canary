@@ -1,56 +1,55 @@
-"use strict";
-n.d(t, { Ay: () => h, B$: () => f, j: () => p });
-var r = n(627968),
-    i = n(64700),
-    a = n(503698),
-    s = n.n(a),
-    o = n(311907),
-    l = n(573435),
-    u = n(531685),
-    c = n(486020),
-    d = n(240248),
-    _ = n(265225);
-function f(e) {
-    let { guildName: t, iconSize: n, className: i } = e,
-        a = (0, d.oN)(t);
-    return (0, r.jsx)(l.Ay, {
-        mask: l.Ay.Masks.CLAN_ICON,
-        width: n,
-        height: n,
-        className: i,
-        children: (0, r.jsx)("div", { className: s()(_.O, _.q), children: a }),
+e.d(s, { Ay: () => A, B$: () => o, j: () => N });
+var a = e(627968),
+    l = e(64700),
+    c = e(503698),
+    n = e.n(c),
+    t = e(17928),
+    d = e(573435),
+    r = e(531685),
+    h = e(486020),
+    m = e(240248),
+    u = e(567268);
+function o(i) {
+    let { guildName: s, iconSize: e, className: l } = i,
+        c = (0, m.oN)(s);
+    return (0, a.jsx)(d.Ay, {
+        mask: d.Ay.Masks.CLAN_ICON,
+        width: e,
+        height: e,
+        className: l,
+        children: (0, a.jsx)("div", { role: "img", "aria-label": s, className: n()(u.O, u.q), children: c }),
     });
 }
-function p(e) {
-    let { guildId: t, guildName: n, guildIcon: i, iconSize: a, className: f, acronymClassName: p, animate: h } = e,
-        m = (0, o.bG)([u.A], () => u.A.isFocused()),
-        g = (0, c.V0)(i) ? i : c.Ay.getGuildIconURL({ id: t, icon: i, size: a, canAnimate: h && m });
-    if (null == g) {
-        let e = (0, d.oN)(n);
-        return (0, r.jsx)(l.Ay, {
-            mask: l.Ay.Masks.CLAN_ICON,
-            width: a,
-            height: a,
-            className: f,
-            children: (0, r.jsx)("div", { className: s()(_.O, _.q, p), children: e }),
+function N(i) {
+    let { guildId: s, guildName: e, guildIcon: l, iconSize: c, className: o, acronymClassName: N, animate: A } = i,
+        g = (0, t.bG)([r.A], () => r.A.isFocused()),
+        k = (0, h.V0)(l) ? l : h.Ay.getGuildIconURL({ id: s, icon: l, size: c, canAnimate: A && g });
+    if (null == k) {
+        let i = (0, m.oN)(e);
+        return (0, a.jsx)(d.Ay, {
+            mask: d.Ay.Masks.CLAN_ICON,
+            width: c,
+            height: c,
+            className: o,
+            children: (0, a.jsx)("div", { role: "img", "aria-label": e, className: n()(u.O, u.q, N), children: i }),
         });
     }
-    return (0, r.jsx)(l.Ay, {
-        mask: l.Ay.Masks.CLAN_ICON,
-        width: a,
-        height: a,
-        className: f,
-        children: (0, r.jsx)("img", { src: g, alt: n, className: _.O }),
+    return (0, a.jsx)(d.Ay, {
+        mask: d.Ay.Masks.CLAN_ICON,
+        width: c,
+        height: c,
+        className: o,
+        children: (0, a.jsx)("img", { src: k, alt: e, className: u.O }),
     });
 }
-let h = i.memo(function (e) {
-    let { guild: t, iconSize: n, className: i, animate: a } = e;
-    return (0, r.jsx)(p, {
-        guildName: t.name,
-        guildId: t.id,
-        guildIcon: t.icon,
-        iconSize: n,
-        className: i,
-        animate: a,
+let A = l.memo(function (i) {
+    let { guild: s, iconSize: e, className: l, animate: c } = i;
+    return (0, a.jsx)(N, {
+        guildName: s.name,
+        guildId: s.id,
+        guildIcon: s.icon,
+        iconSize: e,
+        className: l,
+        animate: c,
     });
 });

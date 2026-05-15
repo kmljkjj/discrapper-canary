@@ -1,147 +1,128 @@
 "use strict";
 n.d(t, {
-    Ac: () => O,
-    B0: () => g,
-    CP: () => I,
-    Dx: () => v,
-    EI: () => h,
-    N2: () => A,
-    Ru: () => y,
-    a4: () => E,
-    lw: () => N,
-    mZ: () => C,
-    nZ: () => T,
-    pX: () => b,
-    ru: () => S,
-    rv: () => m,
-    z5: () => R,
+    Ac: () => T,
+    B0: () => _,
+    CP: () => E,
+    EI: () => c,
+    N2: () => h,
+    Tu: () => g,
+    WU: () => S,
+    Xf: () => p,
+    a4: () => f,
+    lw: () => A,
+    nZ: () => m,
+    rv: () => d,
+    z5: () => I,
 }),
     n(321073);
-var r = n(64700),
-    i = n(284009),
-    a = n.n(i),
-    s = n(575593),
-    o = n(311907),
-    l = n(631670),
-    u = n(159001),
-    c = n(207803),
-    d = n(836602),
-    _ = n(622543),
-    f = n(696451),
-    p = n(287809);
-function h(e) {
-    return r.useMemo(() => {
-        let t = f.Ay.getMutableAllGuildsAndMembers(),
+var i = n(64700),
+    r = n(17928),
+    s = n(765178),
+    a = n(836602),
+    o = n(841595),
+    l = n(696451),
+    u = n(375708);
+function c(e) {
+    return i.useMemo(() => {
+        let t = l.Ay.getMutableAllGuildsAndMembers(),
             n = {};
-        for (let r in t) {
-            let i = t[r],
-                a = i[e]?.avatar;
-            null != a && (null == n[a] && (n[a] = []), n[a].push(r));
+        for (let i in t) {
+            let r = t[i],
+                s = r[e]?.avatar;
+            null != s && (null == n[s] && (n[s] = []), n[s].push(i));
         }
         return null != n ? Object.entries(n).map((e) => e[1][0]) : [];
     }, [e]);
 }
-function m(e, t) {
-    let n = (0, o.bG)([f.Ay], () => (void 0 === t ? null : f.Ay.getMember(t, e.id))),
-        { pendingNameplate: r, pendingErrors: i } = (0, o.cf)([d.A], () => ({
-            pendingNameplate: d.A.getPendingChanges(t).pendingNameplate,
-            pendingErrors: d.A.getErrors(t).nameplate,
+function d(e, t) {
+    let n = (0, r.bG)([l.Ay], () => (void 0 === t ? null : l.Ay.getMember(t, e.id))),
+        { pendingNameplate: i, pendingErrors: s } = (0, r.cf)([a.A], () => ({
+            pendingNameplate: a.A.getPendingChanges(t).pendingNameplate,
+            pendingErrors: a.A.getErrors(t).nameplate,
         }));
     return {
         userNameplate: e.nameplate,
         guildNameplate: n?.collectibles?.nameplate,
-        pendingNameplate: r,
-        pendingErrors: i,
+        pendingNameplate: i,
+        pendingErrors: s,
     };
 }
-function g(e, t) {
-    let n = (0, o.bG)([f.Ay], () => (void 0 === t || null == e ? null : f.Ay.getMember(t, e.id))),
+function _(e, t) {
+    let n = (0, r.bG)([l.Ay], () => (void 0 === t || null == e ? null : l.Ay.getMember(t, e.id))),
         {
-            pendingDisplayNameStyles: r,
-            tryItOutDisplayNameStyles: i,
-            pendingErrors: a,
-        } = (0, o.cf)([d.A], () => ({
-            pendingDisplayNameStyles: d.A.getPendingChanges(t).pendingDisplayNameStyles,
-            tryItOutDisplayNameStyles: d.A.getTryItOutChanges().tryItOutDisplayNameStyles,
-            pendingErrors: d.A.getErrors(t).displayNameStyles,
+            pendingDisplayNameStyles: i,
+            tryItOutDisplayNameStyles: s,
+            pendingErrors: o,
+        } = (0, r.cf)([a.A], () => ({
+            pendingDisplayNameStyles: a.A.getPendingChanges(t).pendingDisplayNameStyles,
+            tryItOutDisplayNameStyles: a.A.getTryItOutChanges().tryItOutDisplayNameStyles,
+            pendingErrors: a.A.getErrors(t).displayNameStyles,
         }));
     return {
         userDisplayNameStyles: e?.displayNameStyles,
         guildDisplayNameStyles: n?.displayNameStyles,
-        pendingDisplayNameStyles: r,
-        tryItOutDisplayNameStyles: i,
-        pendingErrors: a,
+        pendingDisplayNameStyles: i,
+        tryItOutDisplayNameStyles: s,
+        pendingErrors: o,
     };
 }
-function E(e) {
+function f(e) {
     let { user: t, guildId: n } = e,
-        r = (0, o.bG)([f.Ay], () => (null != n ? f.Ay.getMember(n, t.id) : null));
-    return null != n ? r?.avatarDecoration : t.avatarDecoration;
+        i = (0, r.bG)([l.Ay], () => (null != n ? l.Ay.getMember(n, t.id) : null));
+    return null != n ? i?.avatarDecoration : t.avatarDecoration;
 }
-function A(e) {
+function h(e) {
     let { user: t, guildId: n } = e;
-    return (0, o.bG)([_.A], () =>
-        null == n ? _.A.getUserProfile(t.id)?.profileEffect : _.A.getGuildMemberProfile(t.id, n)?.profileEffect,
+    return (0, r.bG)([o.A], () =>
+        null == n ? o.A.getUserProfile(t.id)?.profileEffect : o.A.getGuildMemberProfile(t.id, n)?.profileEffect,
     );
 }
-function I(e) {
-    return (0, o.cf)([d.A], () => ({
-        pendingAvatarDecoration: d.A.getPendingChanges(e).pendingAvatarDecoration,
-        errors: d.A.getErrors(e).avatarDecoration,
+function p(e) {
+    let { user: t, guildId: n } = e;
+    return (0, r.bG)([o.A], () =>
+        null == n ? o.A.getUserProfile(t.id)?.profileFrame : o.A.getGuildMemberProfile(t.id, n)?.profileFrame,
+    );
+}
+function E(e) {
+    return (0, r.cf)([a.A], () => ({
+        pendingAvatarDecoration: a.A.getPendingChanges(e).pendingAvatarDecoration,
+        errors: a.A.getErrors(e).avatarDecoration,
     }));
 }
-function T(e) {
-    return (0, o.cf)([d.A], () => ({
-        pendingProfileEffect: d.A.getPendingChanges(e).pendingProfileEffect,
-        errors: d.A.getErrors(e).profileEffect,
+function m(e) {
+    return (0, r.cf)([a.A], () => ({
+        pendingProfileEffect: a.A.getPendingChanges(e).pendingProfileEffect,
+        errors: a.A.getErrors(e).profileEffect,
     }));
 }
-function y(e, t) {
-    (0, c.Er)(e === t ? void 0 : e);
+function g(e) {
+    return (0, r.cf)([a.A], () => ({
+        pendingProfileFrame: a.A.getPendingChanges(e).pendingProfileFrame,
+        errors: a.A.getErrors(e).profileFrame,
+    }));
 }
-function S(e, t) {
-    (0, l.zq)(e?.imageUri === t ? void 0 : e);
+function A(e) {
+    let { userValue: t, guildValue: n, pendingValue: i, guildId: r } = e;
+    return "" === i || null === i
+        ? null != r
+            ? t
+            : null
+        : "" !== i && null != i
+          ? i
+          : null != r && "" !== n && null != n
+            ? n
+            : t;
 }
-function v(e, t) {
-    let n = p.default.getCurrentUser();
-    if ((a()(null != n, "user cannot be null"), null == t)) {
-        let t = n.avatarDecoration;
-        (0, l.WR)({ type: s.R.AVATAR_DECORATION, value: e?.skuId === t?.skuId ? void 0 : e });
-    } else {
-        let r = f.Ay.getMember(t, n.id)?.avatarDecoration;
-        (0, u.WR)({ type: s.R.AVATAR_DECORATION, value: e?.skuId === r?.skuId ? void 0 : e });
-    }
-}
-function C(e, t) {
-    let n = p.default.getCurrentUser();
-    if ((a()(null != n, "user cannot be null"), null == t)) {
-        let t = _.A.getUserProfile(n.id)?.profileEffect;
-        (0, l.WR)({ type: s.R.PROFILE_EFFECT, value: e?.skuId === t?.skuId ? void 0 : e });
-    } else {
-        let r = _.A.getGuildMemberProfile(n.id, t)?.profileEffect;
-        (0, u.WR)({ type: s.R.PROFILE_EFFECT, value: e?.skuId === r?.skuId ? void 0 : e });
-    }
-}
-function b(e, t) {
-    let n = p.default.getCurrentUser();
-    if ((a()(null != n, "user cannot be null"), null == t)) {
-        let t = n.collectibles?.nameplate;
-        (0, l.WR)({ type: s.R.NAMEPLATE, value: e?.skuId === t?.skuId ? void 0 : e });
-    } else {
-        let r = f.Ay.getMember(t, n.id)?.collectibles?.nameplate;
-        (0, u.WR)({ type: s.R.NAMEPLATE, value: e?.skuId === r?.skuId ? void 0 : e });
-    }
-}
-function N(e) {
-    let { userValue: t, guildValue: n, pendingValue: r, guildId: i } = e,
-        a = "" === r || null === r,
-        s = "" !== r && null != r,
-        o = "" !== n && null != n;
-    return a ? (null != i ? t : null) : s ? r : null != i && o ? n : t;
-}
-function R(e, t) {
+function I(e, t) {
     return void 0 === e ? null != t : null != e;
 }
-function O(e, t) {
+function T(e, t) {
     return void 0 === e ? null != t : null != e;
+}
+function S(e) {
+    "set" === e
+        ? s.O.announce(u.intl.string(u.t.NstziV))
+        : "remove" === e
+          ? s.O.announce(u.intl.string(u.t["f1+oNk"]))
+          : s.O.announce(u.intl.string(u.t["/b5nqj"]));
 }

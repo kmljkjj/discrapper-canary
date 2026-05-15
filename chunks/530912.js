@@ -1,20 +1,21 @@
-n.d(t, { Jf: () => _, TA: () => u, VF: () => h, hH: () => c, nL: () => m, pp: () => d });
+"use strict";
+n.d(t, { Jf: () => m, TA: () => u, VF: () => h, hH: () => d, nL: () => f, pp: () => o });
 var a = n(64700),
-    l = n(735438),
-    s = n(58149),
+    i = n(735438),
+    l = n(58149),
     r = n(734057),
-    i = n(954571),
-    o = n(652215);
-function d(e, t, n) {
-    i.default.track(o.HAw.FORWARD_MESSAGE_STARTED, { channel_id: e, message_id: t, source: n });
+    s = n(954571),
+    c = n(652215);
+function o(e, t, n) {
+    s.default.track(c.HAw.FORWARD_MESSAGE_STARTED, { channel_id: e, message_id: t, source: n });
 }
-function c(e) {
-    let { channelId: t, messageId: n, numDestinationChanges: a, numQueryChanges: l } = e;
-    i.default.track(o.HAw.FORWARD_MESSAGE_CANCELLED, {
+function d(e) {
+    let { channelId: t, messageId: n, numDestinationChanges: a, numQueryChanges: i } = e;
+    s.default.track(c.HAw.FORWARD_MESSAGE_CANCELLED, {
         channel_id: t,
         message_id: n,
         num_destination_changes: a,
-        num_query_changes: l,
+        num_query_changes: i,
     });
 }
 function u(e) {
@@ -22,49 +23,49 @@ function u(e) {
         channelId: t,
         messageId: n,
         hasError: a,
-        hasContextMessage: l,
-        numDestinations: d,
-        numDestinationChanges: c,
+        hasContextMessage: i,
+        numDestinations: o,
+        numDestinationChanges: d,
         numQueryChanges: u,
-        anyDestinationHasSlowmode: _,
-        source: m,
+        anyDestinationHasSlowmode: m,
+        source: f,
     } = e;
     if (
-        (i.default.track(o.HAw.FORWARD_MESSAGE_SENT, {
+        (s.default.track(c.HAw.FORWARD_MESSAGE_SENT, {
             channel_id: t,
             message_id: n,
             has_error: a,
-            has_context_message: l,
-            num_destinations: d,
-            num_destination_changes: c,
+            has_context_message: i,
+            num_destinations: o,
+            num_destination_changes: d,
             num_query_changes: u,
-            any_destination_has_slowmode: _,
+            any_destination_has_slowmode: m,
         }),
-        "message-shortcut" === m)
+        "message-shortcut" === f)
     ) {
         let e = r.A.getChannel(t);
-        i.default.track(o.HAw.MESSAGE_SHORTCUT_ACTION_SENT, {
+        s.default.track(c.HAw.MESSAGE_SHORTCUT_ACTION_SENT, {
             action: "forward",
             original_message_id: n,
-            ...(0, s.H$)(e?.guild_id),
-            ...(0, s.dI)(e),
+            ...(0, l.H$)(e?.guild_id),
+            ...(0, l.dI)(e),
         });
     }
-}
-function _() {
-    return a.useMemo(
-        () =>
-            (0, l.once)((e, t, n) => {
-                i.default.track(o.HAw.FORWARD_ADD_RECIPIENT, { channel_id: e, message_id: t, has_query: n });
-            }),
-        [],
-    );
 }
 function m() {
     return a.useMemo(
         () =>
-            (0, l.once)((e, t) => {
-                i.default.track(o.HAw.FORWARD_EDIT_SEARCH, { channel_id: e, message_id: t });
+            (0, i.once)((e, t, n) => {
+                s.default.track(c.HAw.FORWARD_ADD_RECIPIENT, { channel_id: e, message_id: t, has_query: n });
+            }),
+        [],
+    );
+}
+function f() {
+    return a.useMemo(
+        () =>
+            (0, i.once)((e, t) => {
+                s.default.track(c.HAw.FORWARD_EDIT_SEARCH, { channel_id: e, message_id: t });
             }),
         [],
     );
@@ -72,8 +73,8 @@ function m() {
 function h() {
     return a.useMemo(
         () =>
-            (0, l.once)((e, t) => {
-                i.default.track(o.HAw.FORWARD_EDIT_CONTEXT_MESSAGE, { channel_id: e, message_id: t });
+            (0, i.once)((e, t) => {
+                s.default.track(c.HAw.FORWARD_EDIT_CONTEXT_MESSAGE, { channel_id: e, message_id: t });
             }),
         [],
     );

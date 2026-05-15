@@ -1,14 +1,11 @@
-"use strict";
-n.d(t, { Y: () => r });
-var r = (function (e) {
-    return (
-        (e[(e.LIST = 1)] = "LIST"),
-        (e[(e.LIST_WITH_IMAGE = 2)] = "LIST_WITH_IMAGE"),
-        (e[(e.GALLERY = 3)] = "GALLERY"),
-        (e[(e.EXPANDABLE_LIST = 4)] = "EXPANDABLE_LIST"),
-        (e[(e.BANNER_CARDS = 5)] = "BANNER_CARDS"),
-        (e[(e.SMALL_BANNER_CARDS = 6)] = "SMALL_BANNER_CARDS"),
-        (e[(e.BANNER_IMAGE = 7)] = "BANNER_IMAGE"),
-        e
-    );
-})({});
+i.d(e, { Y: () => n });
+var s,
+    n =
+        (((s = {})[(s.LIST = 1)] = "LIST"),
+        (s[(s.LIST_WITH_IMAGE = 2)] = "LIST_WITH_IMAGE"),
+        (s[(s.GALLERY = 3)] = "GALLERY"),
+        (s[(s.EXPANDABLE_LIST = 4)] = "EXPANDABLE_LIST"),
+        (s[(s.BANNER_CARDS = 5)] = "BANNER_CARDS"),
+        (s[(s.SMALL_BANNER_CARDS = 6)] = "SMALL_BANNER_CARDS"),
+        (s[(s.BANNER_IMAGE = 7)] = "BANNER_IMAGE"),
+        s);

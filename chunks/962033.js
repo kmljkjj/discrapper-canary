@@ -1,1 +1,2 @@
-e.exports = { Q: "animator_d17ea2", A: "item_d17ea2" };
+"use strict";
+e.exports = "/assets/5ab80e6818c3dd27.svg";
