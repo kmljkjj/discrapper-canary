@@ -25,7 +25,7 @@ var i,
     o = n(636537),
     l = n(228366);
 n(398590);
-var u = n(845584),
+var u = n(913122),
     c = n(865116);
 n(250953),
     (0, n(240921).Ay)({
@@ -293,11 +293,28 @@ var D = n(488430);
 class L {
     dismissibleContent;
     version;
+    refTargetBackground;
+    badgeIcon;
+    badgeText;
+    showHoverGradient;
     constructor(e) {
-        (this.type = D.G.BADGE), (this.dismissibleContent = e.dismissibleContent), (this.version = e.version);
+        (this.type = D.G.BADGE),
+            (this.dismissibleContent = e.dismissibleContent),
+            (this.version = e.version),
+            (this.refTargetBackground = e.refTargetBackground),
+            (this.badgeIcon = e.badgeIcon),
+            (this.badgeText = e.badgeText),
+            (this.showHoverGradient = e.showHoverGradient);
     }
     static fromServer(e) {
-        return new L({ ...e, dismissibleContent: e.dismissible_content });
+        return new L({
+            ...e,
+            dismissibleContent: e.dismissible_content,
+            refTargetBackground: e.ref_target_background,
+            badgeIcon: e.badge_icon,
+            badgeText: e.badge_text,
+            showHoverGradient: e.show_hover_gradient,
+        });
     }
 }
 class w {
@@ -569,7 +586,8 @@ class Z {
     categorySkuId;
     categoryStoreListingId;
     rankedSkuIds;
-    backgroundImage;
+    desktopBackgroundImage;
+    mobileBackgroundImage;
     buttonText;
     constructor(e) {
         (this.type = j.g.FRAMES_PRODUCT_SHELF),
@@ -577,7 +595,8 @@ class Z {
             (this.categorySkuId = e.category_sku_id),
             (this.categoryStoreListingId = e.category_store_listing_id),
             (this.rankedSkuIds = e.ranked_sku_ids ?? []),
-            (this.backgroundImage = e.background_image),
+            (this.desktopBackgroundImage = e.desktop_background_image ?? e.background_image),
+            (this.mobileBackgroundImage = e.mobile_background_image ?? e.background_image),
             (this.buttonText = e.button_text);
     }
     static fromServer(e) {

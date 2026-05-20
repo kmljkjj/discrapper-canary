@@ -10,7 +10,7 @@ let r = {
             "AUDIO_TOGGLE_LOCAL_SOUNDBOARD_MUTE",
             "MEDIA_ENGINE_RESET_SETTINGS",
         ],
-        inlineRequire: () => n(447216).A,
+        inlineRequire: () => n(386741).A,
     },
     AutoUpdateManager: {
         actions: ["POST_CONNECTION_OPEN", "AUTO_UPDATER_QUIT_AND_INSTALL"],
@@ -19,11 +19,6 @@ let r = {
     NewUpdaterExperimentManager: {
         actions: ["POST_CONNECTION_OPEN", "LOGOUT"],
         inlineRequire: () => n(401979).A,
-        hasStoreChangeListeners: !0,
-    },
-    RSPatchExperimentManager: {
-        actions: ["POST_CONNECTION_OPEN", "LOGOUT"],
-        inlineRequire: () => n(740535).A,
         hasStoreChangeListeners: !0,
     },
     AgeVerificationManager: {
@@ -417,8 +412,11 @@ let r = {
             "BILLING_PAYMENT_SOURCE_UPDATE_SUCCESS",
             "BILLING_PAYMENT_SOURCE_CREATE_SUCCESS",
             "VIRTUAL_CURRENCY_BALANCE_UPDATE",
+            "ENTITLEMENT_CREATE",
+            "ENTITLEMENT_UPDATE",
+            "ENTITLEMENT_DELETE",
         ],
-        inlineRequire: () => n(794781).A,
+        inlineRequire: () => n(714351).A,
     },
     RelationshipManager: { actions: ["RELATIONSHIP_ADD", "FRIEND_REQUEST_ACCEPTED"], inlineRequire: () => n(908816).A },
     RTCLatencyTestManager: { actions: ["POST_CONNECTION_OPEN"], inlineRequire: () => n(335560).A },
@@ -541,6 +539,8 @@ let r = {
             "CLIPS_SETTINGS_UPDATE",
             "CLIPS_INIT_FAILURE",
             "STREAM_START",
+            "STREAM_DELETE",
+            "STREAM_CLOSE",
             "RUNNING_GAME_TOGGLE_DETECTION",
             "RUNNING_GAMES_CHANGE",
             "CLIPS_RESTART",
@@ -548,7 +548,7 @@ let r = {
             "CLIPS_SAVE_CLIP",
             "CLIPS_PROMOTE_CLIP_CANDIDATE",
         ],
-        inlineRequire: () => n(485162).A,
+        inlineRequire: () => n(971918).A,
         neverLoadBeforeConnectionOpen: !0,
     },
     ClipDecisionEngineManager: {
@@ -852,11 +852,12 @@ let r = {
     ConversationsFetchManager: {
         actions: [
             "CHANNEL_SELECT",
-            "LOAD_MESSAGES_SUCCESS",
-            "UPDATE_VISIBLE_MESSAGES",
-            "CONVERSATIONS_FETCH_SUCCESS",
             "CHANNEL_DELETE",
+            "CONVERSATIONS_FETCH_SUCCESS",
+            "LOAD_MESSAGES_SUCCESS",
             "LOGOUT",
+            "POST_CONNECTION_OPEN",
+            "UPDATE_VISIBLE_MESSAGES",
         ],
         inlineRequire: () => n(185522).A,
         neverLoadBeforeConnectionOpen: !0,

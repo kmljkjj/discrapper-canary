@@ -872,13 +872,14 @@ let tE = (e) => {
                                                       let { PremiumBrandRefreshSubscriptionCancellationModal: t } =
                                                           await Promise.all([
                                                               n.e("34218"),
-                                                              n.e("80203"),
-                                                              n.e("18556"),
-                                                              n.e("9432"),
-                                                              n.e("96527"),
+                                                              n.e("8516"),
+                                                              n.e("95700"),
+                                                              n.e("81857"),
+                                                              n.e("67485"),
                                                               n.e("85484"),
                                                               n.e("5959"),
-                                                              n.e("86028"),
+                                                              n.e("46461"),
+                                                              n.e("16581"),
                                                               n.e("23924"),
                                                               n.e("42205"),
                                                               n.e("71091"),
@@ -895,12 +896,12 @@ let tE = (e) => {
                                                               n.e("74016"),
                                                               n.e("19551"),
                                                               n.e("6338"),
-                                                              n.e("50689"),
+                                                              n.e("96811"),
                                                               n.e("5636"),
-                                                              n.e("86230"),
+                                                              n.e("87196"),
                                                               n.e("9045"),
                                                               n.e("94161"),
-                                                              n.e("35432"),
+                                                              n.e("13051"),
                                                               n.e("80347"),
                                                               n.e("10741"),
                                                               n.e("80166"),
@@ -1033,13 +1034,14 @@ let tC = function (e) {
                         void (0, w.openModalLazy)(async () => {
                             let { PremiumBrandRefreshSubscriptionCancellationModal: e } = await Promise.all([
                                 n.e("34218"),
-                                n.e("80203"),
-                                n.e("18556"),
-                                n.e("9432"),
-                                n.e("96527"),
+                                n.e("8516"),
+                                n.e("95700"),
+                                n.e("81857"),
+                                n.e("67485"),
                                 n.e("85484"),
                                 n.e("5959"),
-                                n.e("86028"),
+                                n.e("46461"),
+                                n.e("16581"),
                                 n.e("23924"),
                                 n.e("42205"),
                                 n.e("71091"),
@@ -1056,12 +1058,12 @@ let tC = function (e) {
                                 n.e("74016"),
                                 n.e("19551"),
                                 n.e("6338"),
-                                n.e("50689"),
+                                n.e("96811"),
                                 n.e("5636"),
-                                n.e("86230"),
+                                n.e("87196"),
                                 n.e("9045"),
                                 n.e("94161"),
-                                n.e("35432"),
+                                n.e("13051"),
                                 n.e("80347"),
                                 n.e("10741"),
                                 n.e("80166"),
@@ -1428,19 +1430,17 @@ function nE() {
             }, [i, l, a, d, r, c, n, _, f, e]);
         })(e),
         { shouldShowBonusOrbsUX: y, multiplier: C } = (0, t3.lk)(nu.rE.NITRO_HOME_MARKETING),
-        v = (0, D.l)("useWhatsNewPerkCards"),
-        { isEligible: O, programReward: R } = (0, I.F)({ location: "useWhatsNewPerkCards" }),
-        b = O && null != R && null != R.reward_amount && R.reward_amount > 0;
+        { isEligible: v, programReward: O } = (0, I.F)({ location: "useWhatsNewPerkCards" }),
+        R = v && null != O && null != O.reward_amount && O.reward_amount > 0;
     return (0, s.useMemo)(() => {
         let e = [
                 c ? null : a,
                 c ? null : l,
-                b
+                R
                     ? {
                           id: V.NITRO_ORBS_REWARDS_CARD_ID,
                           title: $.intl.string(t8.default.hx5AFp),
-                          description: $.intl.format(t8.default.wq3CF2, { orbsCount: R.reward_amount }),
-                          pillText: v ? $.intl.string($.t.y2b7CA) : $.intl.string($.t.oW0eUd),
+                          description: $.intl.format(t8.default.wq3CF2, { orbsCount: O.reward_amount }),
                           primaryAsset: "/assets/8f530451dce1ccc0.svg",
                           primaryAssetClassName: o()(nd.lH, nd.yK),
                           footerContent: (0, r.jsx)(ne, {}),
@@ -1451,7 +1451,7 @@ function nE() {
                 y
                     ? {
                           id: V.QUEST_ORB_MULTIPLIER_CARD_ID,
-                          title: $.intl.string($.t.F2MShO),
+                          title: $.intl.string($.t.Csf5Ol),
                           description: $.intl.format($.t.NpUfej, { bonusOrbMultiplier: C }),
                           primaryAsset:
                               "https://cdn.discordapp.com/assets/content/6a45cf480a4894d29a155fbc23df4dca701a69e7f09227ef964a61bdb6e5833a.png",
@@ -1525,7 +1525,7 @@ function nE() {
             n = (e = e.filter((e) => null != e))[0].featured,
             s = n ? 5 : 6;
         return e.splice(+!!n, 0, S), e.length > s && e.splice(s, e.length - s), e;
-    }, [v, S, b, R, i, y, C, h, g, m, T, f, t, a, l, c]);
+    }, [S, R, O, i, y, C, h, g, m, T, f, t, a, l, c]);
 }
 var nm = n(355097),
     ng = n(64514),

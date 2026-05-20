@@ -7538,14 +7538,7 @@ let { Themes: c } = u.zv,
                 SIZE_XXS: { resolve: () => 12 },
             },
             mobile: {
-                CARD_DEFAULT_RADIUS: {
-                    resolve(e) {
-                        let { enabledExperiments: t } = e;
-                        if (0 === t.length) return 16;
-                        for (let e of t) if ("mobile-visual-refresh" === e) return 8;
-                        return 16;
-                    },
-                },
+                CARD_DEFAULT_RADIUS: { resolve: () => 16 },
                 CHANNEL_DETAILS_NAV_BUTTONS_GAP: {
                     resolve(e) {
                         let { enabledExperiments: t } = e;
@@ -7576,6 +7569,14 @@ let { Themes: c } = u.zv,
                         if (0 === t.length) return 12;
                         for (let e of t) if ("mobile-visual-refresh" === e) return 8;
                         return 12;
+                    },
+                },
+                CHANNEL_LIST_SUBTITLE_TEXT_STYLE: {
+                    resolve(e) {
+                        let { enabledExperiments: t } = e;
+                        if (0 === t.length) return "text-xs/medium";
+                        for (let e of t) if ("mobile-visual-refresh" === e) return "text-sm/medium";
+                        return "text-xs/medium";
                     },
                 },
                 CHANNEL_LIST_TITLE_TEXT_STYLE: {
@@ -7739,6 +7740,14 @@ let { Themes: c } = u.zv,
                         return 0;
                     },
                 },
+                CHAT_INPUT_FLOATING_OFFSET_MINIMUM: {
+                    resolve(e) {
+                        let { enabledExperiments: t } = e;
+                        if (0 === t.length) return 0;
+                        for (let e of t) if ("mobile-visual-refresh" === e) return 16;
+                        return 0;
+                    },
+                },
                 CHAT_INPUT_FLOATING_SCRIM_GRADIENT_HEIGHT: {
                     resolve(e) {
                         let { enabledExperiments: t } = e;
@@ -7831,14 +7840,6 @@ let { Themes: c } = u.zv,
                                     return 40;
                             }
                         return 40;
-                    },
-                },
-                CHAT_INPUT_SPACE_BOTTOM: {
-                    resolve(e) {
-                        let { enabledExperiments: t } = e;
-                        if (0 === t.length) return 0;
-                        for (let e of t) if ("mobile-visual-refresh" === e) return 34;
-                        return 0;
                     },
                 },
                 COACHMARK_BODY_WIDTH: {
@@ -7963,6 +7964,14 @@ let { Themes: c } = u.zv,
                         return 28;
                     },
                 },
+                GIFTING_SETTINGS_PADDING_HORIZONTAL: {
+                    resolve(e) {
+                        let { enabledExperiments: t } = e;
+                        if (0 === t.length) return 0;
+                        for (let e of t) if ("mobile-visual-refresh" === e) return 16;
+                        return 0;
+                    },
+                },
                 GROUP_AVATAR_SIZE: {
                     resolve(e) {
                         let { enabledExperiments: t } = e;
@@ -7975,12 +7984,7 @@ let { Themes: c } = u.zv,
                     resolve(e) {
                         let { enabledExperiments: t } = e;
                         if (0 === t.length) return 4;
-                        for (let e of t)
-                            switch (e) {
-                                case "mobile-visual-refresh":
-                                case "guild-item-spacing":
-                                    return 6;
-                            }
+                        for (let e of t) if ("mobile-visual-refresh" === e) return 6;
                         return 4;
                     },
                 },
@@ -8347,6 +8351,14 @@ let { Themes: c } = u.zv,
                     },
                 },
                 TABLE_ROW_ICON_SIZE: { resolve: () => 32 },
+                TABLE_ROW_LABEL_TEXT_STYLE: {
+                    resolve(e) {
+                        let { enabledExperiments: t } = e;
+                        if (0 === t.length) return "text-md/semibold";
+                        for (let e of t) if ("mobile-visual-refresh" === e) return "text-md/medium";
+                        return "text-md/semibold";
+                    },
+                },
                 TABLE_ROW_PADDING: { resolve: () => 12 },
                 TAB_BAR_UNREAD_BADGE_SIZE: {
                     resolve(e) {

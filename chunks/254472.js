@@ -241,30 +241,32 @@ function eV(e) {
         eh = (0, f.bG)([Q.A], () => Q.A.getChannel(ef)),
         ep = (0, q.A)((e) => e.guildId),
         eE = (0, es.ai)(ep),
-        { badge: em, unread: eg } = (0, f.cf)([ea.A, Q.A, el.default, eo.A, eu.A, ec.Ay, ed.Ay], () =>
-            et.default.keys(P).reduce(
-                (e, t) => {
-                    let n = Q.A.getChannel(t),
-                        i = n?.getGuildId(),
-                        r = ec.Ay.getMentionCount(t);
+        { badge: em, unread: eg } = (0, f.cf)([ea.A, Q.A, el.default, eo.A, eu.A, ec.Ay, ed.Ay], () => {
+            let e = et.default.keys(P),
+                t = new Set();
+            return e.reduce(
+                (e, n) => {
+                    let i = Q.A.getChannel(n),
+                        r = i?.getGuildId(),
+                        s = ec.Ay.getMentionCount(n);
                     if (
-                        ((e.badge = e.badge + r),
-                        (e.unread = e.unread || (ec.Ay.hasUnread(t) && el.default.shouldCountChannelUnread(n, r))),
-                        null != i)
+                        (t.has(n) || (t.add(n), (e.badge = e.badge + s)),
+                        (e.unread = e.unread || (ec.Ay.hasUnread(n) && el.default.shouldCountChannelUnread(i, s))),
+                        null != r)
                     ) {
-                        let n = ea.A.getActiveJoinedRelevantThreadsForParent(i, t);
-                        for (let t in n) {
-                            let n = ec.Ay.getMentionCount(t);
-                            e.badge += n;
-                            let i = Q.A.getChannel(t);
-                            e.unread = e.unread || (ec.Ay.hasUnread(t) && el.default.shouldCountChannelUnread(i, n));
+                        let i = ea.A.getActiveJoinedRelevantThreadsForParent(r, n);
+                        for (let n in i) {
+                            let i = ec.Ay.getMentionCount(n);
+                            t.has(n) || (t.add(n), (e.badge += i));
+                            let r = Q.A.getChannel(n);
+                            e.unread = e.unread || (ec.Ay.hasUnread(n) && el.default.shouldCountChannelUnread(r, i));
                         }
                     }
                     return e;
                 },
                 { badge: 0, unread: !1 },
-            ),
-        ),
+            );
+        }),
         eA =
             ((i = null != (t = (0, f.bG)([J.A], () => J.A.getVoiceChannelId())) && null != P[t]),
             (a = (0, f.bG)([X.A], () => {
@@ -308,7 +310,7 @@ function eV(e) {
                           e &&
                               (0, g.openModalLazy)(async () => {
                                   let { default: e } = await Promise.all([
-                                      n.e("24092"),
+                                      n.e("13218"),
                                       n.e("94494"),
                                       n.e("36946"),
                                       n.e("92639"),
@@ -697,10 +699,10 @@ class tO extends s.PureComponent {
         null != i
             ? (0, tu.L3)(e, async () => {
                   let { default: e } = await Promise.all([
-                      n.e("74389"),
-                      n.e("80203"),
-                      n.e("685"),
-                      n.e("12697"),
+                      n.e("56386"),
+                      n.e("8516"),
+                      n.e("23531"),
+                      n.e("94881"),
                       n.e("26132"),
                       n.e("46652"),
                       n.e("93190"),
@@ -2239,56 +2241,59 @@ let ij = { analyticsSource: { page: ev.liQ.GUILD_CHANNEL, section: ev.JJy.CHANNE
 function iY(e, t) {
     (0, tu.L3)(e, async () => {
         let { default: e } = await Promise.all([
-            n.e("32824"),
-            n.e("79924"),
-            n.e("28951"),
+            n.e("4512"),
+            n.e("63897"),
+            n.e("18320"),
             n.e("60361"),
-            n.e("80203"),
-            n.e("29690"),
-            n.e("685"),
-            n.e("39655"),
-            n.e("77691"),
-            n.e("79149"),
-            n.e("54266"),
-            n.e("35769"),
-            n.e("93110"),
-            n.e("74103"),
+            n.e("8516"),
+            n.e("73589"),
+            n.e("15249"),
+            n.e("19397"),
+            n.e("41816"),
+            n.e("72888"),
+            n.e("67485"),
+            n.e("8802"),
+            n.e("54518"),
+            n.e("94898"),
             n.e("5959"),
-            n.e("86028"),
-            n.e("95664"),
-            n.e("9432"),
+            n.e("46461"),
+            n.e("76090"),
+            n.e("12289"),
+            n.e("81857"),
             n.e("45650"),
-            n.e("55030"),
+            n.e("95700"),
             n.e("27660"),
             n.e("85484"),
-            n.e("31135"),
-            n.e("25677"),
-            n.e("8506"),
-            n.e("333"),
-            n.e("15615"),
-            n.e("22995"),
+            n.e("98848"),
+            n.e("5067"),
+            n.e("6432"),
+            n.e("36407"),
+            n.e("69134"),
             n.e("79705"),
-            n.e("73953"),
+            n.e("54081"),
+            n.e("83928"),
+            n.e("92702"),
+            n.e("1271"),
             n.e("33957"),
-            n.e("48157"),
-            n.e("42971"),
-            n.e("28643"),
-            n.e("47459"),
-            n.e("40671"),
-            n.e("25610"),
-            n.e("74389"),
-            n.e("97444"),
-            n.e("49579"),
-            n.e("41069"),
-            n.e("2661"),
-            n.e("43908"),
+            n.e("59204"),
+            n.e("48628"),
+            n.e("57006"),
+            n.e("64422"),
+            n.e("56386"),
+            n.e("60389"),
+            n.e("44710"),
+            n.e("37261"),
+            n.e("25812"),
             n.e("87845"),
-            n.e("85970"),
-            n.e("49089"),
+            n.e("50862"),
+            n.e("23531"),
+            n.e("10859"),
             n.e("45970"),
             n.e("5007"),
+            n.e("90427"),
             n.e("1472"),
             n.e("83852"),
+            n.e("4974"),
             n.e("80186"),
             n.e("23924"),
             n.e("42205"),
@@ -2316,7 +2321,7 @@ function iY(e, t) {
             n.e("19551"),
             n.e("84569"),
             n.e("6338"),
-            n.e("50689"),
+            n.e("96811"),
             n.e("7743"),
             n.e("45959"),
             n.e("60658"),
@@ -2337,7 +2342,7 @@ function iY(e, t) {
             n.e("62931"),
             n.e("81987"),
             n.e("50417"),
-            n.e("74548"),
+            n.e("62465"),
             n.e("93103"),
             n.e("91763"),
             n.e("76602"),
@@ -2348,12 +2353,12 @@ function iY(e, t) {
             n.e("71210"),
             n.e("42724"),
             n.e("43437"),
-            n.e("82263"),
             n.e("40258"),
             n.e("66495"),
             n.e("88342"),
             n.e("86127"),
             n.e("39970"),
+            n.e("82263"),
             n.e("6174"),
             n.e("91146"),
             n.e("8555"),
@@ -2364,6 +2369,7 @@ function iY(e, t) {
             n.e("86814"),
             n.e("17249"),
             n.e("88599"),
+            n.e("75842"),
             n.e("35027"),
             n.e("53917"),
             n.e("62422"),
@@ -2371,7 +2377,6 @@ function iY(e, t) {
             n.e("90365"),
             n.e("89088"),
             n.e("71273"),
-            n.e("75842"),
             n.e("36863"),
             n.e("67861"),
             n.e("1518"),
@@ -2394,7 +2399,7 @@ function iY(e, t) {
             n.e("80854"),
             n.e("35395"),
             n.e("43780"),
-            n.e("48760"),
+            n.e("96194"),
             n.e("46844"),
             n.e("63235"),
             n.e("45413"),
@@ -2429,7 +2434,7 @@ function iY(e, t) {
             n.e("32209"),
             n.e("39171"),
             n.e("37021"),
-            n.e("234"),
+            n.e("78300"),
             n.e("87478"),
             n.e("83952"),
             n.e("44780"),
@@ -2440,13 +2445,14 @@ function iY(e, t) {
             n.e("89916"),
             n.e("90301"),
             n.e("49145"),
-            n.e("57355"),
             n.e("60773"),
+            n.e("92128"),
             n.e("9004"),
             n.e("8018"),
             n.e("92295"),
             n.e("68763"),
             n.e("15109"),
+            n.e("99549"),
             n.e("29666"),
             n.e("58273"),
             n.e("19454"),
@@ -3008,10 +3014,10 @@ let re = (0, D.Fe)({
         createPromise: () =>
             Promise.all([
                 n.e("98594"),
-                n.e("40671"),
+                n.e("19397"),
                 n.e("81154"),
                 n.e("66622"),
-                n.e("74103"),
+                n.e("54518"),
                 n.e("7927"),
                 n.e("7580"),
                 n.e("91763"),

@@ -1,5 +1,5 @@
 "use strict";
-n.d(t, { I: () => p });
+n.d(t, { I: () => g });
 var i = n(64700),
     r = n(323889),
     s = n(17928),
@@ -67,13 +67,25 @@ let f = new _(a.h, {
         return n;
     },
 });
-var h = n(340124);
-function p() {
-    let e = (0, s.bG)([o.A], () => o.A.getQuestHomeHero()),
+var h = n(340124),
+    p = n(31587);
+function E(e) {
+    return null != e && "" !== e;
+}
+function m(e) {
+    return E(e?.start) && E(e?.end);
+}
+function g() {
+    let e = (0, p.T2)(),
         t = e?.id,
         n = (0, s.bG)([f], () => null != t && f.hasSeen(r.p.QUEST_HOME_HERO, t), [t]);
     return {
-        shouldShowQuestHomeHeroContent: e?.questHomeEntrypoint != null && !n,
+        shouldShowQuestHomeHeroContent:
+            (function (e) {
+                if (null == e) return !1;
+                let t = E(e.tooltipTitle) && E(e.tooltipSubtitle);
+                return E(e.image) || m(e.linearGradient) || m(e.radialGradient) || t;
+            })(e?.questHomeEntrypoint) && !n,
         dismissQuestHomeHeroContent: i.useCallback(() => {
             null != t && (0, h.zh)(r.p.QUEST_HOME_HERO, [t]);
         }, [t]),

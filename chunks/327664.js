@@ -19,9 +19,9 @@ var s,
     S = l(726249),
     _ = l(475073),
     A = l(611924),
-    L = l(561794),
-    v = l(287809),
-    b = l(440938),
+    b = l(561794),
+    L = l(287809),
+    v = l(440938),
     j = l(590180),
     I = l(161918),
     O = l(17928),
@@ -104,7 +104,7 @@ let en = (e, t, l, s) => {
     ea = (e, t) => {
         let { analyticsSource: l } = P(t),
             s = (0, es.I)(en, 5e3, [], { trailing: !0 }),
-            n = (0, b.uM)(),
+            n = (0, v.uM)(),
             a = n?.sessionId;
         return {
             handleScroll: u.useCallback(() => {
@@ -159,7 +159,7 @@ var eg = l(172218),
     ep = l(660653),
     eC = l(466459);
 let ef = () => {
-    let e = (0, h.bG)([v.default], () => v.default.getCurrentUser()),
+    let e = (0, h.bG)([L.default], () => L.default.getCurrentUser()),
         t = k.Ay.canUseShopDiscounts(e);
     return (0, u.useCallback)(
         (e) =>
@@ -205,9 +205,9 @@ let e_ = (e, t) =>
             );
         return (0, u.useMemo)(() => [...e].sort((e, t) => e_(e, l) - e_(t, l)), [e, l]);
     };
-var eL = l(100057),
-    ev = l(126031),
-    eb = l(653887),
+var eb = l(100057),
+    eL = l(126031),
+    ev = l(653887),
     ej = l(607470),
     eI = l(531685),
     eO = l(203312),
@@ -224,9 +224,9 @@ function ek(e) {
         ref: i,
         className: g()(ey.sW, { [ey.by]: o }),
         children: [
-            (0, c.jsx)(ev.s, { children: (0, c.jsx)(eu.D, { variant: "heading-lg/semibold", children: t.name }) }),
+            (0, c.jsx)(eL.s, { children: (0, c.jsx)(eu.D, { variant: "heading-lg/semibold", children: t.name }) }),
             o
-                ? (0, c.jsx)(eb._, {
+                ? (0, c.jsx)(ev._, {
                       src: r,
                       fit: "cover",
                       alignment: "center-left",
@@ -285,7 +285,7 @@ var eH = l(491438),
     eG = l(998694);
 function eU(e) {
     let { category: t } = e,
-        l = (0, h.bG)([v.default], () => v.default.getCurrentUser()),
+        l = (0, h.bG)([L.default], () => L.default.getCurrentUser()),
         s = eA(t.products),
         n = ef()(s),
         a = (0, eh.W)("CollectiblesCatalogContent");
@@ -295,7 +295,7 @@ function eU(e) {
               className: eM.vY,
               children: n.map((e, t) =>
                   (0, c.jsx)(
-                      b.R9,
+                      v.R9,
                       {
                           newValue: { tilePosition: t },
                           children: (0, c.jsx)(
@@ -327,7 +327,7 @@ function ez(e) {
 }
 function eV(e) {
     let { categories: t, setCategoryRef: l, currentPage: s, handlePageChange: n, initialCategoryId: a } = e,
-        r = (0, b.uM)(),
+        r = (0, v.uM)(),
         i = (0, ew.U)(),
         o = r?.sessionId ?? "",
         { noCache: d, includeUnpublished: g } = (0, eG.A)(),
@@ -358,9 +358,9 @@ function eV(e) {
         return m.slice(e, e + R.l5);
     }, [m, s]);
     return (u.useEffect(() => {
-        (0, eL.z)({
+        (0, eb.z)({
             sessionId: o,
-            checkpoint: eL.t.SHOP_MOUNTED,
+            checkpoint: eb.t.SHOP_MOUNTED,
             tab: R.G2.CATALOG,
             unpublishedCategoriesShown: g,
             cacheDisabled: d,
@@ -369,9 +369,9 @@ function eV(e) {
     u.useEffect(() => {
         i ||
             0 === E.length ||
-            (0, eL.z)({
+            (0, eb.z)({
                 sessionId: o,
-                checkpoint: eL.t.SHOP_RENDERED,
+                checkpoint: eb.t.SHOP_RENDERED,
                 tab: R.G2.CATALOG,
                 unpublishedCategoriesShown: g,
                 cacheDisabled: d,
@@ -387,7 +387,7 @@ function eV(e) {
                           "div",
                           {
                               ref: (t) => l(e.skuId, t),
-                              children: (0, c.jsx)(b.R9, {
+                              children: (0, c.jsx)(v.R9, {
                                   newValue: { categoryPosition: t },
                                   children: (0, c.jsx)(ez, { category: e }),
                               }),
@@ -416,7 +416,7 @@ var eW = l(177366),
     eZ = l(912853);
 let eJ = () => {
     let { sort: e, onSetSort: t, hasRelevanceFilters: l } = (0, W.v)(),
-        s = (0, b.uM)(),
+        s = (0, v.uM)(),
         n = (0, eq.yB)("CollectiblesSortSelect"),
         a = l(),
         r = u.useMemo(() => R.QB.filter((e) => e.sortType !== eY.$.RELEVANCE || a), [a]),
@@ -523,7 +523,7 @@ function td() {
         n = s(),
         { enabled: a } = (0, ti.Z)({ location: "Shop" }),
         r = (0, to.sk)("FilterBar"),
-        i = (0, b.uM)(),
+        i = (0, v.uM)(),
         o = u.useRef(null),
         d = u.useMemo(() => R._6.filter((e) => r || e !== ec.q.PROFILE_FRAME), [r]),
         m = u.useCallback(
@@ -805,11 +805,11 @@ var tf = l(528096);
 let tS = { flattenProductVariants: !0 };
 function t_(e) {
     let { isFetchingCategories: t, scrollerRef: l, tab: s } = e,
-        n = (0, b.uM)(),
+        n = (0, v.uM)(),
         a = n?.sessionId ?? "",
         { noCache: r, includeUnpublished: i } = (0, eG.A)(),
         o = (0, eh.W)("CollectiblesFilterResults"),
-        d = (0, h.bG)([v.default], () => v.default.getCurrentUser()),
+        d = (0, h.bG)([L.default], () => L.default.getCurrentUser()),
         { skus: m, currentPage: E, totalCount: x, isFetchingResults: p } = (0, J.S)(),
         C = (0, h.yK)([j.A], () => j.A.getProductsBySkus(m)),
         f = u.useCallback(() => {
@@ -823,15 +823,15 @@ function t_(e) {
         A = u.useMemo(() => _(C), [_, C]);
     u.useEffect(() => {
         t ||
-            (0, eL.z)({
+            (0, eb.z)({
                 sessionId: a,
-                checkpoint: eL.t.SHOP_RENDERED,
+                checkpoint: eb.t.SHOP_RENDERED,
                 tab: s,
                 unpublishedCategoriesShown: i,
                 cacheDisabled: r,
             });
     }, [a, i, r, t, s]);
-    let L = u.useRef(null),
+    let b = u.useRef(null),
         { setQueryPageSize: I, setQueryPageOffset: O, queryPageSize: N } = (0, W.v)(),
         [k, T] = u.useState(!1),
         R = t || p || null == d;
@@ -841,9 +841,9 @@ function t_(e) {
     let M = N > 0 && !R && 0 === A.length;
     u.useEffect(() => {
         let e = new ResizeObserver(() => {
-            null == L.current || I(Math.floor(5 * getComputedStyle(L.current).gridTemplateColumns.split(/\s+/).length));
+            null == b.current || I(Math.floor(5 * getComputedStyle(b.current).gridTemplateColumns.split(/\s+/).length));
         });
-        if (null != L.current) return e.observe(L.current), () => e.disconnect();
+        if (null != b.current) return e.observe(b.current), () => e.disconnect();
     }, [I]);
     let P = u.useCallback(
         (e) => {
@@ -869,7 +869,7 @@ function t_(e) {
                     M && (0, c.jsx)(tC, {}),
                     (0, c.jsxs)("div", {
                         className: g()(tf.ZE, { [tf.Kp]: k }),
-                        ref: L,
+                        ref: b,
                         children: [
                             R && [...Array(N)].map((e, t) => (0, c.jsx)(eB, {}, t)),
                             !R &&
@@ -877,7 +877,7 @@ function t_(e) {
                                     null == j.A.getCategory(e.categorySkuId)
                                         ? null
                                         : (0, c.jsx)(
-                                              b.R9,
+                                              v.R9,
                                               {
                                                   newValue: { tilePosition: t },
                                                   children: (0, c.jsx)(
@@ -914,7 +914,7 @@ function t_(e) {
     });
 }
 var tA = l(832179);
-function tL(e) {
+function tb(e) {
     let { tab: t, categories: l, initialCategoryId: s, showFilterInitially: n = !0, onUnmount: a } = e,
         r = (0, er.A)("shop_include_unpublished");
     (0, W.S)(r);
@@ -957,7 +957,7 @@ function tL(e) {
                                       children: (0, c.jsx)(ei.Z_, { tenantId: B.FYj, templateId: eo.b.BACK_CATALOG }),
                                   }),
                               })
-                            : (0, c.jsx)(tv, {
+                            : (0, c.jsx)(tL, {
                                   isSmallScreen: x,
                                   filterBarOpen: h,
                                   setFilterBarOpen: E,
@@ -975,7 +975,7 @@ function tL(e) {
         })
     );
 }
-let tv = (e) => {
+let tL = (e) => {
     let {
             isSmallScreen: t,
             filterBarOpen: l,
@@ -988,7 +988,7 @@ let tv = (e) => {
         } = e,
         d = u.useRef(null),
         m = (0, W.v)((e) => e.hasDefaultFilters()),
-        h = (0, b.uM)(),
+        h = (0, v.uM)(),
         { handlePageChange: E, currentPage: x } = ((e) => {
             let [t, l] = u.useState(1);
             return {
@@ -1095,7 +1095,7 @@ let tv = (e) => {
                         ],
                     }),
                     m
-                        ? (0, c.jsx)(b.R9, {
+                        ? (0, c.jsx)(v.R9, {
                               newValue: { pageIndex: x },
                               children: (0, c.jsx)(eV, {
                                   categories: r,
@@ -1111,7 +1111,7 @@ let tv = (e) => {
         })
     );
 };
-var tb = l(599062),
+var tv = l(599062),
     tj = l(651162),
     tI = l(554146),
     tO = l(367727);
@@ -1190,7 +1190,7 @@ let tY = (e) => {
             m = s?.bodyText,
             h = s?.name ?? l?.name,
             E = null != h ? w.intl.formatToPlainString(w.t.frSHlf, { destination: h }) : void 0,
-            x = (0, b.uM)();
+            x = (0, v.uM)();
         return (0, c.jsx)(tz.L, {
             innerRef: g,
             onChange: o,
@@ -1269,7 +1269,7 @@ let tY = (e) => {
             children: l?.subblocks.map((e, l) =>
                 e.type === tU.u.CATEGORY
                     ? (0, c.jsx)(
-                          b.R9,
+                          v.R9,
                           {
                               newValue: {
                                   categoryPosition: 1,
@@ -1300,7 +1300,7 @@ let tY = (e) => {
         let [s, n] = l;
         return (0, c.jsx)("div", {
             className: g()(tK.n9, tK.YB),
-            children: (0, c.jsxs)(b.R9, {
+            children: (0, c.jsxs)(v.R9, {
                 newValue: {
                     categoryPosition: 1,
                     pageCategory: null != s ? s.name : n?.name,
@@ -1429,7 +1429,7 @@ let lt = (e) => {
                 buttonContainerClassName: i,
                 orbsSupportedOnly: o,
             } = e,
-            d = (0, O.bG)([v.default], () => v.default.getCurrentUser()),
+            d = (0, O.bG)([L.default], () => L.default.getCurrentUser()),
             m = k.Ay.canUseShopDiscounts(d),
             h = (0, eh.W)("FeedBlock"),
             E = (0, eq.yB)("FeedBlock"),
@@ -1490,9 +1490,9 @@ let lt = (e) => {
                     shuffleProducts: f,
                 };
             })({ sortedSkuIds: s, hasShopDiscount: m, prioritizeUserDiscounts: a, orbsSupportedOnly: o }),
-            L = (0, O.bG)([Y.A], () => Y.A.useReducedMotion),
+            b = (0, O.bG)([Y.A], () => Y.A.useReducedMotion),
             I = (0, O.bG)([eI.A], () => eI.A.isFocused()),
-            T = !L && I,
+            T = !b && I,
             { animationPhase: M, startAnimation: P } = (() => {
                 let [e, t] = u.useState("mounted"),
                     [l, s] = u.useState(!1),
@@ -1544,7 +1544,7 @@ let lt = (e) => {
                     }
                 );
             })(),
-            D = (0, b.uM)(),
+            D = (0, v.uM)(),
             F = D?.sessionId ?? "",
             { analyticsLocations: G } = (0, f.Ay)(N.A.COLLECTIBLES_SHOP_POPULAR_PICKS),
             U = u.useRef(null),
@@ -1654,7 +1654,7 @@ let lt = (e) => {
                                                       ? (l = tK.aS)
                                                       : M === tQ.SORT_IN && (l = tK.F7);
                                         return (0, c.jsx)(
-                                            b.R9,
+                                            v.R9,
                                             {
                                                 newValue: {
                                                     tilePosition: t,
@@ -1683,7 +1683,7 @@ var ls = l(449543),
     ln = l(622697);
 let la = (e) => {
     let { block: t, handleTransition: l, tab: s } = e,
-        n = (0, O.bG)([v.default], () => v.default.getCurrentUser()),
+        n = (0, O.bG)([L.default], () => L.default.getCurrentUser()),
         a = (0, eh.W)("FramesProductShelfBlock"),
         r = t3(),
         i = eA(u.useMemo(() => r(t.rankedSkuIds), [t.rankedSkuIds, r])),
@@ -1702,8 +1702,13 @@ let la = (e) => {
               children: (0, c.jsxs)("div", {
                   className: g()(ln.kL, tK.YB),
                   children: [
-                      null != t.backgroundImage &&
-                          (0, c.jsx)("img", { className: ln.iL, src: t.backgroundImage, alt: "", "aria-hidden": !0 }),
+                      null != t.desktopBackgroundImage &&
+                          (0, c.jsx)("img", {
+                              className: ln.iL,
+                              src: t.desktopBackgroundImage,
+                              alt: "",
+                              "aria-hidden": !0,
+                          }),
                       (0, c.jsxs)("div", {
                           className: ln.Qs,
                           children: [
@@ -1737,7 +1742,7 @@ let la = (e) => {
                                       null == j.A.getCategoryForProduct(e.skuId)
                                           ? null
                                           : (0, c.jsx)(
-                                                b.R9,
+                                                v.R9,
                                                 {
                                                     newValue: {
                                                         tilePosition: l,
@@ -1776,7 +1781,7 @@ let ld = (e) => {
             i = (0, O.bG)([eI.A], () => eI.A.isFocused()),
             o = null != l && !r && i;
         return null != s
-            ? (0, c.jsx)(eb._, { src: s, fit: "fit-width", eventTargetRef: a })
+            ? (0, c.jsx)(ev._, { src: s, fit: "fit-width", eventTargetRef: a })
             : o
               ? (0, c.jsx)(ej.A, { className: g()({ [lu.no]: n }, lu.BW, lu.ud), src: l, autoPlay: !0, loop: !0 })
               : (0, c.jsx)("div", {
@@ -1799,7 +1804,7 @@ let ld = (e) => {
                 return null == e || null == l
                     ? null
                     : (0, c.jsx)(
-                          b.R9,
+                          v.R9,
                           {
                               newValue: { tilePosition: t, pageSection: "top 4", categoryPosition: 0 },
                               children: (0, c.jsx)(
@@ -1868,8 +1873,8 @@ let ld = (e) => {
             ),
             d = u.useRef(null),
             m = (0, eq.yB)("HeroBlock"),
-            h = (0, O.bG)([v.default], () => v.default.getCurrentUser()),
-            E = (0, b.uM)(),
+            h = (0, O.bG)([L.default], () => L.default.getCurrentUser()),
+            E = (0, v.uM)(),
             { analyticsLocations: x } = (0, f.Ay)(N.A.COLLECTIBLES_SHOP_HERO),
             p = u.useMemo(
                 () =>
@@ -1898,7 +1903,7 @@ let ld = (e) => {
                 logoDisplayConfig: S,
                 heroLogo: _,
                 heroBannerStatic: A,
-                heroBannerAnimated: L,
+                heroBannerAnimated: b,
                 heroBannerRive: j,
             } = (0, eN.Kk)(p),
             I = C?.responsive ?? !1,
@@ -1968,7 +1973,7 @@ let ld = (e) => {
                                   null != A &&
                                   (0, c.jsx)(ld, {
                                       bannerStatic: A,
-                                      bannerAnimated: L,
+                                      bannerAnimated: b,
                                       bannerRive: j,
                                       isResponsive: I,
                                       eventTargetRef: d,
@@ -2120,9 +2125,9 @@ let lS = (e) => {
 };
 var l_ = l(189213),
     lA = l(290136),
-    lL = l(478016),
-    lv = l(825484),
-    lb = l(713517),
+    lb = l(478016),
+    lL = l(825484),
+    lv = l(713517),
     lj = l(914410),
     lI = l(859040),
     lO = l(61750);
@@ -2140,7 +2145,7 @@ let lk = u.memo(function (e) {
         let { category: t, rewardSkuId: l } = e,
             { handleCardVisibilityChange: s } = (0, tW.Z)(l),
             n = u.useRef(null),
-            { isHoveringOrFocusing: a } = (0, lb.A)(n),
+            { isHoveringOrFocusing: a } = (0, lv.A)(n),
             { readyToClaim: r, collectibleProductSkuIds: i, collectedSkuIds: o } = lN(t, l),
             d = (0, O.bG)([Z.A], () => Z.A.isClaiming === l);
         return (0, c.jsx)(tz.L, {
@@ -2214,7 +2219,7 @@ let lk = u.memo(function (e) {
                                                         className: g()(ly.__, { [ly.gF]: r }),
                                                         children: [
                                                             r
-                                                                ? (0, c.jsx)(lL.U, {
+                                                                ? (0, c.jsx)(lb.U, {
                                                                       size: "xs",
                                                                       color: "currentColor",
                                                                   })
@@ -2236,7 +2241,7 @@ let lk = u.memo(function (e) {
                                 }),
                                 (0, c.jsx)("div", {
                                     className: eT.Vs,
-                                    children: (0, c.jsx)(lv.e, {
+                                    children: (0, c.jsx)(lL.e, {
                                         wrap: !1,
                                         className: eT.Ld,
                                         fullWidth: !0,
@@ -2336,7 +2341,7 @@ let lk = u.memo(function (e) {
                           E &&
                               h &&
                               (0, c.jsx)(
-                                  b.R9,
+                                  v.R9,
                                   {
                                       newValue: { tilePosition: 0, pageSection: "top 4", categoryPosition: 0 },
                                       children: (0, c.jsx)(lk, { category: i, rewardSkuId: n.rewardSkuId }),
@@ -2348,7 +2353,7 @@ let lk = u.memo(function (e) {
                               return null == e || null == l
                                   ? null
                                   : (0, c.jsx)(
-                                        b.R9,
+                                        v.R9,
                                         {
                                             newValue: { tilePosition: t, pageSection: "top 4", categoryPosition: 0 },
                                             children: (0, c.jsx)(
@@ -2388,7 +2393,7 @@ let lR = {
                 0.1,
                 null != n,
             ),
-            r = (0, O.bG)([v.default], () => v.default.getCurrentUser()),
+            r = (0, O.bG)([L.default], () => L.default.getCurrentUser()),
             { analyticsLocations: i } = (0, f.Ay)(N.A.COLLECTIBLES_SHOP_HERO),
             {
                 bannerDisplayConfig: o,
@@ -2462,7 +2467,7 @@ let lR = {
     },
     lM = (e) => {
         let { shelf: t, handleTransition: l, tab: s } = e,
-            n = (0, O.bG)([v.default], () => v.default.getCurrentUser()),
+            n = (0, O.bG)([L.default], () => L.default.getCurrentUser()),
             a = (0, eh.W)("ShelfBlock"),
             r = (0, O.bG)([j.A], () => j.A.getCategory(t.categorySkuId)),
             i = t3(),
@@ -2500,7 +2505,7 @@ let lR = {
                                       if (null == j.A.getCategoryForProduct(e.skuId) || null == e) return null;
                                       let n = e.skuId;
                                       return (0, c.jsx)(
-                                          b.R9,
+                                          v.R9,
                                           {
                                               newValue: { tilePosition: l, pageSection: t.name, categoryPosition: 2 },
                                               children: (0, c.jsx)(
@@ -2593,10 +2598,10 @@ let lZ = (e) => {
                 }, [s]),
                 s);
         (0, lK.j)({ skuIds: S, location: "GamePromotionBanner" });
-        let _ = (0, b.uM)(),
+        let _ = (0, v.uM)(),
             { analyticsLocations: A } = (0, f.Ay)(),
-            L = u.useRef(null),
-            v = u.useRef(!1),
+            b = u.useRef(null),
+            L = u.useRef(!1),
             j = u.useRef(null),
             I = u.useMemo(() => ({ pageSection: m }), [m]),
             N = u.useCallback(
@@ -2632,10 +2637,10 @@ let lZ = (e) => {
             }, [N, n]),
             P = u.useCallback(
                 (e) => {
-                    !v.current &&
+                    !L.current &&
                         (e && null === j.current
                             ? (j.current = setTimeout(() => {
-                                  (v.current = !0),
+                                  (L.current = !0),
                                       (j.current = null),
                                       y.default.track(B.HAw.COLLECTIBLES_TILE_IMPRESSION, {
                                           collectibles_shop_session_id: _?.sessionId,
@@ -2661,11 +2666,11 @@ let lZ = (e) => {
                   theme: B.NJ8.DARKER,
                   children: (e) =>
                       (0, c.jsx)(tz.L, {
-                          innerRef: L,
+                          innerRef: b,
                           onChange: P,
                           threshold: 0,
                           children: (0, c.jsx)("div", {
-                              ref: L,
+                              ref: b,
                               className: g()(lq.YB, e),
                               children: (0, c.jsxs)("div", {
                                   className: lq.kL,
@@ -2856,7 +2861,7 @@ let l7 = (e) => {
         }, []);
         let m = s?.skuId ?? "",
             { handleCardVisibilityChange: h } = (0, tW.Z)(m, "home", "marketing wide banner"),
-            E = (0, b.uM)(),
+            E = (0, v.uM)(),
             { bannerURL: x } = (0, eN.w$)(t),
             p = l === R.G2.ORBS,
             C = null != t.ctaRoute && "" !== t.ctaRoute,
@@ -2883,7 +2888,7 @@ let l7 = (e) => {
                 },
                 [E, m, l],
             ),
-            L = u.useCallback(
+            b = u.useCallback(
                 function () {
                     let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null;
                     if ((A(e), null != t.ctaRoute && "" !== t.ctaRoute)) {
@@ -2901,7 +2906,7 @@ let l7 = (e) => {
                 [t.ctaRoute, A],
             );
         if (null == x || o) return null;
-        let v = g()(tK.nM, tK.Tq, tK.TS, tK.YB, { [tK._1]: p, [tK.vb]: C }),
+        let L = g()(tK.nM, tK.Tq, tK.TS, tK.YB, { [tK._1]: p, [tK.vb]: C }),
             I = (0, c.jsxs)(c.Fragment, {
                 children: [
                     t.isDismissible &&
@@ -2938,7 +2943,7 @@ let l7 = (e) => {
                                     children: t.title,
                                 }),
                                 (0, c.jsx)(ee.E, {
-                                    style: { color: "var(--text-muted)" },
+                                    style: { color: t.bannerBodyTextColor ?? t.bannerTextColor ?? "var(--text-muted)" },
                                     lineClamp: 2,
                                     variant: p ? "text-md/medium" : "text-sm/medium",
                                     children: p
@@ -2954,7 +2959,7 @@ let l7 = (e) => {
                                             (0, c.jsx)(et.$, {
                                                 variant: "overlay-primary",
                                                 onClick: (e) => {
-                                                    e.stopPropagation(), L(t.ctaText ?? w.intl.string(w.t.jVcuVY));
+                                                    e.stopPropagation(), b(t.ctaText ?? w.intl.string(w.t.jVcuVY));
                                                 },
                                                 text: t.ctaText ?? w.intl.string(w.t.jVcuVY),
                                                 "aria-label":
@@ -2980,8 +2985,8 @@ let l7 = (e) => {
                     onChange: h,
                     threshold: 0,
                     children: C
-                        ? (0, c.jsx)(e4.D, { innerRef: n, onClick: () => L(null), className: g()(e, v), children: I })
-                        : (0, c.jsx)("div", { ref: n, className: g()(e, v), children: I }),
+                        ? (0, c.jsx)(e4.D, { innerRef: n, onClick: () => b(null), className: g()(e, L), children: I })
+                        : (0, c.jsx)("div", { ref: n, className: g()(e, L), children: I }),
                 }),
         });
     },
@@ -2989,12 +2994,12 @@ let l7 = (e) => {
         let { handleTransition: t, numVisibleItems: l, isFetchingCategories: s, tab: n } = e,
             { noCache: a, includeUnpublished: r } = (0, eG.A)(),
             [i, o] = u.useState(!1),
-            d = (0, b.uM)(),
+            d = (0, v.uM)(),
             m = d?.sessionId ?? "";
         u.useEffect(() => {
-            (0, eL.z)({
+            (0, eb.z)({
                 sessionId: m,
-                checkpoint: eL.t.SHOP_MOUNTED,
+                checkpoint: eb.t.SHOP_MOUNTED,
                 tab: n,
                 unpublishedCategoriesShown: r,
                 cacheDisabled: a,
@@ -3016,16 +3021,16 @@ let l7 = (e) => {
             null != E ||
                 h ||
                 0 === x.length ||
-                (0, eL.z)({
+                (0, eb.z)({
                     sessionId: m,
-                    checkpoint: eL.t.SHOP_RENDERED,
+                    checkpoint: eb.t.SHOP_RENDERED,
                     tab: n,
                     unpublishedCategoriesShown: r,
                     cacheDisabled: a,
                 });
         }, [E, h, x.length, r, a, m, n]),
         null != E)
-            ? (0, c.jsx)(tb.h, { onRetry: C, errorOrigin: tb.A.SHOP_PAGE, errorMessage: E.message })
+            ? (0, c.jsx)(tv.h, { onRetry: C, errorOrigin: tv.A.SHOP_PAGE, errorMessage: E.message })
             : h || 0 === x.length
               ? (0, c.jsxs)("div", {
                     className: g()(tK.g4, tK.Of),
@@ -3096,6 +3101,8 @@ let l7 = (e) => {
                                                 title: e.title,
                                                 body: e.body,
                                                 wide_banner_url: e.desktopBackgroundImage,
+                                                banner_text_color: "white",
+                                                banner_body_text_color: "white",
                                                 disable_cta: !0,
                                             }),
                                             tab: n,
@@ -3172,7 +3179,7 @@ let l7 = (e) => {
             n = u.useRef(null),
             { handleScroll: a } = ea(n, l),
             r = (0, ew.U)(),
-            i = (0, b.uM)(),
+            i = (0, v.uM)(),
             [o, d] = u.useState(R.md),
             [g, m] = u.useState(!1);
         return (
@@ -3322,7 +3329,7 @@ let sl = { "Any:personalization-header": lt },
     },
     sc = (e) => {
         let { handleTransition: t, tab: l, transitionState: s } = e,
-            n = (0, b.uM)(),
+            n = (0, v.uM)(),
             a = (0, O.bG)([st.A], () => st.A.getShopLayoutUrlOverride()),
             r = u.useRef(null),
             { handleScroll: i } = ea(r, l),
@@ -3450,14 +3457,14 @@ function sm(e) {
     return null != C
         ? (0, c.jsx)(sd, {})
         : null != i
-          ? (0, c.jsx)(tb.h, { onRetry: r, errorMessage: i, errorOrigin: tb.A.SHOP_PAGE })
+          ? (0, c.jsx)(tv.h, { onRetry: r, errorMessage: i, errorOrigin: tv.A.SHOP_PAGE })
           : t === R.G2.HOME && x
             ? (0, c.jsx)(sc, { tab: K.HOME, transitionState: n, handleTransition: p })
             : t === R.G2.ORBS && x
               ? (0, c.jsx)(sc, { tab: K.ORBS, transitionState: n, handleTransition: p })
               : sg.includes(t)
                 ? (0, c.jsx)(l8, { handleTransition: p, tab: t, transitionState: n })
-                : (0, c.jsx)(tL, {
+                : (0, c.jsx)(tb, {
                       tab: t,
                       categories: E,
                       initialCategoryId: d,
@@ -3478,7 +3485,7 @@ let sh = () =>
                     : void 0,
         ),
     sE = (e) => {
-        let t = (0, O.bG)([v.default], () => v.default.getCurrentUser()),
+        let t = (0, O.bG)([L.default], () => L.default.getCurrentUser()),
             { noCache: l, includeUnpublished: s } = (0, eG.A)();
         u.useEffect(() => {
             null != e &&
@@ -3527,16 +3534,16 @@ let s_ = { pink: "pinkCountdown" },
             }),
         });
     });
-var sL = l(870308),
-    sv = l(650583);
-let sb = (e) => {
+var sb = l(870308),
+    sL = l(650583);
+let sv = (e) => {
         let { children: t, shouldAddEventListener: l, onClose: s } = e,
             n = (0, E.useHasAnyModalOpen)();
         return (
             u.useEffect(() => {
                 if (!l || n) return;
                 let e = (e) => {
-                    e.key === sv.N$.Escape && s();
+                    e.key === sL.N$.Escape && s();
                 };
                 return window.addEventListener("keydown", e), () => window.removeEventListener("keydown", e);
             }, [l, n, s]),
@@ -3547,8 +3554,8 @@ let sb = (e) => {
         let { tab: t = R.G2.HOME } = e;
         (0, A.P)(_.a), (0, z.g)();
         let l = (0, C.A)((0, m.A)()),
-            s = (0, h.bG)([v.default], () => v.default.getCurrentUser());
-        (0, L.pE)();
+            s = (0, h.bG)([L.default], () => L.default.getCurrentUser());
+        (0, b.pE)();
         let n = (0, eq.yB)("CollectiblesShop"),
             { onClose: a } = (function () {
                 let { search: e } = (0, sp.zy)(),
@@ -3610,7 +3617,7 @@ let sb = (e) => {
                         });
                 }, [l, t]);
             })(J, s);
-        let { dismissShopButtonDC: ee } = (0, sL.A)();
+        let { dismissShopButtonDC: ee } = (0, sb.A)();
         u.useEffect(() => {
             ee();
         }, [ee]),
@@ -3639,11 +3646,11 @@ let sb = (e) => {
             })(J, "collectibles_shop");
         return (0, c.jsx)(f.f5, {
             value: es,
-            children: (0, c.jsx)(b.R9, {
+            children: (0, c.jsx)(v.R9, {
                 newValue: { sessionId: l, pageCategory: Y, pageSize: R.l5 },
                 children: (0, c.jsx)(I.iM, {
                     tab: J,
-                    children: (0, c.jsx)(sb, {
+                    children: (0, c.jsx)(sv, {
                         onClose: a,
                         shouldAddEventListener: !1,
                         children: (0, c.jsxs)("div", {

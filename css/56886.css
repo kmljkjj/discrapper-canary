@@ -9332,6 +9332,7 @@
     --mobile-chat-input-floating-content-padding-horizontal: 0px;
     --mobile-chat-input-floating-content-padding-vertical: 0px;
     --mobile-chat-input-floating-inline-full-gradient-height: 0px;
+    --mobile-chat-input-floating-offset-minimum: 0px;
     --mobile-chat-input-floating-scrim-gradient-height: 0px;
     --mobile-chat-input-floating-scrim-offset-top: 0px;
     --mobile-chat-input-floating-typing-gradient-height-reduced: 0px;
@@ -9343,7 +9344,6 @@
     --mobile-chat-input-reply-mention-icon-margin-right: 4px;
     --mobile-chat-input-reply-mention-icon-size: 20px;
     --mobile-chat-input-send-button-width: 40px;
-    --mobile-chat-input-space-bottom: 0px;
     --mobile-coachmark-body-width: 260px;
     --mobile-coachmark-button-spacing: 12px;
     --mobile-control-checkbox-border-radius: 8px;
@@ -9361,6 +9361,7 @@
     --mobile-emoji-row-emoji-line-height: 33px;
     --mobile-emoji-row-emoji-min-spacing: 12px;
     --mobile-emoji-row-emoji-size: 28px;
+    --mobile-gifting-settings-padding-horizontal: 0px;
     --mobile-group-avatar-size: 72px;
     --mobile-guild-bar-item-margin: 4px;
     --mobile-guild-bar-item-padding: 8px;
@@ -9421,6 +9422,7 @@
     --mobile-table-row-group-helper-text-style: text-sm/medium;
     --mobile-table-row-height: 60px;
     --mobile-table-row-icon-size: 32px;
+    --mobile-table-row-label-text-style: text-md/semibold;
     --mobile-table-row-padding: 12px;
     --mobile-user-profile-about-me-heading-text-style: text-sm/semibold;
     --mobile-user-row-label-line-height-android: 16px;
@@ -9448,7 +9450,6 @@
 .mobile-visual-refresh {
     --button-border-radius: 8px;
     --button-border-radius-lg: 12px;
-    --mobile-card-default-radius: 8px;
     --mobile-channel-details-nav-buttons-gap: 0px;
     --mobile-channel-details-nav-icon-button-size: lg;
     --mobile-channel-details-nav-icon-button-variant: icon-only;
@@ -9467,6 +9468,7 @@
     --mobile-chat-input-expression-offset-left: 12px;
     --mobile-chat-input-expression-offset-top: 10px;
     --mobile-chat-input-floating-inline-full-gradient-height: 20px;
+    --mobile-chat-input-floating-offset-minimum: 16px;
     --mobile-chat-input-floating-scrim-gradient-height: 52px;
     --mobile-chat-input-floating-scrim-offset-top: 24px;
     --mobile-chat-input-floating-typing-gradient-height-reduced: 8px;
@@ -9476,7 +9478,6 @@
     --mobile-chat-input-pill-margin-horizontal: 8px;
     --mobile-chat-input-pill-padding: 0px;
     --mobile-chat-input-send-button-width: 32px;
-    --mobile-chat-input-space-bottom: 34px;
     --mobile-coachmark-body-width: 240px;
     --mobile-coachmark-button-spacing: 16px;
     --mobile-control-checkbox-border-radius: 4px;
@@ -9492,6 +9493,7 @@
     --mobile-emoji-row-emoji-line-height: 24px;
     --mobile-emoji-row-emoji-min-spacing: 8px;
     --mobile-emoji-row-emoji-size: 20px;
+    --mobile-gifting-settings-padding-horizontal: 16px;
     --mobile-group-avatar-size: 64px;
     --mobile-guild-bar-item-margin: 6px;
     --mobile-guild-folder-background-left: 8px;
@@ -9541,6 +9543,7 @@
     --mobile-table-row-content-height: 32px;
     --mobile-table-row-group-helper-text-style: text-sm/normal;
     --mobile-table-row-height: 56px;
+    --mobile-table-row-label-text-style: text-md/medium;
     --mobile-user-profile-about-me-heading-text-style: text-sm/medium;
     --mobile-user-row-label-line-height-ios: 20px;
     --mobile-voice-channel-user-limit-border-width: 1px;
@@ -9566,10 +9569,6 @@
     --mobile-chat-input-reply-mention-icon-margin-right: 0px;
     --mobile-chat-input-reply-mention-icon-size: 16px;
     --mobile-chat-input-send-button-width: 40px
-}
-
-.guild-item-spacing {
-    --mobile-guild-bar-item-margin: 6px
 }
 
 .refresh-fast-follow-avatars.density-compact {
